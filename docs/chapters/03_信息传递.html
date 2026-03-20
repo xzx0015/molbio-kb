@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三章：信息传递 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f7fa;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .back { 
+            color: #667eea; 
+            text-decoration: none; 
+            margin-bottom: 20px; 
+            display: inline-block;
+            padding: 10px 0;
+        }
+        .back:hover { text-decoration: underline; }
+        
+        /* 文章内容 */
+        article {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1 { color: #667eea; margin-bottom: 30px; font-size: 2rem; }
+        h2 { color: #764ba2; margin: 30px 0 15px; font-size: 1.5rem; }
+        h3 { color: #555; margin: 20px 0 10px; font-size: 1.2rem; }
+        p { margin-bottom: 15px; }
+        
+        /* 表格 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #667eea;
+        }
+        tr:hover { background: #f8f9fa; }
+        
+        /* 代码块 */
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+        }
+        
+        /* 引用 */
+        blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* 实体标注样式 */
+        .entity {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .entity-molecule { background: #e3f2fd; color: #1976d2; }
+        .entity-process { background: #f3e5f5; color: #7b1fa2; }
+        .entity-enzyme { background: #e8f5e9; color: #388e3c; }
+        .entity-tech { background: #fff3e0; color: #f57c00; }
+        .entity-person { background: #fce4ec; color: #c2185b; }
+        .entity-concept { background: #e0f2f1; color: #00796b; }
+        
+        /* 概念框 */
+        .concept-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .concept-box h4 { margin-bottom: 10px; }
+        
+        /* 列表 */
+        ul, ol { margin: 15px 0 15px 30px; }
+        li { margin: 8px 0; }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back">← 返回首页</a>
+        <article>
+            <h1>第三章：信息传递</h1>
+<h2>3.1 DNA复制概述</h2>
+<h3>半保留复制</h3>
+<p><span class="entity entity-concept" id="semiconservative_replication">半保留复制</span>是DNA复制的核心机制：</p>
+<pre><code>亲代DNA:    5'-ATGC-3'      3'-TACG-5'
+                ↓ 解旋
+子代DNA1:   5'-ATGC-3'  +  新合成: 3'-TACG-5'
+子代DNA2:   新合成: 5'-ATGC-3'  +  3'-TACG-5'
+</code></pre>
+<p><strong>实验证明</strong>：<span class="entity entity-person" title="人物">Meselson</span>和<span class="entity entity-person" title="人物">Stahl</span>（1958）的¹⁵N同位素标记实验</p>
+<h3>复制起点与复制叉</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-concept" title="概念">复制起点</span>（Origin）</td>
+<td>DNA复制开始的特定序列</td>
+</tr>
+<tr>
+<td><span class="entity entity-concept" title="概念">复制叉</span>（Replication fork）</td>
+<td>Y形结构，双链解开的区域</td>
+</tr>
+<tr>
+<td><span class="entity entity-concept" title="概念">复制子</span>（Replicon）</td>
+<td>从一个起点复制的DNA单位</td>
+</tr>
+</tbody>
+</table>
+<p><strong>原核生物</strong>：通常单一起点（如<span class="entity entity-concept" title="概念">OriC</span>）
+<strong>真核生物</strong>：多个起点，形成<span class="entity entity-concept" title="概念">复制泡</span></p>
+<h2>3.2 DNA复制机制</h2>
+<h3>复制过程中的关键酶</h3>
+<table>
+<thead>
+<tr>
+<th>酶</th>
+<th>功能</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">解旋酶</span>（Helicase）</td>
+<td>解开双链</td>
+<td>ATP供能，双向移动</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">单链结合蛋白</span>（SSB）</td>
+<td>稳定单链</td>
+<td>防止复性、降解</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">拓扑异构酶</span></td>
+<td>缓解超螺旋</td>
+<td>I型切断单链，II型切断双链</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">DNA聚合酶</span></td>
+<td>合成新链</td>
+<td>5'→3'方向，需引物</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">引物酶</span>（Primase）</td>
+<td>合成RNA引物</td>
+<td>提供3'-OH末端</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">DNA连接酶</span></td>
+<td>连接片段</td>
+<td>连接Okazaki片段</td>
+</tr>
+</tbody>
+</table>
+<h3>前导链与后随链</h3>
+<p><span class="entity entity-concept" id="leading_lagging">前导链与后随链</span>：</p>
+<ul>
+<li><strong>前导链</strong>（Leading strand）：连续合成，方向与复制叉移动相同</li>
+<li><strong>后随链</strong>（Lagging strand）：不连续合成，形成<span class="entity entity-concept" title="概念">冈崎片段</span></li>
+</ul>
+<blockquote>
+<p><strong>半不连续复制</strong>：一条连续，一条不连续</p>
+</blockquote>
+<h3>DNA聚合酶特性</h3>
+<p><strong>原核生物</strong>（以<span class="entity entity-concept" title="生物">大肠杆菌</span>为例）：</p>
+<table>
+<thead>
+<tr>
+<th>聚合酶</th>
+<th>功能</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">Pol I</span></td>
+<td>修复、切除RNA引物</td>
+<td>5'→3'外切活性</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">Pol II</span></td>
+<td>修复</td>
+<td>SOS修复</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">Pol III</span></td>
+<td>主要复制酶</td>
+<td>高保真、高速度</td>
+</tr>
+</tbody>
+</table>
+<p><strong>真核生物</strong>：
+- <span class="entity entity-enzyme" title="酶">Pol α</span>：合成RNA-DNA引物
+- <span class="entity entity-enzyme" title="酶">Pol δ</span>：合成后随链
+- <span class="entity entity-enzyme" title="酶">Pol ε</span>：合成前导链</p>
+<h2>3.3 转录</h2>
+<h3>转录概述</h3>
+<p><span class="entity entity-concept" id="transcription">转录</span>：以DNA为模板合成RNA的过程</p>
+<pre><code>DNA:    3'-TACG-5'  →  RNA:  5'-AUGC-3'
+</code></pre>
+<p><strong>关键差异</strong>：
+- 转录不需要引物
+- 转录是局部的（基因选择性表达）
+- RNA合成后释放，不保持双链</p>
+<h3>RNA聚合酶</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>功能</th>
+<th>产物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">RNA聚合酶I</span></td>
+<td>真核生物核仁</td>
+<td>rRNA（除5S）</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">RNA聚合酶II</span></td>
+<td>真核生物核质</td>
+<td>mRNA、snRNA、miRNA</td>
+</tr>
+<tr>
+<td><span class="entity entity-enzyme" title="酶">RNA聚合酶III</span></td>
+<td>真核生物核质</td>
+<td>tRNA、5S rRNA</td>
+</tr>
+</tbody>
+</table>
+<h3>转录过程</h3>
+<p><strong>1. 起始</strong>：
+- <span class="entity entity-concept" title="概念">启动子</span>（Promoter）：RNA聚合酶结合位点
+- <span class="entity entity-concept" title="概念">TATA盒</span>：真核生物核心元件
+- 转录起始复合物组装</p>
+<p><strong>2. 延伸</strong>：
+- RNA聚合酶沿DNA移动
+- 5'→3'合成RNA
+- DNA-RNA杂合双链（约8-9bp）</p>
+<p><strong>3. 终止</strong>：
+- 原核：<span class="entity entity-concept" title="概念">ρ因子</span>依赖/非依赖
+- 真核：<span class="entity entity-concept" title="概念">poly(A)信号</span>、<span class="entity entity-concept" title="概念">终止子</span></p>
+<h2>3.4 翻译</h2>
+<h3>遗传密码</h3>
+<p><span class="entity entity-concept" id="genetic_code">遗传密码</span>：mRNA上编码氨基酸的三联体密码子</p>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>密码子数</td>
+<td>64个（4³）</td>
+</tr>
+<tr>
+<td>编码氨基酸</td>
+<td>61个</td>
+</tr>
+<tr>
+<td>终止密码子</td>
+<td>3个：UAA、UAG、UGA</td>
+</tr>
+<tr>
+<td>起始密码子</td>
+<td>AUG（编码Met）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>密码子特点</strong>：
+- <strong>简并性</strong>：多个密码子编码同一氨基酸
+- <strong>通用性</strong>：几乎所有生物共用
+- <strong>连续性</strong>：无标点，不重叠
+- <strong>方向性</strong>：5'→3'阅读</p>
+<h3>tRNA与氨基酸活化</h3>
+<p><span class="entity entity-molecule" title="分子">tRNA</span>（转运RNA）的功能：
+- 携带特定氨基酸
+- 识别mRNA上的密码子（<span class="entity entity-concept" title="概念">反密码子</span>）
+- <span class="entity entity-concept" title="概念">氨基酸臂</span>：结合氨基酸
+- <span class="entity entity-concept" title="概念">反密码子环</span>：识别密码子</p>
+<p><span class="entity entity-enzyme" title="酶">氨酰-tRNA合成酶</span>：催化氨基酸与tRNA连接，高度特异性</p>
+<h3>核糖体</h3>
+<p><span class="entity entity-molecule" title="复合物">核糖体</span>是蛋白质合成的场所：</p>
+<table>
+<thead>
+<tr>
+<th>亚基</th>
+<th>原核</th>
+<th>真核</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大亚基</td>
+<td>50S（23S+5S+蛋白质）</td>
+<td>60S（28S+5.8S+5S+蛋白质）</td>
+</tr>
+<tr>
+<td>小亚基</td>
+<td>30S（16S+蛋白质）</td>
+<td>40S（18S+蛋白质）</td>
+</tr>
+<tr>
+<td>完整</td>
+<td>70S</td>
+<td>80S</td>
+</tr>
+</tbody>
+</table>
+<p><strong>功能位点</strong>：
+- <strong>A位</strong>（氨酰位）：接受新氨酰-tRNA
+- <strong>P位</strong>（肽酰位）：携带正在延伸的肽链
+- <strong>E位</strong>（出口位）：释放空载tRNA</p>
+<h3>翻译过程</h3>
+<p><strong>1. 起始</strong>：
+- 小亚基识别mRNA（<span class="entity entity-concept" title="概念">SD序列</span>或<span class="entity entity-concept" title="概念">5'帽</span>）
+- 起始tRNA进入P位
+- 大亚基结合</p>
+<p><strong>2. 延伸</strong>：
+- 氨酰-tRNA进入A位
+- <span class="entity entity-process" title="过程">肽键形成</span>（<span class="entity entity-enzyme" title="酶">肽酰转移酶</span>催化）
+- 核糖体移位</p>
+<p><strong>3. 终止</strong>：
+- 释放因子识别终止密码子
+- 多肽链释放
+- 核糖体解离</p>
+<h2>3.5 逆转录与RNA复制</h2>
+<h3>逆转录</h3>
+<p><span class="entity entity-concept" id="reverse_transcription">逆转录</span>：RNA → DNA</p>
+<ul>
+<li><span class="entity entity-enzyme" title="酶">逆转录酶</span>（Reverse transcriptase）</li>
+<li>需要tRNA作为引物</li>
+<li>产物：<span class="entity entity-molecule" title="分子">cDNA</span>（互补DNA）</li>
+</ul>
+<p><strong>生物学意义</strong>：
+- <span class="entity entity-concept" title="概念">逆转录病毒</span>（如HIV）
+- 真核生物<span class="entity entity-concept" title="概念">端粒酶</span>
+- <span class="entity entity-concept" title="概念">假基因</span>形成</p>
+<h2>本章小结</h2>
+<ul>
+<li>DNA半保留复制确保遗传信息精确传递</li>
+<li>复制是半不连续的，需要多种酶协同</li>
+<li>转录以DNA为模板合成RNA，不需引物</li>
+<li>翻译以mRNA为模板，tRNA转运氨基酸，核糖体催化</li>
+<li>逆转录是中心法则的补充</li>
+</ul>
+<h2>思考题</h2>
+<ol>
+<li>为什么DNA复制需要RNA引物，而转录不需要？</li>
+<li>真核生物为什么需要3种RNA聚合酶？</li>
+<li>遗传密码的简并性有什么生物学意义？</li>
+</ol>
+        </article>
+        <footer>
+            <p>分子生物学知识库 | Built with ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -24,7 +24,7 @@ def generate_all():
     print("=" * 50)
     
     for md_file in md_files:
-        subprocess.run(['python', 'scripts/render_html.py', str(md_file)])
+        subprocess.run(['python3', 'scripts/render_html.py', str(md_file)])
     
     print("=" * 50)
     print("✅ 全部生成完成！")
