@@ -44,21 +44,99 @@
             text-decoration: none;
             color: inherit;
             display: block;
+            position: relative;
         }
         .entity-item:hover {
             transform: translateX(5px);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
-        /* 实体类型颜色 */
-        .type-molecule { background: #e3f2fd; color: #1976d2; }
+        /* 重要性标识 */
+        .entity-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            border-radius: 6px 0 0 6px;
+        }
+        
+        /* 核心重要 - 红色高亮 */
+        .core-important {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            color: #c62828;
+            font-weight: 600;
+            border: 2px solid #ef5350;
+        }
+        .core-important::before { background: #d32f2f; }
+        
+        /* 重要 - 橙色 */
+        .core-major {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            color: #e65100;
+            font-weight: 500;
+        }
+        .core-major::before { background: #f57c00; }
+        
+        /* 基础 - 蓝色 */
+        .core-basic {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .core-basic::before { background: #1976d2; }
+        
+        /* 原有分类颜色 */
+        .type-molecule { background: #e8f5e9; color: #388e3c; }
+        .type-molecule::before { background: #388e3c; }
+        
         .type-process { background: #f3e5f5; color: #7b1fa2; }
-        .type-enzyme { background: #e8f5e9; color: #388e3c; }
+        .type-process::before { background: #7b1fa2; }
+        
         .type-tech { background: #fff3e0; color: #f57c00; }
-        .type-person { background: #fce4ec; color: #c2185b; }
-        .type-concept { background: #e0f2f1; color: #00796b; }
-        .type-structure { background: #f3e8ff; color: #7c3aed; }
-        .type-disease { background: #fee2e2; color: #dc2626; }
+        .type-tech::before { background: #f57c00; }
+        
+        .type-enzyme { background: #e0f2f1; color: #00796b; }
+        .type-enzyme::before { background: #00796b; }
+        
+        /* 图例 */
+        .legend {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .legend h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+        .legend-items {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        .legend-important {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #ef5350;
+        }
+        .legend-major {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+        .legend-basic {
+            background: #e3f2fd;
+        }
         
         .note {
             background: #fff3e0;
@@ -76,10 +154,7 @@
             margin-bottom: 20px;
             text-align: center;
         }
-        .stats h3 {
-            font-size: 2em;
-            margin-bottom: 5px;
-        }
+        .stats h3 { font-size: 2em; margin-bottom: 5px; }
     </style>
 </head>
 <body>
@@ -89,69 +164,95 @@
         
         <div class="stats">
             <h3>18</h3>
-            <p>核心实体 | 按类别分类</p>
+            <p>核心实体 | 按类别与重要性分类</p>
         </div>
         
-        <div class="note">
-            💡 点击实体名称查看详情。全部 18 个实体均为 HTML 页面，支持响应式布局。
+        <div class="legend">
+            <h3>📊 重要性标识</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color legend-important"></div>
+                    <span>🔴 核心重点（考试必考）</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-major"></div>
+                    <span>🟠 重要概念（常考）</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-basic"></div>
+                    <span>🔵 基础概念（了解）</span>
+                </div>
+            </div>
         </div>
         
+        <!-- 分子相关 -->
         <div class="entity-type">
             <h2>🔬 分子（Molecule）</h2>
             <div class="entity-list">
-                <a href="DNA.html" class="entity-item type-molecule">DNA</a>
-                <a href="RNA.html" class="entity-item type-molecule">RNA</a>
-                <a href="蛋白质.html" class="entity-item type-molecule">蛋白质</a>
+                <a href="DNA.html" class="entity-item core-important">DNA ⭐</a>
+                <a href="RNA.html" class="entity-item core-important">RNA ⭐</a>
+                <a href="蛋白质.html" class="entity-item core-important">蛋白质 ⭐</a>
+                <a href="染色体与 DNA.html" class="entity-item core-important">染色体与 DNA ⭐</a>
+                <a href="核糖体.html" class="entity-item core-major">核糖体</a>
+                <a href="端粒.html" class="entity-item core-basic">端粒与端粒酶</a>
             </div>
         </div>
         
+        <!-- 过程相关 -->
         <div class="entity-type">
             <h2>⚙️ 过程（Process）</h2>
             <div class="entity-list">
-                <a href="DNA复制.html" class="entity-item type-process">DNA复制</a>
-                <a href="转录.html" class="entity-item type-process">转录</a>
-                <a href="翻译.html" class="entity-item type-process">翻译</a>
+                <a href="DNA复制.html" class="entity-item core-important">DNA复制 ⭐</a>
+                <a href="DNA 复制.html" class="entity-item core-important">DNA 复制（详细）⭐</a>
+                <a href="转录.html" class="entity-item core-important">转录 ⭐</a>
+                <a href="基因转录.html" class="entity-item core-important">基因转录（详细）⭐</a>
+                <a href="翻译.html" class="entity-item core-important">翻译 ⭐</a>
+                <a href="蛋白质翻译.html" class="entity-item core-important">蛋白质翻译（详细）⭐</a>
+                <a href="RNA 加工.html" class="entity-item core-major">RNA 加工</a>
+                <a href="DNA 修复.html" class="entity-item core-major">DNA 修复</a>
+                <a href="中心法则.html" class="entity-item core-important">中心法则 ⭐</a>
+                <a href="遗传密码.html" class="entity-item core-important">遗传密码 ⭐</a>
+                <a href="细胞周期.html" class="entity-item core-major">细胞周期调控</a>
             </div>
         </div>
         
+        <!-- 技术相关 -->
         <div class="entity-type">
             <h2>🔧 技术（Technology）</h2>
             <div class="entity-list">
-                <a href="PCR.html" class="entity-item type-tech">PCR</a>
-                <a href="CRISPR-Cas9.html" class="entity-item type-tech">CRISPR-Cas9</a>
-                <a href="分子生物学技术.html" class="entity-item type-tech">分子生物学技术</a>
-                <a href="基因工程.html" class="entity-item type-tech">基因工程</a>
+                <a href="PCR.html" class="entity-item core-important">PCR ⭐</a>
+                <a href="CRISPR-Cas9.html" class="entity-item core-major">CRISPR-Cas9</a>
+                <a href="分子生物学技术.html" class="entity-item core-major">分子生物学技术</a>
+                <a href="基因工程.html" class="entity-item core-major">基因工程</a>
             </div>
         </div>
         
+        <!-- 调控与机制 -->
         <div class="entity-type">
-            <h2>💡 核心概念（Core Concepts）</h2>
+            <h2>🎛️ 调控与机制（Regulation）</h2>
             <div class="entity-list">
-                <a href="中心法则.html" class="entity-item type-concept">中心法则</a>
-                <a href="染色体与 DNA.html" class="entity-item type-concept">染色体与 DNA</a>
-                <a href="DNA 复制.html" class="entity-item type-concept">DNA 复制</a>
-                <a href="DNA 修复.html" class="entity-item type-concept">DNA 修复</a>
-                <a href="端粒.html" class="entity-item type-concept">端粒与端粒酶</a>
-                <a href="基因转录.html" class="entity-item type-concept">基因转录</a>
-                <a href="RNA 加工.html" class="entity-item type-concept">RNA 加工</a>
-                <a href="非编码 RNA.html" class="entity-item type-concept">非编码 RNA</a>
-                <a href="蛋白质翻译.html" class="entity-item type-concept">蛋白质翻译</a>
-                <a href="核糖体.html" class="entity-item type-concept">核糖体</a>
-                <a href="遗传密码.html" class="entity-item type-concept">遗传密码</a>
-                <a href="基因调控.html" class="entity-item type-concept">基因表达调控</a>
-                <a href="信号转导.html" class="entity-item type-concept">信号转导</a>
-                <a href="细胞周期.html" class="entity-item type-concept">细胞周期调控</a>
-                <a href="表观遗传.html" class="entity-item type-concept">表观遗传学</a>
-                <a href="基因组.html" class="entity-item type-concept">基因组与功能基因组</a>
+                <a href="基因调控.html" class="entity-item core-important">基因表达调控 ⭐</a>
+                <a href="表观遗传.html" class="entity-item core-major">表观遗传学</a>
+                <a href="信号转导.html" class="entity-item core-major">信号转导</a>
+                <a href="非编码 RNA.html" class="entity-item core-major">非编码 RNA</a>
             </div>
         </div>
         
+        <!-- 基因组与系统 -->
         <div class="entity-type">
-            <h2>🧪 酶（Enzyme）</h2>
+            <h2>🧬 基因组与系统（Genomics）</h2>
             <div class="entity-list">
-                <div class="entity-item type-enzyme" style="opacity: 0.5;">DNA聚合酶（建设中）</div>
-                <div class="entity-item type-enzyme" style="opacity: 0.5;">RNA聚合酶（建设中）</div>
-                <div class="entity-item type-enzyme" style="opacity: 0.5;">逆转录酶（建设中）</div>
+                <a href="基因组.html" class="entity-item core-major">基因组与功能基因组</a>
+            </div>
+        </div>
+        
+        <!-- 酶（建设中） -->
+        <div class="entity-type">
+            <h2>🧪 酶（Enzyme）- 建设中</h2>
+            <div class="entity-list">
+                <div class="entity-item type-enzyme" style="opacity: 0.5;">DNA聚合酶</div>
+                <div class="entity-item type-enzyme" style="opacity: 0.5;">RNA聚合酶</div>
+                <div class="entity-item type-enzyme" style="opacity: 0.5;">逆转录酶</div>
             </div>
         </div>
     </div>
