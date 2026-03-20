@@ -1,0 +1,27 @@
+{
+  "id": "sequencing",
+  "name": "测序技术",
+  "nameEn": "Sequencing Technology",
+  "category": "技术",
+  "chapter": "第 11 章",
+  "importance": "core-important",
+  "definition": "测序技术是测定 DNA 或 RNA 核苷酸序列的方法，包括 Sanger 测序、二代测序和三代测序等技术。",
+  "keyConcepts": [
+    {"term": "Sanger 测序", "definition": "链终止法测序，使用双脱氧核苷酸"},
+    {"term": "二代测序", "definition": "高通量测序技术，如 Illumina 测序"},
+    {"term": "三代测序", "definition": "单分子测序技术，如 PacBio 和 Nanopore"},
+    {"term": "边合成边测序", "definition": "Illumina 的测序原理"},
+    {"term": "单分子实时测序", "definition": "PacBio 的测序原理"}
+  ],
+  "keyPoints": [
+    "Sanger 测序是第一代测序技术",
+    "二代测序实现了高通量、低成本测序",
+    "三代测序可获得长读长序列",
+    "人类基因组计划推动了测序技术发展",
+    "测序技术在精准医学中应用广泛"
+  ],
+  "relatedEntities": ["分子生物学技术", "基因组", "DNA", "PCR"],
+  "references": [
+    "Sanger F, et al. DNA sequencing with chain-terminating inhibitors. PNAS, 1977"
+  ]
+}

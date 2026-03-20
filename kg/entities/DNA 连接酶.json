@@ -1,0 +1,27 @@
+{
+  "id": "dna-ligase",
+  "name": "DNA 连接酶",
+  "nameEn": "DNA Ligase",
+  "category": "酶",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "DNA 连接酶是催化 DNA 片段之间形成磷酸二酯键的酶，在 DNA 复制、修复和基因工程中起关键作用。",
+  "keyConcepts": [
+    {"term": "磷酸二酯键", "definition": "连接 DNA 核苷酸之间的化学键"},
+    {"term": "粘性末端连接", "definition": "连接具有互补单链突出的 DNA 片段"},
+    {"term": "平末端连接", "definition": "连接平齐的 DNA 末端，效率较低"},
+    {"term": "T4 DNA 连接酶", "definition": "来自 T4 噬菌体，可连接粘性末端和平末端"},
+    {"term": "E. coli DNA 连接酶", "definition": "来自大肠杆菌，需要 NAD+ 作为辅因子"}
+  ],
+  "keyPoints": [
+    "DNA 连接酶连接 DNA 片段的 3'-OH 和 5'-磷酸基团",
+    "T4 DNA 连接酶是最常用的连接酶",
+    "DNA 连接酶在 DNA 复制中连接冈崎片段",
+    "在基因工程中用于连接载体和插入片段",
+    "DNA 连接酶需要 ATP 或 NAD+ 作为能量来源"
+  ],
+  "relatedEntities": ["DNA 复制", "基因工程", "限制性内切酶", "DNA 修复"],
+  "references": [
+    "Lehman IR. DNA ligase: structure, mechanism, and function. Science, 1974"
+  ]
+}

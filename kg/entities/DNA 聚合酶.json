@@ -1,0 +1,27 @@
+{
+  "id": "dna-polymerase",
+  "name": "DNA 聚合酶",
+  "nameEn": "DNA Polymerase",
+  "category": "酶",
+  "chapter": "第 3 章",
+  "importance": "core-important",
+  "definition": "DNA 聚合酶是以 DNA 为模板合成 DNA 的酶，是 DNA 复制的关键酶，具有 5'→3'聚合酶活性、3'→5'外切酶活性（校对功能）。",
+  "keyConcepts": [
+    {"term": "DNA 聚合酶 I", "definition": "原核生物中主要参与 DNA 修复和 RNA 引物切除的酶"},
+    {"term": "DNA 聚合酶 III", "definition": "原核生物中主要的复制酶，具有高持续合成能力"},
+    {"term": "DNA 聚合酶 α/δ/ε", "definition": "真核生物中的主要 DNA 聚合酶，分别负责引物合成和链延伸"},
+    {"term": "Taq 酶", "definition": "耐热的 DNA 聚合酶，来自 Thermus aquaticus，用于 PCR"},
+    {"term": "校对功能", "definition": "3'→5'外切酶活性，可切除错配碱基，保证复制准确性"}
+  ],
+  "keyPoints": [
+    "DNA 聚合酶需要引物，不能从头合成 DNA",
+    "DNA 聚合酶只能沿 5'→3'方向合成",
+    "原核生物 Pol III 是主要复制酶，Pol I 负责修复",
+    "真核生物有多种 DNA 聚合酶，分工不同",
+    "Taq 酶的发现使 PCR 技术成为可能"
+  ],
+  "relatedEntities": ["DNA 复制", "PCR", "DNA 修复", "基因工程"],
+  "references": [
+    "Kornberg A. Enzymatic synthesis of DNA. Nobel Lecture, 1959"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "restriction-enzyme",
+  "name": "限制性内切酶",
+  "nameEn": "Restriction Enzyme",
+  "category": "酶",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "限制性内切酶是一类能识别特定 DNA 序列并在特定位点切割 DNA 的酶，是基因工程的重要工具酶。",
+  "keyConcepts": [
+    {"term": "识别序列", "definition": "限制性内切酶识别的特定 DNA 序列，通常为 4-8 bp 的回文序列"},
+    {"term": "粘性末端", "definition": "切割后产生的单链突出末端，如 EcoRI 切割产生的 5'突出"},
+    {"term": "平末端", "definition": "切割后产生的平齐末端，如 SmaI 切割"},
+    {"term": "I/II/III 型", "definition": "限制性内切酶的分类，II 型最常用"},
+    {"term": "同裂酶", "definition": "识别相同序列但来源不同的限制性内切酶"}
+  ],
+  "keyPoints": [
+    "限制性内切酶是基因工程的基础工具",
+    "II 型限制性内切酶识别特定序列并在内部切割",
+    "常用酶：EcoRI、BamHI、HindIII 等",
+    "粘性末端便于 DNA 片段连接",
+    "限制性内切酶的发现获 1978 年诺贝尔奖"
+  ],
+  "relatedEntities": ["基因工程", "DNA 连接酶", "分子克隆", "PCR"],
+  "references": [
+    "Smith HO, Wilcox KW. A restriction enzyme from Hemophilus influenzae. J Mol Biol, 1970"
+  ]
+}
