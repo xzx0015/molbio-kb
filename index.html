@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分子生物学 | Molecular Biology</title>
+    <title>分子生物学知识库 | Molecular Biology KB</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -31,60 +31,114 @@
         header p {
             font-size: 1.2rem;
             opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
         }
-        .cards {
+        .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-top: 40px;
+            margin: 40px 0;
         }
-        .card {
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-card .label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .content {
             background: white;
             border-radius: 12px;
-            padding: 30px;
+            padding: 40px;
+            margin-top: 40px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-        }
-        .card h2 {
+        .content h2 {
             color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
         }
-        .card p {
-            color: #666;
-            margin-bottom: 20px;
+        .chapters {
+            list-style: none;
         }
-        .card a {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
+        .chapters li {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
             transition: background 0.3s;
         }
-        .card a:hover {
-            background: #764ba2;
+        .chapters li:last-child {
+            border-bottom: none;
         }
-        .intro {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        .chapters li:hover {
+            background: #f8f9fa;
         }
-        .intro h2 {
+        .chapters a {
+            color: #333;
+            text-decoration: none;
+            flex: 1;
+            font-size: 1.1rem;
+        }
+        .chapters a:hover {
             color: #667eea;
-            margin-bottom: 20px;
         }
-        .intro p {
+        .chapter-num {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-ready {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+        .status-pending {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .feature {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .feature h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        .feature p {
             color: #666;
-            line-height: 1.8;
-            margin-bottom: 15px;
+            font-size: 0.95rem;
         }
         footer {
             text-align: center;
@@ -97,28 +151,90 @@
 <body>
     <div class="container">
         <header>
-            <h1>🧬 分子生物学</h1>
-            <p>Molecular Biology · 从DNA到蛋白质的生命密码</p>
+            <h1>🧬 分子生物学知识库</h1>
+            <p>用AI构建的结构化分子生物学知识图谱 · 从DNA到蛋白质的生命密码</p>
         </header>
 
-        <div class="cards">
-            <div class="card">
-                <h2>📚 理论课程</h2>
-                <p>分子生物学核心理论知识，包含DNA复制、转录、翻译、基因调控等核心内容。</p>
-                <a href="theory/">进入学习</a>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number">7</div>
+                <div class="label">核心章节</div>
             </div>
-            <div class="card">
-                <h2>📥 资源下载</h2>
-                <p>课件PPT、参考资料、学习指南等资源一站式下载。</p>
-                <a href="resources/">下载资源</a>
+            <div class="stat-card">
+                <div class="number">18</div>
+                <div class="label">实体类别</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">100+</div>
+                <div class="label">知识单元</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">∞</div>
+                <div class="label">探索可能</div>
             </div>
         </div>
 
-        <div class="intro">
-            <h2>📖 关于分子生物学</h2>
-            <p>分子生物学是现代生命科学的核心学科，研究生物大分子（核酸和蛋白质）的结构、功能及其相互作用，揭示生命活动的分子机制。</p>
-            <p>本知识库涵盖从DNA复制、RNA转录到蛋白质翻译的完整中心法则，以及基因表达调控、DNA损伤修复、分子生物学技术等前沿内容。</p>
-            <p>通过系统学习，帮助建立分子生物学的完整知识体系，深入理解生命的分子基础。</p>
+        <div class="content">
+            <h2>📚 知识章节</h2>
+            <ul class="chapters">
+                <li>
+                    <span class="chapter-num">1</span>
+                    <a href="chapters/01_绪论.html">绪论 - 分子生物学概述与中心法则</a>
+                    <span class="status status-ready">已完成</span>
+                </li>
+                <li>
+                    <span class="chapter-num">2</span>
+                    <a href="#">DNA的结构与复制</a>
+                    <span class="status status-pending">待填充</span>
+                </li>
+                <li>
+                    <span class="chapter-num">3</span>
+                    <a href="#">RNA转录</a>
+                    <span class="status status-pending">待填充</span>
+                </li>
+                <li>
+                    <span class="chapter-num">4</span>
+                    <a href="#">蛋白质翻译</a>
+                    <span class="status status-pending">待填充</span>
+                </li>
+                <li>
+                    <span class="chapter-num">5</span>
+                    <a href="#">基因表达调控</a>
+                    <span class="status status-pending">待填充</span>
+                </li>
+                <li>
+                    <span class="chapter-num">6</span>
+                    <a href="#">DNA损伤与修复</a>
+                    <span class="status status-pending">待填充</span>
+                </li>
+                <li>
+                    <span class="chapter-num">7</span>
+                    <a href="#">分子生物学技术</a>
+                    <span class="status status-pending">待填充</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>🎯 核心特色</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🔬 实体标注</h3>
+                    <p>基因、蛋白质、酶、技术等18类实体语义标注，点击即可查看详细信息</p>
+                </div>
+                <div class="feature">
+                    <h3>🔗 概念关系</h3>
+                    <p>中心法则流程、调控网络、技术原理等概念关系可视化</p>
+                </div>
+                <div class="feature">
+                    <h3>📖 认知辅助</h3>
+                    <p>语法高亮、交互式学习、知识图谱辅助理解</p>
+                </div>
+                <div class="feature">
+                    <h3>🧩 知识单元</h3>
+                    <p>可复用的知识点（SKU），支持碎片化学习和系统构建</p>
+                </div>
+            </div>
         </div>
 
         <footer>
