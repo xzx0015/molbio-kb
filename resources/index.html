@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源下载 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .back { color: #667eea; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 30px; }
+        .resource-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .resource-section h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .file-list { list-style: none; }
+        .file-list li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .file-list li:last-child { border-bottom: none; }
+        .file-info { flex: 1; }
+        .file-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .file-desc {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .file-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            color: #999;
+            font-size: 0.85rem;
+        }
+        .download-btn {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .download-btn:hover { background: #764ba2; }
+        .coming-soon {
+            background: #f5f5f5;
+            color: #999;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        .icon { margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back">← 返回首页</a>
+        <h1>📥 资源下载中心</h1>
+
+        <div class="resource-section">
+            <h2>📑 课件PPT</h2>
+            <ul class="file-list">
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📘 第一章：绪论.pptx</div>
+                        <div class="file-desc">分子生物学概述、中心法则、研究方法介绍</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>2.5 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📘 第二章：DNA复制.pptx</div>
+                        <div class="file-desc">DNA结构、半保留复制、复制机制详解</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>3.2 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📘 第三章：RNA转录.pptx</div>
+                        <div class="file-desc">转录过程、RNA聚合酶、转录后加工</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>2.8 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📘 第四章：蛋白质翻译.pptx</div>
+                        <div class="file-desc">遗传密码、tRNA、核糖体、翻译过程</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>3.5 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📘 第五章：基因调控.pptx</div>
+                        <div class="file-desc">操纵子模型、真核调控、表观遗传</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>4.1 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="resource-section">
+            <h2>📝 实验报告模板</h2>
+            <ul class="file-list">
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📄 实验报告模板.docx</div>
+                        <div class="file-desc">标准实验报告格式，包含实验目的、原理、步骤、结果、讨论</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>45 KB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📊 数据记录表.xlsx</div>
+                        <div class="file-desc">实验数据记录表格模板，方便整理实验数据</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>28 KB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="resource-section">
+            <h2>📚 参考资料</h2>
+            <ul class="file-list">
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📖 分子生物学（第5版）- 朱玉贤.pdf</div>
+                        <div class="file-desc">课程主要参考教材电子版（仅供学习使用）</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>156 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📖 Molecular Biology of the Cell.pdf</div>
+                        <div class="file-desc">经典英文参考书，深入理解细胞分子生物学</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>210 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">🧬 常用分子生物学技术手册.pdf</div>
+                        <div class="file-desc">实验技术详细操作指南和注意事项</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>18 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="resource-section">
+            <h2>🎓 学习辅助</h2>
+            <ul class="file-list">
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">📝 名词解释汇总.docx</div>
+                        <div class="file-desc">课程重要概念和名词解释，方便复习记忆</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>52 KB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">❓ 历年试题汇编.pdf</div>
+                        <div class="file-desc">往年考试真题及参考答案</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>3.8 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">🧠 思维导图.xmind</div>
+                        <div class="file-desc">课程知识结构思维导图，帮助系统理解</div>
+                    </div>
+                    <div class="file-meta">
+                        <span>1.2 MB</span>
+                        <span class="coming-soon">即将上线</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="resource-section">
+            <h2>🔗 外部资源</h2>
+            <ul class="file-list">
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">🌐 NCBI - National Center for Biotechnology Information</div>
+                        <div class="file-desc">美国国立生物技术信息中心，基因序列数据库</div>
+                    </div>
+                    <a href="https://www.ncbi.nlm.nih.gov/" target="_blank" class="download-btn">访问网站</a>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">🌐 UniProt - Protein Knowledgebase</div>
+                        <div class="file-desc">蛋白质序列和功能信息数据库</div>
+                    </div>
+                    <a href="https://www.uniprot.org/" target="_blank" class="download-btn">访问网站</a>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">🌐 PDB - Protein Data Bank</div>
+                        <div class="file-desc">蛋白质三维结构数据库</div>
+                    </div>
+                    <a href="https://www.rcsb.org/" target="_blank" class="download-btn">访问网站</a>
+                </li>
+                <li>
+                    <div class="file-info">
+                        <div class="file-name">🎥 分子生物学动画演示</div>
+                        <div class="file-desc">DNA复制、转录、翻译过程可视化动画</div>
+                    </div>
+                    <a href="https://www.youtube.com/results?search_query=molecular+biology+animation" target="_blank" class="download-btn">查看视频</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
