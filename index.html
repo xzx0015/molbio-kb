@@ -13,11 +13,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         header {
             text-align: center;
             padding: 60px 20px;
@@ -48,15 +44,48 @@
             color: white;
             backdrop-filter: blur(10px);
         }
-        .stat-card .number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 5px;
+        .stat-card .number { font-size: 2.5rem; font-weight: bold; margin-bottom: 5px; }
+        .stat-card .label { font-size: 0.9rem; opacity: 0.8; }
+        
+        /* 导航卡片 */
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
         }
-        .stat-card .label {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .nav-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
         }
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        .nav-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .nav-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .nav-card .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+        .nav-card:hover .btn { background: #764ba2; }
+        
         .content {
             background: white;
             border-radius: 12px;
@@ -70,9 +99,7 @@
             padding-bottom: 15px;
             border-bottom: 2px solid #f0f0f0;
         }
-        .chapters {
-            list-style: none;
-        }
+        .chapters { list-style: none; }
         .chapters li {
             padding: 15px 20px;
             border-bottom: 1px solid #eee;
@@ -80,21 +107,15 @@
             align-items: center;
             transition: background 0.3s;
         }
-        .chapters li:last-child {
-            border-bottom: none;
-        }
-        .chapters li:hover {
-            background: #f8f9fa;
-        }
+        .chapters li:last-child { border-bottom: none; }
+        .chapters li:hover { background: #f8f9fa; }
         .chapters a {
             color: #333;
             text-decoration: none;
             flex: 1;
             font-size: 1.1rem;
         }
-        .chapters a:hover {
-            color: #667eea;
-        }
+        .chapters a:hover { color: #667eea; }
         .chapter-num {
             background: #667eea;
             color: white;
@@ -113,33 +134,7 @@
             font-size: 0.75rem;
             font-weight: 600;
         }
-        .status-ready {
-            background: #e8f5e9;
-            color: #388e3c;
-        }
-        .status-pending {
-            background: #fff3e0;
-            color: #f57c00;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .feature {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
-        }
-        .feature h3 {
-            color: #764ba2;
-            margin-bottom: 10px;
-        }
-        .feature p {
-            color: #666;
-            font-size: 0.95rem;
-        }
+        .status-ready { background: #e8f5e9; color: #388e3c; }
         footer {
             text-align: center;
             padding: 40px;
@@ -157,16 +152,16 @@
 
         <div class="stats">
             <div class="stat-card">
-                <div class="number">7</div>
+                <div class="number">6</div>
                 <div class="label">核心章节</div>
             </div>
             <div class="stat-card">
-                <div class="number">18</div>
+                <div class="number">12</div>
                 <div class="label">实体类别</div>
             </div>
             <div class="stat-card">
-                <div class="number">100+</div>
-                <div class="label">知识单元</div>
+                <div class="number">50+</div>
+                <div class="label">知识节点</div>
             </div>
             <div class="stat-card">
                 <div class="number">∞</div>
@@ -174,7 +169,26 @@
             </div>
         </div>
 
-        <div class="content">
+        <!-- 三大入口 -->
+        <div class="nav-cards">
+            <a href="#chapters" class="nav-card">
+                <h2>📚 知识章节</h2>
+                <p>6章完整的分子生物学知识体系，从分子基础到基因编辑技术，系统学习。</p>
+                <span class="btn">开始学习</span>
+            </a>
+            <a href="kg/concepts/index.html" class="nav-card">
+                <h2>🕸️ 概念图谱</h2>
+                <p>交互式知识图谱，可视化展示DNA复制、转录、翻译等核心概念的关系网络。</p>
+                <span class="btn">探索图谱</span>
+            </a>
+            <a href="kg/entities/index.html" class="nav-card">
+                <h2>🔬 实体索引</h2>
+                <p>基因、蛋白质、酶、技术等12类实体的完整索引，快速查找和关联。</p>
+                <span class="btn">浏览实体</span>
+            </a>
+        </div>
+
+        <div class="content" id="chapters">
             <h2>📚 知识章节</h2>
             <ul class="chapters">
                 <li>
@@ -208,28 +222,6 @@
                     <span class="status status-ready">已完成</span>
                 </li>
             </ul>
-        </div>
-
-        <div class="content">
-            <h2>🎯 核心特色</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>🔬 实体标注</h3>
-                    <p>基因、蛋白质、酶、技术等18类实体语义标注，点击即可查看详细信息</p>
-                </div>
-                <div class="feature">
-                    <h3>🔗 概念关系</h3>
-                    <p>中心法则流程、调控网络、技术原理等概念关系可视化</p>
-                </div>
-                <div class="feature">
-                    <h3>📖 认知辅助</h3>
-                    <p>语法高亮、交互式学习、知识图谱辅助理解</p>
-                </div>
-                <div class="feature">
-                    <h3>🧩 知识单元</h3>
-                    <p>可复用的知识点（SKU），支持碎片化学习和系统构建</p>
-                </div>
-            </div>
         </div>
 
         <footer>
