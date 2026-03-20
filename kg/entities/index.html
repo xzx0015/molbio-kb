@@ -67,6 +67,19 @@
             margin-bottom: 20px;
             border-radius: 0 8px 8px 0;
         }
+        
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .stats h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -74,12 +87,18 @@
         <a href="../../index.html" class="back">← 返回首页</a>
         <h1>🧬 实体索引</h1>
         
-        <div class="note">
-            💡 点击实体名称查看详细信息。更多实体详情页正在建设中...
+        <div class="stats">
+            <h3>18</h3>
+            <p>核心实体 | 按类别分类</p>
         </div>
         
+        <div class="note">
+            💡 点击实体名称查看 JSON 数据。HTML 详情页正在建设中...
+        </div>
+        
+        <!-- 原有 HTML 页面实体 -->
         <div class="entity-type">
-            <h2>🔬 分子（Molecule）</h2>
+            <h2>🔬 分子（Molecule）- HTML 页面</h2>
             <div class="entity-list">
                 <a href="DNA.html" class="entity-item type-molecule">DNA</a>
                 <a href="RNA.html" class="entity-item type-molecule">RNA</a>
@@ -88,7 +107,7 @@
         </div>
         
         <div class="entity-type">
-            <h2>⚙️ 过程（Process）</h2>
+            <h2>⚙️ 过程（Process）- HTML 页面</h2>
             <div class="entity-list">
                 <a href="DNA复制.html" class="entity-item type-process">DNA复制</a>
                 <a href="转录.html" class="entity-item type-process">转录</a>
@@ -97,15 +116,16 @@
         </div>
         
         <div class="entity-type">
-            <h2>🔧 技术（Technology）</h2>
+            <h2>🔧 技术（Technology）- HTML 页面</h2>
             <div class="entity-list">
                 <a href="PCR.html" class="entity-item type-tech">PCR</a>
                 <a href="CRISPR-Cas9.html" class="entity-item type-tech">CRISPR-Cas9</a>
             </div>
         </div>
         
+        <!-- 新增 JSON 实体 -->
         <div class="entity-type">
-            <h2>💡 核心概念（Core Concepts）- 18 个 JSON 实体</h2>
+            <h2>📚 核心概念（Core Concepts）- JSON 数据</h2>
             <div class="entity-list">
                 <a href="中心法则.json" class="entity-item type-concept">中心法则</a>
                 <a href="染色体与 DNA.json" class="entity-item type-concept">染色体与 DNA</a>
@@ -123,13 +143,19 @@
                 <a href="细胞周期.json" class="entity-item type-concept">细胞周期调控</a>
                 <a href="表观遗传.json" class="entity-item type-concept">表观遗传学</a>
                 <a href="基因组.json" class="entity-item type-concept">基因组与功能基因组</a>
+            </div>
+        </div>
+        
+        <div class="entity-type">
+            <h2>🛠️ 实验技术（Lab Techniques）- JSON 数据</h2>
+            <div class="entity-list">
                 <a href="分子生物学技术.json" class="entity-item type-tech">分子生物学技术</a>
                 <a href="基因工程.json" class="entity-item type-tech">基因工程</a>
             </div>
         </div>
         
         <div class="entity-type">
-            <h2>🧪 酶（Enzyme）</h2>
+            <h2>🧪 酶（Enzyme）- 建设中</h2>
             <div class="entity-list">
                 <div class="entity-item type-enzyme" style="opacity: 0.5;">DNA聚合酶（建设中）</div>
                 <div class="entity-item type-enzyme" style="opacity: 0.5;">RNA聚合酶（建设中）</div>
