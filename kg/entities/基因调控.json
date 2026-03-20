@@ -1,0 +1,29 @@
+{
+  "id": "gene-regulation",
+  "name": "基因表达调控",
+  "nameEn": "Gene Expression Regulation",
+  "category": "核心概念",
+  "chapter": "第 7-8 章",
+  "definition": "基因表达调控是细胞根据内外环境变化，精确控制基因转录、翻译等过程，使基因产物在适当时间、空间以适当数量表达的机制。",
+  "keyConcepts": [
+    {"term": "操纵子", "definition": "原核生物中由启动子、操纵基因和结构基因组成的协同调控单元"},
+    {"term": "阻遏蛋白", "definition": "与操纵基因结合抑制转录的调控蛋白"},
+    {"term": "激活蛋白", "definition": "与 DNA 结合促进转录的调控蛋白"},
+    {"term": "顺式作用元件", "definition": "DNA 上影响同一 DNA 分子基因表达的序列，如启动子、增强子"},
+    {"term": "反式作用因子", "definition": "扩散性分子（通常是蛋白质），影响其他 DNA 分子的基因表达"},
+    {"term": "增强子", "definition": "远距离调控基因表达的 DNA 序列，可位于基因上游、下游或内含子中"},
+    {"term": "表观遗传", "definition": "不涉及 DNA 序列改变的基因表达调控，包括 DNA 甲基化、组蛋白修饰"}
+  ],
+  "keyPoints": [
+    "原核基因调控：操纵子模型、乳糖操纵子、色氨酸操纵子",
+    "真核基因调控的多层次性：染色质水平、转录水平、转录后水平、翻译水平",
+    "转录因子结构域：DNA 结合域、转录激活域、二聚化域",
+    "DNA 结合基序：螺旋 - 转角 - 螺旋、锌指、亮氨酸拉链、螺旋 - 环 - 螺旋",
+    "表观遗传调控：DNA 甲基化、组蛋白修饰"
+  ],
+  "relatedEntities": ["基因转录", "表观遗传", "信号转导", "非编码 RNA"],
+  "references": [
+    "Jacob F, Monod J. Genetic regulatory mechanisms in the synthesis of proteins. J Mol Biol, 1961",
+    "Ptashne M. A genetic switch. Cold Spring Harbor Laboratory Press"
+  ]
+}
