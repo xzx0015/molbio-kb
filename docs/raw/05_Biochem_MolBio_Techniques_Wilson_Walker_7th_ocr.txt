@@ -1,0 +1,1713 @@
+<!-- Page 2 -->
+Principles and Techniques of
+
+Biochemistry and Molecular Biology
+
+Seventh edition
+
+EDITED BY KEITH WILSON AND JOHN WALKER
+
+This new edition of the bestselling textbook integrates the theoretical principles and experimental
+techniques common to all undergraduate courses in the bio- and medical sciences. Three of the
+
+16 chapters have new authors and have been totally rewritten. The others have been updated and
+extended to reflect developments in their field exemplified by a new section on stem cells. Two new
+chapters have been added. One on clinical biochemistry discusses the principles underlying the diagnosis
+and management of common biochemical disorders. The second one on drug discovery and development
+illustrates how the principles and techniques covered in the book are fundamental to the design and
+development of new drugs. In-text worked examples are again used to enhance student understanding
+of each topic and case studies are selectively used to illustrate important examples. Experimental
+design, quality assurance and the statistical analysis of quantitative data are emphasised throughout
+the book.
+
+‘© Motivates students by including cutting-edge topics and techniques, such as drug discovery,
+as well as the methods they will encounter in their own lab classes
+
+© Promotes problem solving by setting students a challenge and then guiding them through
+the solution
+
+© Integrates theory and practise to ensure students understand why and how each technique
+is used.
+
+KEITH WILSON is Professor Emeritus of Pharmacological Biochemistry and former Head of the
+Department of Biosciences, Dean of the Faculty of Natural Sciences, and Director of Research at the
+University of Hertfordshire.
+
+JOHN WALKER is Professor Emeritus and former Head of the School of Life Sciences at the
+University of Hertfordshire.
+
+
+<!-- Page 3 -->
+Cover illustration
+Main image Electrophoresis gel showing recombinant protein. Photographer: J.C. Revy. Courtesy of
+Science Photo Library.
+Top inset Transcription factor and DNA molecule. Courtesy of: Laguna Design/Science Photo Library.
+
+Second inset Microtubes, pipettor (pipette) tip & DNA sequence. Courtesy of Tek Image/Science
+Photo Library.
+
+Third inset Stem cell culture, light micrograph. Photographer: Philippe Plailly. Courtesy of Science
+Photo Library.
+
+Fourth inset Embryonic stem cells. Courtesy of Science Photo Library.
+
+Bottom inset Herceptin breast cancer drug, molecular model. Photographer: Tim Evans. Courtesy of
+Science Photo Library.
+
+
+<!-- Page 4 -->
+                 ~
+i                         SS
+ay]
+
+Principles and Techniques of
+
+Biochemistry and
+Molecular Biology
+
+Seventh edition
+
+Edited by
+KEITH WILSON AND JOHN WALKER
+
+Hi] CAMBRIDGE
+
+ap   UNIVERSITY PRESS
+
+
+
+<!-- Page 5 -->
+CAMBRIDGE UNIVERSITY PRESS
+Cambridge, New York, Melbourne, Madrid, Cape Town, Singapore,
+Sao Paulo, Delhi, Dubai, Tokyo
+
+Cambridge University Press
+The Edinburgh Building, Cambridge CB2 8RU, UK
+
+Published in the United States of America by
+Cambridge University Press, New York
+
+www.cambridge.org,
+Information on this title: www.cambridge.org/9780521516358
+
+First and second editions © Bryan Williams and Keith Wilson 1975, 1981
+Third edition © Keith Wilson and Kenneth H. Goulding 1986
+
+Fourth edition ©) Cambridge University Press 1993
+
+Fifth edition ©) Cambridge University Press 2000
+
+Sixth edition © Cambridge University Press 2005
+
+Seventh edition © Cambridge University Press 2010
+
+This publication is in copyright. Subject to statutory exception
+and to the provisions of relevant collective licensing agreements,
+no reproduction of any part may take place without
+
+the written permission of Cambridge University Press
+
+First published by Edward Amold 1975 as A Biologist’s Guide to Principles and Techniques of Practical
+Biochemistry
+
+Second edition 1981; Third edition 1986
+
+Third edition first published by Cambridge University Press 1992; Reprinted 1993
+
+Fourth edition published by Cambridge University Press 1994 as Principles and Techniques of Practical
+Biochemistry; Reprinted 1995, 1997; Fifth edition 2000
+
+Sixth edition first published by Cambridge University Press 2005 as Principles and Techniques of Biochemistry
+and Molecular Biology; Reprinted 2006, 2007
+
+Seventh edition first published by Cambridge University Press 2010
+
+Printed in the United Kingdom at the University Press, Cambridge
+A catalogue record for this publication is available from the British Library
+
+Library of Congress Cataloging-in-Publication Data
+
+Principles and techniques of biochemistry and molecular biology / edited by Keith Wilson,
+John Walker. - 7th ed.
+p. em
+
+ISBN 978-0-521-51635-8 (hardback) - ISBN 978-0-521-73167-6 (pbk,)
+
+1. Biochemistry-Textbooks. 2. Molecular biology-Textbooks. I. Wilson, Keith, 1936- II Walker,
+John M., 1948- Ill. Title.
+
+QP519.7.P75 2009
+
+612'.015-de22 2009043277
+
+ISBN 978-0-521-51635-8 Hardback
+ISBN 978-0-521-73167-6 Paperback
+
+Cambridge University Press has no responsibility for the persistence or
+accuracy of URLs for external or third-party internet websites referred to
+in this publication, and does not guarantee that any content on such
+websites is, or will remain, accurate or appropriate.
+
+
+
+<!-- Page 6 -->
+CONTENTS
+
+Preface to the seventh edition
+List of contributors
+List of abbreviations
+
+1 Basic principles
+K. WILSON
+
+1.1 Biochemical and molecular biology studies
+1.2. Units of measurement
+1.3. Weak electrolytes
+1.4 Quantitative biochemical measurements
+1.5. Safety in the laboratory
+1.6 Suggestions for further reading
+
+2 Cell culture techniques
+A.R. BAYDOUN
+
+2.1 Introduction
+2.2 The cell culture laboratory and equipment
+2.3. Safety considerations in cell culture
+2.4 Aseptic techniques and good cell culture practice
+2.5 Types of animal cell, characteristics and maintenance in culture
+2.6 Stem cell culture
+2.7 Bacterial cell culture
+2.8 Potential use of cell cultures
+2.9 Suggestions for further reading
+
+3 Centrifugation
+K. OHLENDIECK
+
+3.1 Introduction
+3.2. Basic principles of sedimentation
+3.3. Types, care and safety aspects of centrifuges
+3.4 Preparative centrifugation
+3.5 Analytical centrifugation
+3.6 Suggestions for further reading
+
+page xi
+xiii
+xv
+
+38
+
+38
+39
+43
+44
+49
+61
+68
+71
+72
+
+73
+
+73
+74
+79
+86
+95
+99
+
+
+<!-- Page 7 -->
+Mi Contents
+4 Microscopy                                                                                100
+5. W. PADDOCK
+4.1 Introduction                                                                                100
+4.2. The light microscope                                                                       103
+4.3 Optical sectioning                                                                          116
+4.4 Imaging living cells and tissues                                                     123
+4.5 Measuring cellular dynamics                                                         126
+4.6 The electron microscope (EM)                                                       129
+4.7 Image archiving                                                                            133
+4.8 Suggestions for further reading                                                          136
+5 Molecular biology, bioinformatics and basic techniques                 138
+R. RAPLEY
+5.1 Introduction                                                                                138
+5.2 Structure of nucleic acids                                                             139
+5.3 Genes and genome complexity                                                      145
+5.4 Location and packaging of nucleic acids                                          149
+5.5 Functions of nucleic acids                                                            152
+5.6 The manipulation of nucleic acids - basic tools and techniques                    162
+5.7. Isolation and separation of nucleic acids                                            164
+5.8 Molecular biology and bioinformatics                                              170
+5.9 Molecular analysis of nucleic acid sequences                                       171
+5.10 The polymerase chain reaction (PCR)                                              178
+5.11 Nucleotide sequencing of DNA                                                       187
+5.12 Suggestions for further reading                                                       194
+6 Recombinant DNA and genetic analysis                                    195
+R. RAPLEY
+6.1 Introduction                                                                                195
+6.2 Constructing gene libraries                                                                196
+6.3 Cloning vectors                                                                            206
+6.4 Hybridisation and gene probes                                                    223
+6.5 Screening gene libraries                                                                   225
+6.6 Applications of gene cloning                                                         229
+6.7. Expression of foreign genes                                                   234
+6.8 Analysing genes and gene expression                                           240
+6.9 Analysing whole genomes                                                          254
+6.10 Pharmacogenomics                                                                        259
+6.11 Molecular biotechnology and applications                                          260
+6.12 Suggestions for further reading                                                      262
+7 Immunochemical techniques                                                         263
+R. BURNS
+7.1 Introduction                                                                                263
+7.2. Making antibodies                                                                         273
+
+
+<!-- Page 8 -->
+Contents
+
+73
+74
+75
+76
+77
+78
+79
+7.10
+7.11
+7.12
+7.13
+7.14
+7.15
+
+8.1
+8.2
+8.3
+8.4
+8.5
+8.6
+
+9.1
+9.2
+9.3
+9.4
+9.5
+9.6
+9.7
+9.8
+
+10
+
+10.1
+10.2
+10.3
+10.4
+10.5
+10.6
+10.7
+
+Immunoassay formats
+
+Immuno microscopy
+
+Lateral flow devices
+
+Epitope mapping
+
+Immunoblotting
+
+Fluorescent activated cell sorting (FACS)
+Cell and tissue staining techniques
+Immunocapture polymerase chain reaction (PCR)
+Immunoaffinity chromatography (IAC)
+Antibody-based biosensors
+
+Therapeutic antibodies
+
+The future uses of antibody technology
+Suggestions for further reading
+
+Protein structure, purification, characterisation
+and function analysis
+
+J. WALKER
+
+Ionic properties of amino acids and proteins
+
+Protein structure
+
+Protein purification
+
+Protein structure determination
+
+Proteomics and protein function
+
+Suggestions for further reading
+
+Mass spectrometric techniques
+
+A. AITKEN
+
+Introduction
+
+Ionisation
+
+Mass analysers
+
+Detectors
+
+Structural information by tandem mass spectrometry
+Analysing protein complexes
+
+Computing and database analysis
+
+Suggestions for further reading
+
+Electrophoretic techniques
+J. WALKER
+
+General principles
+
+Support media
+
+Electrophoresis of proteins
+Electrophoresis of nucleic acids
+Capillary electrophoresis
+Microchip electrophoresis
+Suggestions for further reading
+
+283
+291
+291
+292
+293
+293
+294
+295
+295
+296
+297
+299
+299
+
+300
+
+300
+304
+307
+328
+340
+351
+
+352
+
+352
+354
+359
+377
+379
+390
+394
+397
+
+399
+
+399
+403
+407
+422
+427
+431
+432
+
+
+<!-- Page 9 -->
+Contents
+
+11
+
+11.1
+11.2
+11.3
+11.4
+11.5
+11.6
+11.7
+11.8
+11.9
+11.10
+
+12
+
+12.1
+12.2
+12.3
+12.4
+12.5
+12.6
+12.7
+12.8
+
+13
+
+13.1
+13.2
+13.3
+13.4
+13.5
+13.6
+13.7
+13.8
+
+14
+
+14.1
+14.2
+14.3
+14.4
+14.5
+14.6
+
+Chromatographic techniques
+
+K. WILSON
+
+Principles of chromatography
+Chromatographic performance parameters
+High-performance liquid chromatography
+Adsorption chromatography
+
+Partition chromatography
+
+Jon-exchange chromatography
+
+Molecular (size) exclusion chromatography
+Affinity chromatography
+
+Gas chromatography
+
+Suggestions for further reading
+
+Spectroscopic techniques: | Spectrophotometric techniques
+A. HOFMANN
+
+Introduction
+
+Ultraviolet and visible light spectroscopy
+
+Fluorescence spectroscopy
+
+Luminometry
+
+Circular dichroism spectroscopy
+
+Light scattering
+
+Atomic spectroscopy
+
+Suggestions for further reading
+
+Spectroscopic techniques: II Structure and interactions
+A. HOFMANN
+
+Introduction
+
+Infrared and Raman spectroscopy
+
+Surface plasmon resonance
+
+Electron paramagnetic resonance
+
+Nuclear magnetic resonance
+
+X-ray diffraction
+
+Small-angle scattering
+
+Suggestions for further reading
+
+Radioisotope techniques
+
+R.J. SLATER
+
+Why use a radioisotope?
+
+The nature of radioactivity
+
+Detection and measurement of radioactivity
+
+Other practical aspects of counting of radioactivity and analysis of data
+Safety aspects
+
+Suggestions for further reading
+
+433
+
+433
+435
+446
+453
+455
+459
+462
+465
+470
+476
+
+477
+
+477
+482
+493
+507
+509
+514
+516
+519
+
+522
+
+522
+523
+527
+530
+536
+546
+549
+551
+
+553
+
+553
+554
+561
+573
+577
+580
+
+
+<!-- Page 10 -->
+Contents
+
+15
+
+15.1
+15.2
+15.3
+15.4
+15.5
+15.6
+
+16
+
+16.1
+16.2
+16.3
+16.4
+16.5
+
+17
+
+17.1
+17.2
+17.3
+17.4
+17.5
+17.6
+
+18
+
+18.1
+18.2
+18.3
+18.4
+
+Enzymes
+
+K. WILSON
+
+Characteristics and nomenclature
+
+Enzyme steady-state kinetics
+
+Analytical methods for the study of enzyme reactions
+Enzyme active sites and catalytic mechanisms
+Control of enzyme activity
+
+Suggestions for further reading
+
+Principles of clinical biochemistry
+
+J. FYFFE AND K. WILSON
+
+Principles of clinical biochemical analysis
+
+Clinical measurements and quality control
+Examples of biochemical aids to clinical diagnosis
+Suggestions for further reading
+Acknowledgements
+
+Cell membrane receptors and cell signalling
+K. WILSON
+
+Receptors for cell signalling
+
+Quantitative aspects of receptor-ligand binding
+Ligand-binding and cell-signalling studies
+Mechanisms of signal transduction
+
+Receptor trafficking
+
+Suggestions for further reading
+
+Drug discovery and development
+K. WILSON
+
+Human disease and drug therapy
+Drug discovery
+
+Drug development
+
+Suggestions for further reading
+
+Index
+
+The colour figure section is between pages 128 and 129
+
+581
+
+581
+584
+602
+611
+615
+624
+
+625
+
+625
+629
+640
+658
+659
+
+660
+
+660
+663
+680
+685
+703
+707
+
+709
+
+709
+
+718
+
+727
+
+734
+
+736
+
+
+<!-- Page 12 -->
+PREFACE TO THE SEVENTH EDITION
+
+In designing the content of this latest edition we continued our previous policy of
+placing emphasis on the recommendations we have received from colleagues and
+academics outside our university. Above all, we have attempted to respond to the
+invaluable feedback from student users of our book both in the UK and abroad. In this
+seventh edition we have retained all 16 chapters from the previous edition. All have
+been appropriately updated to reflect recent developments in their fields, as exemplified
+by the inclusion of a section on stem cells in the cell culture chapter. Three of these
+chapters have new authors and have been completely rewritten. Robert Burns, Scottish
+Agricultural Science Agency, Edinburgh has written the chapter on immunochemical
+techniques, and Andreas Hofmann, Eskitis Institute of Molecular Therapies, Griffith
+University, Brisbane, Australia has written the two chapters on spectroscopic
+techniques. We are delighted to welcome both authors to our team of contributors.
+
+In addition to these changes of authors, two new chapters have been added to the
+book. Our decision taken for the sixth edition to include a section on the biochemical
+principles underlying clinical biochemistry has been well received and so we have
+extended our coverage of the subject and have devoted a whole chapter (16) to this
+subject. Written in collaboration with Dr John Fyffe, Consultant Biochemist, Royal
+Hospital for Sick Children, Yorkhill, Glasgow, new topics that are discussed in the
+chapter include the diagnosis and management of kidney disease, diabetes, endocrine
+disorders including thyroid dysfunction, conditions of the hypothalamus-pituitary-
+adrenal axis such as pregnancy, and pathologies of plasma proteins such as myeloma.
+Case studies are included to illustrate how the principles discussed apply to the
+diagnosis and treatment of individual patients with the conditions.
+
+Our second major innovation for this new edition is the introduction of a new
+chapter on drug discovery and development. The strategic approaches to the discovery
+of new drugs has been revolutionised by developments in molecular biology. Pharma-
+ceutical companies now rely on many of the principles and experimental techniques
+discussed in the chapters throughout the book to identify potential drug targets,
+screen chemical libraries and to evaluate the safety and efficacy of selected candidate
+drugs. The new chapter illustrates the principles of target selection by reference to
+current drugs used in the treatment of atherosclerosis and HIV/AIDS, emphasises the
+strategic decisions to be taken during the various stages of drug discovery and
+
+
+<!-- Page 13 -->
+Preface to the seventh edition
+
+development and discusses the issues involved in clinical trials and the registration of
+
+new drugs.
+
+We continue to welcome constructive comments from all students who use our
+book as part of their studies and academics who adopt the book to complement their
+teaching. Finally, we wish to express our gratitude to the authors and publishers who
+have granted us permission to reproduce their copyright figures and our thanks to
+Katrina Halliday and her colleagues at Cambridge University Press who have been so
+supportive in the production of this new edition.
+
+KEITH WILSON AND JOHN WALKER
+
+
+<!-- Page 14 -->
+CONTRIBUTORS
+
+PROFESSOR A. AITKEN
+
+Division of Biomedical & Clinical Laboratory Sciences
+University of Edinburgh
+
+George Square
+
+Edinburgh EH8 9XD
+
+Scotland, UK
+
+DR A.R. BAYDOUN
+
+School of Life Sciences
+University of Hertfordshire
+College Lane
+
+Hatfield
+
+Herts AL10 9AB, UK
+
+DR R. BURNS
+Scottish Agricultural Science Agency
+1 Roddinglaw Road
+
+Edinburgh EH12 9FJ
+
+Scotland, UK
+
+DR J. FYFFE
+
+Consultant Clinical Biochemist
+Department of Clinical Biochemistry
+Royal Hospital for Sick Children
+Yorkhill
+
+Glasgow G3 8SF
+
+Scotland, UK
+
+PROFESSOR ANDREAS HOFMANN
+
+Structural Chemistry
+
+Eskitis Institute for Cell & Molecular Therapeutics
+Griffith University
+
+Nathan
+
+Brisbane, Qld 4111
+
+Australia
+
+
+<!-- Page 15 -->
+xiv List of contributors
+
+PROFESSOR K. OHLENDIECK
+Department of Biology
+National University of Ireland
+Maynooth
+
+Co. Kildare
+
+Ireland
+
+DR S.W. PADDOCK
+
+Howard Hughes Medical Institute
+Department of Molecular Biology
+University of Wisconsin
+
+1525 Linden Drive
+
+Madison, WI 53706
+
+USA
+
+DR R. RAPLEY
+School of Life Sciences
+University of Hertfordshire
+College Lane
+
+Hatfield
+
+Herts AL10 9AB, UK
+
+PROFESSOR R.J. SLATER
+School of Life Sciences
+University of Hertfordshire
+College Lane
+
+Hatfield
+
+Herts AL10 9AB, UK
+
+PROFESSOR J.M. WALKER
+School of Life Sciences
+University of Hertfordshire
+College Lane
+
+Hatfield
+
+Herts AL10 9AB, UK
+
+PROFESSOR K. WILSON
+Emeritus Professor of Pharmacological Biochemistry
+School of Life Sciences
+
+University of Hertfordshire
+
+College Lane
+
+Hatfield
+
+Herts AL10 9AB, UK
+
+
+<!-- Page 16 -->
+cAMP
+CHAPS,
+c.p.m.
+CTP
+DDT
+DMSO
+DNA
+
+EDTA
+ELISA
+FAD
+FADH,
+FMN
+FMNH,
+Gc
+GTP
+
+Hepes
+HPLC
+kb
+
+min
+NAD*
+NADH
+NADP*
+NADPH
+Pipes
+
+ABBREVIATIONS
+
+The following abbreviations have been used throughout this book.
+
+adenosine 5'-monophosphate
+
+adenosine 5’-diphosphate
+
+adenosine 5’-triphosphate
+
+base-pairs
+
+cyclic AMP
+3-[(3-chloroamidopropy!)dimethylamino]-1-propanesulphonic acid
+counts per minute
+
+cytidine triphosphate
+2,2-bis-(p-chlorophenyl)-1,1,1-trichloroethane
+dimethylsulphoxide
+
+deoxyribonucleic acid
+
+electron
+
+ethylenediaminetetra-acetate
+
+enzyme-linked immunosorbent assay
+
+flavin adenine dinucleotide (oxidised)
+
+flavin adenine dinucleotide (reduced)
+
+flavin mononucleotide (oxidised)
+
+flavin mononucleotide (reduced)
+
+gas chromatography
+
+guanosine triphosphate
+
+hypoxanthine, aminopterin, thymidine medium
+4(2-hydroxyethyl)-1-piperazine-ethanesulphonic acid
+high-performance liquid chromatography
+kilobase-pairs
+
+relative molecular mass
+
+minute
+
+nicotinamide adenine dinucleotide (oxidised)
+nicotinamide adenine dinucleotide (reduced)
+nicotinamide adenine dinucleotide phosphate (oxidised)
+nicotinamide adenine dinucleotide phosphate (reduced)
+1,4-piperazinebis(ethanesulphonic acid)
+
+
+<!-- Page 17 -->
+xvi_List of abbreviations
+Pi         inorganic phosphate
+
+p.p.m. parts per million
+
+ppb. _ parts per billion
+
+PP;        inorganic pyrophosphate
+
+RNA ribonucleic acid
+
+rp.m. revolutions per minute
+
+SDS 。 sodium dodecyl sulphate
+
+Tris       2-amino-2-hydroxymethylpropane-1,3-diol
+
+
+<!-- Page 18 -->
+四                   S
+1 Basic principles
+
+K. WILSON
+
+1.1 Biochemical and molecular biology studies
+1.2. Units of measurement
+
+1.3 Weak electrolytes
+
+1.4 Quantitative biochemical measurements
+1.5. Safety in the laboratory
+
+1.6 Suggestions for further reading
+
+1.1 BIOCHEMICAL AND MOLECULAR BIOLOGY STUDIES
+
+1.1.1 Aims of laboratory investigations
+
+Biochemistry involves the study of the chemical processes that occur in living organ-
+isms with the ultimate aim of understanding the nature of life in molecular terms.
+Biochemical studies rely on the availability of appropriate analytical techniques and on
+the application of these techniques to the advancement of knowledge of the nature of,
+and relationships between, biological molecules, especially proteins and nucleic acids,
+and cellular function. In recent years huge advances have been made in our under-
+standing of gene structure and expression and in the application of techniques such as
+mass spectrometry to the study of protein structure and function. The Human Genome
+Project in particular has been the stimulus for major developments in our understand-
+ing of many human diseases especially cancer and for the identification of strategies
+that might be used to combat these diseases. The discipline of molecular biology
+overlaps with that of biochemistry and in many respects the aims of the two disciplines
+complement each other. Molecular biology is focussed on the molecular understanding
+of the processes of replication, transcription and translation of genetic material
+whereas biochemistry exploits the techniques and findings of molecular biology to
+advance our understanding of such cellular processes as cell signalling and apoptosis.
+The result is that the two disciplines now have the opportunity to address issues such as:
+
+e the structure and function of the total protein component of the cell (proteomics) and
+of all the small molecules in the cell (metabolomics);
+e the mechanisms involved in the control of gene expression;
+
+1
+
+
+<!-- Page 19 -->
+Basic principles
+
+the identification of genes associated with a wide range of human diseases;
+
+the development of gene therapy strategies for the treatment of human diseases;
+the characterisation of the large number of ‘orphan’ receptors, whose physiological
+role and natural agonist are currently unknown, present in the human genome
+and their exploitation for the development of new therapeutic agents;
+
+the identification of novel disease-specific markers for the improvement of clinical
+diagnosis;
+
+the engineering of cells, especially stem cells, to treat human diseases;
+
+the understanding of the functioning of the immune system in order to develop
+strategies for the protection against invading pathogens;
+
+the development of our knowledge of the molecular biology of plants in order to
+engineer crop improvements, pathogen resistance and stress tolerance;
+
+the application of molecular biology techniques to the nature and treatment of
+bacterial, fungal and viral diseases.
+
+The remaining chapters in this book address the major experimental strategies and
+analytical techniques that are routinely used to address issues such as these.
+
+Experimental design
+
+Advances in biochemistry and molecular biology, as in all the sciences, are based on
+the careful design, execution and data analysis of experiments designed to address
+specific questions or hypotheses. Such experimental design involves a discrete
+number of compulsory stages:
+
+the identification of the subject for experimental investigation;
+
+the critical evaluation of the current state of knowledge (the ‘literature’) of
+
+the chosen subject area noting the strengths and weaknesses of the methodologies
+previously applied and the new hypotheses which emerged from the studies;
+
+the formulation of the question or hypothesis to be addressed by the planned
+experiment;
+
+the careful selection of the biological system (species, in vivo or in vitro) to be used for
+the study;
+
+the identification of the variable that is to be studied; the consideration of the other
+variables that will need to be controlled so that the selected variable is the only factor
+that will determine the experimental outcome;
+
+the design of the experiment including the statistical analysis of the results, careful
+evaluation of the materials and apparatus to be used and the consequential potential
+safety aspects of the study;
+
+the execution of the experiment including appropriate calibrations and controls, with
+a carefully written record of the outcomes;
+
+the replication of the experiment as necessary for the unambiguous analysis of the
+outcomes;
+
+
+<!-- Page 20 -->
+3 1.2 Units of measurement
+
+e the evaluation of the outcomes including the application of appropriate statistical
+tests to quantitative data where applicable;
+
+ the formulation of the main conclusions that can be drawn from the results;
+
+e the formulation of new hypotheses and of future experiments that emerge from
+the study.
+
+The results of well-designed and analysed studies are finally published in the scientific
+literature after being subject to independent peer review, and one of the major
+challenges facing professional biochemists and molecular biologists is to keep abreast
+of current advances in the literature. Fortunately, the advent of the web has made
+access to the literature easier than it once was.
+
+1.2 UNITS OF MEASUREMENT
+
+1.2.1 SL units
+
+The French Systeme International d’Unités (the SI system) is the accepted convention
+for all units of measurement. Table 1.1 lists basic and derived SI units. Table 1.2 lists
+numerical values for some physical constants in SI units. Table 1.3 lists the commonly
+used prefixes associated with quantitative terms. Table 1.4 gives the interconversion
+of non-SI units of volume.
+
+1.2.2. Molarity - the expression of concentration
+
+In practical terms one mole of a substance is equal to its molecular mass expressed in
+grams, where the molecular mass is the sum of the atomic masses of the constituent
+atoms. Note that the term molecular mass is preferred to the older term molecular
+weight. The SI unit of concentration is expressed in terms of moles per cubic metre
+(molm~*) (see Table 1.1). In practice this is far too large for normal laboratory
+purposes and a unit based on a cubic decimetre (dm?, 10~? m) is preferred. However,
+some textbooks and journals, especially those of North American origin, tend to use the
+older unit of volume, namely the litre and its subunits (see Table 1.4) rather than cubic
+decimetres. In this book, volumes will be expressed in cubic decimetres or its smaller
+counterparts (Table 1.4). The molarity of a solution of a substance expresses the number
+of moles of the substance in one cubic decimetre of solution. It is expressed by the
+symbol M.
+
+It should be noted that atomic and molecular masses are both expressed in daltons
+(Da) or kilodaltons (kDa), where one dalton is an atomic mass unit equal to one-
+twelfth of the mass of one atom of the '*C isotope. However, biochemists prefer to use
+the term relative molecular mass (M,). This is defined as the molecular mass of a
+substance relative to one-twelfth of the atomic mass of the :2C isotope. M, therefore
+has no units. Thus the relative molecular mass of sodium chloride is 23 (Na) plus
+
+
+<!-- Page 21 -->
+4 Basic principles
+
+Table 1.1 SI units - basic and derived units
+
+
+
+<!-- Page 22 -->
+5 1.2 Units of measurement
+
+Table 1.2 SI units - conversion factors for non-SI units
+
+Unit
+Ayogadro constant
+Faraday constant
+Planck constant
+Universal or molar gas constant
+Molar volume of an ideal gas at s.t-p.
+Velocity of light in a vacuum
+Energy
+
+calorie
+
+erg
+
+electron volt
+Pressure
+
+atmosphere
+
+bar
+
+millimetres of Hg
+Temperature
+
+centigrade
+
+Fahrenheit
+Length
+
+Angstrom
+
+inch
+Mass
+
+pound
+
+Nore: sLp standard temperature and pressure.
+
+Symbol
+工or NA
+下
+h
+
+cal
+erg
+
+eV
+
+atm
+
+bar
+
+mmHg
+
+in
+
+Ib
+
+SI equivalent
+6.022 x 10”? mol *
+9.648 x 10*C mol
+6.626 x 10 **Js
+8.314JK ‘mol '
+22.41dm’ mol-*
+
+2.997 x 10°ms "
+
+1.602 x 10°95
+101325Pa
+10 Pa
+
+133.322Pa
+
+(tsC十273.15)K
+
+{tsF-32)5/9 + 273.15K
+
+10° '°m
+
+0.0254m
+
+0.4536 kg
+
+35.5 (Cl) i.e. 58.5, so that one mole is 58.5 grams. If this was dissolved in water and
+adjusted to a total volume of 1 dm? the solution would be one molar (1M).
+Biological substances are most frequently found at relatively low concentrations
+and in in vitro model systems the volumes of stock solutions regularly used for
+experimental purposes are also small. The consequence is that experimental solutions
+are usually in the mM, 1M and nM range rather than molar. Table 1.5 shows the
+
+interconversion of these units.
+
+
+<!-- Page 23 -->
+6 Basic principles
+
+1.3
+
+1.3.1
+
+Table 1.3 Common unit prefixes associated with quantitative terms
+Multiple       Prefix       Symbol        Multiple        Prefix       Symbol
+1074        yotta      Y         10!        deci      d
+
+107"         zetta       Z           107         centi       c
+
+10"         exa        E           10*         milli       m
+10'°         peta       P           10°         micro      im
+
+10"         tera        T           10°         nano       n
+
+10°        giga      G         10°?       pico      了
+
+105        mega      M         101°       femto     f
+
+10°        kilo      k         1o-*       atto      a
+
+107          hecto       h           10-7!        zepto       Zz
+
+10!          deca       da          10°74        yocto      y
+Table 1.4 Interconversion of non-SI and SI units of volume
+
+Non-SI unit              Non-SI subunit           SI subunit           SI unit
+
+1 litre ()               10? ml                                   一10-3m3?
+1 millilitre (ml)          1ml                                   一10-5m3?
+1 microlitre (1)        10°? ml                            =10°m?
+1 nanolitre (nl)        10°° ml                          =10°?m?*
+
+Table 1.5 Interconversion of mol, mmol and kmol in different volumes
+
+to give different concentrations
+
+Molar (M)                        Millimolar (mM)                     Micromolar (1M)
+1moldm?               1mmol dm                 1 mol dm?
+1mmolem?              1 pmol em                  1nmolcm -3
+1hmolmm-3              1nmol mm                 1 pmol mm?
+
+WEAK ELECTROLYTES
+
+The biochemical importance of weak electrolytes
+
+Many molecules of biochemical importance are weak electrolytes in that they are
+acids or bases that are only partially ionised in aqueous solution. Examples include
+
+
+<!-- Page 24 -->
+7
+
+1.3 Weak electrolytes
+
+1.3.2
+
+the amino acids, peptides, proteins, nucleosides, nucleotides and nucleic acids. It also
+includes the reagents used in the preparation of buffers such as ethanoic (acetic) acid
+and phosphoric acid. The biochemical function of many of these molecules is depen-
+dent upon their precise state of ionisation at the prevailing cellular or extracellular pH.
+The catalytic sites of enzymes, for example, contain functional carboxyl and amino
+groups, from the side chains of constituent amino acids in the protein chain, which
+need to be in a specific ionised state to enable the catalytic function of the enzyme to
+be realised. Before the ionisation of these compounds is discussed in detail, it is
+necessary to appreciate the importance of the ionisation of water.
+
+lonisation of weak acids and bases
+
+One of the most important weak electrolytes is water since it ionises to a small extent to
+give hydrogen ions and hydroxyl ions. In fact there is no such species as a free hydrogen
+ion in aqueous solution as it reacts with water to give a hydronium ion (H;0*):
+
+H,0—=H* + HO-
+H* +H,0—=H;0*
+
+Even though free hydrogen ions do not exist it is conventional to refer to them rather
+than hydronium ions. The equilibrium constant (K-q) for the ionisation of water has a
+value of 1.8 x 10'° at 24°C:
+
+ElIoH |
+
+Keg =
+“1 [H20]
+
+= 1.8 x 1016                                (1.1)
+The molarity of pure water is 55.6 M. This can be incorporated into a new constant,
+Ky:
+
+1.8 x 1071 x 55.6 = [H*][HO-] = 1.0 x 10°“ = Ky                         (1.2)
+
+K, is known as the autoprotolysis constant of water and does not include an
+expression for the concentration of water. Its numerical value of exactly 10 '* relates
+specifically to 24°C. At 0°C Ky has a value of 1.14 x 10 -55 and at 100°C a value of
+5.45 x 10-'*. The stoichiometry in equation 1.2 shows that hydrogen ions and
+hydroxyl ions are produced in a 1:1 ratio, hence both of them must be present at a
+concentration of 1.0 x 10-7 M. Since the Sérensen definition of pH is that it is equal to
+the negative logarithm of the hydrogen ion concentration, it follows that the pH of
+pure water is 7.0. This is the definition of neutrality.
+
+Ionisation of carboxylic acids and amines
+
+As previously stressed, many biochemically important compounds contain a carboxyl
+group (-COOH) or a primary (RNH,), secondary (R,NH) or tertiary (R3N) amine which
+can donate or accept a hydrogen ion on ionisation. The tendency of a weak acid,
+generically represented as HA, to ionise is expressed by the equilibrium reaction:
+
+HA                Ht +             A
+weak acid                conjugate base (anion)
+
+
+
+<!-- Page 25 -->
+8 Basic principles
+
+This reversible reaction can be represented by an equilibrium constant, K,, known as
+the acid dissociation constant (equation 1.3). Numerically, it is very small.
+
+HA)
+
+Ko Hal
+
+(1.3)
+Note that the ionisation of a weak acid results in the release of a hydrogen ion and the
+conjugate base of the acid, both of which are ionic in nature.
+
+Similarly, amino groups (primary, secondary and tertiary) as weak bases can exist
+in ionised and unionised forms and the concomitant ionisation process is represented
+by an equilibrium constant, Kj, (equation 1.4):
+
+RNH, + Hz0               RNH; + HO-
+weak base             conjugate acid
+(primary amine) (substituted ammonium ion)
+
+_ [RNH3)[HO"}
+
+* > TRN|Ha0)                               ”
+
+In this case, the non-ionised form of the base abstracts a hydrogen ion from water to
+produce the conjugate acid that is ionised. If this equation is viewed from the reverse
+direction it is of a similar format to that of equation 1.3. Equally, equation 1.3 viewed
+in reverse is similar in format to equation 1.4.
+
+A specific and simple example of the ionisation of a weak acid is that of acetic
+(ethanoic) acid, CH;COOH:
+
+CH;COOH            CH;COO- +H*
+acetic acid         acetate anion
+
+Acetic acid and its conjugate base, the acetate anion, are known as a conjugate acid—
+base pair. The acid dissociation constant can be written in the following way:
+
+_ [CH3COO-][H*] __ [conjugate base]{H*]
+” [CHscooH ~——sweak acid]
+
+(1.5a)
+
+K, has a value of 1.75 x 10 °M. In practice it is far more common to express the K,
+value in terms of its negative logarithm (i.e. —logK,) referred to as pK,. Thus in this
+case pK, is equal to 4.75. It can be seen from equation 1.3 that pK, is numerically
+equal to the pH at which 50% of the acid is protonated (unionised) and 50% is
+deprotonated (ionised).
+
+It is possible to write an expression for the Kb of the acetate anion as a conjugate
+base:
+
+CH3C00; + H;)0=CH;COOH + HO-
+[CHsCOOH][HO-] _ [weak acid][OH™]                                          (1.5b)
+
+[CH;COO-] [conjugate base]
+
+K,, has a value of 1.77 x 10-'° M, hence its pK, (i.e. —log K,) = 9.25.
+Multiplying these two expressions together results in the important relationship:
+
+K, x Ky = (H*][OH™] = Ky = 1.0 x 107" at 24°C
+
+
+<!-- Page 26 -->
+9 1.3 Weak electrolytes
+
+Table 1.6 pK, values of some acids and bases that
+are commonly used as buffer solutions
+
+Acid or base                            pK,
+
+Acetic acid                              475
+
+Barbituric acid                          3.98
+
+Carbonic acid                        6.10, 10.22
+Citric acid                                    3.10, 4.76, 5.40
+Glycylglycine                                   3.06, 8.13
+Hepes*                                   7.50
+Phosphoric acid                      1.96, 6.70, 12.30
+Phthalic acid                            2.90, 5.51
+Pipes®                                   6.80
+
+Succinic acid                                4.18, 5.56
+Tartaric acid                            2.96, 4.16
+Tris*                                     8.14
+
+Note: “See list of abbreviations at the front of the book.
+
+hence
+pK, + pKy = pKy = 14                                                         (1.6)
+
+This relationship holds for all acid-base pairs and enables one pK, value to be
+calculated from knowledge of the other. Biologically important examples of conjugate
+acid-base pairs are lactic acid/lactate, pyruvic acid/pyruvate, carbonic acid/bicarbon-
+ate and ammonium/ammonia.
+
+In the case of the ionisation of weak bases the most common convention is to quote the
+K, or the pK, of the conjugate acid rather than the Ki, or pKi, of the weak base itself.
+Examples of the pK, values of some weak acids and bases are given in Table 1.6. Remember
+that the smaller the numerical value of pK, the stronger the acid (more ionised) and the
+weaker its conjugate base. Weak acids will be predominantly unionised at low pH values
+and ionised at high values. In contrast, weak bases will be predominantly ionised at low pH
+values and unionised at high values. This sensitivity to pH of the state of ionisation of weak
+electrolytes is important both physiologically and in in vitro biochemical studies em-
+ploying such analytical techniques as electrophoresis and ion-exchange chromatography.
+
+Ionisation of polyprotic weak acids and bases
+
+Polyprotic weak acids and bases are capable of donating or accepting more than one
+hydrogen ion. Each ionisation stage can be represented by a K, value using the
+convention that K} refers to the acid with the most ionisable hydrogen atoms and K?
+the acid with the least number of ionisable hydrogen atoms. One of the most important
+
+
+<!-- Page 27 -->
+10
+
+Example 1
+
+Question
+
+Answer
+
+Basic principles
+
+biochemical examples is phosphoric acid, HiPOs, as it is widely used as the basis of
+a buffer in the pH region of 6.70 (see below):
+
+H3P0,—=H* +H»PO; pKI 1.96
+
+H)PO; —=H* + HPO} pK? 6.70
+
+HPO} ==H* + PO} pK? 12.30
+
+CALCULATION OF pH AND THE EXTENT OF IONISATION OF A WEAK
+ELECTROLYTE
+
+Calculate the pH of a 0.01 M solution of acetic acid and its fractional ionisation given
+that its K, is 1.75 x 10°.
+
+To calculate the pH we can write:
+
+lacetate~}[H*]
+
+=1.75 x 10°
+[acetic acid]          *
+
+Since acetate and hydrogen ions are produced in equal quantities, if x = the
+concentration of each then the concentration of unionised acetic acid remaining will
+be 0.01 — x. Hence:
+
+(x)(x)
+0.01 一x
+1.75 x 10-7 一1.75 x 10-5x =x?
+
+1.75 x 105 =
+
+This can now be solved either by use of the quadratic formula or, more easily, by
+neglecting the x term since it is so small. Adopting the latter alternative gives:
+
+w=1.75x 107
+hence
+
+x=418x 104M
+
+The fractional ionisation (x) of the acetic acid is defined as the fraction of the acetic
+acid that is in the form of acetate and is therefore given by the equation:
+
+[acetate]
+{acetate] + [acetic acid]
+4.18 x 10-4
+~ 4.18 x 10-4 + 0.01 — 4.18 x 10-4
+_ 4.18 x 1074
+0,01
+= 4.18 x 10° or 4.18%
+
+Thus the majority of the acetic acid is present as the unionised form. If the pH is
+increased above 3.38 the proportion of acetate present will increase in accordance
+with the Henderson-Hasselbalch equation.
+
+
+<!-- Page 28 -->
+11 1.3 Weak electrolytes
+
+1.3.3 Buffer solutions
+
+A buffer solution is one that resists a change in pH on the addition of either acid or
+base. They are of enormous importance in practical biochemical work as so many
+biochemical molecules are weak electrolytes so that their ionic status varies with pH
+so there is a need to stabilise this ionic status during the course of a practical experi-
+ment. In practice, a buffer solution consists of an aqueous mixture of a weak acid and
+its conjugate base. The conjugate base component would neutralise any hydrogen
+ions generated during an experiment whilst the unionised acid would neutralise any
+base generated. The Henderson-Hasselbalch equation is of central importance in the
+preparation of buffer solutions. It can be expressed in a variety of forms. For a buffer
+based on a weak acid:
+
+(conjugate base]
+
+PH = DK, + 108 Teak acid                                                     (17)
+or
+lionised form]
+
+H = pK, + log HORSE OM
+PH = pKa + 108 Tinionised form]
+For a buffer based on the conjugate acid of a weak base:
+
+kb
+
+pH = pk, + log (weak base]                                                     (1.8)
+
+(conjugate acid)
+or
+
+[unionised form]
+
+PH = pK: +108 [ionised form]
+
+Table 1.6 lists some weak acids and bases commonly used in the preparation of buffer
+solutions. Phosphate, Hepes and Pipes are commonly used because of their optimum
+pH being close to 7.4. The buffer action and pH of blood is illustrated in Example 2
+and the preparation of a phosphate buffer is given in Example 3.
+
+Buffer capacity
+
+It can be seen from the Henderson-Hasselbalch equations that when the concentration
+(or more strictly the activity) of the weak acid and base is equal, their ratio is one and
+their logarithm zero so that pH = pK,. The ability of a buffer solution to resist a change
+in pH on the addition of strong acid or alkali is expressed by its buffer capacity (f).
+This is defined as the amount (moles) of acid or base required to change the pH by one
+
+unit i.e.
+db —da
+
+a                                                                                  1.9
+
+B    dpH dpH                                                                           (1.9)
+
+where db and da are the amount of base and acid respectively and dpH is the resulting
+change in pH. In practice, f is largest within the pH range pK, +1.
+
+
+<!-- Page 29 -->
+12 Basic principles
+
+Example 2 BUFFER ACTION AND pH OF BLOOD
+
+The normal pH of blood is 7.4 and is maintained at this value by buffer action in
+particular by the action of HCO; and CO, resulting from gaseous CO, dissolved
+in blood and the resulting ionisation of carbonic acid:
+
+CO, + H,0—=H,C0;
+H,CO;==H* + HCO;
+
+Itis possible to calculate an overall equilibrium constant (Keq) for these two consecutive
+reactions and to incorporate the concentration of water (55.6 M) into the value:
+
+Ke  = HEVHCO5) _ 7 95 x 10-7” hence pKeq = 6.1
+“       [CO]                                “
+Rearranging:
+
+(HCO;|
+
+PH = pK + logo 5
+
+When the pH of blood falls due to the metabolic production of H*, these equilibria shift
+in favour of increased production of HCO; that in turn ionises to give increased CO,
+that is then expired. When the pH of blood rises, more HCO; is produced and breathing
+is adjusted to retain more CO, in the blood thus maintaining blood pH. Some disease
+states may change this pH causing either acidosis or alkalosis and this may cause
+serious problems and in extreme cases, death. For example, obstructive lung disease
+may cause acidosis and hyperventilation alkalosis. Clinical biochemists routinely
+monitor patient's acid-base balance in blood, in particular the ratio of HCO and CO).
+Reference ranges for these at pH 7.4 are [HCO;] = 18.0 — 26.0mM and
+
+pCO, = 4.6-6.9 kPa, which gives [CO,] in the range of 1.20mM.
+
+Question A patient suffering from acidosis had a blood pH of 7.15 and [CO,] of 1.15 mM. What
+was the patient's [HCO;] and what are the implications of its value to the buffer
+
+capacity of the blood?
+
+Answer Applying the above equation we get:
+
+一           [HCO5]
+PH = pKeq + log  [oa
+7.15 = 6.10 十 tog ECOal
+1.15
+1.05 = log co
+1.15
+
+Taking the antilog of this equation we get 11.22 = [HCO;]/1.15
+
+Therefore [HCO;] = 12.90 mM indicating that the bicarbonate concentration in
+the patient's blood had decreased by 11.1 mM i.e. 479% thereby severely reducing the
+buffer capacity of the patient’s blood so that any further significant production of
+acid would have serious implications for the patient.
+
+
+<!-- Page 30 -->
+13 1.3 Weak electrolytes
+Example 3 PREPARATION OF A PHOSPHATE BUFFER
+Question How would you prepare 1 dm’ of 0.1M phosphate buffer, pH 7.1, given that pK,
+for phosphoric acid is 6.8 and that the atomic masses for Na, P and 0 are 23, 31 and
+16 daltons respectively?
+Answer The buffer will be based on the ionisation:
+HPO; HPO? + H* pK? = 6.8
+and will therefore involve the use of solid sodium dihydrogen phosphate (NaHzPO4)
+and disodium hydrogen phosphate (NazHPO4).
+Applying the appropriate Henderson-Hasselbalch equation (equation 1.7) gives:
+[HPO;"|
+7.1 = 6.8 +lo        =
+8 PO; |
+HPO3
+0.3 = log!      上
+[H2PO;]
+HPO;
+2.9 = [oO
+[H2P0;]
+Since the total concentration of the two species needs to be 0.1 M it follows that
+[HPO2-] must be 0.067 M and [HP03] 0.033 M. Their molecular masses are 142 and
+120 daltons respectively; hence the weight of each required is 0.067 x 143 = 9.46
+(Na,HPO,) and 0.033 x 120 = 4.00 (NaH,PO,). These weights would be dissolved
+in approximately 800 cm’ pure water, the pH measured and adjusted as necessary,
+and the volume finally made up to 1 dm’.
+Selection of a buffer
+When selecting a buffer for a particular experimental study, several factors should be
+taken into account:
+ select the one with a pK, as near as possible to the required experimental pH and
+within the range pK, + 1, as outside this range there will be too little weak acid or
+weak base present to maintain an effective buffer capacity;
+e select an appropriate concentration of buffer to have adequate buffer capacity
+for the particular experiment. Buffers are most commonly used in the range
+0.05-0.5 M;
+ ensure that the selected buffer does not form insoluble complexes with any anions
+
+or cations essential to the reaction being studied (phosphate buffers tend to
+precipitate polyvalent cations, for example, and may be a metabolite or inhibitor
+of the reaction);

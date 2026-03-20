@@ -1,0 +1,38 @@
+{
+  "source": "08_Modern_Molecular_Biology_Zhu_4th_CN.pdf",
+  "extraction": "OCR",
+  "chapters": [
+    {
+      "title": "能的影响,第十章则讨论了基因组学与比较基因组学研究的最新成果。",
+      "lines": 69
+    },
+    {
+      "title": "第1章 绪 论",
+      "lines": 15
+    },
+    {
+      "title": "第2章 染色体与DNA",
+      "lines": 67
+    },
+    {
+      "title": "第3章 生物信息的传递(上)",
+      "lines": 70
+    },
+    {
+      "title": "第4章 生物信息的传递(下)",
+      "lines": 94
+    },
+    {
+      "title": "203   第6章 分子生物学研究法(下)",
+      "lines": 143
+    },
+    {
+      "title": "第8章 真核基因表达调控",
+      "lines": 63
+    },
+    {
+      "title": "第9章 疾病与人类健康",
+      "lines": 300
+    }
+  ]
+}

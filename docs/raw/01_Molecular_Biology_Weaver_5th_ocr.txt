@@ -1,0 +1,1995 @@
+<!-- Page 1 -->
+Fifth Edition
+
+
+
+<!-- Page 2 -->
+This page intentionally left blank
+
+
+<!-- Page 3 -->
+Molecular Biology
+
+Fifth Edition
+
+Robert F. Weaver
+
+University of Kansas
+
+em \ Connect
+Learn
+Succeed”
+
+
+<!-- Page 4 -->
+The McGraw-Hill companies
+
+MOLECULAR BIOLOGY, FIFTH EDITION
+
+Published by McGraw-Hill, a business unit of The McGraw-Hill Companies, Inc., 1221 Avenue of the
+Americas, New York, NY 10020. Copyright © 2012 by The McGraw-Hill Companies, Inc. All rights reserved.
+Previous editions © 2008, 2005, and 2002. No part of this publication may be reproduced or distributed in
+any form or by any means, or stored in a database or retrieval system, without the prior written consent of
+‘The McGraw-Hill Companies, Inc., including, but not limited to, in any network or other electronic storage or
+transmission, or broadcast for distance learning.
+
+Some ancillaries, including electronic and print components, may not be available to customers outside the
+United States.
+
+This book is printed on acid-free paper.
+1234567890 QDB/QDB10987654321
+
+ISBN 978-0-07-352532-7
+MHID 0-07-352532-4
+
+Vice President & Editor-in-Chief: Marty Lange
+
+Vice President EDP/Central Publishing Services: Kimberly Meriwether David
+Publisher: Janice Roerig-Blong
+
+Executive Marketing Manager: Patrick E. Reidy
+Project Manager: Robin A. Reed
+
+Design Coordinator: Brenda A. Rolwes
+
+Cover Designer: Studio Montage, St. Louis, Missouri
+Lead Photo Research Coordinator: Carrie K. Burger
+Cover Image: © Getty Images RF
+
+Buyer: Sandy Ludovissy
+
+Media Project Manager: Balaji Sundararaman
+Compositor: Aptara®, Inc.
+
+Typeface: 10/12 Sabon
+
+Printer: Quad/Graphics
+
+All credits appearing on page or at the end of the book are considered to be an extension of the
+copyright page.
+
+Library of Congress Cataloging-in-Publication Data
+
+‘Weaver, Robert Franklin, 1942-
+Molecular biology / Robert F Weaver.—Sth ed.
+p.cm,
+ISBN 978-0-07-352532-7 (hardcover : alk. paper)
+1. Molecular biology. I. Title.
+QHS06.W43 2011
+572.8一dc22
+2010051759
+
+www.mhhe.com
+
+
+<!-- Page 5 -->
+To Camilla and Nora
+
+
+<!-- Page 6 -->
+iv
+
+Rob Weaver was born in Topeka, Kansas, and
+grew up in Arlington, Virginia. He received his
+bachelor’s degree in chemistry from the College
+of Wooster in Wooster, Ohio, in 1964. He
+earned his Ph.D. in biochemistry at Duke
+University in 1969, then spent two years doing
+postdoctoral research at the University of
+California, San Francisco, where he studied the
+structure of eukaryotic RNA polymerases with
+William J. Rutter.
+
+He joined the faculty of the University of
+Kansas as an assistant professor of biochemistry
+in 1971, was promoted to associate professor,
+and then to full professor in 1981. In 1984, he
+became chair of the Department of Biochemistry,
+(Source: Ashvini C. Ganesh)                   and served in that capacity until he was named
+
+Associate Dean of the College of Liberal Arts
+and Sciences in 1995.
+
+Prof. Weaver is the divisional dean for the science and mathematics departments
+within the College, which includes supervising 10 different departments and
+programs. As a professor of molecular biosciences, he teaches courses in introductory
+molecular biology and the molecular biology of cancer. In his research laboratory,
+undergraduates and graduate students have participated in research on the molecular
+biology of a baculovirus that infects caterpillars.
+
+Prof. Weaver is the author of many scientific papers resulting from research
+funded by the National Institutes of Health, the National Science Foundation, and
+the American Cancer Society. He has also coauthored two genetics textbooks and
+has written two articles on molecular biology in the National Geographic
+Magazine. He has spent two years performing research in European laboratories
+as an American Cancer Society Research Scholar, one year in Zurich, Switzerland,
+and one year in Oxford, England.
+
+
+<!-- Page 7 -->
+About the Author iv
+Preface xiii
+Acknowledgments — xvii
+
+Guide to Experimental Techniques in
+Molecular Biology xix
+
+Introduction
+
+1 ABrief History 1
+2 The Molecular Nature of Genes 12
+
+3 An Introduction to Gene Function 30
+
+Methods in Molecular Biology
+
+4 Molecular Cloning Methods 49
+
+5 Molecular Tools for Studying Genes and Gene
+Activity 75
+
+Transcription in Bacteria
+
+6 The Mechanism of Transcription in Bacteria 121
+
+7 Operons: Fine Control of Bacterial
+Transcription 167
+
+8 Major Shifts in Bacterial Transcription 196
+9 DNA-Protein Interactions in Bacteria 222
+
+Transcription in Eukaryotes
+10 Eukaryotic RNA Polymerases and
+Their Promoters 244
+
+11 General Transcription Factors
+in Eukaryotes 273
+
+12 Transcription Activators in Eukaryotes 314
+
+13 Chromatin Structure and Its Effects
+on Transcription 355
+
+Post-Transcriptional Events
+
+14 RNA Processing I: Splicing 394
+15 RNA Processing II: Capping and Polyadenylation 436
+
+16 Other RNA Processing Events and Post-Transcriptional
+Control of Gene Expression 471
+
+Translation
+
+17 The Mechanism of Translation I: Initiation 522
+
+18 The Mechanism of Translation II: Elongation
+and Termination 560
+
+19 Ribosomes and Transfer RNA 601
+
+DNA Replication, Recombination,
+and Transposition
+
+0 DNA Replication, Damage, and Repair 636
+1 DNA Replication I: Detailed Mechanism 677
+
+2 Homologous Recombination 709
+
+NNN
+
+3 Transposition 732
+
+Genomes
+
+4 Introduction to Genomics: DNA Sequencing on
+a Genomic Scale 759
+
+Genomics Il: Functional Genomics, Proteomics,
+and Bioinformatics 789
+
+bo
+
+已
+a
+
+Glossary 827
+Index 856
+
+<
+
+
+<!-- Page 8 -->
+About the Author iv                                                       CHAPTER 3
+
+Preface xiii                                          An Introduction to Gene Function 30
+Acknowledgments xvii                                    31
+
+Storing Information 31
+Guide to Experimental Techniques
+
+.                    .             .                                                        Overview of Gene Expression 31
+in Molecular Biology xix
+
+Protein Structure 31
+
+Protein Function 35
+
+:                                                                                   Transcription 39
+Introduction
+
+Translation 40
+3.2 Replication 45
+3.3 Mutations 45
+A Brief History 1               Sickle Cell Disease 45
+
+1.1. Transmission Genetics 2
+
+CHAPTER 1
+
+Mendel’s Laws of Inheritance 2
+
+The Chromosome Theory of Inheritance 3
+Genetic Recombination and Mapping 4        [papTr |
+
+Physical Evidence for Recombination 5                            Methods of Molecular Biology
+1.2 Molecular Genetics 5
+
+The Discovery of DNA 5                                         CHAPTER 4
+
+The Relationship Between Genes and Proteins 6          Mole cular Cloning Methods   49
+
+Activities of Genes 7
+
+13 The Three Domains of Life 9         41 Gene Cloning 50
+
+The Role of Restriction Endonucleases 50
+Vectors 53
+
+Identifying a Specific Clone with a
+Specific Probe 58
+
+CHAPTER 2                                                                         cDNA Cloning 60
+The Molecular Nature of Genes 12                Rapid Amplification of cDNA Ends 61
+2.1 The Nature of Genetic Material 13                       4.2 The Polymerase Chain Reaction 62
+‘Transformation in Bacteria 13                                            Standard PCR 62
+The Chemical Nature of Polynucleotides 15                             Box 4.1 Jurassic Park: More than a Fantasy? 63
+
+Using Reverse Transcriptase PCR (RT-PCR)
+in cDNA Cloning 64
+
+Real-Time PCR 64
+4.3 Methods of Expressing Cloned Genes 65
+
+Expression Vectors 65
+
+2.2. DNA Structure 18
+Experimental Background 19
+The Double Helix 19
+
+2.3 Genes Made of RNA 22
+2.4 Physical Chemistry of Nucleic Acids 23         Other Eukaryotic Vectors 71
+
+A Variety of DNA Structures 23                                                 Using the Ti Plasmid to Transfer Genes
+DNAs of Various Sizes and Shapes 27                                         to Plants 71
+
+vi
+
+
+<!-- Page 9 -->
+CHAPTER 5
+
+Molecular Tools for Studying Genes
+and Gene Activity 75
+
+5.1
+
+5.2
+
+5.3
+
+5.4
+
+5.5
+
+5.6
+
+5.7
+
+5.8
+
+5.9
+
+Molecular Separations 76
+
+Gel Electrophoresis 76
+
+Two-Dimensional Gel Electrophoresis 79
+Ton-Exchange Chromatography 80
+
+Gel Filtration Chromatography 80.
+Affinity Chromatography 81
+
+Labeled Tracers 82
+
+Autoradiography 82
+
+Phosphorimaging 83
+
+Liquid Scintillation Counting 84
+Nonradioactive Tracers 84
+
+Using Nucleic Acid Hybridization 85
+Southern Blots: Identifying Specific DNA Fragments 85
+DNA Fingerprinting and DNA Typing 86
+
+Forensic Uses of DNA Fingerprinting and
+DNA Typing 87
+
+In Situ Hybridization: Locating Genes in
+Chromosomes 88
+
+Immunoblots (Western Blots) 89
+DNA Sequencing and Physical Mapping 89
+
+‘The Sanger Chain-Termination
+Sequencing Method 90
+
+Automated DNA Sequencing 91
+High-Throughput Sequencing 93
+Restriction Mapping 95
+
+Protein Engineering with Cloned Genes:
+Site-Directed Mutagenesis 97
+
+Mapping and Quantifying Transcripts 99
+Northern Blots 99
+
+S1 Mapping 100
+
+Primer Extension 102
+
+Run-Off Transcription and G-Less
+Cassette Transcription 103
+
+Measuring Transcription Rates in Vivo 104
+Nuclear Run-On Transcription 104
+
+Reporter Gene Transcription 105
+
+Measuring Protein Accumulation in Vivo 106
+Assaying DNA-Protein Interactions 108
+Filter Binding 108
+
+Gel Mobility Shift 109
+
+DNase Footprinting 109
+
+DMS Footprinting and Other Footprinting
+Methods 109
+
+Chromatin Immunoprecipitation (ChIP) 112
+Assaying Protein-Protein Interactions 112
+
+Contents
+
+5.10 Finding RNA Sequences That Interact
+with Other Molecules 114
+
+SELEX 114
+Functional SELEX 114
+5.11 Knockouts and Transgenics 115
+Knockout Mice 115
+Transgenic Mice 115
+
+Transcription in Bacteria
+
+CHAPTER 6
+
+The Mechanism of Transcription
+in Bacteria 121
+
+6.1 RNA Polymerase Structure 122
+Sigma (a) as a Specificity Factor 122
+
+6.2 Promoters 123
+Binding of RNA Polymerase to Promoters 123
+Promoter Structure 125
+
+6.3 Transcription Initiation 126
+Sigma Stimulates Transcription Initiation 127
+Reuse of o 128
+The Stochastic o-Cycle Model 129
+Local DNA Melting at the Promoter 132
+Promoter Clearance 134
+Structure and Function of 139
+
+The Role of the a-Subunit in UP Element
+Recognition 142
+
+6.4 Elongation 144
+Core Polymerase Functions in Elongation 144
+Structure of the Elongation Complex 146
+
+6.5 Termination of Transcription 156
+Rho-Independent Termination 156
+Rho-Dependent Termination 159
+
+CHAPTER 7
+
+Operons: Fine Control of Bacterial
+Transcription 167
+7.1 The lac Operon 168
+
+Negative Control of the lac Operon 169
+Discovery of the Operon 169
+Repressor—Operator Interactions 173
+The Mechanism of Repression 174
+Positive Control of the lac Operon 177
+The Mechanism of CAP Action 178
+
+
+<!-- Page 10 -->
+viii
+
+7.2
+
+73
+
+7A
+
+Contents
+
+The ara Operon 182
+
+The ara Operon Repression Loop 183
+
+Evidence for the ara Operon Repression Loop 183
+Autoregulation of araC 185
+
+The trp Operon 186
+
+Tryptophan’s Role in Negative Control of the
+trp Operon 186
+
+Control of the trp Operon by Attenuation 187
+Defeating Attenuation 188
+Riboswitches 190
+
+CHAPTER 8
+
+Major Shifts in Bacterial
+Transcription 196
+
+8.1
+
+8.2
+
+8.3
+
+Sigma Factor Switching 197
+Phage Infection 197
+
+Sporulation 199
+
+Genes with Multiple Promoters 201
+Other o Switches 201
+Anti-o-Factors 202
+
+The RNA Polymerase Encoded in
+Phage T7 202
+
+Infection of E. coli by Phage 入 203
+Lytic Reproduction of Phage 入 204
+Establishing Lysogeny 211
+
+Autoregulation of the cl Gene During
+Lysogeny 212
+
+Determining the Fate of a ) Infection: Lysis or
+Lysogeny 217
+
+Lysogen Induction 218
+
+CHAPTER 9
+
+DNA-Protein Interactions
+in Bacteria 222
+
+9.1
+
+9.2
+
+9.3
+
+The 和 Family of Repressors 223
+
+Probing Binding Specificity by Site-
+Directed Mutagenesis 223
+
+Box 9.1 X-Ray Crystallography 224
+
+High-Resolution Analysis of A Repressor-Operator
+Interactions 229
+
+High-Resolution Analysis of Phage 434
+Repressor-Operator Interactions 232
+
+The trp Repressor 234
+The Role of Tryptophan 234
+
+General Considerations on
+Protein-DNA Interactions 235
+
+Hydrogen Bonding Capabilities of the Four
+Different Base Pairs 235
+
+The Importance of Multimeric DNA-Binding Proteins 236
+
+94
+
+DNA-Binding Proteins: Action at
+a Distance 237
+
+The gal Operon 237
+Duplicated A Operators 237
+Enhancers 238
+
+Transcription in Eukaryotes
+
+CHAPTER 10
+
+Eukaryotic RNA Polymerases
+
+and Their Promoters
+
+10.1
+
+10.2
+
+10.3
+
+244
+
+Multiple Forms of Eukaryotic
+
+RNA Polymerase 245
+
+Separation of the Three Nuclear Polymerases 245
+The Roles of the Three RNA Polymerases 246
+RNA Polymerase Subunit Structures 248
+Promoters 259
+
+Class II Promoters 259
+
+Class] Promoters 263
+
+Class III Promoters 264
+
+Enhancers and Silencers 267
+
+Enhancers 267
+
+Silencers 269
+
+CHAPTER 11
+
+General Transcription Factors
+
+in Eukaryotes
+
+11.1
+
+11.2
+
+11.3
+
+273
+
+Class II Factors 274
+
+The Class II Preinitiation Complex 274
+Structure and Function of TFIID 276
+Structure and Function of TFIIB 286
+Structure and Function of TFIIH 288
+
+‘The Mediator Complex and the
+RNA Polymerase II Holoenzyme 295
+
+Elongation Factors 296
+Class I Factors 299
+
+‘The Core-Binding Factor 299
+
+‘The UPE-Binding Factor 300
+Structure and Function of SL1 301
+Class III Factors 303
+
+TFIIA 303
+
+TFIIB and C304
+
+The Role of TBP 307
+
+
+<!-- Page 11 -->
+CHAPTER 12
+
+Transcription Activators
+in Eukaryotes 314
+
+12.1 Categories of Activators 315
+DNA-Binding Domains 315
+‘Transcription-Activating Domains 315
+
+12.2 Structures of the DNA-Binding
+Motifs of Activators 316
+
+Zinc Fingers 316
+The GAL4 Protein 318
+The Nuclear Receptors 319
+Homeodomains 320
+
+The bZIP and bHLH Domains 321
+
+12.3 Independence of the Domains
+of Activators 323
+
+12.4 Functions of Activators 324
+Recruitment of TFIID 324
+Recruitment of the Holoenzyme 325
+
+12.5 Interaction Among Activators 328
+Dimerization 328
+Action at a Distance 329
+Box 12.1 Genomic Imprinting 332
+Transcription Factories 334
+Complex Enhancers 336
+Architectural Transcription Factors 337
+Enhanceosomes 338
+Insulators 339
+
+12.6 Regulation of Transcription Factors 343
+Coactivators 344
+Activator Ubiquitylation 346
+Activator Sumoylation 347
+Activator Acetylation 348
+Signal Transduction Pathways 348
+
+CHAPTER 13
+
+Chromatin Structure and Its Effects
+on Transcription 355
+
+13.1 Chromatin Structure 356
+Histones 356
+Nucleosomes 357
+The 30-nm Fiber 360
+Higher-Order Chromatin Folding 362
+
+13.2 Chromatin Structure and Gene
+Activity 364
+
+The Effects of Histones on Transcription
+of Class II Genes 365
+
+Contents.         ix
+
+Nucleosome Positioning 367
+Histone Acetylation 372
+
+Histone Deacetylation 373
+Chromatin Remodeling 376
+Heterochromatin and Silencing 383
+
+Nucleosomes and Transcription
+Elongation 387
+
+Post-Transcriptional Events
+
+CHAPTER 14
+
+RNA Processing I: Splicing 394
+14.1 Genes in Pieces 395
+
+Evidence for Split Genes 395
+
+RNA Splicing 396
+
+Splicing Signals 397
+
+Effect of Splicing on Gene Expression 398
+
+14.2 The Mechanism of Splicing of Nuclear
+mRNA Precursors 399
+
+A Branched Intermediate 399
+A Signal at the Branch 401
+Spliceosomes 402
+
+Spliceosome Assembly and Function 411
+
+Commitment, Splice Site Selection, and Alternative
+Splicing 415
+
+Control of Splicing 425
+14.3 Self-Splicing RNAs 427
+Group IIntrons 427
+Group I Introns 430
+
+CHAPTER 15
+
+RNA Processing I: Capping and
+Polyadenylation 436
+15.1 Capping 437
+Cap Structure 437
+Cap Synthesis 438
+Functions of Caps 440
+15.2 Polyadenylation 442
+Poly(A) 442
+Functions of Poly(A) 443
+Basic Mechanism of Polyadenylation 445
+
+Polyadenylation Signals 446
+
+Cleavage and Polyadenylation of a Pre-mRNA 448
+Poly(A) Polymerase 454
+
+Turnover of Poly(A) 454
+
+
+<!-- Page 12 -->
+x Contents
+
+15.3 Coordination of mRNA Processing Events 456
+
+Binding of the CTD of Rpb1 to mRNA-Processing
+Proteins 457
+
+Changes in Association of RNA-Processing Proteins
+with the CTD Correlate with Changes in CTD
+Phosphorylation 458
+
+ACTD Code? 460
+
+Coupling Transcription Termination with mRNA
+3/-End Processing 461
+
+Mechanism of Termination 462
+Role of Polyadenylation in mRNA Transport 466
+
+CHAPTER 16
+
+Other RNA Processing Events and
+Post-Transcriptional Control of Gene
+Expression 471
+
+16.1 Ribosomal RNA Processing 472
+Eukaryotic rRNA Processing 472
+Bacterial rRNA Processing 474
+
+16.2 Transfer RNA Processing 475
+Cutting Apart Polycistronic Precursors 475
+Forming Mature 5’-Ends 475
+Forming Mature 3’-Ends 476
+
+16.3 Trans-Splicing 477
+‘The Mechanism of Trans-Splicing 477
+
+16.4. RNA Editing 479
+Mechanism of Editing 479
+Editing by Nucleotide Deamination 482
+
+16.5 Post-Transcriptional Control of Gene
+Expression: mRNA Stability 483
+
+Casein mRNA Stability 484
+‘Transferrin Receptor mRNA Stability 484
+
+16.6 Post-Transcriptional Control of Gene Expression:
+
+RNA Interference 488
+Mechanism of RNAi 489
+Amplification of siRNA 494
+
+Role of the RNAi Machinery in Heterochromatin
+Formation and Gene Silencing 495
+
+16.7 Piwi-lnteracting RNAs and Transposon Control 501
+
+16.8  Post-Transcriptional Control of Gene
+Expression: MicroRNAs 502
+
+Silencing of Translation by miRNAs 502
+Stimulation of Translation by miRNAs 507
+
+16.9 Translation Repression, mRNA Degradation,
+and P-Bodies 510
+
+Processing Bodies 510
+
+Degradation of mRNAs in P-Bodies 511
+Relief of Repression in P-Bodies 514
+Other Small RNAs 517
+
+Translation
+
+CHAPTER 17
+
+The Mechanism of Translation I:
+Initiation 522
+
+17.1 Initiation of Translation in Bacteria 523
+tRNA Charging 523
+
+Dissociation of Ribosomes 523
+
+Formation of the 30S Initiation Complex 525
+Formation of the 70S Initiation Complex 531
+Summary of Initiation in Bacteria 533
+
+17.2 Initiation in Eukaryotes 533
+The Scanning Model of Initiation 533
+Eukaryotic Initiation Factors 537
+
+17.3 Control of Initiation 545
+Bacterial Translational Control 545
+
+Eukaryotic Translational Control 548
+
+CHAPTER 18
+
+The Mechanism of Translation II:
+Elongation and Termination 560
+18.1 The Direction of Polypeptide Synthesis and
+of mRNA Translation 561
+18.2 The Genetic Code 562
+Nonoverlapping Codons 562
+No Gaps in the Code 563
+The Triplet Code 563
+Breaking the Code 564
+Unusual Base Pairs Between Codon and Anticodon 566
+The (Almost) Universal Code 567
+18.3 The Elongation Cycle 569
+Overview of Elongation 569
+A Three-Site Model of the Ribosome 570
+
+Elongation Step 1: Binding an Aminoacyl-tRNA to the
+A Site of the Ribosome 573
+
+Elongation Step 2: Peptide Bond Formation 577
+
+Elongation Step 3: Translocation 580
+G Proteins and Translation 582
+‘The Structures of EF-Tu and EF-G 583
+18.4 Termination 584
+Termination Codons 584
+Stop Codon Suppression 586
+Release Factors 586
+Dealing with Aberrant Termination 588
+Use of Stop Codons to Insert Unusual Amino Acids 593
+
+
+<!-- Page 13 -->
+18.5 Posttranslation 593
+Folding Nascent Proteins 594
+Release of Ribosomes from mRNA 595
+
+CHAPTER 19
+
+Ribosomes and Transfer RNA 601
+
+19.1. Ribosomes 602
+Fine Structure of the 70S Ribosome 602
+Ribosome Composition 605
+Fine Structure of the 30S Subunit 606
+Fine Structure of the 50S Subunit 612
+Ribosome Structure and the Mechanism of Translation 616
+Polysomes 621
+19.2 Transfer RNA 623
+The Discovery of tRNA 623
+tRNA Structure 623
+
+Recognition of RNAs by Aminoacyl-tRNA Synthetase:
+The Second Genetic Code 626
+
+Proofreading and Editing by Aminoacyl-tRNA
+Synthetases 630
+
+DNA Replication, Recombination,
+and Transposition
+
+CHAPTER 20
+
+DNA Replication, Damage,
+
+and Repair 636
+
+20.1 General Features of DNA Replication 637
+
+Semiconservative Replication 637
+
+At Least Semidiscontinuous Replication 639
+Priming of DNA Synthesis 641
+Bidirectional Replication 642
+Rolling Circle Replication 645
+
+20.2 Enzymology of DNA Replication 646
+Three DNA Polymerases in E. coli 646
+Fidelity of Replication 649
+Multiple Eukaryotic DNA Polymerases 650
+Strand Separation 651
+Single-Strand DNA-Binding Proteins 651
+Topoisomerases 653
+
+20.3 DNA Damage and Repair 656
+Damage Caused by Alkylation of Bases 657
+Damage Caused by Ultraviolet Radiation 658
+Damage Caused by Gamma and X-Rays 658
+Directly Undoing DNA Damage 659
+
+Contents.         xi
+
+Excision Repair 660
+
+Double-Strand Break Repair in Eukaryotes 665
+Mismatch Repair 667
+
+Failure of Mismatch Repair in Humans 668
+
+Coping with DNA Damage Without Repairing It 668
+
+CHAPTER 21
+DNA Replication I:
+Detailed Mechanism 677
+
+21.1 Initiation 678
+Priming in E. coli 678
+
+Priming in Eukaryotes 679
+21.2 Elongation 683
+Speed of Replication 683
+
+The Pol III Holoenzyme and Processivity
+of Replication 683
+
+21.3 Termination 694
+Decatenation: Disentangling Daughter DNAs 694
+Termination in Eukaryotes 695
+
+Box 21.1 Telomeres, the Hayflick Limit, and
+Cancer 699
+
+Telomere Structure and Telomere-Binding Proteins in
+Lower Eukaryotes 702
+
+CHAPTER 22
+
+Homologous Recombination 709
+22.1 The RecBCD Pathway for Homologous
+Recombination 710
+
+22.2 Experimental Support for the RecBCD
+Pathway 712
+
+RecA 712
+RecBCD 715
+RuvA andRuvB 717
+RuvC 719
+22.3 Meiotic Recombination 721
+
+The Mechanism of Meiotic Recombination:
+Overview 721
+
+The Double-Stranded DNA Break 722
+Creation of Single-Stranded Ends at DSBs 728
+22.4 Gene Conversion 728
+
+CHAPTER 23
+
+Transposition 732
+
+23.1 Bacterial Transposons 733
+Discovery of Bacterial Transposons 733
+
+Insertion Sequences: The Simplest Bacterial
+Transposons 733
+
+
+<!-- Page 14 -->
+xii        Contents.
+
+More Complex Transposons 734
+Mechanisms of Transposition 734
+23.2 Eukaryotic Transposons 737
+
+‘The First Examples of Transposable Elements:
+Ds and Ac of Maize 737
+
+P Elements 739
+
+23.3 Rearrangement of Immunoglobulin Genes 740
+Recombination Signals 742
+The Recombinase 743
+Mechanism of V(D)J Recombination 743
+
+23.4 Retrotransposons 745
+
+Retroviruses 745
+
+Retrotransposons 749
+
+Genomes
+
+CHAPTER 24
+Introduction to Genomics: DNA
+Sequencing on a Genomic Scale 759
+
+24.1 Positional Cloning: An Introduction
+to Genomics 760
+
+Classical Tools of Positional Cloning 760
+
+Identifying the Gene Mutated in a Human Disease 762
+24.2 Techniques in Genomic Sequencing 765
+
+‘The Human Genome Project 767
+
+Vectors for Large-Scale Genome Projects 769
+
+‘The Clone-by-Clone Strategy 770
+
+24.3
+
+Shotgun Sequencing 773
+
+Sequencing Standards 774
+
+Studying and Comparing Genomic Sequences 774
+The Human Genome 774
+
+Personal Genomics 779
+
+Other Vertebrate Genomes 779
+
+The Minimal Genome 782
+
+The Barcode of Life 784
+
+CHAPTER 25
+
+Genomics II: Functional Genomics,
+Proteomics, and Bioinformatics 789
+
+25.1
+
+25.2
+
+25.3
+
+Functional Genomics: Gene Expression
+on a Genomic Scale 790
+
+Transcriptomics 790
+Genomic Functional Profiling 799
+
+Single-Nucleotide Polymorphisms:
+Pharmacogenomics 810
+
+Proteomics 812
+
+Protein Separations 812
+Protein Analysis 813
+Quantitative Proteomics 814
+Protein Interactions 816
+Bioinformatics 820
+
+Finding Regulatory Motifs in Mammalian
+Genomes 820
+
+Using the Databases Yourself $22
+
+Glossary 827
+Index 856
+
+
+<!-- Page 15 -->
+One of my most exciting educational experiences was my
+introductory molecular biology course in graduate school.
+My professor used no textbook, but assigned us readings
+directly from the scientific literature. It was challenging,
+but I found it immensely satisfying to meet the challenge
+and understand, not only the conclusions, but how the
+evidence supported those conclusions.
+
+When I started teaching my own molecular biology
+course, I adopted this same approach, but tried to reduce
+the challenge to a level more appropriate for undergradu-
+ate students. I did this by narrowing the focus to the most
+important experiments in each article, and explaining
+those carefully in class. I used hand-drawn cartoons and
+photocopies of the figures as illustrations.
+
+This approach worked well, and the students enjoyed
+it, but I really wanted a textbook that presented the con-
+cepts of molecular biology, along with experiments that
+led to those concepts. I wanted clear explanations that
+showed students the relationship between the experiments
+and the concepts. So, I finally decided that the best way to
+get such a book would be to write it myself. I had already
+coauthored a successful introductory genetics text in
+which I took an experimental approach—as much as pos-
+sible with a book at that level. That gave me the courage
+to try writing an entire book by myself and to treat the
+subject as an adventure in discovery.
+
+Organization
+
+The book begins with a four-chapter sequence that should
+be a review for most students. Chapter 1 is a brief history
+of genetics. Chapter 2 discusses the structure and chemical
+properties of DNA. Chapter 3 is an overview of gene ex-
+pression, and Chapter 4 deals with the nuts and bolts of
+gene cloning. All these are topics that the great majority
+of molecular biology students have already learned in an
+introductory genetics course. Still, students of molecular
+biology need to have a grasp of these concepts and may
+need to refresh their understanding of them. I do not deal
+specifically with these chapters in class; instead, I suggest
+students consult them if they need more work on these topics.
+These chapters are written at a more basic level than the
+rest of the book.
+
+Chapter 5 describes a number of common techniques
+used by molecular biologists. It would not have been pos-
+sible to include all the techniques described in this book in
+one chapter, so I tried to include the most common or, in a
+
+few cases, valuable techniques that are not mentioned else-
+where in the book. When I teach this course, I do not pre-
+sent Chapter 5 as such. Instead, I refer students to it when
+we first encounter a technique in a later chapter. I do it that
+way to avoid boring my students with technique after tech-
+nique. I also realize that the concepts behind some of these
+techniques are rather sophisticated, and the students’ ap-
+preciation of them is much deeper after they’ve acquired
+more experience in molecular biology.
+
+Chapters 6-9 describe transcription in bacteria. Chap-
+ter 6 introduces the basic transcription apparatus, includ-
+ing promoters, terminators, and RNA polymerase, and
+shows how transcripts are initiated, elongated, and termi-
+nated. Chapter 7 describes the control of transcription in
+three different operons, then Chapter 8 shows how bacte-
+ria and their phages control transcription of many genes at
+a time, often by providing alternative sigma factors. Chap-
+ter 9 discusses the interaction between bacterial DNA-
+binding proteins, mostly helix-turn-helix proteins, and
+their DNA targets.
+
+Chapters 10-13 present control of transcription in eu-
+karyotes. Chapter 10 deals with the three eukaryotic RNA
+polymerases and the promoters they recognize. Chapter 11
+introduces the general transcription factors that collabo-
+rate with the three RNA polymerases and points out the
+unifying theme of the TATA-box-binding protein, which
+participates in transcription by all three polymerases.
+Chapter 12 explains the functions of gene-specific tran-
+scription factors, or activators. This chapter also illustrates
+the structures of several representative activators and
+shows how they interact with their DNA targets. Chapter 13
+describes the structure of eukaryotic chromatin and shows
+how activators and silencers can interact with coactivators
+and corepressors to modify histones, and thereby to activate
+or repress transcription.
+
+Chapters 14-16 introduce some of the posttranscrip-
+tional events that occur in eukaryotes. Chapter 14 deals
+with RNA splicing. Chapter 15 describes capping and
+polyadenylation, and Chapter 16 introduces a collection of
+fascinating “other posttranscriptional events,” including
+rRNA and tRNA processing, trans-splicing, and RNA edit-
+ing. This chapter also discusses four kinds of posttranscrip-
+tional control of gene expression: (1) RNA interference;
+(2) modulating mRNA stability (using the transferrin receptor
+mRNA as the prime example); (3) control by microRNAs,
+and (4) control of transposons in germ cells by Piwi-interacting
+RNAs (piRNAs).
+
+xiii
+
+
+<!-- Page 16 -->
+xiv         Preface
+
+Chapters 17-19 describe the translation process in both
+bacteria and eukaryotes. Chapter 17 deals with initiation
+of translation, including the control of translation at the
+initiation step. Chapter 18 shows how polypeptides are
+elongated, with the emphasis on elongation in bacteria.
+Chapter 19 provides details on the structure and function of
+two of the key players in translation: ribosomes and tRNA.
+
+Chapters 20-23 describe the mechanisms of DNA rep-
+lication, recombination, and translocation. Chapter 20 in-
+troduces the basic mechanisms of DNA replication and
+repair, and some of the proteins (including the DNA poly-
+merases) involved in replication. Chapter 21 provides de-
+tails of the initiation, elongation, and termination steps in
+DNA replication in bacteria and eukaryotes. Chapters 22
+and 23 describe DNA rearrangements that occur naturally
+in cells. Chapter 22 discusses homologous recombination
+and Chapter 23 deals with translocation.
+
+Chapters 24 and 25 present concepts of genomics, pro-
+teomics, and bioinformatics. Chapter 24 begins with an old-
+fashioned positional cloning story involving the Huntington
+disease gene and contrasts this lengthy and heroic quest
+with the relative ease of performing positional cloning with
+the human genome (and other genomes). Chapter 25 deals
+with functional genomics (transcriptomics), proteomics,
+and bioinformatics.
+
+New to the Fifth Edition
+
+The most obvious change in the fifth edition is the splitting
+of old Chapter 24 (Genomics, Proteomics, and Bioinformat-
+ics) in two. This chapter was already the longest in the book,
+and the field it represents is growing explosively, so a split
+was inevitable. The new Chapter 24 deals with classical ge-
+nomics: the sequencing and comparison of genomes. New
+material in Chapter 24 includes an analysis of the similarity
+between the human and chimpanzee genomes, and a look at
+the even closer similarity between the human and Neander-
+thal genomes, including recent evidence for interbreeding
+between humans and Neanderthals. It also includes an up-
+date on the new field of synthetic biology, made possible by
+genomic work on microorganisms, and contains a report of
+the recent success by Craig Venter and colleagues in creating
+a living Mycoplasma cell with a synthetic genome.
+
+Chapter 25 deals with fields allied with Genomics:
+Functional Genomics, Proteomics, and Bioinformatics.
+New material in Chapter 25 includes new applications of
+the ChIP-chip and ChIP-seq techniques—the latter using
+next-generation DNA sequencing; collision-induced disso-
+ciation mass spectrometry, which can be used to sequence
+proteins; and the use of isotope-coded affinity tags (ICATs)
+and stable isotope labeling by amino acids (SILAC) to
+make mass spectrometry (MS) quantitative. Quantitative
+MS in turn enables comparative proteomics, in which the
+concentrations of large numbers of proteins can be com-
+pared between species.
+
+All but the introductory chapters of this fifth edition
+have been updated. Here are a few highlights:
+
+。 Chapter 5: Introduces high-throughput (next
+generation) DNA sequencing techniques. These have
+revolutionized the field of genomics. Chromatin
+immunoprecipitation (ChIP) and the yeast two-hybrid
+assay have been moved to Chapter 5, in light of their
+broad applicabilities. A treatment of the energies of
+the B-electrons from 3H, 14C, 35S, and 32P has been
+added, and the fluorography technique, which cap-
+tures information from the lower-energy emissions,
+is discussed.
+
+© Chapter 6: Adds a discussion of FRET-ALEX (FRET
+with alternating laser excitation), along with a de-
+scription of how this technique has been used to
+support (1) the stochastic release model of the
+o-cycle and (2) the scrunching hypothesis to explain
+abortive transcription. This chapter also updates
+the structure of the bacterial elongation complex,
+including a discussion of a two-state model for
+nucleotide addition.
+
+© Chapter 7: Introduces the riboswitch in the mRNA
+from the gin gene of B. subtilis, in which the end
+product of the gene turns expression of the gene off
+by stimulating the mRNA to destroy itself. This
+chapter also introduces a hammerhead ribozyme as
+a possible mammalian riboswitch that may operate
+by a similar mechanism.
+
+。 Chapter 8: Introduces the concepts of anti-o-factors
+and anti-anti-o-factors as controllers of transcription
+during sporulation in B. subtilis.
+
+。 Chapter 9: Emphasizes the dynamic nature of pro-
+tein structure, and points out that a given crystal
+structure represents just one of a range of different
+possible protein conformations.
+
+。 Chapter 10: Presents a new study by Roger Korn-
+berg’s group that identifies the RNA polymerase II
+trigger loop as a key determinant in transcription
+specificity, along with a discussion of how the
+enzyme distinguishes between ribonuncleotides and
+deoxyribonucleotides. This chapter also introduces
+the concepts of core promoter and proximal pro-
+moter, where the core promoter contains any com-
+bination of TFIIB recognition element, TATA box,
+initiator, downstream promoter element, down-
+stream core element, and motif ten element, and
+the proximal promoter contains upstream
+promoter elements.
+
+© Chapter 11: Introduces the concept of core TAFs—
+those associated with class II preinitiation complexes
+from a wide variety of eukaryotes, and introduces
+the new nomenclature (TAF1-TAF13), which
+replaces the old, confusing nomenclature that was
+
+
+<!-- Page 17 -->
+based on molecular masses (e.g., TAF250). This
+chapter also describes an experiment that shows the
+importance of TFIIB in setting the start site of tran-
+scription. It also shows that a similar mechanism
+applies in the archaea, which use a TFIIB homolog
+known as transcription factor B.
+
+Chapter 12: Introduces the technique of chromosome
+conformation capture (3C) and shows how it can be
+used to detect DNA looping between an enhancer
+and a promoter. This chapter also introduces the con-
+cept of imprinting during gametogenesis, and explains
+the role of methylation in imprinting, particularly
+methylation of the imprinting control region of the
+mouse Igf2/H19 locus. It also introduces the concept
+of transcription factories, where transcription of mul-
+tiple genes occurs. Finally, this chapter refines and
+updates the concept of the enhanceosome.
+
+Chapter 13: Presents a new table showing all the
+ways histones can be modified in vivo; brings back
+the solenoid, alongside the two-start helix, as a
+candidate for the 30-nm fiber structure; and presents
+evidence that chromatin adopts one or the other
+structure, depending on its nucleosome repeat
+length. This chapter also introduces the concept of
+specific histone methylations as markers for tran-
+scription initiation and elongation, and shows how
+this information can be used to infer that RNA poly-
+merase II is poised between initiation and elongation
+on many human protein-encoding genes. It also
+emphasizes the importance of histone modifications
+in affecting not only histone-DNA interactions, but
+also nucleosome-nucleosome interactions and
+recruitment of histone-modifying and chromatin-
+remodeling proteins. Finally, this chapter shows how
+PARP1 (poly[ADP-ribose] polymerase-1) can
+facilitate nucleosome loss from chromatin by
+poly(ADP-ribosyl)ating itself.
+
+Chapter 14: Introduces the exon junction complex
+(EJC), which is added to mRNAs during splicing in
+the nucleus, and shows how the EJC can stimulate
+transcription by facilitating the association of
+mRNAs with ribosomes. This chapter also intro-
+duces exon and intron definition modes of splicing
+and shows how they can be distinguished experi-
+mentally. This test has revealed that higher eukary-
+otes primarily use exon definition and lower
+eukaryotes primarily use intron definition.
+
+Chapter 15: Demonstrates that a subunit of CPSF
+(CPSF-73) is responsible for cutting a pre-mRNA at
+a polyadenylation signal. It also shows that serine 7,
+in addition to serines 2 and 5 in the repeating
+heptad in the CTD of the largest RNA polymerase
+subunit, can be phosphorylated, and shows that this
+serine 7 phosphorylation controls the expression of
+
+Preface         xv
+
+certain genes (e.g., the U2 snRNA gene) by control-
+ling the 3'-end processing of their mRNAs.
+
+Chapter 16: Identifies a single enzyme, tRNA 3' pro-
+cessing endoribonuclease, as the agent that cleaves
+excess nucleotides from the 3’-end of a eukaryotic
+tRNA precursor; points out the overwhelming prev-
+alence of trans-splicing in C. elegans; presents a new
+model for removal of the passenger strand of a
+double-stranded siRNA—cleavage of the passenger
+strand by Ago2; introduces Piwi-interacting RNAs
+(piRNAs) and presents the ping-pong model by
+which they are assumed to amplify themselves and
+inactivate transposons in germ cells; introduces
+plant RNA polymerases IV and V, and describes
+their roles in gene silencing. This chapter also greatly
+expands the coverage of miRNAs, and points out
+that hundreds of miRNAs control thousands of
+plant and animal genes, and that mutations in
+miRNA genes typically have very deleterious effects.
+Chapter 16 also updates the biogenesis of miRNAs,
+introducing two pathways to miRNA production:
+the Drosha and mirtron pathways. Finally, this
+chapter introduces P-bodies, which are involved in
+mRNA decay and translational repression.
+
+Chapter 17: Updates the section on eukaryotic
+viral internal ribosome entry sequences (IRESs).
+Some viruses cleave eIF4G, leaving a remnant
+called p100. Poliovirus IRESs bind to p100 and
+thereby gain access to ribosomes, but hepatitis C
+virus IRESs bind directly to elF3, while hepatitis A
+virus IRESs bind even more directly to ribosomes.
+This chapter also refines the model describing how
+the cleavage of eIF4G affects mammalian host
+mRNA translation. Different cell types respond
+differently to this cleavage. Finally, this chapter
+introduces the concept of the pioneer round of
+translation, and points out that different initiation
+factors are used in the pioneer round than in all
+subsequent rounds.
+
+Chapter 18: Introduces the concept of superwobble,
+which holds that a single tRNA with a U in its wob-
+ble position can recognize codons ending in any of
+the four bases, and presents evidence that superwob-
+ble works. This chapter also introduces the hybrid P/I
+state as the initial ribosomal binding state for fMet-
+tRNA M“ In this state, the anticodon is in the P site,
+but the fMet and acceptor stem are in an “initiator”
+site between the P site and the E site. This chapter
+also describes no-go decay, which degrades mRNA
+containing a stalled ribosome, and introduces the
+concept of codon bias to explain inefficiency of
+translation. Finally, this chapter explains how the
+slowing of translation by rare codons can influence
+protein folding both negatively and positively.
+
+
+<!-- Page 18 -->
+xvi
+
+Preface
+
+。 Chapter 19: Includes a new section based on recent
+crystal structures of the ribosome in complex with
+various elongation factors. One of these structures
+involves aminoacyl-tRNA and EF-Tu, and has
+shown that the tRNA is bent by about 30 degrees in
+forming an A/T complex. This bend is important in
+fidelity of translation, and also facilitates the GTP
+hydrolysis that permits EF-Tu to leave the ribosome.
+Another crystal structure involves EF-G-GDP and
+shows the ribosome in the post-translocation E/E,
+P/P state, as opposed to the spontaneously achieved
+pre-translocation P/E, A/P hybrid state. This chapter
+also provides links to two excellent new movies de-
+scribing the elongation process and an overview of
+translation initiation, elongation, and termination.
+Finally, this chapter describes crystal structures that
+illustrate the functions of two critical parts of RF1
+and RF2 in stop codon recognition and cleavage of
+polypeptides from their tRNAs.
+
+© Chapter 20: Introduces the controversial proposal,
+with evidence, that DNA replication in E. coli is dis-
+continuous on both strands. This chapter also intro-
+duces ACL1, a chromatin remodeler recruited via its
+macrodomain to sites of double-strand breaks by
+poly(ADP-ribose) formed at these sites by poly(ADP-
+ribose) polymerase 1 (PARP-1).
+
+© Chapter 21: Presents a co-crystal structure of a B di-
+mer bound to a primed DNA template, showing that
+the B clamp really does encircle the DNA, but that
+the DNA runs through the circle at an angle of
+20 degrees with respect to the horizontal. This chapter
+also includes a corrected and updated Figure 21.17
+(model of the pollIl* subassembly) to show a single
+y-subunit and the two 7-subunits joined to the core
+polymerases through their flexible C-terminal do-
+mains. This section also clarifies that the y- and
+z-subunits are products of the same gene, but the
+former lacks the C-terminal domain of the latter.
+This chapter also introduces the complex of telomere-
+binding proteins known as shelterin, and focuses on
+the six shelterin proteins of mammals and their roles
+in protecting telomeres, and in preventing inappro-
+priate repair and cell cycle arrest in response to
+normal chromosome ends.
+
+* Chapter 22: Adds a new figure (Figure 22.3) to
+show how different nicking patterns to resolve the
+Holliday junction in the RecBCD pathway lead to
+different recombination products (crossover or
+noncrossover recombinants).
+
+。 Chapter 23: Reports that piRNAs targeting P element
+transposons are likely to be the transposition
+suppressors in the P-M system. Similarly, piRNAs
+appear to play the suppressor role in the I-R trans-
+poson system.
+
+Supplements
+
+For the Student www.mhhe.com/weaverSe
+
+The text website for Molecular Biology is a great place to
+review chapter material and to enhance your study routine.
+Here you will have access to:
+
+© digital image files              。 questions
+
+* animation quizzes              。 web links.
+
+¢ PowerPoint lecture outlines
+
+© answers to end-of-chapter
+
+For the Instructor www.mhhe.com/weaverSe
+The Molecular Biology website offers a wealth of teaching
+and learning aids for instructors and students. Instructors
+
+will appreciate:
+TEST
+
+。 Test bank questions and software
+options with EZ Test Online, desktop
+version or Word docs.
+
+¢ Answers to end-of-chapter questions
+ Lecture outline PowerPoint files
+* Image PowerPoint files
+
+¢ McGraw-Hill Presentation Center
+
+McGraw-Hill Presentation Center
+
+Build instructional materials
+wherever, whenever, and how-
+ever you want! Presentation
+
+Center is an online digital library containing assets such as
+photos, artwork, PowerPoints, animations, and other media
+types that can be used to create customized lectures, visually
+enhanced tests and quizzes, compelling course websites, or
+attractive printed support materials.
+
+Options
+
+You're in charge of your course, so 虽         t
+why not be in control of the content of crea  e
+your textbook? At McGraw-Hill Cus-
+
+tom Publishing, we can help you create the ideal text—the
+one you've always imagined. Quickly. Easily. With more
+than 20 years of experience in custom publishing, we're
+experts. But at McGraw Hill, we’re also innovators,
+leading the way with new methods and means for creating
+simplified value added custom textbooks.
+
+eBooks
+
+Going green . . . it’s on everybody's minds these days. It’s
+not only about saving trees; it’s also about saving money.
+Available for a greatly reduced price, McGraw-Hill eBooks
+are an eco-friendly and cost-savings alternative to the
+traditional print textbook. So, you do some good for the
+environment ... and you do some good for your wallet.
+Visit www.mhhe.com/ebooks for details.
+
+
+<!-- Page 19 -->
+In writing this book, I have been aided immeasurably by the advice of many editors and reviewers. They have contributed
+greatly to the accuracy and readability of the book, but they cannot be held accountable for any remaining errors or
+ambiguities. For those, I take full responsibility. I would like to thank the following people for their help.
+
+Fifth Edition Reviewers
+
+Aimee Bernard
+University of Colorado-
+Denver
+
+Brian Freeman
+University of Illinois,
+Urbana-Champaign
+Dennis Bogyo
+
+Valdosta State University
+Donna Hazelwood
+Dakota State University
+Margaret Ritchey
+Centre College
+
+Nemat Kayhani
+University of Florida
+Nicole Bournias-
+Bardiabasis
+
+California State University,
+San Bernardino
+
+Ruhul Kuddus
+
+Utah Valley University
+Tao Weitao
+
+University of Texas at
+San Antonio
+
+Fourth Edition Reviewers
+Dr. David Asch
+
+Youngstown State University
+Christine E. Bezotte
+
+Elmira College
+
+Mark Bolyard
+
+Southern Illinois University,
+Edwardsville
+
+Diane Caporale
+University of Wisconsin,
+Stevens Point
+
+Jianguo Chen
+Claflin University
+
+Chi-Lien Cheng
+Department of Biological
+Sciences, University of lowa
+
+Mary Ellard-Ivey
+Pacific Lutheran University
+
+Olukemi Fadayomi
+Ferris State University, Big
+Rapids, Michigan
+
+Charles Giardina
+University of Connecticut
+Eli V. Hestermann
+Furman University
+
+Dr. Dorothy Hutter
+Monmouth University
+Cheryl Ingram-Smith
+Clemson University
+
+Dr. Cynthia Keler
+Delaware Valley College
+
+Jack Kennell
+Saint Louis University
+
+Charles H. Mallery
+College of Arts and Sciences,
+University of Miami
+
+Jon L. Milhon
+‘Azusa Pacific University
+
+Hao Nguyen
+California State University,
+Sacramento
+
+Thomas Peterson
+
+Towa State University
+
+Ed Stellwag
+
+East Carolina University
+Katherine M. Walstrom
+New College of Florida
+Cornelius A. Watson
+Roosevelt University
+
+Fadi Zaher
+
+Gateway Technical College
+
+Third Edition Reviewers
+
+David Asch
+Youngstown State
+University
+
+Gerard Barcak
+University of Maryland
+School of Medicine
+
+Bonnie Baxter
+
+Hobart & William Smith
+Colleges
+
+André Bédard
+
+McMaster University
+Felix Breden
+
+Simon Fraser University
+Laura Bull
+
+UCSF Liver Center
+Laboratory
+
+James Ellis
+
+Developmental Biology
+Program, Hospital for Sick
+Children, Toronto, Ontario
+
+Robert Helling
+The University of
+
+Michigan
+
+David Hinkle
+
+University of Rochester
+Robert Leamnson
+University of Massachusetts
+at Dartmouth
+
+David Mullin
+
+Tulane University
+
+Marie Pizzorno
+
+Bucknell University
+Michael Reagan
+
+College of St. Benedict/
+St. John’s University
+
+Rodney Scott
+Wheaton College
+
+Second Edition Reviewers
+Mark Bolyard
+
+Southern Illinois University
+M. Suzanne Bradshaw
+University of Cincinnati
+Anne Britt
+
+University of California, Davis
+Robert Brunner
+
+University of California,
+Berkeley
+
+Caroline J. Decker
+Washington State University
+Jeffery DeJong,
+
+University of Texas, Dallas
+Stephen J. D’Surney
+University of Mississippi
+
+John S. Graham
+Bowling Green State
+University
+
+Ann Grens
+
+Indiana University
+
+Ulla M. Hansen
+Boston University
+Laszlo Hanzely
+Northern Illinois University
+Robert B. Helling
+University of Michigan
+Martinez J. Hewlett
+University of Arizona
+David C. Hinkle
+University of Rochester
+Barbara C. Hoopes
+Colgate University
+Richard B. Imberski
+University of Maryland
+
+Cheryl Ingram-Smith
+Pennsylvania State
+University
+
+xvii
+
+
+<!-- Page 20 -->
+xviii Acknowledgments
+
+Alan Kelly
+University of Oregon
+
+Robert N. Leamnson
+University of Massachusetts,
+Dartmouth
+
+Karen A. Malatesta
+Princeton University
+Robert P. Metzger
+
+San Diego State University
+David A. Mullin
+
+Tulane University
+
+Brian K. Murray
+
+Brigham Young University
+Michael A. Palladino
+Monmouth University
+James G. Patton
+Vanderbilt University
+Martha Peterson
+University of Kentucky
+Marie Pizzorno
+
+Bucknell University
+
+Florence Schmieg
+University of Delaware
+
+Zhaomin Yang
+Auburn University
+
+First Edition Reviewers
+
+Kevin L. Anderson
+Mississippi State University
+
+Rodney P. Anderson
+Ohio Northern University
+
+Prakash H. Bhuta
+Eastern Washington
+University
+
+Dennis Bogyo
+Valdosta State University
+Richard Crawford
+
+Trinity College
+Christopher A. Cullis
+Case Western Reserve
+University
+
+Beth De Stasio
+
+Lawrence University
+
+R. Paul Evans
+
+Brigham Young University
+Edward R. Fliss
+
+Missouri Baptist College
+Michael A. Goldman
+
+San Francisco State
+University
+
+Robert Gregerson
+Lyon College
+
+Eileen Gregory
+
+Rollins College
+
+Barbara A. Hamkalo
+University of California,
+Irvine
+
+Mark L. Hammond
+Campbell University
+Terry L. Helser
+
+State University of New
+York, Oneonta
+
+Carolyn Herman
+Southwestern College
+
+Andrew S. Hopkins
+Alverno College
+Carolyn Jones
+Vincennes University
+Teh-Hui Kao
+Pennsylvania State
+University
+
+Mary Evelyn B. Kelley
+‘Wayne State University
+
+Harry van Keulen
+
+Cleveland State University
+Leo Kretzner
+
+University of South Dakota
+Charles J. Kunert
+
+Concordia University
+Robert N. Leamnson
+University of Massachusetts,
+Dartmouth
+
+James D. Liberatos
+Louisiana Tech University
+Cran Lucas
+
+Louisiana State University
+
+James J. McGivern
+Gannon University
+
+James E. Miller
+Delaware Valley College
+Robert V. Miller
+Oklahoma State
+University
+
+George S. Mourad
+Indiana University-Purdue
+University
+
+David A. Mullin
+Tulane University
+James R. Pierce
+
+Texas A&M University,
+Kingsville
+
+Joel B. Piperberg
+Millersville University
+John E. Rebers
+Northern Michigan
+University
+
+Florence Schmieg
+University of Delaware
+Brian R. Shmaefsky
+Kingwood College
+Paul Keith Small
+Eureka College
+
+David J. Stanton
+Saginaw Valley State
+University
+
+Francis X. Steiner
+Hillsdale College
+
+Amy Cheng Vollmer
+Swarthmore College
+Dan Weeks
+
+University of Iowa
+David B. Wing
+
+New Mexico Institute of
+Mining & Technology

@@ -1,0 +1,2648 @@
+<!-- Page 1 -->
+MOLECULAR
+BIOLOGY
+m GENE
+
+WATSON + BAKER « BELL
+GANN © LEVINE + LOSICK
+
+
+<!-- Page 2 -->
+MOLECULAR
+BIOLOGY
+me GENE
+
+SEVENTH EDITION
+
+
+<!-- Page 3 -->
+This page intentionally left blank
+
+
+<!-- Page 4 -->
+MOLECULAR
+BILOLOGY
+me GENE
+
+SEVENTH EDITION
+
+James D. WaTSON                  ALEXANDER GANN
+Cold Spring Harbor Laboratory                                                   Cold Spring Harbor Laboratory
+TANIA A. BAKER                   MICHAEL LEVINE
+Massachusetts Institute of Technology                                              University of California, Berkeley
+STEPHEN P. BELL                   RICHARD LOSICK
+Massachusetts Institute of Technology                                                        Harvard University
+With
+
+STEPHEN C. HARRISON
+
+Harvard Medical School
+(Chapter 6: The Structure of Proteins)
+
+PEARSON
+
+Boston Columbus Indianapolis New York San Francisco Upper Saddle River
+Amsterdam Cape Town Dubai London Madrid Milan Munich Paris Montréal Toronto
+Delhi Mexico City Sao Paulo Sydney Hong Kong Seoul Singapore Taipei Tokyo
+
+COLD SPRING HARBOR LABORATORY PRESS
+Cold Spring Harbor, New York
+
+
+
+<!-- Page 5 -->
+PEARSON
+
+Editor-in-Chief: Beth Wilbur
+
+Senior Acquisitions Editor: Josh Frost
+
+Executive Director of Development: Deborah Gale
+Assistant Editor: Katherine Harrison-Adcock
+Managing Editor: Michael Early
+
+Production Project Manager: Lori Newman
+Illustrators: Dragonfly Media Group
+Manufacturing Buyer: Michael Penne
+
+Director of Marketing: Christy Lesko
+
+Executive Marketing Manager: Lauren Harp
+
+COLD SPRING HARBOR LABORATORY PRESS
+
+Publisher and Sponsoring Editor: John Inglis
+
+Editorial Director: Alexander Gann
+
+Director of Editorial Development: Jan Argentine
+
+Managing Editor and Developmental Editor: Kaaren Janssen
+
+Project Manager: Inez Sialiano
+
+Production Manager: Denise Weiss
+
+Production Editor: Kathleen Bubbeo
+
+Permissions Coordinator: Carol Brown
+
+Crystal Structure Images: Leemor Joshua-Tor and Stephen C. Harrison
+Cover Designer: Mike Albano
+
+Executive Media Producer: Laura Tommasi
+
+Editorial Media Producer: Lee Ann Doctor
+
+Supervising Media Project Manager: David Chavez
+
+Director of Content Development, MasteringBiology: Natania Mlawer
+Content Specialist, MasteringBiology: J. Zane Barlow, PhD
+
+Front and Back Cover Images: Far left, drawing by Francis Crick, Wellcome Library, London. Second from left, from Watson J.D.
+and Crick F.H.C. 1953. Nature 171: 737-738. Second from right, Irving Geis illustration. Rights owned by Howard Hughes Medical
+Institute. Not to be reproduced without permission. Far right, structure by Leemor Joshua-Tor (image prepared with PyMOL).
+
+Credits and acknowledgments for materials borrowed from other sources and reproduced, with permission,
+in this textbook appear on the appropriate page within the text.
+
+Copyright © 2014, 2008, 2004 Pearson Education, Inc. All rights reserved. Manufactured in the United States of America. This
+publication is protected by Copyright, and permission should be obtained from the publisher prior to any prohibited reproduc-
+tion, storage in a retrieval system, or transmission in any form or by any means, electronic, mechanical, photocopying, recording,
+or likewise. To obtain permission(s) to use material from this work, please submit a written request to Pearson Education, Inc.,
+Permissions Department, 1900 E. Lake Ave., Glenview, IL 60025. For information regarding permissions, call (847) 486-2635.
+
+Readers may view, browse, and/or download material for temporary copying purposes only, provided these uses are for noncom-
+mercial personal purposes. Except as provided by law, this material may not be further reproduced, distributed, transmitted,
+modified, adapted, performed, displayed, published, or sold in whole or in part, without prior written permission from the
+publisher.
+
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as trademarks. Where those
+designations appear in this book, and the publisher was aware ofa trademark claim, the designations have been printed in initial
+caps or all caps.
+
+MasteringBiology and BioF lix are trademarks, in the U.S. and/or other countries, of Pearson Education, Inc. or its affiliates.
+
+Library of Congress Cataloging-in-Publication Data
+Watson, James D.
+Molecular biology of the gene / James D. Watson, Cold Spring Harbor Laboratory, Tania A. Baker, Massachusetts Institute of Technology,
+Alexander Gann, Cold Spring Harbor Laboratory, Michael Levine, University of California, Berkeley, Richard Losick, Harvard University,
+pages cm
+Includes bibliographical references and index.
+ISBN-13: 978-0-321-76243-6 (hardcover (student ed))
+ISBN-10: 0-321-76243-6 (hardcover (student ed))
+ISBN-13: 978-0-321-90537-6 (paper (a la carte))
+ISBN-10: 0-321-90537-7 (paper (a la carte))
+[etc.]
+1. Molecular biology--Textbooks. 2. Molecular genetics--Textbooks. I. Title.
+QH506.M6627 2013
+572’.33--de23
+
+2012046093
+
+1234567 8 9 10—DOW—17 16 15 14 13
+
+PEARSO
+
+www.pearsonhighered.com
+
+ISBN 10: 0-321-76243-6 (Student Edition)
+ISBN 13: 978-0-321-76243-6 (Student Edition)
+
+ISBN 10: 0-321-90264-5 (Instructor's Review Copy)
+COLD SPRING HARBOR                                  ISBN 13: 978-0-321-90264-1 (Instructor's Review Copy)
+
+LABORATORY PRESS                                         ISBN 10: 0-321-90537-7 (Books a la Carte Edition)
+www.cshipress.org                                                     ISBN 13: 978-0-321-90537-6 (Books a la Carte Edition)
+
+
+
+<!-- Page 6 -->
+Preface
+
+the 60th anniversary of the discovery of the structure of DNA in 1953, an occasion
+
+celebrated by our cover design. The double-helical structure, held together by spe-
+cific pairing between the bases on the two strands, has become one of the iconic images
+of science. The image of the microscope was perhaps the icon of science in the late
+19th century, displaced by the mid 20th century by the graphical representation of the
+atom with its orbiting electrons. But by the end of the century that image had in turn given
+way to the double helix.
+
+The field of molecular biology as we understand it today was born out of the discovery
+ofthe DNA structure and the agenda for research that that structure immediately provided.
+The paper by Watson and Crick proposing the double helix ended with a now famous sen-
+tence: “It has not escaped our notice that the specific pairing we have postulated immedi-
+ately suggests a possible copying mechanism for the genetic material.” The structure
+suggested how DNA could replicate, opening the way to investigate, in molecular terms,
+how genes are passed down through generations. It was also immediately apparent that
+the order of bases along a DNA molecule could represent a “genetic code,” and so an attack
+on that second great mystery of genetics—how genes encode characteristics—could also
+be launched.
+
+By the time the first edition of Molecular Biology of the Gene was published, just 12
+years later in 1965, it had been confirmed that DNA replicated in the manner suggested
+by the model, the genetic code had all but been cracked, and the mechanism by which
+genes are expressed, and how that expression is regulated, had been established at least
+in outline. The field of molecular biology was ripe for its first textbook, defining for the
+first time the curriculum for undergraduate courses in this topic.
+
+Our understanding of the mechanisms underlying these processes has hugely
+increased over the last 48 years since that first edition, often driven by technological
+advances, including DNA sequencing (another anniversary this year is the 10th anniver-
+sary of completion of the human genome project). The current edition of Molecular Biol-
+ogy of the Gene celebrates both the central intellectual framework of the field put in place
+in that first edition and the extraordinary mechanistic, biological, and evolutionary
+understanding that has since been achieved.
+
+Te NEW EDITION OF MOLECULAR BIOLOGY OF THE GENE appears in this, its 7th edition, on
+
+New to This Edition
+
+There are a number of major changes to the new edition. As well as wide-ranging updates,
+these include changes in organization, addition of completely new chapters, and the addi-
+tion of new topics within existing chapters.
+
+e New Part 2 on the Structure and Study of Macromolecules. In this new section, each of the
+three major macromolecules gets its own chapter. The DNA chapter is retained from the
+previous edition, but what was previously just a short section at the end of that chapter
+is now expanded into a whole new chapter on the structure of RNA. The chapter on
+the structure of proteins is completely new and was written for this edition by Stephen
+Harrison (Harvard University).
+
+
+<!-- Page 7 -->
+Vi
+
+Preface
+
+e Techniques chapter moved from the end of the book into Part 2. This revised and relocated
+chapter introduces the important techniques that will be referred to throughout the
+book. In addition to many of the basic techniques of molecular biology, this chapter
+now includes an updated section on many genomics techniques routinely employed
+by molecular biologists. Techniques more specialized for particular chapters appear
+as boxes within those chapters.
+
+© Completely new chapter on The Origin and Early Evolution of Life. This chapter shows how
+the techniques of molecular biology and biochemistry allow us to consider—even
+reconstruct—how life might have arisen and addresses the prospect of creating life
+in a test tube (synthetic biology). The chapter also reveals how, even at the very early
+stages of life, molecular processes were subject to evolution.
+
+e New material on many aspects of gene regulation. Part 5 of the book is concerned with gene
+regulation. In this edition we have introduced significant new topics, such as quorum
+sensing in bacterial populations, the bacterial CRISPR defense system and piRNAs in
+animals, the function of Polycomb, and increased discussion of other so-called “epige-
+netic” mechanisms of gene regulation in higher eukaryotes. The regulation of “paused
+polymerase” at many genes during animal development and the critical involvement of
+nucleosome positioning and remodeling at promoters during gene activation are also
+new topics to this edition.
+
+e End-of-chapter questions. Appearing for the first time in this edition, these include both
+short answer and data analysis questions. The answers to the even-numbered questions
+are included as Appendix 2 at the back of the book.
+
+@ New experiments and experimental approaches reflecting recent advances in research. Inte-
+grated within the text are new experimental approaches and applications that broaden
+the horizons of research. These include, for example, a description of how the genetic
+code can be experimentally expanded to generate novel proteins, creation ofa synthetic
+genome to identify the minimal features required for life, discussion of new genome-
+wide analysis of nucleosome positioning, experiments on bimodal switches in bacte-
+ria, and how new antibacterial drugs are being designed that target the quorum-sensing
+pathways required for pathogenesis.
+
+Supplements
+
+MasteringBiology www.masteringbiology.com
+
+MasteringBiology is an online homework, tutorial, and assessment system that delivers
+self-paced tutorials that provide individualized coaching, focus on your course objectives,
+and are responsive to each student’s progress. The Mastering system helps instructors
+maximize class time with customizable, easy-to-assign, and automatically graded assess-
+ments that motivate students to learn outside of class and arrive prepared for lecture. Mas-
+teringBiology includes the book’s end-of-chapter problems, eighteen 3D _ structure
+tutorials, reading quizzes, animations, videos, and a wide variety of activities. The eText
+is also available through MasteringBiology, providing access to the complete textbook and
+featuring powerful interactive and customization functions.
+
+Instructor Resource DVD 978-0-321-88342-1/0-321-88342-X
+
+Available free to all adopters, this dual-platform DVD-ROM contains all art and tables
+from the book in JPEG and PowerPoint in high-resolution (150 dpi) files. The PowerPoint
+slides include problems formatted for use with Classroom Response Systems. This DVD-
+ROM also contains an answer key for all of the end-of-chapter Critical Thinking questions
+included in MasteringBiology.
+
+Transparency Acetates 978-0-321-88341-4/0-321-88341-1
+Features approximately 90 four-color illustrations from the text. These transparencies are
+free to all adopters.
+
+
+<!-- Page 8 -->
+Cold Spring Harbor Laboratory Photographs
+
+As in the previous edition, each part opener includes photographs, some newly added to
+this edition. These pictures, selected from the archives of Cold Spring Harbor Laboratory,
+were all taken at the Lab, the great majority during the Symposia hosted there almost every
+summer since 1933. Captions identify who is in each picture and when it was taken. Many
+more examples of these historic photos can be found at the CSHL archives website (http://
+archives.cshl.edu/).
+
+Acknowledgments
+
+Parts of the current edition grew out ofan introductory course on molecular biology taught
+by one of us (RL) at Harvard University, and this author is grateful to Steve Harrison and
+Jim Wang who contributed to this course in past years. In the case of Steve Harrison, we are
+additionally indebted to him for writing and illustrating a brand new chapter on protein
+structure especially for this new edition. No one could be better qualified for such a task,
+and we are the grateful beneficiaries of—and the book is immeasurably improved by—his
+contribution.
+
+We are also grateful to Craig Hunter, who earlier wrote the section on the worm for
+Appendix 1, and to Rob Martienssen, who wrote the section on plants for that same
+appendix.
+
+We have shown sections of the manuscript to various colleagues and their comments
+have been extremely helpful. Specifically we thank Katsura Asano, Stephen Blacklow,
+Jamie Cate, Amy Caudy, Irene Chen, Victoria D’Souza, Richard Ebright, Mike Eisen, Chris
+Fromme, Brenton Graveley, Chris Hammell, Steve Hahn, Oliver Hobert, Ann Hochschild,
+Jim Hu, David Jerulzalmi, Leemor Joshua-Tor, Sandy Johnson, Andrew Knoll, Adrian
+Krainer, Julian Lewis, Sue Lovett, Karolin Luger, Kristen Lynch, Rob Martienssen, Bill
+McGinnis, Matt Michael, Lily Mirels, Nipam Patel, Mark Ptashne, Danny Reinberg, Dimi-
+tar Sasselov, David Shechner, Sarah T. Stewart-Mukhopadhyay, Bruce Stillman, and Jack
+Szostak.
+
+We also thank those who provided us with figures, or the wherewithal to create them:
+Sean Carroll, Seth Darst, Paul Fransz, Brenton Graveley, Ann Hochschild, Julian Lewis,
+Bill McGinnis, Phoebe Rice, Dan Rokhsar, Nori Satoh, Matt Scott, Ali Shilatifard, Peter
+Sorger, Tom Steitz, Andrzej Stasiak, Dan Voytas, and Steve West.
+
+New to this edition are end-of-chapter questions, provided by Mary Ellen Wiltrout, and
+we thank her for these efforts that have enhanced the new edition. In addition, Mary Ellen
+helped with revisions to the DNA repair chapter.
+
+We are indebted to Leemor Joshua-Tor, who so beautifully rendered the majority of the
+structure figures throughout the book. Her skill and patience are much appreciated.
+
+We are also grateful to those who provided their software’: Per Kraulis, Robert Esnouf,
+Ethan Merritt, Barry Honig, and Warren Delano. Coordinates were obtained from the
+Protein Data Bank (www.rcsb.org/pdb/), and citations to those who solved each structure
+are included in the figure legends.
+
+Our art program was again executed by a team from the Dragonfly Media Group, led by
+Craig Durant. Denise Weiss and Mike Albano produced a beautiful cover design. We thank
+Clare Bunce and the CSHL Archive for providing the photos for the part openers and for
+much help tracking them down.
+
+We thank Josh Frost at Pearson who oversaw our efforts and was always on hand to help
+us out or provide advice. In development at CSHL Press, Jan Argentine provided great sup-
+port, guidance, and perspective throughout the process. Our heartfelt thanks to Kaaren
+Janssen who was once again our constant savior—editing and organizing, encouraging
+and understanding—and unstintingly good-humored even on the darkest days. Inez
+Sialiano kept track of the output, and Carol Brown dealt with the permissions as effi-
+ciently as ever. In production, we relied heavily on the extraordinary efforts and patience
+
+Preface
+
+vii
+
+
+<!-- Page 9 -->
+viii
+
+Preface
+
+of Kathleen Bubbeo, for which we are most grateful. And we must also thank Denise
+Weiss, who oversaw production and ensured that the book looked so good by finessing
+the page layout and creating the design. John Inglis as ever created the environment in
+which this could all take place.
+
+And once again, we thank our families for putting up with this book for a third time!
+
+James D. WATSON
+TANIA A. BAKER
+STEPHEN P. BELL
+
+ALEXANDER GANN
+MICHAEL LEVINE
+RICHARD LOSICK
+
+1Per Kraulis granted permission to use MolScript (Kraulis P.J. 1991. MOLSCRIPT: A program to produce both
+detailed and schematic plots of protein structures. J. Appl. Cryst. 24: 946-950). Robert Esnouf gave permission
+to use BobScript (Esnouf R.M. 1997. J. Mol. Graph. 15: 132-134). In addition, Ethan Merritt gave us use of
+Raster3D (Merritt E.A. and Bacon D,J. 1997. Raster3D: Photorealistic molecular graphics. Methods Enzymol.
+277: 505-524), and Barry Honig granted permission to use GRASP (Nicolls A., Sharp K.A., and Honig B.
+1991. Protein folding and association: Insights from the interfacial and thermodynamic properties of hydrocar-
+bons. Proteins 11: 281-296). Warren DeLano agreed to the use of PYMOL (DeLano W.L. 2002. The PyMOL Molec-
+ular Graphics System. DeLano Scientific, Palo Alto, California)
+
+
+<!-- Page 10 -->
+About the Authors
+
+JAMES D. WATSON is Chancellor Emeritus at Cold Spring Harbor Laboratory, where he
+was previously its Director from 1968 to 1993, President from 1994 to 2003, and Chancel-
+lor from 2003 to 2007. He spent his undergraduate years at the University of Chicago and
+received his Ph.D. in 1950 from Indiana University. Between 1950 and 1953, he did post-
+doctoral research in Copenhagen and Cambridge, England. While at Cambridge, he began
+the collaboration that resulted in the elucidation of the double-helical structure of DNA in
+1953. (For this discovery, Watson, Francis Crick, and Maurice Wilkins were awarded the
+Nobel Prize in 1962.) Later in 1953, he went to the California Institute of Technology. He
+moved to Harvard in 1955, where he taught and did research on RNA synthesis and pro-
+tein synthesis until 1976. He was the first Director of the National Center for Genome
+Research of the National Institutes of Health from 1989 to 1992. Dr. Watson was sole
+author of the first, second, and third editions of Molecular Biology of the Gene, and a
+co-author of the fourth, fifth and sixth editions. These were published in 1965, 1970,
+1976, 1987, 2003, and 2007, respectively. He is also a co-author of two other textbooks,
+Molecular Biology of the Cell and Recombinant DNA, as well as author of the celebrated
+1968 memoir, The Double Helix, which in 2012 was listed by the Library of Congress as
+one of the 88 Books That Shaped America.
+
+TANIA A. BAKER is the Head of the Department and Whitehead Professor of Biology at the
+Massachusetts Institute of Technology and an Investigator of the Howard Hughes Medical
+Institute. She received a B.S. in biochemistry from the University of Wisconsin, Madison,
+and a Ph.D. in biochemistry from Stanford University in 1988. Her graduate research was
+carried out in the laboratory of Professor Arthur Kornberg and focused on mechanisms
+of initiation of DNA replication. She did postdoctoral research in the laboratory of
+Dr. Kiyoshi Mizuuchi at the National Institutes of Health, studying the mechanism and
+regulation of DNA transposition. Her current research explores mechanisms and regula-
+tion of genetic recombination, enzyme-catalyzed protein unfolding, and ATP-dependent
+protein degradation. Professor Baker received the 2001 Eli Lilly Research Award from the
+American Society of Microbiology and the 2000 MIT School of Science Teaching Prize for
+Undergraduate Education and is a Fellow of the American Academy of Arts and Sciences
+since 2004 and was elected to the National Academy of Sciences in 2007. She is co-author
+(with Arthur Kornberg) of the book DNA Replication, Second Edition.
+
+STEPHEN P. BELL is a Professor of Biology at the Massachusetts Institute of Technology
+and an Investigator of the Howard Hughes Medical Institute. He received B.A. degrees
+from the Department of Biochemistry, Molecular Biology, and Cell Biology and the Inte-
+grated Sciences Program at Northwestern University and a Ph.D. in biochemistry at the
+University of California, Berkeley, in 1991. His graduate research was carried out in the
+laboratory of Dr. Robert Tjian and focused on eukaryotic transcription. He did postdoc-
+toral research in the laboratory of Dr. Bruce Stillman at Cold Spring Harbor Laboratory,
+working on the initiation of eukaryotic DNA replication. His current research focuses
+on the mechanisms controlling the duplication of eukaryotic chromosomes. Professor
+Bell received the 2001 ASBMB-Schering Plough Scientific Achievement Award, the
+
+ix
+
+
+<!-- Page 11 -->
+X
+
+About the Authors
+
+1998 Everett Moore Baker Memorial Award for Excellence in Undergraduate Teaching at
+MIT, the 2006 MIT School of Science Teaching Award, and the 2009 National Academy of
+Sciences Molecular Biology Award.
+
+ALEXANDER GANN is the Lita Annenberg Hazen Dean and Professor in the Watson
+School of Biological Sciences at Cold Spring Harbor Laboratory. He is also a Senior Editor
+at Cold Spring Harbor Laboratory Press. He received his B.Sc. in microbiology from
+University College London and a Ph.D. in molecular biology from The University of
+Edinburgh in 1989. His graduate research was carried out in the laboratory of Noreen
+Murray and focused on DNA recognition by restriction enzymes. He did postdoctoral
+research in the laboratory of Mark Ptashne at Harvard, working on transcriptional regula-
+tion, and that of Jeremy Brockes at the Ludwig Institute of Cancer Research at University
+College London, where he worked on newt limb regeneration. He was a Lecturer at
+Lancaster University, United Kingdom, from 1996 to 1999, before moving to Cold Spring
+Harbor Laboratory. He is co-author (with Mark Ptashne) of the book Genes & Signals
+(2002) and co-editor (with Jan Witkowski) of The Annotated and Illustrated Double Helix
+(2012).
+
+MICHAEL LEVINE is a Professor of Genetics, Genomics and Development at the Univer-
+sity of California, Berkeley, and is also Co-Director of the Center for Integrative Genomics.
+He received his B.A. from the Department of Genetics at the University of California,
+Berkeley, and his Ph.D. with Alan Garen in the Department of Molecular Biophysics
+and Biochemistry from Yale University in 1981. As a Postdoctoral Fellow with Walter
+Gehring and Gerry Rubin from 1982 to 1984, he studied the molecular genetics of Droso-
+phila development. Professor Levine's research group currently studies the gene networks
+responsible for the gastrulation of the Drosophila and Ciona (sea squirt) embryos. He
+holds the F. Williams Chair in Genetics and Development at University of California, Ber-
+keley. He was awarded the Monsanto Prize in Molecular Biology from the
+National Academy of Sciences in 1996 and was elected to the American Academy of
+Arts and Sciences in 1996 and the National Academy of Sciences in 1998.
+
+RICHARD LOSICK is the Maria Moors Cabot Professor of Biology, a Harvard College Pro-
+fessor, and a Howard Hughes Medical Institute Professor in the Faculty of Arts and Scien-
+ces at Harvard University. He received his A.B. in chemistry at Princeton University and
+his Ph.D. in biochemistry at the Massachusetts Institute of Technology. Upon completion
+of his graduate work, Professor Losick was named a Junior Fellow of the Harvard Society
+of Fellows when he began his studies on RNA polymerase and the regulation of gene tran-
+scription in bacteria. Professor Losick is a past Chairman of the Departments of Cellular
+and Developmental Biology and Molecular and Cellular Biology at Harvard University.
+He received the Camille and Henry Dreyfus Teacher-Scholar Award and is a member of
+the National Academy of Sciences, a Fellow of the American Academy of Arts and Scien-
+ces, a Fellow of the American Association for the Advancement of Science, a Fellow of the
+American Academy of Microbiology, a member of the American Philosophical Society,
+and a former Visiting Scholar of the Phi Beta Kappa Society. Professor Losick is the
+2007 winner of the Selman A. Waksman Award of the National Academy of Sciences,
+a 2009 winner of the Canada Gairdner Award, a 2012 winner of the Louisa Gross
+Horwitz Prize for Biology or Biochemistry of Columbia University, and a 2012 winner
+of the Harvard University Fannie Cox Award for Excellence in Science Teaching.
+
+
+<!-- Page 12 -->
+Class Testers and Reviewers
+
+We wish to thank all of the instructors for their thoughtful suggestions
+
+and comments on versions of many chapters in this book.
+
+Chapter Reviewers
+
+Ann Aguanno, Marymount Manhattan College
+David P. Aiello, Austin College
+Charles F. Austerberry, Creighton University
+
+David G. Bear, University of New Mexico Health
+Sciences Center
+
+Margaret E. Beard, College of the Holy Cross
+
+Gail S. Begley, Northeastern University
+
+Sanford Bernstein, San Diego State University
+
+Michael Blaber, Florida State University
+
+Nicole Bournias, California State University, San Bernardino
+John Boyle, Mississippi State University
+
+Suzanne Bradshaw, University of Cincinnati
+
+John G. Burr, University of Texas at Dallas
+
+Michael A. Campbell, Pennsylvania State University, Erie,
+The Behrend College
+
+Aaron Cassill, University of Texas at San Antonio
+Shirley Coomber, King’s College, University of London
+Anne Cordon, University of Toronto
+
+Sumana Datta, Texas A&M University
+
+Jeff DeJong, University of Texas at Dallas
+
+Jurgen Denecke, University of Leeds
+
+Susan M. DiBartolomeis, Millersville University
+Santosh R. D’Mello, University of Texas at Dallas
+Robert J. Duronio, University of North Carolina, Chapel Hill
+Steven W. Edwards, University of Liverpool
+
+David Frick, University of Wisconsin
+
+Allen Gathman, Southeast Missouri State University
+Anthony D.M. Glass, University of British Columbia
+Elliott S. Goldstein, Arizona State University
+
+Ann Grens, Indiana University, South Bend
+
+Gregory B. Hecht, Rowan University
+
+Robert B. Helling, University of Michigan
+
+David C. Higgs, University of Wisconsin, Parkside
+Mark Kainz, Colgate University
+
+Gregory M. Kelly, University of Western Ontario
+Ann Kleinschmidt, Allegheny College
+
+Dan Krane, Wright State University
+
+Mark Levinthal, Purdue University
+
+Gary J. Lindquester, Rhodes College
+
+James Lodolce, Loyola University Chicago
+Curtis Loer, University of San Diego
+
+Virginia McDonough, Hope College
+
+Michael J. McPherson, University of Leeds
+Victoria Meller, Tufts University
+
+William L. Miller, North Carolina State University
+Dragana Miskovic, University of Waterloo
+
+David Mullin, Tulane University
+
+Jeffrey D. Newman, Lycoming College
+
+James B. Olesen, Ball State University
+
+Anthony J. Otsuka, Illinois State University
+Karen Palter, Temple University
+
+James G. Patton, Vanderbilt University
+
+Ian R. Phillips, Queen Mary, University of London
+Steve Picksley, University of Bradford
+
+Debra Pires, University of California, Los Angeles
+Todd P. Primm, University of Texas at B Paso
+Phillip E. Ryals, The University of West Florida
+Eva Sapi, University of New Haven
+
+Jon B. Scales, Midwestern State University
+Michael Schultze, University of York
+
+Venkat Sharma, University of West Florida
+
+xi
+
+
+<!-- Page 13 -->
+xii        Class Testers and Reviewers
+
+Erica L. Shelley, University of Toronto at Mississauga
+Elizabeth A. Shephard, University College, London
+Margaret E. Stevens, Ripon College
+
+Akif Uzman, University of Houston, Downtown
+Quinn Vega, Montclair State University
+
+Jeffrey M. Voight, Albany College of Pharmacy
+
+Lori L. Wallrath, University of lowa
+
+Robert Wiggers, Stephen F. Austin State University
+Bruce C. Wightman, Muhlenberg College
+
+Bob Zimmermann, University of Massachusetts
+
+Class Testers
+
+Charles F. Austerberry, Creighton University
+Christine E. Bezotté, Elmira College
+
+Astrid Helfant, Hamilton College
+
+Gerald Joyce, The Scripps Research Institute
+Jocelyn Krebs, University of Alaska, Anchorage
+Cran Lucas, Louisiana State University in Shreveport
+Anthony J. Otsuka, Illinois State University
+Charles Polson, Florida Institute of Technology
+Ming-Che Shih, University of lowa
+
+
+<!-- Page 14 -->
+Brief Contents
+
+HISTORY, 1
+
+1 The Mendelian View of the World, 5
+
+2 Nucleic Acids Convey Genetic Information, 21
+
+PART 2
+
+BI le
+
+STRUCTURE AND STUDY OF
+MACROMOLECULES, 45
+
+3 The Importance of Weak and Strong Chemical
+Bonds, 51
+
+The Structure of DNA, 77
+The Structure and Versatility of RNA, 107
+
+The Structure of Proteins, 121
+
+Nao A
+
+Techniques of Molecular Biology, 147
+
+PART 3
+fae [>
+
+MAINTENANCE OF THE GENOME, 193
+
+8 Genome Structure, Chromatin, and the
+Nucleosome, 199
+
+9 The Replication of DNA, 257
+10 The Mutability and Repair of DNA, 313
+
+11 Homologous Recombination at the Molecular
+Level, 341
+
+12 Site-Specific Recombination and Transposition
+of DNA, 377
+
+a
+
+EXPRESSION OF THE GENOME, 423
+
+13 Mechanisms of Transcription, 429
+
+14 RNA Splicing, 467
+
+15 Translation, 509
+
+16 The Genetic Code, 573
+
+17 The Origin and Early Evolution of Life, 593
+
+PART 5
+
+of
+ma
+
+REGULATION, 609
+
+18 Transcriptional Regulation in Prokaryotes, 615
+19 Transcriptional Regulation in Eukaryotes, 657
+20 Regulatory RNAs, 701
+
+21 Gene Regulation in Development and
+Evolution, 733
+
+22 Systems Biology, 775
+
+PART 6
+
+15
+
+APPENDICES, 793
+
+1 Model Organisms, 797
+2 Answers, 831
+
+Index, 845
+
+
+
+<!-- Page 15 -->
+This page intentionally left blank
+
+
+<!-- Page 16 -->
+Detailed Contents
+
+PART 1: HISTORY, 1
+
+和
+
+MENDEL’S DISCOVERIES, 6
+The Principle of Independent Segregation, 6
+ADVANCED CONCEPTS BOX 1-1 Mendelian Laws, 6
+Some Alleles Are neither Dominant nor Recessive, 7
+Principle of Independent Assortment, 8
+
+CHROMOSOMAL THEORY OF HEREDITY, 8
+
+GENE LINKAGE AND CROSSING OVER, 9
+
+KEY EXPERIMENTS BOX 1-2 Genes Are Linked to
+Chromosomes, 10
+
+CHROMOSOME MAPPING, 11
+
+>| 1 The Mendelian View of the World, 5
+
+THE ORIGIN OF GENETIC VARIABILITY.
+THROUGH MUTATIONS, 13
+
+EARLY SPECULATIONS ABOUT WHAT GENES
+ARE AND HOW THEY ACT, 15
+
+PRELIMINARY ATTEMPTS TO FIND A GENE-
+PROTEIN RELATIONSHIP, 16
+
+SUMMARY, 17
+BIBLIOGRAPHY, 17
+QUESTIONS, 18
+
+[四  2 Nucleic Acids Convey Genetic Information, 21
+
+AVERY'S BOMBSHELL: DNA CAN CARRY GENETIC
+SPECIFICITY, 22
+
+Viral Genes Are Also Nucleic Acids, 23
+
+THE DOUBLE HELIX, 24
+KEY EXPERIMENTS BOX 2-1 Chargaff’s Rules, 26
+Finding the Polymerases That Make DNA, 26
+Experimental Evidence Favors Strand Separation
+during DNA Replication, 27
+
+THE GENETIC INFORMATION WITHIN DNA IS
+CONVEYED BY THE SEQUENCE OF ITS FOUR
+NUCLEOTIDE BUILDING BLOCKS, 30
+KEY EXPERIMENTS BOX 2-2 Evidence That Genes
+Control Amino Acid Sequences in Proteins, 31
+DNA Cannot Be the Template That Directly Orders
+Amino Acids during Protein Synthesis, 32
+
+RNA Is Chemically Very Similar to DNA, 32
+THE CENTRAL DOGMA, 33
+
+The Adaptor Hypothesis of Crick, 34
+Discovery of Transfer RNA, 34
+
+The Paradox of the Nonspecific-Appearing
+Ribosomes, 35,
+
+Discovery of Messenger RNA (mRNA), 35
+Enzymatic Synthesis of RNA upon DNA Templates, 35
+Establishing the Genetic Code, 37
+
+ESTABLISHING THE DIRECTION OF PROTEIN
+SYNTHESIS, 38
+
+Start and Stop Signals Are Also Encoded
+within DNA, 40
+
+THE ERA OF GENOMICS, 40
+SUMMARY, 41
+BIBLIOGRAPHY, 42
+
+QUESTIONS, 42
+
+xv
+
+
+<!-- Page 17 -->
+xvi       Detailed Contents
+
+PART 2: STRUCTURE AND STUDY
+OF MACROMOLECULES, 45
+
+CHARACTERISTICS OF CHEMICAL BONDS, 51
+
+Chemical Bonds Are Explainable in Quantum-
+Mechanical Terms, 52
+
+Chemical-Bond Formation Involves a Change in the
+Form of Energy, 53
+
+Equilibrium between Bond Making and Breaking, 53
+
+THE CONCEPT OF FREE ENERGY, 54
+Ka Is Exponentially Related to AG, 54
+Covalent Bonds Are Very Strong, 54
+
+WEAK BONDS IN BIOLOGICAL SYSTEMS, 55
+
+Weak Bonds Have Energies between 1 and
+7 keal/mol, 55
+
+Weak Bonds Are Constantly Made and Broken at
+Physiological Temperatures, 55
+
+The Distinction between Polar and Nonpolar
+Molecules, 55
+
+van der Waals Forces, 56
+Hydrogen Bonds, 57
+Some Ionic Bonds Are Hydrogen Bonds, 58
+
+Weak Interactions Demand Complementary
+Molecular Surfaces, 58
+
+Water Molecules Form Hydrogen Bonds, 59
+
+Weak Bonds between Molecules in Aqueous
+Solutions, 59
+
+Organic Molecules That Tend to Form Hydrogen
+Bonds Are Water Soluble, 60
+
+Hydrophobic “Bonds” Stabilize Macromolecules, 60
+
+ADVANCED CONCEPTS BOX 3-1 The Uniqueness of
+Molecular Shapes and the Concept of Selective
+Stickiness, 61
+
+The Advantage of AG between 2 and 5 kcal/mol, 62
+
+Fal 4 The Structure of DNA, 77
+
+DNA STRUCTURE, 78
+DNA Is Composed of Polynucleotide Chains, 78
+Each Base Has Its Preferred Tautomeric
+Form, 80
+
+The Two Strands of the Double Helix Are Wound
+around Each Other in an Antiparallel
+Orientation, 81
+
+The Two Chains of the Double Helix Have
+Complementary Sequences, 81
+
+3 The Importance of Weak and Strong Chemical Bonds, 51
+
+Weak Bonds Attach Enzymes to Substrates, 62
+
+Weak Bonds Mediate Most Protein—DNA and
+Protein-Protein Interactions, 62
+
+HIGH-ENERGY BONDS, 63
+
+MOLECULES THAT DONATE ENERGY ARE
+THERMODYNAMICALLY UNSTABLE, 63
+
+ENZYMES LOWER ACTIVATION ENERGIES IN
+BIOCHEMICAL REACTIONS, 65
+
+FREE ENERGY IN BIOMOLECULES, 66
+
+High-Energy Bonds Hydrolyze with Large
+Negative AG, 66
+
+HIGH-ENERGY BONDS IN BIOSYNTHETIC
+REACTIONS, 67
+
+Peptide Bonds Hydrolyze Spontaneously, 68
+Coupling of Negative with Positive AG, 69
+
+ACTIVATION OF PRECURSORS IN GROUP
+TRANSFER REACTIONS, 69
+
+ATP Versatility in Group Transfer, 70
+Activation of Amino Acids by Attachment of AMP, 70
+
+Nucleic Acid Precursors Are Activated by the
+Presence of @ ~ @, 71
+
+The Value of @ ~ @ Release in Nucleic Acid
+Synthesis, 72
+
+© ~ @ Splits Characterize Most Biosynthetic
+Reactions, 73
+SUMMARY, 74
+BIBLIOGRAPHY, 75
+
+QUESTIONS, 75
+
+The Double Helix Is Stabilized by Base Pairing and
+Base Stacking, 82
+
+Hydrogen Bonding Is Important for the Specificity of
+Base Pairing, 83
+
+Bases Can Flip Out from the Double Helix, 83
+DNA Is Usually a Right-Handed Double Helix, 83
+
+KEY EXPERIMENTS BOX 4-1 DNA Has 10.5 bp per
+Turn of the Helix in Solution: The Mica
+Experiment, 84
+
+
+<!-- Page 18 -->
+The Double Helix Has Minor and Major
+Grooves, 84
+
+The Major Groove Is Rich in Chemical Information, 85
+The Double Helix Exists in Multiple Conformations, 86
+DNA Can Sometimes Form a Left-Handed Helix, 87
+
+KEY EXPERIMENTS BOX 4-2 How Spots on an X-Ray
+Film Reveal the Structure of DNA, 88
+
+DNA Strands Can Separate (Denature) and
+Reassociate, 89
+
+Some DNA Molecules Are Circles, 92
+
+DNA TOPOLOGY, 93
+
+Linking Number Is an Invariant Topological Property
+of Covalently Closed, Circular DNA, 93
+
+Linking Number Is Composed of Twist
+and Writhe, 93
+
+LK° Is the Linking Number of Fully Relaxed cccDNA
+under Physiological Conditions, 94
+
+DNA in Cells Is Negatively Supercoiled, 95
+
+Nucleosomes Introduce Negative Supercoiling in
+Eukaryotes, 96
+
+RNA CONTAINS RIBOSE AND URACIL AND IS
+USUALLY SINGLE-STRANDED, 107
+
+RNA CHAINS FOLD BACK ON THEMSELVES TO
+FORM LOCAL REGIONS OF DOUBLE HELIX
+SIMILAR TO A-FORM DNA, 108
+
+RNA CAN FOLD UP INTO COMPLEX TERTIARY
+STRUCTURES, 110
+
+NUCLEOTIDE SUBSTITUTIONS IN COMBINATION
+WITH CHEMICAL PROBING PREDICT RNA
+STRUCTURE, 111
+
+MEDICAL CONNECTIONS BOX 5-1 An RNA Switch
+Controls Protein Synthesis by Murine Leukemia
+Virus, 112
+
+6 The Structure of Proteins, 121
+
+THE BASICS, 121
+Amino Acids, 121
+The Peptide Bond, 122
+Polypeptide Chains, 123
+
+Three Amino Acids with Special Conformational
+Properties, 124
+
+ADVANCED CONCEPT BOX 6-1 Ramachandran
+Plot: Permitted Combinations of Main-Chain Torsion
+Angles & and w, 124
+
+Detailed Contents        xvii
+
+Topoisomerases Can Relax Supercoiled DNA, 97
+
+Prokaryotes Have a Special Topoisomerase That
+Introduces Supercoils into DNA, 97
+
+Topoisomerases Also Unknot and Disentangle DNA
+Molecules, 98
+
+Topoisomerases Use a Covalent Protein-DNA Linkage
+to Cleave and Rejoin DNA Strands, 99
+
+Topoisomerases Form an Enzyme Bridge and Pass
+DNA Segments through Each Other, 100
+
+DNA Topoisomers Can Be Separated by
+Electrophoresis, 102
+
+Ethidium Ions Cause DNA to Unwind, 102
+
+KEY EXPERIMENTS BOX 4-3  Proving that DNA Has a
+Helical Periodicity of ~ 10.5 bp per Turn from the
+Topological Properties of DNA Rings, 103
+
+SUMMARY, 103
+BIBLIOGRAPHY, 104
+QUESTIONS, 104
+
+ED  5 The Structure and Versatility of RNA, 107
+
+DIRECTED EVOLUTION SELECTS RNAs THAT
+BIND SMALL MOLECULES, 114
+SOME RNAs ARE ENZYMES, 114
+
+TECHNIQUES BOX 5-2 Creating an RNA Mimetic of the
+Green Fluorescent Protein by Directed Evolution, 115
+
+The Hammerhead Ribozyme Cleaves RNA by the
+Formation of a 2’, 3’ Cyclic Phosphate, 116
+
+A Ribozyme at the Heart of the Ribosome Acts on a
+Carbon Center, 118
+
+SUMMARY, 118
+BIBLIOGRAPHY, 118
+QUESTIONS, 118
+
+IMPORTANCE OF WATER, 125
+
+PROTEIN STRUCTURE CAN BE DESCRIBED AT
+FOUR LEVELS, 126
+PROTEIN DOMAINS, 130
+
+Polypeptide Chains Typically Fold into One or More
+Domains, 130
+
+ADVANCED CONCEPTS BOX 6-2 Glossary of Terms, 130
+Basic Lessons from the Study of Protein Structures, 131
+
+
+<!-- Page 19 -->
+xviii       Detailed Contents
+
+Classes of Protein Domains, 132
+Linkers and Hinges, 133
+Post-Translational Modifications, 133
+
+ADVANCED CONCEPTS BOX 6-3 The Antibody Molecule
+as an Illustration of Protein Domains, 133
+
+FROM AMINO-ACID SEQUENCE TO THREE-
+DIMENSIONAL STRUCTURE, 134
+Protein Folding, 134
+
+KEY EXPERIMENTS BOX 6-4 Three-Dimensional
+Structure of a Protein Is Specified by Its Amino Acid
+Sequence (Anfinsen Experiment), 135
+
+Predicting Protein Structure from Amino Acid
+Sequence, 135
+
+CONFORMATIONAL CHANGES IN
+PROTEINS, 136
+
+7 Techniques of Molecular Biology, 147
+
+NUCLEIC ACIDS: BASIC METHODS, 148
+
+Gel Electrophoresis Separates DNA and RNA
+Molecules according to Size, 148
+
+Restriction Endonucleases Cleave DNA Molecules at
+Particular Sites, 149
+
+DNA Hybridization Can Be Used to Identify Specific
+DNA Molecules, 151
+
+Hybridization Probes Can Identify Electrophoretically
+Separated DNAs and RNAs, 151
+
+Isolation of Specific Segments of DNA, 153
+DNA Cloning, 154
+
+Vector DNA Can Be Introduced into Host Organisms
+by Transformation, 155
+
+Libraries of DNA Molecules Can Be Created
+by Cloning, 156
+
+Hybridization Can Be Used to Identify a Specific Clone
+in a DNA Library, 156
+
+Chemical Synthesis of Defined DNA Sequences, 157
+
+The Polymerase Chain Reaction Amplifies DNAs by
+Repeated Rounds of DNA Replication In Vitro, 158
+
+Nested Sets of DNA Fragments Reveal Nucleotide
+Sequences, 158
+
+TECHNIQUES BOX 7-1 Forensics and the Polymerase
+Chain Reaction, 160
+
+Shotgun Sequencing a Bacterial Genome, 162
+
+The Shotgun Strategy Permits a Partial Assembly of
+Large Genome Sequences, 162
+
+KEY EXPERIMENTS BOX 7-2 Sequenators Are Used for
+High-Throughput Sequencing, 163
+
+The Paired-End Strategy Permits the Assembly of
+Large-Genome Scaffolds, 165
+
+The $1000 Human Genome Is within Reach, 167
+
+PROTEINS AS AGENTS OF SPECIFIC MOLECULAR,
+RECOGNITION, 137
+
+Proteins That Recognize DNA Sequence, 137
+Protein-Protein Interfaces, 140
+Proteins That Recognize RNA, 141
+
+ENZYMES: PROTEINS AS CATALYSTS, 141
+REGULATION OF PROTEIN ACTIVITY, 142
+SUMMARY, 143
+
+BIBLIOGRAPHY, 144
+
+QUESTIONS, 144
+
+GENOMICS, 168
+
+Bioinformatics Tools Facilitate the Genome-Wide
+Identification of Protein-Coding Genes, 169
+
+Whole-Genome Tiling Arrays Are Used to Visualize the
+Transcriptome, 169
+
+Regulatory DNA Sequences Can Be Identified by Using
+Specialized Alignment Tools, 171
+
+Genome Editing Is Used to Precisely Alter Complex
+Genomes, 172
+
+PROTEINS, 173
+Specific Proteins Can Be Purified from Cell Extracts, 173
+
+Purification of a Protein Requires a Specific
+Assay, 173
+
+Preparation of Cell Extracts Containing Active
+Proteins, 174
+
+Proteins Can Be Separated from One Another Using
+Column Chromatography, 174
+
+Separation of Proteins on Polyacrylamide Gels, 176
+
+Antibodies Are Used to Visualize Electrophoretically
+Separated Proteins, 176
+
+Protein Molecules Can Be Directly Sequenced, 177
+
+PROTEOMICS, 179
+
+Combining Liquid Chromatography with Mass
+Spectrometry Identifies Individual Proteins within
+a Complex Extract, 179
+
+Proteome Comparisons Identify Important
+Differences between Cells, 181
+
+Mass Spectrometry Can Also Monitor Protein
+Modification States, 181
+
+Protein-Protein Interactions Can Yield Information
+regarding Protein Function, 182
+
+
+<!-- Page 20 -->
+NUCLEIC ACID -PROTEIN INTERACTIONS, 182
+
+The Electrophoretic Mobility of DNA Is Altered by
+Protein Binding, 183
+
+DNA-Bound Protein Protects the DNA from Nucleases
+and Chemical Modification, 184
+
+Chromatin Immunoprecipitation Can Detect Protein
+Association with DNA in the Cell, 185
+
+Detailed Contents      xix
+
+Chromosome Conformation Capture Assays Are Used
+to Analyze Long-Range Interactions, 187
+
+In Vitro Selection Can Be Used to Identify a Protein’s
+DNA- or RNA-Binding Site, 189
+
+BIBLIOGRAPHY, 190
+QUESTIONS, 190
+
+PART 3: MAINTENANCE
+OF THE GENOME, 193
+
+7
+ae  8 Genome Structure, Chromatin, and the Nucleosome, 199
+
+GENOME SEQUENCE AND CHROMOSOME,
+DIVERSITY, 200
+Chromosomes Can Be Circular or Linear, 200
+Every Cell Maintains a Characteristic Number of
+Chromosomes, 201
+Genome Size Is Related to the Complexity of the
+Organism, 202
+The E. coli Genome Is Composed Almost Entirely of
+Genes, 203
+More Complex Organisms Have Decreased Gene
+Density, 204
+Genes Make Up Only a Small Proportion of the
+Eukaryotic Chromosomal DNA, 205
+
+The Majority of Human Intergenic Sequences Are
+Composed of Repetitive DNA, 207
+
+CHROMOSOME DUPLICATION AND
+SEGREGATION, 208
+Eukaryotic Chromosomes Require Centromeres,
+Telomeres, and Origins of Replication to Be
+Maintained during Cell Division, 208
+
+Eukaryotic Chromosome Duplication and Segregation
+Occur in Separate Phases of the Cell Cycle, 210
+
+Chromosome Structure Changes as Eukaryotic Cells
+Divide, 212
+
+Sister-Chromatid Cohesion and Chromosome
+Condensation Are Mediated by SMC Proteins, 214
+
+Mitosis Maintains the Parental Chromosome
+Number, 214
+
+During Gap Phases, Cells Prepare for the Next Cell
+Cycle Stage and Check That the Previous Stage
+Is Completed Correctly, 217
+
+Meiosis Reduces the Parental Chromosome
+Number, 217
+
+Different Levels of Chromosome Structure Can Be
+Observed by Microscopy, 219
+
+THE NUCLEOSOME, 220
+
+Nucleosomes Are the Building Blocks of
+Chromosomes, 220
+
+Histones Are Small, Positively Charged Proteins, 221
+The Atomic Structure of the Nucleosome, 224
+
+Histones Bind Characteristic Regions of DNA within
+the Nucleosome, 224
+
+KEY EXPERIMENTS BOX 8-1 Micrococcal Nuclease and
+the DNA Associated with the Nucleosome, 226
+
+Many DNA Sequence-Independent Contacts Mediate
+the Interaction between the Core Histones and
+DNA, 227
+
+The Histone Amino-Terminal Tails Stabilize DNA
+Wrapping around the Octamer, 227
+
+Wrapping of the DNA around the Histone Protein Core
+Stores Negative Superhelicity, 228
+
+HIGHER-ORDER CHROMATIN STRUCTURE, 229
+Heterochromatin and Euchromatin, 229
+
+KEY EXPERIMENTS BOX 8-2 Nucleosomes and
+Superhelical Density, 230
+
+Histone H1 Binds to the Linker DNA between
+Nucleosomes, 232
+
+Nucleosome Arrays Can Form More Complex
+Structures: The 30-nm Fiber, 232
+
+The Histone Amino-Terminal Tails Are Required for
+the Formation of the 30-nm Fiber, 234
+
+Further Compaction of DNA Involves Large Loops of
+Nucleosomal DNA, 234
+
+Histone Variants Alter Nucleosome Function, 234
+
+REGULATION OF CHROMATIN STRUCTURE, 236
+
+The Interaction of DNA with the Histone Octamer Is
+Dynamic, 236
+
+Nucleosome-Remodeling Complexes Facilitate
+Nucleosome Movement, 237
+
+Some Nucleosomes Are Found in Specific Positions:
+Nucleosome Positioning, 240
+
+
+<!-- Page 21 -->
+Detailed Contents
+
+The Amino-Terminal Tails of the Histones Are
+Frequently Modified, 241
+
+Protein Domains in Nucleosome-Remodeling
+and -Modifying Complexes Recognize
+Modified Histones, 244
+
+KEY EXPERIMENTS BOX 8-3 Determining Nucleosome
+Position in the Cell, 245
+
+Specific Enzymes Are Responsible for Histone
+Modification, 248
+
+Nucleosome Modification and Remodeling
+Work Together to Increase DNA
+Accessibility, 249
+
+les.  9 The Replication of DNA, 257
+
+THE CHEMISTRY OF DNA SYNTHESIS, 258
+
+DNA Synthesis Requires Deoxynucleoside
+Triphosphates and a Primer:Template Junction, 258
+
+DNA Is Synthesized by Extending the 3’ End of the
+Primer, 259
+
+Hydrolysis of Pyrophosphate Is the Driving Force for
+DNA Synthesis, 260
+
+THE MECHANISM OF DNA POLYMERASE, 260
+
+DNA Polymerases Use a Single Active Site to Catalyze
+DNA Synthesis, 260
+
+TECHNIQUES BOX 9-1 Incorporation Assays Can
+Be Used to Measure Nucleic Acid and Protein
+Synthesis, 261
+
+DNA Polymerases Resemble a Hand That Grips the
+Primer:Template Junction, 263
+
+DNA Polymerases Are Processive Enzymes, 265
+Exonucleases Proofread Newly Synthesized DNA, 267
+
+MEDICAL CONNECTIONS BOX 9-2 Anticancer and
+Antiviral Agents Target DNA Replication, 268
+
+THE REPLICATION FORK, 269
+
+Both Strands of DNA Are Synthesized Together at the
+Replication Fork, 269
+
+The Initiation of a New Strand of DNA Requires an
+RNA Primer, 270
+
+RNA Primers Must Be Removed to Complete DNA
+Replication, 271
+
+DNA Helicases Unwind the Double Helix in Advance
+of the Replication Fork, 272
+
+DNA Helicase Pulls Single-Stranded DNA through a
+Central Protein Pore, 273
+
+Single-Stranded DNA-Binding Proteins Stabilize
+ssDNA before Replication, 273
+
+Topoisomerases Remove Supercoils Produced by DNA
+Unwinding at the Replication Fork, 275
+
+Replication Fork Enzymes Extend the Range of DNA
+Polymerase Substrates, 275
+
+NUCLEOSOME ASSEMBLY, 249
+
+Nucleosomes Are Assembled Immediately after DNA
+Replication, 249
+
+Assembly of Nucleosomes Requires Histone
+“Chaperones’, 253
+
+SUMMARY, 254
+BIBLIOGRAPHY, 255
+QUESTIONS, 255
+
+THE SPECIALIZATION OF DNA
+POLYMERASES, 277
+
+DNA Polymerases Are Specialized for Different Roles
+in the Cell, 277
+
+Sliding Clamps Dramatically Increase DNA
+Polymerase Processivity, 278
+
+Sliding Clamps Are Opened and Placed on DNA by
+Clamp Loaders, 281
+
+ADVANCED CONCEPTS BOX 9-3 ATP Control of Protein
+Function: Loading a Sliding Clamp, 282
+
+DNA SYNTHESIS AT THE REPLICATION FORK, 283
+
+Interactions between Replication Fork Proteins Form
+the E. coli Replisome, 286
+
+INITIATION OF DNA REPLICATION, 288
+
+Specific Genomic DNA Sequences Direct the Initiation
+of DNA Replication, 288
+
+The Replicon Model of Replication Initiation, 288
+
+Replicator Sequences Include Initiator-Binding Sites
+and Easily Unwound DNA, 289
+
+KEY EXPERIMENTS BOX 9-4 The Identification of
+Origins of Replication and Replicators, 290
+
+BINDING AND UNWINDING: ORIGIN
+SELECTION AND ACTIVATION BY
+THE INITIATOR PROTEIN, 293
+Protein-Protein and Protein— DNA Interactions Direct
+the Initiation Process, 293
+ADVANCED CONCEPTS BOX 9-5 E. coli DNA Replication
+Is Regulated by DnaA-ATP Levels and SeqA, 294
+Eukaryotic Chromosomes Are Replicated Exactly Once
+per Cell Cycle, 297
+Helicase Loading Is the First Step in the Initiation of
+Replication in Eukaryotes, 298
+Helicase Loading and Activation Are Regulated to
+
+Allow Only a Single Round of Replication during
+Each Cell Cycle, 300
+
+
+<!-- Page 22 -->
+Similarities between Eukaryotic and Prokaryotic DNA
+Replication Initiation, 301
+
+FINISHING REPLICATION, 302
+
+Type II Topoisomerases Are Required to Separate
+Daughter DNA Molecules, 303
+
+Lagging-Strand Synthesis Is Unable to Copy the
+Extreme Ends of Linear Chromosomes, 303
+
+Telomerase Is a Novel DNA Polymerase That Does Not
+Require an Exogenous Template, 305
+
+Telomerase Solves the End Replication Problem
+by Extending the 3’ End of the
+Chromosome, 305
+
+Detailed Contents        xxi
+
+MEDICAL CONNECTIONS BOX 9-6 Aging, Cancer, and
+the Telomere Hypothesis, 307
+
+Telomere-Binding Proteins Regulate Telomerase
+Activity and Telomere Length, 307
+
+Telomere-Binding Proteins Protect Chromosome
+Ends, 308
+
+SUMMARY, 310
+BIBLIOGRAPHY, 311
+QUESTIONS, 312
+
+ed  10 The Mutability and Repair of DNA, 313
+
+REPLICATION ERRORS AND THEIR REPAIR, 314
+The Nature of Mutations, 314
+Some Replication Errors Escape Proofreading, 315
+
+MEDICAL CONNECTIONS BOX 10-1 Expansion of Triple
+Repeats Causes Disease, 316
+
+Mismatch Repair Removes Errors That Escape
+Proofreading, 316
+
+DNA DAMAGE, 320
+
+DNA Undergoes Damage Spontaneously from
+Hydrolysis and Deamination, 320
+
+MEDICAL CONNECTIONS BOX 10-2 The Ames Test, 321
+
+DNA Is Damaged by Alkylation, Oxidation, and
+Radiation, 322
+
+ADVANCED CONCEPTS BOX 10-3 Quantitation of DNA
+Damage and Its Effects on Cellular Survival and
+Mutagenesis, 323
+
+Mutations Are Also Caused by Base Analogs and
+Intercalating Agents, 323
+
+REPAIR AND TOLERANCE OF DNA DAMAGE, 324
+
+Direct Reversal of DNA Damage, 325
+
+DNA BREAKS ARE COMMON AND INITIATE
+RECOMBINATION, 342
+
+MODELS FOR HOMOLOGOUS
+RECOMBINATION, 342
+
+Strand Invasion Is a Key Early Step in Homologous
+Recombination, 344
+
+Resolving Holliday Junctions Is a Key Step to Finishing
+Genetic Exchange, 346
+
+The Double-Strand Break —Repair Model
+Describes Many Recombination Events, 346
+
+Base Excision Repair Enzymes Remove Damaged
+Bases by a Base-Flipping Mechanism, 326
+
+Nucleotide Excision Repair Enzymes Cleave Damaged
+DNA on Either Side of the Lesion, 328
+
+MEDICAL CONNECTIONS BOX 10-4 Linking Nucleotide
+Excision Repair and Translesion Synthesis to a
+Genetic Disorder in Humans, 330
+
+Recombination Repairs DNA Breaks by Retrieving
+Sequence Information from Undamaged DNA, 330
+
+DSBs in DNA Are Also Repaired by Direct Joining of
+Broken Ends, 331
+
+MEDICAL CONNECTIONS BOX 10-5 Nonhomologous
+End Joining, 332
+
+Translesion DNA Synthesis Enables Replication to
+Proceed across DNA Damage, 333
+
+ADVANCED CONCEPTS BOX 10-6 The Y Family of DNA
+Polymerases, 336
+
+SUMMARY, 338
+BIBLIOGRAPHY, 338
+QUESTIONS, 339
+
+ES)  11 Homologous Recombination at the Molecular Level, 341
+
+HOMOLOGOUS RECOMBINATION PROTEIN
+MACHINES, 349
+ADVANCED CONCEPTS BOX 11-1 How to Resolve a
+
+Recombination Intermediate with Two Holliday
+Junctions, 350
+
+The RecBCD Helicase /Nuclease Processes Broken DNA
+Molecules for Recombination, 351
+
+Chi Sites Control RecBCD, 354
+
+RecA Protein Assembles on Single-Stranded DNA and
+Promotes Strand Invasion, 355
+
+
+<!-- Page 23 -->
+xxii        Detailed Contents
+
+Newly Base-Paired Partners Are Established within the
+RecA Filament, 356
+
+RecA Homologs Are Present in All Organisms, 359
+The RuvAB Complex Specifically Recognizes Holliday
+Junctions and Promotes Branch Migration, 359
+
+RuvC Cleaves Specific DNA Strands at the Holliday
+Junction to Finish Recombination, 361
+
+HOMOLOGOUS RECOMBINATION IN
+EUKARYOTES, 362
+Homologous Recombination Has Additional
+Functions in Eukaryotes, 362
+Homologous Recombination Is Required
+for Chromosome Segregation during
+Meiosis, 362
+Programmed Generation of Double-Stranded DNA
+Breaks Occurs during Meiosis, 363
+MRX Protein Processes the Cleaved DNA Ends for
+Assembly of the RecA-Like Strand-Exchange
+Proteins, 364
+Dmcl Is a RecA-Like Protein That Specifically
+Functions in Meiotic Recombination, 366
+
+Many Proteins Function Together to Promote Meiotic
+Recombination, 366
+
+MEDICAL CONNECTIONS BOX 11-2 The Product of
+the Tumor Suppressor Gene BRCA2 Interacts
+with Rad51 Protein and Controls Genome
+Stability, 367
+
+MEDICAL CONNECTIONS BOX 11-3 Proteins Associated
+with Premature Aging and Cancer Promote an
+Alternative Pathway for Holliday Junction
+Processing, 368
+
+MATING-TYPE SWITCHING, 369
+
+Mating-Type Switching Is Initiated by a Site-Specific
+Double-Strand Break, 370
+
+Mating-Type Switching Is a Gene Conversion Event
+and Not Associated with Crossing Over, 370
+
+GENETIC CONSEQUENCES OF THE MECHANISM
+OF HOMOLOGOUS RECOMBINATION, 371
+
+One Cause of Gene Conversion Is DNA Repair during
+Recombination, 373
+
+SUMMARY, 374
+BIBLIOGRAPHY, 375
+QUESTIONS, 376
+
+S<|  12 Site-Specific Recombination and Transposition of DNA, 377
+
+CONSERVATIVE SITE-SPECIFIC
+RECOMBINATION, 378
+Site-Specific Recombination Occurs at Specific DNA
+Sequences in the Target DNA, 378
+Site-Specific Recombinases Cleave and Rejoin DNA
+Using a Covalent Protein—- DNA Intermediate, 380
+Serine Recombinases Introduce Double-Strand Breaks
+in DNA and Then Swap Strands to Promote
+Recombination, 382
+Structure of the Serine Recombinase~DNA Complex
+Indicates that Subunits Rotate to Achieve Strand
+Exchange, 383
+Tyrosine Recombinases Break and Rejoin One Pair of
+DNA Strands at a Time, 383
+Structures of Tyrosine Recombinases Bound to DNA.
+Reveal the Mechanism of DNA Exchange, 384
+MEDICAL CONNECTIONS BOX 12-1 Application
+
+of Site-Specific Recombination to Genetic
+Engineering, 386
+
+BIOLOGICAL ROLES OF SITE-SPECIFIC
+RECOMBINATION, 386
+入 Integrase Promotes the Integration and Excision of a
+Viral Genome into the Host-Cell Chromosome, 386
+
+Bacteriophage 和 Excision Requires a New
+DNA-Bending Protein, 389
+
+The Hin Recombinase Inverts a Segment of DNA
+Allowing Expression of Alternative Genes, 389
+
+Hin Recombination Requires a DNA Enhancer, 390
+
+Recombinases Convert Multimeric Circular DNA
+Molecules into Monomers, 391
+
+There Are Other Mechanisms to Direct Recombination
+to Specific Segments of DNA, 391
+
+ADVANCED CONCEPTS BOX 12-2 The Xer Recombinase
+Catalyzes the Monomerization of Bacterial
+Chromosomes and of Many Bacterial Plasmids, 392
+
+TRANSPOSITION, 393
+
+Some Genetic Elements Move to New Chromosomal
+Locations by Transposition, 393
+
+There Are Three Principal Classes of Transposable
+Elements, 395
+
+DNA Transposons Carry a Transposase Gene, Flanked
+by Recombination Sites, 395
+
+Transposons Exist as Both Autonomous and
+Nonautonomous Elements, 396
+
+Virus-Like Retrotransposons and Retroviruses Carry
+Terminal Repeat Sequences and Two Genes
+Important for Recombination, 396
+
+Poly-A Retrotransposons Look Like Genes, 396
+DNA Transposition by a Cut-and-Paste Mechanism, 397
+
+
+<!-- Page 24 -->
+The Intermediate in Cut-and-Paste Transposition is
+Finished by Gap Repair, 398
+
+There Are Multiple Mechanisms for Cleaving
+the Nontransferred Strand during DNA
+Transposition, 399
+
+DNA Transposition by a Replicative Mechanism, 401
+
+Virus-Like Retrotransposons and Retroviruses Move
+Using an RNA Intermediate, 403
+
+DNA Transposases and Retroviral Integrases Are
+Members of a Protein Superfamily, 403
+
+Poly-A Retrotransposons Move by a “Reverse Splicing”
+Mechanism, 405
+
+EXAMPLES OF TRANSPOSABLE ELEMENTS AND
+THEIR REGULATION, 406
+KEY EXPERIMENTS BOX 12-3 Maize Elements and
+Discovery of Transposons, 408
+1S4 Family Transposons Are Compact Elements
+with Multiple Mechanisms for Copy Number
+Control, 409
+
+Detailed Contents      xxiii
+
+Phage Mu Is an Extremely Robust Transposon, 411
+
+Mu Uses Target Immunity to Avoid Transposing into
+Its Own DNA, 411
+
+Tc1/mariner Elements Are Highly Successful DNA
+Elements in Eukaryotes, 411
+
+ADVANCED CONCEPTS BOX 12-4 Mechanism of
+Transposition Target Immunity, 413
+
+Yeast Ty Elements Transpose into Safe Havens in the
+Genome, 414
+
+LINEs Promote Their Own Transposition and Even
+Transpose Cellular RNAs, 414
+
+V(D)J RECOMBINATION, 416
+
+The Early Events in V(D)J Recombination Occur by a
+Mechanism Similar to Transposon Excision, 418
+
+SUMMARY, 420
+BIBLIOGRAPHY, 420
+QUESTIONS, 421
+
+PART 4: EXPRESSION OF
+THE GENOME, 423
+
+el  13 Mechanisms of Transcription, 429
+
+RNA POLYMERASES AND THE TRANSCRIPTION
+CYCLE, 430
+RNA Polymerases Come in Different Forms but Share
+Many Features, 430
+Transcription by RNA Polymerase Proceeds in a Series
+of Steps, 432
+
+Transcription Initiation Involves Three Defined
+Steps, 434
+
+THE TRANSCRIPTION CYCLE IN BACTERIA, 434
+
+Bacterial Promoters Vary in Strength and Sequence
+but Have Certain Defining Features, 434
+
+TECHNIQUES BOX 13-1 Consensus Sequences, 436
+
+The o Factor Mediates Binding of Polymerase to the
+Promoter, 437
+
+Transition to the Open Complex Involves Structural
+Changes in RNA Polymerase and in the Promoter
+DNA, 438
+
+Transcription Is Initiated by RNA Polymerase without
+the Need for a Primer, 440
+
+During Initial Transcription, RNA Polymerase
+Remains Stationary and Pulls Downstream DNA
+into Itself, 441
+
+Promoter Escape Involves Breaking Polymerase —
+Promoter Interactions and Polymerase Core-o
+Interactions, 442
+
+The Elongating Polymerase Is a Processive
+Machine That Synthesizes and Proofreads
+RNA, 442
+
+ADVANCED CONCEPTS BOX 13-2 The Single-Subunit
+RNA Polymerases, 443
+
+RNA Polymerase Can Become Arrested and Need
+Removing, 445
+
+Transcription Is Terminated by Signals within the
+RNA Sequence, 445
+
+TRANSCRIPTION IN EUKARYOTES, 448
+
+RNA Polymerase II Core Promoters Are Made Up of
+Combinations of Different Classes of Sequence
+Element, 448
+
+RNA Polymerase II Forms a Preinitiation Complex
+with General Transcription Factors at the
+Promoter, 449
+
+Promoter Escape Requires Phosphorylation of the
+Polymerase “Tail,” 449
+
+TBP Binds to and Distorts DNA Using a B Sheet
+Inserted into the Minor Groove, 451
+
+The Other General Transcription Factors Also Have
+Specific Roles in Initiation, 452
+
+In Vivo, Transcription Initiation Requires
+
+Additional Proteins, Including the Mediator
+Complex, 453
+
+
+<!-- Page 25 -->
+xxiv      Detailed Contents
+
+Mediator Consists of Many Subunits, Some Conserved
+from Yeast to Human, 454
+
+A New Set of Factors Stimulates Pol II Elongation and
+RNA Proofreading, 455
+
+Elongating RNA Polymerase Must Deal with Histones
+in Its Path, 456
+
+Elongating Polymerase Is Associated with a New Set of
+Protein Factors Required for Various Types of RNA
+Processing, 457
+
+Transcription Termination Is Linked
+to RNA Destruction by a Highly
+Processive RNase, 460
+
+[25] 14 RNA Splicing, 467
+
+THE CHEMISTRY OF RNA SPLICING, 469
+
+Sequences within the RNA Determine Where Splicing
+Occurs, 469
+
+The Intron Is Removed in a Form Called a Lariat as the
+Flanking Exons Are Joined, 470
+
+KEY EXPERIMENTS BOX 14-1 Adenovirus and the
+Discovery of Splicing, 471
+
+THE SPLICEOSOME MACHINERY, 473
+
+RNA Splicing Is Performed by a Large Complex Called
+the Spliceosome, 473
+
+SPLICING PATHWAYS, 474
+
+Assembly, Rearrangements, and Catalysis
+within the Spliceosome: The Splicing
+Pathway, 474
+
+Spliceosome Assembly Is Dynamic and
+Variable and Its Disassembly Ensures That the
+Splicing Reaction Goes Only Forward
+in the Cell, 476
+
+Self-Splicing Introns Reveal That RNA Can Catalyze
+RNA Splicing, 477
+
+Group I Introns Release a Linear Intron Rather Than a
+Lariat, 478
+
+KEY EXPERIMENTS BOX 14-2 Converting Group I
+Introns into Ribozymes, 479
+
+How Does the Spliceosome Find the Splice Sites
+Reliably?, 480
+
+VARIANTS OF SPLICING, 482
+
+Exons from Different RNA Molecules Can Be Fused by
+Trans-Splicing, 482
+
+A Small Group of Introns Is Spliced by an Alternative
+Spliceosome Composed of a Different Set of
+snRNPs, 483
+
+ALTERNATIVE SPLICING, 483
+
+Single Genes Can Produce Multiple Products by
+Alternative Splicing, 483
+
+TRANSCRIPTION BY RNA POLYMERASES I
+AND III, 462
+
+RNA Pol I and Pol III Recognize Distinct Promoters but
+Still Require TBP, 462
+
+Pol I Transcribes Just the rRNA Genes, 462
+
+Pol II Promoters Are Found Downstream from the
+Transcription Start Site, 463
+
+SUMMARY, 463
+BIBLIOGRAPHY, 464
+QUESTIONS, 465
+
+Several Mechanisms Exist to Ensure Mutually
+Exclusive Splicing, 486
+
+The Curious Case of the Drosophila Dscam Gene:
+Mutually Exclusive Splicing on a Grand Scale, 487
+
+Mutually Exclusive Splicing of Dscam Exon 6 Cannot
+Be Accounted for by Any Standard Mechanism and
+Instead Uses a Novel Strategy, 488
+
+KEY EXPERIMENTS BOX 14-3 Identification of Docking
+Site and Selector Sequences, 490
+
+Alternative Splicing Is Regulated by Activators and
+Repressors, 491
+
+Regulation of Alternative Splicing Determines the Sex
+of Flies, 493
+
+An Alternative Splicing Switch Lies at the Heart of
+Pluripotency, 495
+
+EXON SHUFFLING, 497
+
+Exons Are Shuffled by Recombination to Produce
+Genes Encoding New Proteins, 497
+
+MEDICAL CONNECTIONS BOX 14-4 Defects in
+Pre-mRNA Splicing Cause Human Disease, 497
+
+RNA EDITING, 500
+
+RNA Editing Is Another Way of Altering the Sequence
+of an mRNA, 500
+
+Guide RNAs Direct the Insertion and Deletion of
+Uridines, 501
+
+MEDICAL CONNECTIONS BOX 14-5 Deaminases
+and HIV, 503
+
+mRNA TRANSPORT, 503
+
+Once Processed, mRNA Is Packaged and Exported
+from the Nucleus into the Cytoplasm for
+Translation, 503
+
+SUMMARY, 505
+BIBLIOGRAPHY, 506
+QUESTIONS, 507
+
+
+<!-- Page 26 -->
+pal 15 Translation, 509
+
+MESSENGER RNA, 510
+
+Polypeptide Chains Are Specified by Open Reading
+Frames, 510.
+
+Prokaryotic mRNAs Have a Ribosome-Binding Site
+That Recruits the Translational Machinery, 512
+
+Eukaryotic mRNAs Are Modified at their 5’ and 3’ Ends
+to Facilitate Translation, 512
+
+TRANSFER RNA, 513
+tRNAs Are Adaptors between Codons and Amino
+Acids, 513
+ADVANCED CONCEPTS BOX 15-1 CCA-Adding Enzymes:
+Synthesizing RNA without a Template, 513
+tRNAs Share a Common Secondary Structure That
+Resembles a Cloverleaf, 514
+
+tRNAs Have an L-Shaped Three-Dimensional
+Structure, 514
+
+ATTACHMENT OF AMINO ACIDS TO tRNA, 515
+
+tRNAs Are Charged by the Attachment of an Amino
+Acid to the 3'-Terminal Adenosine Nucleotide via a
+High-Energy Acyl Linkage, 515
+
+Aminoacyl-tRNA Synthetases Charge tRNAs in Two
+Steps, 515
+
+Each Aminoacyl-tRNA Synthetase Attaches a Single
+Amino Acid to One or More tRNAs, 515
+
+tRNA Synthetases Recognize Unique Structural
+Features of Cognate tRNAs, 517
+
+AminoacyltRNA Formation Is Very Accurate, 518
+
+Some AminoacyltRNA Synthetases Use an
+
+Editing Pocket to Charge tRNAs with
+High Accuracy, 518
+
+The Ribosome Is Unable to Discriminate between
+Correctly and Incorrectly Charged tRNAs, 519
+
+THE RIBOSOME, 519
+ADVANCED CONCEPTS BOX 15-2 Selenocysteine, 520
+The Ribosome Is Composed of a Large and a Small
+Subunit, 521
+
+The Large and Small Subunits Undergo Association
+and Dissociation during Each Cycle of
+Translation, 522
+
+New Amino Acids Are Attached to the Carboxyl
+Terminus of the Growing Polypeptide Chain, 523
+
+Peptide Bonds Are Formed by Transfer of the
+Growing Polypeptide Chain from One tRNA
+to Another, 524
+
+Ribosomal RNAs Are Both Structural and Catalytic
+Determinants of the Ribosome, 524
+
+The Ribosome Has Three Binding Sites for tRNA, 525
+
+Channels through the Ribosome Allow the mRNA and
+
+Growing Polypeptide to Enter and/or Exit the
+Ribosome, 527
+
+Detailed Contents      XXV
+
+INITIATION OF TRANSLATION, 528
+Prokaryotic mRNAs Are Initially Recruited to the
+Small Subunit by Base Pairing to rRNA, 528
+
+A Specialized tRNA Charged with a Modified
+Methionine Binds Directly to the Prokaryotic
+Small Subunit, 528
+
+Three Initiation Factors Direct the Assembly of an
+Initiation Complex That Contains mRNA and the
+Initiator (RNA, 529
+
+Eukaryotic Ribosomes Are Recruited to the mRNA by
+the 5! Cap, 530
+
+Translation Initiation Factors Hold Eukaryotic mRNAs
+in Circles, 532
+
+ADVANCED CONCEPTS BOX 15-3 uORFs and IRESs:
+Exceptions That Prove the Rule, 533
+
+The Start Codon Is Found by Scanning Downstream
+from the 5! End of the mRNA, 535
+
+TRANSLATION ELONGATION, 535
+
+Aminoacyl-tRNAs Are Delivered to the A-Site by
+Elongation Factor EF-Tu, 537
+
+The Ribosome Uses Multiple Mechanisms to Select
+against Incorrect AminoacyltRNAs, 537
+
+The Ribosome Is a Ribozyme, 538
+
+Peptide-Bond Formation Initiates Translocation in the
+Large Subunit, 541
+
+EF-G Drives Translocation by Stabilizing Intermediates
+in Translocation, 542
+
+EF-Tu-GDP and EF-G-GDP Must Exchange GDP for
+GTP before Participating in a New Round of
+Elongation, 543
+
+A Cycle of Peptide-Bond Formation Consumes Two
+Molecules of GTP and One Molecule of ATP, 543
+
+TERMINATION OF TRANSLATION, 544
+
+Release Factors Terminate Translation in Response to
+Stop Codons, 544
+
+Short Regions of Class I Release Factors Recognize
+Stop Codons and Trigger Release of the Peptidyl
+Chain, 544
+
+ADVANCED CONCEPTS BOX 15-4 GTP-Binding Proteins,
+Conformational Switching, and the Fidelity and
+Ordering of the Events of Translation, 546
+
+GDP/GTP Exchange and GTP Hydrolysis Control the
+Function of the Class II Release Factor, 547
+
+The Ribosome Recycling Factor Mimics a tRNA, 548
+
+REGULATION OF TRANSLATION, 549
+
+Protein or RNA Binding near the Ribosome-Binding
+Site Negatively Regulates Bacterial Translation
+Initiation, 549
+
+Regulation of Prokaryotic Translation: Ribosomal
+Proteins Are Translational Repressors of Their Own
+Synthesis, 551
+
+
+<!-- Page 27 -->
+xxvi       Detailed Contents
+
+MEDICAL CONNECTIONS BOX 15-5 Antibiotics Arrest
+Cell Division by Blocking Specific Steps in
+Translation, 552
+
+Global Regulators of Eukaryotic Translation Target Key
+Factors Required for mRNA Recognition and
+Initiator tRNA Ribosome Binding, 556
+
+Spatial Control of Translation by mRNA-Specific
+4E-BPs, 556
+
+An Iron-Regulated, RNA-Binding Protein Controls
+Translation of Ferritin, 557
+
+Translation of the Yeast Transcriptional Activator
+Geng Is Controlled by Short Upstream ORFs and
+Ternary Complex Abundance, 558
+
+TECHNIQUES BOX 15-6 Ribosome and Polysome
+Profiling, 561
+
+Fa  16 The Genetic Code, 573
+
+THE CODE IS DEGENERATE, 573
+Perceiving Order in the Makeup of the Code, 575
+Wobble in the Anticodon, 575
+Three Codons Direct Chain Termination, 577
+How the Code Was Cracked, 577
+
+Stimulation of Amino Acid Incorporation by Synthetic
+mRNAs, 578
+
+Poly-U Codes for Polyphenylalanine, 579
+
+Mixed Copolymers Allowed Additional Codon
+Assignments, 579
+
+Transfer RNA Binding to Defined Trinucleotide
+Codons, 579
+
+Codon Assignments from Repeating Copolymers, 581
+
+THREE RULES GOVERN THE GENETIC CODE, 582
+
+Three Kinds of Point Mutations Alter the
+Genetic Code, 582
+
+WHEN DID LIFE ARISE ON EARTH?, 594
+
+WHAT WAS THE BASIS FOR PREBIOTIC ORGANIC
+CHEMISTRY ?, 595
+
+DID LIFE EVOLVE FROM AN RNA WORLD?, 599
+
+CAN SELF-REPLICATING RIBOZY MES
+BE CREATED BY DIRECTED
+EVOLUTION?, 599
+
+TRANSLATION-DEPENDENT REGULATION OF
+mRNA AND PROTEIN STABILITY, 563
+
+The SsrA RNA Rescues Ribosomes That Translate
+Broken mRNAs, 563
+
+MEDICAL CONNECTIONS BOX 15-7 A Frontline
+Drug in Tuberculosis Therapy Targets
+SsrA Tagging, 565
+
+Eukaryotic Cells Degrade mRNAs That Are Incomplete
+or Have Premature Stop Codons, 565
+
+SUMMARY, 567
+BIBLIOGRAPHY, 570
+QUESTIONS, 570
+
+Genetic Proof That the Gode Is Read in Units
+of Three, 583
+
+SUPPRESSOR MUTATIONS CAN RESIDE IN THE
+SAME OR A DIFFERENT GENE, 584
+Intergenic Suppression Involves Mutant tRNAs, 584
+
+Nonsense Suppressors Also Read Normal Termination
+Signals, 585
+
+Proving the Validity of the Genetic Code, 586
+
+THE CODE IS NEARLY UNIVERSAL, 587
+
+ADVANCED CONCEPTS BOX 16-1 Expanding the Genetic
+Code, 589
+
+SUMMARY, 590
+BIBLIOGRAPHY, 590
+QUESTIONS, 591
+
+17 The Origin and Early Evolution of Life, 593
+
+DOES DARWINIAN EVOLUTION REQUIRE
+SELF-REPLICATING PROTOCELLS?, 603
+
+DID LIFE ARISE ON EARTH?, 606
+SUMMARY, 607
+
+BIBLIOGRAPHY, 607
+QUESTIONS, 607
+
+
+<!-- Page 28 -->
+Detailed Contents        xxvii
+
+PART 5: REGULATION, 609
+
+PRINCIPLES OF TRANSCRIPTIONAL
+REGULATION, 615
+Gene Expression Is Controlled by Regulatory
+Proteins, 615
+Most Activators and Repressors Act at the Level of
+Transcription Initiation, 616
+Many Promoters Are Regulated by Activators That
+Help RNA Polymerase Bind DNA and by Repressors
+That Block That Binding, 616
+Some Activators and Repressors Work by
+Allostery and Regulate Steps in Transcriptional
+Initiation after RNA Polymerase
+Binding, 618
+Action at a Distance and DNA Looping, 618
+Cooperative Binding and Allostery Have Many Roles in
+Gene Regulation, 619
+Antitermination and Beyond: Not All of
+
+Gene Regulation Targets Transcription
+Initiation, 620
+
+REGULATION OF TRANSCRIPTION INITIATION:
+EXAMPLES FROM PROKARYOTES, 620
+An Activator and a Repressor Together Control the lac
+Genes, 620
+CAP and Lac Repressor Have Opposing Effects on RNA
+Polymerase Binding to the ac Promoter, 622
+CAP Has Separate Activating and DNA-Binding
+Surfaces, 622
+CAP and Lac Repressor Bind DNA Using a Common
+Structural Motif, 623
+KEY EXPERIMENTS BOX 18-1 Activator Bypass
+Experiments, 624
+The Activities of Lac Repressor and CAP Are Controlled
+Allosterically by Their Signals, 626
+
+Combinatorial Control: CAP Controls Other Genes As
+Well, 627
+
+KEY EXPERIMENTS BOX 18-2 Jacob, Monod, and the
+Ideas behind Gene Regulation, 628
+
+Alternative o Factors Direct RNA Polymerase to
+Alternative Sets of Promoters, 630
+
+NtrC and MerR: Transcriptional Activators
+That Work by Allostery Rather than by
+Recruitment, 630
+
+NtrC Has ATPase Activity and Works from DNA Sites
+Far from the Gene, 631
+
+MerR Activates Transcription by Twisting Promoter
+DNA, 632
+
+1 18 Transcriptional Regulation in Prokaryotes, 615
+
+Some Repressors Hold RNA Polymerase
+at the Promoter Rather than Excluding
+It, 633
+
+AraC and Control of the araBAD Operon by
+Antiactivation, 634
+
+MEDICAL CONNECTIONS 18-3 Blocking Virulence
+by Silencing Pathways of Intercellular
+Communication, 635
+
+THE CASE OF BACTERIOPHAGE 入: LAYERS OF
+REGULATION, 636
+
+Alternative Patterns of Gene Expression Control Lytic
+and Lysogenic Growth, 636
+
+Regulatory Proteins and Their Binding Sites, 638
+d Repressor Binds to Operator Sites Cooperatively, 639
+
+Repressor and Cro Bind in Different Patterns to Control
+Lytic and Lysogenic Growth, 640
+
+ADVANCED CONCEPTS BOX 18-4 Concentration,
+Affinity, and Cooperative Binding, 641
+
+Lysogenic Induction Requires Proteolytic Cleavage of
+d Repressor, 642
+
+Negative Autoregulation of Repressor Requires
+Long-Distance Interactions and a Large
+DNA Loop, 643
+
+Another Activator, \ CII, Controls the Decision
+between Lytic and Lysogenic Growth upon
+Infection of a New Host, 644
+
+KEY EXPERIMENTS BOX 18-5 Evolution of the
+A Switch, 645
+
+The Number of Phage Particles Infecting a Given Cell
+Affects Whether the Infection Proceeds Lytically or
+Lysogenically, 647
+
+Growth Conditions of E. coli Control the Stability
+of CII Protein and Thus the Lytic/Lysogenic
+Choice, 648
+
+Transcriptional Antitermination in \ Development, 648
+
+KEY EXPERIMENTS BOX 18-6 Genetic Approaches That
+Identified Genes Involved in the Lytic/ Lysogenic
+Choice, 649
+
+Retroregulation: An Interplay of Controls on RNA
+
+Synthesis and Stability Determines int Gene
+Expression, 651
+
+SUMMARY, 652
+BIBLIOGRAPHY, 653
+
+QUESTIONS, 654
+
+
+<!-- Page 29 -->
+xxviii       Detailed Contents
+
+CONSERVED MECHANISMS OF
+TRANSCRIPTIONAL REGULATION FROM YEAST
+TO MAMMALS, 659
+Activators Have Separate DNA-Binding and Activating
+Functions, 660
+Eukaryotic Regulators Use a Range of DNA-Binding
+Domains, But DNA Recognition Involves the Same
+Principles as Found in Bacteria, 661
+
+Activating Regions Are Not Well-Defined
+Structures, 663
+
+TECHNIQUES BOX 19-1 The Two-Hybrid Assay, 664
+
+RECRUITMENT OF PROTEIN COMPLEXES TO
+GENES BY EUKARYOTIC ACTIVATORS, 665
+Activators Recruit the Transcriptional Machinery to
+the Gene, 665
+TECHNIQUES BOX 19-2 The ChIP-Chip and ChIP-Seq
+Assays Are the Best Method for Identifying
+Enhancers, 666
+Activators Also Recruit Nucleosome Modifiers
+That Help the Transcriptional Machinary
+Bind at the Promoter or Initiate
+Transcription, 667
+Activators Recruit Additional Factors Needed for
+Efficient Initiation or Elongation at Some
+Promoters, 669
+MEDICAL CONNECTIONS BOX 19-3 Histone
+Modifications, Transcription Elongation, and
+Leukemia, 670
+Action at a Distance: Loops and Insulators, 672
+
+Appropriate Regulation of Some Groups of Genes
+Requires Locus Control Regions, 673
+
+SIGNAL INTEGRATION AND COMBINATORIAL
+CONTROL, 675
+Activators Work Synergistically to Integrate
+Signals, 675
+Signal Integration: The HO Gene Is Controlled by
+Two Regulators—One Recruits Nucleosome
+Modifiers, and the Other Recruits Mediator, 675
+
+Signal Integration: Cooperative Binding of Activators
+at the Human B-Interferon Gene, 676
+
+Ba  20 Regulatory RNAs, 701
+
+REGULATION BY RNAs IN BACTERIA, 701
+
+Riboswitches Reside within the Transcripts of Genes
+Whose Expression They Control through Changes
+in Secondary Structure, 703
+
+RNAs as Defense Agents in Prokaryotes and
+Archaea, 705
+
+oe  19 Transcriptional Regulation in Eukaryotes, 657
+
+Combinatorial Control Lies at the Heart
+of the Complexity and Diversity
+of Eukaryotes, 678
+
+Combinatorial Control of the Mating-Type Genes from
+S. cerevisiae, 680
+
+TRANSCRIPTIONAL REPRESSORS, 681
+
+SIGNAL TRANSDUCTION AND THE CONTROL OF
+TRANSCRIPTIONAL REGULATORS, 682
+
+Signals Are Often Communicated to Transcriptional
+Regulators through Signal Transduction
+Pathways, 682
+
+KEY EXPERIMENTS BOX 19-4 Evolution of a Regulatory
+Circuit, 683
+
+Signals Control the Activities of Eukaryotic
+Transcriptional Regulators in a Variety of Ways, 686
+
+GENE “SILENCING” BY MODIFICATION OF
+HISTONES AND DNA, 687
+Silencing in Yeast Is Mediated by Deacetylation and
+Methylation of Histones, 688
+In Drosophila, HP1 Recognizes Methylated Histones
+and Condenses Chromatin, 689
+Repression by Polycomb Also Uses Histone
+Methylation, 690
+ADVANCED CONCEPTS BOX 19-5 Is There a Histone
+Code?, 691
+
+DNA Methylation Is Associated with Silenced Genes in
+Mammalian Cells, 692
+
+EPIGENETIC GENE REGULATION, 694
+
+Some States of Gene Expression Are Inherited through
+Cell Division Even When the Initiating Signal Is No
+Longer Present, 694
+
+MEDICAL CONNECTIONS BOX 19-6 Transcriptional
+Repression and Human Disease, 696
+
+SUMMARY, 697
+BIBLIOGRAPHY, 698
+QUESTIONS, 699
+
+CRISPRs Are a Record of Infections Survived and
+Resistance Gained, 706
+
+ADVANCED CONCEPTS BOX 20-1 Amino Acid
+Biosynthetic Operons Are Controlled by
+Attenuation, 707
+
+Spacer Sequences Are Acquired from Infecting
+Viruses, 710
+
+
+<!-- Page 30 -->
+ACRISPR Is Transcribed as a Single Long RNA,
+Which Is Then Processed into Shorter RNA
+Species That Target Destruction of Invading
+DNA or RNA, 710
+
+REGULATORY RNAs ARE WIDESPREAD IN
+EUKARYOTES, 711
+Short RNAs That Silence Genes Are Produced from a
+
+Variety of Sources and Direct the Silencing of Genes
+in Three Different Ways, 712
+
+SYNTHESIS AND FUNCTION OF miRNA
+MOLECULES, 714
+miRNAs Have a Characteristic Structure That Assists in
+Identifying Them and Their Target Genes, 714
+
+An Active miRNA Is Generated through a Two-Step
+Nucleolytic Processing, 716
+
+Dicer Is the Second RNA-Cleaving Enzyme Involved in
+miRNA Production and the Only One Needed for
+siRNA Production, 717
+
+SILENCING GENE EXPRESSION BY
+SMALL RNAs, 718
+Incorporation of a Guide Strand RNA into RISC Makes
+
+the Mature Complex That Is Ready to Silence Gene
+Expression, 718
+
+"
+
+Detailed Contents      xxix
+
+Small RNAs Can Transcriptionally Silence Genes by
+Directing Chromatin Modification, 719
+
+RNAi Is a Defense Mechanism That Protects against
+Viruses and Transposons, 721
+
+KEY EXPERIMENTS BOX 20-2 Discovery of miRNAs and
+RNAi, 722
+
+RNAi Has Become a Powerful Tool for Manipulating
+Gene Expression, 725
+
+MEDICAL CONNECTIONS BOX 20-3 microRNAs and
+Human Disease, 727
+LONG NON-CODING RNAs AND
+X-INACTIVATION, 728
+
+Long Non-Coding RNAs Have Many Roles in Gene
+Regulation, Including Cis and Trans Effects on
+Transcription, 728
+
+X-Inactivation Creates Mosaic Individuals, 728
+
+Xist Is a Long Non-Coding RNA That Inactivates a
+Single X Chromosome in Female Mammals, 729
+
+SUMMARY, 730
+BIBLIOGRAPHY, 731
+QUESTIONS, 732
+
+=| 21 Gene Regulation in Development and Evolution, 733
+
+MEDICAL CONNECTIONS BOX 21-1 Formation of iPS
+Cells, 734
+
+THREE STRATEGIES BY WHICH CELLS ARE
+INSTRUCTED TO EXPRESS SPECIFIC SETS OF
+GENES DURING DEVELOPMENT, 735
+Some mRNAs Become Localized within Eggs and
+Embryos Because of an Intrinsic Polarity in the
+Cytoskeleton, 735
+Cell-to-Cell Contact and Secreted Cell-Signaling
+Molecules Both Elicit Changes in Gene Expression
+in Neighboring Cells, 736
+Gradients of Secreted Signaling Molecules Can Instruct
+Cells to Follow Different Pathways of Development
+Based on Their Location, 737
+
+EXAMPLES OF THE THREE STRATEGIES FOR
+ESTABLISHING DIFFERENTIAL GENE
+EXPRESSION, 738
+The Localized Ash1 Repressor Controls Mating Type in
+Yeast by Silencing the HO Gene, 738
+A Localized mRNA Initiates Muscle Differentiation in
+the Sea Squirt Embryo, 740
+
+ADVANCED CONCEPTS BOX 21-2 Review of
+Cytoskeleton: Asymmetry and Growth, 741
+
+Cell-to-Cell Contact Elicits Differential Gene Expression
+in the Sporulating Bacterium, Bacillus subtilis, 743
+
+A Skin—Nerve Regulatory Switch Is Controlled by
+Notch Signaling in the Insect Central Nervous
+System, 743
+
+A Gradient of the Sonic Hedgehog Morphogen
+Controls the Formation of Different Neurons in the
+Vertebrate Neural Tube, 744
+
+THE MOLECULAR BIOLOGY OF DROSOPHILA
+EMBRYOGENESIS, 746
+
+An Overview of Drosophila Embryogenesis, 746
+
+A Regulatory Gradient Controls Dorsoventral
+Patterning of the Drosophila Embryo, 747
+
+ADVANCED CONCEPTS BOX 21-3 Overview of
+Drosophila Development, 748
+
+Segmentation Is Initiated by Localized RNAs at
+the Anterior and Posterior Poles of the
+Unfertilized Egg, 751
+
+KEY EXPERIMENTS BOX 21-4 Activator Synergy, 752
+Bicoid and Nanos Regulate hunchback, 753
+
+Multiple Enhancers Ensure Precision of hunchback
+Regulation, 754
+
+The Gradient of Hunchback Repressor Establishes
+Different Limits of Gap Gene Expression, 754
+
+MEDICAL CONNECTIONS BOX 21-5 Stem Cell Niche, 755
+
+ADVANCED CONCEPTS BOX 21-6 Gradient
+Thresholds, 757

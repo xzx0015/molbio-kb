@@ -1,0 +1,1026 @@
+<!-- Page 1 -->
+Subtopic
+Biochemistry
+
+人 GREAT
+r(  COURSES'
+Biochemistry
+
+and Molecular Biology
+How Life Works
+
+Course Guidebook
+
+SR & Mathematics
+
+Professor Kevin Ahern
+Oregon State University
+
+
+
+<!-- Page 2 -->
+Published by
+THE GREAT COURSES
+
+Corporate Headquarters
+
+4840 Westfields Boulevard | Suite 500 | Chantilly, Virginia | 20151-2299
+[PHONE 1.800.832.2412 | [eax 703.378.3819 | wes] www.thegreatcourses.com
+
+Copyright © The Teaching Company, 2019
+
+Printed in the United States of America
+
+This book is in copyright. All rights reserved. Without limiting the rights under copyright reserved above, no
+part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted, in
+any form, or by any means (electronic, mechanical, photocopying, recording, or otherwise), without the prior
+written permission of The Teaching Company.
+
+
+<!-- Page 3 -->
+Professor of Biochemistry and
+Biophysics
+
+Oregon State University
+
+Kevin Ahern is a Professor of Biochemistry and Biophysics at Oregon
+State University (OSU). He received BS and MS degrees from Oklahoma
+State University and a PhD in Biochemistry and Biophysics from OSU.
+Trained as a molecular biologist, Professor Ahern’s primary area of scholarly
+activity is in biochemistry instruction. He has served on the OSU faculty
+
+in Biochemistry/Biophysics since the mid-1990s, teaching undergraduate
+and graduate courses and serving as head advisor of the department. A
+passionate supporter of undergraduate research, Professor Ahern served for
+14 years as director of OSU's Howard Hughes Medical Institute Summer
+Undergraduate Research Program and for 3 years as OSU's first Director for
+Undergraduate Research. He is also the principal investigator and has served
+since 2014 as director of OSU's National Science Foundation-funded STEM
+Leaders Program, which uses research experiences as tools for retention of
+underrepresented minority students in STEM disciplines.
+
+PROFESSOR BIOGRAPHY i
+
+
+<!-- Page 4 -->
+Professor Ahern coauthored 3 popular biochemistry textbooks: Biochemistry
+(3rd edition with Christopher K. Mathews and Kensal E. van Holde),
+Biochemistry Free and Easy, and Biochemistry Free for All. The last 2 books
+were cowritten with Indira Rajagopal and are open educational resources that
+have been downloaded more than 4 of a million times.
+
+Paralleling his academic career, Professor Ahern had an extensive career in
+scientific publishing, serving as a contributing editor to Science magazine,
+Genetic Engineering & Biotechnology News, and BioTechniques. He has written
+and published more than 700 articles, including 39 in Science magazine
+
+and 42 in Biochemistry and Molecular Biology Education. Professor Ahern’s
+approach to classroom teaching is novel. He writes and performs music,
+verses, and limericks to help students learn complicated material. He has more
+than 100 metabolic melodies he sings to, and with, students in his classes.
+
+Professor Ahern’s efforts have been recognized with numerous local, regional,
+and national awards. He was a 2-time national finalist for Baylor University’s
+prestigious Robert Foster Cherry Award for Great Teaching and was OSU’s
+nominee for the US Professor of the Year Award in 2009. Professor Ahern
+received OSU’s highest teaching recognition, the Elizabeth P Ritchie
+Distinguished Professor Award, and is an Eminent Professor of OSU's
+Honors College. He was named an OSU top professor by students a record
+14 times and was inducted into OSU Libraries’ Open Access Hall of Fame in
+2013. In 2019, Professor Ahern was the recipient of a Fulbright US Scholar
+‘Award that provided funding for him to teach biochemistry at the University
+of Malta.
+
+As an academic advisor, Professor Ahern won every university award given
+in that field. His mentoring of students was also recognized regionally with
+the Oregon Health & Science University Foundation’s Medical Research
+Foundation Mentor Award and nationally with the National Academic
+Advising Association's Outstanding Advising Award. @
+
+ii Biochemistry and Molecular Biology
+
+
+<!-- Page 5 -->
+[Table of Contents
+
+INTRODUCTION)
+
+Professor Biography
+
+Course Scope
+
+Acknowledgments
+
+Cannan ernwn 一
+
+10
+
+12
+B
+4
+5
+16
+
+GUIDES
+
+Biochemistry Is the Science of Us «
+
+Why Water Is Essential for Life.
+
+Amino Acids: 20 Building Blocks of Life...
+From Peptide Bonds to Protein Structure. . .
+Protein Folding, Misfolding, and Disorder .
+Hemoglobin Function Follows Structure. .
+Enzymes’ Amazing Speed and Specificity .
+Enzyme Regulation in Cells...
+
+Fatty Acids, Fats, and Other Lipids. .
+Sugars: Glucose and the Carbohydrates
+ATP and Energy Transformations in Cells. .
+Breaking Down Sugars and Fatty Acids
+Metabolism Meets at the Citric Acid Cycle .
+Energy Harvesting in Animals and Plants . .
+How Animals Make Carbs and Fats .
+
+Cholesterol, Membranes, Lipoproteins
+
+7
+.29
+.40
+.52
+.63
+74
+84
+
+100
+110
+120
+132
+143
+154
+165
+
+TABLE OF CONTENTS
+
+ili
+
+
+<!-- Page 6 -->
+TT Metabolic Control during Exercise and Rest .
+18 How Plants Make Carbs and Other Metabolites. .
+19 Recycling Nitrogen: Amino Acids, Nucleotides . .
+20 Eating, Antioxidants, and the Microbiome .
+21 Hormones, Stress, and Cell Division............
+22 Neurotransmitters, the Brain, and Addiction ... .
+23° The Biochemistry of Our Senses
+24 From Biochemistry to Molecular Biology. .......
+25 DNA and RNA: Information in Structure. ......
+26 DNA Replication in Bacteria; PCR in the Lab .. .
+27 Chromosome Replication, Telomeres, Aging. .
+
+28 DNA Mismatch and Excision Repair...........
+29 DNA Recombination, Gene Editing, CRISPR...
+30 Transcribing DNA to RNA .........2..0020005
+31 Translating RNA into Proteins .
+
+32. Protein-Synthesis Controls and Epigenetics... ..
+33 Human Genetic Disease and Gene Therapy .....
+34 Cancer Mechanisms and Treatments ...........
+35. Biotechnology, Stem Cells, Synthetic Biology .
+
+36 Omics: Genomics, Proteomics, Transcriptomics. .
+
+SUPPLEMENTARY MATERIAL
+
+Biochemistry and Molecular Biology
+
+
+
+<!-- Page 7 -->
+[course Scope
+
+Biochemistry is a fascinating subject that explains how all life on Earth
+functions. Unfortunately, the details of biochemistry often cause students
+to get lost, and consequently, they don’t get to see the big picture. Without
+connections to real life, the details simply become things to memorize for
+tests—and are soon forgotten.
+
+These lectures were designed to help everyone learn and enjoy biochemistry
+using explanations of real-world biochemistry problems as tools to understand
+the subject—while still introducing college-level biochemistry and not
+dumbing it down. And without any need for memorization, you won't spend
+your time memorizing facts, giving much more time to listen to explanations
+and think through the concepts.
+
+Biochemistry combines biology—the science of life—and chemistry, the
+science of molecules. Biochemistry, then, is the molecular basis of life. Every
+single thing that makes people alive is due to biological molecules and
+
+their interactions.
+
+The first 24 lectures of this course focus on biological molecules and
+metabolism, the thousands of different biochemical reactions that are
+occurring in human cells. You'll start by learning some basics about water,
+the most abundant molecule in the body, in lecture 2. You'll then move on
+to amino acids, proteins, and enzymes in lectures 3 through 8. Along the
+way, you'll discover how the flexibility of proteins enables everything from
+
+speeding up reactions to meeting the body's needs for oxygen.
+
+Lectures 9 and 10 introduce other major biomolecules: lipids and
+carbohydrates. You'll learn what metabolic energy is in lecture 11 and how
+much of it you go through. Then, in lectures 12 and 13, you'll discover how
+
+
+
+<!-- Page 8 -->
+cells break down dietary and stored carbs and fats to generate the energy
+your body needs. Lecture 14 will bring all of the cell’s energy considerations
+together under one umbrella, and you'll learn how photosynthesis—the
+capture of solar energy by plants—is related to metabolic energy generation
+in humans.
+
+Lectures 15 through 19 complete the tour of metabolism by examining
+how human cells build carbs, fats, amino acids, and cholesterol. In lectures
+20 through 24, you apply your biochemical knowledge to fascinating topics
+that take you well beyond individual cells. These lectures discuss healthy
+eating and fad diets, the language of cellular communication, the incredible
+speed of neurotransmission, and the 5 manifestations of neurotransmission
+that give rise to your senses.
+
+The last 12 lectures of the course delve into biological information—
+specifically, the specifications for building an organism and how that
+information is stored in molecules to be used, maintained, and transmitted
+
+to future generations. This is often called molecular biology. Whereas
+biochemistry focuses on biomolecular reactions, molecular biology covers the
+underlying cellular architecture that gives rise to the proteins that enable all of
+the biochemical reactions.
+
+DNA‘ role in this process is dissected in lectures 25 through 29. Prepare to be
+surprised at how you have DNA that is different from both of your parents’
+and how little DNA would be needed to store all of the world’s computer
+information. Lecture 30 illuminates the role of another information molecule,
+RNA, in making proteins and how it may have played additional roles in early
+life on Earth. The actual process of making proteins, and the many ways cells
+control when and how much of each protein to make, is the subject of lectures
+
+31 and 32.
+
+Beginning with lecture 33, you'll apply knowledge you've acquired to
+understand human genetic diseases. You'll also learn about some clever
+and promising approaches to fixing some of them. Lecture 34 covers the
+molecular basis of cancer and its treatment. The last 2 lectures (35 and
+
+2 Biochemistry and Molecular Biology
+
+
+<!-- Page 9 -->
+36) focus on exciting, modern applications of biochemistry knowledge—
+especially on medicine that is personalized and that works at the molecular
+level to cure disease.
+
+You can skip around a bit, if you like, but you'll probably benefit more from
+following the topics sequentially in each of the 2 modules—biochemistry and
+molecular biology—as the lectures were created to build on lessons learned
+from preceding lectures. The biochemistry and molecular biology modules
+have also been structured to be independent so that watching the first
+
+24 lectures isn’t essential to understanding the last 12. And if you want to go
+deeper at any point in your biochemical journey, there is an extensive reading
+list in the Bibliography and 2 biochemistry textbooks you can download for
+free at www.davincipress.com/freeforall.heml. 人
+
+COURSE SCOPE 3
+
+
+<!-- Page 10 -->
+[Acknowledgments
+
+4
+
+The effort that went into putting these lectures together was enormous. I can
+take credit for what is said in front of the camera, but much more happened
+behind the scenes. Major credit for the scripts goes to Indira Rajagopal and
+Jay Tate. Video production, editing, and graphics were the product of a
+talented team led by Trish Golden, Kristen Westphal, and Trisa Barnhill.
+Finally, Td like to acknowledge Christopher Mathews for giving me the
+opportunity to bring my teaching ideas to life, George Pearson for being an
+incredible mentor and friend, and Neal Gladstone for inspiring me to write
+lyrics and verse. ©
+
+Biochemistry and Molecular Biology
+
+
+<!-- Page 11 -->
+BIOCHEMISTRY IS
+THE SCIENCE OF US
+
+B iochemistry helps design life-saving treatments, improve the
+
+food supply, and answer questions in areas spanning from
+archaeology to criminal justice. In fact, there are few areas of
+science where biochemistry hasn’t had some impact.
+
+l Biochemistry: A Young Science
+
+Biochemistry is new, as the sciences go. Separately, the subjects of chemistry
+
+and biology have been around since the time of the ancient Greeks and
+
+Egyptians. But the idea of combining them is much more recent. About
+
+200 years ago, there was no evidence that a science of biochemistry was even
+
+possible. Even 100 years ago, the word biochemistry was barely coming into
+
+use, and the field had scarcely begun.
+
+Yet biochemistry has already unraveled
+chemical pathways and processes in cells
+that make us who we are. Personalized
+medicine is becoming possible thanks to
+disciplines biochemistry has spawned,
+including genomics and metabolomics.
+
+Biochemistry is truly
+the science of us—a
+
+single grand story that is
+much bigger than all of
+humanity.
+
+
+<!-- Page 12 -->
+The earliest roots of biochemistry date from almost 2 centuries ago, when an
+experiment by Friedrich Wéhler accidentally created a compound now known
+as urea. It turned out to be identical to a crystal that appeared when he dried
+urine. This demonstration made it clear, for the first time, that ordinary
+chemistry had to be possible inside of cells.
+
+As early investigators began to take apart the cell, they increasingly began to
+discover both the magic of biochemistry and its roots in traditional chemistry.
+‘Two discoveries at roughly the same time in the 1860s were inheritance and
+the existence of DNA. But the significance of these remained unrealized for
+decades.
+
+The famous physicist Erwin Schrédinger wrote a seminal book for lay readers
+entitled What Is Life? based on lectures he had been giving in Dublin. This
+book set the theoretical framework for what we now take for granted—that
+everything we associate with life has its roots in molecules. Watson and Crick
+in 1953 pointed to Schrdinger’s book as inspiration for their search to find
+the structure of DNA.
+
+Everyone knew that the chemistry of reproduction had to be distinctive,
+but it took a long time to realize that what enabled cells to reproduce was
+their ability to store information, read that information, and reproduce that
+information. No chemistry anyone saw before had ever done that.
+
+Classical biochemistry had been               '
+
+concerned with enzymes and other               The periodic table has
+molecular reactions found inside and             more than 100 elements,
+among cells. Now a new field called              and with only afew
+
+molecular biology came into being,
+
+exceptions, biochemistry is
+not concerned with those
+individual atoms.
+
+with the master instructions that cells
+need to carry out their activities. The
+2 fields became intertwined, and the
+2 names for this combined subject are
+basically interchangeable.
+
+6 Biochemistry and Molecular Biology
+
+
+
+<!-- Page 13 -->
+「 Molecules and Minerals
+
+Biochemistry is mostly about molecules. The molecules of biochemistry
+are overwhelmingly built using primarily just 6 bonding elements: carbon,
+oxygen, nitrogen, and hydrogen, with supporting help from sulfur and
+phosphorus.
+
+What matters for joining these atoms together is electrons. Chemical bonds
+always involve electrons—the smallest parts of their atoms by far. Electrons
+are negatively charged and located outside the nucleus of the atom. The
+number and kind of bonds an atom can make is due to the number of
+electrons it can share, release, or steal. Of those, the bonds that biochemistry
+cares about most involve electron sharing, It is these covalent bonds that stick
+us together.
+
+Cells are mostly water, which is just hydrogen covalently bonded with
+oxygen—hydrogen dioxide. The oxygen can make 2 bonds; each hydrogen
+can only make one bond. More importantly, they share electrons with each
+other. The other 4 elements that ate of primary importance for making bonds
+in biochemistry also like to share.
+
+The element whose atoms are arguably the most important for life is carbon.
+Carbon’s importance is directly traced to its electrons. It has 4 electrons
+involved in reactions, and they all participate in sharing with other atoms.
+Sometimes the sharing is equal, while other times it’s unequal, but carbon
+never gives up its electrons entirely or takes those of another atom.
+
+Carbons ability to make 4 bonds also makes it central to the construction
+of large and complicated molecules. A carbohydrate molecule, for example,
+is a bunch of carbons that have been hydrated with a bunch of water.
+Biochemistry is all about large carbon-centered molecules and their
+relationships to the water of the cell.
+
+LECTURE 1 | Biochemistry Is the Science of US. 7
+
+
+<!-- Page 14 -->
+Conventions for the Depiction of Molecules
+
+In the simplified diagram shown above right, the
+carbon is assumed to be at the meeting point of
+angled lines depicting the bonds. Hydrogens attached
+to the carbons are also omitted entirely. These
+simplifications help a lot when showing bigger carbon
+compounds, including the fatty acid depicted below.
+
+STEARIC ACID (18 CARBONS)
+
+MR AA
+
+H H HH HH H H H H HH H H H H H H
+Onl 1 LL LI JE
+
+7~C-C-C-C-C—C= C— C= C=C=€-C-C=C-C-C-C-C-H
+Oe ti ft i 7 ot Oo OT Qt
+H H HH HH H H H H H H H H H H H H
+
+8 Biochemistry and Molecular Biology
+
+
+<!-- Page 15 -->
+Besides carbon, hydrogen, and oxygen, the fourth most abundant element
+
+in our bodies—and the most abundant in our atmosphere—is nitrogen.
+Nitrogen can make 3 bonds with its electrons. When nitrogen bonds to
+hydrogen, as it commonly does, it forms an amine, which is related to
+ammonia. Amines also give their name to amino acids, which are the building
+blocks of proteins—the stars of biochemistry.
+
+HO              NH>2
+
+HO
+
+A fifth clement that is important in many proteins is sulfur, which can make
+2 bonds and is found in 2 of the amino acids.
+
+The sixth element that’s important for building biomolecules is phosphorus.
+In cells, phosphorus is pretty much only seen when bound to 4 oxygen atoms
+to create a unit known as a phosphate. Phosphates are important for storing
+
+energy and for being on-off switches for proteins. Phosphates are also part of
+the backbone of the structure of DNA.
+
+There are some other players in biochemistry. Many of these are atoms and
+molecules that are referred to as minerals. Eight minerals are most abundant
+in biochemistry: sodium, potassium, magnesium, calcium, iron, zinc, copper,
+and chloride. Minerals fall into a different category from the previous
+
+6 elements because minerals do not usually share electrons when they form
+bonds. Chloride steals electrons; each of the other minerals is a supplier of
+electrons.
+
+LECTURE 1| Biochemistry Is the Science of Us 9
+
+
+<!-- Page 16 -->
+In the watery environment of the body, such molecules are broken up and
+become charged ions. Our bodies are not made of ions; instead, we make use
+of ions.
+
+Stealing electrons involves gaining a negative electric charge, while supplying
+electrons means a loss of negative charge by the atom participating, Because
+atoms start out with a charge of zero, we can tell the number of electrons an
+atom has gained or lost by its charge.
+
+Sodium is a supplier of one electron, so it
+typically has a charge of +1, and chlorine
+steals electrons, so it has a charge of -1. Put
+them close together and they make NaCl,
+also known as table sale. But in the watery
+environment of our bodies, the ionic bonds
+
+Sodium atom Chlorine atom
+
+holding the salt are broken, and we use
+
+the ions.
+
+Iron and copper are 2 ions with some additional abilities. We find them in
+
+and
+
+cells with 2 possible charges each. For iron, it can exist as Fe" or Fe
+copper can exist as Cu’ or Cu", The ability of iron and copper to flip between
+2 states differing by one electron turns out to be very important for handling
+
+energy in cells.
+
+Copper plays 2 important roles in the body. One involves energy generation:
+Ic helps in respiration by transferring electrons to oxygen to make water,
+
+and this is the reason you breathe. The second role of copper is in helping to
+protect cells from random damage actually caused by the oxygen you breathe.
+
+The process of making an ion is called ionization. Ions are very important
+to cells. When minerals dissolve in water, they form ions and come apart.
+Sodium chloride splits into sodium ions and chloride ions when you dissolve
+it in water. Because water is 70% of the weight of cells, interactions with water
+in the cell are crucially important.
+
+10 Biochemistry and Molecular Biology
+
+
+<!-- Page 17 -->
+cl =
+
+Chloride ion
+
+Na*
+
+Sodium ion
+
+b+
+
+Ions are not building blocks of cells, but they perform critical tasks in and
+around the cells of our bodies. Individual atom ions, such as sodium and
+potassium, are tiny compared to proteins and other giant cell molecules with
+thousands of atoms. The tiny size of these ions allows cells to regulate their
+movement using nanoscopic protein channels specific for each one and allows
+them to move very rapidly, while their electrical charge gives them important
+roles in the electrical circuits of our nerve cells.
+
+Proteins and Enzymes
+
+Proteins are the workhorses of the cell. Proteins are polymers, which are long
+strings of molecules joined end to end. But there’s more than one way to build
+
+a polymer.
+Nonliving polymers, such as plastics, tend to repeat a single building block
+
+over and over. Such repetition provides uniformity: A sheet of plastic will
+
+appear the same no matter what part of it you examine.
+
+LECTURE 1 | Biochemistry Is the S
+
+
+
+<!-- Page 18 -->
+By contrast, protein polymers have much
+more individuality. Instead of repeating
+
+a single building block monotonously,
+proteins have at their disposal, and often
+use, 20 different building blocks—all
+amino acids. Each of the thousands of
+proteins found in cells has a unique order
+of building blocks joined to each other, and
+that sequence of building blocks determines
+the shape of the protein and what it does.
+
+Many proteins are quite
+large, often with more
+than 1000 amino acids in
+a single protein molecule.
+That’s why they’re called
+macromolecules.
+
+Some proteins speed up chemical reactions occurring inside of cells. A huge
+
+family of proteins that is responsible for speeding up all sorts of reactions
+
+is called enzymes. Nonprotein molecules that speed up reactions are called
+
+catalysts.
+
+What makes enzymes almost magical is their incredible speed. Cells rely on
+
+enormously sped-up reactions. In the absence of enzymes, some reactions can
+
+take millions of years to occur, so the speed of enzymes is crucial.
+
+12
+
+Biochemistry and Molecular Biology
+
+Enzymes are also very
+particular about their
+partners. This is called high
+specificity. The specificity of
+an enzyme is rooted in the
+very specific arrangement
+
+of the building blocks in its
+polymer. Change the order of
+amino acids and you change
+the shape of the enzyme.
+
+
+<!-- Page 19 -->
+The shape of molecules is one of the most important considerations in
+biochemistry. A basic principle is that structure determines function. Enzymes
+have highly specific shapes, and those characteristic shapes only allow molecules
+with corresponding shapes to fit into them. Fitting into enzymes in a very
+specific way is critical because that’s where enzymes catalyze reactions. Ifa
+molecule can’t fit into an enzyme, its reaction will merely grind along at the
+
+speed of nonlife.
+
+‘The vast majority of biomolecules found in a cell get made in reactions
+catalyzed by enzymes in that cell. Because each enzyme catalyzes reactions
+quite specifically, on only one or a handful of different molecules, any given
+cell must make thousands of enzymes to catalyze the thousands of different
+types of molecules made in that one cell.
+
+celts as Houses for Reactions
+
+Cells are the fundamental unit of life. Overall, you could think of cells as
+houses for molecular reactions. Like houses, cells have surrounding walls in
+the form of a membrane.
+Some cellular houses are
+Prokaryote                            more like tents, with a
+simple design, small size, and
+              only a single room for the
+sx                   reactions to live in. Bacteria
+cells have single rooms. They
+are also called prokaryotes.
+With no internal walls,
+bacterial houses keep all their
+possessions in the same room.
+
+LECTURE 1 | Biochemistry Is the Science ofus 13
+
+
+<!-- Page 20 -->
+Most other cells, such as the ones in our body, are more like houses
+subdivided into rooms, each of which has a function. Rooms in cells are
+
+called organelles. There are several, including a nucleus, where DNA is stored,
+
+and mitochondria, where energy is made.
+
+Animal Cell                        Plant Cell
+
+Cells with the organizational scheme of a house are called eukaryotes. Most
+eukaryotes are multicellular—like cities containing many houses. However, a
+few eukaryotes, such as yeast and amoebas, happily maintain the rural life of
+a little house on the prairie.
+
+One of the remarkable things about the biochemistry of cells is this: All
+living things are remarkably similar. The molecules they contain, the
+reactions their molecules undergo, and the ways they store information inside
+themselves are similar. Whether it’s the breakdown and synthesis of fat, the
+storing of chemical energy, or the synthesis of proteins, all cells take the same
+basic approach.
+
+14 Bil
+
+hemistry and Molecular Bi
+
+
+<!-- Page 21 -->
+This similarity provides a great simplification
+
+Drug makers work hard to         for learning biochemistry. When you learn
+
+exploit minor differences         the biochemistry for one organism, you've
+between human and         already learned a great deal about every
+bacteria cells when         other organism. These deep similarities
+
+make it possible for us to use bacteria,
+
+designing antibacterial
+drugs for infections.
+
+yeast, and animals as biological factories to
+make human proteins, such as insulin, for
+medicinal use.
+
+Don’t focus on the terminology used in these lectures. This isn’t a
+course about names, equations, memorizing, or any of the standard
+things people stereotypically associate with science courses. This is
+a one-of-a-kind course where you can enjoy biochemistry while you
+learn it.
+
+READINGS)
+
+Gray, Molecules.
+
+Reactions.
+
+Jonsson, et al., “Essential Chemistry for Biochemists.”
+
+Pross What Is Life?
+
+LECTURE 1 | Biochemistry Is the Science of Us
+
+15
+
+
+<!-- Page 22 -->
+QUESTIONS
+
+1 The 6 elements that are used to construct biomolecules are not the 6 most
+abundant elements on Earth. Discuss why abundance is not an important
+consideration for biomolecules. What properties do these elements have
+that allow them to better perform the roles of making molecules that are
+important for life?
+
+2 The great scientist Louis Pasteur mistakenly believed that the process of
+fermentation was a biological process, not one that was possible using
+ordinary chemistry. He was wrong, of course. One type of protein bridged
+the biological/chemistry gap and allowed reactions to occur both inside of
+cells and, when removed, outside of them. What are these proteins called,
+and how do they enable what seemed impossible to Pasteur?
+
+CLICK HERE TO SEE THE ANSWERS.
+
+16 Biochemistry and Molecular Biology
+
+
+<!-- Page 23 -->
+WHY WATER IS
+ESSENTIAL FOR LIFE
+
+W ater is uniquely valuable because it has some special
+and peculiar properties that make it different from all
+
+other liquids in ways that are crucial to the processes that
+support life.
+
+l water's Electronegativity
+
+‘The key to the behavior of water is in a property of atoms called
+clectronegativity, which is a measure of the affinity of an atom’s nucleus for
+its outermost electrons. You can think of it as how strongly the nucleus of the
+atom holds on to those electrons. Atoms whose nuclei hold on tightly to outer
+electrons have high clectronegativity values.
+
+Life on Earth almost certainly began in water, and liquid water seems to
+be an irreplaceable requirement for all life. About 2/3 of Earth’s surface
+is covered with water, and about 2/3 the weight of a human being is
+water.
+
+7
+
+
+<!-- Page 24 -->
+Electronegativities of elements vary considerably. Fluorine and oxygen
+have the highest electronegativities. As you move from right to left along
+the Periodic Table, the electronegativity values tend to decrease: Elements
+on the left side of the table, such as sodium and potassium, have very low
+clectronegativity values. The exception is hydrogen, but its single electron is
+also a special case.
+
+‘A molecule of water is made up of an oxygen atom and 2 hydrogen atoms.
+Oxygen has a very high electronegativity value compared to hydrogen, which
+means that the nucleus of the oxygen atom “likes” electrons more than the
+nucleus of each hydrogen atom does. So, although oxygen can make a bond to
+“share” electrons with hydrogen, the oxygen does not share equally.
+
+You could think of oxygen as an electron bully, keeping shared electrons in
+each bond closer to itself and farther away from hydrogens. Although this
+setup is still a covalent bond, in that the electrons are shared, the oxygen holds
+the bond electrons closer, so it acquires a partial negative charge, written 5°.
+And because hydrogen is farther away from the bond electron, the hydrogen
+gets a partial positive charge, written 8°. It is this nonuniform charge
+distribution that gives water its very interesting properties.
+
+I Water’s Polarity
+
+When you look closely at the structure of
+a water molecule, the shape is a relaxed V.
+The bottom of the V, where the oxygen
+is, will be slightly negative, and the tops
+of the V, where the hydrogens are, will
+
+be slightly positive. A molecule with an
+uneven distribution of charge like this is
+described as being polar.
+
+18 Biochemistry and Molecular Biology
+
+
+<!-- Page 25 -->
+Each water molecule is in close proximity to several other water molecules,
+each with the same partial charge distributions. Opposite charges attract, so
+partial positive charges on hydrogens of one water molecule are attracted to
+the partial negative charge on each oxygen of neighboring water molecules.
+Interactions arising from these partial charges are called hydrogen bonds.
+
+Although hydrogen bonds are possible between atoms of many molecules,
+they mostly involve oxygen, nitrogen, sulfur, and hydrogen.
+
+Two of the most important structures in our cells rely on hydrogen
+bonds for stability:
+
+© The complex folded structure of proteins is stabilized by hydrogen bonds.
+
+© Double strands of DNA are held together by hydrogen bonds.
+
+Hydrogen bonds are why water remains liquid at room temperature; these
+bonds are how water molecules attract and hold on to each other. Although
+such bonds are not permanent, each water molecule in liquid water is
+constantly making and breaking links with its neighbors in a sort of group
+dance, swapping partners but staying connected. Breaking all these bonds at
+the same time to turn water into steam takes much more heat than would be
+needed for molecules not held together by such bonds.
+
+。 Conversely, when temperatures drop
+and thermal motion is minimal, HO
+
+Unlike most liquids, as water
+freezes, it expands, thus
+reducing its density. This is
+why ice floats in liquid water.
+
+molecules take a tiny step back and
+each water molecule hydrogen-bonds
+to 4 neighboring H,Os. This creates
+
+the highly ordered structure in an ice
+
+And the fact that water is a          crystal. And because frozen water is
+liquid across the wide range         in this crystal form, ice is less dense
+of temperatures considered         than water.
+
+to be normal is unusual, too.
+
+LECTURE 2 | Why Water Is Essential for Life 19
+
+
+
+<!-- Page 26 -->
+H
+tm AAA
+[RE
+Li    Be
+an_ An A+
+oun] Maaresom
+Na   Mg
+an Ji lun Av
+[Potassium  [Calcium    [Scandium  [Titanium  [Vanadium  [Chromium — [Manganese [iron    [Cobalt
+K    Ca     Sc    Ti    V    Cr} Mn, Fe   Co
+wo Kv [aos Ko [un An [arsr Hae [som 2 [2200/24 [sie Aes [ssn As 21
+Rabid [Strontium   Ritrum ——]farconum Niobium enum ][Technetum Ruthenium — Rhodium
+Rb | Sr     Y    Zr J) Nb, Mo) Tc   Ru | Rh
+sar Salon Ko lan Ko (na Ko lan Aa [an Aaa [on Aca [roro Ae [wan Aas
+[Sesion —]Berom      woes ium fons — fasten Rhona Osram igor
+Cs   Ba     Vv    Hf   Ta    Ww   Re   Os    Ir
+wan fos [rors He       raw Aa [1098/13 [1280 Av [rer Hrs [19028 A [wa Am
+Fr / Ra     Vv    Rf 7 Db, Sg) Bh, Hs ) Mt
+was Ser [iz Se        wn fre [wn As [on Aros fier Arar [120 vv
+EEC
+La   Ce   Pr   Nd Pm, Sm Eu
+ran Zor [wor As ln 21 [race Ao [isi Har [15038 Are [sire As
+Tainan |Terms] Praacinam [rani Reps] Pttonam american
+Ac   Th   Pa    U    Np 7, Pu) Am
+won fo [rao Avo [erie An [000 v2 [ein Al Ae [iar Hs
+
+
+
+<!-- Page 27 -->
+Name of element          * Solid
+Element state            ** Liquid
+* Gas
+Chemical symbol
+ym          + Unknown
+Atomic weight
+Atomic number
+tom
+He
+FRI        Reon
+B    Cc    N    0    F    Ne
+Al    Si    P    Ss    cl    Ar
+Rial] fer] ane     allan [Germanium —|farsenie —]Seletam [Bromine] krypton
+Ni   Cu   Zn     Ga   Ge中 As | Se   Br   Kr
+RAR SR | ERA    indium] tn    [antimony —]eturiam —lfedne ——] Xenon
+Pd) Ag J Cd     In   Sn J Sb Te    1    Xe
+[|    rer    [|    Biemuin —fesoniom —astatne Raden
+Pt) Au) Hg     Tl    Pb    Bi    Po /中 At   Rn
+Ds   Rg   Cn     Uut) FI) Uup,)) Lv | Uus,) Uuo
+Gd   Tb   Dy     Ho   Er J) Tm) Yb   Lu
+Cm) Bk   Cf     Es /| Fm/| Md, No   Lr
+
+
+
+<!-- Page 28 -->
+Hydrogen bonds can also form within and between molecules. The same
+clectronegativity difference that gives rise to hydrogen-bonding in water also
+allows amino acids to interact within proteins.
+
+Whenever large electronegativity differences exist between hydrogen and an
+atom, hydrogen bonds are possible. For example, hydrogen has much weaker
+clectronegativity than nitrogen and forms hydrogen bonds when linked
+together. Carbon, on the other hand, is much more similar to hydrogen, so it
+does not form hydrogen bonds to any significant extent.
+
+Every amino acid in every protein contains nitrogen-hydrogen bonds,
+
+and carbon-oxygen double bonds and hydrogen bonds can form between
+the hydrogens of the nitrogen-hydrogen bonds and the oxygens of the
+carbon-oxygen double bonds. Similarly, every nucleotide in every DNA or
+RNA molecule contains these bonds.
+
+And because most of the body is water, the hydrogen bonds within these
+biomolecules are constantly being invited to dance with water. In other
+words, because water is held together by hydrogen bonds, water is an effective
+medium and solvent for the molecules important for life, both inside cells and
+in the fluids that surround them.
+
+A solvent is a liquid that dissolves something. Ocean water is full of dissolved
+salts, Water uses its partial charges to dissolve compounds.
+
+Table salt, or sodium chloride,
+can be ionized in water. Sodium’s
+very low affinity and chlorine’s
+very high affinity for electrons
+means that sodium essentially
+gives up an electron to chlorine
+when they bond. Sodium then
+has a net charge that’s fully
+
+positive and is a sodium ion.
+
+22 Biochemistry and Molecular Biology
+
+
+<!-- Page 29 -->
+On the other side of the molecule, chlorine gains sodium's electron and is
+fully negatively charged, forming a chloride ion. Sodium’s positive charge is
+strongly attracted to chloride’s negative charge, creating an ionic bond.
+
+By contrast, many organic
+compounds, such as sugar,            GLUCOSE 4
+dissolve in water because
+the partial charges of their
+own hydrogen bonds can
+mingle directly with the
+hydrogen bonds of water.
+There is no need to ionize.
+‘Water's partial charges
+
+can dance with the partial
+charges of glucose, a typical
+sugar, to pull individual
+sugar molecules into
+solution,
+
+But other molecules,
+
+such as oil and fat, do not
+dissolve or mix in water.
+This is because they have long chains of carbon-hydrogen bonds that do
+not ionize or form hydrogen bonds. The electronegativities of hydrogen and
+carbon are similar enough that electrons in these bonds are pretty equally
+shared. The charge distribution is effectively uniform, and the bond is
+effectively nonpolar. So, fats can neither ionize nor readily form hydrogen
+bonds; therefore, water can’t pull fat molecules apart from each other.
+
+Molecules that do not dissolve in water are hydrophobic, meaning
+“water-fearing.” Molecules that do dissolve in water are hydrophilic, or
+“water-loving.” Molecules that are ambivalent about water are amphiphilic,
+which means they have an intermediate level of solubility in water compared
+
+to hydrophilic and hydrophobic compounds.
+
+LECTURE 2 | Why Water Is Essential for Life 23
+
+
+<!-- Page 30 -->
+Like a clique of middle schoolers huddling with each other and rejecting those
+who are different, the hydrophobic regions of amphiphilic molecules arrange
+themselves to be near each other and away from water. Meanwhile, their
+hydrophilic ends happily associate with water molecules. All this combines to
+form a spherical bubble-like structure called a micelle.
+
+This chemical property of nonpolar parts of molecules to associate with
+
+each other to the exclusion of water is called the hydrophobic effect, and it is
+important for forming cellular membranes.
+
+MICELLE
+
+— Hydrophilic head
+
+-—— Hydrophobic tail
+
+Soap is an example of an amphiphilic compound. It is partly hydrophilic
+and partly hydrophobic. The hydrophilic end interacts with water
+readily; the hydrophobic end avoids interacting with water. Soap’s
+micellar structure is critical to how it removes grease when you wash
+your hands or do the dishes.
+
+24

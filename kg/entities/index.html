@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实体索引 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .back { color: #667eea; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+        h1 { color: #667eea; margin-bottom: 30px; }
+        
+        .entity-type {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .entity-type h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .entity-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .entity-item {
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .entity-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* 实体类型颜色 */
+        .type-molecule { background: #e3f2fd; color: #1976d2; }
+        .type-process { background: #f3e5f5; color: #7b1fa2; }
+        .type-enzyme { background: #e8f5e9; color: #388e3c; }
+        .type-tech { background: #fff3e0; color: #f57c00; }
+        .type-person { background: #fce4ec; color: #c2185b; }
+        .type-concept { background: #e0f2f1; color: #00796b; }
+        .type-structure { background: #f3e8ff; color: #7c3aed; }
+        .type-disease { background: #fee2e2; color: #dc2626; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back">← 返回首页</a>
+        <h1>🧬 实体索引</h1>
+        
+        <div class="entity-type">
+            <h2>🔬 分子（Molecule）</h2>
+            <div class="entity-list">
+                <div class="entity-item type-molecule">DNA</div>
+                <div class="entity-item type-molecule">RNA</div>
+                <div class="entity-item type-molecule">核苷酸</div>
+                <div class="entity-item type-molecule">氨基酸</div>
+                <div class="entity-item type-molecule">蛋白质</div>
+                <div class="entity-item type-molecule">酶</div>
+                <div class="entity-item type-molecule">脱氧核糖</div>
+                <div class="entity-item type-molecule">核糖</div>
+                <div class="entity-item type-molecule">碱基</div>
+                <div class="entity-item type-molecule">磷酸基团</div>
+                <div class="entity-item type-molecule">五碳糖</div>
+                <div class="entity-item type-molecule">tRNA</div>
+                <div class="entity-item type-molecule">mRNA</div>
+                <div class="entity-item type-molecule">rRNA</div>
+                <div class="entity-item type-molecule">cDNA</div>
+            </div>
+        </div>
+        
+        <div class="entity-type">
+            <h2>⚙️ 过程（Process）</h2>
+            <div class="entity-list">
+                <div class="entity-item type-process">DNA复制</div>
+                <div class="entity-item type-process">转录</div>
+                <div class="entity-item type-process">翻译</div>
+                <div class="entity-item type-process">逆转录</div>
+                <div class="entity-item type-process">半保留复制</div>
+                <div class="entity-item type-process">碱基互补配对</div>
+                <div class="entity-item type-process">分子内碱基配对</div>
+                <div class="entity-item type-process">链侵入</div>
+            </div>
+        </div>
+        
+        <div class="entity-type">
+            <h2>🧪 酶（Enzyme）</h2>
+            <div class="entity-list">
+                <div class="entity-item type-enzyme">DNA聚合酶</div>
+                <div class="entity-item type-enzyme">RNA聚合酶</div>
+                <div class="entity-item type-enzyme">逆转录酶</div>
+                <div class="entity-item type-enzyme">解旋酶</div>
+                <div class="entity-item type-enzyme">引物酶</div>
+                <div class="entity-item type-enzyme">DNA连接酶</div>
+                <div class="entity-item type-enzyme">拓扑异构酶</div>
+                <div class="entity-item type-enzyme">DNA糖基化酶</div>
+                <div class="entity-item type-enzyme">AP内切酶</div>
+                <div class="entity-item type-enzyme">光裂合酶</div>
+                <div class="entity-item type-enzyme">端粒酶</div>
+                <div class="entity-item type-enzyme">肽酰转移酶</div>
+                <div class="entity-item type-enzyme">氨酰-tRNA合成酶</div>
+            </div>
+        </div>
+        
+        <div class="entity-type">
+            <h2>🔧 技术（Technology）</h2>
+            <div class="entity-list">
+                <div class="entity-item type-tech">PCR</div>
+                <div class="entity-item type-tech">DNA测序</div>
+                <div class="entity-item type-tech">基因克隆</div>
+                <div class="entity-item type-tech">基因编辑</div>
+                <div class="entity-item type-tech">重组DNA技术</div>
+                <div class="entity-item type-tech">核酸提取</div>
+            </div>
+        </div>
+        
+        <div class="entity-type">
+            <h2>👤 人物（Person）</h2>
+            <div class="entity-list">
+                <div class="entity-item type-person">Watson</div>
+                <div class="entity-item type-person">Crick</div>
+                <div class="entity-item type-person">Jacob</div>
+                <div class="entity-item type-person">Monod</div>
+                <div class="entity-item type-person">Meselson</div>
+                <div class="entity-item type-person">Stahl</div>
+            </div>
+        </div>
+        
+        <div class="entity-type">
+            <h2>💡 概念（Concept）</h2>
+            <div class="entity-list">
+                <div class="entity-item type-concept">中心法则</div>
+                <div class="entity-item type-concept">遗传密码</div>
+                <div class="entity-item type-concept">操纵子</div>
+                <div class="entity-item type-concept">启动子</div>
+                <div class="entity-item type-concept">增强子</div>
+                <div class="entity-item type-concept">复制起点</div>
+                <div class="entity-item type-concept">复制叉</div>
+                <div class="entity-item type-concept">冈崎片段</div>
+                <div class="entity-item type-concept">半不连续复制</div>
+                <div class="entity-item type-concept">基因表达调控</div>
+                <div class="entity-item type-concept">表观遗传</div>
+                <div class="entity-item type-concept">DNA甲基化</div>
+            </div>
+        </div>
+        
+        <div class="entity-type">
+            <h2>🏗️ 结构（Structure）</h2>
+            <div class="entity-list">
+                <div class="entity-item type-structure">双螺旋</div>
+                <div class="entity-item type-structure">α-螺旋</div>
+                <div class="entity-item type-structure">β-折叠</div>
+                <div class="entity-item type-structure">核糖体</div>
+                <div class="entity-item type-structure">染色体</div>
+                <div class="entity-item type-structure">核小体</div>
+                <div class="entity-item type-structure">T环</div>
+                <div class="entity-item type-structure">Holliday连接体</div>
+            </div>
+        </div>
+        
+        <div

@@ -1,0 +1,2041 @@
+<!-- Page 1 -->
+LODISH + BERK * MATSUDAIRA + KAISER
+KRIEGER + SCOTT «+ ZIPURSKY * DARNELL
+
+Molecular        m=
+Cell
+Biology
+
+
+
+<!-- Page 2 -->
+Molecular Cell Biology
+
+Fifth Edition
+
+Harvey Lodish (Massachusetts Institute of Technology)
+Arnold Berk (U. of California, Los Angeles)
+
+Paul Matsudaira (Massachusetts Institute of Technology)
+Chris A. Kaiser (Massachusetts Institute of Technology)
+Monty Krieger (Massachusetts Institute of Technology)
+Matthew P. Scott (Stanford U.)
+
+Lawrence Zipursky (U. of California, Los Angeles)
+
+James Darnell (Rockefeller U.)
+
+
+<!-- Page 3 -->
+Summary
+
+Molecular Cell Biology provides a clear introduction to the techniques and experiments of scientists
+past and present, showing how important discoveries led to the formation of the field's key concepts.
+Since the publication of the Fourth Edition, fundamental principles have emerged from our
+understanding of molecular cell biology. This Fifth Edition strives to present these principles clearly
+while providing essential experimental information.
+
+
+<!-- Page 4 -->
+New to this Edition
+
+REORGANIZED AND REWRITTEN FOR A MORE DIRECT FOCUS ON CELLS AND CELLULAR
+SYSTEMS. The new author team has reshaped the text to emphasize just those topics that fall within the scope of the
+course, presenting them in a logical, teachable organization in seven parts:
+
+Chemical and Molecular Foundations
+
+Cell Organization and Biochemistry
+
+Genetics and Molecular Biology
+
+*Cell Signalling
+
+*Membrane Trafficking
+
+*The Cytoskelon
+
+Cell Cycle and Cell-Growth Control
+
+In Part I Chemical and Molecular Foundation:
+*New Chapter 1, Life Begins with Cells provides a conceptual overview of the text.
+
+*Chapter 2, Chemical Foundations focuses on the chemical concepts most relevant to molecular cell biology, and
+features a new section introducing the cellular building blocks (amino acids, nucleotides, carbohydrates, fatty acids, and
+phospholipids).
+
+*Chapter 4, Basic Molecular Genetic Mechanisms, has been restructured to describe the basic mechanisms of
+transcription, translation, and DNA replication and the molecular machines that carry out these processes. It introduces
+the concept of transcriptional control and includes a brief discussion of gene control in bacteria.
+
+In Part II, Cell Organization and Biochemistry (Chs. 5 through 8), students get an early introduction to core cell
+biology topics such a:        cell membranes, structure, and function.
+
+*Chapter 6, Integrating Cells into Tissues features an earlier, expanded treatment of adhesive cell-cell and cell-matrix
+interactions, preparing students to think about how cells relate to each other and their immediate surroundings.
+*Chapters on Transport of Ions and Small Molecules Across Cell Membranes and Cellular Energetics appear
+earlier in the book (Chs. 7 & 8 now; 15 and 16 in the previous edition).
+
+In Part III, Genetics and Molecular Biology:
+
+*Chapter 9, Molecular Genetic Techniques and Genomics offers streamlined coverage of genetic and recombinant
+DNA techniques (Chs. 7 and 8 in the previous edition). Several examples of DNA microarray analysis to determine
+genome-wide expression patterns are presented here and throughout the book.
+
+*Chapters 11 and 12, Transcriptional Control of Gene Expression and Post-Transcriptional Gene Control and
+Nuclear Transport, now focus on eukaryotic cells. Coverage of prokaryotic gene control has been shifted to Chapter 4.
+
+In Part IV, Cell Signaling, the new edition provides expanded treatment of signaling systems and their integration
+within the whole cell/organism, with chapters on Signaling at the Cell Surface (Ch. 13), Signaling Pathways That
+Control Gene Activity (Ch. 14), and Integration of Signals and Gene Controls (Ch. 15)
+
+In Part V, Membrane Trafficking:
+
+*Chapters on Moving Proteins into Membranes and Organelles (Ch. 16) and Vesicular Traffic, Secretion, and
+Endocytosis (Ch. 17) offer an expanded introduction to protein sorting (a single chapter in the previous edition)
+
+*New Chapter 18, Metabolism and Movement of Lipids provides expanded coverage of an often-overlooked class of
+macromolecules, plus an elegant case study of the two-way interplay between basic molecular cell biology and
+medicine.
+
+In Part VI, Cell Cycle and Cell-Growth Control
+Regulating the Eukaryotic Cell Cycle is now Chapter 21 immediately preceding the chapter on cell birth, lineage,
+
+and death. This chapter contains a new section on molecular mechanisms that permit cells to undergo meiosis rather than
+mitosi:
+
+*New Chapter 22, Cell Birth, Lineage and Death emphasizes the general role of asymmetric cell division in early
+development, includes new coverage of C. elegans cell lineage, and describes cell-type specification in yeast and muscle
+(from fourth edition Chapter 14).
+
+
+
+<!-- Page 5 -->
+OTHER CONTENT REORGANIZATIONS
+
+Some topics on DNA replication, repair, and recombination (formerly a separate chapter) are now incorporated in
+other chapters where they fit naturall
+#DNA replication is covered in Basic Molecular Genetic Mechanisms (Ch. 4)
+
+*DNA damage and repair is covered in Cancer (Ch. 23)
+
+Coverage of topoisomerases and mechanisms of recombination has been substantially reduced and incorporated into
+other chapters where relevant.
+
+Material on gene control and development (fourth edition Chapter 14) and cell interactions in development (fourth
+edition Chapter 23), has been refocused to emphasize how studies in development inform our understanding of basic cell
+processes. This material has been placed in several appropriate chapters in the Fifth Edition (Chapters 6,14, 15, and 22.)
+
+Material on nerve cells (fourth edition Chapter 21) is now covered in Chapters 7 and 17, along with other ion-transport
+and vesicle-trafficking processes.
+
+SIGNATURE FOCUS ON EXPERIMENTS ENHANCED
+
+Molecular Cell Biology doesn't just catalog concepts. It provides a clear introduction to the techniques and experiments
+of scientists past and present, showing how important discoveries led to the formation of the fields key concepts. The
+authors’ commitment to providing students with an experimental focus continues to drive the narrative wherever possible
+in this fifth edition. As well, new ways of presenting the experimental approach to student include:
+
+Students answer a research question by looking at real experimental data in new Analyze the Data problems that
+conclude each chapter. In addition to these problems, the Fifth Edition includes real data throughout, wherever possible.
+* Updated Perspectives for the Future, at the conclusion of each chapter which explore potential applications of future
+discoveries and unanswered questions that lie ahead for researchers.
+
+*Titles for experimental figures have been rewritten to emphasize the experimental results.
+
+NEW WAYS OF SEEING MOLECULAR CELL BIOLOGY
+
+Given the importance of visuals in cell biology, the Fifth Edition offers the following innovations to the art and media
+program:
+
+*New Overview Figures throughout provide the reader with an overview of the details to come.
+
+*New pairing of diagrams with micrographs make as clear as possible for the student what they are seeing in the real
+image.
+
+=Many more stepped-out figures illustrate important concepts
+
+*More consistent schematic depictions of structures and processes within and across chapters
+
+#Improved treatment of structural data through the consistent presentation of molecular models across the text
+Expanded video resource library, with many new videos for instructors to use in lectures.
+
+
+<!-- Page 6 -->
+Media
+
+WEB
+
+Companion Web Site at www.whfreeman.com/lodish
+
+For students, the site serves both as a free, 24-hour-a-day virtual study guide and as a bridge to the working world of cell
+and molecular biologists. Features include:
+
+*Over 50 Animations. Developed by the authors, these narrated animations illustrate dynamic processes and events in
+molecular cell biology. Media Connections icons in the book link relevant figures with their corresponding animations
+on the Web site. All animations are visually consistent with the book illustrations.
+
+*Sixty Quicktime research videos. These clips from cutting-edge laboratories around the world show your students
+what cells and cellular processes really look like.
+
+®Classic Experiments. Each of these 20 brief illustrated e:
+experiment, and describes how a researcher formed a hypoth
+how this affected our current understanding.
+
+*Timed MCAT/GRE-style prep exams. Referenced to the text, these practice exams give students valuable test-taking
+experience.
+
+covers a groundbreaking molecular cell/biology
+, developed an experiment to test the hypothesis, and
+
+Also available,
+
+Student CD, 0-7167-8875-6
+
+Please note, this CD has the same material as the student Web site
+
+Instructors For Instructors, the site offers specific ideas on using the electronic media for the book while teaching
+from it, including:
+
+*®Textbook illustrations, photos, and tables in JPEG and PowerPoint format, optimized for lecture presentation.
+Labels have been enlarged and are in boldface type; complicated multistep illustration shave been separated into parts,
+and colors are enhanced.
+
+*Solutions to all text problems.
+
+#Q&A/MCAT/GRE Reports that allow instructors to track students’ progre
+*Testing on Molecular Cell Biology Test Bank in Word files
+
+Plus:
+
+Online Update Service
+
+Now there is a convenient way to bring the most important developments in molecular cell biology research--
+in NATURE Reviews Molecular Cell Biology--into your classroom. The Online Update Service gives you quick access
+to all review articles published in NRMCB. Finding information relevant to the topics you cover is easy. Entries are
+organized according to the chapter sections of Molecular Cell Biology, Fifth Edition. Links include a short description of
+the article, the entire article in PDF format, and illustrations from each article in a projection-friendly format for use in
+lectures.
+
+PRESENTATION/ASSESSMENT
+
+Instructor's CD-ROM, 0-7167-0065-4
+
+Contains the following electronic content to allow instructors to create their own websites and presentations:
+*®Textbook illustrations, photos, and tables in JPEG and PowerPoint format, optimized for lecture presentation.
+Labels have been enlarged and are in boldface type; complicated multistep illustration shave been separated into parts,
+and colors are enhanced.
+
+*Sixty Quicktime research videos. These videos from cutting-edge laboratories around the world show your students
+what cells and cellular processes really look like. These videos come from cutting-edge laboratories around the world.
+* Video Guide provides description of video, run time, and the source of the video (researcher(s) and it
+*#Over 50 Animations. Developed by the authors, these narrated animations illustrate dynamic processes and events in
+molecular cell biology. Media Connections icons in the book link relevant figures with their corresponding animations
+on the Web site. All animations are visually consistent with the book illustrations.
+
+Overhead Transparency Set, 0-7167-0069-7
+Contains 250 full-color images from the text optimized for classroom projection, including all overview figures.
+
+
+<!-- Page 7 -->
+Vi
+
+Supplements
+
+FOR STUDENTS
+
+Working with Molecular Cell Biology, Fifth Edition: A Study Companion and Solutions Manual, by Brian
+Storrie, Eric Wong, Rich Walker, and Glenda Gillaspy, all of Virginia Polytechnic Institute and State University
+Each chapter of the Study Companion will be divided into three parts:
+
+*Reviewing Concepts: Serves as a study and review resource, posing questions on key principles, concepts, and
+experiments
+
+* Analyzing Experiments: Requires students to answer multi-part problems based on experimental data, and to apply
+knowledge of concepts and techniques.
+
+*Solutions to Problems: Includes the worked-out solutions to the questions posed. In addition, the worked-out answers.
+to every end-of-chapter question from the text.
+
+Student CD, 0-7167-8875-6
+
+**Please note, this CD has the same material as the student website does**
+
+*#Over 50 Animations. Developed by the authors, these narrated animations illustrate dynamic processes and events in
+molecular cell biology. Media Connections icons in the book link relevant figures with their corresponding animations
+on the Web site. All animations are visually consistent with the book illustrations.
+
+*Sixty Quicktime research videos. Drawn from cutting edge labs around the world, these videos show your students
+
+what cells and cellular processes really look like.
+
+*®Classic Experiments. Each of these 20 brief illustrated e:
+experiment, and describes how a researcher formed a hypoth
+how this affected our current understanding.
+
+*Timed MCAT/GRE-style prep exams. Referenced to the text, these practice exams give students valuable test-taking
+experience.
+
+s covers a groundbreaking molecular cell/biology
+, developed an experiment to test the hypothesis, and
+
+AVAILABLE PACKAGES
+
+Text + Working With Molecular Cell Biology, 0-7167-6152-1
+Text + MCAT Practice Test, 0-7167-2241-0
+
+Text + Student CD, 0-7167-8886-1
+
+
+<!-- Page 8 -->
+vii
+
+About the Authors
+
+Harvey Lodish is Professor of Biology at the Massachusetts Institute of Technology and a member of the Whitehead
+Institute for Biomedical Research. Dr. Lodish is also a member of the National Academy of Sciences and the American
+Academy of Arts and Sciences and President (2004) of the American Society for Cell Biology. He is well known for his
+work on cell membrane physiology, particularly the biosynthesis of many cell-surface proteins, and on the cloning and
+functional analysis of several cell-surface receptor proteins, such as the erythropoietin and TGF_ receptors, and transport
+proteins, including those for glucose and fatty acids. Dr. Lodish teaches undergraduate and graduate courses in cell
+biology.
+
+Arnold Berk is Professor of Microbiology, Immunology and Molecular Genetics and a member of the Molecular
+Biology Institute at the University of California, Los Angeles. Dr. Berk is also a fellow of the American Academy of
+Arts and Sciences. He is one of the original discoverers of RNA splicing and of mechanisms for gene control in viruses.
+His laboratory studies the molecular interactions that regulate transcription initiation in mammalian cells, focusing
+particular attention on transcription factors encoded by oncogenes and tumor suppressors. He teaches introductory
+courses in molecular biology and virology and an advanced course in cell biology of the nucleus.
+
+Paul Matsudaira is a member of the Whitehead Institute for Biomedical Research, Professor of Biology and
+Bioengineering at the Massachusetts Institute of Technology, and Director of the WI/MIT Biolmaging Center. His
+laboratory studies the mechanics and biochemistry of cell motility and adhesion and has developed high speed, high-
+through-put DNA analysis methods based on microfabricated chips. He organized the first biology course required of all
+MIT undergraduates and teaches courses in undergraduate biology and graduate bioengineering at MIT.
+
+
+
+<!-- Page 9 -->
+viii
+
+Chris A. Kaiser is a cell biologist and geneticist who has made fundamental contributions to understanding the basic
+processes of intracellular protein folding and membrane protein trafficking. His laboratory at the Massachusetts Institute
+of Technology, where he is Professor of Biology, studies how newly synthesized membrane and secretory proteins are
+folded and sorted in the compartments of the secretory pathway. Dr. Kaiser teaches genetics to undergraduates and
+graduate students at MIT.
+
+Monty Krieger is Thomas D. & Virginia W. Cabot Professor in the Department of Biology at the Massachusetts
+Institute of Technology. For his innovative teaching of undergraduate biology and human physiology as well as graduate
+cell biology courses, he has received numerous awards. His laboratory has made contributions to our understanding of
+membrane trafficking through the Golgi apparatus, and has cloned and characterized receptor proteins important for the
+movement            of           cholesterol            into            and            out            of           cells.
+
+Matthew P. Scott is Professor of Developmental Biology and Genetics at Stanford University School of Medicine and
+Investigator at the Howard Hughes Medical Institute. He is a member of the National Academy of Sciences and the
+American Academy of Arts and Sciences and a past president of the Society for Developmental Biology. He is known
+for his work in developmental biology and genetics, particularly in areas of cell-cell signaling and homeobox genes and
+for discovering the roles of developmental regulators in cancer. Dr. Scott teaches development and disease mechanisms
+
+to medical students and developmental iology to graduate students at Stanford University.
+
+
+
+<!-- Page 10 -->
+Table of Contents
+
+1. Life Begins with Cells
+
+Completely rewritten chapter that highlights the common structural and functional properties of cells despite
+their various sizes, shapes, and specialized abilities
+
+The contribution of experimental approaches from various disciplines to an integrated view of the cell
+Which model organisms are most suited for particular studies and why
+
+Insights drawn from genomics concerning evolution and their implication for the study of human diseases
+
+1.1 The Diversity and Commonality of Cells
+
+1.2 The Work of Cells
+
+1.3 Investigating Cells and Their Constituents
+1.4 Choosing the Right Experimental Organism
+1.5 A Genome Perspective on Evolution
+
+2. Chemical Foundations
+
+Emphasis on role of noncovalent bonds and molecular complementarity in interactions between
+macromolecules
+
+Consolidated introduction to properties of biological monomers and principles of their polymerization
+Introduction to phospholipids and their assembly into larger structures
+
+Brief review of chemical equilibrium and relation to steady state, binding reactions, pH, and buffers Coverage
+of free energy, coupled reactions, energy coupling, and role of electron carriers in redox reactions
+
+2.1 Atomic Bonds and Molecular Interactions
+2.2 Cellular Building Blocks
+
+2.3 Chemical Equilibrium
+
+2.4 Biochemical Energetics
+
+3. Protein Structure and Function
+
+Concise description of levels of protein structure with emphasis on use of recurring motifs and domains
+Brief discussion of antibodies to illustrate specificity of ligand binding by proteins
+
+New coverage of physical association of enzymes in a common pathway and evolution of multifunctional
+enzymes
+
+Increased focus on proteins as molecular machines and motors with moving parts (conformational changes)
+and as macromolecular assemblies whose complexity permits emergence of new properties with specific
+examples
+
+Expanded discussion of mechanisms for regulating protein activity including the role of Ca2-calmodulin, G
+proteins, and kinase/phosphatase combinations as molecular switches
+
+Common techniques presented in one section at end of chapter
+
+3.1 Hierarchical Structure of Proteins
+
+3.2 Folding, Modification, and Degradation of Proteins
+
+3.3 Enzymes and the Chemical Work of Cells
+
+3.4 Molecular Motors and Machines
+
+3.5 Common Mechanisms for Regulating Protein Function
+3.6 Purifying, Detecting, and Characterizing Proteins
+
+
+<!-- Page 11 -->
+4. From Gene to Protein: Basic Molecular Genetic Mechanisms
+
+Description of the macromolecular assemblies that carry out transcription, translation, and DNA replication
+
+Updated models of the ribosome
+
+Improved process figures of transcription, translation, and DNA replication
+
+Clearer description of bidirectional chain growth of leading and lagging strands from single DNA replication
+
+origin
+
+© — Earlier discussion of gene control, focusing on prokaryotic mechanisms as prelude for later coverage of more
+complex eukaryotic mechanisms
+
+© = Overview of the structure and life cycles of viruses
+
+4.1 Structure of Nucleic Acids
+
+4.2 Transcription of Protein-Coding Genes and Formation of Functional mRNA
+4.3 Control of Bacterial Gene Expression
+
+4.4 The Three Roles of RNA in Translation
+
+4.5 Stepwise Synthesis of Proteins on Ribosomes
+
+4.6 DNA Replication
+
+5. Biomembranes and Cell Architecture
+
+© — Consolidated coverage of the structures and properties of membrane lipids and proteins
+New material on lipid rafts and lipid-binding motifs in peripheral proteins
+Expanded section on the cytoskeleton, providing an early introduction to the three classes of cytoskeletal fibers
+and their organization within cells
+
+© Techniques for isolating subcellular structures and the uses of different types of microscopy covered at end of
+the chapter
+
+= Three-dimensional models based on computational reconstructions of digital micrographs
+
+5.1 Biomembranes: Lipid Composition and Structural Organization
+5.2 Biomembranes: Protein Components and Basic Functions
+
+5.3 Organelles of the Eukaryotic Cell
+
+5.4 The Cytoskeleton: Components and Structural Functions
+
+5.5 Purification of Cells and Their Parts
+
+6. Integrating Cells into Tissues
+
+Early coverage of adhesive interactions that cells aggregate into tissues
+
+New overview section outlining major types of adhesive molecules in animals and how their diversity arises
+Presentation of all types of cell junctions in epithelial and nonepithelial cells integrated into one chapter
+Increased emphasis on the role of integrins and of cell-surface adhesive molecules in linking the extracellular
+matrix to the cytoskeleton and signaling pathways, thereby mediating inside-out and outside-in effects
+
+Updated description of tight junctions and variations in their permeability
+
+New material on how diverse functions of glycosaminoglycans (GAGs) are determined
+
+Expanded discussion of integrins including new molecular models of active and inactive states
+
+New coverage of dystrophin glycoprotein complex (DGC), which is critical to structural integrity of muscle
+cells
+
+Brief coverage of cell cultures with examples of their use in research and to produce monoclonal antibodies
+Numerous medical, plant, and biotech applications
+
+
+<!-- Page 12 -->
+Xi
+
+© 6.1 Cell-Cell and Cell-Matrix Adhesion: An Overview
+
+* 6.2 Sheetlike Epithelial Tissues: Junctions and Cell-Adhesion Molecules
+¢ 6.3 The Extracellular Matrix of Epithelial Sheets
+
+«6.4 The Extracellular Matrix of Nonepithelial Tissues
+
+« 6.5 Adhesive Interactions Involving Nonepithelial Cells
+
+© 6.6 Plant Tissues
+
+© 6.7 Growth and Use of Cultured Cells
+
+7. Transport of Ions and Small Molecules across Cell Membranes
+
+© — Clear comparison of different transport mechanisms and basic principles of protein-mediated transport
+
+© Updated molecular models of muscle Ca2 ATPase, lipid flippase, resting K channel, aquaporin, voltage-gated
+K channel and implications for their operation
+
+© Expanded coverage of ABC superfamily of transporters (e.g., bacterial permeases, mammalian MDR proteins)
+
+© = Coverage of the generation and transmission of electric signals by neurons, an instructive example of the
+complex interplay of various transport proteins in carrying out complex physiological functions
+
+«7.1 Overview of Membrane Transport
+
+«7.2 ATP-Powered Pumps and the Intracellular Ionic Environment
+
+« 7.3 Nongated Ion Channels and the Resting Membrane Potential
+
+。 7.4 Cotransport by Symporters and Antiporters
+
+« 7.5 Movement of Water
+
+© 7.6 Transepithelial Transport
+
+* 7.7 Voltage-Gated Ion Channels and the Propagation of Action Potentials in Nerve Cells
+e 7.8 Neurotransmitters and Transport Proteins in Signal Transmission at Synapses
+
+8. Cellular Energetics
+
+© Integrated coverage of ATP generation driven by the proton-motive force in bacterial, animal, and plant cells
+
+e New coverage of the evolutionary origin of mitochondria and chloroplasts
+
+© Clear explanation of the Q cycle and new molecular model of CoQ-cytochrome c reductase complex explaining
+its operation in the cycle
+
+© More detailed description of proton movement through FOF 1 complex including an updated model for how the
+protein operates to produce ATP
+
+¢ Discussion of recent model for the supramolecular organization of the two plant photosystems and regulation
+of their relative activities
+
+« 8.1 Oxidation of Glucose and Fatty Acids to CO2
+
+¢ 8.2 Electron Transport and Generation of the Proton-Motive Force
+
+e 8.3 Harnessing the Proton-Motive Force for Energy-Requiring Processes
+。 8.4 Photosynthetic Stages and Light-Absorbing Pigments
+
+。 8.5 Molecular Analysis of Photosystems
+
+* 8.6 CO2 Metabolism during Photosynthesis
+
+
+<!-- Page 13 -->
+Xii
+
+9. Molecular Genetic Techniques and Genomics
+
+Reorganized and streamlined discussion of classical genetic and recombinant DNA techniques for identifying
+genes and determining their function
+
+Coverage of newer techniques including epitope tagging to localize proteins, expanded discussion of DNA
+microarrays, and computer searching of sequence banks
+
+Consolidated coverage of methods for inactivating specific genes including RNA interference (RNAi) and
+dominant-negative alleles
+
+Applications of and insights derived from genomics
+
+Separate section on inherited human diseases and general approach for discovering their molecular causes
+
+9.1 Genetic Analysis of Mutations to Identify and Study Genes
+
+9.2 DNA Cloning by Recombinant DNA Methods
+
+9.3 Characterizing and Using Cloned DNA Fragments
+
+9.4 Genomics: Genome-Wide Analysis of Gene Structure and Expression
+9.5 Inactivating the Function of Specific Genes in Eukaryotes
+
+9.6 Identifying and Locating Human Disease Genes
+
+10. Gene and Chromosome Structure
+
+Updated estimates of the amounts of various types of noncoding ("nonfunctional") DNA in the human genome
+Updated model for movement of LINE sequences, the most numerous type of nonfunctional DNA in mammals
+Exon shuffling and the evolutionary significance of noncoding DNA
+
+Various uses of fluorescent in situ hybridization (FISH) to detect specific chromosomes or sequences within
+them
+
+Telomeric sequences and role of telomerase in preventing chromosome shortening during DNA replication
+
+10.1 Molecular Definition of a Gene
+
+10.2 Chromosomal Organization of Genes and Noncoding DNA
+
+10.3 Mobile DNA
+
+10.4 Structural Organization of Eukaryotic Chromosomes
+
+10.5 Morphology and Functional Elements of Eukaryotic Chromosomes
+10.6 Organelle DNAs
+
+11. Transcriptional Control of Gene Expression
+
+Focus on gene control in eukaryotes (prokaryotes covered in Chapter 4)
+New molecular model of yeast RNA polymerase II and comparison with bacterial RNA polymerase
+
+New coverage of concept that a "histone code" functions in controlling transcription initiation by modulating
+chromatin structure
+
+New information and expanded discussion about the structure and function of the mediator complex in
+transcription initiation
+
+Recent model of ordered binding of multiple activators and co-activators during transcription initiation
+Yeast two-hybrid system for detecting proteins that interact
+
+
+<!-- Page 14 -->
+xiii
+
+© 11.1 Overview of Eukaryotic Gene Control and RNA Polymerases
+© 11.2 Regulatory Sequences in Protein-Coding Genes
+
+。 11.3 Activators and Repressors of Transcription
+
+。 11.4 Transcription Initiation by RNA Polymerase II and Other Polymerases
+© 11.5 Molecular Mechanisms of Transcription Activation and Repression
+
+© 11.6 Control of Transcription-Factor Activity of Nuclear Receptors
+
+12. Post-Transcriptional Controls and Nuclear Transport
+
+© Evidence for coupling of RNA synthesis and processing
+
+© New coverage of role of SR proteins in determining splicing sites in RNA
+
+© General function of splicing repressors and activation
+
+日 Updated, expanded discussion of transport through nuclear pores, FG-nucleoporins, and commonalities in
+export and import mechanisms
+
+© New coverage of repression of mRNA translation by microRNAs, RNA interference, and alternative pathways of
+mRNA degradation
+
+© Recently discovered mechanism of cytoplasmic polyadenylation and its role in early development and nervous
+system (e.g., memory, learning)
+
+© 12.1 RNA Chain Elongation and Termination
+© 12.2 Processing of Eukaryotic Pre-mRNA
+
+。 — 12.3 Regulation of mRNA Processing
+
+。 12.4Macromolecular Transport across the Nuclear Envelope
+。 12.5 Cytoplasmic Mechanisms of Post-Transcriptional Control
+© 12.6 Processing of rRNA and tRNA
+
+13. Signaling at the Cell Surface
+
+© Two overview sections focusing on general concepts applicable to all or nearly all signaling pathways with
+summary table of major receptor/signaling pathways
+
+© Revamped discussion of signaling from G protein-coupled receptors (GPCRs) including the muscarinic
+acetylcholine receptor in cardiac muscle and transducin in retinal cells
+
+日 New molecular model of trimeric G proteins in active and inactive conformations
+
+e Use of fluorescence energy transfer to detect interacting proteins (e.g., receptor and coupled G protein) in
+living cells
+
+e = Examples of GPCR pathways that regulate transcription of genes
+
+¢ 13.1 Signaling Molecules and Cell-Surface Receptors (3200)
+
+¢ 13.2 Intracellular Signal Transduction (2000)
+
+e 13.3 GPCRs That Activate or Inhibit Adenylyl Cyclase
+
+e 13.4 GPCRs That Directly or Indirectly Regulate Ion Channels
+e 13.5 GPCRs That Activate Phospholipase C
+
+。 13.6 Activation of Gene Transcription by GPCRs
+
+
+<!-- Page 15 -->
+xiv
+
+14. Signaling Pathways That Control Gene Activity
+
+Expanded, integrated coverage of signaling from TGF receptors, cytokine receptors, and receptor tyrosine
+kinases
+
+Experimental identification of Jaks and Stats as signal-transduction proteins
+
+New coverage on regulating signaling from cytokine receptors
+
+Emphasis that some receptors can activate multiple signaling pathways
+
+Additional material on recruitment of signaling proteins to the plaama membrane
+
+Updated discussion of NF-kB signaling pathway and its numerous functions in cells
+
+New section on bone resorption as a case study of the integration of multiple molecular mechanisms (cell
+adhesion, membrane transport, and signaling between cells) in one physiological process
+
+Role of presenilin in normal signaling from Notch receptor and its likely contribution to pathology of
+Alzheimer's disease
+
+14.1 TGF Receptors and the Direct Activation of Smads
+
+14.2 Cytokine Receptors and the JAK-STAT Pathway
+
+14.3 Receptor Tyrosine Kinases and Activation of Ras
+
+14.4 MAP Kinase Pathways
+
+14.5 Phosphoinositides As Signal Transducers from RTKs and Cytokine Receptors
+14.6 Pathways That Involve Signal-Induced Protein Cleavage
+
+15. Integrating Signals with Gene Controls
+
+New chapter focusing on coordinated cell responses to environmental and development signals
+Coverage of techniques for determining changes in gene expression that produce cell responses to signals
+
+New section on oxygen deprivation as example of a program of cellular responses induced by an environmental
+signal
+
+Involvement of signaling pathways in determining cell fates and boundaries during early development
+Enhanced discussion of early events in dorsoventral patterning of embryo
+
+Emphasis on evolutionary conserved signaling mechanisms and their functioning in different contexts (e.g., role
+of Toll-like signaling in innate immunity in plants and animals; evolutionary relation of Hedgehog signaling to
+sterol metabolism)
+
+15.1 Experimental Approaches for Building a Comprehensive View of Signal-Induced Responses
+15.2 Control of Cells by Environmental Influences
+
+15.3 Control of Cell Fates by Graded Amounts of Regulators
+
+15.4 Boundary Creation by Different Combinations of Transcription Factors in Adjacent Cells
+15.5 Boundary Creation by Extracellular Signals
+
+15.6 Reciprocal Induction and Lateral Inhibition
+
+15.7 Integrating and Controlling Signals
+
+
+<!-- Page 16 -->
+XV
+
+16. Moving Proteins into Membranes and Organelles
+
+Focus on common elements in protein targeting: signal sequences and their receptors, structure of
+translocation channels, and energy source that drives translocation
+
+New coverage of post-translational translocation into the endoplasmic reticulum (ER)
+
+Expanded discussion of topogenic sequences in membrane proteins synthesized on the endoplasmic reticulum
+and use of hydrophobicity profiles to identify them
+
+Role of various protein-folding catalysts (e.g., BiP, Hsc proteins) in protein folding and translocation into
+organelles
+
+New coverage of bacterial systems for moving proteins into the periplasmic space or across both the inner and
+outer membrane
+
+Updated information on formation and rearrangement of disulfide bonds in eukaryotic and bacterial cells and
+the unfolded-protein response
+
+Expanded, updated treatment of protein import to submitochondrial compartments and the corresponding
+signal sequences
+
+New evidence that peroxisomal matrix and membrane proteins are imported by different pathways
+
+Clearer, more instructive figures of translocation pathways
+
+16.1 Translocation of Secretory Proteins across the ER Membrane
+16.2 Insertion of Proteins into the ER Membrane
+
+16.3 Protein Modifications, Folding, and Quality Control in the ER
+16.4 Export of Bacterial Proteins
+
+16.5 Sorting of Proteins to Mitochondria and Chloroplasts
+
+16.6 Sorting of Peroxisomal Proteins
+
+17. Vesicular Traffic, Secretion, and Endocytosis
+
+Reorganized discussion of vesicle trafficking in the secretory pathway emphasizing mechanistic commonality of
+different transport steps
+
+New section on relevant experimental techniques
+
+Expanded discussion of the role of GPase switch proteins in formation and docking of transport vesicles
+
+New coverage of special pathways for delivering plasma-membrane proteins and cytoplasmic components to
+lysosomes for degradation
+
+New information on molecular mechanism of virus budding from infected cells and its similarity to the
+formation of multivesicular endosomes
+
+17.1 Techniques for Studying the Secretory Pathway
+
+17.2 Molecular Mechanisms of Vesicular Traffic
+
+17.3 Vesicle Traffic in the Early Stages of the Secretory Pathway
+
+17.4 Protein Sorting and Processing in Later Stages of the Secretory Pathway
+17.5 Receptor-Mediated Endocytosis and the Sorting of Internalized Proteins
+
+17.6 Synaptic Vesicle Function and Formation
+
+
+<!-- Page 17 -->
+XVi
+
+18. Metabolism and Movement of Lipids
+
+© New chapter that provides an in-depth example of synergistic relationship between basic molecular cell biology
+and medicine
+
+Assay for detecting flippase activity of ABC proteins
+
+Role of ABC proteins and other transport proteins in formation of bile and enterohepatic circulation
+Composition, formation, and transport of lipoproteins
+
+Discovery of LDL receptor and experiments demonstrating receptor-mediated endocytosis of LDL particles
+
+SREBP pathway for controlling cellular cholesterol levels; role of cholesterol-sensing SCAP protein and
+regulated intramembrane proteolysis
+
+© Development of atherosclerosis as a consequence of normal processes that provide defense against infection
+and tissue damage
+© Cell biological explanation of why
+
+some cholesterol is "good" and some is "bad"
+© Rationale design of cholesterol-lowering drugs
+
+18.1 Synthesis and Intracellular Movement of Membrane Lipids
+18.2 Intercellular Lipid Transport
+
+18.3 Regulation of Cellular Lipid Metabolism
+
+18.4 The Cell Biology of Atherosclerosis, Heart Attacks, and Strokes
+
+19. Cytoskeleton I: Microfilaments and Intermediate Filaments
+
+Support of cellular membranes by actin filaments, intermediate filaments, and linking proteins
+Role of cytoskeletal rearrangements in changes in cell shape and cellular movement
+
+Assay for myosin motor activity
+
+Functions of different myosins in vesicle trafficking, cytoplasmic streaming, and muscle contraction
+Control of cytoskeleton and cell migration by external signals
+
+19.1 Actin Structures
+19.2 The Dynamics of Actin Assembly
+19.3 Myosin-Powered Cell Movements
+19.4 Cell Locomotion
+
+20. Cytoskeleton II: Microtubules
+
+Updated coverage of proteins that regulate microtubule assembly and cross-linkage
+New information about microtubule motor proteins and their cargoes
+
+© = = Microtubule rearrangements and motor proteins during mitosis
+
+20.1 Microtubule Organization and Dynamics
+20.2 Kinesin- and Dynein-Powered Movements
+20.3 Microtubule Dynamics and Motor Proteins during Mitosis
+
+
+<!-- Page 18 -->
+xvii
+
+21. Regulating the Eukaryotic Cell Cycle
+
+Coverage of the cell cycle and its regulation shifted to immediately precede new chapter on cell birth, lineage,
+and death
+
+Focus on the master controllers, the heterodimeric protein kinases that regulate the activities of multiple
+proteins involved in DNA replication and mitosis
+
+Recent results leading to more complete understanding of molecular mechanisms that control entry into
+anaphase
+
+Expanded discussion of checkpoints at which progression through the cell cycle is monitored with much new
+information about their operation
+
+New section on proteins that direction a cell to undergo meiosis rather than mitosis and that mediate crossing
+over
+
+21.1 Overview of the Cell Cycle and Its Control
+
+21.2 Biochemical Studies with Oocytes, Eggs, and Early Embryos
+21.3 Genetic Studies with S. pombe
+
+21.4 Molecular Mechanisms for Regulating Mitotic Events
+
+21.5 Genetic Studies with S. cerevisiae
+
+21.6 Cell-Cycle Control in Mammalian Cells
+
+21.7 Checkpoints in Cell-Cycle Regulation
+
+21.8 Meiosis: A Special Type of Cell Division
+
+22. Cell Birth, Lineage, and Death
+
+New chapter providing integrated view of how different cell types arise, differentiate, and in some cases die
+during early development
+
+Importance and properties of various stem-cell populations
+
+Crucial role of asymmetric cell division in development using C. elegans lineage as an example
+
+Current understanding of mechanisms for generating two different daughter cells during cell division
+Common molecular pathway leading to cell suicide due to lack of survival signals (e.g., neurotrophins) or to
+cell murder due to killing signals (e.g., TNF and Fas ligand) from other cells
+
+22.1 The Birth of Cells
+
+22.2 Cell-Type Specification in Yeast
+
+22.3 Specification and Differentiation of Muscle
+22.4 Regulation of Asymmetric Cell Division
+22.5 Cell Death and Its Regulation
+
+
+<!-- Page 19 -->
+xviii
+
+23. Cancer
+
+Revised discussion with emphasis on multiple genetic changes leading to abnormal, unregulated cell
+proliferation
+
+Expanded coverage and summarizing figure of signaling components that are mutated in various types of
+cancer
+
+Use of DNA microarrays to detect subtle differences in different types of cancer cells
+
+Clearer explanation of inherited versus noninherited forms of cancer
+
+Development of Gleevec, a new anticancer drug, and why it works
+
+Updated description of role of p53 in G1 checkpoint and effects of its loss Addition of coverage on DNA
+damage and repair
+
+Association of cancer development with some normal DNA-repair systems and defects in other repair systems
+
+23.1 Tumor Cells and the Onset of Cancer
+
+23.2 The Genetic Basis of Cancer
+
+23.3 Oncogenic Mutations in Growth-Promoting Proteins
+
+23.4 Mutations Causing Loss of Growth-Inhibiting and Cell-Cycle Controls
+
+23.5 The Role of Carcinogens and DNA Repair in Cancer
+
+
+<!-- Page 20 -->
+1
+
+LIFE BEGINS
+WITH CELLS
+
+can grow, reproduce, process information, respond to
+stimuli, and carry out an amazing array of chemical re-
+actions. These abilities define life. We and other multicellular
+organisms contain billions or trillions of cells organized into
+complex structures, but many organisms consist of a single
+cell. Even simple unicellular organisms exhibit all the hall-
+mark properties of life, indicating that the cell is the funda-
+mental unit of life. As the twenty-first century opens, we face
+an explosion of new data about the components of cells,
+what structures they contain, how they touch and influence
+each other. Still, an immense amount remains to be learned,
+particularly about how information flows through cells and
+how they decide on the most appropriate ways to respond.
+Molecular cell biology is a rich, integrative science that
+brings together biochemistry, biophysics, molecular biology,
+microscopy, genetics, physiology, computer science, and de-
+velopmental biology. Each of these fields has its own em-
+phasis and style of experimentation. In the following
+chapters, we will describe insights and experimental ap-
+proaches drawn from all of these fields, gradually weaving
+the multifaceted story of the birth, life, and death of cells. We
+start in this prologue chapter by introducing the diversity of
+cells, their basic constituents and critical functions, and what
+we can learn from the various ways of studying cells.
+
+|     ike ourselves, the individual cells that form our bodies
+
+A single ~200 micrometer (tm) cell, the human egg, with
+sperm, which are also single cells. From the union of an egg
+and sperm will arise the 10 trillion cells of a human body.
+[Photo Researchers, Inc.]
+
+GG The Diversity and Commonality
+of Cells
+
+Cells come in an amazing variety of sizes and shapes (Figure
+1-1). Some move rapidly and have fast-changing structures, as
+we can see in movies of amoebae and rotifers. Others are
+largely stationary and structurally stable. Oxygen kills some
+cells but is an absolute requirement for others. Most cells in
+multicellular organisms are intimately involved with other
+cells. Although some unicellular organisms live in isolation,
+others form colonies or live in close association with other
+types of organisms, such as the bacteria that help plants to ex-
+tract nitrogen from the air or the bacteria that live in our in-
+testines and help us digest food. Despite these and numerous
+
+OUTLINE
+
+1.1 The Diversity and Commonality of Cells
+1.2 The Molecules of a Cell
+
+1.3 The Work of Cells
+
+1.4 Investigating Cells and Their Parts
+
+1.5 A Genome Perspective on Evolution
+
+
+<!-- Page 21 -->
+2 CHAPTER 1 ° Life Begins with Cells
+
+(e)                                          (f)
+
+A FIGURE 1-1 Cells come in an astounding assortment of
+shapes and sizes. Some of the morphological variety of cells is
+illustrated in these photographs. In addition to morphology, cells
+differ in their ability to move, internal organization (prokaryotic
+versus eukaryotic cells), and metabolic activities. (a) Eubacteria
+note dividing cells. These are Lactococcus lactis, which are used
+to produce cheese such as Roquefort, Brie, and Camembert.
+
+(b) A mass of archaebacteria (Methanosarcina) that produce their
+energy by converting carbon dioxide and hydrogen gas to
+methane. Some species that live in the rumen of cattle give rise
+to >150 liters of methane gas/day. (c) Blood cells, shown in false
+color. The red blood cells are oxygen-bearing erythrocytes, the
+white blood cells (leukocytes) are part of the immune system
+and fight infection, and the green cells are platelets that provide
+substances to make blood clot at a wound. (d) Large single cells:
+fossilized dinosaur eggs. (e) A colonial single-celled green alga,
+Volvox aureus. The large spheres are made up of many individual
+cells, visible as blue or green dots. The yellow masses inside are
+daughter colonies, each made up of many cells. (f) A single
+
+other differences, all cells share certain structural features and
+carry out many complicated processes in basically the same
+way. As the story of cells unfolds throughout this book, we
+will focus on the molecular basis of both the differences and
+similarities in the structure and function of various cells.
+
+All Cells Are Prokaryotic or Eukaryotic
+
+The biological universe consists of two types of cells—
+prokaryotic and eukaryotic. Prokaryotic cells consist of a sin-
+
+|
+é            it
+
+(9)                                    (h)
+Purkinje neuron of the cerebellum, which can form more than a
+hundred thousand connections with other cells through the
+branched network of dendrites. The cell was made visible by
+introduction of a fluorescent protein; the cell body is the bulb at
+the bottom. (g) Cells can form an epithelial sheet, as in the slice
+through intestine shown here. Each finger-like tower of cells, a
+villus, contains many cells in a continuous sheet. Nutrients are
+transferred from digested food through the epithelial sheet to the
+blood for transport to other parts of the body. New cells form
+continuously near the bases of the villi, and old cells are shed
+from the top. (h) Plant cells are fixed firmly in place in vascular
+plants, supported by a rigid cellulose skeleton. Spaces between
+the cells are joined into tubes for transport of water and food.
+[Part (a) Gary Gaugler/ Photo Researchers, Inc. Part (b) Ralph Robinson/
+Visuals Inlimited, Inc. Part (c) NIH/Photo Researchers, Inc. Part (d)
+John D. Cunningham/Visuals Unlimited, Inc. Part (e) Carolina
+Biological/Visuals Unlimited, Inc. Part (f) Helen M. Blau, Stanford
+University. Part (g) Jeff Gordon, Washington University School of
+Medicine. Part (h) Richard Kessel and C. Shih/Visuals Unlimited, Inc.]
+
+gle closed compartment that is surrounded by the plasma
+membrane, lacks a defined nucleus, and has a relatively simple
+internal organization (Figure 1-2a). All prokaryotes have cells
+of this type. Bacteria, the most numerous prokaryotes, are
+single-celled organisms; the cyanobacteria, or blue-green algae,
+can be unicellular or filamentous chains of cells. Although bac-
+terial cells do not have membrane-bounded compartments,
+many proteins are precisely localized in their aqueous interior,
+or cytosol, indicating the presence of internal organization. A
+single Escherichia coli bacterium has a dry weight of about
+
+
+
+<!-- Page 22 -->
+(a) Prokaryotic cell
+
+1.1 * The Diversity and Commonality of Cells 3
+
+(b) Eukaryotic cell
+
+~ Periplasmic space
+and cell wall
+
+Nucleoid
+
+Outer membrane __ Inner (plasma)
+
+membrane
+
+05 um
+
+Nucleoid
+
+Inner (plasma) membrane
+Cell wall
+Periplasmic space
+
+Outer membrane
+
+Plasma membrane
+
+Golgi vesicles
+Mitochondrion
+Peroxisome
+
+Lysosome
+
+Rough endoplasmic
+reticulum
+
+Secretory vesicle
+
+‘A FIGURE 1-2 Prokaryotic cells have a simpler internal
+organization than eukaryotic cells. (a) Electron micrograph of a
+thin section of Escherichia coli, a common intestinal bacterium.
+The nucleoid, consisting of the bacterial DNA, is not enclosed
+within a membrane. E. coli and some other bacteria are
+surrounded by two membranes separated by the periplasmic
+space. The thin cell wall is adjacent to the inner membrane.
+
+(b) Electron micrograph of a plasma cell, a type of white blood
+cell that secretes antibodies. Only a single membrane (the plasma
+membrane) surrounds the cell, but the interior contains many
+membrane-limited compartments, or organelles. The defining
+
+25 X 10° '* g. Bacteria account for an estimated 1-1.5 kg of
+the average human’s weight. The estimated number of bacte-
+ria on earth is 5 X 10°, weighing a total of about 10!” kg.
+Prokaryotic cells have been found 7 miles deep in the ocean
+and 40 miles up in the atmosphere; they are quite adaptable!
+The carbon stored in bacteria is nearly as much as the carbon
+stored in plants.
+
+Eukaryotic cells, unlike prokaryotic cells, contain a de-
+fined membrane-bound nucleus and extensive internal mem-
+
+characteristic of eukaryotic cells is segregation of the cellular DNA
+within a defined nucleus, which is bounded by a double
+membrane. The outer nuclear membrane is continuous with the
+rough endoplasmic reticulum, a factory for assembling proteins.
+Golgi vesicles process and modify proteins, mitochondria generate
+energy, lysosomes digest cell materials to recycle them,
+peroxisomes process molecules using oxygen, and secretory
+vesicles carry cell materials to the surface to release them.
+
+[Part (a) courtesy of |. D. J. Burdett and R. G. E. Murray. Part (b) from
+
+PC. Cross and K. L. Mercer, 1993, Cell and Tissue Ultrastructure:
+
+A Functional Perspective, W. H. Freeman and Company.)
+
+branes that enclose other compartments, the organelles (Fig-
+ure 1-2b). The region of the cell lying between the plasma
+membrane and the nucleus is the cytoplasm, comprising the
+cytosol (aqueous phase) and the organelles. Eukaryotes com-
+prise all members of the plant and animal kingdoms, includ-
+ing the fungi, which exist in both multicellular forms (molds)
+and unicellular forms (yeasts), and the protozoans (proto,
+primitive; zoan, animal), which are exclusively unicellular.
+Eukaryotic cells are commonly about 10-100 jm across,
+
+
+
+<!-- Page 23 -->
+4 CHAPTER 1 1 Life Begins with Cells
+
+Animals Plants
+Fungi
+Ciliates            Euglena
+Microsporidia                                     EUKARYOTA
+Slime molds
+Diplomonads
+(Giardia lamblia)
+EUBACTERIA
+E. coli                                   Sulfolobus
+ARCHAEA
+B. subtilus                          Thermococcus
+Thermotoga                   Methanobacterium
+Flavobacteria
+Green sulfur                                                  Halobacterium
+bacteria                        | |
+Borrelia                         Methanococcus
+burgdorferi                     Jannaschii
+
+国 Presumed common progenitor
+of all extant organisms
+
+国 Presumed common progenitor
+of archaebacteria and eukaryotes
+
+4A FIGURE 1-3 All organisms from simple bacteria to
+complex mammals probably evolved from a common, single-
+celled progenitor. This family tree depicts the evolutionary
+relations among the three major lineages of organisms. The
+structure of the tree was initially ascertained from morphological
+criteria: Creatures that look alike were put close together. More
+recently the sequences of DNA and proteins have been
+examined as a more information-rich criterion for assigning
+relationships. The greater the similarities in these macromolecular
+sequences, the more closely related organisms are thought to
+be. The trees based on morphological comparisons and the fossil
+record generally agree well with those those based on molecular
+data. Although all organisms in the eubacterial and archaean
+lineages are prokaryotes, archaea are more similar to eukaryotes
+than to eubacteria (“‘true” bacteria) in some respects. For
+instance, archaean and eukaryotic genomes encode homologous
+histone proteins, which associate with DNA; in contrast, bacteria
+lack histones. Likewise, the RNA and protein components of
+archaean ribosomes are more like those in eukaryotes than
+those in bacteria.
+
+generally much larger than bacteria. A typical human fi-
+broblast, a connective tissue cell, might be about 15 pm
+across with a volume and dry weight some thousands of
+times those of an E. coli bacterial cell. An amoeba, a single-
+celled protozoan, can be more than 0.5 mm long. An ostrich
+egg begins as a single cell that is even larger and easily visi-
+ble to the naked eye.
+
+All cells are thought to have evolved from a common pro-
+genitor because the structures and molecules in all cells have
+
+so many similarities. In recent years, detailed analysis of the
+DNA sequences from a variety of prokaryotic organisms has
+revealed two distinct types: the so-called “true” bacteria, or eu-
+bacteria, and archaea (also called archaebacteria or archaeans).
+Working on the assumption that organisms with more similar
+genes evolved from a common progenitor more recently than
+those with more dissimilar genes, researchers have developed
+the evolutionary lineage tree shown in Figure 1-3. According to
+this tree, the archaea and the eukaryotes diverged from the true
+bacteria before they diverged from each other.
+
+Many archaeans grow in unusual, often extreme, envi
+ronments that may resemble ancient conditions when life
+first appeared on earth. For instance, halophiles (“salt lov-
+ing”) require high concentrations of salt to survive, and
+thermoacidophiles (“*heat and acid loving”) grow in hot (80° C)
+sulfur springs, where a pH of less than 2 is common. Still
+other archaeans live in oxygen-free milieus and generate
+methane (CH,) by combining water with carbon dioxide.
+
+Unicellular Organisms Help and Hurt Us
+
+Bacteria and archaebacteria, the most abundant single-celled
+organisms, are commonly 1-2 jum in size. Despite their small
+size and simple architecture, they are remarkable biochemi-
+cal factories, converting simple chemicals into complex bio-
+logical molecules. Bacteria are critical to the earth's ecology,
+but some cause major diseases: bubonic plague (Black Death)
+from Yersinia pestis, strep throat from Streptomyces, tuber-
+culosis from Mycobacterium tuberculosis, anthrax from
+Bacillus anthracis, cholera from Vibrio cholerae, food poi-
+soning from certain types of E. coli and Salmonella.
+
+Humans are walking repositories of bacteria, as are all
+plants and animals. We provide food and shelter for a stag-
+gering number of “bugs,” with the greatest concentration in
+our intestines. Bacteria help us digest our food and in turn
+are able to reproduce. A common gut bacterium, E. col
+also a favorite experimental organism. In response to signals
+from bacteria such as E. coli, the intestinal cells form appro-
+priate shapes to provide a niche where bacteria can live, thus
+facilitating proper digestion by the combined efforts of the
+bacterial and the intestinal cells. Conversely, exposure to in-
+testinal cells changes the properties of the bacteria so that
+they participate more effectively in digestion. Such commu-
+nication and response is a common feature of cells.
+
+The normal, peaceful mutualism of humans and bacteria
+is sometimes violated by one or both parties. When bacteria
+begin to grow where they are dangerous to us (e.g., in the blood-
+stream or in a wound), the cells of our immune system fight
+back, neutralizing or devouring the intruders. Powerful antibi-
+otic medicines, which selectively poison prokaryotic cells,
+provide rapid assistance to our relatively slow-developing
+immune response. Understanding the molecular biology of bac-
+terial cells leads to an understanding of how bacteria are nor-
+mally poisoned by antibiotics, how they become resistant to
+antibiotics, and what processes or structures present in bacter-
+ial but not human cells might be usefully targeted by new drugs.
+
+
+
+<!-- Page 24 -->
+(a)
+
+Liver
+
+VA
+
+Zygote
+
+A FIGURE 1-4 Plasmodium organisms, the parasites that
+cause malaria, are single-celled protozoans with a
+remarkable life cycle. Many Plasmodium species are known,
+and they can infect a variety of animals, cycling between insect
+and vertebrate hosts. The four species that cause malaria in
+humans undergo several dramatic transformations within their
+human and mosquito hosts. (a) Diagram of the life cycle.
+Sporozoites enter a human host when an infected Anopheles
+mosquito bites a person fl. They migrate to the liver where they
+develop into merozoites, which are released into the blood Al.
+Merozoites differ substantially from sporozoites, so this
+transformation is a metamorphosis (Greek, “to transform” or
+“many shapes”). Circulating merozoites invade red blood cells
+(RBCs) and reproduce within them Kl. Proteins produced by
+some Plasmodium species move to the surface of infected
+RBCs, causing the cells to adhere to the walls of blood vessels.
+This prevents infected RBCs cells from circulating to the spleen
+where cells of the immune system would destroy the RBCs and
+the Plasmodium organisms they harbor. After growing and
+reproducing in RBCs for a period of time characteristic of each
+Plasmodium species, the merozoites suddenly burst forth in
+synchrony from large numbers of infected cells Bd. It is this
+
+a                           0)
+a
+lleo JeAI1e Bunixg pue 6uluaelu3 sllozolodSs mipouseld :oapiA
+
+1.1 * The Diversity and Commonality of Cells 5
+
+Sata
+
+SNOILOAJNNOO VIGAW
+
+event that brings on the fevers and shaking chills that are
+the well-known symptoms of malaria. Some of the
+released merozoites infect additional RBCs, creating a
+cycle of production and infection. Eventually, some
+merozoites develop into male and female gametocytes
+
+H, another metamorphosis. These cells, which contain half
+the usual number of chromosomes, cannot survive for long
+unless they are transferred in blood to an Anopheles
+Mosquito. In the mosquito’s stomach, the gametocytes are
+transformed into sperm or eggs (gametes), yet another
+metamorphosis marked by development of long hairlike
+flagella on the sperm Ml. Fusion of sperm and eggs
+generates zygotes I, which implant into the cells of the
+stomach wall and grow into oocysts, essentially factories
+for producing sporozoites. Rupture of an oocyst releases
+thousands of sporozoites 图; these migrate to the salivary
+glands, setting the stage for infection of another human
+host. (b) Scanning electron micrograph of mature oocysts
+and emerging sporozoites. Oocysts abut the external
+surface of stomach wall cells and are encased within a
+membrane that protects them from the host immune
+system. [Part (b) courtesy of R. E. Sinden.)
+
+Like bacteria, protozoa are usually beneficial members of
+the food chain. They play key roles in the fertility of soil, con-
+trolling bacterial populations and excreting nitrogenous and
+phosphate compounds, and are key players in waste treat-
+ment systems—both natural and man-made. These unicellu-
+lar eukaryotes are also critical parts of marine ecosystems,
+consuming large quantities of phytoplankton and harboring
+photosynthetic algae, which use sunlight to produce biologi-
+cally useful energy forms and small fuel molecules.
+However, some protozoa do give us grief: Entamoeba
+histolytica causes dysentery; Trichomonas vaginalis, vagini-
+
+tis; and Trypanosoma brucei, sleeping sickness. Each year the
+worst of the protozoa, Plasmodium falciparum and related
+species, is the cause of more than 300 million new cases of
+malaria, a disease that kills 1.5 to 3 million people annually.
+These protozoans inhabit mammals and mosquitoes alter-
+nately, changing their morphology and behavior in response
+to signals in each of these environments. They also recog-
+nize receptors on the surfaces of the cells they infect. The
+complex life cycle of Plasmodium dramatically illustrates
+how a single cell can adapt to each new challenge it encoun-
+ters (Figure 1-4). All of the transformations in cell type that
+
+
+
+<!-- Page 25 -->
+6 CHAPTER 1 1 Life Begins with Cells
+
+occur during the Plasmodium life cycle are governed by in-
+structions encoded in the genetic material of this parasite and
+triggered by environmental inputs.
+
+The other group of single-celled eukaryotes, the yeasts,
+also have their good and bad points, as do their multicellular
+cousins, the molds. Yeasts and molds, which collectively con-
+stitute the fungi, have an important ecological role in break-
+ing down plant and animal remains for reuse. They also
+
+(a)
+
+Mating between haploid
+Wi ceils of opposite mating
+回 "egeratve growth
+
+95 @ Oa
+e® 了                            of diploid cells
+Diploid cells a
+
+slee
+
+Vegetative
+growth
+of haploid
+cells          © ©                Four haploid
+©) ascospores          (@)  ©
+within ascus
+
+入    (8) Starvation causes
+图 2848 ruptures,    (8)       ascus formation,
+
+spores germinate                            losis
+
+(b)
+
+Budding (S. cerevisiae)
+
+A FIGURE 1-5 The yeast Saccharomyces cerevisiae
+reproduces sexually and asexually. (a) Two cells that differ in
+mating type, called a and a, can mate to form an a/a cell Hl.
+The a and a cells are haploid, meaning they contain a single copy
+of each yeast chromosome, half the usual number. Mating yields
+a diploid a/a cell containing two copies of each chromosome.
+During vegetative growth, diploid cells multiply by mitotic
+budding, an asexual process Bl. Under starvation conditions,
+diploid cells undergo meiosis, a special type of cell division, to
+form haploid ascospores 图. Rupture of an ascus releases four
+haploid spores, which can germinate into haploid cells El. These
+also can multiply asexually 回. (b) Scanning electron micrograph
+of budding yeast cells. After each bud breaks free, a scar is left
+at the budding site so the number of previous buds can be
+counted. The orange cells are bacteria. [Part (b) M. Abbey/Visuals
+Unlimited, Inc.]
+
+make numerous antibiotics and are used in the manufacture
+of bread, beer, wine, and cheese. Not so pleasant are fungal
+diseases, which range from relatively innocuous skin infec-
+tions, such as jock itch and athlete’s foot, to life-threatening
+Pneumocystis carinii pneumonia, a common cause of death
+among AIDS patients.
+
+Even Single Cells Can Have Sex
+
+The common yeast used to make bread and beer, Saccha-
+romyces cerevisiae, appears fairly frequently in this book be-
+cause it has proven to be a great experimental organism. Like
+many other unicellular organisms, yeasts have two mating
+types that are conceptually like the male and female gametes
+(eggs and sperm) of higher organisms. Two yeast cells of op-
+posite mating type can fuse, or mate, to produce a third cell
+type containing the genetic material from each cell (Figure
+1-5). Such sexual life cycles allow more rapid changes in ge-
+netic inheritance than would be possible without sex, result-
+ing in valuable adaptations while quickly eliminating
+detrimental mutations. That, and not just Hollywood, is
+probably why sex is so ubiquitous.
+
+Viruses Are the Ultimate Parasites
+
+Virus-caused diseases are numerous and all too familiar:
+chicken pox, influenza, some types of pneumonia, polio,
+measles, rabies, hepatitis, the common cold, and many oth-
+ers. Smallpox, once a worldwide scourge, was eradicated by
+a decade-long global immunization effort beginning in the
+mid-1960s. Viral infections in plants (e.g., dwarf mosaic
+virus in corn) have a major economic impact on crop pro-
+duction. Planting of virus-resistant varieties, developed by
+traditional breeding methods and more recently by genetic
+engineering techniques, can reduce crop losses significantly.
+Most viruses have a rather limited host range, infecting cer-
+tain bacteria, plants, or animals (Figure 1-6).
+
+Because viruses cannot grow or reproduce on their own,
+they are not considered to be alive. To survive, a virus must
+infect a host cell and take over its internal machinery to syn-
+thesize viral proteins and in some cases to replicate the viral
+genetic material. When newly made viruses are released, the
+cycle starts anew. Viruses are much smaller than cells, on the
+order of 100 nanometer (nm) in diameter; in comparison,
+bacterial cells are usually >1000 nm (1 nm=10"? meters). A
+virus is typically composed of a protein coat that encloses a
+core containing the genetic material, which carries the infor-
+mation for producing more viruses (Chapter 4). The coat
+protects a virus from the environment and allows it to stick
+to, or enter, specific host cells. In some viruses, the protein
+coat is surrounded by an outer membrane-like envelope.
+
+The ability of viruses to transport genetic material into
+cells and tissues represents a medical menace and a medical
+opportunity. Viral infections can be devastatingly destructive,
+causing cells to break open and tissues to fall apart. However,
+many methods for manipulating cells depend upon using
+
+
+
+<!-- Page 26 -->
+(a) T4 bacteriophage
+
+A FIGURE 1-6 Viruses must infect a host cell to grow and
+reproduce. These electron micrographs illustrate some of the
+structural variety exhibited by viruses. (a) T4 bacteriophage
+(bracket) attaches to a bacterial cell via a tail structure. Viruses
+that infect bacteria are called bacteriophages, or simply phages.
+(b) Tobacco mosaic virus causes a mottling of the leaves of
+
+viruses to convey genetic material into cells. To do this, the
+portion of the viral genetic material that is potentially harm-
+ful is replaced with other genetic material, including human
+genes. The altered viruses, or vectors, still can enter cells tot-
+ing the introduced genes with them (Chapter 9). One day, dis-
+eases caused by defective genes may be treated by using viral
+vectors to introduce a normal copy of a defective gene into
+patients. Current research is dedicated to overcoming the con-
+siderable obstacles to this approach, such as getting the in-
+troduced genes to work at the right places and times.
+
+We Develop from a Single Cell
+
+In 1827, German physician Karl von Baer discovered that
+mammals grow from eggs that come from the mother’s
+ovary, Fertilization of an egg by a sperm cell yields a zygote,
+a visually unimpressive cell 200 pm in diameter. Every
+human being begins as a zygote, which houses all the neces-
+sary instructions for building the human body containing
+about 100 trillion (10!) cells, an amazing feat. Development
+begins with the fertilized egg cell dividing into two, four, then
+eight cells, forming the very early embryo (Figure 1-7). Con-
+tinued cell proliferation and then differentiation into distinct
+cell types gives rise to every tissue in the body. One initial
+cell, the fertilized egg (zygote), generates hundreds of differ-
+ent kinds of cells that differ in contents, shape, size, color,
+mobility, and surface composition. We will see how genes
+and signals control cell diversification in Chapters 15 and 22.
+
+Making different kinds of cells—muscle, skin, bone, neu-
+ron, blood cells—is not enough to produce the human body.
+The cells must be properly arranged and organized into tis-
+
+1.1 * The Diversity and Commonality of Cells 7
+
+(b) Tobacco mosaic virus
+
+(c) Adenovirus
+
+50 nm,
+Pod
+
+infected tobacco plants and stunts their growth. (c) Adenovirus
+causes eye and respiratory tract infections in humans. This virus
+has an outer membranous envelope from which long
+glycoprotein spikes protrude. [Part (a) from A. Levine, 1991, Viruses,
+Scientific American Library, p. 20. Part (b) courtesy of R. C. Valentine.
+Part (cj courtesy of Robley C. Williams, University of California.]
+
+sues, organs, and appendages. Our two hands have the same
+kinds of cells, yet their different arrangements—in a mirror
+image—are critical for function. In addition, many cells ex-
+hibit distinct functional and/or structural asymmetries, a
+property often called polarity. From such polarized cells arise
+
+<4 FIGURE 1-7 The first
+few cell divisions of a
+fertilized egg set the
+stage for all subsequent
+development. A developing
+mouse embryo is shown at
+(a) the two-cell, (b) fourcell,
+and (c) eight-cell stages.
+The embryo is surrounded
+by supporting membranes.
+The corresponding steps
+
+in human development
+occur during the first few
+days after fertilization.
+[Claude Edelmann/Photo
+
+(b)                           Researchers, Inc.]
+
+(a)
+
+=
+m
+口
+>
+°
+jo}
+Zz
+二
+m
+°
+4
+°
+二
+中
+
+juawidojanag 5Iuo/qu3 人be3 :oapIA
+
+(c)
+
+
+
+<!-- Page 27 -->
+8 CHAPTER 1 1 Life Begins with Cells
+
+asymmetric, polarized tissues such as the lining of the intes-
+tines and structures like hands and hearts. The features that
+make some cells polarized, and how they arise, also are cov-
+ered in later chapters.
+
+Stem Cells, Cloning, and Related Techniques
+Offer Exciting Possibilities but Raise
+Some Concerns
+
+Identical twins occur naturally when the mass of cells com-
+posing an early embryo divides into two parts, each of which
+develops and grows into an individual animal. Each cell in
+an eight-cell-stage mouse embryo has the potential to give
+rise to any part of the entire animal. Cells with this capabil-
+ity are referred to as embryonic stem (ES) cells. As we learn
+in Chapter 22, ES cells can be grown in the laboratory (cul-
+tured) and will develop into various types of differentiated
+cells under appropriate conditions.
+
+The ability to make and manipulate mammalian embryos
+in the laboratory has led to new medical opportunities as
+well as various social and ethical concerns. In vitro fertiliza-
+tion, for instance, has allowed many otherwise infertile cou-
+ples to have children. A new technique involves extraction of
+nuclei from defective sperm incapable of normally fertiliz~
+ing an egg, injection of the nuclei into eggs, and implantation
+of the resulting fertilized eggs into the mother.
+
+In recent years, nuclei taken from cells of adult animals
+have been used to produce new animals. In this procedure,
+the nucleus is removed from a body cell (e.g., skin or blood
+cell) of a donor animal and introduced into an unfertilized
+mammalian egg that has been deprived of its own nucleus.
+This manipulated egg, which is equivalent to a fertilized egg,
+is then implanted into a foster mother. The ability of such a
+donor nucleus to direct the development of an entire animal
+suggests that all the information required for life is retained
+in the nuclei of some adult cells. Since all the cells in an ani-
+mal produced in this way have the genes of the single origi-
+nal donor cell, the new animal is a clone of the donor (Figure
+1-8). Repeating the process can give rise to many clones. So
+far, however, the majority of embryos produced by this tech-
+nique of nuclear-transfer cloning do not survive due to birth
+defects. Even those animals that are born live have shown
+abnormalities, including accelerated aging. The “rooting”
+of plants, in contrast, is a type of cloning that is readily ac-
+complished by gardeners, farmers, and laboratory technicians.
+
+The technical difficulties and possible hazards of nuclear-
+transfer cloning have not deterred some individuals from pur-
+suing the goal of human cloning. However, cloning of
+humans per se has very limited scientific interest and is op-
+posed by most scientists because of its high risk. Of greater
+scientific and medical interest is the ability to generate specific
+cell types starting from embryonic or adult stem cells. The sci-
+entific interest comes from learning the signals that can un-
+leash the potential of the genes to form a certain cell type. The
+medical interest comes from the possibility of treating the nu-
+
+A FIGURE 1-8 Five genetically identical cloned sheep. An
+early sheep embryo was divided into five groups of cells and
+each was separately implanted into a surrogate mother, much
+like the natural process of twinning. At an early stage the cells
+are able to adjust and form an entire animal; later in development
+the cells become progressively restricted and can no longer do
+so. An alternative way to clone animals is to replace the nuclei of
+multiple single-celled embryos with donor nuclei from cells of an
+adult sheep. Each embryo will be genetically identical to the
+adult from which the nucleus was obtained. Low percentages of
+embryos survive these procedures to give healthy animals, and
+the full impact of the techniques on the animals is not yet known.
+[Geoff Tompkinson/Science Photo Library/Photo Researchers, Inc.]
+
+merous diseases in which particular cell types are damaged
+or missing, and of repairing wounds more completely.
+
+加区 The Molecules of a Cell
+
+Molecular cell biologists explore how all the remarkable
+properties of the cell arise from underlying molecular events:
+the assembly of large molecules, binding of large molecules
+to each other, catalytic effects that promote particular chem-
+ical reactions, and the deployment of information carried by
+giant molecules. Here we review the most important kinds of
+molecules that form the chemical foundations of cell struc-
+ture and function.
+
+Small Molecules Carry Energy, Transmit Signals,
+and Are Linked into Macromolecules
+
+Much of the cell’s contents is a watery soup flavored with
+small molecules (¢.g., simple sugars, amino acids, vitamins)
+and ions (e.g., sodium, chloride, calcium ions). The locations
+and concentrations of small molecules and ions within the
+cell are controlled by numerous proteins inserted in cellular
+membranes. These pumps, transporters, and ion channels
+move nearly all small molecules and ions into or out of the
+cell and its organelles (Chapter 7).
+
+
+<!-- Page 28 -->
+One of the best-known small molecules is adenosine
+triphosphate (ATP), which stores readily available chemical
+energy in two of its chemical bonds (see Figure 2-24). When
+cells split apart these energy-rich bonds in ATP, the released
+energy can be harnessed to power an energy-requiring
+process like muscle contraction or protein biosynthesis. To
+obtain energy for making ATP, cells break down food mole-
+cules. For instance, when sugar is degraded to carbon diox-
+ide and water, the energy stored in the original chemical
+bonds is released and much of it can be “captured” in ATP
+(Chapter 8). Bacterial, plant, and animal cells can all make
+ATP by this process. In addition, plants and a few other or-
+ganisms can harvest energy from sunlight to form ATP in
+photosynthesis.
+
+Other small molecules act as signals both within and be-
+tween cells; such signals direct numerous cellular activities
+(Chapters 13-15). The powerful effect on our bodies of a
+frightening event comes from the instantaneous flooding of
+the body with epinephrine, a small-molecule hormone that
+mobilizes the “fight or flight” response. The movements
+needed to fight or flee are triggered by nerve impulses that
+flow from the brain to our muscles with the aid of neuro-
+transmitters, another type of small-molecule signal that we
+discuss in Chapter 7.
+
+Certain small molecules (monomers) in the cellular soup
+can be joined to form polymers through repetition of a single
+type of chemical-linkage reaction (see Figure 2-11). Cells
+produce three types of large polymers, commonly called
+macromolecules: polysaccharides, proteins, and nucleic
+acids. Sugars, for example, are the monomers used to form
+
+Insulin
+
+Glutamine synthetase                 Hemoglobin
+
+A FIGURE 1-9 Proteins vary greatly in size, shape, and
+function. These models of the water-accessible surface of some
+representative proteins are drawn to a common scale and reveal
+the numerous projections and crevices on the surface. Each
+protein has a defined three-dimensional shape (conformation)
+that is stabilized by numerous chemical interactions discussed in
+Chapters 2 and 3. The illustrated proteins include enzymes
+
+1.2 * The Molecules of aCell 9
+
+polysaccharides. These macromolecules are critical structural
+components of plant cell walls and insect skeletons. A typical
+polysaccharide is a linear or branched chain of repeating
+identical sugar units. Such a chain carries information: the
+number of units. However if the units are nor identical, then
+the order and type of units carry additional information. As
+we see in Chapter 6, some polysaccharides exhibit the greater
+informational complexity associated with a linear code made
+up of different units assembled in a particular order. This
+property, however, is most typical of the two other types of
+biological macromolecules—proteins and nucleic acids.
+
+Proteins Give Cells Structure and Perform Most
+Cellular Tasks
+
+The varied, intricate structures of proteins enable them to
+carry out numerous functions. Cells string together 20 dif-
+ferent amino acids in a linear chain to form a protein (see
+Figure 2-13). Proteins commonly range in length from 100 to
+1000 amino acids, but some are much shorter and others
+longer. We obtain amino acids either by synthesizing them
+from other molecules or by breaking down proteins that we
+eat. The “essential” amino acids, from a dietary standpoint,
+are the eight that we cannot synthesize and must obtain from
+food. Beans and corn together have all eight, making their
+combination particularly nutritious. Once a chain of amino
+acids is formed, it folds into a complex shape, conferring a
+distinctive three-dimensional structure and function on each
+protein (Figure 1-9).
+
+BRR
+
+DNA molecule
+
+_ et eo
+
+Lipid bilayer
+
+Immunoglobulin
+
+Adenylate
+kinase
+
+(glutamine synthetase and adenylate kinase), an antibody
+(immunoglobulin), a hormone (insulin), and the blood’s oxygen
+carrier (hemoglobin). Models of a segment of the nucleic acid
+DNA and a small region of the lipid bilayer that forms cellular
+membranes (see Section 1.3) demonstrate the relative width of
+these structures compared with typical proteins. [Courtesy of
+Gareth White]
+
+
+<!-- Page 29 -->
+10 CHAPTER 1 1 Life Begins with Cells
+
+Some proteins are similar to one another and therefore
+can be considered members of a protein family. A few hun-
+dred such families have been identified. Most proteins are de-
+signed to work in particular places within a cell or to be
+released into the extracellular (extra, “outside”) space. Elab-
+orate cellular pathways ensure that proteins are transported
+to their proper intracellular (intra, within) locations or se-
+creted (Chapters 16 and 17).
+
+Proteins can serve as structural components of a cell, for
+example, by forming an internal skeleton (Chapters 5, 19, and
+20). They can be sensors that change shape as temperature, ion
+concentrations, or other properties of the cell change. They
+can import and export substances across the plasma mem-
+brane (Chapter 7). They can be enzymes, causing chemical re-
+actions to occur much more rapidly than they would without
+the aid of these protein catalysts (Chapter 3). They can bind to
+a specific gene, turning it on or off (Chapter 11). They can be
+extracellular signals, released from one cell to communicate
+with other cells, or intracellular signals, carrying information
+within the cell (Chapters 13-15). They can be motors that
+move other molecules around, burning chemical energy (ATP)
+to do so (Chapters 19 and 20).
+
+How can 20 amino acids form all the different proteins
+needed to perform these varied tasks? Seems impossible at
+first glance. But if a “typical” protein is about 400 amino
+acids long, there are 20*°° possible different protein se-
+quences. Even assuming that many of these would be func-
+tionally equivalent, unstable, or otherwise discountable, the
+number of possible proteins is well along toward infinity.
+
+Next we might ask how many protein molecules a cell
+needs to operate and maintain itself. To estimate this num-
+ber, let's take a typical eukaryotic cell, such as a hepatocyte
+(liver cell). This cell, roughly a cube 15 hm (0.0015 cm) on
+a side, has a volume of 3.4 X 10~° cm} (or milliliters). As-
+suming a cell density of 1.03 g/ml, the cell would weigh
+3.5 X 10°° g. Since protein accounts for approximately 20
+percent of a cell's weight, the total weight of cellular pro-
+tein is 7 X 10° !° g. The average yeast protein has a mo-
+
+lecular weight of 52,700 (g/mol). Assuming this value is
+typical of eukaryotic proteins, we can calculate the total
+number of protein molecules per liver cell as about 7.9 X
+10° from the total protein weight and Avogadro's number,
+the number of molecules per mole of any chemical com-
+pound (6.02 x 1075). To carry this calculation one step
+further, consider that a liver cell contains about 10,000
+different proteins; thus, a cell contains close to a million
+molecules of each type of protein on average. In actuality
+the abundance of different proteins varies widely, from the
+quite rare insulin-binding receptor protein (20,000 mole-
+cules) to the abundant structural protein actin (5 X 108
+molecules).
+
+Nucleic Acids Carry Coded Information
+for Making Proteins at the Right Time and Place
+
+The information about how, when, and where to produce each
+kind of protein is carried in the genetic material, a polymer
+called deoxyribonucleic acid (DNA). The three-dimensional
+structure of DNA consists of two long helical strands that are
+coiled around a common axis, forming a double helix. DNA
+strands are composed of monomers called nucleotides; these
+often are referred to as bases because their structures contain
+cyclic organic bases (Chapter 4).
+
+Four different nucleotides, abbreviated A, T, C, and G,
+are joined end to end in a DNA strand, with the base parts
+projecting out from the helical backbone of the strand. Each
+DNA double helix has a simple construction: wherever there
+is an A in one strand there is a T in the other, and each C is
+matched with a G (Figure 1-10). This complementary match-
+ing of the two strands is so strong that if complementary
+strands are separated, they will spontaneously zip back to-
+gether in the right salt and temperature conditions. Such
+hybridization is extremely useful for detecting one strand using
+the other. For example, if one strand is purified and attached
+to a piece of paper, soaking the paper in a solution contain-
+ing the other complementary strand will lead to zippering,
+
+A FIGURE 1-10 DNA consists of two complementary
+strands wound around each other to form a double helix.
+(Left) The double helix is stabilized by weak hydrogen bonds
+between the A andT bases and between the C and G bases.
+(Right) During replication, the two strands are unwound and used
+
+as templates to produce complementary strands. The outcome is
+two copies of the original double helix, each containing one of
+the original strands and one new daughter (complementary)
+strand.
+
+
+<!-- Page 30 -->
+even if the solution also contains many other DNA strands
+that do not match.
+
+The genetic information carried by DNA resides in its se-
+quence, the linear order of nucleotides along a strand. The
+information-bearing portion of DNA is divided into discrete
+functional units, the genes, which typically are 5000 to
+100,000 nucleotides long. Most bacteria have a few thou-
+sand genes; humans, about 40,000. The genes that carry in-
+structions for making proteins commonly contain two parts:
+a coding region that specifies the amino acid sequence of a
+protein and a regulatory region that controls when and in
+which cells the protein is made.
+
+Cells use two processes in series to convert the coded in-
+formation in DNA into proteins (Figure 1-11). In the first,
+called transcription, the coding region of a gene is copied
+into a single-stranded ribonucleic acid (RNA) version of the
+double-stranded DNA. A large enzyme, RNA polymerase,
+catalyzes the linkage of nucleotides into a RNA chain using
+DNA as a template. In eukaryotic cells, the initial RNA
+product is processed into a smaller messenger RNA (mRNA)
+molecule, which moves to the cytoplasm. Here the ribosome,
+an enormously complex molecular machine composed of
+both RNA and protein, carries out the second process, called
+translation. During translation, the ribosome assembles and
+links together amino acids in the precise order dictated by the
+mRNA sequence according to the nearly universal genetic
+code. We examine the cell components that carry out tran-
+scription and translation in detail in Chapter 4.
+
+All organisms have ways to control when and where their
+genes can be transcribed. For instance, nearly all the cells in
+our bodies contain the full set of human genes, but in each
+cell type only some of these genes are active, or turned on,
+and used to make proteins. That’s why liver cells produce
+some proteins that are not produced by kidney cells, and vice
+versa. Moreover, many cells can respond to external signals
+or changes in external conditions by turning specific genes on
+or off, thereby adapting their repertoire of proteins to meet
+current needs. Such control of gene activity depends on
+DNA-binding proteins called transcription factors, which
+bind to DNA and act as switches, either activating or re-
+pressing transcription of particular genes (Chapter 11).
+
+Transcription factors are shaped so precisely that they are
+able to bind preferentially to the regulatory regions of just a
+few genes out of the thousands present in a cell's DNA. Typ-
+ically a DNA-binding protein will recognize short DNA se-
+quences about 6-12 base pairs long. A segment of DNA
+containing 10 base pairs can have 4'° possible sequences
+(1,048,576) since each position can be any of four nu-
+cleotides. Only a few copies of each such sequence will occur
+in the DNA of a cell, assuring the specificity of gene activation
+and repression. Multiple copies of one type of transcription
+factor can coordinately regulate a set of genes if binding sites
+for that factor exist near each gene in the set. Transcription
+factors often work as multiprotein complexes, with more
+than one protein contributing its own DNA-binding speci-
+ficity to selecting the regulated genes. In complex organisms,
+
+1.2 * The Molecules of aCell 11
+
+Transcription
+‘
+pre-mRNA 一   a   =
+回            vv      Nucleus
+Processing        一人-DC
+《生生
+mRNA
+四     二   Protein
+Translation ——QQ= cviosol
+Transcription             RNA               自 Ribosome
+factor       polymerase
+
+ROVIWAL Transcribed region of DNA
+
+JRIMINIW Nontranscribed region of DNA
+
+一 Protein-coding region of RNA
+Noncoding region of RNA
+Amino acid chain
+
+A FIGURE 1-11 The coded information in DNA is converted
+into the amino acid sequences of proteins by a multistep
+process. Step fll: Transcription factors bind to the regulatory
+regions of the specific genes they control and activate them.
+Step Bi: Following assembly of a multiprotein initiation complex
+bound to the DNA, RNA polymerase begins transcription of an
+activated gene at a specific location, the start site. The
+polymerase moves along the DNA linking nucleotides into a
+single-stranded pre-mRNA transcript using one of the DNA
+strands as a template. Step 图: The transcript is processed to
+remove noncoding sequences. Step 图: In a eukaryotic cell, the
+mature messenger RNA (mRNA) moves to the cytoplasm, where
+it is bound by ribosomes that read its sequence and assemble a
+protein by chemically linking amino acids into a linear chain.
+
+hundreds of different transcription factors are employed to
+form an exquisite control system that activates the right genes
+in the right cells at the right times.
+
+The Genome Is Packaged into Chromosomes
+and Replicated During Cell Division
+
+Most of the DNA in eukaryotic cells is located in the nucleus,
+extensively folded into the familiar structures we know as
+chromosomes (Chapter 10). Each chromosome contains a sin-
+gle linear DNA molecule associated with certain proteins. In
+prokaryotic cells, most or all of the genetic information resides

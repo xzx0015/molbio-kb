@@ -1,0 +1,1782 @@
+<!-- Page 1 -->
+Molecular Biology and Biotechnology
+Sth Edition
+
+
+<!-- Page 3 -->
+Molecular Biology and
+
+Biotechnology
+Sth Edition
+
+Edited by
+
+John M Walker
+
+School of Life Sciences, University of Hertfordshire, Hatfield, Hertfordshire
+ALI10 9AB, UK
+
+Ralph Raply
+
+School of Life Sciences, University of Hertfordshire, Hatfield, Hertfordshire
+ALI10 9AB, UK
+
+RSC Publishing
+
+
+<!-- Page 4 -->
+ISBN: 978-0-85404-125-1
+
+A catalogue record for this book is available from the British Library
+
+Royal Society of Chemistry, 2009
+All rights reserved
+
+Apart from fair dealing for the purposes of research for non-commercial purposes or for
+private study, criticism or review, as permitted under the Copyright, Designs and Patents
+‘Act 1988 and the Copyright and Related Rights Regulations 2003, this publication may not
+be reproduced, stored or transmitted, in any form or by any means, without the prior
+permission in writing of The Royal Society of Chemistry or the copyright owner, or in the
+case of reproduction in accordance with the terms of licences issued by the Copyright
+Licensing Agency in the UK, or in accordance with the terms of the licences issued by the
+appropriate Reproduction Rights Organization outside the UK. Enquiries concerning
+reproduction outside the terms stated here should be sent to The Royal Society of Chemistry
+at the address printed on this page.
+
+Published by The Royal Society of Chemistry,
+Thomas Graham House, Science Park, Milton Road,
+Cambridge CB4 OWF, UK
+
+Registered Charity Number 207890
+
+For further information see our website at www.rsc.org
+
+
+<!-- Page 5 -->
+Preface
+
+One of the exciting aspects of being involved in the field of molecular
+biology is the ever-accelerating rate of progress, both in the develop-
+ment of new methodologies and in the practical applications of these
+methodologies. Indeed, such developments led to the idea of the first
+edition of Molecular Biology and Biotechnology and subsequent edi-
+tions have reflected the fast-moving nature of the area, not least this
+latest edition, which continues to reflect recent developments, with
+new chapters in developing areas such as genome technology, nano-
+biotechnology, regenerative medicine and biofuels.
+
+The first six chapters deal with the technology used in current mole-
+cular biology and biotechnology. These deal primarily with core nucleic
+acid techniques and protein expression through microbial and genetic
+detection methods. Further chapters address the huge advances made in
+gene and genome analysis and update the rapid advances into yeast
+analysis, which is providing very exciting insights into molecular path-
+ways. Molecular biology also continues to affect profoundly progress in
+biotechnology in areas such as vaccine development, use and application
+of monoclonal antibodies, clinical treatment and diagnosis, the pro-
+duction of transgenic animals, and many other areas of research relevant
+to the pharmaceutical industry. Chapters on all these areas have been
+retained and fully updated in this new edition and new chapters intro-
+duced on the applications of molecular biology in the areas of drug
+design and diseases, and regenerative medicine. In addition, we continue
+to ensure that biotechnology is not just considered at the gene level and
+full consideration continues to be given to applications and
+
+Molecular Biology and Biotechnology, Sth Edition
+Edited by John M Walker and Ralph Rapley
+
+© Royal Society of Chemistry 2009
+
+Published by the Royal Society of Chemistry, www.rsc.org
+
+V
+
+
+<!-- Page 6 -->
+Vi                                                                                                                      Preface
+
+manufacturing, with chapters on downstream processing, biosensors,
+the applications of immobilised biocatalysts, and a new chapter on the
+developing area of biofuels.
+
+Our continued intention is that this book should primarily have a
+teaching function. As such, this book should prove of interest both to
+undergraduates studying for biological or chemical qualifications and to
+postgraduate and other scientific workers who need a sound introduc-
+tion to this ever rapidly advancing and expanding area.
+
+John M. Walker
+Ralph Rapley
+
+
+<!-- Page 7 -->
+Contents
+
+Chapter 1
+
+Chapter 2
+
+Basic Molecular Biology Techniques
+Ralph Rapley
+
+1.1 Enzymes Used in Molecular Biology
+1.2 Isolation and Separation of Nucleic Acids
+1.2.1 Isolation of DNA
+1.2.2 Isolation of RNA
+1.3 Electrophor    of Nucleic Acids
+1.4 Restriction Mapping of DNA Fragments
+1.5 Nucleic Acid Analysis Methods
+1.5.1 DNA Blotting
+1.5.2. RNA Blotting
+1.6 Gene Probe Derivation
+1.7 Labelling DNA Gene Probe Molecules
+1.7.1 End Labelling of DNA Molecules
+1.7.2. Random Primer Labelling
+1.7.3. Nick Translation
+1.8 The Polymerase Chain Reaction
+References
+
+Molecular Cloning and Protein Expression
+Stuart Harbron
+
+2.1
+2.2
+2.3
+2.4
+
+Introduction
+
+Host-related Issues
+
+Vectors
+
+Expression Systems
+
+2.4.1. The pET Expression System
+2.4.2 The pBAD Expression System
+
+WODANWWH
+
+ll
+12
+13
+14
+15
+15
+18
+
+20
+21
+24
+30
+30
+33
+
+Molecular Biology and Biotechnology, 5th Edition
+Edited by John M Walker and Ralph Rapley
+
+© Royal Society of Chemistry 2009
+
+Published by the Royal Society of Chemistry, www.rsc.org
+
+vii
+
+
+<!-- Page 8 -->
+viii
+
+Chapter 3
+
+Chapter 4
+
+Contents
+
+2.5 Problems
+
+2.6 Fusion Proteins
+2.6.1 Solubility-enhancing Tags.
+2.6.2 Purification-facilitating Tags
+2.6.3. HT Approaches
+
+2.7 Other Hosts
+
+2.8 Cell-free Systems
+
+2.9 Conclusion
+
+References
+
+Molecular Diagnostics
+Laura J. Tafe, Claudine L. Bartels, Joel A. Lefferts and
+
+Gregory J. Tsongalis
+
+3.1 Introduction
+
+3.2 Technologies
+
+3.3. The Infectious Disease Paradigm
+3.4 Genetics
+
+3.5 Hematology
+
+3.6 Oncology
+
+3.7 Pharmacogenomics
+
+3.8 Conclusion
+
+References
+
+Molecular Microbial Diagnostics
+Karl-Henning Kalland
+
+4.1 Introduction
+42 Cl      1 Microbiological Diagnosis
+4.3 Sample Collection and Nucleic Acid Purification
+4.3.1 Sample Collection and Transport
+4.3.2 Extraction of Nucleic Acids
+4.3.3. Manual Extraction of Nucleic Acids
+4.3.4 Automated Extraction of Nucleic Acids
+4.4 Nucleic Acid Amplification Techniques
+4.4.1 Polymerase Chain Reaction (PCR)
+4.4.2. The Contamination Problem
+4.4.3, Reverse PCR — cDNA Synthesis
+4.4.4 Nested PCR
+4.4.5 Real-time PCR
+4.4.6 Visualisation of Real-time PCR Amplification
+4.4.7. Real-time PCR Equipment
+4.4.8 Real-time Quantitative PCR
+4.4.9 Determination of ‘Viral Load’ in Clinical
+Microbiology
+
+34
+37
+37
+40
+43
+44
+44
+45
+45
+
+51
+52
+53
+55
+59
+62
+65
+71
+71
+
+16
+78
+79
+79
+80
+81
+81
+81
+81
+82
+82
+83
+83
+84
+86
+86
+
+87
+
+
+<!-- Page 9 -->
+Contents
+
+Chapter 5
+
+4.5
+
+4.6
+
+47
+
+4.4.10 Internal Controls in Microbiological
+Real-time qPCR
+
+4.4.11 Multiplex Real-time PCR
+
+4.4.12 Melting Curve Analysis
+
+4.4.13 Genotyping
+
+Other Techniques Used in Clinical Microbiology
+
+4.5.1 Hybridisation Techniques.
+
+4.5.2 Nucleic Acid-based Typing of Bacteria
+
+4.5.3. Pyrosequencing
+
+4.5.4. TaqMan Low-density Arrays (TLDAs)
+
+Selected Examples of Clinical Nucleic
+
+Acid-based Diagnosis
+
+4.6.1 Central Nervous System (CNS) Disease
+
+4.6.2. Respiratory Infections
+
+4.6.3. Hepatitis
+
+4.6.4 Gastroenteritis
+
+4.6.5 Sexually Transmitted Diseases
+
+4.6.6 HIV Infection and AIDS
+
+4.6.7 Bacterial Antibiotic Resistance and Virulence
+Factor Genes
+
+Conclusion and Future Challenges
+
+References
+
+Genes and Genomes
+David B. Whitehouse
+
+5.1
+
+5.2
+
+5.3
+
+5.4
+
+Introduction
+5.1.1 Background
+Key DNA Technologies
+5.2.1 Molecular Cloning Outline
+5.2.2. Cloning Vectors
+5.2.3. The Cloning Process
+5.2.4 DNA Librari
+The Polymerase Chain Reaction (PCR)
+5.3.1 Steps in the PCR
+5.3.2. PCR Primer Design and Bioinformatics
+5.3.3. Reverse Transcriptase PCR (RT-PCR)
+5.3.4 Quantitative or Real-time PCR
+DNA Sequencing
+5.4.1 Dideoxynucleotide Chain
+Terminators
+5.4.2. Sequencing Double-stranded DNA
+5.4.3. PCR Cycle Sequencing
+5.4.4 Automated DNA Sequencing
+5.4.5 Pyrosequencing
+
+ix
+
+87
+88
+88
+89
+90
+90
+93
+97
+98
+
+99
+
+99
+100
+100
+101
+102
+103
+
+104
+106
+107
+
+112
+112
+115
+115
+115
+118
+120
+122
+123
+125
+126
+126
+128
+
+129
+129
+130
+130
+131
+
+
+<!-- Page 10 -->
+Chapter 6
+
+Chapter 7
+
+Contents
+
+5.5 Genome Analysis
+5.5.1 Mapping and Identifying Genes
+5.5.2 Tools for Genetic Mapping
+5.5.3 Mutation Detection
+5.6 Genome Projects Background
+5.6.1 Mapping and Sequencing Strategies
+5.7 Gene Discovery and Localisation
+5.7.1 Laboratory Approaches
+5.7.2. Bioinformatics Approaches
+5.8 Future Directions
+References
+
+The Biotechnology and Molecular Biology of Yeast
+Brendan P. G. Curran and Virginia C. Bugeja
+
+6.1 Introduction
+6.2 The Production of Heterologous Proteins by Yeast
+6.2.1 The Yeast Hosts
+6.2.2 Assembling and Transforming Appropriate
+DNA Constructs into the Hosts
+6.2.3 Ensuring Optimal Expression of the Desired
+Protein
+6.3 From Re-engineering Genomes to Constructing Novel
+Signal and Biochemical Pathways
+6.3.1 Large-scale Manipulation of Mammalian and
+Bacterial DNA
+6.3.2 Novel Biological Reporter Systems
+6.3.3 Novel Biochemical Products Include
+Humanised EPO
+6.4 Yeast as a Paradigm of Eukaryotic Cellular Biology
+6.4.1 Genomic Insights
+6.4.2 Transcriptomes, Proteomes and Metabolomes
+and Drug Development
+6.4.3. Systems Biology
+6.5 Future Prospects
+References
+
+Metabolic Engineering
+Stefan Kempa, Dirk Walther, Oliver Ebenhoeh and Wolfram
+
+Weckwerth
+7.1 Introduction
+7.2 Theoretical Approaches for Metabolic Networks
+
+7.2.1 Kinetic Modelling
+
+131
+131
+132
+139
+144
+144
+149
+149
+150
+152
+153
+
+159
+161
+161
+
+162
+
+165
+
+170
+
+170
+176
+
+179
+187
+187
+
+188
+190
+191
+191
+
+196
+197
+198
+
+
+<!-- Page 11 -->
+Contents
+
+Chapter 8
+
+Chapter 9
+
+7.2.2 Metabolic Control Analysis (MCA),
+Elementary Flux Modes (EFM) and
+Flux-balance Analysis (FBA)
+
+7.3. Experimental Approaches for Metabolic Engineering
+
+7.3.1 Tools for Metabolic Engineering
+
+7.3.2. Metabolomics
+7.3.3, Metabolomics in the Context of Metabolic
+Engineering
+
+7.4 Examples in Metabolic Engineering
+7.4.1 Metabolic Engineering of Plants
+7.4.2 Acetate Metabolism and Recombinant Protein
+Synthesis in £. coli—a Test Case for Metabolic
+Engineering
+7.4.3 Metabolic Flux Analysis and a Bioartificial Liver
+7.5 Omics Technologies Open New Perspectives for
+Metabolic Engineering
+7.6 Acknowledgement
+References
+
+Bionanotechnology
+David W. Wright
+
+8.1 Introduction
+8.2 Semiconductor Quantum Dots
+8.2.1 Quantum Confinement Effects
+8.2.2 Biotechnological Applications of Fluorescent
+Semiconductor Quantum Dots
+8.3. Magnetic Nanoparticles
+8.3.1 Nanoscaling Laws and Magnetism
+8.3.2 Biotechnological Applications of Magnetic
+Nanoparticles
+8.4 Zerovalent Noble Metal Nanoparticles
+8.4.1 Nanoscale Properties of Zerovalent Nobel
+Metal Nanoparticles
+8.4.2 Bionanotechnology Application of Zerovalent
+Noble Metal Nanoparticles
+8.5 Making Nanoscale Structures Using Biotechnology
+8.6 Conclusions
+References
+
+Molecular Engineering of Antibodies
+James D. Marks
+
+9.1 Introduction
+9.2 Antibodies as Therapeutics
+
+xi
+
+202
+208
+208
+209
+
+210
+211
+211
+
+213
+213
+
+214
+215
+215
+
+220
+222
+222
+
+224
+226
+226
+
+228
+232
+
+234
+236
+241
+241
+
+245
+246
+
+
+<!-- Page 12 -->
+xii
+
+Chapter 10
+
+Contents
+
+9.3. Antibody Structure and Function
+9.4 Chimeric Antibodies
+9.5 Antibody Humanization
+9.6 Antibodies from Diversity Libraries and Display
+Technologies
+9.6.1 Antibody Phage Display
+9.6.2 Alternative Display Technologies
+9.7. Engineering Antibody Affinity
+9.8 Enhancing Antibody Potency
+9.9 Conclusion
+References
+
+Plant Biotechnology
+Michael G. K. Jones
+
+10.1 Introduction
+ions of Molecular Biology to Speed Up the
+s of Crop Improvement
+10.2.1 Molecular Maps of Crop Plants
+10.2.2. Molecular Markers
+10.2.3. Types of Molecular Markers.
+10.2.4 Marker-assisted Selection
+10.2.5 Examples of Marke:
+10.2.6 Molecular Diagnostics
+10.2.7. DNA Fingerprinting, Variety Identification
+10.2.8 DNA Microarrays
+10.2.9 Bioinformati
+10.3. Transgenic Technologies
+10.3.1 Agrobacterium-mediated Transformation
+10.3.2 Selectable Marker and Reporter Genes
+10.3.3. Particle Bombardment
+10.4 Applications of Transgenic Technologies
+10.5 Engineering Crop Resistance to Herbicides
+10.6 Engineering Resistance to Pests And Diseases
+10.6.1 Insect Resistance
+10.6.2 Engineered Resistance to Plant Viruses
+10.6.3. Resistance to Fungal Pathogens
+10.6.4 Natural Resistance Genes
+10.6.5 Engineering Resistance to Fungal Pathogens
+10.6.6 Resistance to Bacterial Pathogens
+10.6.7 Resistance to Nematode Pathogens
+10.7 Manipulating Male Sterility
+10.8 Tolerance to Abiotic Stresses
+10.9 Manipulating Quality
+10.9.1 Prolonging Shelf Life
+
+ted Selection
+
+250
+251
+255
+
+256
+257
+262
+263
+264
+265
+265
+
+272
+
+273
+273
+274
+274
+275
+276
+277
+278
+279
+279
+279
+280
+280
+281
+
+281
+
+283
+284
+284
+285
+287
+288
+290
+291
+
+292
+292
+293
+294
+294
+
+
+<!-- Page 13 -->
+Contents
+
+10.9.2 Nutritional and Technological Properties
+10.9.3. Manipulation of Metabolic Partitioning
+
+10.10 Production of Plant Polymers and Biodegradable
+Plas
+
+10.11 Plants as Bioreactors: Biopharming and
+Neutraceuticals
+10.11.1 Edible Vaccines
+10.11.2 Production of Antibodies in Plants
+10.11.3 Plant Neutraceuticals
+
+10.12 Plant Biotechnology in Forestry
+
+10.13 Intellectual Property
+
+10.14 Public Acceptance
+
+10.15 Future Prospects
+
+References
+
+Chapter 11 Biotechnology-based Drug Discovery
+
+K. K.
+
+11.1
+
+11.2
+11.3
+
+11.4
+
+11.5
+
+11.6
+
+Jain
+
+Introduction to Drug Discovery
+
+11.1.1 Basics of Drug Discovery in the Biopharma-
+ceutical Industry
+
+11.1.2. Historical Landmarks in Drug Discovery and
+Development
+
+11.1.3. Current Status of Drug Discovery
+
+New Biotechnologies for Drug Discovery
+
+Genomic Technologies for Drug Discovery
+
+11.3.1 SNPs in Drug Discovery
+
+11.3.2 Gene Expression Profiling
+
+11.3.3 Limitations of Genomics for Drug Discovery
+and Need for Other Omics
+
+Role of Proteomics in Drug Discovery
+
+11.4.1 Protei:    s Drug Targets
+
+11.4.2. Protein Expression Mapping by 2D Gel
+
+Electrophoresis
+
+11.4.3. Liquid Chromatography-based Drug
+Discovery
+
+11.4.4 Matri        ted Laser Desorption/Ionisation
+
+Mass Spectrometry
+
+11.4.5 Protein-Protein Interactions
+
+11.4.6 Use of Proteomic Technologies for
+Important Drug Targets
+
+Metabolomic and Metabonomic Technologies for
+
+Drug Discovery
+
+Role of Nanobiotechnology
+
+in Drug Discovery
+
+xiii
+
+294
+297
+
+298
+
+298
+298
+299
+299
+300
+300
+301
+302
+303
+
+307
+307
+308
+309
+310
+310
+311
+312
+312
+313
+313
+314
+314
+
+314
+315
+
+316
+
+317
+
+318
+
+
+<!-- Page 14 -->
+Xiv                                                                                                                     Contents
+
+11.6.1 Nanobiotechnology for Target Validation 318
+11.6.2 Nanotechnology-based Drug Design at
+
+Cell Level                                  318
+
+11.6.3. Nanomaterials as Drug Candidates          319
+
+11.7. Role of Biomarkers in Drug Discovery                320
+
+11.8 Screening in Drug Discovery                           320
+
+11.8.1 Cell-based Screening System                321
+11.8.2 Receptor Targets: Human versus Animal
+
+Tissues                                          321
+
+11.8.3 Tissue Screening                               322
+
+11.9 Target Validation Technologies                        322
+
+11.9.1 Animal Models for Genomics-based
+
+Target Validation Methods                    322
+
+11.9.2 Role of Knockout Mice in Drug Discovery 323
+
+11.10 Antisense for Drug Discovery                         323
+
+11.10.1 Antisense Oligonucleotides for Drug
+
+Target Validation                              324
+
+11.10.2 Aptamers                                                    324
+
+11.10.3 RNA as a Drug Target                       325
+
+11.10.4 Ribozymes                                                  325
+
+11.11 RNAi for Drug Discovery                           326
+11.11.1 Use of siRNA Libraries to Identify Genes
+
+as Therapeutic Targets                          327
+
+11.11.2 RNAi as a Tool for Assay Development     328
+11.11.3 Challenges of Drug Discovery with
+RNAi                                           328
+11.11.4 Role of MicroRNA in Drug Discovery      329
+11.12 Biochips and Microarrays
+
+for Drug Discovery                                      329
+11.12.1 Finding Lead Compounds                 330
+11.12.2. High-throughput cDNA Microarrays        330
+11.12.3 Use of Gene Expression Data to Find New
+Drug Targets                                        330
+11.12.4 Investigation of the Mechanism of Drug
+Action                                          331
+11.13. Applications of Bioinformatics
+in Drug Discovery                                     331
+11.13.1 Combination of In Silico and In vitro Studies 332
+11.14 Role of Model Organisms in Drug Discovery          333
+11.15 Chemogenomic Approach to Drug Discovery         334
+11.16 Virtual Drug Development                         334
+11.17. Role of Biotechnology in Lead Generation and
+Validation                                                335
+11.18 Conclusion                                               335
+
+References                                                                                         336
+
+
+<!-- Page 15 -->
+Contents
+
+Chapter 12 Vaccines
+
+Niall McMullan
+
+12.1 An Overview of Vaccines and
+Vaccination
+12.2. Types of Vaccines in Current Use
+12.2.1 Live, Attenuated Vaccines
+12.2.2 Inactivated Vaccines
+12.2.3. Subunit Vaccine:
+12.3. The Need for New Vaccines
+12.4 New Approaches to Vaccine Development
+Recombinant Live Vectors
+Recombinant BCG Vectors
+Recombinant Salmonella Vectors
+Recombinant Adenovirus Vectors
+Recombinant Vaccinia Vectors
+4.6 DNA Vaccines
+12.5 Adjuvants
+12.5.1 Immune-stimulating Complexes (ISCOMs)
+and Liposomes
+12.5.2 Freund-type Adjuvants
+12.5.3. CpG Oligonucleotides (CpG ODNs)
+References
+
+Chapter 13 Tissue Engineering
+
+Nils Link and Martin Fussenegger
+
+13.1 Introduction
+13.1.1 Economic Impact of Healthcare
+13.1.2 Tissue Engineering
+13.1.3. Treating Disease Through Tissue
+Engineering
+13.2. Cell Types
+13.2.1 Embryonic Stem Cells
+13.2.2 Adult Stem Cells
+13.2.3 Mature Cells
+13.3 Extracellular Matrix
+13.3.1 Biological Extracellular Matric
+13.3.2 Artificial Extracellular Matric
+13.4. Tissue Engineering Concepts
+13.4.1 Cultivation of Artificial Ti
+13.4.2. Design of Scaffold-free Tiss
+13.5 Conclusions
+References
+
+xv
+
+337
+338
+338
+339
+340
+342
+343
+343
+343
+344,
+345
+346
+346
+347
+
+347
+347
+348
+349
+
+351
+351
+352
+
+353
+356
+356
+360
+361
+362
+362
+364
+369
+369
+372
+373
+373
+
+
+<!-- Page 16 -->
+xvi                                                                                                                     Contents
+
+Chapter 14 Transgenesis
+Elizabeth J. Cartwright and Xin Wang
+
+14.1 Introduction                                               390
+From Gene to Function                        390
+14.2         enesis by DNA Pronuclear Injection            391
+Generation of a Transgenic Mouse            391
+Summary of Advantages and Disadvantages
+of Generating Transgenic Mice by
+Pronuclear Injection of DNA                   397
+14.3. Gene Targeting by Homologous Recombination
+in Embryonic Stem Cells                               397
+14.3.1 Basic Principles                                  398
+14.3.2 Generation of a Knockout Mouse            400
+14.3.3. Summary of Advantages and Disadvantages
+of Generating Gene Knockout Mice          404
+14.4 Conditional Gene Targeting                           404
+14.4.1 Generation of a Conditional Knockout
+Mouse Using the Cre-loxP System            406
+14.4.2. Chromosomal Engineering Using the
+Cre-loxP System                         410
+14.4.3. Summary of Advantages and
+Disadvantages of Conditional Gene
+Targeting                                         410
+14.5 Phenotypic Analysis of Genetically
+Modified Mice                                       411
+14.6 Ethical and Animal Welfare Considerations            412
+14.7. Conclusions                                               414
+14.8 Acknowledgements                                       414
+References                                                                                         415
+
+Chapter 15 Protein Engineering
+John Adair and Duncan McGregor
+
+15.1 Introduction                                         418
+15.1.1 Protein Structures                            419
+15.2 Tools of the Trade                                   420
+15.2.1 Sequence Identification                       420
+15.2.2. Structure Determination and Modelling       420
+15.2.3. Sequence Modification                421
+15.2.4 Production                                   432
+15.2.5 Analysis                                     433
+15.3. Applications                                         434
+15.3.1 Point Mutations                                 434
+
+15.3.2 Domain Shuffling (Linking, Swapping
+and Deleting)                             435
+
+
+<!-- Page 17 -->
+Contents
+
+15.3.3. Whole Protein Shuffling
+
+15.3.4. Protein-Ligand Interactions
+
+15.3.5 Towards De Novo Design
+15.4 Conclusions and Future Directions
+References
+
+Chapter 16 Immobilisation of Enzymes and Cells
+
+Gordon F. Bickerstaff
+
+16.1 Introduction
+16.2. Biocatalysts
+16.2.1 Enzymes
+Ribozymes, Deoxyribozymes and Ribosomes
+.2.3 Splicesomes
+16.2.4 Abzymes
+16.2.5 Multienzyme Complexes
+16.2.6 Cells
+16.2.7 Biocatalyst Selection
+16.3. Immobilisation
+16.3.1 Choice of Support Material
+16.3.2 Choice of Immobilisation Procedures
+16.4. Properties of Immobilised Biocatalysts
+16.4.1 Stability
+16       Catalytic Activity
+16.4.3. Coenzyme Regeneration
+16.5 Applications
+References
+
+Chapter 17 Downstream Processing
+
+Daniel G. Bracewell, Mohammad Ali S. Mumtaz and
+Cc. Mark Smales
+
+17.1 Introduction
+17.2 Initial Considerations and Primary Recovery
+17.2.1. Centrifugation and Filtration
+17.2.2 Cell Lysis
+17.2.3. Recovery of Material from Inclusion Bodies
+17.3 Protein Precipitation
+17.4 Chromatography
+17.4.1 Ton-exchange Chromatography (IEX)
+17.4.2. Affinity Chromatography
+17.4.3. Hydrophobic Interaction Chromatography
+(HIC)
+17.4.4 Gel Filtration Chromatography
+17.5 Alternatives to Packed Bed Chromatography
+
+xvii
+
+441
+441
+442
+443
+447
+
+454
+455
+455
+459
+460
+461
+462
+466
+468
+469
+470
+474
+483
+483
+484
+485
+487
+489
+
+492
+493
+494
+494
+495
+496
+497
+499
+500
+
+501
+501
+502
+
+
+<!-- Page 18 -->
+XViii
+
+Chapter 18
+
+Chapter 19
+
+Contents
+
+17.5.1 Expanded Bed Adsorption
+17.5.2. Aqueous Two-phase Extraction
+Membrane Chromatography and Filtration
+Crystallisation
+-5 Monolith Columns
+17.6 Design of Biomolecules for Downstream Processing
+17.7 Scaledown Methods
+17.8 Validation and Robustness
+17.9 Formulation and Antiviral Treatments
+
+17.9.1 Formulation
+
+17.9.2. Antiviral Treatments
+17.10 Current Developments and Future Directions
+References
+
+Biosensors
+Martin F. Chaplin
+
+18.1 Introduction
+18.2. The Biological Reaction
+18.3. Theory
+18.4 Electrochemical Methods
+18.4.1 Amperometric Biosensors
+18.4.2 Potentiometric Biosenso:
+18.4.3 Conductimetric Biosensors
+18.5 Piezoelectric Biosensors
+18.6 Optical Biosensors
+18.6.1 Evanescent Wave Biosensors
+18.6.2 Surface Plasmon Resonance
+18.7 Whole Cell Biosen:
+18.8 Receptor-based Sensors
+18.9 Conclusion
+References
+
+Biofuels and Biotechnology
+Jonathan R. Mielenz
+
+19.1 Introduction
+
+19.2 Production of the Major Biofuels
+19.2.1 Corn Processing and Ethanol
+19.2.2. Biomass Conversion for Ethanol
+19.2.3 Biodiesel
+
+19.3. Application of Biotechnology Tools to Biofuels
+Processes
+19.3.1 Improved Production of Corn Ethanol
+19.3.2 Ethanol Production from Biomass
+
+502
+503
+503
+504
+505
+505
+506
+506
+507
+507
+508
+509
+510
+
+513
+518
+519
+522
+522
+531
+533
+534
+536
+538
+540
+542
+543
+545
+546
+
+548
+549
+550
+552
+556
+
+557
+559
+561
+
+
+<!-- Page 19 -->
+Contents
+
+19.3.3. Biobutanol
+
+19.3.4 Biodiesel
+
+19.3.5 New Concepts
+19.4 Future Perspectives
+References
+
+Subject Index
+
+xix
+
+572
+573
+573
+574
+576
+
+585
+
+
+<!-- Page 21 -->
+CHAPTER 1
+Basic Molecular Biology Techniques
+
+RALPH RAPLEY
+
+School of Life Sciences, University of Hertfordshire, Hatfield, Hertfordshire
+AL10 9AB, UK
+
+1.1 ENZYMES USED IN MOLECULAR BIOLOGY
+
+The discovery and characterisation of a number of key enzymes have
+permitted the development of various techniques for the analysis and
+manipulation of DNA. In particular, the enzymes termed type II
+restriction endonucleases have come to play a key role in all aspects of
+molecular biology.' These enzymes recognise specific DNA sequences,
+usually 4-6 base pairs (bp) in length, and cleave them in a defined
+manner. The sequences recognised are palindromic or of an inverted
+repeat nature, that is, they read the same in both directions on each
+strand. When cleaved they leave a flush-ended or staggered (also termed
+a cohesive-ended) fragment depending on the particular enzyme used
+(Figure 1.1).
+
+An important property of staggered ends is that those produced from
+different molecules by the same enzyme are complementary (or ‘sticky’)
+and so will anneal to each other (Table 1.1). The annealed strands are
+held together only by hydrogen bonding between complementary bases
+on opposite strands. Covalent joining of ends on each of the two strands
+may be brought about by the enzyme DNA ligase. This is widely
+exploited in molecular biology to allow the construction of recombinant
+DNA, i.e. the joining of DNA fragments from different sources.
+
+Molecular Biology and Biotechnology, Sth Edition
+
+Edited by John M Walker and Ralph Rapley
+
+© Royal Society of Chemistry 2009
+
+Published by the Royal Society of Chemistry, www.rsc.org
+
+1
+
+
+<!-- Page 22 -->
+2                                                                Chapter 1
+
+Hindll Resriction Enzyme
+
+GAC ==
+
+Tc
+Adclc T G —==5
+
+5a] Gg
+7] <
+
+YY
+Blunt ended digest
+
+从
+
+5-3 GTC       a=[==.7
+3-S==a CAG       Tas
+
+Blunt ended restriction fragments produced
+
+EcoRI Restriction enzyme
+
+1.3!
+15°
+
+5-0     GLA A
+CT
+
+C
+3                                 G
+
+v
+Staggered digestion
+
+5 ===] GAATT OH             ===
+7c         HOTTAA G a5’
+
+Sti
+
+cohesive ended restriction fragments produced
+
+Figure 1.1 Examples of digestion of DNA by restriction endonucleases. The upper
+panel indicates the result of a restriction digestion forming blunt frag-
+ments with the enzyme HindIII. The bottom panel indicates the cohesive
+fragments produced by digestion with the enzyme EcoR1.
+
+Approximately 500 restriction enzymes have been characterised that
+recognise over 100 different target sequences. A number of these, termed
+isoschizomers, recognise different target sequences but produce the same
+staggered ends or overhangs. A number of other enzymes have proved
+to be of value in the manipulation of DNA, as summarised in Table 1.2,
+and are indicated at appropriate points within the text.
+
+
+<!-- Page 23 -->
+Basic Molecular Biology Techniques                                            3
+
+Table 1.1 Examples of restriction endonucleases that recognise different tar-
+get sequences and the resulting fragments following digestion.
+
+Name __ Recognition Sequence                                 Digestion Products
+Four Nucleotide Recognition Sequence
+5"-6G cc-3      Blunt End
+ae                                         3                     Digestion
+5                     Cohesive End
+pa
+ipa          3 ccce sy                       3 -Gec cs        Digestion
+Six Nucleotide Recognition Sequence
+Bantl        5 -GGRTTC-37                     5-6 。 GATCC-3"
+3" -Gecc-5"                       3/-CCTAG—G-S!
+EcoRI                                         oe ean
+3 -CTTRR
+Hinallt                                         a       ae
+3/-TTCGA AS!
+Fight Nucleotide Recognition Sequence
+Nott                                         5
+3"-cGccGG
+
+Table 1.2 Comparison of the various labelling methods for DNA.
+
+Labelling method         Enzyme                     Probe Type Specific Activity
+5! end labelling           Alkaline Phosphatase      DNA           Low
+Polynucleotide Kinase
+3! end labelling          Terminal Transferase      DNA           Low
+Nick Translation          DNase I                      DNA             High
+DNA Polymerase I
+Random Hexamer       DNA Polymerase I        DNA          High
+PCR                     Taq DNA Polymerase = DNA           High
+Riboprobes (CRNA) __ RNA Polymerase          RNA           High
+
+1.2, ISOLATION AND SEPARATION OF NUCLEIC ACIDS
+1.2.1 Isolation of DNA
+
+The use of DNA for analysis or manipulation usually requires that it is
+isolated and purified to a certain extent. DNA is recovered from cells by
+the gentlest possible method of cell rupture to prevent the DNA from
+fragmenting by mechanical shearing. This is usually in the presence of
+
+
+<!-- Page 24 -->
+4                                                                Chapter 1
+
+EDTA which chelate the Mg2+ ions needed for enzymes that degrade
+DNA termed DNase. Ideally, cell walls, if present, should be digested
+enzymatically (e.g. lysozyme treatment of bacteria) and the cell mem-
+brane should be solubilised using detergent. If physical disruption is
+necessary, it should be kept to a minimum and should involve cutting or
+squashing of cells, rather than the use of shear forces. Cell disruption
+(and most subsequent steps) should be performed at 4°C, using glass-
+ware and solutions which have been autoclaved to destroy DNase
+activity (Figure 1.2).
+
+After release of nucleic acids from the cells, RNA can be removed by
+treatment with ribonuclease (RNase) which has been heat treated to
+inactivate any DNase contaminants; RNase is relatively stable to heat as
+a result of its disulfide bonds, which ensure rapid renaturation of the
+molecule on cooling. The other major contaminant, protein, is removed
+by shaking the solution gently with water-saturated phenol or with a
+
+Homogenise Cells/Tissues
+4°C/sterile equipment
+
+(
+
+Cellular Lysis
+Detergent / Lysozyme
+
+(
+
+Chelating Agents
+EDTA / Citrate
+
+(
+
+Proteinase Agents
+Proteinase K
+
+(
+
+Phenol Extraction
+Phenol / Chloroform
+
+(
+
+Alcohol Precipitation
+70% / 100% Ethanol
+
+(
+
+Redissolve DNA.
+TE Buffer (Tris-EDTA)
+
+Figure 1.2 Flow diagram of the main steps involved in the extraction of DNA.
+
+
+<!-- Page 25 -->
+Basic Molecular Biology Techniques                                            5
+
+phenol-chloroform mixture, either of which will denature proteins but
+not nucleic acids. Centrifugation of the emulsion formed by this mixing
+produces a lower, organic phase, separated from the upper, aqueous
+phase by an interface of denatured protein. The aqueous solution is
+recovered and deproteinised repeatedly, until no more mater:       seen at
+the interface. Finally, the deproteinised DNA preparation is mixed with
+two volumes of absolute ethanol and the DNA allowed to precipitate
+out of solution in a freezer. After centrifugation, the DNA pellet is
+redissolved in a buffer containing EDTA to inactivate any DNases
+present. This solution can be stored at 4°C for at least 1 month. DNA
+solutions can be stored frozen, although repeated freezing and thawing
+tend to damage long DNA molecules by shearing.
+
+The procedure described above is suitable for total cellular DNA. If
+the DNA from a specific organelle or viral particle is needed, it is best to
+isolate the organelle or virus before extracting its DNA, since the
+recovery of a particular type of DNA from a mixture is usually rather
+difficult. Where a high degree of purity is required, DNA may be sub-
+jected to density gradient ultracentrifugation through caesium chloride,
+which is particularly useful for the preparation of plasmid DNA.’ It is
+possible to check the integrity of the DNA by agarose gel electrophoresis
+and determine the concentration of the DNA by using the fact that
+1 absorbance unit equates to 504gml~! of DNA and so
+
+50 x A269 = concentration of DNA sample (ug mI~!)          ()
+
+Contaminants may also be identified by scanning UV spectrophoto-
+metry from 200 to 300nm. A ratio of 260 nm:280 nm of approximately
+1.8 indicates that the sample is free of protein contamination, which
+absorbs strongly at 280 nm.
+
+1.2.2 Isolation of RNA
+
+The methods used for RNA isolation are very similar to those described
+above for DNA; however, RNA molecules are relatively short and
+therefore less easily damaged by shearing, so cell disruption can be more
+vigorous. RNA is, however, very vulnerable to digestion by RNases.
+which are present endogenously in various concentrations in certain cell
+types and exogenously on fingers. Gloves should therefore be worn and
+a strong detergent should be included in the isolation medium to
+denature immediately any RNases. Subsequent deproteinisation should
+be particularly rigorous, since RNA is often tightly associated with
+proteins.* DNase treatment can be used to remove DNA and RNA can
+
+
+
+<!-- Page 26 -->
+6                                                                Chapter 1
+
+be precipitated by ethanol. One reagent in which is commonly used in
+RNA extraction is guanadinium thiocyanate, which is both a strong
+inhibitor of RNase and a protein denaturant. It is possible to check the
+integrity of an RNA extract by analysing it by agarose gel electro-
+phoresis. The most abundant RNA species are rRNA molecules, 23S
+and 16S for prokaryotes and 18S and 28S for eukaryotes. These appear
+as discrete bands on the agarose gel and indicate that the other RNA
+components are likely to be intact. This is usually carried out under
+denaturing conditions to prevent secondary structure formation in the
+RNA. The concentration of the RNA may be estimated by using UV
+spectrophotometry. At 260 nm, 1 absorbance unit equates to 40 pg ml
+of RNA and therefore
+
+40 x 4260 = concentration of RNA sample (yg ml~!)          (2)
+
+Contaminants may also be identified in the same way as for DNA by
+scanning UV spectrophotometry; however, in the case of RNA a
+260 nm:280 nm ratio of approximately 2 would be expected for a sample
+containing no contamination.
+
+In many cases, it is desirable to isolate eukaryotic mRNA, which
+constitutes only 2-5% of cellular RNA, from a mixture of total RNA
+molecules. This may be carried out by affinity chromatography on oligo
+(dT)-cellulose columns. At high salt concentrations, the mRNA con-
+taining poly(A) tails binds to the complementary oligo(dT) molecules of
+the affinity column and so mRNA will be retained; all other RNA
+molecules can be washed through the column with further high-salt
+solution. Finally, the bound mRNA can be eluted using a low con-
+centration of salt. Nucleic acid species may also be subfractionated by
+more physical means such as electrophoretic or chromatographic
+separations based on differences in nucleic acid fragment sizes or phy-
+sicochemical characteristics.*
+
+13 ELECTROPHORESIS OF NUCLEIC ACIDS
+
+Electrophoresis in agarose or polyacrylamide gels is the most usual way to
+separate DNA molecules according to size (Figure 1.3). The technique
+can be used analytically or preparatively and can be qualitative or
+quantitative. Large fragments of DNA such as chromosomes may also be
+separated by a modification of electrophoresis termed pulsed field gel
+electrophoresis (PFGE). The easiest and most widely applicable method
+is electrophoresis in horizontal agarose gels, followed by staining with
+
+
+<!-- Page 27 -->
+Basic Molecular Biology Techniques                                            7
+
+Electrode                                Separating Matrix                                Electrode
+
+DNA a            JL
+
+U
+
+Buffer                                                                           Buffer
+
+‘Migration of DNA (- to +)
+
+Figure 1.3. A typical setup required for agarose gel electrophoresis of DNA.
+The upper panel indicates a cross-section of the unit used for gel
+electrophoresis.
+
+ethidium bromide. This dye binds to DNA by insertion between stacked
+base pairs (intercalation) and it exhibits a strong orange/red fluorescence
+when illuminated with ultraviolet light. Very often electrophoresis is used
+to check the purity and intactness of a DNA preparation or to assess the
+extent of a enzymatic reaction during, for example, the steps involved in
+the cloning of DNA. For such checks ‘mini-gels’ are particularly con-
+venient, since they need little preparation, use small samples and give
+results quickly. Agarose gels can be used to separate molecules larger than
+about 100 bp. For higher resolution or for the effective separation of
+shorter DNA molecules, polyacrylamide gels are the preferred method.*
+
+When electrophoresis is used preparatively, the piece of gel containing
+the desired DNA fragment is physically removed with a scalpel. The
+DNA may be recovered from the gel fragment in various ways. This may
+include crushing with a glass rod in a small volume of buffer, using
+agarase to digest the agarose thus leaving the DNA, or by the process of
+electroelution. In the latter method, the piece of gel is sealed in a length
+of dialysis tubing containing buffer and is then placed between two
+electrodes in a tank containing more buffer. Passage of an electric cur-
+rent between the electrodes causes DNA to migrate out of the gel piece,
+but it remains trapped within the dialysis tubing and can therefore be
+recovered easily. More commonly, commercial spin columns can be used
+which contain an isolating matrix used in conjunction with a bench-top
+microcentrifuge. The use of such standardised ‘kits’ in molecular biology
+is now commonplace. An alternative to conventional analysis of nucleic
+acids by electrophoresis is through the use of microfluidic systems. These
+are carefully manufactured chip-based units where microlitre volumes
+may be used and with the aid of computer analysis provide much of the
+data necessary for analysis. Their advantage lies in the fact that the
+sample volume is very small, allowing much of an extract to be used for
+further analysis.*
+
+
+
+<!-- Page 28 -->
+8                                                                Chapter 1
+
+1.4 RESTRICTION MAPPING OF DNA FRAGMENTS
+
+Restriction mapping involves the size analysis of restriction fragments
+produced by several restriction enzymes individually and in combination.°
+The principle of this mapping is illustrated, in which the restriction sites of
+two enzymes, A and B, are being mapped. Cleavage with A gives frag-
+ments 2 and 7 kilobases (kb) from a 9 kb molecule, hence we can position
+the single A site 2 kb from one end. Similarly, B gives fragments 3 and 6 kb,
+so it has a single site 3 kb from one end; but it is not possible at this stage to
+say if it is near to A’s site or at the opposite end of the DNA. This can be
+resolved by a double digestion. If the resultant fragments are 2, 3 and 4kb,
+then A and B cut at opposite ends of the molecule; if they are 1, 2 and 6 kb,
+the sites are near each other. Not surprisingly, the mapping of real
+molecules is rarely as simple as this and computer analysis of the restriction
+fragment lengths is usually needed to construct a map (Figure 1.4).
+
+1.5 NUCLEIC ACID ANALYSIS METHODS
+
+There are numerous methods for analysing DNA and RNA; however,
+many of them are solution based or more recently include the use of
+
+A. DNA region containing
+two restriction sites 1, 2
+
+B. Point mutation abolishes
+restriction site 1
+
+1         2 3
+C. Point mutation creates
+restriction site 3
+1 2
+
+E. Sequence deletion of region
+containing restriction site 2
+
+D. Sequence rearrangement
+moves restriction site 2
+1
+
+1                 2
+F. Insertion of sequences eg. presence
+of variable number tandem repeats
+
+se
+
+VNTR
+
+Figure 1.4 Restriction fragment length polymorphisms (RFLP). The schematic panels
+A-F indicate the various fragments obtained following digestion as a result
+of differences in the position of restriction endonuclease target sequences.
+
+
+<!-- Page 29 -->
+Basic Molecular Biology Techniques                                            9
+
+chip-based array systems. Indeed, the lab-on-a-chip approach is devel-
+oping rapidly and it is possible to envisage many detection and analysis
+methods being developed in this format in the future.’ However, tra-
+ditional methods are still employed in many laboratories and much is
+still made of producing a hard copy of digested and separated single-
+stranded DNA fragments attached to a matrix such as nylon for analysis
+with an appropriate labelled probe.
+
+1.5.1 DNA Blotting
+
+Electrophoresis of DNA restriction fragments allows separation based
+on size to be carried out; however, it provides no indication as to the
+presence of a specific, desired fragment among the complex sample
+(Figure 1.5). This can be achieved by transferring the DNA from the
+intact gel on to a piece of nitrocellulose or nylon membrane placed in
+contact with it. This provides a more permanent record of the sample
+since DNA begins to diffuse out of a gel that is left for a few hours. First
+the gel is soaked in alkali to render the DNA single stranded. It is then
+transferred to the membrane so that the DNA becomes bound to the it
+in exactly the same pattern as that originally on the gel. This transfer,
+named a Southern blot after its inventor Ed Southern, can be performed
+electrophoretically or by drawing large volumes of buffer through both
+gel and membrane, thus transferring DNA from one to the other by
+
+Gel
+
+Electrophoresis
+
+Target DNA Sequence
+g                            Digest with restriction enzyme              一一
+w=                       oe
+四          pea           is)             二
+ar                           一
+Io aw                   二二
+DNA Genome                 a”               二 一
+Autoradiograph
+O                                      graphy
+AN                         Hybridise membrane with
+Paper Towels <==                     labelled DNA probe
+SSS
+Membrane                                                          \,
+Agarose Gel ~                                          中       一人
+be
+六                          Target DNA detected
+
+Immobilisation of DNA onto Membrane
+
+Figure 1.5 The steps involved in the production of a Southern blot and the sub-
+sequent detection of a specific DNA sequence following hybridisation with
+a complementary labelled gene probe.
+
+
+<!-- Page 30 -->
+10                                                                                       Chapter 1
+
+capillary action. The point of this operation is that the membrane can
+now be treated with a labelled DNA molecule, for example a gene probe.
+This single-stranded DNA probe will hybridise under the right conditions
+to complementary fragments immobilised on the membrane. The con-
+ditions of hybridisation, including the temperature and salt concentra-
+tion, are critical for this process to take place effectively. This is usually
+referred to as the stringency of the hybridisation and it is particular for
+each individual gene probe and for each sample of DNA. A series of
+washing steps with buffer are then carried out to remove any unbound
+probe and the membrane is developed, after which the precise location of
+the probe and its target may be vis      d. It is also possible to analyse
+DNA from different species or organisms by blotting the DNA and then
+using a gene probe representing a protein or enzyme from one of the
+organisms. In this way, it is possible to search for related genes in dif-
+ferent species. This technique is generally termed Zoo blotting.
+
+1.5.2 RNA Blotting
+
+The same basic process of nucleic acid blotting can be used to transfer
+RNA from gels on to similar membranes. This allows the identification
+of specific mRNA sequences of a defined length by hybridisation to a
+labelled gene probe and is known as Northern blotting.’ With this
+technique it is not only possible to detect specific mRNA molecules but
+it may also be used to quantify the relative amounts of the specific
+mRNA. It is usual to separate the mRNA transcripts by gel electro-
+phoresis under denaturing conditions since this improves resolution and
+allows a more accurate estimation of the sizes of the transcripts. The
+format of the blotting may be altered from transfer from a gel to direct
+application to slots on a specific blotting apparatus containing the nylon
+membrane. This is termed slot or dot blotting and provides a convenient
+means of measuring the abundance of specific mRNA transcripts
+without the need for gel electrophoresis; it does not, however, provide
+information regarding the size of the fragments.
+
+A further method of RNA analysis that overcomes the problems of
+RNA blotting is termed the ribonuclease protection assay. Here the
+RNA from a sample is extracted and then mixed with a probe repre-
+senting the sequence of interest in solution. The probe and the appro-
+priate RNA fragment hybridise to form a double-stranded sequence.
+RNase is then added, which cleaves any single-stranded RNA present
+but leaves the double-stranded RNA intact. The intact RNA can then be
+separated by electrophoresis and an indication of the size of the frag-
+ment generated. The efficient removal of the background of RNA and
+

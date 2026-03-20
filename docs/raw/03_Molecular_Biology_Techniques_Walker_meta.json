@@ -1,0 +1,34 @@
+{
+  "source": "03_Molecular_Biology_Techniques_Walker.pdf",
+  "extraction": "OCR",
+  "chapters": [
+    {
+      "title": "Chapter 11 Biotechnology-based Drug Discovery",
+      "lines": 115
+    },
+    {
+      "title": "Chapter 12 Vaccines",
+      "lines": 21
+    },
+    {
+      "title": "Chapter 13 Tissue Engineering",
+      "lines": 54
+    },
+    {
+      "title": "Chapter 14 Transgenesis",
+      "lines": 28
+    },
+    {
+      "title": "Chapter 15 Protein Engineering",
+      "lines": 20
+    },
+    {
+      "title": "Chapter 16 Immobilisation of Enzymes and Cells",
+      "lines": 19
+    },
+    {
+      "title": "Chapter 17 Downstream Processing",
+      "lines": 519
+    }
+  ]
+}

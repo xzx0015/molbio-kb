@@ -1,0 +1,50 @@
+{
+  "source": "07_Molecular_Biology_of_the_Gene_Watson_7th_CN.pdf",
+  "extraction": "OCR",
+  "chapters": [
+    {
+      "title": "第3章 弱化学键和强化学键的重要性”52",
+      "lines": 2
+    },
+    {
+      "title": "第6章 蛋白质的结构 125",
+      "lines": 2
+    },
+    {
+      "title": "第8章 基因组结构、染色体和核小体 202",
+      "lines": 7
+    },
+    {
+      "title": "第16章 遗传密码 597",
+      "lines": 4
+    },
+    {
+      "title": "第20章 调控RNA 734",
+      "lines": 1
+    },
+    {
+      "title": "第22章 系统生物学 816",
+      "lines": 19
+    },
+    {
+      "title": "第2章 核酸承载遗传作息”22",
+      "lines": 135
+    },
+    {
+      "title": "第6章 蛋白质的结构 125",
+      "lines": 516
+    },
+    {
+      "title": "第15章 翻译 530",
+      "lines": 278
+    },
+    {
+      "title": "第20章 调控RNAS 734",
+      "lines": 113
+    },
+    {
+      "title": "第22章 系统生物学 816",
+      "lines": 229
+    }
+  ]
+}
