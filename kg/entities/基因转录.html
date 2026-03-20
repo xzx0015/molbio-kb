@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基因转录 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .back { color: #667eea; text-decoration: none; display: inline-block; margin-bottom: 15px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .subtitle { color: #999; font-size: 0.9em; }
+        .meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        .chapter-tag { background: #28a745; }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .section p { color: #555; line-height: 1.8; }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #333; margin-bottom: 8px; font-size: 1em; }
+        .concept-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        
+        .key-points { list-style: none; padding: 0; }
+        .key-points li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #555;
+        }
+        
+        .relation-list { display: flex; gap: 10px; flex-wrap: wrap; }
+        .relation-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .relation-tag:hover { background: #667eea; color: white; }
+        
+        .references { list-style: none; padding: 0; }
+        .references li {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 0.9em;
+            border-left: 3px solid #28a745;
+        }
+        
+        footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
+        
+        @media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back">← 返回实体索引</a>
+            <h1>基因转录</h1>
+            <p class="subtitle">Gene Transcription | 第 4 章</p>
+            <div class="meta">
+                <span class="tag">核心概念</span>
+                <span class="tag chapter-tag">第 4 章</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📖 定义</h2>
+            <p>转录是以 DNA 为模板合成 RNA 的过程，是基因表达的第一步，将遗传信息从 DNA 传递到 RNA。</p>
+        </div>
+        
+        <div class="section">
+            <h2>🔑 关键概念</h2>
+            <div class="concept-grid"><div class="concept-card"><h4>启动子</h4><p>RNA 聚合酶识别和结合的 DNA 序列，决定转录起始位点和效率</p></div><div class="concept-card"><h4>RNA 聚合酶</h4><p>催化 RNA 合成的酶，原核一种，真核三种（Pol I、II、III）</p></div><div class="concept-card"><h4>转录因子</h4><p>协助 RNA 聚合酶结合启动子并调控转录的蛋白质</p></div><div class="concept-card"><h4>转录起始</h4><p>RNA 聚合酶结合启动子并开始合成 RNA 的过程</p></div><div class="concept-card"><h4>转录延伸</h4><p>RNA 聚合酶沿 DNA 模板移动并合成 RNA 链的过程</p></div><div class="concept-card"><h4>转录终止</h4><p>RNA 聚合酶停止合成并释放 RNA 产物的过程</p></div><div class="concept-card"><h4>操纵子</h4><p>原核生物中功能相关基因成簇排列、协同调控的转录单位</p></div></div>
+        </div>
+        
+        <div class="section">
+            <h2>📌 核心知识点</h2>
+            <ul class="key-points"><li>转录的基本过程：起始、延伸、终止</li>
+<li>原核生物转录的特点：操纵子结构、转录与翻译偶联</li>
+<li>真核生物转录的特点：三种 RNA 聚合酶、复杂转录因子、转录后加工</li>
+<li>启动子元件：-10 区 (Pribnow 框)、-35 区（原核）；TATA 框、CAAT 框（真核）</li>
+<li>转录调控的基本机制</li></ul>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 关联实体</h2>
+            <div class="relation-list"><a href="#" class="relation-tag">染色体与 DNA</a><a href="#" class="relation-tag">RNA 加工</a><a href="#" class="relation-tag">蛋白质翻译</a><a href="#" class="relation-tag">基因调控</a></div>
+        </div>
+        
+        <div class="section">
+            <h2>📚 参考文献</h2>
+            <ul class="references"><li>Jacob F, Monod J. Genetic regulatory mechanisms in the synthesis of proteins. J Mol Biol, 1961</li>
+<li>Burgess RR. RNA polymerase from Escherichia coli. Nature, 1969</li></ul>
+        </div>
+        
+        <footer><p>© 2026 分子生物学知识库</p></footer>
+    </div>
+</body>
+</html>

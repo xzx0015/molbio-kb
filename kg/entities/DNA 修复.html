@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA 修复 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .back { color: #667eea; text-decoration: none; display: inline-block; margin-bottom: 15px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .subtitle { color: #999; font-size: 0.9em; }
+        .meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        .chapter-tag { background: #28a745; }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .section p { color: #555; line-height: 1.8; }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #333; margin-bottom: 8px; font-size: 1em; }
+        .concept-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        
+        .key-points { list-style: none; padding: 0; }
+        .key-points li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #555;
+        }
+        
+        .relation-list { display: flex; gap: 10px; flex-wrap: wrap; }
+        .relation-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .relation-tag:hover { background: #667eea; color: white; }
+        
+        .references { list-style: none; padding: 0; }
+        .references li {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 0.9em;
+            border-left: 3px solid #28a745;
+        }
+        
+        footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
+        
+        @media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back">← 返回实体索引</a>
+            <h1>DNA 修复</h1>
+            <p class="subtitle">DNA Repair | 第 3 章</p>
+            <div class="meta">
+                <span class="tag">核心概念</span>
+                <span class="tag chapter-tag">第 3 章</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📖 定义</h2>
+            <p>DNA 修复是细胞纠正 DNA 损伤、维持基因组稳定性的机制，包括多种修复途径应对不同类型的 DNA 损伤。</p>
+        </div>
+        
+        <div class="section">
+            <h2>🔑 关键概念</h2>
+            <div class="concept-grid"><div class="concept-card"><h4>DNA 损伤</h4><p>DNA 结构或化学性质的改变，可由辐射、化学物质、复制错误等引起</p></div><div class="concept-card"><h4>直接修复</h4><p>直接逆转损伤的修复方式，如光修复酶修复嘧啶二聚体</p></div><div class="concept-card"><h4>碱基切除修复(BER)</h4><p>修复单个受损碱基的修复途径</p></div><div class="concept-card"><h4>核苷酸切除修复(NER)</h4><p>修复较大 DNA 损伤（如嘧啶二聚体）的修复途径</p></div><div class="concept-card"><h4>错配修复(MMR)</h4><p>纠正 DNA 复制中错配碱基的修复途径</p></div><div class="concept-card"><h4>同源重组(HR)</h4><p>利用同源序列作为模板进行精确修复</p></div><div class="concept-card"><h4>非同源末端连接(NHEJ)</h4><p>直接连接断裂末端的修复方式，可能引入突变</p></div></div>
+        </div>
+        
+        <div class="section">
+            <h2>📌 核心知识点</h2>
+            <ul class="key-points"><li>DNA 损伤类型：碱基修饰、单链断裂、双链断裂、交联</li>
+<li>直接修复：光修复、烷基转移酶</li>
+<li>BER：DNA 糖基化酶识别损伤碱基，AP 内切酶切割，DNA 聚合酶填补，连接酶连接</li>
+<li>MMR：识别错配，切除含错配的链，重新合成</li>
+<li>HR 和 NHEJ 的比较：精确性、细胞周期依赖性</li>
+<li>DNA 修复缺陷与疾病：着色性干皮病、林奇综合征</li></ul>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 关联实体</h2>
+            <div class="relation-list"><a href="#" class="relation-tag">DNA 复制</a><a href="#" class="relation-tag">细胞周期</a><a href="#" class="relation-tag">基因组</a><a href="#" class="relation-tag">表观遗传</a></div>
+        </div>
+        
+        <div class="section">
+            <h2>📚 参考文献</h2>
+            <ul class="references"><li>Hanawalt PC, et al. DNA repair mechanisms. Cold Spring Harb Symp Quant Biol, 1968</li></ul>
+        </div>
+        
+        <footer><p>© 2026 分子生物学知识库</p></footer>
+    </div>
+</body>
+</html>

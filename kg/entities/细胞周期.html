@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>细胞周期调控 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .back { color: #667eea; text-decoration: none; display: inline-block; margin-bottom: 15px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .subtitle { color: #999; font-size: 0.9em; }
+        .meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        .chapter-tag { background: #28a745; }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .section p { color: #555; line-height: 1.8; }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #333; margin-bottom: 8px; font-size: 1em; }
+        .concept-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        
+        .key-points { list-style: none; padding: 0; }
+        .key-points li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #555;
+        }
+        
+        .relation-list { display: flex; gap: 10px; flex-wrap: wrap; }
+        .relation-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .relation-tag:hover { background: #667eea; color: white; }
+        
+        .references { list-style: none; padding: 0; }
+        .references li {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 0.9em;
+            border-left: 3px solid #28a745;
+        }
+        
+        footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
+        
+        @media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back">← 返回实体索引</a>
+            <h1>细胞周期调控</h1>
+            <p class="subtitle">Cell Cycle Regulation | 第 8 章</p>
+            <div class="meta">
+                <span class="tag">核心概念</span>
+                <span class="tag chapter-tag">第 8 章</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📖 定义</h2>
+            <p>细胞周期是细胞从一次分裂结束到下一次分裂结束所经历的过程，包括 G1 期、S 期、G2 期和 M 期，受多种调控蛋白精确控制。</p>
+        </div>
+        
+        <div class="section">
+            <h2>🔑 关键概念</h2>
+            <div class="concept-grid"><div class="concept-card"><h4>G1 期</h4><p>DNA 合成前期，细胞生长和准备 DNA 复制</p></div><div class="concept-card"><h4>S 期</h4><p>DNA 合成期，完成 DNA 复制</p></div><div class="concept-card"><h4>G2 期</h4><p>DNA 合成后期，准备细胞分裂</p></div><div class="concept-card"><h4>M 期</h4><p>有丝分裂期，染色体分离和细胞分裂</p></div><div class="concept-card"><h4>检验点</h4><p>监控细胞周期进程的关键调控点</p></div><div class="concept-card"><h4>周期蛋白</h4><p>与 CDK 结合并激活其激酶活性的蛋白质</p></div><div class="concept-card"><h4>CDK</h4><p>周期蛋白依赖性激酶，驱动细胞周期进程</p></div><div class="concept-card"><h4>CKI</h4><p>CDK 抑制因子，负调控细胞周期</p></div></div>
+        </div>
+        
+        <div class="section">
+            <h2>📌 核心知识点</h2>
+            <ul class="key-points"><li>细胞周期的四个阶段及其特征</li>
+<li>周期蛋白-CDK 复合物是细胞周期的核心调控因子</li>
+<li>主要检验点：G1/S 检验点、S 期检验点、G2/M 检验点、纺锤体检验点</li>
+<li>Rb-E2F 通路调控 G1/S 转换</li>
+<li>p53 在 DNA 损伤应答中的作用</li>
+<li>细胞周期失调与癌症</li></ul>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 关联实体</h2>
+            <div class="relation-list"><a href="#" class="relation-tag">DNA 复制</a><a href="#" class="relation-tag">基因调控</a><a href="#" class="relation-tag">信号转导</a><a href="#" class="relation-tag">DNA 修复</a></div>
+        </div>
+        
+        <div class="section">
+            <h2>📚 参考文献</h2>
+            <ul class="references"><li>Hartwell LH, Weinert TA. Checkpoints: controls that ensure the order of cell cycle events. Science, 1989</li>
+<li>Hunt T. Cyclins and their partners: from a vague idea to a clear reality. Nobel Lecture, 2001</li></ul>
+        </div>
+        
+        <footer><p>© 2026 分子生物学知识库</p></footer>
+    </div>
+</body>
+</html>
