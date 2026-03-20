@@ -1,0 +1,29 @@
+{
+  "id": "dna-repair",
+  "name": "DNA 修复",
+  "nameEn": "DNA Repair",
+  "category": "核心概念",
+  "chapter": "第 3 章",
+  "definition": "DNA 修复是细胞纠正 DNA 损伤、维持基因组稳定性的机制，包括多种修复途径应对不同类型的 DNA 损伤。",
+  "keyConcepts": [
+    {"term": "DNA 损伤", "definition": "DNA 结构或化学性质的改变，可由辐射、化学物质、复制错误等引起"},
+    {"term": "直接修复", "definition": "直接逆转损伤的修复方式，如光修复酶修复嘧啶二聚体"},
+    {"term": "碱基切除修复(BER)", "definition": "修复单个受损碱基的修复途径"},
+    {"term": "核苷酸切除修复(NER)", "definition": "修复较大 DNA 损伤（如嘧啶二聚体）的修复途径"},
+    {"term": "错配修复(MMR)", "definition": "纠正 DNA 复制中错配碱基的修复途径"},
+    {"term": "同源重组(HR)", "definition": "利用同源序列作为模板进行精确修复"},
+    {"term": "非同源末端连接(NHEJ)", "definition": "直接连接断裂末端的修复方式，可能引入突变"}
+  ],
+  "keyPoints": [
+    "DNA 损伤类型：碱基修饰、单链断裂、双链断裂、交联",
+    "直接修复：光修复、烷基转移酶",
+    "BER：DNA 糖基化酶识别损伤碱基，AP 内切酶切割，DNA 聚合酶填补，连接酶连接",
+    "MMR：识别错配，切除含错配的链，重新合成",
+    "HR 和 NHEJ 的比较：精确性、细胞周期依赖性",
+    "DNA 修复缺陷与疾病：着色性干皮病、林奇综合征"
+  ],
+  "relatedEntities": ["DNA 复制", "细胞周期", "基因组", "表观遗传"],
+  "references": [
+    "Hanawalt PC, et al. DNA repair mechanisms. Cold Spring Harb Symp Quant Biol, 1968"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "central-dogma",
+  "name": "中心法则",
+  "nameEn": "Central Dogma",
+  "category": "核心概念",
+  "chapter": "第 1-2 章",
+  "definition": "中心法则描述遗传信息在生物大分子之间的传递规律：DNA→RNA→蛋白质，以及 DNA 的自我复制。",
+  "keyConcepts": [
+    {"term": "DNA 复制", "definition": "DNA 以自身为模板合成新 DNA 的过程"},
+    {"term": "转录", "definition": "以 DNA 为模板合成 RNA 的过程"},
+    {"term": "翻译", "definition": "以 mRNA 为模板合成蛋白质的过程"},
+    {"term": "逆转录", "definition": "以 RNA 为模板合成 DNA 的过程，由逆转录酶催化"},
+    {"term": "RNA 复制", "definition": "某些 RNA 病毒以 RNA 为模板合成 RNA 的过程"},
+    {"term": "遗传信息", "definition": "生物大分子中储存的遗传指令"}
+  ],
+  "keyPoints": [
+    "中心法则的核心内容：遗传信息从核酸流向核酸或蛋白质",
+    "DNA→DNA：复制",
+    "DNA→RNA：转录",
+    "RNA→蛋白质：翻译",
+    "RNA→DNA：逆转录（补充）",
+    "RNA→RNA：RNA 复制（某些病毒）",
+    "蛋白质→核酸或蛋白质：不存在"
+  ],
+  "relatedEntities": ["DNA 复制", "基因转录", "蛋白质翻译", "基因组"],
+  "references": [
+    "Crick FH. On protein synthesis. Symp Soc Exp Biol, 1958",
+    "Crick FH. Central dogma of molecular biology. Nature, 1970"
+  ]
+}

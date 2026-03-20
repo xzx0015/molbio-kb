@@ -1,0 +1,32 @@
+{
+  "id": "rna-processing",
+  "name": "RNA 加工",
+  "nameEn": "RNA Processing",
+  "category": "核心概念",
+  "chapter": "第 5 章",
+  "definition": "真核生物初级转录产物（pre-mRNA）需要经过一系列加工修饰才能成为成熟的功能性 RNA，包括 5'端加帽、3'端加尾、剪接等过程。",
+  "keyConcepts": [
+    {"term": "5'端加帽", "definition": "在 mRNA 5'端添加 7-甲基鸟苷(m⁷G)帽子结构，保护 mRNA 并促进翻译起始"},
+    {"term": "3'端加尾", "definition": "在 mRNA 3'端添加多聚腺苷酸(poly-A)尾巴，增加稳定性并参与核质转运"},
+    {"term": "RNA 剪接", "definition": "切除内含子、连接外显子的过程"},
+    {"term": "内含子", "definition": "基因中不编码蛋白质的间隔序列，转录后被切除"},
+    {"term": "外显子", "definition": "基因中编码蛋白质的序列，剪接后保留在成熟 mRNA 中"},
+    {"term": "剪接体", "definition": "由 snRNP 和蛋白质组成的大型复合物，催化剪接反应"},
+    {"term": "选择性剪接", "definition": "同一 pre-mRNA 通过不同剪接方式产生多种 mRNA 异构体"},
+    {"term": "RNA 编辑", "definition": "转录后改变 RNA 序列的过程，如碱基插入、删除或替换"}
+  ],
+  "keyPoints": [
+    "真核基因断裂结构：内含子与外显子",
+    "5'端帽子结构：m⁷GpppN，保护 mRNA、促进翻译、参与核输出",
+    "3'端 poly-A 尾巴：50-250 个 A，增加稳定性、促进翻译",
+    "剪接的化学机制：两次转酯反应",
+    "剪接体的组成：U1、U2、U4/U5/U6 snRNP",
+    "选择性剪接增加蛋白质多样性",
+    "RNA 编辑的类型和生物学意义"
+  ],
+  "relatedEntities": ["基因转录", "蛋白质翻译", "基因调控", "非编码 RNA"],
+  "references": [
+    "Berget SM, Moore C, Sharp PA. An amazing sequence arrangement at the 5' ends of adenovirus 2 messenger RNA. PNAS, 1977",
+    "Roberts RJ, Sharp PA. Split genes. Nobel Prize research, 1993"
+  ]
+}

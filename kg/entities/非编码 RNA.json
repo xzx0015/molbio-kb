@@ -1,0 +1,31 @@
+{
+  "id": "noncoding-rna",
+  "name": "非编码 RNA",
+  "nameEn": "Non-coding RNA",
+  "category": "核心概念",
+  "chapter": "第 5 章",
+  "definition": "非编码 RNA 是不编码蛋白质的 RNA 分子，包括 rRNA、tRNA、snRNA、miRNA、lncRNA 等，在基因表达调控、蛋白质合成等过程中发挥重要功能。",
+  "keyConcepts": [
+    {"term": "rRNA", "definition": "核糖体 RNA，是核糖体的结构和催化组分"},
+    {"term": "tRNA", "definition": "转运 RNA，携带氨基酸并识别 mRNA 密码子"},
+    {"term": "snRNA", "definition": "小核 RNA，参与 pre-mRNA 剪接"},
+    {"term": "miRNA", "definition": "微小 RNA，约 22nt，通过抑制翻译或降解 mRNA 调控基因表达"},
+    {"term": "siRNA", "definition": "小干扰 RNA，介导 RNA 干扰，沉默特定基因"},
+    {"term": "lncRNA", "definition": "长链非编码 RNA，>200nt，参与多种调控过程"},
+    {"term": "circRNA", "definition": "环状 RNA，共价闭合环状结构，具有调控功能"},
+    {"term": "RNA 干扰", "definition": "由双链 RNA 诱导的基因沉默现象"}
+  ],
+  "keyPoints": [
+    "非编码 RNA 的分类：管家 ncRNA（rRNA、tRNA）和调控 ncRNA（miRNA、lncRNA）",
+    "miRNA 的生物合成和功能机制",
+    "RNA 干扰的发现和应用",
+    "lncRNA 的调控机制：顺式作用、反式作用、支架功能、诱饵功能",
+    "circRNA 的特性和功能",
+    "非编码 RNA 与疾病"
+  ],
+  "relatedEntities": ["RNA 加工", "基因调控", "蛋白质翻译", "表观遗传"],
+  "references": [
+    "Fire A, Mello CC. RNA interference. Nature, 1998",
+    "Esteller M. Non-coding RNAs in human disease. Nat Rev Genet, 2011"
+  ]
+}

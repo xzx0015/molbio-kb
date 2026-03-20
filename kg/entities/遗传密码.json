@@ -1,0 +1,28 @@
+{
+  "id": "genetic-code",
+  "name": "遗传密码",
+  "nameEn": "Genetic Code",
+  "category": "核心概念",
+  "chapter": "第 6 章",
+  "definition": "遗传密码是 mRNA 上核苷酸序列与蛋白质氨基酸序列之间的对应规则，由 64 个三联体密码子组成。",
+  "keyConcepts": [
+    {"term": "密码子", "definition": "mRNA 上连续的 3 个核苷酸，决定一个氨基酸或翻译信号"},
+    {"term": "有义密码子", "definition": "编码氨基酸的 61 个密码子"},
+    {"term": "终止密码子", "definition": "不编码氨基酸，导致翻译终止的 3 个密码子（UAA、UAG、UGA）"},
+    {"term": "起始密码子", "definition": "AUG，编码甲硫氨酸，标志翻译起始"},
+    {"term": "简并性", "definition": "多个密码子编码同一氨基酸的现象"},
+    {"term": "摆动假说", "definition": "Crick 提出的密码子-反密码子配对第三位的灵活性"}
+  ],
+  "keyPoints": [
+    "遗传密码的特征：三联体、连续性、简并性、通用性、摆动性",
+    "64 个密码子：61 个有义密码子 + 3 个终止密码子",
+    "AUG 是起始密码子兼甲硫氨酸密码子",
+    "密码子简并性主要发生在第三位",
+    "线粒体和某些生物使用变异的遗传密码"
+  ],
+  "relatedEntities": ["蛋白质翻译", "tRNA", "核糖体", "基因转录"],
+  "references": [
+    "Nirenberg MW, Matthaei JH. The dependence of cell-free protein synthesis in E. coli upon naturally occurring or synthetic template polyribonucleotides. PNAS, 1961",
+    "Khorana HG. Coding properties of copolymers of inosinic acid and cytidylic acid. PNAS, 1965"
+  ]
+}

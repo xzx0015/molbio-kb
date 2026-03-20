@@ -1,0 +1,31 @@
+{
+  "id": "genetic-engineering",
+  "name": "基因工程",
+  "nameEn": "Genetic Engineering",
+  "category": "实验技术",
+  "chapter": "第 11 章",
+  "definition": "基因工程是利用重组 DNA 技术，将外源基因导入生物体，使其获得新性状或产生特定产物的技术。",
+  "keyConcepts": [
+    {"term": "重组 DNA", "definition": "将不同来源的 DNA 片段连接形成新的 DNA 分子"},
+    {"term": "限制性内切酶", "definition": "识别特定 DNA 序列并在特定位点切割的酶"},
+    {"term": "DNA 连接酶", "definition": "催化 DNA 片段之间磷酸二酯键形成的酶"},
+    {"term": "质粒", "definition": "细菌中独立于染色体的环状双链 DNA，常用作克隆载体"},
+    {"term": "转化", "definition": "将外源 DNA 导入细菌细胞的过程"},
+    {"term": "转导", "definition": "通过噬菌体将 DNA 导入细菌的过程"},
+    {"term": "转染", "definition": "将外源 DNA 导入真核细胞的过程"},
+    {"term": "筛选标记", "definition": "用于筛选成功转化细胞的基因，如抗生素抗性基因"}
+  ],
+  "keyPoints": [
+    "基因工程的基本步骤：目的基因获取、载体选择、酶切、连接、转化、筛选",
+    "限制性内切酶的识别序列和切割方式",
+    "常用载体的特点和选择",
+    "转化方法：热激法、电穿孔法",
+    "重组子的筛选和鉴定",
+    "基因表达系统：原核表达、真核表达"
+  ],
+  "relatedEntities": ["分子生物学技术", "PCR", "基因组", "基因调控"],
+  "references": [
+    "Cohen SN, Chang AC. The plasmid as genetic element. PNAS, 1973",
+    "Cohen SN, et al. Construction of biologically functional bacterial plasmids in vitro. PNAS, 1973"
+  ]
+}
