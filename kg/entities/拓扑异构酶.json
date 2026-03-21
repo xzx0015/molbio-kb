@@ -1,0 +1,27 @@
+{
+  "id": "topoisomerase",
+  "name": "拓扑异构酶",
+  "nameEn": "Topoisomerase",
+  "category": "酶",
+  "chapter": "第 3 章",
+  "importance": "core-major",
+  "definition": "拓扑异构酶是一类改变 DNA 拓扑结构的酶，通过切断和重新连接 DNA 链，解除超螺旋张力，在 DNA 复制、转录和重组中必不可少。",
+  "keyConcepts": [
+    {"term": "I 型拓扑异构酶", "definition": "切断单链 DNA，解除超螺旋，如拓扑异构酶 I"},
+    {"term": "II 型拓扑异构酶", "definition": "切断双链 DNA，如 DNA 旋转酶（原核）和拓扑异构酶 II（真核）"},
+    {"term": "DNA 旋转酶", "definition": "原核生物特有的 II 型拓扑异构酶，可引入负超螺旋"},
+    {"term": "超螺旋", "definition": "DNA 双螺旋进一步扭曲形成的高级结构"},
+    {"term": "连环体", "definition": "复制后形成的相互缠绕的 DNA 分子"}
+  ],
+  "keyPoints": [
+    "拓扑异构酶解除 DNA 超螺旋张力",
+    "I 型酶切断单链，II 型酶切断双链",
+    "DNA 旋转酶可引入负超螺旋",
+    "拓扑异构酶是抗生素（如喹诺酮类）的靶点",
+    "拓扑异构酶抑制剂用于癌症化疗"
+  ],
+  "relatedEntities": ["DNA 复制", "DNA 超螺旋", "DNA 重组", "抗生素"],
+  "references": [
+    "Wang JC. Cellular roles of DNA topoisomerases: a molecular perspective. Nat Rev Mol Cell Biol, 2002"
+  ]
+}
