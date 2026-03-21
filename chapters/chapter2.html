@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>第二章：分子基础 | 分子生物学知识库</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -78,11 +74,8 @@
             background: #f8f9fa;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
         }
-        .concept-list li:hover {
-            background: #e3f2fd;
-        }
+        .concept-list li:hover { background: #e3f2fd; }
         .main-content {
             background: white;
             border-radius: 12px;
@@ -96,10 +89,7 @@
             margin: 20px 0;
             border-left: 4px solid #667eea;
         }
-        .concept-card h4 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
+        .concept-card h4 { color: #667eea; margin-bottom: 10px; }
         .entity-tag {
             display: inline-block;
             background: #667eea;
@@ -110,15 +100,23 @@
             margin: 2px;
             cursor: pointer;
         }
-        .entity-tag:hover {
-            background: #764ba2;
-        }
-        .structure-compare {
-            background: linear-gradient(135deg, #faf0f0 0%, #f0f4f8 100%);
-            border-radius: 12px;
+        .entity-tag:hover { background: #764ba2; }
+        .history-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff0cc 100%);
+            border-left: 4px solid #f39c12;
             padding: 20px;
+            border-radius: 8px;
             margin: 20px 0;
         }
+        table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-collapse: collapse;
+        }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
         footer {
             text-align: center;
             padding: 30px;
@@ -133,12 +131,12 @@
     </div>
     <nav class="chapter-nav">
         <a href="../index.html">🏠 首页</a>
-        <a href="chapter1.html">第1章</a>
+        <a href="chapter1.html">第 1 章</a>
         <a href="chapter2.html" class="active">第 2 章</a>
-        <a href="chapter3.html">第3章</a>
-        <a href="chapter4.html">第4章</a>
-        <a href="chapter5.html">第5章</a>
-        <a href="chapter6.html">第6章</a>
+        <a href="chapter3.html">第 3 章</a>
+        <a href="chapter4.html">第 4 章</a>
+        <a href="chapter5.html">第 5 章</a>
+        <a href="chapter6.html">第 6 章</a>
         <a href="../kg/entities/network.html">🕸️ 关联图谱</a>
     </nav>
     <div class="container">
@@ -160,132 +158,29 @@
             </div>
         </aside>
         <main class="main-content">
-            <section id="nucleotide">
-                <h2>2.1 核苷酸结构</h2>
-                <div class="concept-card">
-                    <h4>🧬 核苷酸组成</h4>
-                    <p>核酸的基本组成单位，由三部分组成：</p>
-                    <table style="width: 100%; background: white; border-radius: 8px; margin-top: 15px;">
-                        <tr style="background: #667eea; color: white;">
-                            <th style="padding: 12px;">组分</th>
-                            <th style="padding: 12px;">说明</th>
-                            <th style="padding: 12px;">代表</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">磷酸基团</td>
-                            <td style="padding: 12px;">连接核苷酸形成磷酸二酯键</td>
-                            <td style="padding: 12px;">—PO₄</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">五碳糖</td>
-                            <td style="padding: 12px;">DNA 为脱氧核糖，RNA 为核糖</td>
-                            <td style="padding: 12px;">C5H10O4 / C5H10O5</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">含氮碱基</td>
-                            <td style="padding: 12px;">携带遗传信息</td>
-                            <td style="padding: 12px;">A/T/G/C/U</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
             <section id="dna-structure">
                 <h2>2.2 DNA 双螺旋结构</h2>
                 <div class="concept-card">
                     <h4>🌀 Watson-Crick 模型</h4>
-                    <p>1953 年，Watson 和 Crick 提出 DNA 双螺旋结构模型：</p>
-                    <ul style="margin: 15px 0 15px 20px; line-height: 1.8;">
-                        <li>两条反向平行的多核苷酸链</li>
-                        <li>右手螺旋（B-DNA），每圈 10 个碱基对</li>
-                        <li>碱基位于内侧，磷酸 - 糖骨架位于外侧</li>
-                        <li>大沟（Major groove）和小沟（Minor groove）</li>
+                    
+                    <div class="history-box">
+                        <h5>📜 发现历史</h5>
+                        <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
+                            <li><strong>1950</strong> - Chargaff 法则：A=T，G=C，嘌呤=嘧啶</li>
+                            <li><strong>1952</strong> - Rosalind Franklin 获得 DNA 的 X 射线衍射图（Photo 51）</li>
+                            <li><strong>1953</strong> - Watson & Crick 提出 DNA 双螺旋模型</li>
+                            <li><strong>1962</strong> - Watson、Crick、Wilkins 获诺贝尔生理学或医学奖</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><em>Franklin 的贡献长期被忽视，她的 X 射线数据是双螺旋模型的关键证据。</em></p>
+                    </div>
+                    
+                    <h5>🧬 双螺旋结构特征</h5>
+                    <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
+                        <li><strong>右手螺旋</strong>：B-DNA 为右手螺旋，每圈 10 个碱基对</li>
+                        <li><strong>碱基配对</strong>：A-T（2 个氢键），G-C（3 个氢键）</li>
+                        <li><strong>大沟与小沟</strong>：蛋白质识别 DNA 序列的重要位点</li>
+                        <li><strong>磷酸骨架</strong>：位于外侧，带负电荷</li>
                     </ul>
-                    <div style="margin-top: 15px;">
-                        <span class="entity-tag" onclick="goToEntity('DNA')">DNA</span>
-                        <span class="entity-tag" onclick="goToEntity('染色体与 DNA')">染色体</span>
-                    </div>
-                </div>
-                <div class="structure-compare">
-                    <h3>📊 DNA 构象类型</h3>
-                    <table style="width: 100%; background: white; border-radius: 8px; margin-top: 15px;">
-                        <tr style="background: #667eea; color: white;">
-                            <th style="padding: 12px;">类型</th>
-                            <th style="padding: 12px;">螺旋方向</th>
-                            <th style="padding: 12px;">碱基对/圈</th>
-                            <th style="padding: 12px;">特点</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;"><strong>B-DNA</strong></td>
-                            <td style="padding: 12px;">右手</td>
-                            <td style="padding: 12px;">10</td>
-                            <td style="padding: 12px;">生理条件下最常见</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;"><strong>A-DNA</strong></td>
-                            <td style="padding: 12px;">右手</td>
-                            <td style="padding: 12px;">11</td>
-                            <td style="padding: 12px;">脱水状态，较粗短</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;"><strong>Z-DNA</strong></td>
-                            <td style="padding: 12px;">左手</td>
-                            <td style="padding: 12px;">12</td>
-                            <td style="padding: 12px;">高盐或特定序列</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            <section id="rna-structure">
-                <h2>2.3 RNA 结构特点</h2>
-                <div class="concept-card">
-                    <h4>🧬 RNA vs DNA</h4>
-                    <table style="width: 100%; background: white; border-radius: 8px; margin-top: 15px;">
-                        <tr style="background: #667eea; color: white;">
-                            <th style="padding: 12px;">特征</th>
-                            <th style="padding: 12px;">DNA</th>
-                            <th style="padding: 12px;">RNA</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">糖</td>
-                            <td style="padding: 12px;">脱氧核糖</td>
-                            <td style="padding: 12px;">核糖</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">碱基</td>
-                            <td style="padding: 12px;">A/T/G/C</td>
-                            <td style="padding: 12px;">A/U/G/C</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">结构</td>
-                            <td style="padding: 12px;">双链</td>
-                            <td style="padding: 12px;">通常单链</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            <section id="protein-structure">
-                <h2>2.4 蛋白质结构</h2>
-                <div class="concept-card">
-                    <h4>🧬 氨基酸</h4>
-                    <p>20 种标准氨基酸是蛋白质的基本单位：</p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px;">
-                        <div style="background: white; padding: 10px; border-radius: 8px;">
-                            <strong>非极性</strong><br>
-                            <small style="color: #666;">丙氨酸、亮氨酸</small>
-                        </div>
-                        <div style="background: white; padding: 10px; border-radius: 8px;">
-                            <strong>极性不带电</strong><br>
-                            <small style="color: #666;">丝氨酸、苏氨酸</small>
-                        </div>
-                        <div style="background: white; padding: 10px; border-radius: 8px;">
-                            <strong>酸性</strong><br>
-                            <small style="color: #666;">天冬氨酸、谷氨酸</small>
-                        </div>
-                        <div style="background: white; padding: 10px; border-radius: 8px;">
-                            <strong>碱性</strong><br>
-                            <small style="color: #666;">赖氨酸、精氨酸</small>
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
@@ -306,8 +201,7 @@
         }
         function goToEntity(entity) {
             const encodedEntity = encodeURIComponent(entity);
-            const url = `../kg/entities/${encodedEntity}.html`;
-            window.location.href = url;
+            window.location.href = '../kg/entities/' + encodedEntity + '.html';
         }
     </script>
 </body>
