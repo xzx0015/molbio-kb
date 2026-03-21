@@ -1,0 +1,27 @@
+{
+  "id": "transformation",
+  "name": "转化",
+  "nameEn": "Transformation",
+  "category": "技术",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "转化是将外源 DNA 导入细菌细胞的过程，是基因工程中获取重组子的关键步骤，包括热激法和电穿孔法等方法。",
+  "keyConcepts": [
+    {"term": "感受态细胞", "definition": "能够摄取外源 DNA 的细菌细胞"},
+    {"term": "热激法", "definition": "通过温度变化使细胞膜通透性增加的方法"},
+    {"term": "电穿孔", "definition": "利用电脉冲在细胞膜上形成孔洞的方法"},
+    {"term": "转化效率", "definition": "单位 DNA 获得的转化子数量"},
+    {"term": "筛选", "definition": "通过抗生素抗性等标记筛选成功转化的细胞"}
+  ],
+  "keyPoints": [
+    "转化是基因工程的关键步骤",
+    "感受态细胞更容易摄取 DNA",
+    "热激法是最常用的转化方法",
+    "电穿孔适用于难以转化的细胞",
+    "转化后需要筛选获得重组子"
+  ],
+  "relatedEntities": ["基因工程", "质粒", "载体", "基因克隆"],
+  "references": [
+    "Mandel M, Higa A. Calcium-dependent bacteriophage DNA infection. J Mol Biol, 1970"
+  ]
+}

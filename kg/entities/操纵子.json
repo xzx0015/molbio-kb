@@ -1,0 +1,28 @@
+{
+  "id": "operon",
+  "name": "操纵子",
+  "nameEn": "Operon",
+  "category": "调控",
+  "chapter": "第 7 章",
+  "importance": "core-important",
+  "definition": "操纵子是原核生物中由启动子、操纵基因和结构基因组成的协同调控单元，是原核基因表达调控的基本单位。",
+  "keyConcepts": [
+    {"term": "乳糖操纵子", "definition": "大肠杆菌中调控乳糖代谢的操纵子，lac 操纵子"},
+    {"term": "色氨酸操纵子", "definition": "大肠杆菌中调控色氨酸合成的操纵子，trp 操纵子"},
+    {"term": "阻遏蛋白", "definition": "结合操纵基因抑制转录的蛋白质"},
+    {"term": "诱导物", "definition": "解除阻遏的小分子，如乳糖的代谢物异乳糖"},
+    {"term": "辅阻遏物", "definition": "辅助阻遏蛋白结合操纵基因的小分子，如色氨酸"},
+    {"term": "衰减作用", "definition": "色氨酸操纵子特有的转录衰减调控机制"}
+  ],
+  "keyPoints": [
+    "操纵子是原核生物基因调控的基本单位",
+    "操纵子包含启动子、操纵基因和结构基因",
+    "乳糖操纵子是可诱导型操纵子的典型",
+    "色氨酸操纵子是可阻遏型操纵子的典型",
+    "操纵子模型由 Jacob 和 Monod 提出"
+  ],
+  "relatedEntities": ["基因调控", "阻遏蛋白", "启动子", "转录因子"],
+  "references": [
+    "Jacob F, Monod J. Genetic regulatory mechanisms in the synthesis of proteins. J Mol Biol, 1961"
+  ]
+}

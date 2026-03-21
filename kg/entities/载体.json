@@ -1,0 +1,27 @@
+{
+  "id": "vector",
+  "name": "载体",
+  "nameEn": "Vector",
+  "category": "技术",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "载体是携带外源 DNA 进入宿主细胞并使其复制的 DNA 分子，包括质粒、噬菌体、病毒等，是基因工程的核心工具。",
+  "keyConcepts": [
+    {"term": "克隆载体", "definition": "用于 DNA 片段克隆的载体，如质粒"},
+    {"term": "表达载体", "definition": "用于外源基因表达的载体，含有启动子"},
+    {"term": "穿梭载体", "definition": "可在多种宿主中复制的载体"},
+    {"term": "病毒载体", "definition": "改造后的病毒，用于基因递送"},
+    {"term": "BAC", "definition": "细菌人工染色体，可携带大片段 DNA"}
+  ],
+  "keyPoints": [
+    "载体是基因工程的核心工具",
+    "载体需要复制起点、筛选标记和多克隆位点",
+    "质粒是最常用的克隆载体",
+    "表达载体用于蛋白质表达",
+    "病毒载体用于基因治疗和转基因"
+  ],
+  "relatedEntities": ["基因工程", "质粒", "限制性内切酶", "DNA 连接酶"],
+  "references": [
+    "Cohen SN, et al. Construction of biologically functional bacterial plasmids in vitro. PNAS, 1973"
+  ]
+}
