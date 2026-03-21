@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五章：基因组维持 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .chapter-nav {
+            background: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .chapter-nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .chapter-nav a:hover, .chapter-nav a.active {
+            background: #667eea;
+            color: white;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 20px;
+        }
+        @media (max-width: 1200px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 80px;
+        }
+        .sidebar h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .concept-list { list-style: none; }
+        .concept-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .concept-list li:hover { background: #e3f2fd; }
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #667eea; margin-bottom: 10px; }
+        .entity-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin: 2px;
+            cursor: pointer;
+        }
+        .entity-tag:hover { background: #764ba2; }
+        table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-collapse: collapse;
+        }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛡️ 第五章：基因组维持</h1>
+        <p>DNA 损伤修复与基因组稳定性</p>
+    </div>
+    <nav class="chapter-nav">
+        <a href="../index.html">🏠 首页</a>
+        <a href="chapter1.html">第 1 章</a>
+        <a href="chapter2.html">第 2 章</a>
+        <a href="chapter3.html">第 3 章</a>
+        <a href="chapter4.html">第 4 章</a>
+        <a href="chapter5.html" class="active">第 5 章</a>
+        <a href="chapter6.html">第 6 章</a>
+        <a href="../kg/entities/network.html">🕸️ 关联图谱</a>
+    </nav>
+    <div class="container">
+        <aside class="sidebar">
+            <h3>📚 本章核心概念</h3>
+            <ul class="concept-list">
+                <li onclick="showConcept('dna-damage')">DNA 损伤</li>
+                <li onclick="showConcept('direct-repair')">直接修复</li>
+                <li onclick="showConcept('excision-repair')">切除修复</li>
+                <li onclick="showConcept('mismatch-repair')">错配修复</li>
+                <li onclick="showConcept('dsb-repair')">双链断裂修复</li>
+                <li onclick="showConcept('recombination')">DNA 重组</li>
+            </ul>
+            <h3 style="margin-top: 30px;">🔗 相关实体</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                <span class="entity-tag" onclick="goToEntity('DNA 修复')">DNA 修复</span>
+                <span class="entity-tag" onclick="goToEntity('DNA 复制')">DNA 复制</span>
+                <span class="entity-tag" onclick="goToEntity('DNA 聚合酶')">DNA 聚合酶</span>
+                <span class="entity-tag" onclick="goToEntity('DNA 连接酶')">DNA 连接酶</span>
+                <span class="entity-tag" onclick="goToEntity('突变')">突变</span>
+            </div>
+        </aside>
+        <main class="main-content">
+            <section id="dna-damage">
+                <h2>5.1 DNA 损伤</h2>
+                <div class="concept-card">
+                    <h4>⚠️ 损伤类型</h4>
+                    <p>DNA 损伤分为两大类：</p>
+                    <h5 style="margin-top: 15px;">自发性损伤：</h5>
+                    <table>
+                        <tr><th>类型</th><th>机制</th><th>频率</th></tr>
+                        <tr><td>脱嘌呤</td><td>糖苷键水解</td><td>10⁴/细胞/天</td></tr>
+                        <tr><td>脱氨基</td><td>胞嘧啶→尿嘧啶</td><td>100/细胞/天</td></tr>
+                        <tr><td>氧化损伤</td><td>活性氧（ROS）</td><td>10³/细胞/天</td></tr>
+                    </table>
+                    <h5 style="margin-top: 15px;">诱发性损伤：</h5>
+                    <table>
+                        <tr><th>诱变剂</th><th>损伤类型</th></tr>
+                        <tr><td>UV</td><td>嘧啶二聚体（CPD、6-4 光产物）</td></tr>
+                        <tr><td>电离辐射</td><td>双链断裂、碱基氧化</td></tr>
+                        <tr><td>烷化剂</td><td>碱基烷基化</td></tr>
+                    </table>
+                </div>
+            </section>
+            <section id="direct-repair">
+                <h2>5.2 DNA 修复机制</h2>
+                <div class="concept-card">
+                    <h4>🔧 直接修复</h4>
+                    <p>直接逆转损伤，不切除核苷酸：</p>
+                    <table>
+                        <tr><th>类型</th><th>酶</th><th>机制</th></tr>
+                        <tr><td>光修复</td><td>光裂合酶</td><td>光依赖，裂解嘧啶二聚体</td></tr>
+                        <tr><td>O⁶-甲基鸟嘌呤修复</td><td>MGMT</td><td>转移甲基到自身</td></tr>
+                        <tr><td>单链断裂修复</td><td>DNA 连接酶</td><td>直接连接</td></tr>
+                    </table>
+                </div>
+                <div class="concept-card">
+                    <h4>✂️ 切除修复</h4>
+                    <p>切除损伤片段，重新合成：</p>
+                    <ul style="margin: 15px 0 15px 20px; line-height: 1.8;">
+                        <li><strong>碱基切除修复（BER）</strong>：修复单个损伤碱基</li>
+                        <li><strong>核苷酸切除修复（NER）</strong>：修复大的螺旋扭曲损伤</li>
+                        <li><strong>全基因组 NER vs 转录偶联 NER</strong>：优先修复活跃转录基因</li>
+                    </ul>
+                </div>
+                <div class="concept-card">
+                    <h4>🎯 错配修复（MMR）</h4>
+                    <p>纠正 DNA 复制中的碱基错配：</p>
+                    <ul style="margin: 15px 0 15px 20px; line-height: 1.8;">
+                        <li>MutS：识别错配</li>
+                        <li>MutL：介导修复</li>
+                        <li>MutH：切割（原核）</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>临床意义：</strong>林奇综合征（遗传性非息肉性结直肠癌）</p>
+                </div>
+                <div class="concept-card" id="dsb-repair">
+                    <h4>💥 双链断裂修复</h4>
+                    <p>最危险的 DNA 损伤，两种主要修复方式：</p>
+                    <table>
+                        <tr><th>修复方式</th><th>特点</th><th>时期</th></tr>
+                        <tr><td>同源重组（HRR）</td><td>高保真，需要同源模板</td><td>S/G2 期</td></tr>
+                        <tr><td>非同源末端连接（NHEJ）</td><td>易出错，直接连接</td><td>全周期</td></tr>
+                    </table>
+                </div>
+            </section>
+            <section id="recombination">
+                <h2>5.3 DNA 重组</h2>
+                <div class="concept-card">
+                    <h4>🔄 重组类型</h4>
+                    <ul style="margin: 15px 0 15px 20px; line-height: 1.8;">
+                        <li><strong>同源重组</strong>：需要序列同源性，如减数分裂中的交叉互换</li>
+                        <li><strong>位点特异性重组</strong>：发生在特定序列位点</li>
+                        <li><strong>转座</strong>：转座子在基因组中移动</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <aside class="sidebar">
+            <h3>📊 学习进度</h3>
+            <div style="background: #f0f4f8; padding: 15px; border-radius: 8px;">
+                <div style="background: #667eea; height: 8px; border-radius: 4px; width: 100%;"></div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">本章已完成</p>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <p>© 2026 分子生物学知识库 | 第五章：基因组维持</p>
+    </footer>
+    <script>
+        function showConcept(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        function goToEntity(entity) {
+            const encodedEntity = encodeURIComponent(entity);
+            window.location.href = `../kg/entities/${encodedEntity}.html`;
+        }
+    </script>
+</body>
+</html>

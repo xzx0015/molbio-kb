@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第六章：分子生物学技术 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .chapter-nav {
+            background: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .chapter-nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .chapter-nav a:hover, .chapter-nav a.active {
+            background: #667eea;
+            color: white;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 20px;
+        }
+        @media (max-width: 1200px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 80px;
+        }
+        .sidebar h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .concept-list { list-style: none; }
+        .concept-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .concept-list li:hover { background: #e3f2fd; }
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #667eea; margin-bottom: 10px; }
+        .entity-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin: 2px;
+            cursor: pointer;
+        }
+        .entity-tag:hover { background: #764ba2; }
+        table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-collapse: collapse;
+        }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔬 第六章：分子生物学技术</h1>
+        <p>PCR、测序与基因工程</p>
+    </div>
+    <nav class="chapter-nav">
+        <a href="../index.html">🏠 首页</a>
+        <a href="chapter1.html">第 1 章</a>
+        <a href="chapter2.html">第 2 章</a>
+        <a href="chapter3.html">第 3 章</a>
+        <a href="chapter4.html">第 4 章</a>
+        <a href="chapter5.html">第 5 章</a>
+        <a href="chapter6.html" class="active">第 6 章</a>
+        <a href="../kg/entities/network.html">🕸️ 关联图谱</a>
+    </nav>
+    <div class="container">
+        <aside class="sidebar">
+            <h3>📚 本章核心概念</h3>
+            <ul class="concept-list">
+                <li onclick="showConcept('pcr')">PCR</li>
+                <li onclick="showConcept('sequencing')">DNA 测序</li>
+                <li onclick="showConcept('cloning')">基因克隆</li>
+                <li onclick="showConcept('crispr')">CRISPR</li>
+            </ul>
+            <h3 style="margin-top: 30px;">🔗 相关实体</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                <span class="entity-tag" onclick="goToEntity('PCR')">PCR</span>
+                <span class="entity-tag" onclick="goToEntity('测序技术')">测序技术</span>
+                <span class="entity-tag" onclick="goToEntity('基因工程')">基因工程</span>
+                <span class="entity-tag" onclick="goToEntity('CRISPR-Cas9')">CRISPR-Cas9</span>
+            </div>
+        </aside>
+        <main class="main-content">
+            <section id="pcr">
+                <h2>6.1 PCR 技术</h2>
+                <div class="concept-card">
+                    <h4>🔄 PCR 原理</h4>
+                    <p>聚合酶链式反应（PCR）模拟 DNA 复制过程，在体外快速扩增特定 DNA 片段。</p>
+                    <p style="margin-top: 10px;"><strong>发明者：</strong>Kary Mullis，1993 年诺贝尔化学奖</p>
+                    <h5 style="margin-top: 15px;">反应步骤：</h5>
+                    <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
+                        <li><strong>变性</strong>：94-95°C，30 秒 -2 分钟</li>
+                        <li><strong>退火</strong>：50-65°C，取决于引物 Tm 值</li>
+                        <li><strong>延伸</strong>：72°C，1 分钟/kb</li>
+                    </ul>
+                    <p style="margin-top: 10px;">30-35 个循环后，DNA 指数扩增（2ⁿ）</p>
+                </div>
+                <div class="concept-card">
+                    <h4>🧪 Taq 酶</h4>
+                    <p>从嗜热菌 Thermus aquaticus 中分离：</p>
+                    <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
+                        <li>✅ 耐热，在 95°C 不失活</li>
+                        <li>✅ 最适温度 72-80°C</li>
+                        <li>❌ 无 3'-5'外切酶活性，无校对功能</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="sequencing">
+                <h2>6.2 DNA 测序技术</h2>
+                <div class="concept-card">
+                    <h4>📝 Sanger 测序（第一代）</h4>
+                    <p>双脱氧终止法，读长 500-1000bp，准确率>99.9%</p>
+                </div>
+                <div class="concept-card">
+                    <h4>🧬 高通量测序（第二代）</h4>
+                    <table>
+                        <tr><th>平台</th><th>技术原理</th><th>读长</th></tr>
+                        <tr><td>Illumina</td><td>桥式 PCR + 荧光标记</td><td>150-300bp</td></tr>
+                        <tr><td>Ion Torrent</td><td>半导体测序</td><td>200-400bp</td></tr>
+                    </table>
+                </div>
+                <div class="concept-card">
+                    <h4>🔬 第三代测序</h4>
+                    <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
+                        <li><strong>PacBio</strong>：单分子实时测序，读长 10-20kb</li>
+                        <li><strong>Oxford Nanopore</strong>：纳米孔测序，便携实时</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="cloning">
+                <h2>6.3 基因克隆</h2>
+                <div class="concept-card">
+                    <h4>🧪 载体系统</h4>
+                    <table>
+                        <tr><th>载体类型</th><th>容量</th><th>宿主</th></tr>
+                        <tr><td>质粒</td><td>2-10kb</td><td>细菌</td></tr>
+                        <tr><td>噬菌体</td><td>9-23kb</td><td>细菌</td></tr>
+                        <tr><td>BAC</td><td>100-300kb</td><td>细菌</td></tr>
+                        <tr><td>YAC</td><td>0.5-2Mb</td><td>酵母</td></tr>
+                    </table>
+                </div>
+            </section>
+            <section id="crispr">
+                <h2>6.4 CRISPR-Cas9 基因编辑</h2>
+                <div class="concept-card">
+                    <h4>✂️ CRISPR 系统</h4>
+                    <p>源自细菌免疫系统，用于精确编辑基因组：</p>
+                    <ul style="margin: 15px 0 15px 20px; line-height: 1.8;">
+                        <li><strong>sgRNA</strong>：引导 Cas9 到靶位点</li>
+                        <li><strong>Cas9</strong>：核酸内切酶，切割 DNA</li>
+                        <li><strong>PAM 序列</strong>：NGG，Cas9 识别位点</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>应用：</strong>基因敲除、基因敲入、基因调控</p>
+                </div>
+            </section>
+        </main>
+        <aside class="sidebar">
+            <h3>📊 学习进度</h3>
+            <div style="background: #f0f4f8; padding: 15px; border-radius: 8px;">
+                <div style="background: #667eea; height: 8px; border-radius: 4px; width: 100%;"></div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">本章已完成</p>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <p>© 2026 分子生物学知识库 | 第六章：分子生物学技术</p>
+    </footer>
+    <script>
+        function showConcept(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        function goToEntity(entity) {
+            const encodedEntity = encodeURIComponent(entity);
+            window.location.href = `../kg/entities/${encodedEntity}.html`;
+        }
+    </script>
+</body>
+</html>
