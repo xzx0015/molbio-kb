@@ -308,7 +308,8 @@
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
         function goToEntity(entity) {
-            window.open(`../entities/${entity}.html`, '_blank');
+            const encodedEntity = encodeURIComponent(entity);
+            window.open(`../entities/${encodedEntity}.html`, '_blank');
         }
     </script>
 </body>
