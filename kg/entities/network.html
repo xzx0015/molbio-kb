@@ -118,7 +118,21 @@
                 { id: "表观遗传", group: "concept", r: 16 },
                 { id: "PCR", group: "tech", r: 14 },
                 { id: "测序技术", group: "tech", r: 14 },
-                { id: "基因工程", group: "tech", r: 16 }
+                { id: "基因工程", group: "tech", r: 16 },
+                // 新增实体
+                { id: "酶", group: "molecule", r: 18 },
+                { id: "结构蛋白", group: "molecule", r: 16 },
+                { id: "DNA甲基化", group: "concept", r: 15 },
+                { id: "CDK", group: "enzyme", r: 15 },
+                { id: "线粒体", group: "molecule", r: 17 },
+                { id: "细胞膜", group: "molecule", r: 16 },
+                { id: "细胞凋亡", group: "process", r: 16 },
+                { id: "自噬", group: "process", r: 15 },
+                { id: "检验点", group: "process", r: 15 },
+                { id: "周期蛋白", group: "molecule", r: 15 },
+                { id: "染色质重塑", group: "concept", r: 14 },
+                { id: "绝缘子", group: "concept", r: 13 },
+                { id: "核糖体亚基", group: "concept", r: 14 }
             ],
             links: [
                 { source: "中心法则", target: "DNA" },
@@ -141,7 +155,28 @@
                 { source: "操纵子", target: "启动子" },
                 { source: "PCR", target: "DNA聚合酶" },
                 { source: "基因工程", target: "PCR" },
-                { source: "基因工程", target: "测序技术" }
+                { source: "基因工程", target: "测序技术" },
+                // 新增关联
+                { source: "酶", target: "DNA聚合酶" },
+                { source: "酶", target: "RNA聚合酶" },
+                { source: "结构蛋白", target: "蛋白质" },
+                { source: "DNA甲基化", target: "表观遗传" },
+                { source: "DNA甲基化", target: "基因调控" },
+                { source: "CDK", target: "DNA复制" },
+                { source: "CDK", target: "基因调控" },
+                { source: "线粒体", target: "DNA" },
+                { source: "线粒体", target: "细胞凋亡" },
+                { source: "细胞膜", target: "蛋白质" },
+                { source: "细胞凋亡", target: "基因调控" },
+                { source: "自噬", target: "细胞凋亡" },
+                { source: "检验点", target: "DNA复制" },
+                { source: "检验点", target: "CDK" },
+                { source: "周期蛋白", target: "CDK" },
+                { source: "染色质重塑", target: "表观遗传" },
+                { source: "染色质重塑", target: "基因调控" },
+                { source: "绝缘子", target: "基因调控" },
+                { source: "核糖体亚基", target: "核糖体" },
+                { source: "核糖体亚基", target: "翻译" }
             ]
         };
         
