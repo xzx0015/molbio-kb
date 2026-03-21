@@ -7,6 +7,7 @@
 import json
 import os
 from pathlib import Path
+from urllib.parse import quote
 
 # HTML 模板
 HTML_TEMPLATE = '''<!DOCTYPE html>
@@ -214,7 +215,8 @@ def generate_relations_html(relations):
         return '<span style="color: #999;">暂无关联实体</span>'
     html = ''
     for rel in relations:
-        html += f'<a href="#" class="relation-tag">{rel}</a>'
+        encoded_rel = quote(rel, safe='')
+        html += f'<a href="{encoded_rel}.html" class="relation-tag">{rel}</a>'
     return html
 
 def generate_references_html(references):
