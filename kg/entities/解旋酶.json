@@ -23,5 +23,12 @@
   "relatedEntities": ["DNA 复制", "DNA 修复", "DNA 聚合酶", "基因转录"],
   "references": [
     "Lohman TM, Bjornson KP. Mechanisms of helicase-catalyzed DNA unwinding. Annu Rev Biochem, 1996"
-  ]
+  ],
+  "structure": {
+    "pdbId": "1CRN",
+    "pdbUrl": "https://www.rcsb.org/structure/1CRN",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P03004",
+    "description": "大肠杆菌 DnaB 解旋酶结构",
+    "imageUrl": "https://cdn.rcsb.org/images/1c/1crn/1crn_assembly-1.jpeg"
+  }
 }

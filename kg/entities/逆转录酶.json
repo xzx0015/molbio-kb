@@ -24,5 +24,12 @@
   "references": [
     "Temin HM, Mizutani S. RNA-dependent DNA polymerase in virions of Rous sarcoma virus. Nature, 1970",
     "Baltimore D. RNA-dependent DNA polymerase in virions of RNA tumour viruses. Nature, 1970"
-  ]
+  ],
+  "structure": {
+    "pdbId": "1HMV",
+    "pdbUrl": "https://www.rcsb.org/structure/1HMV",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/Q72874",
+    "description": "HIV-1 逆转录酶与 DNA 复合物结构",
+    "imageUrl": "https://cdn.rcsb.org/images/1h/1hmv/1hmv_assembly-1.jpeg"
+  }
 }

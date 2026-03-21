@@ -23,5 +23,12 @@
   "relatedEntities": ["基因转录", "启动子", "转录因子", "非编码 RNA"],
   "references": [
     "Burgess RR. RNA polymerase from Escherichia coli. Nature, 1969"
-  ]
+  ],
+  "structure": {
+    "pdbId": "6GH5",
+    "pdbUrl": "https://www.rcsb.org/structure/6GH5",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P0A7Z4",
+    "description": "大肠杆菌 RNA 聚合酶全酶与启动子 DNA 的复合物结构",
+    "imageUrl": "https://cdn.rcsb.org/images/6g/6gh5/6gh5_assembly-1.jpeg"
+  }
 }

@@ -23,5 +23,12 @@
   "relatedEntities": ["DNA 复制", "基因工程", "限制性内切酶", "DNA 修复"],
   "references": [
     "Lehman IR. DNA ligase: structure, mechanism, and function. Science, 1974"
-  ]
+  ],
+  "structure": {
+    "pdbId": "1DGS",
+    "pdbUrl": "https://www.rcsb.org/structure/1DGS",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P00970",
+    "description": "T7 DNA 连接酶结构",
+    "imageUrl": "https://cdn.rcsb.org/images/1d/1dgs/1dgs_assembly-1.jpeg"
+  }
 }

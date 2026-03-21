@@ -23,5 +23,12 @@
   "relatedEntities": ["基因工程", "DNA 连接酶", "分子克隆", "PCR"],
   "references": [
     "Smith HO, Wilcox KW. A restriction enzyme from Hemophilus influenzae. J Mol Biol, 1970"
-  ]
+  ],
+  "structure": {
+    "pdbId": "1ERI",
+    "pdbUrl": "https://www.rcsb.org/structure/1ERI",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P00642",
+    "description": "EcoRI 内切酶与 DNA 复合物结构",
+    "imageUrl": "https://cdn.rcsb.org/images/1e/1eri/1eri_assembly-1.jpeg"
+  }
 }

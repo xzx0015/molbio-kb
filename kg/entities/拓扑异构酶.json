@@ -23,5 +23,12 @@
   "relatedEntities": ["DNA 复制", "DNA 超螺旋", "DNA 重组", "抗生素"],
   "references": [
     "Wang JC. Cellular roles of DNA topoisomerases: a molecular perspective. Nat Rev Mol Cell Biol, 2002"
-  ]
+  ],
+  "structure": {
+    "pdbId": "1ECL",
+    "pdbUrl": "https://www.rcsb.org/structure/1ECL",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P03018",
+    "description": "大肠杆菌 DNA 旋转酶 A 亚基结构",
+    "imageUrl": "https://cdn.rcsb.org/images/1e/1ecl/1ecl_assembly-1.jpeg"
+  }
 }

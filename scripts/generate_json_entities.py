@@ -114,6 +114,38 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
             border-left: 3px solid #28a745;
         }}
         
+        .structure-box {{
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }}
+        .structure-box h4 {{
+            color: #667eea;
+            margin-bottom: 10px;
+        }}
+        .structure-img {{
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 10px 0;
+        }}
+        .structure-links {{
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }}
+        .structure-link {{
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+        }}
+        .structure-link:hover {{ background: #5a6fd6; }}
+        
         footer {{ text-align: center; color: white; padding: 20px; opacity: 0.8; }}
         
         @media (max-width: 768px) {{ .concept-grid {{ grid-template-columns: 1fr; }} }}
@@ -150,6 +182,8 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
             <h2>🔗 关联实体</h2>
             <div class="relation-list">{relations}</div>
         </div>
+        
+        {structure}
         
         <div class="section">
             <h2>📚 参考文献</h2>
@@ -188,6 +222,35 @@ def generate_references_html(references):
         return '<li>暂无参考文献</li>'
     return '\n'.join([f'<li>{ref}</li>' for ref in references])
 
+def generate_structure_html(structure):
+    if not structure:
+        return ''
+    
+    pdb_id = structure.get('pdbId', '')
+    pdb_url = structure.get('pdbUrl', '')
+    alphafold_url = structure.get('alphafoldUrl', '')
+    description = structure.get('description', '')
+    image_url = structure.get('imageUrl', '')
+    
+    html = '<div class="section">\n'
+    html += '<h2>🧬 蛋白质结构</h2>\n'
+    html += '<div class="structure-box">\n'
+    html += f'<h4>📷 {description}</h4>\n'
+    
+    if image_url:
+        html += f'<img src="{image_url}" alt="蛋白质结构" class="structure-img" onerror="this.style.display=\'none\'">\n'
+    
+    html += '<div class="structure-links">\n'
+    if pdb_url:
+        html += f'<a href="{pdb_url}" target="_blank" class="structure-link">🔗 PDB 数据库</a>\n'
+    if alphafold_url:
+        html += f'<a href="{alphafold_url}" target="_blank" class="structure-link">🔗 AlphaFold</a>\n'
+    html += '</div>\n'
+    html += '</div>\n'
+    html += '</div>\n'
+    
+    return html
+
 def generate_entity_page(json_file):
     with open(json_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -196,6 +259,7 @@ def generate_entity_page(json_file):
     keypoints_html = generate_keypoints_html(data.get('keyPoints', []))
     relations_html = generate_relations_html(data.get('relatedEntities', []))
     references_html = generate_references_html(data.get('references', []))
+    structure_html = generate_structure_html(data.get('structure'))
     
     html = HTML_TEMPLATE.format(
         name=data.get('name', ''),
@@ -206,7 +270,8 @@ def generate_entity_page(json_file):
         concepts=concepts_html,
         keyPoints=keypoints_html,
         relations=relations_html,
-        references=references_html
+        references=references_html,
+        structure=structure_html
     )
     
     output_file = json_file.parent / (json_file.stem + '.html')

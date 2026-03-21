@@ -23,5 +23,12 @@
   "relatedEntities": ["DNA 复制", "PCR", "DNA 修复", "基因工程"],
   "references": [
     "Kornberg A. Enzymatic synthesis of DNA. Nobel Lecture, 1959"
-  ]
+  ],
+  "structure": {
+    "pdbId": "1QTM",
+    "pdbUrl": "https://www.rcsb.org/structure/1QTM",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P00582",
+    "description": "Taq DNA 聚合酶与 DNA 复合物的晶体结构",
+    "imageUrl": "https://cdn.rcsb.org/images/1q/1qtm/1qtm_assembly-1.jpeg"
+  }
 }

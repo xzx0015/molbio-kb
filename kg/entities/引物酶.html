@@ -103,6 +103,38 @@
             border-left: 3px solid #28a745;
         }
         
+        .structure-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .structure-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .structure-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 10px 0;
+        }
+        .structure-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .structure-link {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+        }
+        .structure-link:hover { background: #5a6fd6; }
+        
         footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
         
         @media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
@@ -143,6 +175,19 @@
             <h2>🔗 关联实体</h2>
             <div class="relation-list"><a href="#" class="relation-tag">DNA 复制</a><a href="#" class="relation-tag">DNA 聚合酶</a><a href="#" class="relation-tag">冈崎片段</a><a href="#" class="relation-tag">引发体</a></div>
         </div>
+        
+        <div class="section">
+<h2>🧬 蛋白质结构</h2>
+<div class="structure-box">
+<h4>📷 噬菌体 T7 引物酶结构</h4>
+<img src="https://cdn.rcsb.org/images/3b/3b39/3b39_assembly-1.jpeg" alt="蛋白质结构" class="structure-img" onerror="this.style.display='none'">
+<div class="structure-links">
+<a href="https://www.rcsb.org/structure/3B39" target="_blank" class="structure-link">🔗 PDB 数据库</a>
+<a href="https://alphafold.ebi.ac.uk/entry/P28630" target="_blank" class="structure-link">🔗 AlphaFold</a>
+</div>
+</div>
+</div>
+
         
         <div class="section">
             <h2>📚 参考文献</h2>

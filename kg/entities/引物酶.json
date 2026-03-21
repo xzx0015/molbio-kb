@@ -23,5 +23,12 @@
   "relatedEntities": ["DNA 复制", "DNA 聚合酶", "冈崎片段", "引发体"],
   "references": [
     "Frick DN, Richardson CC. DNA primases. Annu Rev Biochem, 2001"
-  ]
+  ],
+  "structure": {
+    "pdbId": "3B39",
+    "pdbUrl": "https://www.rcsb.org/structure/3B39",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P28630",
+    "description": "噬菌体 T7 引物酶结构",
+    "imageUrl": "https://cdn.rcsb.org/images/3b/3b39/3b39_assembly-1.jpeg"
+  }
 }
