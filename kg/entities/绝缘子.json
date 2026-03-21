@@ -1,0 +1,28 @@
+{
+  "id": "insulator",
+  "name": "绝缘子",
+  "nameEn": "Insulator",
+  "category": "调控",
+  "chapter": "第7-8章",
+  "importance": "core-basic",
+  "definition": "绝缘子是基因组中的调控元件，能够阻断增强子或沉默子对启动子的作用，或作为异染色质扩散的屏障，确保基因表达的独立调控。",
+  "keyConcepts": [
+    {"term": "增强子阻断", "definition": "绝缘子阻止增强子远距离激活基因"},
+    {"term": "异染色质屏障", "definition": "绝缘子阻止异染色质扩散到常染色质区域"},
+    {"term": "CTCF", "definition": "绝缘子结合蛋白，介导染色质环化"},
+    {"term": "染色质环", "definition": "CTCF介导的染色质空间结构，形成拓扑关联结构域"},
+    {"term": "TAD", "definition": "拓扑关联结构域，染色质的基本功能单位"},
+    {"term": "基因座控制区", "definition": "LCR，含有绝缘子元件的调控区域"}
+  ],
+  "keyPoints": [
+    "绝缘子确保基因独立调控",
+    "CTCF是哺乳动物主要的绝缘子结合蛋白",
+    "绝缘子参与染色质三维结构组织",
+    "TAD是染色质的基本功能单位",
+    "绝缘子异常与基因表达失调相关"
+  ],
+  "relatedEntities": ["增强子", "沉默子", "基因调控", "染色质", "CTCF"],
+  "references": [
+    "Gaszner M, Felsenfeld G. Insulators: exploiting transcriptional and epigenetic mechanisms. Nat Rev Genet, 2006"
+  ]
+}

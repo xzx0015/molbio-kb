@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝缘子 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .back { color: #667eea; text-decoration: none; display: inline-block; margin-bottom: 15px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .subtitle { color: #999; font-size: 0.9em; }
+        .meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        .chapter-tag { background: #28a745; }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .section p { color: #555; line-height: 1.8; }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #333; margin-bottom: 8px; font-size: 1em; }
+        .concept-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        
+        .key-points { list-style: none; padding: 0; }
+        .key-points li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #555;
+        }
+        
+        .relation-list { display: flex; gap: 10px; flex-wrap: wrap; }
+        .relation-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .relation-tag:hover { background: #667eea; color: white; }
+        
+        .references { list-style: none; padding: 0; }
+        .references li {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 0.9em;
+            border-left: 3px solid #28a745;
+        }
+        
+        .structure-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .structure-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .structure-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 10px 0;
+        }
+        .structure-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .structure-link {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+        }
+        .structure-link:hover { background: #5a6fd6; }
+        
+        footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
+        
+        @media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back">← 返回实体索引</a>
+            <h1>绝缘子</h1>
+            <p class="subtitle">Insulator | 第7-8章</p>
+            <div class="meta">
+                <span class="tag">调控</span>
+                <span class="tag chapter-tag">第7-8章</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📖 定义</h2>
+            <p>绝缘子是基因组中的调控元件，能够阻断增强子或沉默子对启动子的作用，或作为异染色质扩散的屏障，确保基因表达的独立调控。</p>
+        </div>
+        
+        <div class="section">
+            <h2>🔑 关键概念</h2>
+            <div class="concept-grid"><div class="concept-card"><h4>增强子阻断</h4><p>绝缘子阻止增强子远距离激活基因</p></div><div class="concept-card"><h4>异染色质屏障</h4><p>绝缘子阻止异染色质扩散到常染色质区域</p></div><div class="concept-card"><h4>CTCF</h4><p>绝缘子结合蛋白，介导染色质环化</p></div><div class="concept-card"><h4>染色质环</h4><p>CTCF介导的染色质空间结构，形成拓扑关联结构域</p></div><div class="concept-card"><h4>TAD</h4><p>拓扑关联结构域，染色质的基本功能单位</p></div><div class="concept-card"><h4>基因座控制区</h4><p>LCR，含有绝缘子元件的调控区域</p></div></div>
+        </div>
+        
+        <div class="section">
+            <h2>📌 核心知识点</h2>
+            <ul class="key-points"><li>绝缘子确保基因独立调控</li>
+<li>CTCF是哺乳动物主要的绝缘子结合蛋白</li>
+<li>绝缘子参与染色质三维结构组织</li>
+<li>TAD是染色质的基本功能单位</li>
+<li>绝缘子异常与基因表达失调相关</li></ul>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 关联实体</h2>
+            <div class="relation-list"><a href="%E5%A2%9E%E5%BC%BA%E5%AD%90.html" class="relation-tag">增强子</a><a href="%E6%B2%89%E9%BB%98%E5%AD%90.html" class="relation-tag">沉默子</a><a href="%E5%9F%BA%E5%9B%A0%E8%B0%83%E6%8E%A7.html" class="relation-tag">基因调控</a><a href="%E6%9F%93%E8%89%B2%E8%B4%A8.html" class="relation-tag">染色质</a><a href="CTCF.html" class="relation-tag">CTCF</a></div>
+        </div>
+        
+        
+        
+        <div class="section">
+            <h2>📚 参考文献</h2>
+            <ul class="references"><li>Gaszner M, Felsenfeld G. Insulators: exploiting transcriptional and epigenetic mechanisms. Nat Rev Genet, 2006</li></ul>
+        </div>
+        
+        <footer><p>© 2026 分子生物学知识库</p></footer>
+    </div>
+</body>
+</html>
