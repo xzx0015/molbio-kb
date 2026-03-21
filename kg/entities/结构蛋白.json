@@ -1,0 +1,28 @@
+{
+  "id": "structural-protein",
+  "name": "结构蛋白",
+  "nameEn": "Structural Protein",
+  "category": "分子",
+  "chapter": "第2章",
+  "importance": "core-major",
+  "definition": "结构蛋白是构成细胞和细胞外基质的主要蛋白质，提供机械支持、维持细胞形态和组织结构。与功能蛋白（如酶）不同，结构蛋白主要起支撑作用。",
+  "keyConcepts": [
+    {"term": "胶原蛋白", "definition": "最丰富的结构蛋白，构成结缔组织的主要成分"},
+    {"term": "角蛋白", "definition": "构成皮肤、毛发、指甲的纤维状蛋白"},
+    {"term": "肌动蛋白", "definition": "细胞骨架的主要成分，参与细胞运动和肌肉收缩"},
+    {"term": "微管蛋白", "definition": "构成微管的蛋白，参与细胞分裂和细胞内运输"},
+    {"term": "组蛋白", "definition": "与DNA结合形成染色质的碱性蛋白"},
+    {"term": "细胞外基质", "definition": "细胞外的蛋白质和多糖网络，提供结构支持"}
+  ],
+  "keyPoints": [
+    "结构蛋白通常具有重复的结构域，形成纤维或网状结构",
+    "胶原蛋白占人体蛋白质总量的25-35%",
+    "细胞骨架由微丝（肌动蛋白）、微管（微管蛋白）和中间纤维组成",
+    "结构蛋白的异常与多种疾病相关，如胶原病",
+    "细胞外基质不仅提供支持，还参与细胞信号传导"
+  ],
+  "relatedEntities": ["蛋白质", "胶原蛋白", "细胞骨架", "组蛋白", "细胞外基质"],
+  "references": [
+    "Alberts B, et al. Molecular Biology of the Cell. 6th ed. Garland Science, 2015"
+  ]
+}

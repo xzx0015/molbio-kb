@@ -1,0 +1,29 @@
+{
+  "id": "enzyme",
+  "name": "酶",
+  "nameEn": "Enzyme",
+  "category": "分子",
+  "chapter": "第2章",
+  "importance": "core-important",
+  "definition": "酶是生物催化剂，具有高效性、专一性和可调节性。绝大多数酶是蛋白质，少数是RNA（核酶）。酶通过降低反应活化能加速生化反应。",
+  "keyConcepts": [
+    {"term": "活性中心", "definition": "酶分子中与底物结合并催化反应的区域"},
+    {"term": "底物", "definition": "酶作用的反应物"},
+    {"term": "辅因子", "definition": "辅助酶发挥作用的非蛋白质成分，如金属离子或辅酶"},
+    {"term": "米氏常数(Km)", "definition": "酶对底物亲和力的量度，Km值越小亲和力越大"},
+    {"term": "最大反应速率(Vmax)", "definition": "酶被底物饱和时的反应速率"},
+    {"term": "竞争性抑制", "definition": "抑制剂与底物竞争结合活性中心"},
+    {"term": "非竞争性抑制", "definition": "抑制剂结合酶的其他位点，改变酶的构象"}
+  ],
+  "keyPoints": [
+    "酶具有高效性：可比非催化反应快10⁶-10¹²倍",
+    "酶具有专一性：一种酶通常只催化一种或一类反应",
+    "酶活性受温度、pH、抑制剂等因素调节",
+    "酶的命名通常以底物加-ase后缀",
+    "酶的分类：氧化还原酶、转移酶、水解酶、裂合酶、异构酶、连接酶"
+  ],
+  "relatedEntities": ["蛋白质", "DNA聚合酶", "RNA聚合酶", "限制酶", "激酶"],
+  "references": [
+    "Berg JM, Tymoczko JL, Gatto GJ. Biochemistry. 8th ed. W.H. Freeman, 2015"
+  ]
+}

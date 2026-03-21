@@ -1,0 +1,27 @@
+{
+  "id": "cdk",
+  "name": "周期蛋白依赖性激酶",
+  "nameEn": "Cyclin-Dependent Kinase",
+  "category": "酶",
+  "chapter": "第8章",
+  "importance": "core-important",
+  "definition": "CDK（周期蛋白依赖性激酶）是一类丝氨酸/苏氨酸激酶，必须与周期蛋白结合才能活化，是细胞周期进程的核心调控因子。",
+  "keyConcepts": [
+    {"term": "周期蛋白", "definition": "与CDK结合并激活其激酶活性的蛋白质"},
+    {"term": "CDK1", "definition": "又称Cdc2，驱动有丝分裂的关键激酶"},
+    {"term": "CDK4/6", "definition": "G1期关键激酶，调控G1/S转换"},
+    {"term": "CKI", "definition": "CDK抑制因子，负调控细胞周期"},
+    {"term": "磷酸化", "definition": "CDK通过磷酸化靶蛋白调控细胞周期进程"}
+  ],
+  "keyPoints": [
+    "CDK必须与周期蛋白结合才能活化",
+    "CDK活性受磷酸化/去磷酸化和CKI调控",
+    "CDK4/6-Cyclin D调控G1期进程",
+    "CDK1-Cyclin B驱动有丝分裂",
+    "CDK异常与癌症密切相关"
+  ],
+  "relatedEntities": ["细胞周期", "周期蛋白", "检验点", "基因调控"],
+  "references": [
+    "Hunt T. Cyclins and their partners: from a vague idea to a clear reality. Nobel Lecture, 2001"
+  ]
+}
