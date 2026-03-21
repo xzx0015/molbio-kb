@@ -156,35 +156,48 @@
                 <div class="label">核心章节</div>
             </div>
             <div class="stat-card">
+                <div class="number">80+</div>
+                <div class="label">实体条目</div>
+            </div>
+            <div class="stat-card">
                 <div class="number">12</div>
                 <div class="label">实体类别</div>
             </div>
             <div class="stat-card">
-                <div class="number">50+</div>
-                <div class="label">知识节点</div>
-            </div>
-            <div class="stat-card">
                 <div class="number">∞</div>
-                <div class="label">探索可能</div>
+                <div class="label">持续更新</div>
             </div>
         </div>
 
-        <!-- 三大入口 -->
+        <!-- 搜索框 -->
+        <div style="max-width: 600px; margin: 0 auto 40px;">
+            <form action="search/index.html" method="get" style="display: flex; background: white; border-radius: 50px; padding: 5px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+                <input type="text" name="q" placeholder="搜索知识条目，如：DNA复制、PCR..." style="flex: 1; border: none; padding: 15px 25px; font-size: 1rem; outline: none; border-radius: 50px;">
+                <button type="submit" style="background: #667eea; color: white; border: none; padding: 15px 30px; border-radius: 50px; cursor: pointer; font-size: 1rem;">🔍 搜索</button>
+            </form>
+        </div>
+
+        <!-- 四大入口 -->
         <div class="nav-cards">
-            <a href="#chapters" class="nav-card">
+            <a href="chapters/index.html" class="nav-card">
                 <h2>📚 知识章节</h2>
                 <p>6章完整的分子生物学知识体系，从分子基础到基因编辑技术，系统学习。</p>
                 <span class="btn">开始学习</span>
             </a>
-            <a href="kg/concepts/index.html" class="nav-card">
+            <a href="kg/concepts/network.html" class="nav-card">
                 <h2>🕸️ 概念图谱</h2>
                 <p>交互式知识图谱，可视化展示DNA复制、转录、翻译等核心概念的关系网络。</p>
                 <span class="btn">探索图谱</span>
             </a>
             <a href="kg/entities/index.html" class="nav-card">
                 <h2>🔬 实体索引</h2>
-                <p>基因、蛋白质、酶、技术等12类实体的完整索引，快速查找和关联。</p>
+                <p>80+个实体条目：基因、蛋白质、酶、技术等，快速查找和关联。</p>
                 <span class="btn">浏览实体</span>
+            </a>
+            <a href="search/index.html" class="nav-card">
+                <h2>🔍 知识搜索</h2>
+                <p>全文搜索功能，快速定位概念、技术、方法，支持分类筛选。</p>
+                <span class="btn">立即搜索</span>
             </a>
         </div>
 

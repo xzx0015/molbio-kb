@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第四章：表达调控 | 分子生物学知识库</title>
+    <title>第4章：章节标题 | 分子生物学知识库</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #f5f7fa;
             min-height: 100vh;
+            line-height: 1.8;
         }
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 30px;
+            padding: 40px 20px;
             text-align: center;
         }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
         .chapter-nav {
             background: white;
             padding: 15px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
@@ -35,284 +37,139 @@
             padding: 8px 16px;
             border-radius: 20px;
             transition: all 0.3s;
+            font-size: 0.9rem;
         }
         .chapter-nav a:hover, .chapter-nav a.active {
             background: #667eea;
             color: white;
         }
         .container {
-            max-width: 1400px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 300px 1fr 300px;
-            gap: 20px;
-        }
-        @media (max-width: 1200px) {
-            .container { grid-template-columns: 1fr; }
-            .sidebar { display: none; }
-        }
-        .sidebar {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            height: fit-content;
-            position: sticky;
-            top: 80px;
-        }
-        .sidebar h3 {
-            color: #764ba2;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        .concept-list { list-style: none; }
-        .concept-list li {
-            padding: 10px;
-            margin: 5px 0;
-            background: #f8f9fa;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .concept-list li:hover {
-            background: #e3f2fd;
+            padding: 40px 20px;
         }
         .main-content {
             background: white;
             border-radius: 12px;
-            padding: 30px;
+            padding: 40px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .concept-card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid #667eea;
-        }
-        .concept-card h4 {
+        .main-content h2 {
             color: #667eea;
-            margin-bottom: 10px;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
         }
-        .entity-tag {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            margin: 2px;
-            cursor: pointer;
+        .main-content h3 {
+            color: #764ba2;
+            margin: 25px 0 10px;
         }
-        .entity-tag:hover {
-            background: #764ba2;
+        .main-content p { margin-bottom: 15px; color: #444; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
         }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f0f4f8; }
+        ul, ol { margin: 15px 0 15px 25px; }
+        li { margin: 8px 0; }
+        strong { color: #667eea; }
+        .summary {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e3f2fd 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .summary h3 { color: #667eea; margin-top: 0; }
+        .questions {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .questions h3 { color: #f57c00; margin-top: 0; }
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+        .footer-nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .footer-nav a:hover { background: #f0f4f8; }
         footer {
             text-align: center;
-            padding: 30px;
-            color: #666;
+            padding: 40px;
+            color: #999;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🎛️ 第四章：表达调控</h1>
-        <p>原核与真核生物的基因表达调控机制</p>
+        <h1>第4章：章节标题</h1>
+        <p>DNA复制、转录与翻译</p>
     </div>
+    
     <nav class="chapter-nav">
-        <a href="../index.html">🏠 首页</a>
         <a href="chapter1.html">第1章</a>
         <a href="chapter2.html">第2章</a>
-        <a href="chapter3.html">第3章</a>
-        <a href="chapter4.html" class="active">第 4 章</a>
+        <a href="chapter3.html>第3章</a>
+        <a href="chapter4.html" class="active">第4章</a>
         <a href="chapter5.html">第5章</a>
         <a href="chapter6.html">第6章</a>
-        <a href="../kg/entities/network.html">🕸️ 关联图谱</a>
     </nav>
+    
     <div class="container">
-        <aside class="sidebar">
-            <h3>📚 本章核心概念</h3>
-            <ul class="concept-list">
-                <li onclick="showConcept('regulation-levels')">调控层次</li>
-                <li onclick="showConcept('operon')">操纵子</li>
-                <li onclick="showConcept('lac-operon')">乳糖操纵子</li>
-                <li onclick="showConcept('trp-operon')">色氨酸操纵子</li>
-                <li onclick="showConcept('cis-element')">顺式作用元件</li>
-                <li onclick="showConcept('trans-factor')">反式作用因子</li>
+        <div class="main-content">
+            <h2>3.1 DNA复制</h2>
+            <p><strong>半保留复制</strong>：每个子代DNA分子包含一条亲代链和一条新合成链。</p>
+            <ul>
+                <li><strong>半不连续复制</strong>：前导链连续合成，滞后链以冈崎片段不连续合成</li>
+                <li><strong>双向复制</strong>：从复制起点向两个方向进行</li>
+                <li><strong>高保真性</strong>：错误率约10⁻⁹</li>
             </ul>
-            <h3 style="margin-top: 30px;">🔗 相关实体</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-                <span class="entity-tag" onclick="goToEntity('基因调控')">基因调控</span>
-                <span class="entity-tag" onclick="goToEntity('转录因子')">转录因子</span>
-                <span class="entity-tag" onclick="goToEntity('启动子')">启动子</span>
-                <span class="entity-tag" onclick="goToEntity('操纵子')">操纵子</span>
-                <span class="entity-tag" onclick="goToEntity('表观遗传')">表观遗传</span>
+            
+            <h2>3.2 转录</h2>
+            <p>以DNA为模板合成RNA的过程：</p>
+            <ol>
+                <li><strong>起始</strong>：RNA聚合酶结合启动子</li>
+                <li><strong>延伸</strong>：合成RNA链</li>
+                <li><strong>终止</strong>：遇到终止信号</li>
+            </ol>
+            
+            <h2>3.3 翻译</h2>
+            <p>遗传密码特点：三联体、通用性、简并性、连续性</p>
+            
+            <div class="summary">
+                <h3>本章小结</h3>
+                <ul>
+                    <li>DNA复制是半保留、半不连续的</li>
+                    <li>转录包括起始、延伸、终止三个阶段</li>
+                    <li>翻译在核糖体上进行，需要mRNA、tRNA参与</li>
+                </ul>
             </div>
-        </aside>
-        <main class="main-content">
-            <section id="regulation-levels">
-                <h2>4.1 调控层次</h2>
-                <div class="concept-card">
-                    <h4>🎛️ 基因表达调控</h4>
-                    <p>发生在多个层次的复杂过程：</p>
-                    <table style="width: 100%; background: white; border-radius: 8px; margin-top: 15px;">
-                        <tr style="background: #667eea; color: white;">
-                            <th style="padding: 12px;">层次</th>
-                            <th style="padding: 12px;">调控点</th>
-                            <th style="padding: 12px;">特点</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">染色质水平</td>
-                            <td style="padding: 12px;">DNA 可及性</td>
-                            <td style="padding: 12px;">表观遗传，长期调控</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">转录水平</td>
-                            <td style="padding: 12px;">转录起始</td>
-                            <td style="padding: 12px;">最主要调控点</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">转录后水平</td>
-                            <td style="padding: 12px;">RNA 加工、稳定性</td>
-                            <td style="padding: 12px;">快速响应</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">翻译水平</td>
-                            <td style="padding: 12px;">翻译起始</td>
-                            <td style="padding: 12px;">应急调控</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">翻译后水平</td>
-                            <td style="padding: 12px;">蛋白质修饰、定位</td>
-                            <td style="padding: 12px;">功能激活</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            <section id="operon">
-                <h2>4.2 原核生物基因调控</h2>
-                <div class="concept-card">
-                    <h4>🧬 操纵子模型</h4>
-                    <p>原核生物基因调控的基本单位：</p>
-                    <div style="background: white; padding: 15px; border-radius: 8px; margin: 15px 0; font-family: monospace;">
-                        启动子 - 操纵基因 - 结构基因群<br>
-                        &nbsp;&nbsp;↑&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>
-                        RNA 聚合酶&nbsp;&nbsp;&nbsp;阻遏蛋白
-                    </div>
-                    <table style="width: 100%; background: white; border-radius: 8px; margin-top: 15px;">
-                        <tr style="background: #667eea; color: white;">
-                            <th style="padding: 12px;">元件</th>
-                            <th style="padding: 12px;">功能</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">启动子</td>
-                            <td style="padding: 12px;">RNA 聚合酶结合位点</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">操纵基因（Operator）</td>
-                            <td style="padding: 12px;">阻遏蛋白结合位点</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">结构基因</td>
-                            <td style="padding: 12px;">编码功能蛋白</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">调节基因</td>
-                            <td style="padding: 12px;">编码调控蛋白</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            <section id="lac-operon">
-                <h2>4.3 乳糖操纵子</h2>
-                <div class="concept-card">
-                    <h4>🥛 Lac Operon</h4>
-                    <p><strong>负调控（阻遏）：</strong></p>
-                    <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
-                        <li>无乳糖时：阻遏蛋白结合操纵基因，转录关闭</li>
-                        <li>有乳糖时：乳糖作为诱导物，阻遏蛋白失活，转录开启</li>
-                    </ul>
-                    <p><strong>正调控（激活）：</strong></p>
-                    <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
-                        <li>葡萄糖缺乏时：cAMP 升高，CAP 蛋白激活转录</li>
-                    </ul>
-                    <div style="margin-top: 15px;">
-                        <span class="entity-tag" onclick="goToEntity('操纵子')">操纵子</span>
-                        <span class="entity-tag" onclick="goToEntity('阻遏蛋白')">阻遏蛋白</span>
-                    </div>
-                </div>
-            </section>
-            <section id="trp-operon">
-                <h2>4.4 色氨酸操纵子</h2>
-                <div class="concept-card">
-                    <h4>🧪 Trp Operon</h4>
-                    <p><strong>阻遏型操纵子：</strong></p>
-                    <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
-                        <li>无色氨酸时：转录开启</li>
-                        <li>有色氨酸时：色氨酸作为辅阻遏物，阻遏蛋白激活，转录关闭</li>
-                    </ul>
-                    <p><strong>衰减作用（Attenuation）：</strong></p>
-                    <ul style="margin: 10px 0 10px 20px; line-height: 1.8;">
-                        <li>前导肽的翻译影响转录终止</li>
-                        <li>转录 - 翻译偶联的精细调控</li>
-                    </ul>
-                </div>
-            </section>
-            <section id="cis-element">
-                <h2>4.5 真核生物转录调控</h2>
-                <div class="concept-card">
-                    <h4>🧬 顺式作用元件</h4>
-                    <p>DNA 上的调控序列：</p>
-                    <table style="width: 100%; background: white; border-radius: 8px; margin-top: 15px;">
-                        <tr style="background: #667eea; color: white;">
-                            <th style="padding: 12px;">元件</th>
-                            <th style="padding: 12px;">位置</th>
-                            <th style="padding: 12px;">功能</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">启动子</td>
-                            <td style="padding: 12px;">转录起始点附近</td>
-                            <td style="padding: 12px;">基础转录装置组装</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">增强子（Enhancer）</td>
-                            <td style="padding: 12px;">远端（1kb-1Mb）</td>
-                            <td style="padding: 12px;">显著增强转录效率</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">沉默子（Silencer）</td>
-                            <td style="padding: 12px;">远端</td>
-                            <td style="padding: 12px;">抑制转录</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">绝缘子（Insulator）</td>
-                            <td style="padding: 12px;">边界</td>
-                            <td style="padding: 12px;">阻断增强子/沉默子作用</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-        </main>
-        <aside class="sidebar">
-            <h3>📊 学习进度</h3>
-            <div style="background: #f0f4f8; padding: 15px; border-radius: 8px;">
-                <div style="background: #667eea; height: 8px; border-radius: 4px; width: 100%;"></div>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">本章已完成</p>
+            
+            <div class="footer-nav">
+                <a href="chapter2.html">← 上一章</a>
+                <a href="index.html">返回列表</a>
+                <a href="chapter4.html" class="active">下一章 →</a>
             </div>
-        </aside>
+        </div>
     </div>
+    
     <footer>
-        <p>© 2026 分子生物学知识库 | 第四章：表达调控</p>
+        <p>分子生物学知识库 | 持续更新中</p>
     </footer>
-    <script>
-        function showConcept(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-        function goToEntity(entity) {
-            const encodedEntity = encodeURIComponent(entity);
-            window.location.href = `../kg/entities/${encodedEntity}.html`;
-        }
-    </script>
 </body>
 </html>

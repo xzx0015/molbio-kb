@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第三章：信息传递 | 分子生物学知识库</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #f5f7fa;
             min-height: 100vh;
+            line-height: 1.8;
         }
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 30px;
+            padding: 40px 20px;
             text-align: center;
         }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
         .chapter-nav {
             background: white;
             padding: 15px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
@@ -36,269 +37,139 @@
             padding: 8px 16px;
             border-radius: 20px;
             transition: all 0.3s;
+            font-size: 0.9rem;
         }
         .chapter-nav a:hover, .chapter-nav a.active {
             background: #667eea;
             color: white;
         }
         .container {
-            max-width: 1400px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 300px 1fr 300px;
-            gap: 20px;
+            padding: 40px 20px;
         }
-        @media (max-width: 1200px) {
-            .container { grid-template-columns: 1fr; }
-            .sidebar { display: none; }
-        }
-        .sidebar {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            height: fit-content;
-            position: sticky;
-            top: 80px;
-        }
-        .sidebar h3 {
-            color: #764ba2;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        .concept-list { list-style: none; }
-        .concept-list li {
-            padding: 10px;
-            margin: 5px 0;
-            background: #f8f9fa;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .concept-list li:hover { background: #e3f2fd; }
         .main-content {
             background: white;
             border-radius: 12px;
-            padding: 30px;
+            padding: 40px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .concept-card {
-            background: #f8f9fa;
-            border-radius: 12px;
+        .main-content h2 {
+            color: #667eea;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .main-content h3 {
+            color: #764ba2;
+            margin: 25px 0 10px;
+        }
+        .main-content p { margin-bottom: 15px; color: #444; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f0f4f8; }
+        ul, ol { margin: 15px 0 15px 25px; }
+        li { margin: 8px 0; }
+        strong { color: #667eea; }
+        .summary {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e3f2fd 100%);
             padding: 25px;
-            margin: 25px 0;
-            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            margin: 30px 0;
         }
-        .concept-card h4 { color: #667eea; margin-bottom: 15px; font-size: 1.3em; }
-        .concept-card h5 { color: #764ba2; margin: 20px 0 10px 0; font-size: 1.1em; }
-        .entity-tag {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            margin: 3px;
-            cursor: pointer;
+        .summary h3 { color: #667eea; margin-top: 0; }
+        .questions {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
         }
-        .entity-tag:hover { background: #764ba2; }
-        .experiment-box {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
-            border-left: 4px solid #e74c3c;
-            padding: 20px;
+        .questions h3 { color: #f57c00; margin-top: 0; }
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+        .footer-nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
             border-radius: 8px;
-            margin: 20px 0;
+            transition: all 0.3s;
         }
-        .mechanism-box {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-left: 4px solid #3498db;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
+        .footer-nav a:hover { background: #f0f4f8; }
         footer {
             text-align: center;
-            padding: 30px;
-            color: #666;
+            padding: 40px;
+            color: #999;
         }
-        ul { line-height: 1.8; margin: 10px 0 10px 20px; }
-        strong { color: #667eea; }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>📡 第三章：信息传递</h1>
-        <p>DNA复制、转录与翻译的分子机制</p>
+        <h1>第三章：信息传递</h1>
+        <p>DNA复制、转录与翻译</p>
     </div>
+    
     <nav class="chapter-nav">
-        <a href="../index.html">🏠 首页</a>
-        <a href="chapter1.html">第 1 章</a>
-        <a href="chapter2.html">第 2 章</a>
-        <a href="chapter3.html" class="active">第 3 章</a>
-        <a href="chapter4.html">第 4 章</a>
-        <a href="chapter5.html">第 5 章</a>
-        <a href="chapter6.html">第 6 章</a>
-        <a href="../kg/entities/network.html">🕸️ 关联图谱</a>
+        <a href="chapter1.html">第1章</a>
+        <a href="chapter2.html">第2章</a>
+        <a href="chapter3.html" class="active">第3章</a>
+        <a href="chapter4.html">第4章</a>
+        <a href="chapter5.html">第5章</a>
+        <a href="chapter6.html">第6章</a>
     </nav>
+    
     <div class="container">
-        <aside class="sidebar">
-            <h3>📚 本章核心概念</h3>
-            <ul class="concept-list">
-                <li onclick="showConcept('semiconservative')">半保留复制</li>
-                <li onclick="showConcept('replication-fork')">复制叉</li>
-                <li onclick="showConcept('leading-lagging')">前导链与后随链</li>
-                <li onclick="showConcept('transcription')">转录</li>
-                <li onclick="showConcept('translation')">翻译</li>
+        <div class="main-content">
+            <h2>3.1 DNA复制</h2>
+            <p><strong>半保留复制</strong>：每个子代DNA分子包含一条亲代链和一条新合成链。</p>
+            <ul>
+                <li><strong>半不连续复制</strong>：前导链连续合成，滞后链以冈崎片段不连续合成</li>
+                <li><strong>双向复制</strong>：从复制起点向两个方向进行</li>
+                <li><strong>高保真性</strong>：错误率约10⁻⁹</li>
             </ul>
-            <h3 style="margin-top: 30px;">🔗 相关实体</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-                <span class="entity-tag" onclick="goToEntity('DNA 复制')">DNA 复制</span>
-                <span class="entity-tag" onclick="goToEntity('DNA 聚合酶')">DNA 聚合酶</span>
-                <span class="entity-tag" onclick="goToEntity('解旋酶')">解旋酶</span>
-                <span class="entity-tag" onclick="goToEntity('RNA 聚合酶')">RNA 聚合酶</span>
-                <span class="entity-tag" onclick="goToEntity('核糖体')">核糖体</span>
-            </div>
-        </aside>
-        <main class="main-content">
-            <section id="dna-replication">
-                <h2>3.1 DNA 复制</h2>
-                
-                <div class="concept-card" id="semiconservative">
-                    <h4>🧬 半保留复制（Semiconservative Replication）</h4>
-                    <p>DNA 复制的核心机制：每个子代 DNA 分子包含一条亲代链和一条新合成链。</p>
-                    
-                    <div class="mechanism-box">
-                        <h5>📖 详细分子机制</h5>
-                        <ol style="margin: 10px 0 10px 20px; line-height: 1.8;">
-                            <li><strong>复制起点识别（Origin Recognition）</strong>：复制起始蛋白（原核：DnaA，真核：ORC 复合物）识别特定 DNA 序列（原核：oriC，真核：ARS）</li>
-                            <li><strong>解旋（Unwinding）</strong>：解旋酶（Helicase）解开双链，单链结合蛋白（SSB）稳定单链 DNA，防止复性</li>
-                            <li><strong>引物合成（Priming）</strong>：引物酶（Primase）合成 10-12nt RNA 引物，提供 3'-OH 末端</li>
-                            <li><strong>链延伸（Elongation）</strong>：DNA 聚合酶 III（原核）/ Pol δ/ε（真核）沿 5'→3'方向合成新链</li>
-                            <li><strong>引物切除（Primer Removal）</strong>：DNA 聚合酶 I 切除 RNA 引物并填补缺口</li>
-                            <li><strong>连接（Ligation）</strong>：DNA 连接酶连接冈崎片段，形成连续链</li>
-                        </ol>
-                    </div>
-                    
-                    <div class="experiment-box">
-                        <h5>🧪 经典实验：Meselson-Stahl 实验（1958）</h5>
-                        <p style="margin: 10px 0;"><strong>实验设计：</strong>利用¹⁵N（重氮）标记 DNA，通过 CsCl 密度梯度离心追踪复制方式</p>
-                        <ul>
-                            <li><strong>第 0 代：</strong>全部为¹⁵N-¹⁵N 重 DNA（亲代）</li>
-                            <li><strong>第 1 代：</strong>全部为¹⁵N-¹⁴N 杂合 DNA → <strong>排除全保留复制</strong></li>
-                            <li><strong>第 2 代：</strong>½ 杂合 DNA（¹⁵N-¹⁴N）+ ½ 轻 DNA（¹⁴N-¹⁴N）→ <strong>证实半保留复制</strong></li>
-                            <li><strong>结论：</strong>DNA 复制是半保留的，每个子代 DNA 含一条亲代链和一条新合成链</li>
-                        </ul>
-                        <p style="margin-top: 10px;"><em>该实验被誉为"生物学中最美的实验"，为分子生物学奠定了基础。</em></p>
-                    </div>
-                    
-                    <div style="margin-top: 15px;">
-                        <span class="entity-tag" onclick="goToEntity('DNA 复制')">DNA 复制</span>
-                        <span class="entity-tag" onclick="goToEntity('DNA 聚合酶')">DNA 聚合酶</span>
-                        <span class="entity-tag" onclick="goToEntity('解旋酶')">解旋酶</span>
-                        <span class="entity-tag" onclick="goToEntity('引物酶')">引物酶</span>
-                        <span class="entity-tag" onclick="goToEntity('DNA 连接酶')">DNA 连接酶</span>
-                    </div>
-                </div>
-                
-                <div class="concept-card" id="replication-fork">
-                    <h4>🍴 复制叉（Replication Fork）</h4>
-                    <p>Y 形结构，是 DNA 复制的活跃区域。包含解旋酶、引物酶、DNA 聚合酶等多种酶和蛋白因子。</p>
-                    <ul>
-                        <li><strong>前导链（Leading Strand）：</strong>沿 5'→3'方向连续合成，与复制叉移动方向相同</li>
-                        <li><strong>后随链（Lagging Strand）：</strong>沿 5'→3'方向不连续合成，形成冈崎片段（原核：1000-2000nt，真核：100-200nt）</li>
-                        <li><strong>冈崎片段（Okazaki Fragments）：</strong>由日本科学家冈崎令治发现，是后随链不连续合成的证据</li>
-                    </ul>
-                </div>
-            </section>
             
-            <section id="transcription">
-                <h2>3.2 转录（Transcription）</h2>
-                
-                <div class="concept-card">
-                    <h4>📝 转录概述</h4>
-                    <p>以 DNA 为模板合成 RNA 的过程，是基因表达的第一步。</p>
-                    
-                    <div class="mechanism-box">
-                        <h5>📖 转录三阶段</h5>
-                        <ol style="margin: 10px 0 10px 20px; line-height: 1.8;">
-                            <li><strong>起始（Initiation）</strong>：RNA 聚合酶识别并结合启动子（原核：-10 区 Pribnow 框、-35 区；真核：TATA 框、CAAT 框），DNA 解链形成转录泡</li>
-                            <li><strong>延伸（Elongation）</strong>：RNA 聚合酶沿 DNA 模板移动，沿 5'→3'方向合成 RNA，形成 DNA-RNA 杂合双链（约 8-9bp）</li>
-                            <li><strong>终止（Termination）</strong>：原核：ρ因子依赖/非依赖终止；真核：poly-A 信号介导终止</li>
-                        </ol>
-                    </div>
-                    
-                    <h5>🔬 原核 vs 真核转录</h5>
-                    <table style="width: 100%; background: white; border-radius: 8px; margin: 15px 0; border-collapse: collapse;">
-                        <tr style="background: #667eea; color: white;">
-                            <th style="padding: 12px; text-align: left;">特征</th>
-                            <th style="padding: 12px;">原核生物</th>
-                            <th style="padding: 12px;">真核生物</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">RNA 聚合酶</td>
-                            <td style="padding: 12px;">一种（α₂ββ'ωσ）</td>
-                            <td style="padding: 12px;">三种（Pol I、II、III）</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">转录与翻译</td>
-                            <td style="padding: 12px;">偶联进行</td>
-                            <td style="padding: 12px;">时空分离</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px;">RNA 加工</td>
-                            <td style="padding: 12px;">无</td>
-                            <td style="padding: 12px;">5'加帽、3'加尾、剪接</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
+            <h2>3.2 转录</h2>
+            <p>以DNA为模板合成RNA的过程：</p>
+            <ol>
+                <li><strong>起始</strong>：RNA聚合酶结合启动子</li>
+                <li><strong>延伸</strong>：合成RNA链</li>
+                <li><strong>终止</strong>：遇到终止信号</li>
+            </ol>
             
-            <section id="translation">
-                <h2>3.3 翻译（Translation）</h2>
-                
-                <div class="concept-card">
-                    <h4>🏭 翻译概述</h4>
-                    <p>以 mRNA 为模板合成蛋白质的过程，在核糖体上进行。</p>
-                    
-                    <div class="mechanism-box">
-                        <h5>📖 翻译三阶段</h5>
-                        <ol style="margin: 10px 0 10px 20px; line-height: 1.8;">
-                            <li><strong>起始（Initiation）</strong>：核糖体小亚基结合 mRNA，识别起始密码子 AUG，起始 tRNA 进入 P 位，大亚基结合</li>
-                            <li><strong>延伸（Elongation）</strong>：氨酰-tRNA 进入 A 位，肽键形成，核糖体移位，空载 tRNA 从 E 位退出</li>
-                            <li><strong>终止（Termination）</strong>：释放因子识别终止密码子（UAA、UAG、UGA），多肽链释放，核糖体解离</li>
-                        </ol>
-                    </div>
-                    
-                    <h5>🧬 遗传密码（Genetic Code）特点</h5>
-                    <ul>
-                        <li><strong>三联体密码：</strong>64 个密码子（61 个有义密码子 + 3 个终止密码子）</li>
-                        <li><strong>简并性（Degeneracy）：</strong>多数氨基酸由多个密码子编码，主要差异在第三位</li>
-                        <li><strong>通用性（Universality）：</strong>几乎所有生物使用相同密码子（线粒体等例外）</li>
-                        <li><strong>摆动性（Wobble）：</strong>密码子 - 反密码子配对第三位具有灵活性</li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-        <aside class="sidebar">
-            <h3>📊 学习进度</h3>
-            <div style="background: #f0f4f8; padding: 15px; border-radius: 8px;">
-                <div style="background: #667eea; height: 8px; border-radius: 4px; width: 100%;"></div>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">本章已完成</p>
+            <h2>3.3 翻译</h2>
+            <p>遗传密码特点：三联体、通用性、简并性、连续性</p>
+            
+            <div class="summary">
+                <h3>本章小结</h3>
+                <ul>
+                    <li>DNA复制是半保留、半不连续的</li>
+                    <li>转录包括起始、延伸、终止三个阶段</li>
+                    <li>翻译在核糖体上进行，需要mRNA、tRNA参与</li>
+                </ul>
             </div>
-        </aside>
+            
+            <div class="footer-nav">
+                <a href="chapter2.html">← 上一章</a>
+                <a href="index.html">返回列表</a>
+                <a href="chapter4.html">下一章 →</a>
+            </div>
+        </div>
     </div>
+    
     <footer>
-        <p>© 2026 分子生物学知识库 | 第三章：信息传递</p>
+        <p>分子生物学知识库 | 持续更新中</p>
     </footer>
-    <script>
-        function showConcept(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-        function goToEntity(entity) {
-            const encodedEntity = encodeURIComponent(entity);
-            window.location.href = '../kg/entities/' + encodedEntity + '.html';
-        }
-    </script>
 </body>
 </html>
