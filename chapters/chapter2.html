@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>第二章：分子基础 | 分子生物学知识库</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
@@ -301,7 +304,8 @@
         }
         function goToEntity(entity) {
             const encodedEntity = encodeURIComponent(entity);
-            window.open(`../kg/entities/${encodedEntity}.html`, '_blank');
+            const url = `../kg/entities/${encodedEntity}.html`;
+            window.location.href = url;
         }
     </script>
 </body>
