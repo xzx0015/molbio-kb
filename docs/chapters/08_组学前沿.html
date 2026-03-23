@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八章：组学与前沿技术 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f7fa;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .back { 
+            color: #667eea; 
+            text-decoration: none; 
+            margin-bottom: 20px; 
+            display: inline-block;
+            padding: 10px 0;
+        }
+        .back:hover { text-decoration: underline; }
+        
+        /* 文章内容 */
+        article {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1 { color: #667eea; margin-bottom: 30px; font-size: 2rem; }
+        h2 { color: #764ba2; margin: 30px 0 15px; font-size: 1.5rem; }
+        h3 { color: #555; margin: 20px 0 10px; font-size: 1.2rem; }
+        p { margin-bottom: 15px; }
+        
+        /* 表格 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #667eea;
+        }
+        tr:hover { background: #f8f9fa; }
+        
+        /* 代码块 */
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+        }
+        
+        /* 引用 */
+        blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* 实体标注样式 */
+        .entity {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .entity-molecule { background: #e3f2fd; color: #1976d2; }
+        .entity-process { background: #f3e5f5; color: #7b1fa2; }
+        .entity-enzyme { background: #e8f5e9; color: #388e3c; }
+        .entity-tech { background: #fff3e0; color: #f57c00; }
+        .entity-person { background: #fce4ec; color: #c2185b; }
+        .entity-concept { background: #e0f2f1; color: #00796b; }
+        
+        /* 概念框 */
+        .concept-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .concept-box h4 { margin-bottom: 10px; }
+        
+        /* 列表 */
+        ul, ol { margin: 15px 0 15px 30px; }
+        li { margin: 8px 0; }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back">← 返回首页</a>
+        <article>
+            <h1>第八章：组学与前沿技术</h1>
+<h2>8.1 基因组学</h2>
+<h3>DNA测序技术</h3>
+<p><strong>第一代测序（Sanger测序）</strong>：
+- 双脱氧终止法
+- 读长：500-1000 bp
+- 准确率：&gt;99.9%
+- 应用：小片段验证、重测序</p>
+<p><strong>第二代测序（NGS）</strong>：
+| 平台 | 技术原理 | 读长 | 应用 |
+|------|---------|------|------|
+| Illumina | 桥式PCR + 荧光标记 | 150-300 bp | 全基因组、RNA-seq |
+| Ion Torrent | 半导体测序 | 200-400 bp | 靶向测序 |</p>
+<p><strong>第三代测序</strong>：
+- <strong>PacBio</strong>：单分子实时测序，读长10-20 kb
+- <strong>Oxford Nanopore</strong>：纳米孔测序，便携、实时</p>
+<h3>全基因组分析</h3>
+<p><strong>全基因组测序</strong>（WGS）：
+- 检测SNV、Indel、SV、CNV
+- 疾病研究、群体遗传学</p>
+<p><strong>全外显子测序</strong>（WES）：
+- 只测外显子区域（占基因组1-2%）
+- 成本较低，适合孟德尔疾病研究</p>
+<p><strong>基因组注释</strong>：
+- 基因预测（ab initio、同源比对）
+- 功能注释（GO、KEGG）
+- 非编码RNA注释</p>
+<h3>比较基因组学</h3>
+<p><strong>同线性分析</strong>（Synteny）：
+- 比较不同物种基因组结构
+- 揭示进化关系</p>
+<p><strong>全基因组复制</strong>（WGD）：
+- 植物基因组常见
+- 基因家族扩张</p>
+<h2>8.2 转录组学</h2>
+<h3>RNA-seq技术</h3>
+<p><strong>原理</strong>：
+1. RNA提取
+2. 逆转录为cDNA
+3. 文库构建
+4. 高通量测序
+5. 数据分析</p>
+<p><strong>应用</strong>：
+- 基因表达定量
+- 可变剪接分析
+- 新转录本发现
+- 融合基因检测</p>
+<h3>单细胞转录组</h3>
+<p><strong>scRNA-seq技术</strong>：
+| 平台 | 特点 |
+|------|------|
+| 10x Genomics | 高通量，3'端捕获 |
+| Smart-seq2 | 全长覆盖 |
+| Drop-seq | 低成本 |</p>
+<p><strong>分析流程</strong>：
+1. 质控和过滤
+2. 归一化
+3. 降维（PCA、t-SNE、UMAP）
+4. 聚类
+5. 差异表达分析
+6. 轨迹推断</p>
+<p><strong>应用</strong>：
+- 细胞类型鉴定
+- 发育轨迹重建
+- 肿瘤异质性分析</p>
+<h3>空间转录组</h3>
+<p><strong>技术原理</strong>：
+- 保留组织空间信息
+- 结合组织学和转录组学</p>
+<p><strong>平台</strong>：
+- 10x Genomics Visium
+- Slide-seq
+- MERFISH</p>
+<h2>8.3 蛋白质组学</h2>
+<h3>质谱技术</h3>
+<p><strong>LC-MS/MS</strong>：
+- 液相色谱分离
+- 质谱检测
+- 蛋白质鉴定和定量</p>
+<p><strong>定量方法</strong>：
+| 方法 | 原理 |
+|------|------|
+| SILAC | 稳定同位素标记 |
+| iTRAQ/TMT | 同位素标记 |
+| Label-free | 无标记，基于肽段强度 |
+| DIA/SWATH | 数据非依赖采集 |</p>
+<h3>蛋白质相互作用</h3>
+<p><strong>酵母双杂交</strong>（Y2H）：
+- 检测蛋白质-蛋白质相互作用
+- 高通量筛选</p>
+<p><strong>质谱蛋白质组学</strong>：
+- AP-MS（亲和纯化质谱）
+- BioID（邻近标记）</p>
+<h3>翻译后修饰</h3>
+<p><strong>磷酸化蛋白质组</strong>：
+- TiO₂/IMAC富集
+- 质谱鉴定磷酸化位点</p>
+<p><strong>泛素化蛋白质组</strong>：
+- 泛素化位点鉴定
+- 蛋白质降解研究</p>
+<h2>8.4 代谢组学</h2>
+<h3>代谢物检测</h3>
+<p><strong>LC-MS</strong>：
+- 非靶向代谢组学
+- 广谱检测代谢物</p>
+<p><strong>GC-MS</strong>：
+- 挥发性代谢物
+- 标准品库匹配</p>
+<p><strong>NMR</strong>：
+- 无损伤检测
+- 定量准确</p>
+<h3>代谢流分析</h3>
+<p><strong>原理</strong>：
+- 同位素示踪（¹³C、¹⁵N）
+- 追踪代谢物转化
+- 计算代谢通量</p>
+<h2>8.5 表观基因组学</h2>
+<h3>ChIP-seq</h3>
+<p><strong>原理</strong>：
+- 染色质免疫沉淀
+- 测序鉴定蛋白质结合位点</p>
+<p><strong>应用</strong>：
+- 转录因子结合位点
+- 组蛋白修饰分布
+- 染色质可及性（ATAC-seq）</p>
+<h3>DNA甲基化测序</h3>
+<p><strong>WGBS</strong>（全基因组亚硫酸氢盐测序）：
+- 金标准方法
+- 单碱基分辨率</p>
+<p><strong>RRBS</strong>（简化代表性亚硫酸氢盐测序）：
+- 只测CpG富集区域
+- 成本较低</p>
+<h3>染色质构象</h3>
+<p><strong>Hi-C</strong>：
+- 检测染色质三维结构
+- 揭示拓扑关联结构域（TAD）</p>
+<p><strong>Capture-C</strong>：
+- 高分辨率检测特定区域互作
+- 增强子-启动子互作</p>
+<h2>8.6 前沿技术</h2>
+<h3>基因治疗</h3>
+<p><strong>递送系统</strong>：
+| 类型 | 特点 |
+|------|------|
+| 病毒载体 | AAV、慢病毒、腺病毒 |
+| 非病毒载体 | 脂质纳米颗粒（LNP） |
+| 基因编辑 | CRISPR体内递送 |</p>
+<p><strong>应用</strong>：
+- 单基因遗传病（如镰状细胞贫血）
+- 癌症免疫治疗（CAR-T）
+- 眼科疾病</p>
+<h3>合成生物学</h3>
+<p><strong>基因线路</strong>：
+- 逻辑门（AND、OR、NOT）
+- 振荡器、开关</p>
+<p><strong>细胞工厂</strong>：
+- 微生物合成药物（青蒿素、紫杉醇）
+- 生物燃料生产</p>
+<h3>人工智能与生物学</h3>
+<p><strong>AlphaFold</strong>：
+- 蛋白质结构预测
+- 覆盖2亿+蛋白质</p>
+<p><strong>深度学习应用</strong>：
+- 基因表达预测
+- 药物发现
+- 医学影像分析</p>
+<h3>类器官与器官芯片</h3>
+<p><strong>类器官</strong>（Organoid）：
+- 干细胞自组织形成
+- 模拟器官结构和功能
+- 疾病建模、药物筛选</p>
+<p><strong>器官芯片</strong>（Organ-on-chip）：
+- 微流控技术
+- 模拟器官微环境
+- 药物毒性测试</p>
+<h2>本章小结</h2>
+<ul>
+<li>组学技术从基因组、转录组、蛋白质组、代谢组多层次研究生物系统</li>
+<li>单细胞和空间技术揭示细胞异质性和组织微环境</li>
+<li>表观基因组学研究基因调控的表观遗传机制</li>
+<li>前沿技术（基因治疗、合成生物学、AI）正在改变生物医学研究</li>
+</ul>
+<h2>思考题</h2>
+<ol>
+<li>单细胞RNA-seq相比bulk RNA-seq有什么优势和局限？</li>
+<li>空间转录组技术如何改变我们对组织生物学的理解？</li>
+<li>人工智能在分子生物学研究中有哪些应用前景？</li>
+</ol>
+        </article>
+        <footer>
+            <p>分子生物学知识库 | Built with ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>

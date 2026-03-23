@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四章：翻译 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f7fa;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .back { 
+            color: #667eea; 
+            text-decoration: none; 
+            margin-bottom: 20px; 
+            display: inline-block;
+            padding: 10px 0;
+        }
+        .back:hover { text-decoration: underline; }
+        
+        /* 文章内容 */
+        article {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1 { color: #667eea; margin-bottom: 30px; font-size: 2rem; }
+        h2 { color: #764ba2; margin: 30px 0 15px; font-size: 1.5rem; }
+        h3 { color: #555; margin: 20px 0 10px; font-size: 1.2rem; }
+        p { margin-bottom: 15px; }
+        
+        /* 表格 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #667eea;
+        }
+        tr:hover { background: #f8f9fa; }
+        
+        /* 代码块 */
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+        }
+        
+        /* 引用 */
+        blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* 实体标注样式 */
+        .entity {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .entity-molecule { background: #e3f2fd; color: #1976d2; }
+        .entity-process { background: #f3e5f5; color: #7b1fa2; }
+        .entity-enzyme { background: #e8f5e9; color: #388e3c; }
+        .entity-tech { background: #fff3e0; color: #f57c00; }
+        .entity-person { background: #fce4ec; color: #c2185b; }
+        .entity-concept { background: #e0f2f1; color: #00796b; }
+        
+        /* 概念框 */
+        .concept-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .concept-box h4 { margin-bottom: 10px; }
+        
+        /* 列表 */
+        ul, ol { margin: 15px 0 15px 30px; }
+        li { margin: 8px 0; }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back">← 返回首页</a>
+        <article>
+            <h1>第四章：翻译</h1>
+<h2>4.1 遗传密码</h2>
+<h3>密码子特征</h3>
+<p><span class="entity entity-concept" id="genetic_code">遗传密码</span>：mRNA上编码氨基酸的三联体密码子</p>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>密码子数</td>
+<td>64个（4³）</td>
+</tr>
+<tr>
+<td>编码氨基酸</td>
+<td>61个</td>
+</tr>
+<tr>
+<td>终止密码子</td>
+<td>3个：UAA、UAG、UGA</td>
+</tr>
+<tr>
+<td>起始密码子</td>
+<td>AUG（编码Met）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>密码子特点</strong>：
+- <strong>简并性</strong>：多个密码子编码同一氨基酸（如Leu有6个密码子）
+- <strong>通用性</strong>：几乎所有生物共用（线粒体有例外）
+- <strong>连续性</strong>：无标点，不重叠
+- <strong>方向性</strong>：5'→3'阅读
+- <strong>不重叠性</strong>：每个核苷酸只属于一个密码子</p>
+<h3>密码子表</h3>
+<table>
+<thead>
+<tr>
+<th>第一位</th>
+<th>U</th>
+<th>C</th>
+<th>A</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>U</strong></td>
+<td>Phe</td>
+<td>Ser</td>
+<td>Tyr</td>
+<td>Cys</td>
+</tr>
+<tr>
+<td></td>
+<td>Phe</td>
+<td>Ser</td>
+<td>Tyr</td>
+<td>Cys</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Ser</td>
+<td>STOP</td>
+<td>STOP</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Ser</td>
+<td>STOP</td>
+<td>Trp</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Leu</td>
+<td>Pro</td>
+<td>His</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Pro</td>
+<td>His</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Pro</td>
+<td>Gln</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Pro</td>
+<td>Gln</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td>Ile</td>
+<td>Thr</td>
+<td>Asn</td>
+<td>Ser</td>
+</tr>
+<tr>
+<td></td>
+<td>Ile</td>
+<td>Thr</td>
+<td>Asn</td>
+<td>Ser</td>
+</tr>
+<tr>
+<td></td>
+<td>Ile</td>
+<td>Thr</td>
+<td>Lys</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td></td>
+<td>Met</td>
+<td>Thr</td>
+<td>Lys</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Val</td>
+<td>Ala</td>
+<td>Asp</td>
+<td>Gly</td>
+</tr>
+<tr>
+<td></td>
+<td>Val</td>
+<td>Ala</td>
+<td>Asp</td>
+<td>Gly</td>
+</tr>
+<tr>
+<td></td>
+<td>Val</td>
+<td>Ala</td>
+<td>Glu</td>
+<td>Gly</td>
+</tr>
+<tr>
+<td></td>
+<td>Val</td>
+<td>Ala</td>
+<td>Glu</td>
+<td>Gly</td>
+</tr>
+</tbody>
+</table>
+<h2>4.2 tRNA与氨基酸活化</h2>
+<h3>tRNA结构</h3>
+<p><span class="entity entity-molecule" title="分子">tRNA</span>（转运RNA）的功能：
+- 携带特定氨基酸
+- 识别mRNA上的密码子（<span class="entity entity-concept" title="概念">反密码子</span>）</p>
+<p><strong>结构特征</strong>：
+- 长度：73-93个核苷酸
+- 三叶草二级结构
+- L形三级结构
+- <span class="entity entity-concept" title="概念">氨基酸臂</span>：3'端CCA，结合氨基酸
+- <span class="entity entity-concept" title="概念">反密码子环</span>：识别密码子
+- <span class="entity entity-concept" title="概念">D环</span>和<span class="entity entity-concept" title="概念">TψC环</span>：结构稳定</p>
+<h3>氨基酸活化</h3>
+<p><span class="entity entity-enzyme" title="酶">氨酰-tRNA合成酶</span>（aaRS）：
+- 催化氨基酸与tRNA连接
+- 高度特异性（一种酶对应一种氨基酸）
+- 两步反应：
+  1. 氨基酸 + ATP → 氨酰-AMP + PPi
+  2. 氨酰-AMP + tRNA → 氨酰-tRNA + AMP</p>
+<p><strong>校对机制</strong>：
+- 合成酶的编辑活性
+- 识别tRNA的反密码子和受体茎
+- 确保翻译保真性</p>
+<h3>摆动配对</h3>
+<p><span class="entity entity-concept" id="wobble">摆动假说</span>：反密码子5'位碱基与密码子3'位配对有一定灵活性</p>
+<table>
+<thead>
+<tr>
+<th>反密码子5'位</th>
+<th>可配对密码子3'位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>G</td>
+</tr>
+<tr>
+<td>A</td>
+<td>U</td>
+</tr>
+<tr>
+<td>U</td>
+<td>A或G</td>
+</tr>
+<tr>
+<td>G</td>
+<td>C或U</td>
+</tr>
+<tr>
+<td>I（次黄嘌呤）</td>
+<td>U、C或A</td>
+</tr>
+</tbody>
+</table>
+<h2>4.3 核糖体</h2>
+<h3>核糖体结构</h3>
+<p><span class="entity entity-molecule" title="复合物">核糖体</span>是蛋白质合成的场所：</p>
+<table>
+<thead>
+<tr>
+<th>亚基</th>
+<th>原核</th>
+<th>真核</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大亚基</td>
+<td>50S（23S+5S rRNA + 蛋白质）</td>
+<td>60S（28S+5.8S+5S rRNA + 蛋白质）</td>
+</tr>
+<tr>
+<td>小亚基</td>
+<td>30S（16S rRNA + 蛋白质）</td>
+<td>40S（18S rRNA + 蛋白质）</td>
+</tr>
+<tr>
+<td>完整</td>
+<td>70S</td>
+<td>80S</td>
+</tr>
+</tbody>
+</table>
+<p><strong>rRNA功能</strong>：
+- 催化肽键形成（核酶活性）
+- 提供结构框架
+- 参与tRNA和mRNA结合</p>
+<h3>核糖体功能位点</h3>
+<table>
+<thead>
+<tr>
+<th>位点</th>
+<th>名称</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A位</strong></td>
+<td>氨酰位（Aminoacyl site）</td>
+<td>接受新氨酰-tRNA</td>
+</tr>
+<tr>
+<td><strong>P位</strong></td>
+<td>肽酰位（Peptidyl site）</td>
+<td>携带正在延伸的肽链</td>
+</tr>
+<tr>
+<td><strong>E位</strong></td>
+<td>出口位（Exit site）</td>
+<td>释放空载tRNA</td>
+</tr>
+</tbody>
+</table>
+<h3>核糖体组装</h3>
+<p><strong>原核生物</strong>：
+- 30S亚基：16S rRNA + 21种蛋白质
+- 50S亚基：23S rRNA + 5S rRNA + 34种蛋白质</p>
+<p><strong>真核生物</strong>：
+- 在核仁中组装
+- 需要snoRNA指导rRNA修饰
+- 组装后输出到细胞质</p>
+<h2>4.4 翻译过程</h2>
+<h3>起始阶段</h3>
+<p><strong>原核生物</strong>：
+1. <strong>小亚基识别mRNA</strong>：<span class="entity entity-concept" title="概念">SD序列</span>（Shine-Dalgarno）与16S rRNA 3'端互补
+2. <strong>起始tRNA进入</strong>：fMet-tRNAᶠᴹᵉᵗ进入P位
+3. <strong>大亚基结合</strong>：形成70S起始复合物</p>
+<p><strong>真核生物</strong>：
+1. <strong>5'帽识别</strong>：eIF4F复合物识别m⁷G帽
+2. <strong>扫描机制</strong>：43S前起始复合物从5'端扫描到AUG
+3. <strong>起始密码子识别</strong>：Kozak序列（GCCRCC<strong>AUG</strong>G）
+4. <strong>大亚基结合</strong>：形成80S起始复合物</p>
+<p><strong>起始因子</strong>：
+| 因子 | 功能 |
+|------|------|
+| IF1/IF2/IF3 | 原核起始因子 |
+| eIF1-eIF6 | 真核起始因子（eIF4F识别帽结构） |</p>
+<h3>延伸阶段</h3>
+<p><strong>延伸循环</strong>：
+1. <strong>氨酰-tRNA进入A位</strong>：EF-Tu（原核）/eEF1A（真核）护送
+2. <strong>肽键形成</strong>：<span class="entity entity-enzyme" title="酶">肽酰转移酶</span>催化（rRNA的核酶活性）
+3. <strong>核糖体移位</strong>：EF-G（原核）/eEF2（真核）驱动
+4. <strong>空载tRNA释放</strong>：从E位离开</p>
+<p><strong>延伸因子</strong>：
+| 原核 | 真核 | 功能 |
+|------|------|------|
+| EF-Tu | eEF1A | 护送氨酰-tRNA进入A位 |
+| EF-Ts | eEF1B | 再生EF-Tu/eEF1A |
+| EF-G | eEF2 | 驱动核糖体移位 |</p>
+<h3>终止阶段</h3>
+<p><strong>终止信号</strong>：
+- 终止密码子：UAA、UAG、UGA
+- 无对应的氨酰-tRNA</p>
+<p><strong>释放因子</strong>：
+| 因子 | 识别密码子 |
+|------|-----------|
+| RF1（原核） | UAA、UAG |
+| RF2（原核） | UAA、UGA |
+| RF3（原核） | 促进RF1/RF2释放 |
+| eRF1（真核） | 所有终止密码子 |</p>
+<p><strong>终止过程</strong>：
+1. 释放因子识别终止密码子
+2. 肽酰转移酶活性改变：水解肽酰-tRNA
+3. 多肽链释放
+4. 核糖体解离</p>
+<h2>4.5 翻译后修饰</h2>
+<h3>蛋白质折叠</h3>
+<p><strong>分子伴侣</strong>：
+- <span class="entity entity-concept" title="蛋白">Hsp70</span>：防止新生肽链聚集
+- <span class="entity entity-concept" title="蛋白">Hsp60/GroEL</span>：提供折叠腔室
+- <span class="entity entity-concept" title="蛋白">Hsp90</span>：稳定特定蛋白质</p>
+<h3>化学修饰</h3>
+<table>
+<thead>
+<tr>
+<th>修饰类型</th>
+<th>位点</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-concept" title="修饰">磷酸化</span></td>
+<td>Ser/Thr/Tyr</td>
+<td>信号转导、活性调控</td>
+</tr>
+<tr>
+<td><span class="entity entity-concept" title="修饰">糖基化</span></td>
+<td>Asn/Ser/Thr</td>
+<td>蛋白质定位、稳定性</td>
+</tr>
+<tr>
+<td><span class="entity entity-concept" title="修饰">乙酰化</span></td>
+<td>Lys</td>
+<td>蛋白质相互作用</td>
+</tr>
+<tr>
+<td><span class="entity entity-concept" title="修饰">泛素化</span></td>
+<td>Lys</td>
+<td>蛋白质降解标记</td>
+</tr>
+<tr>
+<td><span class="entity entity-concept" title="修饰">甲基化</span></td>
+<td>Lys/Arg</td>
+<td>信号转导</td>
+</tr>
+<tr>
+<td><span class="entity entity-concept" title="修饰">二硫键</span></td>
+<td>Cys-Cys</td>
+<td>结构稳定</td>
+</tr>
+</tbody>
+</table>
+<h3>蛋白质分选</h3>
+<p><strong>信号肽假说</strong>：
+- <span class="entity entity-concept" title="序列">信号肽</span>引导蛋白质到特定位置
+- <span class="entity entity-molecule" title="复合物">SRP</span>（信号识别颗粒）识别信号肽
+- 转运到内质网、线粒体、叶绿体等</p>
+<h2>4.6 翻译调控</h2>
+<h3>翻译起始调控</h3>
+<p><strong>eIF4E结合蛋白</strong>（<span class="entity entity-concept" title="蛋白">4E-BP</span>）：
+- 与<span class="entity entity-concept" title="因子">eIF4E</span>竞争结合
+- <span class="entity entity-concept" title="激酶">mTOR激酶</span>磷酸化4E-BP，释放eIF4E
+- 营养信号调控翻译</p>
+<p><strong>铁响应元件</strong>（<span class="entity entity-concept" title="概念">IRE</span>）：
+- <span class="entity entity-concept" title="蛋白">铁调节蛋白</span>（IRP）结合IRE
+- 铁缺乏时：抑制<span class="entity entity-concept" title="蛋白">铁蛋白</span>mRNA翻译
+- 铁充足时：IRP失活，翻译进行</p>
+<h3>全局调控</h3>
+<p><strong>eIF2磷酸化</strong>：
+- 应激条件下eIF2α磷酸化
+- 抑制全局翻译起始
+- 但激活特定应激基因翻译</p>
+<p><strong>miRNA调控</strong>：
+- <span class="entity entity-molecule" title="分子">miRNA</span>与<span class="entity entity-molecule" title="复合物">RISC复合物</span>结合
+- 靶向mRNA抑制翻译或促进降解</p>
+<h2>本章小结</h2>
+<ul>
+<li>遗传密码具有简并性、通用性、连续性</li>
+<li>tRNA通过反密码子识别密码子，携带特定氨基酸</li>
+<li>核糖体是蛋白质合成的场所，具有A、P、E三个位点</li>
+<li>翻译分起始、延伸、终止三个阶段</li>
+<li>翻译后修饰决定蛋白质的最终功能和定位</li>
+<li>翻译水平调控是基因表达调控的重要环节</li>
+</ul>
+<h2>思考题</h2>
+<ol>
+<li>遗传密码的简并性有什么生物学意义？</li>
+<li>比较原核生物和真核生物翻译起始的差异。</li>
+<li>为什么肽酰转移酶活性由rRNA而不是蛋白质执行？</li>
+</ol>
+        </article>
+        <footer>
+            <p>分子生物学知识库 | Built with ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>
