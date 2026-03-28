@@ -1,0 +1,27 @@
+{
+  "id": "dna-methylation",
+  "name": "DNA 甲基化",
+  "nameEn": "DNA Methylation",
+  "category": "调控",
+  "chapter": "第 9 章",
+  "importance": "core-important",
+  "definition": "DNA 甲基化是在 DNA 甲基转移酶催化下，将甲基基团添加到胞嘧啶（主要是 CpG 岛）的过程，是重要的表观遗传修饰，与基因沉默、基因组印记和 X 染色体失活相关。",
+  "keyConcepts": [
+    {"term": "CpG 岛", "definition": "基因组中富含 CpG 二核苷酸的区域，常位于基因启动子区"},
+    {"term": "DNMT", "definition": "DNA 甲基转移酶，催化 DNA 甲基化"},
+    {"term": "5-甲基胞嘧啶", "definition": "DNA 甲基化的主要产物，5mC"},
+    {"term": "基因组印记", "definition": "基因表达依赖于亲本来源的表观遗传现象"},
+    {"term": "X 染色体失活", "definition": "雌性哺乳动物中一条 X 染色体随机失活的现象"}
+  ],
+  "keyPoints": [
+    "DNA 甲基化主要发生在 CpG 岛的胞嘧啶上",
+    "DNA 甲基化通常与基因沉默相关",
+    "DNA 甲基化在发育和细胞分化中起重要作用",
+    "DNA 甲基化异常与癌症等疾病相关",
+    "DNA 甲基化是可逆的表观遗传修饰"
+  ],
+  "relatedEntities": ["表观遗传", "组蛋白修饰", "基因调控", "CpG 岛"],
+  "references": [
+    "Bird A. DNA methylation and the frequency of CpG in animal DNA. Nucleic Acids Res, 1980"
+  ]
+}

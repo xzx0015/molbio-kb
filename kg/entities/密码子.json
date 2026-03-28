@@ -1,0 +1,28 @@
+{
+  "id": "codon",
+  "name": "密码子",
+  "nameEn": "Codon",
+  "category": "分子",
+  "chapter": "第 6 章",
+  "importance": "core-important",
+  "definition": "密码子是 mRNA 上连续的 3 个核苷酸，决定一个氨基酸或翻译信号，共有 64 个密码子。",
+  "keyConcepts": [
+    {"term": "起始密码子", "definition": "AUG，编码甲硫氨酸，标志翻译起始"},
+    {"term": "终止密码子", "definition": "UAA、UAG、UGA，不编码氨基酸，导致翻译终止"},
+    {"term": "有义密码子", "definition": "编码氨基酸的 61 个密码子"},
+    {"term": "同义密码子", "definition": "编码同一氨基酸的不同密码子"},
+    {"term": "密码子简并性", "definition": "多个密码子编码同一氨基酸的现象"},
+    {"term": "密码子使用偏好", "definition": "不同生物对同义密码子的使用频率差异"}
+  ],
+  "keyPoints": [
+    "64 个密码子：61 个有义密码子 + 3 个终止密码子",
+    "AUG 是起始密码子兼甲硫氨酸密码子",
+    "密码子简并性主要发生在第三位",
+    "密码子与反密码子配对具有摆动性",
+    "线粒体和某些生物使用变异的遗传密码"
+  ],
+  "relatedEntities": ["遗传密码", "反密码子", "tRNA", "蛋白质翻译"],
+  "references": [
+    "Nirenberg MW, Matthaei JH. The dependence of cell-free protein synthesis in E. coli upon naturally occurring or synthetic template polyribonucleotides. PNAS, 1961"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "autophagy",
+  "name": "自噬",
+  "nameEn": "Autophagy",
+  "category": "过程",
+  "chapter": "第5章",
+  "importance": "core-major",
+  "definition": "自噬是细胞通过形成自噬体包裹胞质成分，与溶酶体融合降解，实现自我更新的过程，在营养缺乏、应激和发育中起重要作用。",
+  "keyConcepts": [
+    {"term": "自噬体", "definition": "双层膜结构，包裹待降解的胞质成分"},
+    {"term": "溶酶体", "definition": "含有水解酶的细胞器，降解自噬体内容物"},
+    {"term": "自噬溶酶体", "definition": "自噬体与溶酶体融合后的结构"},
+    {"term": "ATG基因", "definition": "自噬相关基因，编码自噬 machinery 蛋白"},
+    {"term": "mTOR", "definition": "营养感应激酶，抑制自噬的主要调控因子"},
+    {"term": "LC3", "definition": "自噬体膜蛋白，自噬的标志物"}
+  ],
+  "keyPoints": [
+    "自噬是细胞自我更新的重要机制",
+    "自噬在营养缺乏时提供能量和原料",
+    "自噬异常与癌症、神经退行性疾病和感染相关",
+    "自噬可选择性降解受损细胞器（线粒体自噬）",
+    "2016年诺贝尔生理学或医学奖授予自噬研究"
+  ],
+  "relatedEntities": ["溶酶体", "线粒体", "mTOR", "细胞凋亡", "蛋白质"],
+  "references": [
+    "Mizushima N, Ohsumi Y. Autophagy: renovation of cells and tissues. Cell, 2011"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "snp",
+  "name": "SNP",
+  "nameEn": "Single Nucleotide Polymorphism",
+  "category": "基因组",
+  "chapter": "第 10 章",
+  "importance": "core-major",
+  "definition": "SNP（单核苷酸多态性）是基因组中最常见的遗传变异，指在基因组水平上单个核苷酸的变异，是遗传标记和疾病关联研究的重要工具。",
+  "keyConcepts": [
+    {"term": "等位基因", "definition": "同一基因座上的不同序列变异"},
+    {"term": "基因型", "definition": "个体在某个 SNP 位点的等位基因组成"},
+    {"term": "次要等位基因频率", "definition": "人群中次要等位基因的出现频率"},
+    {"term": "同义 SNP", "definition": "不改变氨基酸的 SNP"},
+    {"term": "非同义 SNP", "definition": "改变氨基酸的 SNP"},
+    {"term": "GWAS", "definition": "全基因组关联研究，用于发现疾病相关 SNP"}
+  ],
+  "keyPoints": [
+    "SNP 是人类基因组中最丰富的遗传变异",
+    "人类基因组约有 300 万个 SNP",
+    "SNP 可作为遗传标记用于连锁分析",
+    "GWAS 用于发现疾病相关的 SNP",
+    "SNP 可用于个体化医学和药物基因组学"
+  ],
+  "relatedEntities": ["基因组", "突变", "遗传密码", "多态性"],
+  "references": [
+    "International HapMap Consortium. The International HapMap Project. Nature, 2003"
+  ]
+}

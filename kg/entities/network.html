@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>概念关联图谱 | 分子生物学知识库</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+        
+        .controls {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .controls h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        .control-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .control-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .control-btn:hover, .control-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        #graph-container {
+            background: white;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        svg {
+            width: 100%;
+            height: 600px;
+        }
+        
+        .node {
+            cursor: pointer;
+        }
+        .link {
+            stroke-opacity: 0.6;
+        }
+        
+        text {
+            font-size: 12px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🕸️ 概念关联图谱</h1>
+        <p>可视化展示分子生物学核心概念的内在联系</p>
+    </div>
+    
+    <div class="controls">
+        <h3>🔍 选择视图</h3>
+        <div class="control-group">
+            <button class="control-btn active" onclick="showNetwork('all')">全部关联</button>
+            <button class="control-btn" onclick="showNetwork('central-dogma')">中心法则</button>
+            <button class="control-btn" onclick="showNetwork('dna-replication')">DNA复制</button>
+            <button class="control-btn" onclick="showNetwork('gene-regulation')">基因调控</button>
+        </div>
+    </div>
+    
+    <div id="graph-container">
+        <svg id="graph"></svg>
+    </div>
+    
+    <script>
+        // 定义节点和连接数据
+        const data = {
+            nodes: [
+                { id: "中心法则", group: "core", r: 25 },
+                { id: "DNA", group: "molecule", r: 20 },
+                { id: "RNA", group: "molecule", r: 20 },
+                { id: "蛋白质", group: "molecule", r: 20 },
+                { id: "DNA复制", group: "process", r: 18 },
+                { id: "转录", group: "process", r: 18 },
+                { id: "翻译", group: "process", r: 18 },
+                { id: "DNA聚合酶", group: "enzyme", r: 15 },
+                { id: "RNA聚合酶", group: "enzyme", r: 15 },
+                { id: "核糖体", group: "concept", r: 15 },
+                { id: "基因调控", group: "process", r: 18 },
+                { id: "启动子", group: "concept", r: 14 },
+                { id: "转录因子", group: "concept", r: 14 },
+                { id: "操纵子", group: "concept", r: 14 },
+                { id: "表观遗传", group: "concept", r: 16 },
+                { id: "PCR", group: "tech", r: 14 },
+                { id: "测序技术", group: "tech", r: 14 },
+                { id: "基因工程", group: "tech", r: 16 },
+                // 新增实体
+                { id: "酶", group: "molecule", r: 18 },
+                { id: "结构蛋白", group: "molecule", r: 16 },
+                { id: "DNA甲基化", group: "concept", r: 15 },
+                { id: "CDK", group: "enzyme", r: 15 },
+                { id: "线粒体", group: "molecule", r: 17 },
+                { id: "细胞膜", group: "molecule", r: 16 },
+                { id: "细胞凋亡", group: "process", r: 16 },
+                { id: "自噬", group: "process", r: 15 },
+                { id: "检验点", group: "process", r: 15 },
+                { id: "周期蛋白", group: "molecule", r: 15 },
+                { id: "染色质重塑", group: "concept", r: 14 },
+                { id: "绝缘子", group: "concept", r: 13 },
+                { id: "核糖体亚基", group: "concept", r: 14 }
+            ],
+            links: [
+                { source: "中心法则", target: "DNA" },
+                { source: "中心法则", target: "RNA" },
+                { source: "中心法则", target: "蛋白质" },
+                { source: "DNA", target: "DNA复制" },
+                { source: "DNA", target: "转录" },
+                { source: "RNA", target: "转录" },
+                { source: "RNA", target: "翻译" },
+                { source: "蛋白质", target: "翻译" },
+                { source: "DNA复制", target: "DNA聚合酶" },
+                { source: "转录", target: "RNA聚合酶" },
+                { source: "转录", target: "启动子" },
+                { source: "翻译", target: "核糖体" },
+                { source: "基因调控", target: "转录" },
+                { source: "基因调控", target: "转录因子" },
+                { source: "基因调控", target: "操纵子" },
+                { source: "基因调控", target: "表观遗传" },
+                { source: "启动子", target: "转录因子" },
+                { source: "操纵子", target: "启动子" },
+                { source: "PCR", target: "DNA聚合酶" },
+                { source: "基因工程", target: "PCR" },
+                { source: "基因工程", target: "测序技术" },
+                // 新增关联
+                { source: "酶", target: "DNA聚合酶" },
+                { source: "酶", target: "RNA聚合酶" },
+                { source: "结构蛋白", target: "蛋白质" },
+                { source: "DNA甲基化", target: "表观遗传" },
+                { source: "DNA甲基化", target: "基因调控" },
+                { source: "CDK", target: "DNA复制" },
+                { source: "CDK", target: "基因调控" },
+                { source: "线粒体", target: "DNA" },
+                { source: "线粒体", target: "细胞凋亡" },
+                { source: "细胞膜", target: "蛋白质" },
+                { source: "细胞凋亡", target: "基因调控" },
+                { source: "自噬", target: "细胞凋亡" },
+                { source: "检验点", target: "DNA复制" },
+                { source: "检验点", target: "CDK" },
+                { source: "周期蛋白", target: "CDK" },
+                { source: "染色质重塑", target: "表观遗传" },
+                { source: "染色质重塑", target: "基因调控" },
+                { source: "绝缘子", target: "基因调控" },
+                { source: "核糖体亚基", target: "核糖体" },
+                { source: "核糖体亚基", target: "翻译" }
+            ]
+        };
+        
+        const colorScale = {
+            core: "#e74c3c",
+            molecule: "#3498db",
+            process: "#f39c12",
+            enzyme: "#27ae60",
+            concept: "#9b59b6",
+            tech: "#1abc9c"
+        };
+        
+        function drawGraph(filteredData) {
+            const svg = d3.select("#graph");
+            svg.selectAll("*").remove();
+            
+            const width = svg.node().parentElement.clientWidth;
+            const height = 600;
+            
+            svg.attr("viewBox", [0, 0, width, height]);
+            
+            const simulation = d3.forceSimulation(filteredData.nodes)
+                .force("link", d3.forceLink(filteredData.links).id(d => d.id).distance(100))
+                .force("charge", d3.forceManyBody().strength(-300))
+                .force("center", d3.forceCenter(width / 2, height / 2));
+            
+            const link = svg.append("g")
+                .selectAll("line")
+                .data(filteredData.links)
+                .join("line")
+                .attr("class", "link")
+                .attr("stroke", "#999")
+                .attr("stroke-width", 2);
+            
+            const node = svg.append("g")
+                .selectAll("g")
+                .data(filteredData.nodes)
+                .join("g")
+                .attr("class", "node")
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended));
+            
+            node.append("circle")
+                .attr("r", d => d.r)
+                .attr("fill", d => colorScale[d.group])
+                .attr("stroke", "#fff")
+                .attr("stroke-width", 2);
+            
+            node.append("text")
+                .attr("dy", d => d.r + 15)
+                .attr("text-anchor", "middle")
+                .text(d => d.id)
+                .attr("fill", "#333");
+            
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+                
+                node.attr("transform", d => `translate(${d.x},${d.y})`);
+            });
+            
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+            
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+            
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        }
+        
+        function showNetwork(type) {
+            document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            let filteredData = { nodes: [], links: [] };
+            
+            if (type === 'all') {
+                filteredData = data;
+            } else if (type === 'central-dogma') {
+                const nodes = ["中心法则", "DNA", "RNA", "蛋白质", "DNA复制", "转录", "翻译"];
+                filteredData.nodes = data.nodes.filter(n => nodes.includes(n.id));
+                filteredData.links = data.links.filter(l => 
+                    nodes.includes(l.source.id || l.source) && nodes.includes(l.target.id || l.target)
+                );
+            } else if (type === 'dna-replication') {
+                const nodes = ["DNA", "DNA复制", "DNA聚合酶", "中心法则"];
+                filteredData.nodes = data.nodes.filter(n => nodes.includes(n.id));
+                filteredData.links = data.links.filter(l => 
+                    nodes.includes(l.source.id || l.source) && nodes.includes(l.target.id || l.target)
+                );
+            } else if (type === 'gene-regulation') {
+                const nodes = ["基因调控", "转录", "启动子", "转录因子", "操纵子", "表观遗传", "RNA聚合酶"];
+                filteredData.nodes = data.nodes.filter(n => nodes.includes(n.id));
+                filteredData.links = data.links.filter(l => 
+                    nodes.includes(l.source.id || l.source) && nodes.includes(l.target.id || l.target)
+                );
+            }
+            
+            drawGraph(filteredData);
+        }
+        
+        // 初始显示全部
+        drawGraph(data);
+    </script>
+</body>
+</html>

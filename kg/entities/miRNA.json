@@ -1,0 +1,29 @@
+{
+  "id": "mirna",
+  "name": "miRNA",
+  "nameEn": "microRNA",
+  "category": "调控",
+  "chapter": "第 9 章",
+  "importance": "core-major",
+  "definition": "miRNA（微小 RNA）是一类长度约 22 个核苷酸的内源性非编码 RNA，通过与靶 mRNA 的 3'UTR 结合，抑制翻译或促进 mRNA 降解，调控基因表达。",
+  "keyConcepts": [
+    {"term": "pri-miRNA", "definition": "miRNA 的初级转录产物，含有茎环结构"},
+    {"term": "pre-miRNA", "definition": "Drosha 加工后的 miRNA 前体，约 70nt"},
+    {"term": "Dicer", "definition": "切割 pre-miRNA 产生成熟 miRNA 的核酸酶"},
+    {"term": "RISC", "definition": "RNA 诱导沉默复合物，装载 miRNA 后调控靶基因"},
+    {"term": "种子序列", "definition": "miRNA 5'端第 2-8 位核苷酸，决定靶标识别"},
+    {"term": "3'UTR", "definition": "mRNA 的 3'非翻译区，miRNA 的主要结合位点"}
+  ],
+  "keyPoints": [
+    "miRNA 是一类重要的基因表达调控因子",
+    "人类基因组编码约 1000 种 miRNA",
+    "一个 miRNA 可调控多个靶基因",
+    "miRNA 在发育、分化、癌症等过程中起重要作用",
+    "miRNA 可作为疾病诊断标志物和治疗靶点"
+  ],
+  "relatedEntities": ["非编码 RNA", "RNA 干扰", "基因调控", "siRNA"],
+  "references": [
+    "Lee RC, et al. The C. elegans heterochronic gene lin-4 encodes small RNAs with antisense complementarity to lin-14. Cell, 1993",
+    "Bartel DP. MicroRNAs: genomics, biogenesis, mechanism, and function. Cell, 2004"
+  ]
+}

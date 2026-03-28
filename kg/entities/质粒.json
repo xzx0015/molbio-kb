@@ -1,0 +1,27 @@
+{
+  "id": "plasmid",
+  "name": "质粒",
+  "nameEn": "Plasmid",
+  "category": "分子",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "质粒是细菌中独立于染色体的小型环状双链 DNA 分子，可自主复制，携带抗生素抗性基因等，是基因工程的重要载体。",
+  "keyConcepts": [
+    {"term": "复制起点", "definition": "质粒 DNA 复制的起始位点"},
+    {"term": "抗生素抗性基因", "definition": "质粒上编码抗生素抗性的基因，用于筛选"},
+    {"term": "多克隆位点", "definition": "质粒上含有多个限制性酶切位点的区域"},
+    {"term": "拷贝数", "definition": "每个细胞中质粒的数量"},
+    {"term": "接合", "definition": "细菌间通过性菌毛转移质粒的过程"}
+  ],
+  "keyPoints": [
+    "质粒是独立于细菌染色体的 DNA 分子",
+    "质粒可自主复制并遗传给子代细胞",
+    "质粒是基因工程的主要载体",
+    "质粒携带抗生素抗性基因便于筛选",
+    "质粒可在细菌间水平转移"
+  ],
+  "relatedEntities": ["基因工程", "DNA 复制", "载体", "转化"],
+  "references": [
+    "Cohen SN. The manipulation of genes. Sci Am, 1975"
+  ]
+}

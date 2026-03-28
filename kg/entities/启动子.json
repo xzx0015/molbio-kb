@@ -1,0 +1,27 @@
+{
+  "id": "promoter",
+  "name": "启动子",
+  "nameEn": "Promoter",
+  "category": "调控",
+  "chapter": "第 4 章",
+  "importance": "core-important",
+  "definition": "启动子是位于基因上游、能被 RNA 聚合酶识别并结合的 DNA 序列，决定转录起始位点和转录效率。",
+  "keyConcepts": [
+    {"term": "TATA 框", "definition": "真核生物启动子中的保守序列，位于 -25 至 -30 区"},
+    {"term": "CAAT 框", "definition": "真核生物启动子中的保守序列，位于 -70 至 -80 区"},
+    {"term": "GC 框", "definition": "富含 GC 的启动子元件"},
+    {"term": "Pribnow 框", "definition": "原核生物启动子中的 -10 区保守序列"},
+    {"term": "-35 区", "definition": "原核生物启动子中的另一个保守区域"}
+  ],
+  "keyPoints": [
+    "启动子位于转录起始位点上游",
+    "启动子决定转录起始位点和效率",
+    "原核生物启动子含 -10 区和 -35 区",
+    "真核生物启动子含 TATA 框、CAAT 框等",
+    "启动子突变可影响基因表达"
+  ],
+  "relatedEntities": ["基因转录", "RNA 聚合酶", "转录因子", "基因调控"],
+  "references": [
+    "Jacob F, Monod J. Genetic regulatory mechanisms in the synthesis of proteins. J Mol Biol, 1961"
+  ]
+}

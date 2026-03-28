@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引物酶 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .back { color: #667eea; text-decoration: none; display: inline-block; margin-bottom: 15px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .subtitle { color: #999; font-size: 0.9em; }
+        .meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        .chapter-tag { background: #28a745; }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .section p { color: #555; line-height: 1.8; }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #333; margin-bottom: 8px; font-size: 1em; }
+        .concept-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        
+        .key-points { list-style: none; padding: 0; }
+        .key-points li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #555;
+        }
+        
+        .relation-list { display: flex; gap: 10px; flex-wrap: wrap; }
+        .relation-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .relation-tag:hover { background: #667eea; color: white; }
+        
+        .references { list-style: none; padding: 0; }
+        .references li {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 0.9em;
+            border-left: 3px solid #28a745;
+        }
+        
+        .structure-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .structure-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .structure-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 10px 0;
+        }
+        .structure-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .structure-link {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+        }
+        .structure-link:hover { background: #5a6fd6; }
+        
+        footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
+        
+        @media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back">← 返回实体索引</a>
+            <h1>引物酶</h1>
+            <p class="subtitle">Primase | 第 3 章</p>
+            <div class="meta">
+                <span class="tag">酶</span>
+                <span class="tag chapter-tag">第 3 章</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📖 定义</h2>
+            <p>引物酶是合成 RNA 引物的酶，为 DNA 聚合酶提供 3'-OH 末端，是 DNA 复制起始所必需的酶。</p>
+        </div>
+        
+        <div class="section">
+            <h2>🔑 关键概念</h2>
+            <div class="concept-grid"><div class="concept-card"><h4>RNA 引物</h4><p>引物酶合成的短 RNA 片段，约 10nt</p></div><div class="concept-card"><h4>DnaG</h4><p>大肠杆菌的引物酶</p></div><div class="concept-card"><h4>Pol α-引物酶</h4><p>真核生物的 DNA 聚合酶 α 与引物酶复合物</p></div><div class="concept-card"><h4>引发体</h4><p>包含引物酶和其他蛋白的复合物，在复制起始中起作用</p></div><div class="concept-card"><h4>冈崎片段</h4><p>滞后链上不连续合成的片段，每个都需要 RNA 引物</p></div></div>
+        </div>
+        
+        <div class="section">
+            <h2>📌 核心知识点</h2>
+            <ul class="key-points"><li>引物酶合成 RNA 引物，为 DNA 聚合酶提供起始点</li>
+<li>DNA 聚合酶不能从头合成，需要引物</li>
+<li>引物最终被 DNA 聚合酶 I 切除并替换为 DNA</li>
+<li>真核生物中 Pol α 具有引物酶活性</li>
+<li>每个冈崎片段都需要新的 RNA 引物</li></ul>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 关联实体</h2>
+            <div class="relation-list"><a href="DNA%20%E5%A4%8D%E5%88%B6.html" class="relation-tag">DNA 复制</a><a href="DNA%20%E8%81%9A%E5%90%88%E9%85%B6.html" class="relation-tag">DNA 聚合酶</a><a href="%E5%86%88%E5%B4%8E%E7%89%87%E6%AE%B5.html" class="relation-tag">冈崎片段</a><a href="%E5%BC%95%E5%8F%91%E4%BD%93.html" class="relation-tag">引发体</a></div>
+        </div>
+        
+        <div class="section">
+<h2>🧬 蛋白质结构</h2>
+<div class="structure-box">
+<h4>📷 噬菌体 T7 引物酶结构</h4>
+<img src="https://cdn.rcsb.org/images/3b/3b39/3b39_assembly-1.jpeg" alt="蛋白质结构" class="structure-img" onerror="this.style.display='none'">
+<div class="structure-links">
+<a href="https://www.rcsb.org/structure/3B39" target="_blank" class="structure-link">🔗 PDB 数据库</a>
+<a href="https://alphafold.ebi.ac.uk/entry/P28630" target="_blank" class="structure-link">🔗 AlphaFold</a>
+</div>
+</div>
+</div>
+
+        
+        <div class="section">
+            <h2>📚 参考文献</h2>
+            <ul class="references"><li>Frick DN, Richardson CC. DNA primases. Annu Rev Biochem, 2001</li></ul>
+        </div>
+        
+        <footer><p>© 2026 分子生物学知识库</p></footer>
+    </div>
+</body>
+</html>

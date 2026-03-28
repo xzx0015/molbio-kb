@@ -1,0 +1,28 @@
+{
+  "id": "checkpoint",
+  "name": "细胞周期检验点",
+  "nameEn": "Cell Cycle Checkpoint",
+  "category": "过程",
+  "chapter": "第8章",
+  "importance": "core-important",
+  "definition": "细胞周期检验点是监控细胞周期进程的关键调控点，确保细胞在进入下一阶段前完成必要的准备，如DNA复制完成、损伤修复等。",
+  "keyConcepts": [
+    {"term": "G1/S检验点", "definition": "监控细胞大小、营养、DNA损伤，决定是否进入S期"},
+    {"term": "S期检验点", "definition": "监控DNA复制进度，防止复制叉停滞"},
+    {"term": "G2/M检验点", "definition": "监控DNA复制完成和损伤修复，决定是否进入有丝分裂"},
+    {"term": "纺锤体检验点", "definition": "监控染色体与纺锤体正确连接，防止染色体分离错误"},
+    {"term": "p53", "definition": "肿瘤抑制蛋白，DNA损伤时激活检验点"},
+    {"term": "ATM/ATR", "definition": "DNA损伤感应激酶，激活检验点信号"}
+  ],
+  "keyPoints": [
+    "检验点确保细胞周期有序进行",
+    "检验点缺陷导致基因组不稳定和癌症",
+    "p53是G1/S和G2/M检验点的关键调控因子",
+    "纺锤体检验点防止染色体分离错误",
+    "检验点激活可逆，修复完成后恢复周期"
+  ],
+  "relatedEntities": ["细胞周期", "CDK", "p53", "DNA修复", "基因调控"],
+  "references": [
+    "Hartwell LH, Weinert TA. Checkpoints: controls that ensure the order of cell cycle events. Science, 1989"
+  ]
+}

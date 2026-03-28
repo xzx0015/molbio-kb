@@ -1,0 +1,28 @@
+{
+  "id": "ribosomal-subunit",
+  "name": "核糖体亚基",
+  "nameEn": "Ribosomal Subunit",
+  "category": "分子",
+  "chapter": "第6章",
+  "importance": "core-major",
+  "definition": "核糖体由大亚基和小亚基组成，翻译时组装。原核核糖体为70S（50S+30S），真核核糖体为80S（60S+40S），亚基由rRNA和核糖体蛋白组成。",
+  "keyConcepts": [
+    {"term": "大亚基", "definition": "含肽酰转移酶中心，催化肽键形成"},
+    {"term": "小亚基", "definition": "含解码中心，识别mRNA密码子"},
+    {"term": "30S亚基", "definition": "原核小亚基，含16S rRNA"},
+    {"term": "50S亚基", "definition": "原核大亚基，含23S和5S rRNA"},
+    {"term": "40S亚基", "definition": "真核小亚基，含18S rRNA"},
+    {"term": "60S亚基", "definition": "真核大亚基，含28S、5.8S和5S rRNA"}
+  ],
+  "keyPoints": [
+    "核糖体亚基在翻译起始时组装",
+    "大亚基催化肽键形成，小亚基解码mRNA",
+    "rRNA是核糖体的结构和催化组分",
+    "核糖体蛋白稳定rRNA结构并协助功能",
+    "核糖体亚基组装是核糖体生物发生的关键步骤"
+  ],
+  "relatedEntities": ["核糖体", "rRNA", "蛋白质翻译", "tRNA", "mRNA"],
+  "references": [
+    "Ramakrishnan V. Ribosome structure and function. Nobel Lecture, 2009"
+  ]
+}

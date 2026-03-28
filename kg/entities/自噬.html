@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自噬 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .back { color: #667eea; text-decoration: none; display: inline-block; margin-bottom: 15px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .subtitle { color: #999; font-size: 0.9em; }
+        .meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        .chapter-tag { background: #28a745; }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .section p { color: #555; line-height: 1.8; }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #333; margin-bottom: 8px; font-size: 1em; }
+        .concept-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        
+        .key-points { list-style: none; padding: 0; }
+        .key-points li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #555;
+        }
+        
+        .relation-list { display: flex; gap: 10px; flex-wrap: wrap; }
+        .relation-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .relation-tag:hover { background: #667eea; color: white; }
+        
+        .references { list-style: none; padding: 0; }
+        .references li {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 0.9em;
+            border-left: 3px solid #28a745;
+        }
+        
+        .structure-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .structure-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .structure-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 10px 0;
+        }
+        .structure-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .structure-link {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+        }
+        .structure-link:hover { background: #5a6fd6; }
+        
+        footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
+        
+        @media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back">← 返回实体索引</a>
+            <h1>自噬</h1>
+            <p class="subtitle">Autophagy | 第5章</p>
+            <div class="meta">
+                <span class="tag">过程</span>
+                <span class="tag chapter-tag">第5章</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📖 定义</h2>
+            <p>自噬是细胞通过形成自噬体包裹胞质成分，与溶酶体融合降解，实现自我更新的过程，在营养缺乏、应激和发育中起重要作用。</p>
+        </div>
+        
+        <div class="section">
+            <h2>🔑 关键概念</h2>
+            <div class="concept-grid"><div class="concept-card"><h4>自噬体</h4><p>双层膜结构，包裹待降解的胞质成分</p></div><div class="concept-card"><h4>溶酶体</h4><p>含有水解酶的细胞器，降解自噬体内容物</p></div><div class="concept-card"><h4>自噬溶酶体</h4><p>自噬体与溶酶体融合后的结构</p></div><div class="concept-card"><h4>ATG基因</h4><p>自噬相关基因，编码自噬 machinery 蛋白</p></div><div class="concept-card"><h4>mTOR</h4><p>营养感应激酶，抑制自噬的主要调控因子</p></div><div class="concept-card"><h4>LC3</h4><p>自噬体膜蛋白，自噬的标志物</p></div></div>
+        </div>
+        
+        <div class="section">
+            <h2>📌 核心知识点</h2>
+            <ul class="key-points"><li>自噬是细胞自我更新的重要机制</li>
+<li>自噬在营养缺乏时提供能量和原料</li>
+<li>自噬异常与癌症、神经退行性疾病和感染相关</li>
+<li>自噬可选择性降解受损细胞器（线粒体自噬）</li>
+<li>2016年诺贝尔生理学或医学奖授予自噬研究</li></ul>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 关联实体</h2>
+            <div class="relation-list"><a href="%E6%BA%B6%E9%85%B6%E4%BD%93.html" class="relation-tag">溶酶体</a><a href="%E7%BA%BF%E7%B2%92%E4%BD%93.html" class="relation-tag">线粒体</a><a href="mTOR.html" class="relation-tag">mTOR</a><a href="%E7%BB%86%E8%83%9E%E5%87%8B%E4%BA%A1.html" class="relation-tag">细胞凋亡</a><a href="%E8%9B%8B%E7%99%BD%E8%B4%A8.html" class="relation-tag">蛋白质</a></div>
+        </div>
+        
+        
+        
+        <div class="section">
+            <h2>📚 参考文献</h2>
+            <ul class="references"><li>Mizushima N, Ohsumi Y. Autophagy: renovation of cells and tissues. Cell, 2011</li></ul>
+        </div>
+        
+        <footer><p>© 2026 分子生物学知识库</p></footer>
+    </div>
+</body>
+</html>

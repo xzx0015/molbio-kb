@@ -1,0 +1,27 @@
+{
+  "id": "transcription-factor",
+  "name": "转录因子",
+  "nameEn": "Transcription Factor",
+  "category": "调控",
+  "chapter": "第 7-8 章",
+  "importance": "core-important",
+  "definition": "转录因子是能与 DNA 特定序列结合并调控基因转录的蛋白质，通常含有 DNA 结合域和转录激活域。",
+  "keyConcepts": [
+    {"term": "DNA 结合域", "definition": "转录因子中与 DNA 结合的蛋白质结构域"},
+    {"term": "转录激活域", "definition": "转录因子中激活转录的结构域"},
+    {"term": "通用转录因子", "definition": "参与基础转录的转录因子，如 TFIID、TFIIB"},
+    {"term": "特异性转录因子", "definition": "调控特定基因表达的转录因子"},
+    {"term": "DNA 结合基序", "definition": "转录因子识别 DNA 的特定结构模式"}
+  ],
+  "keyPoints": [
+    "转录因子是基因表达调控的关键分子",
+    "转录因子含有 DNA 结合域和转录激活域",
+    "通用转录因子参与基础转录 machinery",
+    "特异性转录因子调控特定基因",
+    "转录因子异常与多种疾病相关"
+  ],
+  "relatedEntities": ["基因调控", "启动子", "增强子", "基因转录"],
+  "references": [
+    "Ptashne M. A genetic switch. Cold Spring Harbor Laboratory Press, 1992"
+  ]
+}

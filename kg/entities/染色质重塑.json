@@ -1,0 +1,28 @@
+{
+  "id": "chromatin-remodeling",
+  "name": "染色质重塑",
+  "nameEn": "Chromatin Remodeling",
+  "category": "调控",
+  "chapter": "第9章",
+  "importance": "core-major",
+  "definition": "染色质重塑是通过ATP依赖的染色质重塑复合物改变核小体位置和组成，调节DNA可及性，从而调控基因表达的表观遗传机制。",
+  "keyConcepts": [
+    {"term": "SWI/SNF复合物", "definition": "第一个发现的染色质重塑复合物，利用ATP水解能量"},
+    {"term": "ISWI家族", "definition": "模仿开关家族，调控核小体间距"},
+    {"term": "CHD家族", "definition": "染色质解旋酶DNA结合蛋白家族"},
+    {"term": "核小体滑动", "definition": "重塑复合物使核小体沿DNA移动"},
+    {"term": "组蛋白置换", "definition": "用变体组蛋白替换标准组蛋白"},
+    {"term": "DNA可及性", "definition": "染色质结构影响转录因子结合DNA的能力"}
+  ],
+  "keyPoints": [
+    "染色质重塑是表观遗传调控的重要机制",
+    "重塑复合物利用ATP水解提供能量",
+    "重塑可改变核小体位置、组成或组蛋白修饰",
+    "染色质重塑与发育、分化和癌症相关",
+    "SWI/SNF亚基突变在多种癌症中常见"
+  ],
+  "relatedEntities": ["表观遗传", "组蛋白修饰", "DNA甲基化", "基因调控", "核小体"],
+  "references": [
+    "Clapier CR, Cairns BR. The biology of chromatin remodeling complexes. Annu Rev Biochem, 2009"
+  ]
+}

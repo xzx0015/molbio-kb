@@ -1,0 +1,27 @@
+{
+  "id": "repressor",
+  "name": "阻遏蛋白",
+  "nameEn": "Repressor",
+  "category": "调控",
+  "chapter": "第 7 章",
+  "importance": "core-major",
+  "definition": "阻遏蛋白是一类能够结合 DNA 特定序列（如操纵基因）并抑制基因转录的蛋白质，是原核生物基因负调控的关键因子。",
+  "keyConcepts": [
+    {"term": "操纵基因", "definition": "阻遏蛋白结合的 DNA 序列"},
+    {"term": "效应物", "definition": "结合阻遏蛋白并改变其活性的小分子"},
+    {"term": "诱导型阻遏", "definition": "结合诱导物后失去活性的阻遏蛋白"},
+    {"term": "辅阻遏型阻遏", "definition": "结合辅阻遏物后获得活性的阻遏蛋白"},
+    {"term": "Lac 阻遏蛋白", "definition": "乳糖操纵子的阻遏蛋白"}
+  ],
+  "keyPoints": [
+    "阻遏蛋白是原核生物基因负调控的主要方式",
+    "阻遏蛋白结合操纵基因阻止转录",
+    "效应物可调节阻遏蛋白的活性",
+    "阻遏蛋白的发现证实了基因调控的存在",
+    "真核生物也有类似的阻遏机制"
+  ],
+  "relatedEntities": ["操纵子", "基因调控", "启动子", "转录因子"],
+  "references": [
+    "Gilbert W, Müller-Hill B. Isolation of the lac repressor. PNAS, 1966"
+  ]
+}

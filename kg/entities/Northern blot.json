@@ -1,0 +1,27 @@
+{
+  "id": "northern-blot",
+  "name": "Northern blot",
+  "nameEn": "Northern Blot",
+  "category": "技术",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "Northern blot 是检测特定 RNA 的印迹技术，通过凝胶电泳分离 RNA，转膜后用探针杂交检测。",
+  "keyConcepts": [
+    {"term": "甲醛变性胶", "definition": "用于 RNA 分离的变性琼脂糖凝胶"},
+    {"term": "探针", "definition": "标记的 DNA 或 RNA 片段，用于检测特定 RNA"},
+    {"term": "杂交", "definition": "探针与靶 RNA 的碱基配对过程"},
+    {"term": "转膜", "definition": "将凝胶中的 RNA 转移到膜上"},
+    {"term": "放射性标记", "definition": "用放射性同位素标记探针"}
+  ],
+  "keyPoints": [
+    "Northern blot 用于检测特定 RNA 的大小和表达量",
+    "RNA 需要变性处理以防止二级结构",
+    "探针特异性决定检测特异性",
+    "Northern blot 可分析 RNA 加工和剪接",
+    "RT-qPCR 已部分替代 Northern blot"
+  ],
+  "relatedEntities": ["分子生物学技术", "RNA", "探针", "Southern blot"],
+  "references": [
+    "Alwine JC, et al. Detection of specific RNAs or specific fragments of DNA among fractionated DNA. PNAS, 1977"
+  ]
+}

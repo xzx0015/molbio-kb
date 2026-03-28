@@ -1,0 +1,27 @@
+{
+  "id": "enhancer",
+  "name": "增强子",
+  "nameEn": "Enhancer",
+  "category": "调控",
+  "chapter": "第 7-8 章",
+  "importance": "core-major",
+  "definition": "增强子是能够增强基因转录效率的 DNA 序列，可位于基因的上游、下游或内含子中，具有位置和方向独立性。",
+  "keyConcepts": [
+    {"term": "位置独立性", "definition": "增强子可在基因上游、下游或内部发挥作用"},
+    {"term": "方向独立性", "definition": "增强子正向或反向插入均可发挥作用"},
+    {"term": "远距离作用", "definition": "增强子可在数千碱基外发挥作用"},
+    {"term": "转录因子结合", "definition": "增强子结合特异性转录因子"},
+    {"term": "染色质环", "definition": "增强子通过染色质环与启动子接近"}
+  ],
+  "keyPoints": [
+    "增强子可显著增强基因转录",
+    "增强子具有位置和方向独立性",
+    "增强子可远距离发挥作用",
+    "增强子通过染色质环与启动子相互作用",
+    "增强子突变可导致疾病"
+  ],
+  "relatedEntities": ["基因调控", "启动子", "转录因子", "沉默子"],
+  "references": [
+    "Banerji J, et al. A lymphocyte-specific cellular enhancer is located downstream of the joining region in immunoglobulin heavy chain genes. Cell, 1983"
+  ]
+}
