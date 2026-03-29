@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+        
+        .search-container {
+            max-width: 800px;
+            margin: -30px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .search-box {
+            background: white;
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+        }
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+        .search-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        .search-btn:hover { background: #764ba2; }
+        
+        .filters {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .results {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        .result-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .result-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .result-title {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .result-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .result-meta {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        .result-tag {
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        .no-results h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .suggestions {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .suggestions h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        .suggestion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .suggestion-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .suggestion-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔍 知识搜索</h1>
+        <p>在分子生物学知识库中快速查找概念、技术和方法</p>
+    </div>
+    
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索知识条目，如：DNA复制、PCR、CRISPR..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">搜索</button>
+        </div>
+    </div>
+    
+    <div class="filters">
+        <div class="filter-group">
+            <button class="filter-btn active" onclick="filterBy('all')">全部</button>
+            <button class="filter-btn" onclick="filterBy('concept')">概念</button>
+            <button class="filter-btn" onclick="filterBy('enzyme')">酶</button>
+            <button class="filter-btn" onclick="filterBy('tech')">技术</button>
+            <button class="filter-btn" onclick="filterBy('process')">过程</button>
+            <button class="filter-btn" onclick="filterBy('molecule')">分子</button>
+        </div>
+    </div>
+    
+    <div class="results" id="results">
+        <!-- 搜索结果将显示在这里 -->
+    </div>
+    
+    <div class="suggestions">
+        <h3>🔥 热门搜索</h3>
+        <div class="suggestion-grid">
+            <div class="suggestion-item" onclick="quickSearch('DNA复制')">DNA复制</div>
+            <div class="suggestion-item" onclick="quickSearch('PCR')">PCR</div>
+            <div class="suggestion-item" onclick="quickSearch('CRISPR')">CRISPR</div>
+            <div class="suggestion-item" onclick="quickSearch('转录')">转录</div>
+            <div class="suggestion-item" onclick="quickSearch('翻译')">翻译</div>
+            <div class="suggestion-item" onclick="quickSearch('基因调控')">基因调控</div>
+            <div class="suggestion-item" onclick="quickSearch('表观遗传')">表观遗传</div>
+            <div class="suggestion-item" onclick="quickSearch('RNA干扰')">RNA干扰</div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>分子生物学知识库 | 持续更新中</p>
+    </footer>
+    
+    <script>
+        // 知识库索引数据（简化版，实际应从JSON加载）
+        const knowledgeIndex = [
+            { id: "DNA复制", name: "DNA复制", category: "过程", desc: "以亲代DNA为模板合成子代DNA的过程，是遗传信息传递的基础", importance: "core" },
+            { id: "转录", name: "转录", category: "过程", desc: "以DNA为模板合成RNA的过程，是基因表达的第一步", importance: "core" },
+            { id: "翻译", name: "翻译", category: "过程", desc: "以mRNA为模板合成蛋白质的过程", importance: "core" },
+            { id: "PCR", name: "PCR", category: "技术", desc: "聚合酶链式反应，用于体外扩增DNA片段", importance: "core" },
+            { id: "CRISPR-Cas9", name: "CRISPR-Cas9", category: "技术", desc: "革命性的基因编辑技术，可实现精准的基因组编辑", importance: "core" },
+            { id: "基因调控", name: "基因调控", category: "过程", desc: "细胞控制基因表达水平和时机的机制", importance: "core" },
+            { id: "表观遗传", name: "表观遗传", category: "机制", desc: "不改变DNA序列的基因表达调控机制", importance: "core" },
+            { id: "DNA聚合酶", name: "DNA聚合酶", category: "酶", desc: "催化DNA合成的关键酶", importance: "core" },
+            { id: "RNA聚合酶", name: "RNA聚合酶", category: "酶", desc: "催化RNA合成的酶", importance: "core" },
+            { id: "启动子", name: "启动子", category: "调控元件", desc: "RNA聚合酶结合并启动转录的DNA序列", importance: "core" },
+            { id: "转录因子",            { id: "转录因子", name: "转录因子", category: "蛋白质", desc: "结合DNA调控转录的蛋白质", importance: "core" },
+            { id: "RNA干扰", name: "RNA干扰", category: "机制", desc: "由小RNA介导的基因沉默机制", importance: "major" },
+            { id: "miRNA", name: "miRNA", category: "RNA", desc: "微小RNA，参与基因表达调控", importance: "major" },
+            { id: "siRNA", name: "siRNA", category: "RNA", desc: "小干扰RNA，介导RNA干扰", importance: "major" },
+            { id: "DNA甲基化", name: "DNA甲基化", category: "修饰", desc: "DNA的表观遗传修饰，影响基因表达", importance: "major" },
+            { id: "Western-blot", name: "Western blot", category: "技术", desc: "检测蛋白质的免疫印迹技术", importance: "core" },
+            { id: "Northern-blot", name: "Northern blot", category: "技术", desc: "检测RNA的印迹技术", importance: "major" },
+            { id: "Southern-blot", name: "Southern blot", category: "技术", desc: "检测DNA的印迹技术", importance: "major" },
+            { id: "中心法则", name: "中心法则", category: "核心理论", desc: "描述遗传信息流动方向的基本法则", importance: "core" },
+            { id: "操纵子", name: "操纵子", category: "调控单元", desc: "原核生物基因调控的基本单位", importance: "major" },
+            { id: "端粒", name: "端粒", category: "结构", desc: "染色体末端的保护结构", importance: "major" },
+            { id: "端粒酶", name: "端粒酶", category: "酶", desc: "维持端粒长度的逆转录酶", importance: "major" },
+            { id: "细胞周期", name: "细胞周期", category: "过程", desc: "细胞生长和分裂的周期性过程", importance: "major" },
+            { id: "CDK", name: "CDK", category: "酶", desc: "周期蛋白依赖性激酶，调控细胞周期", importance: "major" },
+            { id: "细胞凋亡", name: "细胞凋亡", category: "过程", desc: "程序性细胞死亡", importance: "major" },
+            { id: "DNA修复", name: "DNA修复", category: "过程", desc: "修复DNA损伤的机制", importance: "major" },
+            { id: "DNA重组", name: "DNA重组", category: "过程", desc: "DNA分子间交换遗传信息的过程", importance: "major" },
+            { id: "基因工程", name: "基因工程", category: "技术", desc: "对基因进行体外操作的技术", importance: "core" },
+            { id: "测序技术", name: "测序技术", category: "技术", desc: "测定DNA/RNA序列的技术", importance: "core" },
+            { id: "密码子", name: "密码子", category: "概念", desc: "mRNA上编码氨基酸的三联体核苷酸", importance: "core" },
+            { id: "反密码子", name: "反密码子", category: "概念", desc: "tRNA上与密码子配对的核苷酸三联体", importance: "core" },
+            { id: "内含子", name: "内含子", category: "结构", desc: "基因中不编码蛋白质的序列", importance: "major" },
+            { id: "外显子", name: "外显子", category: "结构", desc: "基因中编码蛋白质的序列", importance: "major" },
+            { id: "增强子", name: "增强子", category: "调控元件", desc: "增强基因转录的DNA序列", importance: "major" },
+            { id: "沉默子", name: "沉默子", category: "调控元件", desc: "抑制基因转录的DNA序列", importance: "major" }
+        ];
+
+        let currentFilter = 'all';
+        let searchResults = [];
+
+        // 执行搜索
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (!query) {
+                showSuggestions();
+                return;
+            }
+            
+            searchResults = knowledgeIndex.filter(item => {
+                const matchName = item.name.toLowerCase().includes(query);
+                const matchDesc = item.desc.toLowerCase().includes(query);
+                const matchCategory = item.category.toLowerCase().includes(query);
+                return matchName || matchDesc || matchCategory;
+            });
+            
+            displayResults();
+        }
+
+        // 快速搜索
+        function quickSearch(term) {
+            document.getElementById('searchInput').value = term;
+            performSearch();
+        }
+
+        // 按类别筛选
+        function filterBy(category) {
+            currentFilter = category;
+            
+            // 更新按钮状态
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            displayResults();
+        }
+
+        // 显示搜索结果
+        function displayResults() {
+            const resultsContainer = document.getElementById('results');
+            
+            let filtered = searchResults;
+            if (currentFilter !== 'all') {
+                const categoryMap = {
+                    'concept': ['概念', '核心理论', '机制'],
+                    'enzyme': ['酶'],
+                    'tech': ['技术'],
+                    'process': ['过程'],
+                    'molecule': ['分子', 'RNA', '蛋白质', '复合物']
+                };
+                filtered = searchResults.filter(item => 
+                    categoryMap[currentFilter]?.includes(item.category)
+                );
+            }
+            
+            if (filtered.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        <h3>未找到相关结果</h3>
+                        <p>请尝试其他关键词，或浏览下方热门搜索</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            resultsContainer.innerHTML = filtered.map(item => `
+                <div class="result-item" onclick="openEntity('${item.id}')">
+                    <div class="result-title">${item.name}</div>
+                    <div class="result-desc">${item.desc}</div>
+                    <div class="result-meta">
+                        <span class="result-tag">${item.category}</span>
+                        <span>${item.importance === 'core' ? '⭐ 核心' : item.importance === 'major' ? '🔸 重要' : '基础'}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 显示建议
+        function showSuggestions() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        // 打开实体详情
+        function openEntity(id) {
+            // 尝试打开对应的HTML文件
+            const entityUrl = `../kg/entities/${encodeURIComponent(id)}.html`;
+            window.open(entityUrl, '_blank');
+        }
+
+        // 回车搜索
+        document.getElementById('searchInput')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // 初始化显示建议
+        showSuggestions();
+    </script>
+</body>
+</html>
