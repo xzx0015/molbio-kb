@@ -1,0 +1,34 @@
+{
+  "id": "rna-polymerase",
+  "name": "RNA 聚合酶",
+  "nameEn": "RNA Polymerase",
+  "category": "酶",
+  "chapter": "第 4 章",
+  "importance": "core-important",
+  "definition": "RNA 聚合酶是以 DNA 为模板合成 RNA 的酶，催化转录过程，不需要引物，具有 5'→3'RNA 聚合酶活性。",
+  "keyConcepts": [
+    {"term": "原核 RNA 聚合酶", "definition": "由 α₂ββ'ωσ 亚基组成，σ 因子负责识别启动子"},
+    {"term": "真核 RNA 聚合酶 I", "definition": "位于核仁，转录 rRNA（除 5S）"},
+    {"term": "真核 RNA 聚合酶 II", "definition": "位于核质，转录 mRNA 和 snRNA"},
+    {"term": "真核 RNA 聚合酶 III", "definition": "位于核质，转录 tRNA 和 5S rRNA"},
+    {"term": "启动子识别", "definition": "RNA 聚合酶识别并结合 DNA 上的启动子序列"}
+  ],
+  "keyPoints": [
+    "RNA 聚合酶不需要引物，可从头合成 RNA",
+    "原核生物只有一种 RNA 聚合酶，通过 σ 因子识别不同启动子",
+    "真核生物有三种 RNA 聚合酶，分工不同",
+    "RNA 聚合酶 II 是研究最深入的，涉及 mRNA 合成",
+    "转录因子协助 RNA 聚合酶结合启动子"
+  ],
+  "relatedEntities": ["基因转录", "启动子", "转录因子", "非编码 RNA"],
+  "references": [
+    "Burgess RR. RNA polymerase from Escherichia coli. Nature, 1969"
+  ],
+  "structure": {
+    "pdbId": "6GH5",
+    "pdbUrl": "https://www.rcsb.org/structure/6GH5",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P0A7Z4",
+    "description": "大肠杆菌 RNA 聚合酶全酶与启动子 DNA 的复合物结构",
+    "imageUrl": "https://cdn.rcsb.org/images/6g/6gh5/6gh5_assembly-1.jpeg"
+  }
+}

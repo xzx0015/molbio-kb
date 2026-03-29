@@ -1,0 +1,27 @@
+{
+  "id": "anticodon",
+  "name": "反密码子",
+  "nameEn": "Anticodon",
+  "category": "分子",
+  "chapter": "第 6 章",
+  "importance": "core-major",
+  "definition": "反密码子是 tRNA 上与 mRNA 密码子互补配对的 3 个核苷酸，位于 tRNA 的反密码子环上。",
+  "keyConcepts": [
+    {"term": "反密码子环", "definition": "tRNA 上含有反密码子的环状结构"},
+    {"term": "密码子-反密码子配对", "definition": "mRNA 密码子与 tRNA 反密码子的碱基配对"},
+    {"term": "摆动假说", "definition": "Crick 提出的密码子-反密码子配对第三位的灵活性"},
+    {"term": "摆动配对", "definition": "反密码子第一位碱基与密码子第三位碱基的非标准配对"},
+    {"term": "次黄嘌呤", "definition": "常出现在反密码子第一位的修饰碱基，可与 U/C/A 配对"}
+  ],
+  "keyPoints": [
+    "反密码子位于 tRNA 的反密码子环上",
+    "反密码子与密码子反向互补配对",
+    "摆动配对增加了翻译的灵活性",
+    "次黄嘌呤（I）在反密码子中常见",
+    "密码子-反密码子配对确保翻译的准确性"
+  ],
+  "relatedEntities": ["密码子", "tRNA", "遗传密码", "蛋白质翻译"],
+  "references": [
+    "Crick FH. Codon-anticodon pairing: the wobble hypothesis. J Mol Biol, 1966"
+  ]
+}

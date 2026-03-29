@@ -1,0 +1,29 @@
+{
+  "id": "mutation",
+  "name": "突变",
+  "nameEn": "Mutation",
+  "category": "基因组",
+  "chapter": "第 3 章",
+  "importance": "core-important",
+  "definition": "突变是 DNA 序列的永久性改变，包括点突变、插入、缺失、重排等类型，是遗传变异的来源，可导致疾病或提供进化优势。",
+  "keyConcepts": [
+    {"term": "点突变", "definition": "单个核苷酸的改变，包括转换和颠换"},
+    {"term": "插入", "definition": "DNA 序列中插入额外的核苷酸"},
+    {"term": "缺失", "definition": "DNA 序列中丢失核苷酸"},
+    {"term": "移码突变", "definition": "插入或缺失非 3 的倍数个核苷酸，导致阅读框改变"},
+    {"term": "错义突变", "definition": "改变氨基酸的点突变"},
+    {"term": "无义突变", "definition": "产生终止密码子的点突变"},
+    {"term": "同义突变", "definition": "不改变氨基酸的点突变"}
+  ],
+  "keyPoints": [
+    "突变是遗传变异的根本来源",
+    "突变可由复制错误、辐射、化学物质等引起",
+    "DNA 修复系统可纠正大部分突变",
+    "突变可导致遗传病或癌症",
+    "突变也是进化的原材料"
+  ],
+  "relatedEntities": ["DNA 修复", "SNP", "遗传密码", "DNA 复制"],
+  "references": [
+    "Drake JW. A constant rate of spontaneous mutation in DNA-based microbes. PNAS, 1991"
+  ]
+}

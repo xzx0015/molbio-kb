@@ -1,0 +1,28 @@
+{
+  "id": "cyclin",
+  "name": "周期蛋白",
+  "nameEn": "Cyclin",
+  "category": "分子",
+  "chapter": "第8章",
+  "importance": "core-important",
+  "definition": "周期蛋白是一类在细胞周期中周期性合成和降解的蛋白质，与CDK结合形成复合物，激活CDK激酶活性，驱动细胞周期进程。",
+  "keyConcepts": [
+    {"term": "Cyclin D", "definition": "G1期周期蛋白，响应生长因子"},
+    {"term": "Cyclin E", "definition": "G1/S转换期周期蛋白，启动DNA复制"},
+    {"term": "Cyclin A", "definition": "S期和G2期周期蛋白，促进S期进程"},
+    {"term": "Cyclin B", "definition": "G2/M期周期蛋白，驱动有丝分裂"},
+    {"term": "泛素化降解", "definition": "周期蛋白通过APC/C泛素化途径降解"},
+    {"term": "APC/C", "definition": "后期促进复合物，介导周期蛋白降解"}
+  ],
+  "keyPoints": [
+    "周期蛋白浓度在细胞周期中周期性波动",
+    "周期蛋白与CDK结合是CDK活化的必要条件",
+    "不同周期蛋白在不同周期阶段起作用",
+    "周期蛋白降解是退出周期阶段的关键",
+    "周期蛋白异常与癌症密切相关"
+  ],
+  "relatedEntities": ["CDK", "细胞周期", "检验点", "泛素化", "基因调控"],
+  "references": [
+    "Hunt T. Cyclins and their partners: from a vague idea to a clear reality. Nobel Lecture, 2001"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "silencer",
+  "name": "沉默子",
+  "nameEn": "Silencer",
+  "category": "调控",
+  "chapter": "第 7-8 章",
+  "importance": "core-basic",
+  "definition": "沉默子是能够抑制基因转录的 DNA 序列，与增强子功能相反，通过结合阻遏蛋白抑制基因表达。",
+  "keyConcepts": [
+    {"term": "阻遏蛋白", "definition": "结合沉默子并抑制转录的蛋白质"},
+    {"term": "位置独立性", "definition": "沉默子可在基因上游、下游或内部发挥作用"},
+    {"term": "远距离作用", "definition": "沉默子可在远距离抑制基因转录"},
+    {"term": "绝缘子", "definition": "阻断增强子或沉默子作用的 DNA 元件"}
+  ],
+  "keyPoints": [
+    "沉默子与增强子功能相反",
+    "沉默子通过结合阻遏蛋白抑制转录",
+    "沉默子具有位置独立性",
+    "沉默子可远距离发挥作用",
+    "绝缘子可阻断沉默子的作用"
+  ],
+  "relatedEntities": ["基因调控", "增强子", "阻遏蛋白", "绝缘子"],
+  "references": [
+    "Brand AH, et al. A gene with promoter and terminator functions in the mating-type locus of yeast. Nature, 1985"
+  ]
+}

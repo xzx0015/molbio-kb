@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逆转录酶 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .back { color: #667eea; text-decoration: none; display: inline-block; margin-bottom: 15px; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .subtitle { color: #999; font-size: 0.9em; }
+        .meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        .chapter-tag { background: #28a745; }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .section p { color: #555; line-height: 1.8; }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .concept-card h4 { color: #333; margin-bottom: 8px; font-size: 1em; }
+        .concept-card p { color: #666; font-size: 0.9em; line-height: 1.5; }
+        
+        .key-points { list-style: none; padding: 0; }
+        .key-points li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            color: #555;
+        }
+        
+        .relation-list { display: flex; gap: 10px; flex-wrap: wrap; }
+        .relation-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .relation-tag:hover { background: #667eea; color: white; }
+        
+        .references { list-style: none; padding: 0; }
+        .references li {
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 0.9em;
+            border-left: 3px solid #28a745;
+        }
+        
+        .structure-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .structure-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .structure-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 10px 0;
+        }
+        .structure-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .structure-link {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+        }
+        .structure-link:hover { background: #5a6fd6; }
+        
+        footer { text-align: center; color: white; padding: 20px; opacity: 0.8; }
+        
+        @media (max-width: 768px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back">← 返回实体索引</a>
+            <h1>逆转录酶</h1>
+            <p class="subtitle">Reverse Transcriptase | 第 3 章</p>
+            <div class="meta">
+                <span class="tag">酶</span>
+                <span class="tag chapter-tag">第 3 章</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📖 定义</h2>
+            <p>逆转录酶是以 RNA 为模板合成 DNA 的 RNA 依赖性 DNA 聚合酶，存在于逆转录病毒中，可催化逆转录过程。</p>
+        </div>
+        
+        <div class="section">
+            <h2>🔑 关键概念</h2>
+            <div class="concept-grid"><div class="concept-card"><h4>RNA 依赖性 DNA 聚合酶</h4><p>以 RNA 为模板合成 DNA 的酶</p></div><div class="concept-card"><h4>RNase H</h4><p>逆转录酶的 RNase H 活性，可降解 RNA-DNA 杂合链中的 RNA</p></div><div class="concept-card"><h4>DNA 依赖性 DNA 聚合酶</h4><p>逆转录酶的第二活性，以 DNA 为模板合成 DNA</p></div><div class="concept-card"><h4>端粒酶</h4><p>含有逆转录酶活性的核糖核蛋白，可延长端粒</p></div><div class="concept-card"><h4>逆转录病毒</h4><p>含有逆转录酶的病毒，如 HIV</p></div></div>
+        </div>
+        
+        <div class="section">
+            <h2>📌 核心知识点</h2>
+            <ul class="key-points"><li>逆转录酶由 Temin 和 Baltimore 独立发现</li>
+<li>逆转录酶有三种活性：RNA 依赖性 DNA 聚合酶、RNase H、DNA 依赖性 DNA 聚合酶</li>
+<li>逆转录酶是逆转录病毒复制的关键酶</li>
+<li>端粒酶是一种特殊的逆转录酶</li>
+<li>逆转录酶在分子生物学研究中广泛应用（cDNA 合成）</li></ul>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 关联实体</h2>
+            <div class="relation-list"><a href="%E4%B8%AD%E5%BF%83%E6%B3%95%E5%88%99.html" class="relation-tag">中心法则</a><a href="%E7%AB%AF%E7%B2%92.html" class="relation-tag">端粒</a><a href="%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B.html" class="relation-tag">基因工程</a><a href="cDNA.html" class="relation-tag">cDNA</a></div>
+        </div>
+        
+        <div class="section">
+<h2>🧬 蛋白质结构</h2>
+<div class="structure-box">
+<h4>📷 HIV-1 逆转录酶与 DNA 复合物结构</h4>
+<img src="https://cdn.rcsb.org/images/1h/1hmv/1hmv_assembly-1.jpeg" alt="蛋白质结构" class="structure-img" onerror="this.style.display='none'">
+<div class="structure-links">
+<a href="https://www.rcsb.org/structure/1HMV" target="_blank" class="structure-link">🔗 PDB 数据库</a>
+<a href="https://alphafold.ebi.ac.uk/entry/Q72874" target="_blank" class="structure-link">🔗 AlphaFold</a>
+</div>
+</div>
+</div>
+
+        
+        <div class="section">
+            <h2>📚 参考文献</h2>
+            <ul class="references"><li>Temin HM, Mizutani S. RNA-dependent DNA polymerase in virions of Rous sarcoma virus. Nature, 1970</li>
+<li>Baltimore D. RNA-dependent DNA polymerase in virions of RNA tumour viruses. Nature, 1970</li></ul>
+        </div>
+        
+        <footer><p>© 2026 分子生物学知识库</p></footer>
+    </div>
+</body>
+</html>

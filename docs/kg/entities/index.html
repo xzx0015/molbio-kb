@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实体索引 | 分子生物学知识库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .back { color: #667eea; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+        .back:hover { text-decoration: underline; }
+        h1 { color: #667eea; margin-bottom: 30px; }
+        
+        .entity-type {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .entity-type h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .entity-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .entity-item {
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+        }
+        .entity-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 重要性标识 */
+        .entity-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            border-radius: 6px 0 0 6px;
+        }
+        
+        /* 核心重要 - 柔和粉色 */
+        .core-important {
+            background: #faf0f0;
+            color: #8b5a5a;
+            font-weight: 500;
+            border-left: 3px solid #d4a5a5;
+        }
+        .core-important::before { background: #d4a5a5; }
+        
+        /* 重要 - 柔和米色 */
+        .core-major {
+            background: #faf8f0;
+            color: #8b7355;
+        }
+        .core-major::before { background: #d4c4a5; }
+        
+        /* 基础 - 柔和灰蓝 */
+        .core-basic {
+            background: #f0f4f8;
+            color: #5a6b7a;
+        }
+        .core-basic::before { background: #a5b4c4; }
+        
+        /* 原有分类颜色 */
+        .type-molecule { background: #e8f5e9; color: #388e3c; }
+        .type-molecule::before { background: #388e3c; }
+        
+        .type-process { background: #f3e5f5; color: #7b1fa2; }
+        .type-process::before { background: #7b1fa2; }
+        
+        .type-tech { background: #fff3e0; color: #f57c00; }
+        .type-tech::before { background: #f57c00; }
+        
+        .type-enzyme { background: #e0f2f1; color: #00796b; }
+        .type-enzyme::before { background: #00796b; }
+        
+        /* 图例 */
+        .legend {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .legend h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+        .legend-items {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        .legend-important {
+            background: #faf0f0;
+            border: 1px solid #d4a5a5;
+        }
+        .legend-major {
+            background: #faf8f0;
+        }
+        .legend-basic {
+            background: #f0f4f8;
+        }
+        
+        .note {
+            background: #fff3e0;
+            border-left: 4px solid #f57c00;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .stats h3 { font-size: 2em; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <nav class="chapter-nav" style="margin-bottom: 20px;">
+        <a href="../../index.html">🏠 首页</a>
+        <a href="../../docs/chapters/chapter1.html">第1章</a>
+        <a href="../../docs/chapters/chapter2.html">第2章</a>
+        <a href="../../docs/chapters/chapter3.html">第3章</a>
+        <a href="../../docs/chapters/chapter4.html">第4章</a>
+        <a href="../../docs/chapters/chapter5.html">第5章</a>
+        <a href="../../docs/chapters/chapter6.html">第6章</a>
+        <a href="../../docs/chapters/chapter7.html">第7章</a>
+        <a href="../../docs/chapters/chapter8.html">第8章</a>
+        <a href="network.html" class="active">🕸️ 关联图谱</a>
+    </nav>
+    <div class="container">
+        <a href="../../index.html" class="back">← 返回首页</a>
+        <h1>🧬 实体索引</h1>
+        
+        <div class="stats">
+            <h3>55</h3>
+            <p>核心实体 | 按类别与重要性分类</p>
+        </div>
+        
+        <div style="background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center;">
+            <a href="network.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-size: 1.1em; margin-right: 10px;">🕸️ 查看概念关联图谱</a>
+            <p style="color: #666; margin-top: 10px; font-size: 0.9em;">可视化展示核心概念的内在联系</p>
+        </div>
+        
+        <div class="legend">
+            <h3>📊 重要性标识</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color legend-important"></div>
+                    <span>🔴 核心重点（考试必考）</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-major"></div>
+                    <span>🟠 重要概念（常考）</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-basic"></div>
+                    <span>🔵 基础概念（了解）</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 分子相关 -->
+        <div class="entity-type">
+            <h2>🔬 分子（Molecule）</h2>
+            <div class="entity-list">
+                <a href="DNA.html" class="entity-item core-important">DNA ⭐</a>
+                <a href="RNA.html" class="entity-item core-important">RNA ⭐</a>
+                <a href="蛋白质.html" class="entity-item core-important">蛋白质 ⭐</a>
+                <a href="染色体与 DNA.html" class="entity-item core-important">染色体与 DNA ⭐</a>
+                <a href="核苷酸.html" class="entity-item core-important">核苷酸 ⭐</a>
+                <a href="氨基酸.html" class="entity-item core-important">氨基酸 ⭐</a>
+                <a href="密码子.html" class="entity-item core-important">密码子 ⭐</a>
+                <a href="反密码子.html" class="entity-item core-major">反密码子</a>
+                <a href="外显子.html" class="entity-item core-important">外显子 ⭐</a>
+                <a href="内含子.html" class="entity-item core-important">内含子 ⭐</a>
+                <a href="质粒.html" class="entity-item core-major">质粒</a>
+                <a href="核糖体.html" class="entity-item core-major">核糖体</a>
+                <a href="端粒.html" class="entity-item core-basic">端粒与端粒酶</a>
+            </div>
+        </div>
+        
+        <!-- 过程相关 -->
+        <div class="entity-type">
+            <h2>⚙️ 过程（Process）</h2>
+            <div class="entity-list">
+                <a href="DNA复制.html" class="entity-item core-important">DNA复制 ⭐</a>
+                <a href="DNA 复制.html" class="entity-item core-important">DNA 复制（详细）⭐</a>
+                <a href="转录.html" class="entity-item core-important">转录 ⭐</a>
+                <a href="基因转录.html" class="entity-item core-important">基因转录（详细）⭐</a>
+                <a href="翻译.html" class="entity-item core-important">翻译 ⭐</a>
+                <a href="蛋白质翻译.html" class="entity-item core-important">蛋白质翻译（详细）⭐</a>
+                <a href="RNA 加工.html" class="entity-item core-major">RNA 加工</a>
+                <a href="DNA 修复.html" class="entity-item core-major">DNA 修复</a>
+                <a href="DNA 重组.html" class="entity-item core-major">DNA 重组</a>
+                <a href="RNA 干扰.html" class="entity-item core-major">RNA 干扰</a>
+                <a href="中心法则.html" class="entity-item core-important">中心法则 ⭐</a>
+                <a href="遗传密码.html" class="entity-item core-important">遗传密码 ⭐</a>
+                <a href="细胞周期.html" class="entity-item core-major">细胞周期调控</a>
+            </div>
+        </div>
+        
+        <!-- 技术相关 -->
+        <div class="entity-type">
+            <h2>🔧 技术（Technology）</h2>
+            <div class="entity-list">
+                <a href="PCR.html" class="entity-item core-important">PCR ⭐</a>
+                <a href="测序技术.html" class="entity-item core-important">测序技术 ⭐</a>
+                <a href="电泳.html" class="entity-item core-major">电泳</a>
+                <a href="CRISPR-Cas9.html" class="entity-item core-major">CRISPR-Cas9</a>
+                <a href="分子生物学技术.html" class="entity-item core-major">分子生物学技术</a>
+                <a href="基因工程.html" class="entity-item core-major">基因工程</a>
+                <a href="载体.html" class="entity-item core-major">载体</a>
+                <a href="转化.html" class="entity-item core-major">转化</a>
+                <a href="Western blot.html" class="entity-item core-major">Western blot</a>
+                <a href="Northern blot.html" class="entity-item core-major">Northern blot</a>
+                <a href="Southern blot.html" class="entity-item core-major">Southern blot</a>
+            </div>
+        </div>
+        
+        <!-- 调控与机制 -->
+        <div class="entity-type">
+            <h2>🎛️ 调控与机制（Regulation）</h2>
+            <div class="entity-list">
+                <a href="基因调控.html" class="entity-item core-important">基因表达调控 ⭐</a>
+                <a href="转录因子.html" class="entity-item core-important">转录因子 ⭐</a>
+                <a href="启动子.html" class="entity-item core-important">启动子 ⭐</a>
+                <a href="操纵子.html" class="entity-item core-important">操纵子 ⭐</a>
+                <a href="阻遏蛋白.html" class="entity-item core-major">阻遏蛋白</a>
+                <a href="表观遗传.html" class="entity-item core-major">表观遗传学</a>
+                <a href="组蛋白修饰.html" class="entity-item core-major">组蛋白修饰</a>
+                <a href="DNA 甲基化.html" class="entity-item core-important">DNA 甲基化 ⭐</a>
+                <a href="信号转导.html" class="entity-item core-major">信号转导</a>
+                <a href="非编码 RNA.html" class="entity-item core-major">非编码 RNA</a>
+                <a href="miRNA.html" class="entity-item core-major">miRNA</a>
+                <a href="siRNA.html" class="entity-item core-major">siRNA</a>
+                <a href="增强子.html" class="entity-item core-major">增强子</a>
+                <a href="沉默子.html" class="entity-item core-basic">沉默子</a>
+            </div>
+        </div>
+        
+        <!-- 基因组与系统 -->
+        <div class="entity-type">
+            <h2>🧬 基因组与系统（Genomics）</h2>
+            <div class="entity-list">
+                <a href="基因组.html" class="entity-item core-major">基因组与功能基因组</a>
+                <a href="突变.html" class="entity-item core-important">突变 ⭐</a>
+                <a href="SNP.html" class="entity-item core-major">SNP</a>
+            </div>
+        </div>
+        
+        <!-- 酶 -->
+        <div class="entity-type">
+            <h2>🧪 酶（Enzyme）</h2>
+            <div class="entity-list">
+                <a href="DNA 聚合酶.html" class="entity-item core-important">DNA 聚合酶 ⭐</a>
+                <a href="RNA 聚合酶.html" class="entity-item core-important">RNA 聚合酶 ⭐</a>
+                <a href="解旋酶.html" class="entity-item core-major">解旋酶</a>
+                <a href="引物酶.html" class="entity-item core-major">引物酶</a>
+                <a href="拓扑异构酶.html" class="entity-item core-major">拓扑异构酶</a>
+                <a href="逆转录酶.html" class="entity-item core-major">逆转录酶</a>
+                <a href="限制性内切酶.html" class="entity-item core-major">限制性内切酶</a>
+                <a href="DNA 连接酶.html" class="entity-item core-major">DNA 连接酶</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
