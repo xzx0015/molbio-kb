@@ -1,0 +1,34 @@
+{
+  "id": "primase",
+  "name": "引物酶",
+  "nameEn": "Primase",
+  "category": "酶",
+  "chapter": "第 3 章",
+  "importance": "core-major",
+  "definition": "引物酶是合成 RNA 引物的酶，为 DNA 聚合酶提供 3'-OH 末端，是 DNA 复制起始所必需的酶。",
+  "keyConcepts": [
+    {"term": "RNA 引物", "definition": "引物酶合成的短 RNA 片段，约 10nt"},
+    {"term": "DnaG", "definition": "大肠杆菌的引物酶"},
+    {"term": "Pol α-引物酶", "definition": "真核生物的 DNA 聚合酶 α 与引物酶复合物"},
+    {"term": "引发体", "definition": "包含引物酶和其他蛋白的复合物，在复制起始中起作用"},
+    {"term": "冈崎片段", "definition": "滞后链上不连续合成的片段，每个都需要 RNA 引物"}
+  ],
+  "keyPoints": [
+    "引物酶合成 RNA 引物，为 DNA 聚合酶提供起始点",
+    "DNA 聚合酶不能从头合成，需要引物",
+    "引物最终被 DNA 聚合酶 I 切除并替换为 DNA",
+    "真核生物中 Pol α 具有引物酶活性",
+    "每个冈崎片段都需要新的 RNA 引物"
+  ],
+  "relatedEntities": ["DNA 复制", "DNA 聚合酶", "冈崎片段", "引发体"],
+  "references": [
+    "Frick DN, Richardson CC. DNA primases. Annu Rev Biochem, 2001"
+  ],
+  "structure": {
+    "pdbId": "3B39",
+    "pdbUrl": "https://www.rcsb.org/structure/3B39",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P28630",
+    "description": "噬菌体 T7 引物酶结构",
+    "imageUrl": "https://cdn.rcsb.org/images/3b/3b39/3b39_assembly-1.jpeg"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "histone-modification",
+  "name": "组蛋白修饰",
+  "nameEn": "Histone Modification",
+  "category": "调控",
+  "chapter": "第 9 章",
+  "importance": "core-important",
+  "definition": "组蛋白修饰是组蛋白 N 端尾部的化学修饰，包括乙酰化、甲基化、磷酸化等，影响染色质结构和基因表达，构成表观遗传调控的重要机制。",
+  "keyConcepts": [
+    {"term": "组蛋白乙酰化", "definition": "在组蛋白赖氨酸残基上添加乙酰基，通常与基因激活相关"},
+    {"term": "组蛋白甲基化", "definition": "在组蛋白赖氨酸或精氨酸残基上添加甲基，可激活或抑制基因"},
+    {"term": "HAT", "definition": "组蛋白乙酰转移酶，催化组蛋白乙酰化"},
+    {"term": "HDAC", "definition": "组蛋白去乙酰化酶，去除乙酰基，通常与基因抑制相关"},
+    {"term": "H3K4me3", "definition": "组蛋白 H3 第 4 位赖氨酸三甲基化，基因激活标志"},
+    {"term": "H3K27me3", "definition": "组蛋白 H3 第 27 位赖氨酸三甲基化，基因抑制标志"}
+  ],
+  "keyPoints": [
+    "组蛋白修饰影响染色质结构和基因表达",
+    "乙酰化通常激活基因，去乙酰化抑制基因",
+    "甲基化可激活或抑制基因，取决于位点",
+    "组蛋白修饰构成'组蛋白密码'",
+    "组蛋白修饰酶是药物开发的重要靶点"
+  ],
+  "relatedEntities": ["表观遗传", "染色质", "基因调控", "DNA 甲基化"],
+  "references": [
+    "Strahl BD, Allis CD. The language of covalent histone modifications. Nature, 2000"
+  ]
+}

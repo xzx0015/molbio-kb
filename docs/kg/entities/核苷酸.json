@@ -1,0 +1,28 @@
+{
+  "id": "nucleotide",
+  "name": "核苷酸",
+  "nameEn": "Nucleotide",
+  "category": "分子",
+  "chapter": "第 2 章",
+  "importance": "core-important",
+  "definition": "核苷酸是核酸（DNA 和 RNA）的基本组成单位，由碱基、五碳糖和磷酸基团组成，是遗传信息的载体。",
+  "keyConcepts": [
+    {"term": "脱氧核糖核苷酸", "definition": "DNA 的组成单位，含脱氧核糖和 A/T/G/C 碱基"},
+    {"term": "核糖核苷酸", "definition": "RNA 的组成单位，含核糖和 A/U/G/C 碱基"},
+    {"term": "碱基", "definition": "核苷酸中的含氮杂环化合物，包括嘌呤和嘧啶"},
+    {"term": "磷酸二酯键", "definition": "连接核苷酸的化学键，形成核酸链"},
+    {"term": "dNTP", "definition": "脱氧核苷三磷酸，DNA 合成的原料"},
+    {"term": "NTP", "definition": "核苷三磷酸，RNA 合成的原料"}
+  ],
+  "keyPoints": [
+    "核苷酸由碱基、五碳糖和磷酸组成",
+    "DNA 含脱氧核糖，RNA 含核糖",
+    "DNA 含 T，RNA 含 U",
+    "核苷三磷酸（dNTP/NTP）是核酸合成的原料",
+    "核苷酸还参与能量代谢（ATP）和信号传导（cAMP）"
+  ],
+  "relatedEntities": ["DNA", "RNA", "DNA 复制", "基因转录", "染色体与 DNA"],
+  "references": [
+    "Watson JD, Crick FH. Molecular structure of nucleic acids. Nature, 1953"
+  ]
+}

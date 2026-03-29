@@ -1,0 +1,27 @@
+{
+  "id": "western-blot",
+  "name": "Western blot",
+  "nameEn": "Western Blot",
+  "category": "技术",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "Western blot 是检测特定蛋白质的免疫印迹技术，通过 SDS-PAGE 分离蛋白质，转膜后用抗体检测。",
+  "keyConcepts": [
+    {"term": "SDS-PAGE", "definition": "十二烷基硫酸钠聚丙烯酰胺凝胶电泳，按分子量分离蛋白质"},
+    {"term": "转膜", "definition": "将凝胶中的蛋白质转移到 PVDF 或硝酸纤维素膜上"},
+    {"term": "一抗", "definition": "识别目标蛋白质的一抗（特异性抗体）"},
+    {"term": "二抗", "definition": "识别一抗的二抗，通常带有酶标记或荧光标记"},
+    {"term": "显色", "definition": "通过化学发光或显色反应检测蛋白质条带"}
+  ],
+  "keyPoints": [
+    "Western blot 用于检测特定蛋白质的存在和大小",
+    "SDS-PAGE 按分子量分离蛋白质",
+    "转膜可使用电转移或毛细管转移",
+    "抗体特异性是关键",
+    "Western blot 是蛋白质研究的基础技术"
+  ],
+  "relatedEntities": ["分子生物学技术", "蛋白质", "抗体", "SDS-PAGE"],
+  "references": [
+    "Towbin H, et al. Electrophoretic transfer of proteins from polyacrylamide gels to nitrocellulose sheets. PNAS, 1979"
+  ]
+}

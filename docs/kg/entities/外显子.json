@@ -1,0 +1,27 @@
+{
+  "id": "exon",
+  "name": "外显子",
+  "nameEn": "Exon",
+  "category": "分子",
+  "chapter": "第 5 章",
+  "importance": "core-important",
+  "definition": "外显子是基因中编码蛋白质的序列，在 RNA 剪接后保留在成熟 mRNA 中，是基因表达为蛋白质的功能区域。",
+  "keyConcepts": [
+    {"term": "内含子", "definition": "基因中不编码蛋白质的间隔序列，转录后被切除"},
+    {"term": "RNA 剪接", "definition": "切除内含子、连接外显子的过程"},
+    {"term": "选择性剪接", "definition": "同一 pre-mRNA 通过不同剪接方式产生多种 mRNA 异构体"},
+    {"term": "剪接位点", "definition": "外显子与内含子交界处的保守序列"},
+    {"term": "外显子-内含子边界", "definition": "5'剪接位点（GT）和 3'剪接位点（AG）"}
+  ],
+  "keyPoints": [
+    "外显子是基因的编码区域",
+    "真核基因由外显子和内含子交替组成",
+    "RNA 剪接连接外显子形成成熟 mRNA",
+    "选择性剪接增加蛋白质多样性",
+    "外显子突变可导致疾病"
+  ],
+  "relatedEntities": ["内含子", "RNA 加工", "基因转录", "蛋白质翻译"],
+  "references": [
+    "Gilbert W. Why genes in pieces? Nature, 1978"
+  ]
+}

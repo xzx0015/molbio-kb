@@ -1,0 +1,28 @@
+{
+  "id": "cell-membrane",
+  "name": "细胞膜",
+  "nameEn": "Cell Membrane",
+  "category": "分子",
+  "chapter": "第2章",
+  "importance": "core-major",
+  "definition": "细胞膜是包围细胞的磷脂双分子层结构，具有选择透过性，控制物质进出细胞，参与细胞信号识别和细胞间通讯。",
+  "keyConcepts": [
+    {"term": "磷脂双分子层", "definition": "细胞膜的基本骨架，亲水头朝外，疏水尾朝内"},
+    {"term": "膜蛋白", "definition": "嵌入或附着在膜上的蛋白质，执行运输、信号等功能"},
+    {"term": "糖蛋白", "definition": "膜上糖基化的蛋白质，参与细胞识别"},
+    {"term": "胆固醇", "definition": "调节膜流动性的脂质分子"},
+    {"term": "流动镶嵌模型", "definition": "描述膜结构的经典模型，膜蛋白镶嵌在流动的脂质双层中"},
+    {"term": "选择透过性", "definition": "膜只允许特定物质通过的特性"}
+  ],
+  "keyPoints": [
+    "细胞膜由磷脂双分子层构成，具有流动性",
+    "膜蛋白分为整合蛋白和外周蛋白",
+    "细胞膜参与物质运输、能量转换和信息传递",
+    "膜流动性受温度和胆固醇含量影响",
+    "细胞膜的不对称性对细胞功能至关重要"
+  ],
+  "relatedEntities": ["蛋白质", "磷脂", "胆固醇", "膜蛋白", "糖蛋白"],
+  "references": [
+    "Singer SJ, Nicolson GL. The fluid mosaic model of the structure of cell membranes. Science, 1972"
+  ]
+}

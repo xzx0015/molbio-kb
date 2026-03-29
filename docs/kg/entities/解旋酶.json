@@ -1,0 +1,34 @@
+{
+  "id": "helicase",
+  "name": "解旋酶",
+  "nameEn": "Helicase",
+  "category": "酶",
+  "chapter": "第 3 章",
+  "importance": "core-major",
+  "definition": "解旋酶是一类利用 ATP 水解能量解开 DNA 双链或 RNA 二级结构的酶，在 DNA 复制、修复、转录和重组中起关键作用。",
+  "keyConcepts": [
+    {"term": "DnaB 解旋酶", "definition": "大肠杆菌中主要的复制解旋酶"},
+    {"term": "MCM 复合物", "definition": "真核生物的复制解旋酶，在复制起始中起作用"},
+    {"term": "RecQ 解旋酶", "definition": "参与 DNA 修复的解旋酶家族"},
+    {"term": "SV40 大 T 抗原", "definition": "SV40 病毒的解旋酶，常用于体外研究"},
+    {"term": "ATP 依赖性", "definition": "解旋酶需要 ATP 水解提供能量"}
+  ],
+  "keyPoints": [
+    "解旋酶解开 DNA 双链，为复制和转录提供单链模板",
+    "解旋酶是 DNA 复制的关键酶之一",
+    "解旋酶具有方向性（5'→3'或 3'→5'）",
+    "解旋酶缺陷可导致基因组不稳定和疾病",
+    "解旋酶在 DNA 修复和重组中也发挥作用"
+  ],
+  "relatedEntities": ["DNA 复制", "DNA 修复", "DNA 聚合酶", "基因转录"],
+  "references": [
+    "Lohman TM, Bjornson KP. Mechanisms of helicase-catalyzed DNA unwinding. Annu Rev Biochem, 1996"
+  ],
+  "structure": {
+    "pdbId": "1CRN",
+    "pdbUrl": "https://www.rcsb.org/structure/1CRN",
+    "alphafoldUrl": "https://alphafold.ebi.ac.uk/entry/P03004",
+    "description": "大肠杆菌 DnaB 解旋酶结构",
+    "imageUrl": "https://cdn.rcsb.org/images/1c/1crn/1crn_assembly-1.jpeg"
+  }
+}

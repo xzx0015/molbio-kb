@@ -1,0 +1,27 @@
+{
+  "id": "southern-blot",
+  "name": "Southern blot",
+  "nameEn": "Southern Blot",
+  "category": "技术",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "Southern blot 是检测特定 DNA 的印迹技术，通过限制性内切酶切割 DNA，凝胶电泳分离后转膜杂交检测。",
+  "keyConcepts": [
+    {"term": "限制性酶切", "definition": "用限制性内切酶切割 DNA"},
+    {"term": "琼脂糖凝胶电泳", "definition": "按大小分离 DNA 片段"},
+    {"term": "变性", "definition": "将双链 DNA 变为单链 DNA"},
+    {"term": "探针杂交", "definition": "标记探针与靶 DNA 杂交"},
+    {"term": "自显影", "definition": "通过放射性或化学发光检测信号"}
+  ],
+  "keyPoints": [
+    "Southern blot 由 Southern 发明",
+    "用于检测特定 DNA 序列的存在",
+    "可分析基因拷贝数和限制性片段长度多态性",
+    "DNA 指纹技术的基础",
+    "Southern blot 在基因诊断中应用广泛"
+  ],
+  "relatedEntities": ["分子生物学技术", "DNA", "限制性内切酶", "探针"],
+  "references": [
+    "Southern EM. Detection of specific sequences among DNA fragments separated by gel electrophoresis. J Mol Biol, 1975"
+  ]
+}

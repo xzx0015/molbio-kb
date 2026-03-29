@@ -1,0 +1,27 @@
+{
+  "id": "electrophoresis",
+  "name": "电泳",
+  "nameEn": "Electrophoresis",
+  "category": "技术",
+  "chapter": "第 11 章",
+  "importance": "core-major",
+  "definition": "电泳是利用电场使带电分子（DNA、RNA、蛋白质）在凝胶中迁移分离的技术，根据分子大小和电荷进行分离，是分子生物学的基础技术。",
+  "keyConcepts": [
+    {"term": "琼脂糖凝胶电泳", "definition": "用于 DNA 和 RNA 分离的电泳方法"},
+    {"term": "SDS-PAGE", "definition": "用于蛋白质分离的聚丙烯酰胺凝胶电泳"},
+    {"term": "DNA Marker", "definition": "已知大小的 DNA 片段，用于估算样品大小"},
+    {"term": "溴化乙锭", "definition": "DNA 染料，可在紫外光下显示 DNA 条带"},
+    {"term": "迁移率", "definition": "分子在电场中的移动速度，与大小成反比"}
+  ],
+  "keyPoints": [
+    "电泳根据分子大小分离生物大分子",
+    "琼脂糖凝胶用于 DNA/RNA 分离",
+    "SDS-PAGE 用于蛋白质分离",
+    "DNA 在琼脂糖凝胶中按大小分离",
+    "电泳是分子生物学实验的基础技术"
+  ],
+  "relatedEntities": ["分子生物学技术", "DNA", "蛋白质", "Western blot"],
+  "references": [
+    "Helling RB, et al. An analysis of the T4 bacteriophage lysis-lysogeny decision at the molecular level. J Virol, 1974"
+  ]
+}

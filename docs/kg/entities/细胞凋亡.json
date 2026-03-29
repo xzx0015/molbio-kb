@@ -1,0 +1,28 @@
+{
+  "id": "apoptosis",
+  "name": "细胞凋亡",
+  "nameEn": "Apoptosis",
+  "category": "过程",
+  "chapter": "第5章",
+  "importance": "core-major",
+  "definition": "细胞凋亡是程序性细胞死亡，是细胞主动、有序地结束生命的过程，对发育、组织稳态和防御至关重要，不引起炎症反应。",
+  "keyConcepts": [
+    {"term": "caspase", "definition": "半胱天冬氨酸蛋白酶，凋亡的执行者"},
+    {"term": "凋亡小体", "definition": "凋亡细胞形成的膜包被小体，被吞噬细胞清除"},
+    {"term": "线粒体途径", "definition": "通过线粒体释放细胞色素c激活caspase的凋亡途径"},
+    {"term": "死亡受体途径", "definition": "通过死亡受体（如Fas）激活caspase的凋亡途径"},
+    {"term": "Bcl-2家族", "definition": "调控线粒体途径的蛋白家族，包括促凋亡和抗凋亡成员"},
+    {"term": "DNA ladder", "definition": "凋亡细胞DNA降解形成的180bp整数倍片段"}
+  ],
+  "keyPoints": [
+    "凋亡是程序性、受控的细胞死亡过程",
+    "凋亡对胚胎发育和组织稳态至关重要",
+    "凋亡异常与癌症（凋亡不足）和神经退行性疾病（凋亡过度）相关",
+    "凋亡细胞形成凋亡小体，被吞噬细胞清除，不引起炎症",
+    "caspase级联反应是凋亡的核心机制"
+  ],
+  "relatedEntities": ["线粒体", "caspase", "细胞周期", "基因调控", "DNA修复"],
+  "references": [
+    "Kerr JF, Wyllie AH, Currie AR. Apoptosis: a basic biological phenomenon. Br J Cancer, 1972"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "rna-interference",
+  "name": "RNA 干扰",
+  "nameEn": "RNA Interference",
+  "category": "过程",
+  "chapter": "第 9 章",
+  "importance": "core-major",
+  "definition": "RNA 干扰是由双链 RNA 诱导的基因沉默现象，通过 siRNA 或 miRNA 介导，特异性降解靶 mRNA 或抑制翻译。",
+  "keyConcepts": [
+    {"term": "siRNA", "definition": "小干扰 RNA，约 21nt，介导 RNAi 沉默特定基因"},
+    {"term": "miRNA", "definition": "微小 RNA，约 22nt，内源性调控基因表达"},
+    {"term": "Dicer", "definition": "切割 dsRNA 产生 siRNA/miRNA 的核酸酶"},
+    {"term": "RISC", "definition": "RNA 诱导沉默复合物，介导靶 mRNA 降解"},
+    {"term": "dsRNA", "definition": "双链 RNA，RNAi 的触发分子"}
+  ],
+  "keyPoints": [
+    "RNAi 由 Fire 和 Mello 发现，获 2006 年诺贝尔奖",
+    "dsRNA 被 Dicer 切割成 siRNA",
+    "siRNA 与 RISC 结合，引导降解靶 mRNA",
+    "RNAi 是生物体防御病毒和调控基因的重要机制",
+    "RNAi 技术在基因功能研究中广泛应用"
+  ],
+  "relatedEntities": ["非编码 RNA", "基因调控", "miRNA", "siRNA"],
+  "references": [
+    "Fire A, Mello CC. Potent and specific genetic interference by double-stranded RNA in Caenorhabditis elegans. Nature, 1998"
+  ]
+}
