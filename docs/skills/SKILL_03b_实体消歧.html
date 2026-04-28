@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SKILL_03b_实体消歧.md | 分子生物学知识库</title><meta name="description" content="# SKILL_03b_实体消歧.md ## 同名基因/蛋白跨物种消歧策略 --- ## 一、消歧概述 ### 1.1 为什么需要消歧？ 分子生物学中存在大量同名异义现象： - **跨物种同名**: 人类p53 vs 小鼠p53 vs 大鼠p53 - **基因家族**: p53家族（p53, p63, p73） - *">
+<style>:root{--bg:#f6f8fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e5e7eb;--primary:#355cde;--accent:#764ba2;--soft:#eef2ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}.wrap{max-width:1120px;margin:0 auto;padding:24px}.top{background:linear-gradient(135deg,#355cde,#764ba2);color:white}.top .wrap{padding-top:34px;padding-bottom:34px}.brand{font-size:28px;font-weight:800;margin:0}.subtitle{opacity:.9;margin:8px 0 0}.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 24px rgba(16,24,40,.05)}.article h1{color:var(--primary);line-height:1.25}.article h2{border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:30px}.article table{width:100%;border-collapse:collapse;margin:16px 0}.article th,.article td{border-bottom:1px solid var(--line);padding:8px;text-align:left}.article th{background:#f9fafb}.article code{background:#f3f4f6;padding:2px 5px;border-radius:5px}.article pre{background:#111827;color:#f9fafb;padding:14px;border-radius:12px;overflow:auto}.crumb{margin:16px 0;color:var(--muted)}.entity{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--soft);font-weight:600}.tag{display:inline-block;font-size:12px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:2px 8px;margin:2px}.list{padding-left:1.2em}.searchbox{width:100%;font-size:16px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white}.result{padding:14px 0;border-bottom:1px solid var(--line)}.footer{padding:28px;text-align:center;color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:white;margin:3px}.warn{background:#fff7ed;border-color:#fed7aa}.ok{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:640px){.wrap{padding:16px}.article{padding:20px}.brand{font-size:24px}}</style></head><body>
+<header class="top"><div class="wrap"><h1 class="brand">🧬 分子生物学知识库</h1><p class="subtitle">Molecular Biology KB · 统一生成的课程章节、实体索引、概念关系与搜索入口</p><nav class="nav"><a href="../index.html">首页</a><a href="../chapters/index.html">课程章节</a><a href="../kg/entities/index.html">实体索引</a><a href="../kg/concepts/index.html">概念图谱</a><a href="../search/index.html">搜索</a><a href="index.html">构建方法</a></nav></div></header>
+<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><article class="article"><h1 id="skill_03b_md">SKILL_03b_实体消歧.md</h1>
+<h2 id="_1">同名基因/蛋白跨物种消歧策略</h2>
+<hr />
+<h2 id="_2">一、消歧概述</h2>
+<h3 id="11">1.1 为什么需要消歧？</h3>
+<p>分子生物学中存在大量同名异义现象：
+- <strong>跨物种同名</strong>: 人类p53 vs 小鼠p53 vs 大鼠p53
+- <strong>基因家族</strong>: p53家族（p53, p63, p73）
+- <strong>亚型差异</strong>: 同一基因的不同剪接变体
+- <strong>历史命名</strong>: 同一基因的不同历史名称</p>
+<h3 id="12">1.2 消歧原则</h3>
+<ol>
+<li><strong>精确性</strong>: 明确指代具体实体</li>
+<li><strong>可追溯性</strong>: 保留原始命名信息</li>
+<li><strong>标准化</strong>: 遵循权威命名规范</li>
+<li><strong>兼容性</strong>: 支持多数据库交叉引用</li>
+</ol>
+<hr />
+<h2 id="_3">二、跨物种基因/蛋白消歧</h2>
+<h3 id="21">2.1 命名规范对照</h3>
+<h4 id="hgnc">人类基因（HGNC标准）</h4>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>规则</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基因符号</td>
+<td>全大写</td>
+<td>TP53, BRCA1, EGFR</td>
+</tr>
+<tr>
+<td>蛋白名称</td>
+<td>首字母大写</td>
+<td>p53蛋白, BRCA1蛋白</td>
+</tr>
+<tr>
+<td>斜体书写</td>
+<td>基因名用斜体</td>
+<td><em>TP53</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="mgi">小鼠基因（MGI标准）</h4>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>规则</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基因符号</td>
+<td>首字母大写，其余小写</td>
+<td>Trp53, Brca1, Egfr</td>
+</tr>
+<tr>
+<td>蛋白名称</td>
+<td>全大写</td>
+<td>TP53, BRCA1</td>
+</tr>
+<tr>
+<td>斜体书写</td>
+<td>基因名用斜体</td>
+<td><em>Trp53</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_4">模式生物命名</h4>
+<table>
+<thead>
+<tr>
+<th>物种</th>
+<th>基因符号</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大鼠</td>
+<td>全大写（或首字母大写）</td>
+<td>Tp53 / TP53</td>
+</tr>
+<tr>
+<td>果蝇</td>
+<td>首字母大写</td>
+<td>p53, white</td>
+</tr>
+<tr>
+<td>线虫</td>
+<td>小写+数字</td>
+<td>daf-2, age-1</td>
+</tr>
+<tr>
+<td>酵母</td>
+<td>全大写</td>
+<td>RAD53, SIR2</td>
+</tr>
+<tr>
+<td>斑马鱼</td>
+<td>小写</td>
+<td>tp53, brca1</td>
+</tr>
+<tr>
+<td>拟南芥</td>
+<td>全大写</td>
+<td>FLC, FT</td>
+</tr>
+<tr>
+<td>大肠杆菌</td>
+<td>三个小写+大写</td>
+<td>lacZ, recA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 消歧标注格式</h3>
+<pre><code>基础格式: &lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt;
+扩展格式: &lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt;
+</code></pre>
+<h3 id="23">2.3 典型消歧案例</h3>
+<h4 id="1-p53">案例1: p53基因跨物种</h4>
+<table>
+<thead>
+<tr>
+<th>实体</th>
+<th>标注示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人类p53</td>
+<td><span class="entity">TP53</span></td>
+<td>HGNC标准符号</td>
+</tr>
+<tr>
+<td>小鼠p53</td>
+<td><span class="entity">Trp53</span></td>
+<td>MGI标准符号</td>
+</tr>
+<tr>
+<td>大鼠p53</td>
+<td><span class="entity">Tp53</span></td>
+<td>RGD数据库</td>
+</tr>
+<tr>
+<td>果蝇p53</td>
+<td><span class="entity">p53</span></td>
+<td>FlyBase ID</td>
+</tr>
+<tr>
+<td>斑马鱼p53</td>
+<td><span class="entity">tp53</span></td>
+<td>ZFIN ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-brca1">案例2: BRCA1基因</h4>
+<table>
+<thead>
+<tr>
+<th>实体</th>
+<th>标注示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人类BRCA1</td>
+<td><span class="entity">BRCA1</span></td>
+</tr>
+<tr>
+<td>小鼠Brca1</td>
+<td><span class="entity">Brca1</span></td>
+</tr>
+<tr>
+<td>大鼠Brca1</td>
+<td><span class="entity">Brca1</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-egfr">案例3: EGFR基因</h4>
+<table>
+<thead>
+<tr>
+<th>实体</th>
+<th>标注示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人类EGFR</td>
+<td><span class="entity">EGFR</span></td>
+</tr>
+<tr>
+<td>小鼠Egfr</td>
+<td><span class="entity">Egfr</span></td>
+</tr>
+<tr>
+<td>大鼠Egfr</td>
+<td><span class="entity">Egfr</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="24">2.4 物种标识符标准</h3>
+<table>
+<thead>
+<tr>
+<th>物种</th>
+<th>拉丁名</th>
+<th>常用标识</th>
+<th>Taxonomy ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人类</td>
+<td>Homo sapiens</td>
+<td>Hs, Hsa</td>
+<td>9606</td>
+</tr>
+<tr>
+<td>小鼠</td>
+<td>Mus musculus</td>
+<td>Mm, Mmu</td>
+<td>10090</td>
+</tr>
+<tr>
+<td>大鼠</td>
+<td>Rattus norvegicus</td>
+<td>Rn, Rno</td>
+<td>10116</td>
+</tr>
+<tr>
+<td>果蝇</td>
+<td>Drosophila melanogaster</td>
+<td>Dm, Dme</td>
+<td>7227</td>
+</tr>
+<tr>
+<td>线虫</td>
+<td>Caenorhabditis elegans</td>
+<td>Ce, Cel</td>
+<td>6239</td>
+</tr>
+<tr>
+<td>酵母</td>
+<td>Saccharomyces cerevisiae</td>
+<td>Sc, Sce</td>
+<td>4932</td>
+</tr>
+<tr>
+<td>斑马鱼</td>
+<td>Danio rerio</td>
+<td>Dr, Dre</td>
+<td>7955</td>
+</tr>
+<tr>
+<td>拟南芥</td>
+<td>Arabidopsis thaliana</td>
+<td>At, Ath</td>
+<td>3702</td>
+</tr>
+<tr>
+<td>大肠杆菌</td>
+<td>Escherichia coli</td>
+<td>Ec, Eco</td>
+<td>562</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">三、基因家族消歧</h2>
+<h3 id="31-p53">3.1 p53家族</h3>
+<pre><code>p53家族
+├── 人类
+│   ├── &lt;span class=&quot;entity&quot;&gt;TP53&lt;/span&gt;
+│   ├── &lt;span class=&quot;entity&quot;&gt;TP63&lt;/span&gt;
+│   └── &lt;span class=&quot;entity&quot;&gt;TP73&lt;/span&gt;
+├── 小鼠
+│   ├── &lt;span class=&quot;entity&quot;&gt;Trp53&lt;/span&gt;
+│   ├── &lt;span class=&quot;entity&quot;&gt;Trp63&lt;/span&gt;
+│   └── &lt;span class=&quot;entity&quot;&gt;Trp73&lt;/span&gt;
+└── 果蝇
+    └── &lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;
+</code></pre>
+<h3 id="32-ras">3.2 RAS家族</h3>
+<table>
+<thead>
+<tr>
+<th>基因</th>
+<th>标注示例</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HRAS</td>
+<td><span class="entity">HRAS</span></td>
+<td>Harvey大鼠肉瘤病毒原癌基因</td>
+</tr>
+<tr>
+<td>KRAS</td>
+<td><span class="entity">KRAS</span></td>
+<td>Kirsten大鼠肉瘤病毒原癌基因</td>
+</tr>
+<tr>
+<td>NRAS</td>
+<td><span class="entity">NRAS</span></td>
+<td>神经母细胞瘤RAS病毒原癌基因</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-myc">3.3 MYC家族</h3>
+<table>
+<thead>
+<tr>
+<th>基因</th>
+<th>标注示例</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MYC</td>
+<td><span class="entity">MYC</span></td>
+<td>细胞增殖调控</td>
+</tr>
+<tr>
+<td>MYCN</td>
+<td><span class="entity">MYCN</span></td>
+<td>神经发育</td>
+</tr>
+<tr>
+<td>MYCL</td>
+<td><span class="entity">MYCL</span></td>
+<td>肺癌相关</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34">3.4 组蛋白家族</h3>
+<pre><code>组蛋白家族
+├── 核心组蛋白
+│   ├── &lt;span class=&quot;entity&quot;&gt;H2BC1&lt;/span&gt;
+│   ├── &lt;span class=&quot;entity&quot;&gt;H3C1&lt;/span&gt;
+│   ├── &lt;span class=&quot;entity&quot;&gt;H3F3A&lt;/span&gt;
+│   └── &lt;span class=&quot;entity&quot;&gt;H3F3B&lt;/span&gt;
+└── 连接组蛋白
+    ├── &lt;span class=&quot;entity&quot;&gt;H1-1&lt;/span&gt;
+    └── &lt;span class=&quot;entity&quot;&gt;H1-10&lt;/span&gt;
+</code></pre>
+<hr />
+<h2 id="_6">四、剪接变体消歧</h2>
+<h3 id="41">4.1 剪接变体标注格式</h3>
+<pre><code>&lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt;
+</code></pre>
+<h3 id="42">4.2 典型剪接变体案例</h3>
+<h4 id="tp53">TP53剪接变体</h4>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>标注示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TP53全长</td>
+<td><span class="entity">TP53</span></td>
+<td>标准转录本</td>
+</tr>
+<tr>
+<td>TP53β</td>
+<td><span class="entity">TP53</span></td>
+<td>C端截短变体</td>
+</tr>
+<tr>
+<td>TP53γ</td>
+<td><span class="entity">TP53</span></td>
+<td>C端截短变体</td>
+</tr>
+<tr>
+<td>Δ40p53</td>
+<td><span class="entity">TP53</span></td>
+<td>N端截短变体</td>
+</tr>
+<tr>
+<td>Δ133p53</td>
+<td><span class="entity">TP53</span></td>
+<td>内部启动子变体</td>
+</tr>
+</tbody>
+</table>
+<h4 id="brca1">BRCA1剪接变体</h4>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>标注示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BRCA1全长</td>
+<td><span class="entity">BRCA1</span></td>
+<td>标准转录本</td>
+</tr>
+<tr>
+<td>BRCA1-Δ11q</td>
+<td><span class="entity">BRCA1</span></td>
+<td>外显子11缺失</td>
+</tr>
+<tr>
+<td>BRCA1-IRIS</td>
+<td><span class="entity">BRCA1</span></td>
+<td>内部核糖体进入</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43">4.3 蛋白亚型标注</h3>
+<pre><code>#蛋白亚型标注格式:
+&lt;span class=&quot;entity&quot;&gt;蛋白名&lt;/span&gt;
+
+示例:
+&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;
+&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;
+&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;
+</code></pre>
+<hr />
+<h2 id="_7">五、历史命名与别名消歧</h2>
+<h3 id="51">5.1 历史名称对照</h3>
+<table>
+<thead>
+<tr>
+<th>当前标准名</th>
+<th>历史名称/别名</th>
+<th>标注示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TP53</td>
+<td>p53, LFS1, BCC7</td>
+<td><span class="entity">TP53</span></td>
+</tr>
+<tr>
+<td>CDKN2A</td>
+<td>p16INK4a, MTS1, MLM</td>
+<td><span class="entity">CDKN2A</span></td>
+</tr>
+<tr>
+<td>ERBB2</td>
+<td>HER2, NEU, CD340</td>
+<td><span class="entity">ERBB2</span></td>
+</tr>
+<tr>
+<td>MYC</td>
+<td>c-Myc, bHLHe39</td>
+<td><span class="entity">MYC</span></td>
+</tr>
+<tr>
+<td>AKT1</td>
+<td>PKB, RAC-alpha</td>
+<td><span class="entity">AKT1</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2 基因重命名案例</h3>
+<pre><code>重命名历史:
+├── SEP15 → SELENOF
+│   └── &lt;span class=&quot;entity&quot;&gt;SELENOF&lt;/span&gt;
+├── HUGO基因符号变更
+│   ├── &lt;span class=&quot;entity&quot;&gt;CARKD&lt;/span&gt;
+│   └── &lt;span class=&quot;entity&quot;&gt;FAM46A&lt;/span&gt;
+└── 功能发现后的重命名
+    └── &lt;span class=&quot;entity&quot;&gt;BRCA1&lt;/span&gt;
+</code></pre>
+<hr />
+<h2 id="_8">六、病毒基因消歧</h2>
+<h3 id="61">6.1 病毒基因标注</h3>
+<pre><code>格式: &lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt;
+</code></pre>
+<h3 id="62-hiv">6.2 HIV基因示例</h3>
+<table>
+<thead>
+<tr>
+<th>基因</th>
+<th>标注示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gag</td>
+<td><span class="entity">gag</span></td>
+</tr>
+<tr>
+<td>pol</td>
+<td><span class="entity">pol</span></td>
+</tr>
+<tr>
+<td>env</td>
+<td><span class="entity">env</span></td>
+</tr>
+<tr>
+<td>tat</td>
+<td><span class="entity">tat</span></td>
+</tr>
+<tr>
+<td>rev</td>
+<td><span class="entity">rev</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="63">6.3 噬菌体基因示例</h3>
+<table>
+<thead>
+<tr>
+<th>基因</th>
+<th>标注示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>λ cI</td>
+<td><span class="entity">cI</span></td>
+</tr>
+<tr>
+<td>λ cro</td>
+<td><span class="entity">cro</span></td>
+</tr>
+<tr>
+<td>T4 rII</td>
+<td><span class="entity">rIIA</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">七、消歧决策流程</h2>
+<h3 id="71">7.1 消歧检查清单</h3>
+<pre><code>遇到实体名称时，按以下顺序检查:
+
+1. 【物种识别】
+   □ 是否明确提及物种？
+   □ 上下文暗示的物种是什么？
+   □ 实验材料来源物种？
+
+2. 【基因/蛋白区分】
+   □ 讨论的是基因还是蛋白？
+   □ 是否需要同时标注基因和蛋白？
+
+3. 【家族成员识别】
+   □ 是否属于已知基因家族？
+   □ 具体是家族中的哪个成员？
+
+4. 【变体识别】
+   □ 是否涉及剪接变体？
+   □ 是否涉及突变体？
+   □ 是否涉及亚型？
+
+5. 【命名验证】
+   □ 是否使用当前标准命名？
+   □ 是否有别名需要标注？
+   □ 是否有历史名称？
+
+6. 【数据库交叉验证】
+   □ HGNC/MGI/其他数据库验证
+   □ UniProt蛋白验证
+   □ NCBI Gene验证
+</code></pre>
+<h3 id="72">7.2 消歧决策树</h3>
+<pre><code>                    ┌─────────────────┐
+                    │  遇到实体名称    │
+                    └────────┬────────┘
+                             │
+                    ┌────────▼────────┐
+                    │  是否跨物种？    │
+                    └────────┬────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              │是                           │否
+              ▼                             ▼
+    ┌─────────────────┐           ┌─────────────────┐
+    │  标注物种属性    │           │  是否为基因家族  │
+    │  物种:人类/小鼠  │           └────────┬────────┘
+    └────────┬────────┘                    │
+             │              ┌──────────────┼──────────────┐
+             │              │是                           │否
+             │              ▼                             ▼
+             │    ┌─────────────────┐           ┌─────────────────┐
+             │    │  标注家族属性    │           │  是否有剪接变体  │
+             │    │  家族:p53/Myc   │           └────────┬────────┘
+             │    └────────┬────────┘                    │
+             │             │              ┌──────────────┼──────────────┐
+             │             │              │是                           │否
+             │             │              ▼                             ▼
+             │             │    ┌─────────────────┐           ┌─────────────────┐
+             │             │    │  标注变体属性    │           │  使用基础标注    │
+             │             │    │  变体:β/γ/Δ40   │           │  &lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt;     │
+             │             │    └────────┬────────┘           └─────────────────┘
+             │             │             │
+             └─────────────┴─────────────┘
+                             │
+                    ┌────────▼────────┐
+                    │  添加数据库ID    │
+                    │  HGNC/MGI/UniProt│
+                    └─────────────────┘
+</code></pre>
+<hr />
+<h2 id="_10">八、消歧工具与资源</h2>
+<h3 id="81">8.1 推荐数据库</h3>
+<table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>用途</th>
+<th>网址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HGNC</td>
+<td>人类基因命名</td>
+<td>https://www.genenames.org/</td>
+</tr>
+<tr>
+<td>MGI</td>
+<td>小鼠基因信息</td>
+<td>http://www.informatics.jax.org/</td>
+</tr>
+<tr>
+<td>RGD</td>
+<td>大鼠基因组</td>
+<td>https://rgd.mcw.edu/</td>
+</tr>
+<tr>
+<td>Fly</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FlyBase</td>
+<td>果蝇基因</td>
+<td>https://flybase.org/</td>
+</tr>
+<tr>
+<td>WormBase</td>
+<td>线虫基因</td>
+<td>https://www.wormbase.org/</td>
+</tr>
+<tr>
+<td>SGD</td>
+<td>酵母基因</td>
+<td>https://www.yeastgenome.org/</td>
+</tr>
+<tr>
+<td>ZFIN</td>
+<td>斑马鱼基因</td>
+<td>https://zfin.org/</td>
+</tr>
+<tr>
+<td>TAIR</td>
+<td>拟南芥基因</td>
+<td>https://www.arabidopsis.org/</td>
+</tr>
+<tr>
+<td>UniProt</td>
+<td>蛋白信息</td>
+<td>https://www.uniprot.org/</td>
+</tr>
+<tr>
+<td>NCBI Gene</td>
+<td>综合基因数据库</td>
+<td>https://www.ncbi.nlm.nih.gov/gene/</td>
+</tr>
+<tr>
+<td>Ensembl</td>
+<td>基因组浏览器</td>
+<td>https://www.ensembl.org/</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82">8.2 命名规范参考</h3>
+<table>
+<thead>
+<tr>
+<th>规范</th>
+<th>适用范围</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HGNC Guidelines</td>
+<td>人类基因</td>
+<td>https://www.genenames.org/about/guidelines</td>
+</tr>
+<tr>
+<td>MGI Nomenclature</td>
+<td>小鼠基因</td>
+<td>http://www.informatics.jax.org/mgihome/nomen/</td>
+</tr>
+<tr>
+<td>Gene Ontology</td>
+<td>全物种</td>
+<td>http://geneontology.org/docs/ontology-documentation/</td>
+</tr>
+<tr>
+<td>UniProt Naming</td>
+<td>蛋白质</td>
+<td>https://www.uniprot.org/help/protein_names</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83">8.3 快速查询命令</h3>
+<pre><code class="language-bash"># 人类基因查询
+curl -s &quot;https://rest.genenames.org/fetch/symbol/TP53&quot; | jq .
+
+# UniProt蛋白查询
+curl -s &quot;https://rest.uniprot.org/uniprotkb/P04637.json&quot; | jq '.proteinDescription'
+
+# NCBI Gene查询
+esearch -db gene -query &quot;TP53[Gene] AND human[Organism]&quot; | efetch -format docsum
+</code></pre>
+<hr />
+<h2 id="_11">九、消歧质量评估</h2>
+<h3 id="91">9.1 评估指标</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>目标值</th>
+<th>计算方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物种识别准确率</td>
+<td>≥98%</td>
+<td>正确识别物种/总实体数</td>
+</tr>
+<tr>
+<td>家族成员区分率</td>
+<td>≥95%</td>
+<td>正确区分家族成员/家族实体数</td>
+</tr>
+<tr>
+<td>变体标注完整率</td>
+<td>≥90%</td>
+<td>完整标注变体/涉及变体实体数</td>
+</tr>
+<tr>
+<td>数据库ID匹配率</td>
+<td>≥95%</td>
+<td>成功匹配数据库ID/标注实体数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92">9.2 常见错误类型</h3>
+<table>
+<thead>
+<tr>
+<th>错误类型</th>
+<th>错误示例</th>
+<th>正确标注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物种混淆</td>
+<td><span class="entity">p53</span>（小鼠实验却标人类）</td>
+<td><span class="entity">Trp53</span></td>
+</tr>
+<tr>
+<td>基因蛋白混淆</td>
+<td><span class="entity">p53蛋白</span></td>
+<td><span class="entity">p53蛋白</span></td>
+</tr>
+<tr>
+<td>家族成员错误</td>
+<td><span class="entity">p63</span>当作p53</td>
+<td><span class="entity">TP63</span></td>
+</tr>
+<tr>
+<td>变体遗漏</td>
+<td><span class="entity">TP53</span>（实际是Δ40变体）</td>
+<td><span class="entity">TP53</span></td>
+</tr>
+<tr>
+<td>历史名称未标注</td>
+<td><span class="entity">TP53</span>（原文用p53）</td>
+<td><span class="entity">TP53</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>版本: 1.0 | 更新日期: 2026-03-17</em></p></article></main><footer class="footer">Built for molecular biology teaching · Generated by scripts/build_site.py</footer>
+</body></html>

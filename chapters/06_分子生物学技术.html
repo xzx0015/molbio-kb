@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第六章：分子生物学技术 | 分子生物学知识库</title><meta name="description" content="# 第六章：分子生物学技术 ## 6.1 PCR技术 ### 原理 Kary Mullis 1983〗因此获得1993年诺贝尔化学奖。 ### 反应体系 | 组分 | 作用 | 示例 | |------|------|------| | 〖@模板DNA〗 | 扩增的原始材料 | 基因组DNA | | 〖&amp;引物〗 | 确">
+<style>:root{--bg:#f6f8fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e5e7eb;--primary:#355cde;--accent:#764ba2;--soft:#eef2ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}.wrap{max-width:1120px;margin:0 auto;padding:24px}.top{background:linear-gradient(135deg,#355cde,#764ba2);color:white}.top .wrap{padding-top:34px;padding-bottom:34px}.brand{font-size:28px;font-weight:800;margin:0}.subtitle{opacity:.9;margin:8px 0 0}.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 24px rgba(16,24,40,.05)}.article h1{color:var(--primary);line-height:1.25}.article h2{border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:30px}.article table{width:100%;border-collapse:collapse;margin:16px 0}.article th,.article td{border-bottom:1px solid var(--line);padding:8px;text-align:left}.article th{background:#f9fafb}.article code{background:#f3f4f6;padding:2px 5px;border-radius:5px}.article pre{background:#111827;color:#f9fafb;padding:14px;border-radius:12px;overflow:auto}.crumb{margin:16px 0;color:var(--muted)}.entity{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--soft);font-weight:600}.tag{display:inline-block;font-size:12px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:2px 8px;margin:2px}.list{padding-left:1.2em}.searchbox{width:100%;font-size:16px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white}.result{padding:14px 0;border-bottom:1px solid var(--line)}.footer{padding:28px;text-align:center;color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:white;margin:3px}.warn{background:#fff7ed;border-color:#fed7aa}.ok{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:640px){.wrap{padding:16px}.article{padding:20px}.brand{font-size:24px}}</style></head><body>
+<header class="top"><div class="wrap"><h1 class="brand">🧬 分子生物学知识库</h1><p class="subtitle">Molecular Biology KB · 统一生成的课程章节、实体索引、概念关系与搜索入口</p><nav class="nav"><a href="../index.html">首页</a><a href="index.html">课程章节</a><a href="../kg/entities/index.html">实体索引</a><a href="../kg/concepts/index.html">概念图谱</a><a href="../search/index.html">搜索</a><a href="../skills/index.html">构建方法</a></nav></div></header>
+<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">课程章节</a></div><article class="article"><h1 id="_1">第六章：分子生物学技术</h1>
+<h2 id="61-pcr">6.1 PCR技术</h2>
+<h3 id="_2">原理</h3>
+<p>&lt;<span class="entity">中心法则</span>告诉我们，<span class="entity">DNA复制</span>是遗传信息传递的基础。<span class="entity">PCR</span>（聚合酶链式反应）技术正是模拟这一过程，在体外快速扩增特定<span class="entity">DNA</span>片段。</p>
+<p><strong>发明者</strong>：<span class="entity">Kary Mullis 1983</span>因此获得1993年诺贝尔化学奖。</p>
+<h3 id="_3">反应体系</h3>
+<table>
+<thead>
+<tr>
+<th>组分</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity">模板DNA</span></td>
+<td>扩增的原始材料</td>
+<td>基因组DNA</td>
+</tr>
+<tr>
+<td><span class="entity">引物</span></td>
+<td>确定扩增起始位点</td>
+<td>上下游各一条</td>
+</tr>
+<tr>
+<td><span class="entity">DNA聚合酶</span></td>
+<td>催化DNA合成</td>
+<td><span class="entity">Taq酶</span></td>
+</tr>
+<tr>
+<td><span class="entity">dNTPs</span></td>
+<td>原料</td>
+<td>dATP、dTTP、dGTP、dCTP</td>
+</tr>
+<tr>
+<td><span class="entity">缓冲液</span></td>
+<td>提供适宜环境</td>
+<td>含<span class="entity">Mg²⁺</span>、<span class="entity">pH 8.3</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">反应步骤</h3>
+<pre><code>&lt;span class=&quot;entity&quot;&gt;94-95°C&lt;/span&gt;变性 → &lt;span class=&quot;entity&quot;&gt;50-65°C&lt;/span&gt;退火 → &lt;span class=&quot;entity&quot;&gt;72°C&lt;/span&gt;延伸
+     ↓
+   30-35个循环
+     ↓
+  DNA指数扩增（2ⁿ）
+</code></pre>
+<p><strong>关键参数</strong>：
+- 变性温度：<span class="entity">94-95°C</span>，时间：<span class="entity">30秒-2分钟</span>
+- 退火温度：取决于引物Tm值，通常<span class="entity">低于Tm 5°C</span>
+- 延伸时间：<span class="entity">1分钟/kb</span></p>
+<h3 id="taq">Taq酶特点</h3>
+<p><span class="entity">Taq DNA聚合酶</span>是从<span class="entity">嗜热菌</span><span class="entity">Thermus aquaticus</span>中分离的：
+- ✅ 耐热，在<span class="entity">95°C</span>不失活
+- ✅ 最适温度<span class="entity">72-80°C</span>
+- ❌ 无<span class="entity">3&#x27;-5&#x27;外切酶活性</span>，无校对功能
+- ❌ 错误率较高（约<span class="entity">10⁻⁴</span>）</p>
+<p><strong>高保真酶</strong>：如<span class="entity">Pfu酶</span>、<span class="entity">Phusion酶</span>，具有校对功能。</p>
+<h2 id="62-dna">6.2 DNA测序技术</h2>
+<h3 id="sanger">Sanger测序（第一代）</h3>
+<p><strong>原理</strong>：<span class="entity">双脱氧终止法</span></p>
+<pre><code>DNA合成反应 + 少量双脱氧核苷酸（ddNTP）
+         ↓
+    随机终止产生不同长度片段
+         ↓
+    电泳分离，读取序列
+</code></pre>
+<p><strong>特点</strong>：
+- 读长：500-1000 bp
+- 准确率：&gt;99.9%
+- 通量：低（每次反应一条序列）</p>
+<h3 id="_5">高通量测序（第二代）</h3>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>技术原理</th>
+<th>读长</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity">Illumina</span></td>
+<td>桥式PCR + 荧光标记</td>
+<td>150-300 bp</td>
+<td>全基因组、RNA-seq</td>
+</tr>
+<tr>
+<td><span class="entity">Ion Torrent</span></td>
+<td>半导体测序</td>
+<td>200-400 bp</td>
+<td>靶向测序</td>
+</tr>
+<tr>
+<td><span class="entity">SOLiD</span></td>
+<td>连接测序</td>
+<td>50-75 bp</td>
+<td>重测序</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Illumina测序流程</strong>：
+1. 文库制备：DNA片段化 + 接头连接
+2. 簇生成：桥式PCR扩增
+3. 测序：边合成边测序（SBS）
+4. 数据分析：图像 → 碱基识别</p>
+<h3 id="_6">第三代测序</h3>
+<p><strong>PacBio（单分子实时测序）</strong>：
+- 读长：10-20 kb，最长可达100 kb
+- 优势：直接检测<span class="entity">DNA甲基化</span>
+- 应用：基因组组装、结构变异检测</p>
+<p><strong>Oxford Nanopore</strong>：
+- 原理：纳米孔单分子测序
+- 特点：便携、实时、超长读长
+- 设备：MinION（USB大小）</p>
+<h2 id="63">6.3 基因克隆</h2>
+<h3 id="_7">载体系统</h3>
+<table>
+<thead>
+<tr>
+<th>载体类型</th>
+<th>容量</th>
+<th>宿主</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity">质粒</span></td>
+<td>2-10 kb</td>
+<td>细菌</td>
+<td>常规克隆</td>
+</tr>
+<tr>
+<td><span class="entity">噬菌体</span></td>
+<td>9-23 kb</td>
+<td>细菌</td>
+<td>cDNA文库</td>
+</tr>
+<tr>
+<td><span class="entity">BAC</span></td>
+<td>100-300 kb</td>
+<td>细菌</td>
+<td>基因组文库</td>
+</tr>
+<tr>
+<td><span class="entity">YAC</span></td>
+<td>0.5-2 Mb</td>
+<td>酵母</td>
+<td>大片段克隆</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">克隆流程</h3>
+<pre><code>目的基因获取 ←&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;/&lt;span class=&quot;entity&quot;&gt;化学合成&lt;/span&gt;/&lt;span class=&quot;entity&quot;&gt;文库筛选&lt;/span&gt;
+      ↓
+载体准备 ← &lt;span class=&quot;entity&quot;&gt;限制性内切酶&lt;/span&gt;切割
+      ↓
+连接反应 ← &lt;span class=&quot;entity&quot;&gt;DNA连接酶&lt;/span&gt;
+      ↓
+转化/转染 ← 导入宿主细胞
+      ↓
+筛选鉴定 ← &lt;span class=&quot;entity&quot;&gt;抗生素抗性&lt;/span&gt;、&lt;span class=&quot;entity&quot;&gt;蓝白斑筛选&lt;/span&gt;
+</code></pre>
+<h3 id="_9">限制性内切酶</h3>
+<p><strong>识别序列特点</strong>：
+- 通常为4-8 bp的<span class="entity">回文序列</span>
+- 切割产生粘性末端或平末端</p>
+<table>
+<thead>
+<tr>
+<th>酶</th>
+<th>识别序列</th>
+<th>末端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity">EcoRI</span></td>
+<td>G↓AATTC</td>
+<td>5'粘性</td>
+</tr>
+<tr>
+<td><span class="entity">BamHI</span></td>
+<td>G↓GATCC</td>
+<td>5'粘性</td>
+</tr>
+<tr>
+<td><span class="entity">HindIII</span></td>
+<td>A↓AGCTT</td>
+<td>5'粘性</td>
+</tr>
+<tr>
+<td><span class="entity">SmaI</span></td>
+<td>CCC↓GGG</td>
+<td>平末端</td>
+</tr>
+</tbody>
+</table>
+<h2 id="64">6.4 基因编辑技术</h2>
+<h3 id="crispr-cas9">CRISPR-Cas9系统</h3>
+<p><strong>发现</strong>：<span class="entity">Jennifer Doudna &amp; Emmanuelle Charpentier 2012</span>，获2020年诺贝尔化学奖。</p>
+<p><strong>组成</strong>：
+- <span class="entity">Cas9蛋白</span>：核酸酶，切割DNA
+- <span class="entity">sgRNA</span>：向导RNA，引导Cas9到靶位点</p>
+<p><strong>原理</strong>：</p>
+<pre><code>sgRNA识别靶序列（PAM: NGG）
+        ↓
+Cas9切割DNA双链
+        ↓
+细胞修复（NHEJ或HDR）
+        ↓
+基因敲除或精确编辑
+</code></pre>
+<p><strong>应用</strong>：
+- <span class="entity">遗传病</span>治疗（如<span class="entity">镰状细胞贫血</span>）
+- <span class="entity">癌症</span>免疫治疗
+- 功能基因研究
+- 作物改良</p>
+<h3 id="_10">碱基编辑器</h3>
+<p><strong>CBE（胞嘧啶碱基编辑器）</strong>：C → T
+<strong>ABE（腺嘌呤碱基编辑器）</strong>：A → G</p>
+<p><strong>优势</strong>：不切断DNA双链，减少随机插入/缺失</p>
+<h2 id="65">6.5 基因表达分析</h2>
+<h3 id="rt-pcr">RT-PCR</h3>
+<p><strong>原理</strong>：</p>
+<pre><code>RNA →&lt;span class=&quot;entity&quot;&gt;逆转录&lt;/span&gt;→ cDNA →&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;→ 扩增产物
+</code></pre>
+<p><strong>关键酶</strong>：<span class="entity">逆转录酶</span>（如M-MLV、AMV）</p>
+<p><strong>应用</strong>：
+- 检测基因表达水平
+- 验证RNA-seq结果
+- 病毒检测（如<span class="entity">COVID-19</span>RT-PCR检测）</p>
+<h3 id="rnarnai">RNA干扰（RNAi）</h3>
+<p><strong>机制</strong>：
+- <span class="entity">dsRNA</span>被<span class="entity">Dicer</span>切割为<span class="entity">siRNA</span>（21-23 nt）
+- siRNA与<span class="entity">RISC复合物</span>结合
+- 靶向降解互补mRNA</p>
+<p><strong>应用</strong>：
+- 基因功能研究（基因敲低）
+- 治疗（如<span class="entity">年龄相关性黄斑变性</span>）</p>
+<h2 id="_11">本章小结</h2>
+<ul>
+<li><span class="entity">PCR</span>是体外DNA扩增的核心技术</li>
+<li>测序技术从Sanger发展到高通量、单分子测序</li>
+<li>基因克隆依赖载体系统和限制酶</li>
+<li><span class="entity">CRISPR-Cas9</span>革命性地改变了基因编辑</li>
+<li>RNA技术（RT-PCR、RNAi）是基因表达研究的重要工具</li>
+</ul>
+<h2 id="_12">思考题</h2>
+<ol>
+<li>为什么PCR需要引物，而DNA复制在体内不需要外源引物？</li>
+<li>比较第一代、第二代、第三代测序技术的优缺点。</li>
+<li>CRISPR-Cas9与传统基因编辑技术（如ZFN、TALEN）相比有什么优势？</li>
+</ol></article></main><footer class="footer">Built for molecular biology teaching · Generated by scripts/build_site.py</footer>
+</body></html>

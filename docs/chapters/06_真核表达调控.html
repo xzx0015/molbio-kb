@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第六章：真核生物基因表达调控 | 分子生物学知识库</title><meta name="description" content="# 第六章：真核生物基因表达调控 ## 6.1 真核基因调控概述 ### 与原核生物的差异 | 特征 | 原核生物 | 真核生物 | |------|---------|---------| | 转录翻译 | 偶联 | 分隔（核膜） | | 基因组织 | 操纵子 | 单基因 | | 染色质 | 无 | 有核小体 | |">
+<style>:root{--bg:#f6f8fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e5e7eb;--primary:#355cde;--accent:#764ba2;--soft:#eef2ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}.wrap{max-width:1120px;margin:0 auto;padding:24px}.top{background:linear-gradient(135deg,#355cde,#764ba2);color:white}.top .wrap{padding-top:34px;padding-bottom:34px}.brand{font-size:28px;font-weight:800;margin:0}.subtitle{opacity:.9;margin:8px 0 0}.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 24px rgba(16,24,40,.05)}.article h1{color:var(--primary);line-height:1.25}.article h2{border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:30px}.article table{width:100%;border-collapse:collapse;margin:16px 0}.article th,.article td{border-bottom:1px solid var(--line);padding:8px;text-align:left}.article th{background:#f9fafb}.article code{background:#f3f4f6;padding:2px 5px;border-radius:5px}.article pre{background:#111827;color:#f9fafb;padding:14px;border-radius:12px;overflow:auto}.crumb{margin:16px 0;color:var(--muted)}.entity{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--soft);font-weight:600}.tag{display:inline-block;font-size:12px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:2px 8px;margin:2px}.list{padding-left:1.2em}.searchbox{width:100%;font-size:16px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white}.result{padding:14px 0;border-bottom:1px solid var(--line)}.footer{padding:28px;text-align:center;color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:white;margin:3px}.warn{background:#fff7ed;border-color:#fed7aa}.ok{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:640px){.wrap{padding:16px}.article{padding:20px}.brand{font-size:24px}}</style></head><body>
+<header class="top"><div class="wrap"><h1 class="brand">🧬 分子生物学知识库</h1><p class="subtitle">Molecular Biology KB · 统一生成的课程章节、实体索引、概念关系与搜索入口</p><nav class="nav"><a href="../index.html">首页</a><a href="index.html">课程章节</a><a href="../kg/entities/index.html">实体索引</a><a href="../kg/concepts/index.html">概念图谱</a><a href="../search/index.html">搜索</a><a href="../skills/index.html">构建方法</a></nav></div></header>
+<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">课程章节</a></div><article class="article"><h1 id="_1">第六章：真核生物基因表达调控</h1>
+<h2 id="61">6.1 真核基因调控概述</h2>
+<h3 id="_2">与原核生物的差异</h3>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>原核生物</th>
+<th>真核生物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转录翻译</td>
+<td>偶联</td>
+<td>分隔（核膜）</td>
+</tr>
+<tr>
+<td>基因组织</td>
+<td>操纵子</td>
+<td>单基因</td>
+</tr>
+<tr>
+<td>染色质</td>
+<td>无</td>
+<td>有核小体</td>
+</tr>
+<tr>
+<td>主要调控点</td>
+<td>转录</td>
+<td>多水平</td>
+</tr>
+<tr>
+<td>RNA加工</td>
+<td>无</td>
+<td>复杂（加帽、加尾、剪接）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">调控层次</h3>
+<p><span class="entity concept" title="概念：eukaryotic_regulation">真核基因表达调控</span>发生在多个层次：</p>
+<pre><code>染色质水平 → 转录水平 → RNA加工 → mRNA运输 → 翻译水平 → 蛋白质修饰
+    ↑           ↑          ↑          ↑          ↑          ↑
+表观遗传   转录因子   选择性剪接   核质运输   翻译起始   信号转导
+</code></pre>
+<h2 id="62">6.2 染色质水平调控</h2>
+<h3 id="dna">DNA甲基化</h3>
+<p><span class="entity entity-generic" title="修饰">DNA甲基化</span>：
+- <strong>位点</strong>：<span class="entity entity-generic" title="碱基">CpG岛</span>中的胞嘧啶（C→5mC）
+- <strong>酶</strong>：<span class="entity enzyme" title="酶">DNA甲基转移酶</span>（DNMT1维持，DNMT3a/3b从头）
+- <strong>效应</strong>：通常抑制基因表达</p>
+<p><strong>生物学意义</strong>：
+- <span class="entity entity-generic" title="概念">基因组印记</span>（Imprinting）：亲本特异性表达
+- <span class="entity entity-generic" title="概念">X染色体失活</span>：雌性X染色体剂量补偿
+- 转座子沉默
+- 肿瘤抑制基因沉默</p>
+<h3 id="_4">组蛋白修饰</h3>
+<p><span class="entity concept" title="概念：histone_modification">组蛋白修饰</span>：</p>
+<table>
+<thead>
+<tr>
+<th>修饰</th>
+<th>位点</th>
+<th>效应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="修饰">乙酰化</span>（Ac）</td>
+<td>赖氨酸</td>
+<td>激活转录</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">甲基化</span>（Me）</td>
+<td>赖氨酸/精氨酸</td>
+<td>H3K4me3激活，H3K27me3抑制</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">磷酸化</span>（P）</td>
+<td>丝氨酸</td>
+<td>调控染色质结构</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">泛素化</span>（Ub）</td>
+<td>赖氨酸</td>
+<td>调控转录</td>
+</tr>
+</tbody>
+</table>
+<p><strong>组蛋白密码假说</strong>：
+- 不同修饰组合产生特定调控效应
+- 修饰之间相互影响（交叉对话）</p>
+<h3 id="_5">染色质重塑</h3>
+<p><span class="entity complex" title="复合物">染色质重塑复合物</span>：
+- <span class="entity complex" title="复合物">SWI/SNF</span>：利用ATP水解能量重塑核小体
+- <span class="entity complex" title="复合物">ISWI</span>、<span class="entity complex" title="复合物">CHD</span>、<span class="entity complex" title="复合物">INO80</span>家族</p>
+<p><strong>功能</strong>：
+- 改变核小体位置
+- 影响DNA可及性
+- 调控转录因子结合</p>
+<h2 id="63">6.3 转录水平调控</h2>
+<h3 id="_6">顺式作用元件</h3>
+<p><span class="entity concept" title="概念：cis_element">顺式作用元件</span>：DNA上的调控序列</p>
+<table>
+<thead>
+<tr>
+<th>元件</th>
+<th>位置</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="概念">启动子</span>（Promoter）</td>
+<td>转录起始点附近</td>
+<td>基础转录装置组装</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">增强子</span>（Enhancer）</td>
+<td>远端（1kb-1Mb）</td>
+<td>显著增强转录效率</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">沉默子</span>（Silencer）</td>
+<td>远端</td>
+<td>抑制转录</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">绝缘子</span>（Insulator）</td>
+<td>边界</td>
+<td>阻断增强子/沉默子作用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>增强子特征</strong>：
+- 方向无关性
+- 位置灵活性（上游、下游、内含子）
+- 组织特异性
+- 与启动子形成染色质环</p>
+<h3 id="_7">反式作用因子</h3>
+<p><span class="entity concept" title="概念：trans_factor">反式作用因子</span>：调控蛋白</p>
+<p><strong>转录因子结构</strong>：
+- <span class="entity entity-generic" title="结构">DNA结合域</span>：识别特定序列
+- <span class="entity entity-generic" title="结构">转录激活域</span>：招募转录 machinery
+- <span class="entity entity-generic" title="结构">二聚化结构域</span>：形成同源/异源二聚体
+- <span class="entity entity-generic" title="结构">核定位信号</span>（NLS）：进入细胞核</p>
+<p><strong>常见DNA结合域</strong>：
+| 结构域 | 特征 | 代表因子 |
+|--------|------|---------|
+| <span class="entity entity-generic" title="结构">同源异型域</span>（Homeodomain） | 螺旋-转角-螺旋变体 | HOX蛋白 |
+| <span class="entity entity-generic" title="结构">锌指</span>（Zinc finger） | Zn²⁺稳定 | SP1、TFIIIA |
+| <span class="entity entity-generic" title="结构">碱性亮氨酸拉链</span>（bZIP） | 亮氨酸拉链二聚化 | AP-1、CREB |
+| <span class="entity entity-generic" title="结构">螺旋-环-螺旋</span>（HLH） | HLH二聚化 | MyoD、E47 |</p>
+<h3 id="_8">转录调控网络</h3>
+<p><strong>组合调控</strong>：
+- 多个转录因子协同作用
+- 产生特异性的时空表达模式
+- 增强调控特异性</p>
+<p><strong>实例</strong>：
+- <span class="entity protein" title="蛋白">MyoD</span>与肌肉分化
+- <span class="entity protein" title="蛋白">Oct4</span>、<span class="entity protein" title="蛋白">Sox2</span>、<span class="entity protein" title="蛋白">Nanog</span>与干细胞多能性</p>
+<h2 id="64">6.4 转录后调控</h2>
+<h3 id="_9">选择性剪接</h3>
+<p><span class="entity concept" title="概念：alternative_splicing">选择性剪接</span>：
+- 一个基因产生多种mRNA异构体
+- 人类约95%的基因存在选择性剪接
+- 增加蛋白质组多样性</p>
+<p><strong>剪接模式</strong>：
+| 模式 | 说明 |
+|------|------|
+| 外显子跳跃 | 跳过某个外显子 |
+| 互斥外显子 | 两个外显子只保留一个 |
+| 内含子保留 | 保留某个内含子 |
+| 可变5'剪接位点 | 使用不同的5'剪接位点 |
+| 可变3'剪接位点 | 使用不同的3'剪接位点 |</p>
+<p><strong>调控因子</strong>：
+- <span class="entity protein" title="蛋白">SR蛋白</span>：促进剪接
+- <span class="entity protein" title="蛋白">hnRNP蛋白&lt;/组织&gt;：抑制剪接</p>
+<h3 id="rna">RNA编辑</h3>
+<p>&lt;concept id=&quot;rna_editing&quot;&gt;RNA编辑&lt;/concept&gt;：
+- 转录后改变RNA序列
+- 脱氨酶（ADAR、APOBEC）介导
+- 实例：APOB mRNA的C→U编辑</p>
+<h3 id="rna_1">RNA稳定性调控</h3>
+<p><strong>mRNA降解途径</strong>：
+1. &lt;entity type=&quot;概念&quot;&gt;脱腺苷酸化</span>：去除poly(A)尾
+2. <span class="entity entity-generic" title="概念">脱帽</span>：去除5'帽
+3. <span class="entity entity-generic" title="概念">外切酶降解</span>：5'→3'或3'→5'</p>
+<p><strong>调控元件</strong>：
+- <span class="entity entity-generic" title="概念">AU富含元件</span>（ARE）：促进降解
+- <span class="entity entity-generic" title="概念">miRNA</span>：通过<span class="entity entity-generic" title="概念">RNA干扰</span>抑制翻译或促进降解</p>
+<h3 id="mirna">miRNA调控</h3>
+<p><span class="entity molecule" title="分子">miRNA</span>（微小RNA）：
+- 长度：21-25 nt
+- 来源：RNA聚合酶II转录，经<span class="entity enzyme" title="酶">Drosha</span>和<span class="entity enzyme" title="酶">Dicer</span>加工
+- 机制：与<span class="entity complex" title="复合物">RISC复合物</span>结合，靶向mRNA</p>
+<p><strong>调控方式</strong>：
+- 完全互补：mRNA切割
+- 部分互补：翻译抑制</p>
+<h2 id="65">6.5 翻译水平调控</h2>
+<h3 id="_10">全局翻译调控</h3>
+<p><strong>eIF2磷酸化</strong>：
+- 应激条件下eIF2α磷酸化
+- 抑制全局翻译起始
+- 但激活特定应激基因翻译</p>
+<p><strong>mTOR通路</strong>：
+- <span class="entity entity-generic" title="激酶">mTOR激酶</span>感知营养信号
+- 磷酸化<span class="entity protein" title="蛋白">4E-BP</span>，释放eIF4E
+- 促进翻译起始</p>
+<h3 id="_11">特异性翻译调控</h3>
+<p><strong>铁响应元件</strong>（<span class="entity entity-generic" title="概念">IRE</span>）：
+- <span class="entity protein" title="蛋白">铁调节蛋白</span>（IRP）结合IRE
+- 铁缺乏时：抑制<span class="entity protein" title="蛋白">铁蛋白</span>mRNA翻译
+- 铁充足时：IRP失活，翻译进行</p>
+<p><strong>上游开放阅读框</strong>（uORF）：
+- 位于主ORF上游
+- 抑制主ORF翻译
+- 应激条件下被绕过</p>
+<h2 id="66">6.6 信号转导与基因表达</h2>
+<h3 id="_12">信号通路</h3>
+<p><strong>MAPK通路</strong>：
+- 生长因子 → Ras → Raf → MEK → ERK
+- ERK入核激活转录因子</p>
+<p><strong>Wnt/β-catenin通路</strong>：
+- Wnt信号稳定β-catenin
+- β-catenin入核激活TCF转录因子</p>
+<p><strong>TGF-β/Smad通路</strong>：
+- TGF-β受体磷酸化Smad2/3
+- Smad复合物入核调控转录</p>
+<h3 id="_13">激素调控</h3>
+<p><strong>类固醇激素</strong>：
+- 脂溶性，可穿过细胞膜
+- 与核受体结合
+- 激素-受体复合物直接调控转录</p>
+<p><strong>实例</strong>：
+- 雌激素受体（ER）
+- 糖皮质激素受体（GR）</p>
+<h2 id="_14">本章小结</h2>
+<ul>
+<li>真核基因调控发生在多水平，比原核更复杂</li>
+<li>染色质修饰（DNA甲基化、组蛋白修饰）是表观遗传调控的基础</li>
+<li>转录因子通过顺式元件和反式因子精细调控</li>
+<li>转录后调控（选择性剪接、miRNA）增加调控层次</li>
+<li>信号转导通路将胞外信号转化为基因表达变化</li>
+</ul>
+<h2 id="_15">思考题</h2>
+<ol>
+<li>为什么真核生物需要比原核生物更复杂的调控机制？</li>
+<li>DNA甲基化和组蛋白修饰如何协同调控基因表达？</li>
+<li>选择性剪接有什么生物学意义？</li>
+</ol></article></main><footer class="footer">Built for molecular biology teaching · Generated by scripts/build_site.py</footer>
+</body></html>

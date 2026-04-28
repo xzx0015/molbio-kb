@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SKILL 02: 结构分析 — 从标准化文本到结构化课程 | 分子生物学知识库</title><meta name="description" content="# SKILL 02: 结构分析 — 从标准化文本到结构化课程 &gt; 将标准化后的课程文本拆分为带编号的结构化知识点，处理教学周/章节/知识点的层级关系。 --- ## 核心设计决策：为什么用〖〗Token而不用XML/HTML标签 本项目的语义标注采用轻量CJK符号（`〖@蛋白质〗`、`〖=DNA〗`、`〖~转录〗`等">
+<style>:root{--bg:#f6f8fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e5e7eb;--primary:#355cde;--accent:#764ba2;--soft:#eef2ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}.wrap{max-width:1120px;margin:0 auto;padding:24px}.top{background:linear-gradient(135deg,#355cde,#764ba2);color:white}.top .wrap{padding-top:34px;padding-bottom:34px}.brand{font-size:28px;font-weight:800;margin:0}.subtitle{opacity:.9;margin:8px 0 0}.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 24px rgba(16,24,40,.05)}.article h1{color:var(--primary);line-height:1.25}.article h2{border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:30px}.article table{width:100%;border-collapse:collapse;margin:16px 0}.article th,.article td{border-bottom:1px solid var(--line);padding:8px;text-align:left}.article th{background:#f9fafb}.article code{background:#f3f4f6;padding:2px 5px;border-radius:5px}.article pre{background:#111827;color:#f9fafb;padding:14px;border-radius:12px;overflow:auto}.crumb{margin:16px 0;color:var(--muted)}.entity{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--soft);font-weight:600}.tag{display:inline-block;font-size:12px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:2px 8px;margin:2px}.list{padding-left:1.2em}.searchbox{width:100%;font-size:16px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white}.result{padding:14px 0;border-bottom:1px solid var(--line)}.footer{padding:28px;text-align:center;color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:white;margin:3px}.warn{background:#fff7ed;border-color:#fed7aa}.ok{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:640px){.wrap{padding:16px}.article{padding:20px}.brand{font-size:24px}}</style></head><body>
+<header class="top"><div class="wrap"><h1 class="brand">🧬 分子生物学知识库</h1><p class="subtitle">Molecular Biology KB · 统一生成的课程章节、实体索引、概念关系与搜索入口</p><nav class="nav"><a href="../index.html">首页</a><a href="../chapters/index.html">课程章节</a><a href="../kg/entities/index.html">实体索引</a><a href="../kg/concepts/index.html">概念图谱</a><a href="../search/index.html">搜索</a><a href="index.html">构建方法</a></nav></div></header>
+<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><article class="article"><h1 id="skill-02">SKILL 02: 结构分析 — 从标准化文本到结构化课程</h1>
+<blockquote>
+<p>将标准化后的课程文本拆分为带编号的结构化知识点，处理教学周/章节/知识点的层级关系。</p>
+</blockquote>
+<hr />
+<h2 id="tokenxmlhtml">核心设计决策：为什么用〖〗Token而不用XML/HTML标签</h2>
+<p>本项目的语义标注采用轻量CJK符号（<code>&lt;span class="entity"&gt;蛋白质&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;DNA&lt;/span&gt;</code>、<code>〖~转录〗</code>等），而非XML（<code>&lt;protein&gt;蛋白质&lt;/protein&gt;</code>）或HTML（<code>&lt;span class="protein"&gt;蛋白质&lt;/span&gt;</code>）。这是在<strong>可读性</strong>与<strong>语义精确性</strong>之间的刻意权衡。</p>
+<h3 id="_1">方案对比</h3>
+<pre><code>原文：DNA聚合酶在复制叉处催化DNA链的延伸。
+
+XML标注：
+&lt;enzyme&gt;DNA聚合酶&lt;/enzyme&gt;在&lt;structure&gt;复制叉&lt;/structure&gt;处
+催化&lt;molecule&gt;DNA&lt;/molecule&gt;链的&lt;process&gt;延伸&lt;/process&gt;。
+
+HTML标注：
+&lt;span class=&quot;enzyme&quot;&gt;DNA聚合酶&lt;/span&gt;在&lt;span class=&quot;structure&quot;&gt;复制叉&lt;/span&gt;处
+催化&lt;span class=&quot;molecule&quot;&gt;DNA&lt;/span&gt;链的&lt;span class=&quot;process&quot;&gt;延伸&lt;/span&gt;。
+
+Token标注：
+&lt;span class=&quot;entity&quot;&gt;DNA聚合酶&lt;/span&gt;在&lt;span class=&quot;entity&quot;&gt;复制叉&lt;/span&gt;处催化&lt;span class=&quot;entity&quot;&gt;DNA&lt;/span&gt;链的〖~延伸〗。
+</code></pre>
+<h3 id="xmlhtml">为什么不用XML/HTML</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>XML/HTML</th>
+<th>〖〗Token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>人眼可读性</strong></td>
+<td>标签淹没原文，标注后几乎无法直接阅读</td>
+<td>标记轻量，标注后仍可流畅阅读原文</td>
+</tr>
+<tr>
+<td><strong>标注效率</strong></td>
+<td>打开/关闭标签冗长，LLM输出Token消耗大</td>
+<td>单字符类型标记，LLM输出紧凑</td>
+</tr>
+<tr>
+<td><strong>git diff</strong></td>
+<td>标签噪音严重，差异难以review</td>
+<td>diff清晰，改动一目了然</td>
+</tr>
+<tr>
+<td><strong>嵌套处理</strong></td>
+<td>允许任意嵌套，但解析复杂</td>
+<td>拍平策略：<code>〖;DNA聚合酶I〗</code>（外层保留）</td>
+</tr>
+<tr>
+<td><strong>语义精确性</strong></td>
+<td>可附加任意属性（id/type/ref等）</td>
+<td>仅类型标记，属性通过外挂JSON补全</td>
+</tr>
+<tr>
+<td><strong>编辑门槛</strong></td>
+<td>需要了解XML语法，标签易写错</td>
+<td>选中文本加前后缀即可，直觉操作</td>
+</tr>
+<tr>
+<td><strong>格式冲突</strong></td>
+<td>与Markdown语法可能冲突</td>
+<td>v1.0的<code>$酶$</code>与Markdown math冲突（v2.0已解决）</td>
+</tr>
+<tr>
+<td><strong>渲染无关性</strong></td>
+<td>HTML标注与渲染耦合</td>
+<td>同一份标注可渲染为HTML/PDF/LaTeX/JSON</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">关键洞察</h3>
+<ol>
+<li>
+<p><strong>课程文本的首要矛盾是可读性</strong>。15章×数万字的标注文件，学习者需要频繁阅读和修改。XML标注后原文几乎不可读（标签字符数常超过原文字符数），这在实际学习中不可接受。</p>
+</li>
+<li>
+<p><strong>语义精确性通过分层补全</strong>。Token标记只承载"类型"这一维信息，更丰富的语义（消歧、别名、定义）通过外挂JSON元数据层在渲染时注入，而非塞进标记本身：
+   <code>源文件：&lt;span class="entity"&gt;DNA聚合酶III&lt;/span&gt;          ← 只标类型
+   消歧层：{"DNA聚合酶III": {"全称": "DNA聚合酶III全酶", "基因": "dnaE"}}
+   别名层：{"DNA聚合酶III": ["Pol III", "DNA Pol III"]}    ← JSON补全别名
+   渲染时：&lt;a href="concept.html#DNA聚合酶III"&gt;&lt;span class="enzyme" title="DNA聚合酶III全酶，原核生物主要复制酶"&gt;DNA聚合酶III&lt;/span&gt;&lt;/a&gt;</code></p>
+</li>
+<li>
+<p><strong>v1→v2的教训验证了这一选择</strong>。项目初期曾用HTML <code>&lt;span style="color:..."&gt;</code> 标注，标注后原文完全不可读，被迫回退为Token标记。</p>
+</li>
+</ol>
+<hr />
+<h2 id="_3">子工序</h2>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>文件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02a</td>
+<td>SKILL_02a_章节切分.md</td>
+<td>教学周/章节/知识点编号（Purple Numbers）</td>
+</tr>
+<tr>
+<td>02b</td>
+<td>SKILL_02b_概念层级.md</td>
+<td>核心概念→衍生概念→应用实例的层级构建</td>
+</tr>
+<tr>
+<td>02c</td>
+<td>SKILL_02c_前置依赖.md</td>
+<td>知识点先修关系图、学习路径依赖</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">数据结构</h2>
+<h3 id="sections_datajson">sections_data.json</h3>
+<pre><code class="language-json">{
+  &quot;02_DNA复制&quot;: [
+    {&quot;anchor&quot;: &quot;1&quot;, &quot;title&quot;: &quot;DNA复制的基本特征&quot;},
+    {&quot;anchor&quot;: &quot;8&quot;, &quot;title&quot;: &quot;复制起点与复制子&quot;},
+    {&quot;anchor&quot;: &quot;15&quot;, &quot;title&quot;: &quot;DNA聚合酶家族&quot;},
+    {&quot;anchor&quot;: &quot;28&quot;, &quot;title&quot;: &quot;复制叉与引物合成&quot;},
+    {&quot;anchor&quot;: &quot;42&quot;, &quot;title&quot;: &quot;前导链与滞后链&quot;},
+    {&quot;anchor&quot;: &quot;55&quot;, &quot;title&quot;: &quot;端粒与端粒酶&quot;}
+  ],
+  &quot;03_转录与RNA加工&quot;: [
+    {&quot;anchor&quot;: &quot;1&quot;, &quot;title&quot;: &quot;转录概述&quot;},
+    {&quot;anchor&quot;: &quot;6&quot;, &quot;title&quot;: &quot;原核生物转录&quot;},
+    {&quot;anchor&quot;: &quot;20&quot;, &quot;title&quot;: &quot;真核生物转录&quot;},
+    {&quot;anchor&quot;: &quot;35&quot;, &quot;title&quot;: &quot;RNA加工与修饰&quot;}
+  ]
+}
+</code></pre>
+<h3 id="prerequisites_graphjson">prerequisites_graph.json</h3>
+<pre><code class="language-json">{
+  &quot;nodes&quot;: [
+    {&quot;id&quot;: &quot;02.01&quot;, &quot;name&quot;: &quot;DNA复制的基本特征&quot;, &quot;level&quot;: &quot;core&quot;},
+    {&quot;id&quot;: &quot;02.05&quot;, &quot;name&quot;: &quot;DNA聚合酶&quot;, &quot;level&quot;: &quot;core&quot;},
+    {&quot;id&quot;: &quot;03.01&quot;, &quot;name&quot;: &quot;转录概述&quot;, &quot;level&quot;: &quot;core&quot;},
+    {&quot;id&quot;: &quot;03.02&quot;, &quot;name&quot;: &quot;RNA聚合酶&quot;, &quot;level&quot;: &quot;derived&quot;}
+  ],
+  &quot;edges&quot;: [
+    {&quot;from&quot;: &quot;02.01&quot;, &quot;to&quot;: &quot;02.05&quot;, &quot;type&quot;: &quot;prerequisite&quot;},
+    {&quot;from&quot;: &quot;02.05&quot;, &quot;to&quot;: &quot;03.02&quot;, &quot;type&quot;: &quot;analogy&quot;},
+    {&quot;from&quot;: &quot;01.03&quot;, &quot;to&quot;: &quot;02.01&quot;, &quot;type&quot;: &quot;prerequisite&quot;}
+  ]
+}
+</code></pre>
+<hr />
+<h2 id="_5">质量检查</h2>
+<h3 id="lint_structurepy">lint_structure.py 检查项</h3>
+<p><strong>段落编号检查</strong>：
+- 格式正确：<code>[数字]</code> 或 <code>[数字.数字...]</code>（不允许 <code>[1.a]</code>、<code>[一]</code>）
+- 顶层编号连续（[1]→[2]→[3]，不允许跳跃 [1]→[3]）
+- 子编号连续（[1.1]→[1.2]→[1.3]）</p>
+<p><strong>标题层级检查</strong>：
+- 一级标题唯一（每章只有一个 <code>#</code>）
+- 不允许层级跳跃（<code>#</code> 直接到 <code>###</code>，跳过 <code>##</code>）
+- 标题非空</p>
+<p><strong>知识点层级检查</strong>：
+- 每个知识点有明确的level标记（core/derived/application）
+- 核心概念数量适中（每章5-10个）</p>
+<p><strong>常见问题及修复</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>表现</th>
+<th>修复方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>编号跳跃</td>
+<td>[1]→[3] 缺少[2]</td>
+<td>检查是否遗漏段落或编号写错</td>
+</tr>
+<tr>
+<td>层级跳跃</td>
+<td># 后直接 ###</td>
+<td>补充 ## 二级标题</td>
+</tr>
+<tr>
+<td>重复编号</td>
+<td>两个 [3.1]</td>
+<td>给后一个重新编号 [3.2]</td>
+</tr>
+<tr>
+<td>空标题</td>
+<td><code>##</code> 后无内容</td>
+<td>添加有意义的标题文字</td>
+</tr>
+<tr>
+<td>概念层级混乱</td>
+<td>衍生概念多于核心概念</td>
+<td>重新梳理概念体系</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">工具链</h2>
+<table>
+<thead>
+<tr>
+<th>脚本</th>
+<th>位置</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>section_extract.py</code></td>
+<td>scripts/</td>
+<td>提取小节结构</td>
+</tr>
+<tr>
+<td><code>section_extract_all.py</code></td>
+<td>scripts/</td>
+<td>完整提取，生成 <code>sections_data.json</code></td>
+</tr>
+<tr>
+<td><code>prereq_graph_build.py</code></td>
+<td>scripts/</td>
+<td>构建前置依赖图</td>
+</tr>
+<tr>
+<td><code>concept_hierarchy.py</code></td>
+<td>scripts/</td>
+<td>构建概念层级树</td>
+</tr>
+<tr>
+<td><code>lint_structure.py</code></td>
+<td>scripts/</td>
+<td>结构验证</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">扩展到其他课程</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>需调整内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>章节拆分</td>
+<td>不同课程的模块/单元结构不同</td>
+</tr>
+<tr>
+<td>知识点密度</td>
+<td>理论课vs实验课的知识点粒度不同</td>
+</tr>
+<tr>
+<td>前置依赖</td>
+<td>不同学科的知识依赖网络差异大</td>
+</tr>
+<tr>
+<td>概念层级</td>
+<td>基础概念vs高级应用的划分标准不同</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>本SKILL文档基于分子生物学课程的结构化经验提炼。</em>
+<em>核心产出：15章×平均30知识点 ≈ 450个编号知识点，~90个语义小节。</em></p></article></main><footer class="footer">Built for molecular biology teaching · Generated by scripts/build_site.py</footer>
+</body></html>

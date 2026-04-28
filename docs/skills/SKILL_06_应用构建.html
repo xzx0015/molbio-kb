@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SKILL 06: 应用构建 — 分子生物学教学应用总览 | 分子生物学知识库</title><meta name="description" content="# SKILL 06: 应用构建 — 分子生物学教学应用总览 &gt; 基于本体体系构建的分子生物学智能教学应用系统架构与功能概览。 --- ## 一、系统架构 ### 1.1 整体架构图 ``` ┌───────────────────────────────────────────────────────────────">
+<style>:root{--bg:#f6f8fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e5e7eb;--primary:#355cde;--accent:#764ba2;--soft:#eef2ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}.wrap{max-width:1120px;margin:0 auto;padding:24px}.top{background:linear-gradient(135deg,#355cde,#764ba2);color:white}.top .wrap{padding-top:34px;padding-bottom:34px}.brand{font-size:28px;font-weight:800;margin:0}.subtitle{opacity:.9;margin:8px 0 0}.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 24px rgba(16,24,40,.05)}.article h1{color:var(--primary);line-height:1.25}.article h2{border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:30px}.article table{width:100%;border-collapse:collapse;margin:16px 0}.article th,.article td{border-bottom:1px solid var(--line);padding:8px;text-align:left}.article th{background:#f9fafb}.article code{background:#f3f4f6;padding:2px 5px;border-radius:5px}.article pre{background:#111827;color:#f9fafb;padding:14px;border-radius:12px;overflow:auto}.crumb{margin:16px 0;color:var(--muted)}.entity{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--soft);font-weight:600}.tag{display:inline-block;font-size:12px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:2px 8px;margin:2px}.list{padding-left:1.2em}.searchbox{width:100%;font-size:16px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white}.result{padding:14px 0;border-bottom:1px solid var(--line)}.footer{padding:28px;text-align:center;color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:white;margin:3px}.warn{background:#fff7ed;border-color:#fed7aa}.ok{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:640px){.wrap{padding:16px}.article{padding:20px}.brand{font-size:24px}}</style></head><body>
+<header class="top"><div class="wrap"><h1 class="brand">🧬 分子生物学知识库</h1><p class="subtitle">Molecular Biology KB · 统一生成的课程章节、实体索引、概念关系与搜索入口</p><nav class="nav"><a href="../index.html">首页</a><a href="../chapters/index.html">课程章节</a><a href="../kg/entities/index.html">实体索引</a><a href="../kg/concepts/index.html">概念图谱</a><a href="../search/index.html">搜索</a><a href="index.html">构建方法</a></nav></div></header>
+<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><article class="article"><h1 id="skill-06">SKILL 06: 应用构建 — 分子生物学教学应用总览</h1>
+<blockquote>
+<p>基于本体体系构建的分子生物学智能教学应用系统架构与功能概览。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、系统架构</h2>
+<h3 id="11">1.1 整体架构图</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│                      用户交互层 (UI Layer)                       │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │
+│  │ 知识点查询   │  │ 学习路径    │  │ 题库练习    │  │ 个人中心│ │
+│  │   SKILL_06a │  │  SKILL_06b  │  │  SKILL_06c  │  │        │ │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+                              ↕
+┌─────────────────────────────────────────────────────────────────┐
+│                      应用服务层 (Service Layer)                  │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │
+│  │ 智能检索    │  │ 路径规划    │  │ 推荐引擎    │  │ 评估引擎│ │
+│  │  服务       │  │   服务      │  │            │  │        │ │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │ 知识图谱    │  │ 学习分析    │  │ 可视化      │             │
+│  │  服务       │  │   服务      │  │  服务       │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
+└─────────────────────────────────────────────────────────────────┘
+                              ↕
+┌─────────────────────────────────────────────────────────────────┐
+│                      数据层 (Data Layer)                         │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │
+│  │ OWL/RDF本体 │  │ 知识点内容  │  │ 题库数据    │  │ 用户数据│ │
+│  │  (SKILL_05) │  │             │  │             │  │        │ │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │
+│  ┌─────────────┐  ┌─────────────┐                               │
+│  │ 图数据库    │  │ 学习记录    │                               │
+│  │ (Neo4j)     │  │             │                               │
+│  └─────────────┘  └─────────────┘                               │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="12">1.2 技术栈</h3>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>技术选型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前端</td>
+<td>React + TypeScript + D3.js</td>
+<td>交互式可视化</td>
+</tr>
+<tr>
+<td>后端</td>
+<td>Python FastAPI</td>
+<td>高性能API服务</td>
+</tr>
+<tr>
+<td>图数据库</td>
+<td>Neo4j</td>
+<td>知识图谱存储与查询</td>
+</tr>
+<tr>
+<td>RDF存储</td>
+<td>Apache Jena / rdflib</td>
+<td>本体推理与验证</td>
+</tr>
+<tr>
+<td>搜索引擎</td>
+<td>Elasticsearch</td>
+<td>全文检索与语义搜索</td>
+</tr>
+<tr>
+<td>推荐引擎</td>
+<td>自研算法 + scikit-learn</td>
+<td>个性化推荐</td>
+</tr>
+<tr>
+<td>缓存</td>
+<td>Redis</td>
+<td>热点数据缓存</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">二、核心应用场景</h2>
+<h3 id="21">2.1 场景矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>应用场景</th>
+<th>目标用户</th>
+<th>核心功能</th>
+<th>依赖本体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>知识点智能检索</strong></td>
+<td>学生、教师</td>
+<td>多维度检索、关联推荐、可视化展示</td>
+<td>概念本体、前置依赖本体</td>
+</tr>
+<tr>
+<td><strong>个性化学习路径</strong></td>
+<td>学生</td>
+<td>路径生成、薄弱环节识别、进度追踪</td>
+<td>学习路径本体、用户本体</td>
+</tr>
+<tr>
+<td><strong>智能题库练习</strong></td>
+<td>学生</td>
+<td>多标签题目、难度自适应、知识点覆盖分析</td>
+<td>评估本体、概念本体</td>
+</tr>
+<tr>
+<td><strong>教学资源管理</strong></td>
+<td>教师</td>
+<td>资源标注、关联组织、效果评估</td>
+<td>概念本体</td>
+</tr>
+<tr>
+<td><strong>学情分析</strong></td>
+<td>教师、管理员</td>
+<td>班级掌握度分析、易错点统计、教学建议</td>
+<td>用户本体、评估本体</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 用户旅程</h3>
+<pre><code>学生用户旅程：
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│ 注册登录 │ → │ 水平测试 │ → │ 获得推荐 │ → │ 学习知识点│ → │ 练习巩固 │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘
+                                                    ↓              ↓
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│ 完成课程 │ ← │ 阶段测试 │ ← │ 查漏补缺 │ ← │ 错题复习 │ ← │ 掌握评估 │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘
+
+教师用户旅程：
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│ 课程设计 │ → │ 资源上传 │ → │ 关联知识点│ → │ 发布任务 │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘
+                                                  ↓
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│ 教学调整 │ ← │ 学情分析 │ ← │ 作业批改 │ ← │ 学生完成 │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘
+</code></pre>
+<hr />
+<h2 id="_3">三、功能模块详解</h2>
+<h3 id="31-skill_06a">3.1 知识点智能检索 (SKILL_06a)</h3>
+<p><strong>功能定位</strong>：知识图谱的入口，支持多维度知识发现</p>
+<p><strong>核心能力</strong>：
+- 多维度检索（按实体、关系、概念分类）
+- 语义理解与联想推荐
+- 知识图谱局部可视化
+- 前置知识提示</p>
+<p><strong>用户交互流程</strong>：</p>
+<pre><code>1. 用户输入查询词（如&quot;DNA聚合酶&quot;）
+2. 系统解析查询意图（实体查询/概念查询/关系查询）
+3. 执行检索并返回匹配结果
+4. 展示知识卡片（定义、属性、关联）
+5. 可视化展示关联知识图谱
+6. 推荐相关知识点和学习资源
+</code></pre>
+<p><strong>技术实现</strong>：
+- 基于Elasticsearch的全文检索
+- 基于Neo4j的图遍历查询
+- 基于本体的语义扩展（同义词、上下位词）</p>
+<hr />
+<h3 id="32-skill_06b">3.2 个性化学习路径 (SKILL_06b)</h3>
+<p><strong>功能定位</strong>：基于知识依赖关系和学习者状态的自适应学习规划</p>
+<p><strong>核心能力</strong>：
+- 知识点掌握度评估
+- 最短学习路径生成
+- 最完整学习路径生成
+- 薄弱环节识别与强化</p>
+<p><strong>用户交互流程</strong>：</p>
+<pre><code>1. 系统评估学习者当前知识状态
+2. 学习者选择学习目标（如&quot;掌握PCR技术&quot;）
+3. 系统分析目标知识点的前置依赖
+4. 生成个性化学习路径（考虑已掌握知识点）
+5. 学习者按路径学习
+6. 实时更新掌握度并调整路径
+</code></pre>
+<p><strong>技术实现</strong>：
+- 基于拓扑排序的依赖路径分析
+- 基于Dijkstra算法的最短路径计算
+- 基于贝叶斯知识追踪的掌握度评估</p>
+<hr />
+<h3 id="33-skill_06c">3.3 智能题库系统 (SKILL_06c)</h3>
+<p><strong>功能定位</strong>：知识点与题目的精准映射，支持自适应练习</p>
+<p><strong>核心能力</strong>：
+- 题目多标签标注（知识点、难度、题型）
+- 难度分级与自适应调整
+- 知识点覆盖分析
+- 错题归因与针对性练习</p>
+<p><strong>用户交互流程</strong>：</p>
+<pre><code>1. 用户选择练习模式（章节练习/专项练习/模拟测试）
+2. 系统根据用户掌握度推荐题目
+3. 用户答题并提交
+4. 系统评估答案并更新知识点掌握度
+5. 分析错题对应的知识点薄弱环节
+6. 推荐针对性练习或前置知识复习
+</code></pre>
+<p><strong>技术实现</strong>：
+- 基于IRT（项目反应理论）的难度校准
+- 基于知识图谱的题目-知识点关联
+- 基于协同过滤的相似题目推荐</p>
+<hr />
+<h3 id="34">3.4 学情分析看板</h3>
+<p><strong>功能定位</strong>：为教师提供数据驱动的教学决策支持</p>
+<p><strong>核心能力</strong>：
+- 班级整体掌握度热力图
+- 知识点掌握度分布
+- 易错点统计与分析
+- 学习进度追踪
+- 个性化教学建议</p>
+<p><strong>可视化组件</strong>：</p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│ 班级学情概览                                    [导出报告]  │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────────────┐  ┌─────────────────────────────┐  │
+│  │   整体掌握度 72%    │  │    知识点掌握度热力图        │  │
+│  │   ┌───────────┐    │  │    [DNA复制    ████████░░]  │  │
+│  │   │   仪表盘   │    │  │    [转录       ██████░░░░]  │  │
+│  │   └───────────┘    │  │    [翻译       █████░░░░░]  │  │
+│  └─────────────────────┘  └─────────────────────────────┘  │
+│  ┌─────────────────────┐  ┌─────────────────────────────┐  │
+│  │    易错点 TOP 5     │  │    学习进度分布              │  │
+│  │  1. 冈崎片段合成    │  │    [进度条图表]              │  │
+│  │  2. 转录因子识别    │  │                              │  │
+│  │  3. 密码子简并性    │  │                              │  │
+│  └─────────────────────┘  └─────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2 id="_4">四、数据流设计</h2>
+<h3 id="41">4.1 知识检索数据流</h3>
+<pre><code>用户查询
+   ↓
+[查询解析器] → 意图识别（实体/概念/关系）
+   ↓
+[检索引擎]
+   ├── Elasticsearch: 全文检索匹配
+   ├── Neo4j: 图遍历查询
+   └── 本体推理: 语义扩展
+   ↓
+[结果融合与排序]
+   ↓
+[可视化渲染]
+   ├── 知识卡片
+   ├── 关系图谱
+   └── 推荐列表
+</code></pre>
+<h3 id="42">4.2 学习路径数据流</h3>
+<pre><code>学习目标 + 用户ID
+   ↓
+[用户画像服务] → 获取当前掌握度
+   ↓
+[依赖分析器] → 查询前置依赖图谱
+   ↓
+[路径规划引擎]
+   ├── 过滤已掌握知识点
+   ├── 拓扑排序生成学习序列
+   └── 计算路径长度和难度
+   ↓
+[路径优化]
+   ├── 最短路径（时间优先）
+   └── 最完整路径（全面掌握）
+   ↓
+[路径可视化与导出]
+</code></pre>
+<h3 id="43">4.3 题库练习数据流</h3>
+<pre><code>练习请求
+   ↓
+[推荐引擎]
+   ├── 查询用户薄弱知识点
+   ├── 匹配相关题目
+   └── 根据难度曲线筛选
+   ↓
+[题目呈现]
+   ↓
+用户作答
+   ↓
+[答案评估]
+   ├── 客观题自动判分
+   └── 主观题模型评分
+   ↓
+[掌握度更新]
+   ├── 更新知识点掌握度
+   ├── 记录错题
+   └── 生成练习报告
+   ↓
+[反馈与推荐]
+</code></pre>
+<hr />
+<h2 id="api">五、API设计概览</h2>
+<h3 id="51-api">5.1 知识点检索 API</h3>
+<pre><code class="language-yaml">GET /api/concepts/search
+参数:
+  q: 查询词
+  type: 查询类型 (entity|concept|relation)
+  filter: 过滤条件 (difficulty|category|importance)
+返回:
+  concepts: 知识点列表
+  relationships: 关联关系
+  suggestions: 搜索建议
+
+GET /api/concepts/{id}
+返回:
+  concept: 知识点详情
+  prerequisites: 前置知识
+  related: 相关知识
+  questions: 关联题目
+
+GET /api/concepts/{id}/graph
+参数:
+  depth: 图谱深度 (1-3)
+返回:
+  nodes: 节点列表
+  edges: 边列表
+</code></pre>
+<h3 id="52-api">5.2 学习路径 API</h3>
+<pre><code class="language-yaml">POST /api/learning-paths/generate
+参数:
+  target_concept: 目标知识点
+  strategy: 策略 (shortest|comprehensive)
+  user_id: 用户ID
+返回:
+  path: 学习路径
+  stages: 学习阶段
+  estimated_time: 预计时长
+
+GET /api/learning-paths/{id}/progress
+返回:
+  completed: 已完成节点
+  current: 当前节点
+  next: 推荐下一步
+  mastery: 掌握度变化
+
+POST /api/learning-paths/adjust
+参数:
+  path_id: 路径ID
+  feedback: 学习反馈
+返回:
+  adjusted_path: 调整后的路径
+</code></pre>
+<h3 id="53-api">5.3 题库 API</h3>
+<pre><code class="language-yaml">GET /api/questions
+参数:
+  concept: 知识点ID
+  difficulty: 难度等级
+  type: 题目类型
+  count: 题目数量
+返回:
+  questions: 题目列表
+
+POST /api/questions/submit
+参数:
+  question_id: 题目ID
+  answer: 答案
+  user_id: 用户ID
+返回:
+  correct: 是否正确
+  explanation: 解析
+  concept_mastery: 知识点掌握度更新
+
+GET /api/questions/recommend
+参数:
+  user_id: 用户ID
+  weak_concepts: 薄弱知识点列表
+返回:
+  questions: 推荐题目
+  focus_concepts: 重点关注知识点
+</code></pre>
+<hr />
+<h2 id="_5">六、部署架构</h2>
+<h3 id="61">6.1 容器化部署</h3>
+<pre><code class="language-yaml"># docker-compose.yml
+version: '3.8'
+services:
+  # 前端应用
+  frontend:
+    image: molbio-frontend:latest
+    ports:
+      - &quot;3000:3000&quot;
+    depends_on:
+      - api
+
+  # API服务
+  api:
+    image: molbio-api:latest
+    ports:
+      - &quot;8000:8000&quot;
+    environment:
+      - NEO4J_URI=bolt://neo4j:7687
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on:
+      - neo4j
+      - elasticsearch
+
+  # 图数据库
+  neo4j:
+    image: neo4j:5.0
+    ports:
+      - &quot;7474:7474&quot;
+      - &quot;7687:7687&quot;
+    volumes:
+      - neo4j_data:/data
+      - ./ontology:/ontology:ro
+
+  # 搜索引擎
+  elasticsearch:
+    image: elasticsearch:8.0.0
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+
+  # 缓存
+  redis:
+    image: redis:7-alpine
+    ports:
+      - &quot;6379:6379&quot;
+
+volumes:
+  neo4j_data:
+  es_data:
+</code></pre>
+<h3 id="62">6.2 微服务架构</h3>
+<pre><code>                    ┌─────────────┐
+                    │   API网关   │
+                    │  (Kong/Nginx)│
+                    └──────┬──────┘
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+   ┌────┴────┐       ┌────┴────┐       ┌────┴────┐
+   │ 检索服务 │       │ 路径服务 │       │ 题库服务 │
+   │ (Search)│       │  (Path) │       │(Question)│
+   └────┬────┘       └────┬────┘       └────┬────┘
+        │                  │                  │
+        └──────────────────┼──────────────────┘
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+         ┌────┴────┐  ┌────┴────┐  ┌────┴────┐
+         │  Neo4j  │  │   ES    │  │  Redis  │
+         │ (图数据)│  │(全文索引)│  │ (缓存)  │
+         └─────────┘  └─────────┘  └─────────┘
+</code></pre>
+<hr />
+<h2 id="_6">七、开发路线图</h2>
+<h3 id="phase-1-mvp">Phase 1: 基础能力 (MVP)</h3>
+<ul>
+<li>[x] 本体设计与构建 (SKILL_05)</li>
+<li>[ ] 知识点检索系统 (SKILL_06a)</li>
+<li>[ ] 基础学习路径 (SKILL_06b)</li>
+<li>[ ] 题库关联 (SKILL_06c)</li>
+</ul>
+<h3 id="phase-2">Phase 2: 智能增强</h3>
+<ul>
+<li>[ ] 语义搜索与推荐</li>
+<li>[ ] 自适应学习路径</li>
+<li>[ ] 智能错题分析</li>
+<li>[ ] 学情分析看板</li>
+</ul>
+<h3 id="phase-3">Phase 3: 高级功能</h3>
+<ul>
+<li>[ ] 知识图谱可视化增强</li>
+<li>[ ] 多模态学习资源</li>
+<li>[ ] 协作学习功能</li>
+<li>[ ] AI助教对话</li>
+</ul>
+<hr />
+<h2 id="skill">八、与其他SKILL的关系</h2>
+<table>
+<thead>
+<tr>
+<th>SKILL</th>
+<th>关系</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SKILL_05_本体构建</td>
+<td>基础依赖</td>
+<td>提供知识图谱的数据模型</td>
+</tr>
+<tr>
+<td>SKILL_06a_知识点查询</td>
+<td>子模块</td>
+<td>详细描述检索系统实现</td>
+</tr>
+<tr>
+<td>SKILL_06b_学习路径</td>
+<td>子模块</td>
+<td>详细描述路径规划实现</td>
+</tr>
+<tr>
+<td>SKILL_06c_题库关联</td>
+<td>子模块</td>
+<td>详细描述题库系统实现</td>
+</tr>
+<tr>
+<td>认知辅助阅读器</td>
+<td>参考设计</td>
+<td>借鉴语义高亮和可视化设计</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">九、总结</h2>
+<p>本应用构建方案基于OWL/RDF本体体系，构建了完整的分子生物学智能教学应用系统：</p>
+<ol>
+<li><strong>技术架构</strong>：采用微服务架构，前后端分离，支持水平扩展</li>
+<li><strong>数据层</strong>：Neo4j图数据库存储知识图谱，Elasticsearch支持全文检索</li>
+<li><strong>核心应用</strong>：知识点检索、学习路径规划、智能题库三大模块</li>
+<li><strong>智能能力</strong>：基于知识依赖的个性化推荐，基于掌握度的自适应学习</li>
+<li><strong>扩展性</strong>：模块化设计，支持后续添加AI对话、多模态资源等高级功能</li>
+</ol></article></main><footer class="footer">Built for molecular biology teaching · Generated by scripts/build_site.py</footer>
+</body></html>

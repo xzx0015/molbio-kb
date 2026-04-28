@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SKILL 01: 内容采集 — PDF/课件/文献的采集与标准化 | 分子生物学知识库</title><meta name="description" content="# SKILL 01: 内容采集 — PDF/课件/文献的采集与标准化 &gt; 从多种原始格式（PDF、PPT、Word、网页）采集分子生物学教学资源，统一转换为标准Markdown格式。 --- ## 一、核心概念 ### 1.1 原始资源类型 分子生物学课程资源通常来自以下渠道： | 来源类型 | 典型格式 | 内容特">
+<style>:root{--bg:#f6f8fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e5e7eb;--primary:#355cde;--accent:#764ba2;--soft:#eef2ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}.wrap{max-width:1120px;margin:0 auto;padding:24px}.top{background:linear-gradient(135deg,#355cde,#764ba2);color:white}.top .wrap{padding-top:34px;padding-bottom:34px}.brand{font-size:28px;font-weight:800;margin:0}.subtitle{opacity:.9;margin:8px 0 0}.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 24px rgba(16,24,40,.05)}.article h1{color:var(--primary);line-height:1.25}.article h2{border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:30px}.article table{width:100%;border-collapse:collapse;margin:16px 0}.article th,.article td{border-bottom:1px solid var(--line);padding:8px;text-align:left}.article th{background:#f9fafb}.article code{background:#f3f4f6;padding:2px 5px;border-radius:5px}.article pre{background:#111827;color:#f9fafb;padding:14px;border-radius:12px;overflow:auto}.crumb{margin:16px 0;color:var(--muted)}.entity{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--soft);font-weight:600}.tag{display:inline-block;font-size:12px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:2px 8px;margin:2px}.list{padding-left:1.2em}.searchbox{width:100%;font-size:16px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white}.result{padding:14px 0;border-bottom:1px solid var(--line)}.footer{padding:28px;text-align:center;color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:white;margin:3px}.warn{background:#fff7ed;border-color:#fed7aa}.ok{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:640px){.wrap{padding:16px}.article{padding:20px}.brand{font-size:24px}}</style></head><body>
+<header class="top"><div class="wrap"><h1 class="brand">🧬 分子生物学知识库</h1><p class="subtitle">Molecular Biology KB · 统一生成的课程章节、实体索引、概念关系与搜索入口</p><nav class="nav"><a href="../index.html">首页</a><a href="../chapters/index.html">课程章节</a><a href="../kg/entities/index.html">实体索引</a><a href="../kg/concepts/index.html">概念图谱</a><a href="../search/index.html">搜索</a><a href="index.html">构建方法</a></nav></div></header>
+<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><article class="article"><h1 id="skill-01-pdf">SKILL 01: 内容采集 — PDF/课件/文献的采集与标准化</h1>
+<blockquote>
+<p>从多种原始格式（PDF、PPT、Word、网页）采集分子生物学教学资源，统一转换为标准Markdown格式。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、核心概念</h2>
+<h3 id="11">1.1 原始资源类型</h3>
+<p>分子生物学课程资源通常来自以下渠道：</p>
+<table>
+<thead>
+<tr>
+<th>来源类型</th>
+<th>典型格式</th>
+<th>内容特征</th>
+<th>处理优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>教材扫描</td>
+<td>PDF</td>
+<td>完整章节、权威定义</td>
+<td>★★★ 最高</td>
+</tr>
+<tr>
+<td>教学课件</td>
+<td>PPT/PPTX</td>
+<td>重点提炼、图示丰富</td>
+<td>★★★ 最高</td>
+</tr>
+<tr>
+<td>讲义文档</td>
+<td>DOC/DOCX</td>
+<td>补充说明、例题解析</td>
+<td>★★☆ 中等</td>
+</tr>
+<tr>
+<td>参考文献</td>
+<td>PDF</td>
+<td>前沿进展、实验方法</td>
+<td>★★☆ 中等</td>
+</tr>
+<tr>
+<td>在线资源</td>
+<td>HTML/Markdown</td>
+<td>互动内容、视频脚本</td>
+<td>★☆☆ 可选</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12">1.2 标准化目标格式</h3>
+<p>所有资源最终统一为 <strong>GitHub Flavored Markdown (GFM)</strong>，原因：
+- <strong>纯文本可diff</strong> — 便于版本控制和协作
+- <strong>LaTeX公式支持</strong> — <code>$E=mc^2$</code> 和 <code>$$...$$</code> 块级公式
+- <strong>表格友好</strong> — 课程数据常以表格呈现
+- <strong>图片嵌入</strong> — <code>![alt](path)</code> 语法简洁
+- <strong>代码高亮</strong> — 序列数据、脚本示例</p>
+<hr />
+<h2 id="1">二、阶段1：资源采集</h2>
+<h3 id="21">2.1 采集目录结构</h3>
+<pre><code>archive/
+├── 教材/
+│   ├── 分子生物学_第5版_朱玉贤.pdf
+│   ├── 分子生物学_第5版_朱玉贤_章节目录.txt
+│   └── 封面-版权页-目录.pdf
+├── 课件/
+│   ├── 第01章_绪论.pptx
+│   ├── 第02章_DNA复制.pptx
+│   └── ...
+├── 文献/
+│   ├── 2023_Crispr_Review.pdf
+│   └── ...
+└── 补充/
+    └── 实验指导.docx
+</code></pre>
+<h3 id="22">2.2 命名规范</h3>
+<p><strong>文件命名</strong>：<code>{序号}_{主题}.{扩展名}</code></p>
+<pre><code>✓ 第01章_绪论与历史.pptx
+✓ 第02章_DNA复制机制.pdf
+✓ 第03章_转录与RNA加工.pptx
+✗ 分子生物学第一章.pptx      ← 缺少序号
+✗ 第1章.pptx                 ← 序号未补零
+✗ DNA复制(2).pptx            ← 无序号，有重复标记
+</code></pre>
+<p><strong>章节编号规则</strong>：
+- 两位数编号（01-99），确保文件排序正确
+- 使用阿拉伯数字，避免"第一章"等中文数字
+- 主题使用简洁英文或中文，无空格用下划线替代</p>
+<hr />
+<h2 id="2">三、阶段2：格式转换</h2>
+<h3 id="31-pdfmarkdown">3.1 PDF转Markdown</h3>
+<p><strong>工具链</strong>：<code>pdfplumber</code>（保留布局）+ <code>pandoc</code>（精修格式）</p>
+<pre><code class="language-python">import pdfplumber
+
+def pdf_to_markdown(pdf_path, output_path):
+    &quot;&quot;&quot;PDF转Markdown，保留章节结构和公式&quot;&quot;&quot;
+    with pdfplumber.open(pdf_path) as pdf:
+        md_content = []
+        for page in pdf.pages:
+            text = page.extract_text()
+            # 识别标题层级（字体大小/粗体）
+            # 识别公式块（居中、特殊字符）
+            # 识别表格（线条对齐）
+            md_content.append(process_page(text))
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('\n\n'.join(md_content))
+</code></pre>
+<p><strong>PDF特殊元素处理</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>识别特征</th>
+<th>Markdown转换</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>章节标题</td>
+<td>大字号、粗体、数字编号</td>
+<td><code># 第N章 标题</code></td>
+</tr>
+<tr>
+<td>小节标题</td>
+<td>中等字号、粗体</td>
+<td><code>## N.M 标题</code></td>
+</tr>
+<tr>
+<td>正文段落</td>
+<td>常规字号</td>
+<td>普通段落</td>
+</tr>
+<tr>
+<td>公式块</td>
+<td>居中、希腊字母/上下标</td>
+<td><code>$$...$$</code></td>
+</tr>
+<tr>
+<td>行内公式</td>
+<td>特殊符号夹杂</td>
+<td><code>$...$</code></td>
+</tr>
+<tr>
+<td>表格</td>
+<td>线条对齐</td>
+<td>GFM表格语法</td>
+</tr>
+<tr>
+<td>图片</td>
+<td>图注"图N-X"</td>
+<td><code>![图注](images/...)</code></td>
+</tr>
+<tr>
+<td>页眉页脚</td>
+<td>每页重复</td>
+<td>删除</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-pptmarkdown">3.2 PPT转Markdown</h3>
+<p><strong>工具链</strong>：<code>python-pptx</code> 提取文本 + 手动整理结构</p>
+<pre><code class="language-python">from pptx import Presentation
+
+def pptx_to_markdown(pptx_path, output_path):
+    &quot;&quot;&quot;PPT转Markdown，每页转为一个小节&quot;&quot;&quot;
+    prs = Presentation(pptx_path)
+    md_content = []
+
+    for i, slide in enumerate(prs.slides, 1):
+        slide_text = []
+        for shape in slide.shapes:
+            if hasattr(shape, &quot;text&quot;) and shape.text.strip():
+                slide_text.append(shape.text.strip())
+
+        if slide_text:
+            md_content.append(f&quot;## 幻灯片 {i}\n\n&quot;)
+            md_content.append('\n\n'.join(slide_text))
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('\n\n'.join(md_content))
+</code></pre>
+<p><strong>PPT特殊处理</strong>：
+- 提取备注栏内容作为补充说明
+- 识别SmartArt图形转为列表或表格
+- 图片另存到 <code>images/</code> 目录，Markdown引用相对路径</p>
+<h3 id="33-wordmarkdown">3.3 Word转Markdown</h3>
+<p><strong>推荐工具</strong>：<code>pandoc</code>（最可靠）</p>
+<pre><code class="language-bash"># 基础转换
+pandoc -s input.docx -t markdown -o output.md
+
+# 保留图片（提取到指定目录）
+pandoc -s input.docx -t markdown --extract-media=./images -o output.md
+
+# 保留表格宽度信息
+pandoc -s input.docx -t markdown --wrap=none -o output.md
+</code></pre>
+<hr />
+<h2 id="3">四、阶段3：内容清洗</h2>
+<h3 id="41">4.1 清洗规则</h3>
+<p><strong>删除内容</strong>：
+- 页眉页脚（页码、章节名重复）
+- 版权声明页
+- 空白页/分隔页
+- "本章小结"等模板化内容（保留核心要点）</p>
+<p><strong>规范化内容</strong>：
+- 统一术语拼写（如"DNA"不写作"Dna"或"dna"）
+- 统一标点符号（中文内容用中文标点，英文用英文标点）
+- 统一单位格式（"kb"→"kb"，"°C"→"°C"）</p>
+<h3 id="42">4.2 公式标准化</h3>
+<p><strong>LaTeX公式规范</strong>：</p>
+<pre><code class="language-markdown"># 行内公式
+DNA双螺旋直径约为 $2\,\text{nm}$，螺距约为 $3.4\,\text{nm}$。
+
+# 块级公式（独立成行）
+$$
+DNA_{浓度}(\mu g/mL) = \frac{OD_{260} \times 稀释倍数 \times 50}{1000}
+$$
+
+# 化学方程式
+$$
+\text{dNTP} + \text{DNA}_{n} \xrightarrow{\text{DNA聚合酶}} \text{DNA}_{n+1} + \text{PPi}
+$$
+</code></pre>
+<p><strong>常见公式替换</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>原文</th>
+<th>替换为</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>α</td>
+<td><code>\alpha</code></td>
+<td>希腊字母</td>
+</tr>
+<tr>
+<td>β</td>
+<td><code>\beta</code></td>
+<td>希腊字母</td>
+</tr>
+<tr>
+<td>°C</td>
+<td><code>^\circ\text{C}</code></td>
+<td>摄氏度</td>
+</tr>
+<tr>
+<td>下标n</td>
+<td><code>_n</code></td>
+<td>下标</td>
+</tr>
+<tr>
+<td>上标2</td>
+<td><code>^2</code></td>
+<td>上标</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43">4.3 图片处理</h3>
+<p><strong>图片命名</strong>：<code>{章节号}_{序号}_{描述}.png</code></p>
+<pre><code>images/
+├── 02_01_dna_double_helix.png
+├── 02_02_replication_fork.png
+├── 02_03_okazaki_fragments.png
+└── ...
+</code></pre>
+<p><strong>Markdown引用</strong>：</p>
+<pre><code class="language-markdown">![DNA双螺旋结构示意图](images/02_01_dna_double_helix.png)
+*图2-1 DNA双螺旋结构示意图。显示两条反向平行的多核苷酸链，碱基对位于内侧，通过氢键连接。*
+</code></pre>
+<hr />
+<h2 id="4">五、阶段4：质量验证</h2>
+<h3 id="51">5.1 自动化检查</h3>
+<pre><code class="language-python"># lint_raw_md.py — 原始Markdown质量检查
+
+def check_markdown_quality(md_path):
+    &quot;&quot;&quot;检查转换后的Markdown质量&quot;&quot;&quot;
+    issues = []
+
+    with open(md_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # 检查1：标题层级是否连续
+    headers = re.findall(r'^(#{1,6})\s', content, re.MULTILINE)
+    # 不允许从#直接跳到###
+
+    # 检查2：公式语法是否正确
+    # 行内公式 $...$ 必须成对
+    # 块级公式 $$...$$ 必须成对
+
+    # 检查3：图片引用是否存在
+    images = re.findall(r'!\[.*?\]\((.*?)\)', content)
+    for img in images:
+        if not os.path.exists(os.path.join(os.path.dirname(md_path), img)):
+            issues.append(f&quot;图片缺失: {img}&quot;)
+
+    # 检查4：表格格式是否正确
+    # GFM表格必须有表头分隔行 |---|---|
+
+    # 检查5：编码问题
+    # 不应有乱码字符 
+
+    return issues
+</code></pre>
+<h3 id="52">5.2 人工审核清单</h3>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>合格标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>章节完整性</td>
+<td>无遗漏小节，顺序正确</td>
+</tr>
+<tr>
+<td>公式准确性</td>
+<td>与原文一致，渲染正确</td>
+</tr>
+<tr>
+<td>图片清晰度</td>
+<td>分辨率足够，标注清晰</td>
+</tr>
+<tr>
+<td>术语一致性</td>
+<td>全文术语统一</td>
+</tr>
+<tr>
+<td>引用完整性</td>
+<td>图表引用编号连续</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">六、输出规范</h2>
+<h3 id="61">6.1 标准化后目录结构</h3>
+<pre><code>docs/raw/
+├── 01_绪论与历史.md
+├── 02_DNA复制.md
+├── 03_转录与RNA加工.md
+├── 04_翻译与蛋白质合成.md
+├── 05_基因表达调控.md
+├── 06_分子生物学技术.md
+├── 07_基因组学与蛋白质组学.md
+└── images/
+    ├── 01_01_central_dogma.png
+    ├── 02_01_dna_structure.png
+    └── ...
+</code></pre>
+<h3 id="62">6.2 文件头元数据</h3>
+<p>每个标准化Markdown文件应包含YAML frontmatter：</p>
+<pre><code class="language-markdown">---
+chapter: 02
+title: DNA复制
+source: 分子生物学_第5版_朱玉贤.pdf
+pages: 45-89
+topics:
+  - DNA半保留复制
+  - 复制起点与方向
+  - DNA聚合酶
+  - 复制叉与冈崎片段
+  - 端粒与端粒酶
+keywords:
+  - DNA replication
+  - DNA polymerase
+  - replication fork
+  - Okazaki fragments
+  - telomerase
+difficulty: intermediate
+prerequisites:
+  - 01_绪论与历史
+---
+
+# 第2章 DNA复制
+
+## 2.1 DNA复制的基本特征
+
+...
+</code></pre>
+<hr />
+<h2 id="_3">七、工具链</h2>
+<table>
+<thead>
+<tr>
+<th>脚本</th>
+<th>位置</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pdf_to_md.py</code></td>
+<td>scripts/</td>
+<td>PDF转Markdown，保留结构</td>
+</tr>
+<tr>
+<td><code>pptx_to_md.py</code></td>
+<td>scripts/</td>
+<td>PPT转Markdown</td>
+</tr>
+<tr>
+<td><code>docx_to_md.py</code></td>
+<td>scripts/</td>
+<td>Word转Markdown（pandoc包装）</td>
+</tr>
+<tr>
+<td><code>clean_md.py</code></td>
+<td>scripts/</td>
+<td>内容清洗（去页眉页脚等）</td>
+</tr>
+<tr>
+<td><code>lint_raw_md.py</code></td>
+<td>scripts/</td>
+<td>Markdown质量检查</td>
+</tr>
+<tr>
+<td><code>extract_images.py</code></td>
+<td>scripts/</td>
+<td>批量提取和重命名图片</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">八、经验教训</h2>
+<ol>
+<li><strong>PDF扫描件需OCR</strong> — 扫描版PDF需先进行OCR识别，推荐<code>Tesseract</code>+<code>pdf2image</code></li>
+<li><strong>公式优先保留LaTeX</strong> — 图片公式难以编辑，尽量转换为LaTeX源码</li>
+<li><strong>表格手动校对</strong> — 自动转换的表格常有对齐问题，需人工检查</li>
+<li><strong>图片单独管理</strong> — 图片与Markdown分离，便于后续替换和优化</li>
+<li><strong>版本控制原始文件</strong> — <code>archive/</code>目录纳入git，保留原始资源可追溯</li>
+<li><strong>批注转为引用块</strong> — 教材边栏批注用 <code>&gt; ...</code> 引用块格式保留</li>
+</ol>
+<hr />
+<h2 id="_5">九、扩展到其他课程</h2>
+<table>
+<thead>
+<tr>
+<th>课程类型</th>
+<th>特殊处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验课</td>
+<td>保留实验步骤编号，安全注意事项高亮</td>
+</tr>
+<tr>
+<td>习题课</td>
+<td>题目与答案分离存储，便于生成练习</td>
+</tr>
+<tr>
+<td>双语课程</td>
+<td>标注原文术语，建立术语对照表</td>
+</tr>
+<tr>
+<td>前沿讲座</td>
+<td>标注演讲日期，区分经典与前沿内容</td>
+</tr>
+</tbody>
+</table></article></main><footer class="footer">Built for molecular biology teaching · Generated by scripts/build_site.py</footer>
+</body></html>
