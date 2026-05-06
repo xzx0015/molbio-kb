@@ -299,61 +299,77 @@ def build_chapters(pages: list[Page]) -> list[dict[str, str]]:
     md_files = sorted((ROOT / "content/chapters").glob("*.md"))
     groups = defaultdict(list)
     for md in md_files:
-        prefix = md.stem[:2]  # "01", "02", etc.
+        prefix = md.stem[:2]
         groups[prefix].append(md)
     
-    # Build individual pages for each md file, with chapter-nav and inline entity links
+    ch_names = ["", "绪论", "分子基础与复制", "信息传递与转录", "翻译与表达调控",
+                "原核表达调控与基因组维持", "分子生物学技术与真核表达调控", "实验技术", "组学前沿"]
+    
+    # Build ONE merged page per chapter (8 chapters total)
+    sorted_prefixes = sorted(groups)
     all_chapters = []
-    for i, md in enumerate(md_files):
-        raw = md.read_text(encoding="utf-8")
-        title = title_from_md(raw, md.stem)
-        out = Path("chapters") / f"{md.stem}.html"
-        all_chapters.append({"title": title, "stem": md.stem, "out": out.as_posix(), "text": clean_text(raw), "prefix": md.stem[:2]})
+    
+    for pi, prefix in enumerate(sorted_prefixes):
+        subs = groups[prefix]
+        ch_num = int(prefix)
+        ch_name = ch_names[ch_num] if ch_num < len(ch_names) else f"第{ch_num}章"
+        out = Path("chapters") / f"ch{ch_num:02d}_{ch_name}.html"
         
-        # Build chapter nav (prev | home | next)
+        # Concatenate all sub-chapter markdown content with section breaks
+        merged_md = ""
+        merged_text = ""
+        for mi, md in enumerate(subs):
+            raw = md.read_text(encoding="utf-8")
+            sub_title = title_from_md(raw, md.stem)
+            if mi > 0:
+                merged_md += f"\n\n---\n\n"
+            # Remove the first # heading (replace with ## for sub-section)
+            raw_fixed = re.sub(r'^#\s+', '## ', raw, count=1)
+            merged_md += raw_fixed
+            merged_text += clean_text(raw) + " "
+        
+        all_chapters.append({"title": ch_name, "stem": f"ch{ch_num:02d}_{ch_name}", "out": out.as_posix(), "text": clean_text(merged_text), "prefix": prefix})
+        
+        # Chapter nav (prev/home/next)
         prev_link = ""
         next_link = ""
-        if i > 0:
-            prev_stem = md_files[i-1].stem
-            prev_link = f'<a href="{rel(out, Path("chapters") / f"{prev_stem}.html")}">← 上一章</a>'
-        if i < len(md_files) - 1:
-            next_stem = md_files[i+1].stem
-            next_link = f'<a href="{rel(out, Path("chapters") / f"{next_stem}.html")}">下一章 →</a>'
+        if pi > 0:
+            prev_prefix = sorted_prefixes[pi-1]
+            prev_name = ch_names[int(prev_prefix)] if int(prev_prefix) < len(ch_names) else f"第{int(prev_prefix)}章"
+            prev_link = f'<a href="{rel(out, Path("chapters") / f"ch{int(prev_prefix):02d}_{prev_name}.html")}">← 上一章</a>'
+        if pi < len(sorted_prefixes) - 1:
+            next_prefix = sorted_prefixes[pi+1]
+            next_name = ch_names[int(next_prefix)] if int(next_prefix) < len(ch_names) else f"第{int(next_prefix)}章"
+            next_link = f'<a href="{rel(out, Path("chapters") / f"ch{int(next_prefix):02d}_{next_name}.html")}">下一章 →</a>'
         chapter_nav = f'<nav class="chapter-nav">{prev_link}<a href="{rel(out, "index.html")}" class="nav-home">🏠 首页</a>{next_link}</nav>'
         
-        # Add purple numbers to paragraphs
-        html_body = md_to_html(raw)
-        # Add PN to each <p> tag
+        # Build HTML with purple numbers
+        html_body = md_to_html(merged_md)
         pn_counter = [0]
         def add_pn(m):
             pn_counter[0] += 1
             return f'<p><a class="pn" id="pn-{pn_counter[0]}" href="#pn-{pn_counter[0]}">{pn_counter[0]}</a>'
         html_body = re.sub(r'<p>', add_pn, html_body)
         
-        body = f'{chapter_nav}<div class="article">{html_body}</div>{chapter_nav}'
-        write_page(out, title, body, pages, "chapter", raw)
+        body = f'{chapter_nav}<h1>第{ch_num}章：{ch_name}</h1><div class="article">{html_body}</div>{chapter_nav}'
+        write_page(out, ch_name, body, pages, "chapter", merged_text)
     
-    # Build chapter index: one card per chapter number, with sub-sections listed
+    # Chapter index page – one card per chapter
     idx = Path("chapters/index.html")
     chapter_cards = []
-    for prefix in sorted(groups):
+    for prefix in sorted_prefixes:
         subs = groups[prefix]
-        # Use the first sub as the main chapter title base
-        main_title = None
-        sub_list_parts = []
+        ch_num = int(prefix)
+        ch_name = ch_names[ch_num] if ch_num < len(ch_names) else f"第{ch_num}章"
+        out_ch = Path("chapters") / f"ch{ch_num:02d}_{ch_name}.html"
+        sub_list = []
         for md in subs:
             raw = md.read_text(encoding="utf-8")
             t = title_from_md(raw, md.stem)
-            if main_title is None:
-                main_title = t
-            out = Path("chapters") / f"{md.stem}.html"
-            sub_list_parts.append(f'<li><a href="{rel(idx, out)}">{html.escape(t)}</a></li>')
-        ch_num = int(prefix)
-        ch_names = ["", "绪论", "分子基础与复制", "信息传递与转录", "翻译与表达调控", "原核与基因组维持", "技术与真核调控", "实验技术", "组学前沿"]
-        ch_name = ch_names[ch_num] if ch_num < len(ch_names) else (main_title or f"第{ch_num}章")
-        chapter_cards.append(f'''<div class="card chapter"><span class="icon">📄</span><h2>第{ch_num}章：{html.escape(ch_name)}</h2><ul class="list" style="font-size:15px">{"".join(sub_list_parts)}</ul></div>''')
+            sub_list.append(f'<li>{html.escape(t)}</li>')
+        chapter_cards.append(f'''<div class="card chapter"><span class="icon">📄</span><h2>第{ch_num}章：{html.escape(ch_name)}</h2><ul class="list" style="font-size:15px">{"".join(sub_list)}</ul><p><a href="{rel(idx, out_ch)}">阅读本章 →</a></p></div>''')
     
-    body = f'<h1>📖 课程章节</h1><p class="muted">由 <code>content/chapters/*.md</code> 自动生成，共 <b>{len(groups)}</b> 章。</p><div class="section-divider"></div><div class="grid">{"".join(chapter_cards)}</div>'
+    body = f'<h1>📖 课程章节</h1><p class="muted">共 <b>{len(groups)}</b> 章。</p><div class="section-divider"></div><div class="grid">{"".join(chapter_cards)}</div>'
     write_page(idx, "课程章节", body, pages, "index", "课程章节")
     return all_chapters
 
@@ -579,20 +595,21 @@ def build_home(pages: list[Page], chapters: list[dict[str, str]], entities: dict
         prefix = md.stem[:2]
         groups[prefix].append(md)
     
+    ch_names_list = ["", "绪论", "分子基础与复制", "信息传递与转录", "翻译与表达调控",
+                "原核表达调控与基因组维持", "分子生物学技术与真核表达调控", "实验技术", "组学前沿"]
     chapter_links = ""
     for prefix in sorted(groups):
         subs = groups[prefix]
         ch_num = int(prefix)
-        ch_names = ["", "绪论", "分子基础与复制", "信息传递与转录", "翻译与表达调控", "原核与基因组维持", "技术与真核调控", "实验技术", "组学前沿"]
-        ch_name = ch_names[ch_num] if ch_num < len(ch_names) else f"第{ch_num}章"
+        ch_name = ch_names_list[ch_num] if ch_num < len(ch_names_list) else f"第{ch_num}章"
+        ch_file = Path("chapters") / f"ch{ch_num:02d}_{ch_name}.html"
         sub_links = ""
         for md in subs:
             raw = md.read_text(encoding="utf-8")
             t = title_from_md(raw, md.stem)
-            out_path = Path("chapters") / f"{md.stem}.html"
-            sub_links += f'<span class="subsection"><a href="{rel(out, out_path)}">{html.escape(t)}</a></span> · '
+            sub_links += f'<span class="subsection">{html.escape(t)}</span> · '
         sub_links = sub_links.rstrip(" · ")
-        chapter_links += f'<div class="subsection" style="margin:8px 0"><b>{ch_num:02d}</b> <a href="{rel(out, Path("chapters") / (subs[0].stem + ".html"))}" style="font-weight:700;font-size:17px">{html.escape(ch_name)}</a> &nbsp; {sub_links}</div>'
+        chapter_links += f'<div class="subsection" style="margin:8px 0"><b>{ch_num:02d}</b> <a href="{rel(out, ch_file)}" style="font-weight:700;font-size:1.1rem">{html.escape(ch_name)}</a> &nbsp; {sub_links}</div>'
     
     ch_count = len(groups)
     body = f'''<div class="stats"><div class="stat"><span class="num">{ch_count}章</span></div><div class="stat"><span class="num">{len(entities)}实体</span></div><div class="stat"><span class="num">{node_count}节点</span></div><div class="stat"><span class="num">{rel_count}关系</span></div></div>

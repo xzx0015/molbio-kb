@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>第二章：分子基础 | 分子生物学知识库</title><meta name="description" content="# 第二章：分子基础 ## 2.1 核酸的化学组成 ### 核苷酸结构 核苷酸 （Nucleotide）是核酸的基本组成单位，由三部分组成： | 组分 | 说明 | 代表 | |------|------|------| | 磷酸基团 | 连接核苷酸形成磷酸二酯键 | —PO₄ | | 五碳糖 | DNA为 脱氧核糖 ">
+<title>分子基础与复制 | 分子生物学知识库</title><meta name="description" content="# 第二章：分子基础 ## 2.1 核酸的化学组成 ### 核苷酸结构 核苷酸 （Nucleotide）是核酸的基本组成单位，由三部分组成： | 组分 | 说明 | 代表 | |------|------|------| | 磷酸基团 | 连接核苷酸形成磷酸二酯键 | —PO₄ | | 五碳糖 | DNA为 脱氧核糖 ">
 <style>
 /* ===== molbio-kb v2 ===== */
 :root{--bg:#fefdf8;--card:#fff;--ink:#1a1a2e;--ink2:#444;--mu:#777;--line:#e8e2d0;--p:#2563eb;--a:#7c3aed;--g:#059669;--o:#ea580c;--header-bg:linear-gradient(135deg,#1e40af,#3b82f6,#6366f1)}
@@ -130,7 +130,7 @@ html.dark .footer{border-color:#334155}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><nav class="chapter-nav"><a href="01_%E7%BB%AA%E8%AE%BA.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="02_%E5%A4%8D%E5%88%B6.html">下一章 →</a></nav><div class="article"><h1 id="_1">第二章：分子基础</h1>
+<main><nav class="chapter-nav"><a href="ch01_%E7%BB%AA%E8%AE%BA.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">下一章 →</a></nav><h1>第2章：分子基础与复制</h1><div class="article"><h2 id="_1">第二章：分子基础</h2>
 <h2 id="21">2.1 核酸的化学组成</h2>
 <h3 id="_2">核苷酸结构</h3>
 <p><a class="pn" id="pn-1" href="#pn-1">1</a><span class="entity molecule" title="分子">核苷酸</span>（Nucleotide）是核酸的基本组成单位，由三部分组成：</p>
@@ -353,7 +353,214 @@ html.dark .footer{border-color:#334155}
 <li>为什么DNA使用脱氧核糖而RNA使用核糖？这对它们的功能有什么影响？</li>
 <li>G≡C碱基对比A=T更稳定，这对基因组有什么意义？</li>
 <li>列举3种DNA结合蛋白的结构模体及其功能。</li>
-</ol></div><nav class="chapter-nav"><a href="01_%E7%BB%AA%E8%AE%BA.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="02_%E5%A4%8D%E5%88%B6.html">下一章 →</a></nav></main>
+</ol>
+<hr />
+<h2 id="dna_1">第二章：DNA复制</h2>
+<h2 id="21-dna">2.1 DNA复制概述</h2>
+<h3 id="_9">半保留复制</h3>
+<p><a class="pn" id="pn-10" href="#pn-10">10</a><span class="entity concept" title="概念：semiconservative_replication">半保留复制</span>是DNA复制的核心机制：</p>
+<pre><code>亲代DNA:    5'-ATGC-3'      3'-TACG-5'
+                ↓ 解旋
+子代DNA1:   5'-ATGC-3'  +  新合成: 3'-TACG-5'
+子代DNA2:   新合成: 5'-ATGC-3'  +  3'-TACG-5'
+</code></pre>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>实验证明</strong>：<span class="entity entity-generic" title="人物">Meselson</span>和<span class="entity entity-generic" title="人物">Stahl</span>（1958）的¹⁵N同位素标记实验</p>
+<h3 id="_10">复制起点与复制叉</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="概念">复制起点</span>（Origin）</td>
+<td>DNA复制开始的特定序列</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">复制叉</span>（Replication fork）</td>
+<td>Y形结构，双链解开的区域</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">复制子</span>（Replicon）</td>
+<td>从一个起点复制的DNA单位</td>
+</tr>
+</tbody>
+</table>
+<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>原核生物</strong>：通常单一起点（如<span class="entity entity-generic" title="概念">OriC</span>）
+<strong>真核生物</strong>：多个起点，形成<span class="entity entity-generic" title="概念">复制泡</span></p>
+<h2 id="22-dna_1">2.2 DNA复制机制</h2>
+<h3 id="_11">复制过程中的关键酶</h3>
+<table>
+<thead>
+<tr>
+<th>酶</th>
+<th>功能</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity enzyme" title="酶">解旋酶</span>（Helicase）</td>
+<td>解开双链</td>
+<td>ATP供能，双向移动</td>
+</tr>
+<tr>
+<td><span class="entity enzyme" title="酶">单链结合蛋白</span>（SSB）</td>
+<td>稳定单链</td>
+<td>防止复性、降解</td>
+</tr>
+<tr>
+<td><span class="entity enzyme" title="酶">拓扑异构酶</span></td>
+<td>缓解超螺旋</td>
+<td>I型切断单链，II型切断双链</td>
+</tr>
+<tr>
+<td><span class="entity enzyme" title="酶">DNA聚合酶</span></td>
+<td>合成新链</td>
+<td>5'→3'方向，需引物</td>
+</tr>
+<tr>
+<td><span class="entity enzyme" title="酶">引物酶</span>（Primase）</td>
+<td>合成RNA引物</td>
+<td>提供3'-OH末端</td>
+</tr>
+<tr>
+<td><span class="entity enzyme" title="酶">DNA连接酶</span></td>
+<td>连接片段</td>
+<td>连接Okazaki片段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">前导链与后随链</h3>
+<p><a class="pn" id="pn-13" href="#pn-13">13</a><span class="entity concept" title="概念：leading_lagging">前导链与后随链</span>：</p>
+<ul>
+<li><strong>前导链</strong>（Leading strand）：连续合成，方向与复制叉移动相同</li>
+<li><strong>后随链</strong>（Lagging strand）：不连续合成，形成<span class="entity entity-generic" title="概念">冈崎片段</span></li>
+</ul>
+<blockquote>
+<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>半不连续复制</strong>：一条连续，一条不连续</p>
+</blockquote>
+<h3 id="dna_2">DNA聚合酶特性</h3>
+<p><a class="pn" id="pn-15" href="#pn-15">15</a><strong>原核生物</strong>（以<span class="entity entity-generic" title="生物">大肠杆菌</span>为例）：</p>
+<table>
+<thead>
+<tr>
+<th>聚合酶</th>
+<th>功能</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity enzyme" title="酶">Pol I</span></td>
+<td>修复、切除RNA引物</td>
+<td>5'→3'外切活性</td>
+</tr>
+<tr>
+<td><span class="entity enzyme" title="酶">Pol II</span></td>
+<td>修复</td>
+<td>SOS修复</td>
+</tr>
+<tr>
+<td><span class="entity enzyme" title="酶">Pol III</span></td>
+<td>主要复制酶</td>
+<td>高保真、高速度</td>
+</tr>
+</tbody>
+</table>
+<p><a class="pn" id="pn-16" href="#pn-16">16</a><strong>真核生物</strong>：
+- <span class="entity enzyme" title="酶">Pol α</span>：合成RNA-DNA引物
+- <span class="entity enzyme" title="酶">Pol δ</span>：合成后随链
+- <span class="entity enzyme" title="酶">Pol ε</span>：合成前导链</p>
+<h2 id="23-dna">2.3 DNA复制的调控</h2>
+<h3 id="_13">复制起始调控</h3>
+<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>原核生物</strong>：
+- <span class="entity protein" title="蛋白">DnaA</span>蛋白结合OriC的9bp重复序列
+- ATP-DnaA促进双链解开
+- <span class="entity protein" title="蛋白">DnaC</span>协助<span class="entity protein" title="蛋白">DnaB</span>解旋酶加载</p>
+<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>真核生物</strong>：
+- 复制起点识别复合物<span class="entity complex" title="复合物">ORC</span>
+- <span class="entity protein" title="蛋白">Cdc6</span>和<span class="entity protein" title="蛋白">Cdt1</span>招募<span class="entity protein" title="蛋白">MCM</span>解旋酶
+- <span class="entity entity-generic" title="激酶">CDK</span>和<span class="entity entity-generic" title="激酶">DDK</span>激酶激活复制起始</p>
+<h3 id="_14">复制检查点</h3>
+<p><a class="pn" id="pn-19" href="#pn-19">19</a><span class="entity concept" title="概念：replication_checkpoint">复制检查点</span>确保DNA完整复制：</p>
+<ul>
+<li><strong>S期检查点</strong>：监测复制叉进展</li>
+<li><strong>DNA损伤检查点</strong>：<span class="entity entity-generic" title="激酶">ATM/ATR</span>激酶通路</li>
+<li><strong>复制许可</strong>：每轮细胞周期只复制一次</li>
+</ul>
+<h2 id="24_1">2.4 端粒与端粒酶</h2>
+<h3 id="_15">端粒结构</h3>
+<p><a class="pn" id="pn-20" href="#pn-20">20</a><span class="entity entity-generic" title="结构">端粒</span>（Telomere）：染色体末端的保护结构</p>
+<ul>
+<li>序列：人类为<span class="entity entity-generic" title="序列">TTAGGG</span>重复（5-15 kb）</li>
+<li>结构：<span class="entity entity-generic" title="结构">T环</span>（T-loop），3'端回折</li>
+<li>功能：防止染色体末端被识别为DNA损伤</li>
+</ul>
+<h3 id="_16">端粒酶</h3>
+<p><a class="pn" id="pn-21" href="#pn-21">21</a><span class="entity enzyme" title="酶">端粒酶</span>（Telomerase）：
+- <span class="entity complex" title="复合物">核糖核蛋白</span>复合物
+- <span class="entity molecule" title="分子">RNA组分</span>（<span class="entity entity-generic" title="RNA">TERC</span>）：模板序列
+- <span class="entity protein" title="蛋白">蛋白质组分</span>（<span class="entity protein" title="蛋白">TERT</span>）：逆转录酶活性</p>
+<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>机制</strong>：</p>
+<pre><code>端粒DNA 3'端 → 端粒酶结合 → 以RNA为模板延伸 → 移位 → 重复
+</code></pre>
+<h3 id="_17">端粒与衰老</h3>
+<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>端粒缩短</strong>：
+- 正常体细胞：端粒酶活性低，端粒逐代缩短
+- <span class="entity entity-generic" title="概念">Hayflick极限</span>：细胞分裂约50-60次后衰老</p>
+<p><a class="pn" id="pn-24" href="#pn-24">24</a><strong>端粒酶与癌症</strong>：
+- 85-90%的癌细胞端粒酶重新激活
+- 维持端粒长度，获得无限增殖能力</p>
+<h2 id="25-dna">2.5 DNA损伤与修复</h2>
+<h3 id="_18">损伤类型</h3>
+<table>
+<thead>
+<tr>
+<th>诱变剂</th>
+<th>损伤类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="诱变剂">UV</span></td>
+<td>嘧啶二聚体（CPD、6-4光产物）</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="诱变剂">电离辐射</span></td>
+<td>双链断裂、碱基氧化</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="诱变剂">烷化剂</span></td>
+<td>碱基烷基化</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_19">主要修复机制</h3>
+<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>直接修复</strong>：
+- <span class="entity entity-generic" title="修复">光修复</span>：<span class="entity enzyme" title="酶">光裂合酶</span>裂解嘧啶二聚体</p>
+<p><a class="pn" id="pn-26" href="#pn-26">26</a><strong>切除修复</strong>：
+- <span class="entity entity-generic" title="修复">BER</span>（碱基切除修复）：修复单个损伤碱基
+- <span class="entity entity-generic" title="修复">NER</span>（核苷酸切除修复）：修复大的螺旋扭曲</p>
+<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>双链断裂修复</strong>：
+- <span class="entity entity-generic" title="修复">同源重组</span>（HRR）：高保真，需要同源模板
+- <span class="entity entity-generic" title="修复">非同源末端连接</span>（NHEJ）：易错，不需要模板</p>
+<h2 id="_20">本章小结</h2>
+<ul>
+<li>DNA半保留复制确保遗传信息精确传递</li>
+<li>复制是半不连续的，需要多种酶协同</li>
+<li>复制起始受严格调控，确保每周期只复制一次</li>
+<li>端粒酶维持染色体末端，与衰老和癌症相关</li>
+<li>DNA损伤修复机制维持基因组稳定性</li>
+</ul>
+<h2 id="_21">思考题</h2>
+<ol>
+<li>为什么DNA复制需要RNA引物？</li>
+<li>前导链和后随链的合成有什么不同？</li>
+<li>端粒酶在癌症治疗中有什么潜在应用？</li>
+</ol></div><nav class="chapter-nav"><a href="ch01_%E7%BB%AA%E8%AE%BA.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">下一章 →</a></nav></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

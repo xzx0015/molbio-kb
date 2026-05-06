@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>第八章：组学与前沿技术 | 分子生物学知识库</title><meta name="description" content="# 第八章：组学与前沿技术 ## 8.1 基因组学 ### DNA测序技术 **第一代测序（Sanger测序）**： - 双脱氧终止法 - 读长：500-1000 bp - 准确率：&gt;99.9% - 应用：小片段验证、重测序 **第二代测序（NGS）**： | 平台 | 技术原理 | 读长 | 应用 | |------">
+<title>绪论 | 分子生物学知识库</title><meta name="description" content="# 第一章：绪论 ## 1.1 分子生物学的定义 **分子生物学**（Molecular Biology）是研究生物大分子（核酸和蛋白质）的结构、功能及其相互作用，揭示生命活动分子机制的学科。 ### 核心研究对象 | 类别 | 代表分子 | 功能 | |------|---------|------| | 核酸 | ">
 <style>
 /* ===== molbio-kb v2 ===== */
 :root{--bg:#fefdf8;--card:#fff;--ink:#1a1a2e;--ink2:#444;--mu:#777;--line:#e8e2d0;--p:#2563eb;--a:#7c3aed;--g:#059669;--o:#ea580c;--header-bg:linear-gradient(135deg,#1e40af,#3b82f6,#6366f1)}
@@ -130,194 +130,108 @@ html.dark .footer{border-color:#334155}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><nav class="chapter-nav"><a href="07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a></nav><div class="article"><h1 id="_1">第八章：组学与前沿技术</h1>
-<h2 id="81">8.1 基因组学</h2>
-<h3 id="dna">DNA测序技术</h3>
-<p><a class="pn" id="pn-1" href="#pn-1">1</a><strong>第一代测序（Sanger测序）</strong>：
-- 双脱氧终止法
-- 读长：500-1000 bp
-- 准确率：&gt;99.9%
-- 应用：小片段验证、重测序</p>
-<p><a class="pn" id="pn-2" href="#pn-2">2</a><strong>第二代测序（NGS）</strong>：
-| 平台 | 技术原理 | 读长 | 应用 |
-|------|---------|------|------|
-| Illumina | 桥式PCR + 荧光标记 | 150-300 bp | 全基因组、RNA-seq |
-| Ion Torrent | 半导体测序 | 200-400 bp | 靶向测序 |</p>
-<p><a class="pn" id="pn-3" href="#pn-3">3</a><strong>第三代测序</strong>：
-- <strong>PacBio</strong>：单分子实时测序，读长10-20 kb
-- <strong>Oxford Nanopore</strong>：纳米孔测序，便携、实时</p>
-<h3 id="_2">全基因组分析</h3>
-<p><a class="pn" id="pn-4" href="#pn-4">4</a><strong>全基因组测序</strong>（WGS）：
-- 检测SNV、Indel、SV、CNV
-- 疾病研究、群体遗传学</p>
-<p><a class="pn" id="pn-5" href="#pn-5">5</a><strong>全外显子测序</strong>（WES）：
-- 只测外显子区域（占基因组1-2%）
-- 成本较低，适合孟德尔疾病研究</p>
-<p><a class="pn" id="pn-6" href="#pn-6">6</a><strong>基因组注释</strong>：
-- 基因预测（ab initio、同源比对）
-- 功能注释（GO、KEGG）
-- 非编码RNA注释</p>
-<h3 id="_3">比较基因组学</h3>
-<p><a class="pn" id="pn-7" href="#pn-7">7</a><strong>同线性分析</strong>（Synteny）：
-- 比较不同物种基因组结构
-- 揭示进化关系</p>
-<p><a class="pn" id="pn-8" href="#pn-8">8</a><strong>全基因组复制</strong>（WGD）：
-- 植物基因组常见
-- 基因家族扩张</p>
-<h2 id="82">8.2 转录组学</h2>
-<h3 id="rna-seq">RNA-seq技术</h3>
-<p><a class="pn" id="pn-9" href="#pn-9">9</a><strong>原理</strong>：
-1. RNA提取
-2. 逆转录为cDNA
-3. 文库构建
-4. 高通量测序
-5. 数据分析</p>
-<p><a class="pn" id="pn-10" href="#pn-10">10</a><strong>应用</strong>：
-- 基因表达定量
-- 可变剪接分析
-- 新转录本发现
-- 融合基因检测</p>
-<h3 id="_4">单细胞转录组</h3>
-<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>scRNA-seq技术</strong>：
-| 平台 | 特点 |
-|------|------|
-| 10x Genomics | 高通量，3'端捕获 |
-| Smart-seq2 | 全长覆盖 |
-| Drop-seq | 低成本 |</p>
-<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>分析流程</strong>：
-1. 质控和过滤
-2. 归一化
-3. 降维（PCA、t-SNE、UMAP）
-4. 聚类
-5. 差异表达分析
-6. 轨迹推断</p>
-<p><a class="pn" id="pn-13" href="#pn-13">13</a><strong>应用</strong>：
-- 细胞类型鉴定
-- 发育轨迹重建
-- 肿瘤异质性分析</p>
-<h3 id="_5">空间转录组</h3>
-<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>技术原理</strong>：
-- 保留组织空间信息
-- 结合组织学和转录组学</p>
-<p><a class="pn" id="pn-15" href="#pn-15">15</a><strong>平台</strong>：
-- 10x Genomics Visium
-- Slide-seq
-- MERFISH</p>
-<h2 id="83">8.3 蛋白质组学</h2>
-<h3 id="_6">质谱技术</h3>
-<p><a class="pn" id="pn-16" href="#pn-16">16</a><strong>LC-MS/MS</strong>：
-- 液相色谱分离
-- 质谱检测
-- 蛋白质鉴定和定量</p>
-<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>定量方法</strong>：
-| 方法 | 原理 |
-|------|------|
-| SILAC | 稳定同位素标记 |
-| iTRAQ/TMT | 同位素标记 |
-| Label-free | 无标记，基于肽段强度 |
-| DIA/SWATH | 数据非依赖采集 |</p>
-<h3 id="_7">蛋白质相互作用</h3>
-<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>酵母双杂交</strong>（Y2H）：
-- 检测蛋白质-蛋白质相互作用
-- 高通量筛选</p>
-<p><a class="pn" id="pn-19" href="#pn-19">19</a><strong>质谱蛋白质组学</strong>：
-- AP-MS（亲和纯化质谱）
-- BioID（邻近标记）</p>
-<h3 id="_8">翻译后修饰</h3>
-<p><a class="pn" id="pn-20" href="#pn-20">20</a><strong>磷酸化蛋白质组</strong>：
-- TiO₂/IMAC富集
-- 质谱鉴定磷酸化位点</p>
-<p><a class="pn" id="pn-21" href="#pn-21">21</a><strong>泛素化蛋白质组</strong>：
-- 泛素化位点鉴定
-- 蛋白质降解研究</p>
-<h2 id="84">8.4 代谢组学</h2>
-<h3 id="_9">代谢物检测</h3>
-<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>LC-MS</strong>：
-- 非靶向代谢组学
-- 广谱检测代谢物</p>
-<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>GC-MS</strong>：
-- 挥发性代谢物
-- 标准品库匹配</p>
-<p><a class="pn" id="pn-24" href="#pn-24">24</a><strong>NMR</strong>：
-- 无损伤检测
-- 定量准确</p>
-<h3 id="_10">代谢流分析</h3>
-<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>原理</strong>：
-- 同位素示踪（¹³C、¹⁵N）
-- 追踪代谢物转化
-- 计算代谢通量</p>
-<h2 id="85">8.5 表观基因组学</h2>
-<h3 id="chip-seq">ChIP-seq</h3>
-<p><a class="pn" id="pn-26" href="#pn-26">26</a><strong>原理</strong>：
-- 染色质免疫沉淀
-- 测序鉴定蛋白质结合位点</p>
-<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>应用</strong>：
-- 转录因子结合位点
-- 组蛋白修饰分布
-- 染色质可及性（ATAC-seq）</p>
-<h3 id="dna_1">DNA甲基化测序</h3>
-<p><a class="pn" id="pn-28" href="#pn-28">28</a><strong>WGBS</strong>（全基因组亚硫酸氢盐测序）：
-- 金标准方法
-- 单碱基分辨率</p>
-<p><a class="pn" id="pn-29" href="#pn-29">29</a><strong>RRBS</strong>（简化代表性亚硫酸氢盐测序）：
-- 只测CpG富集区域
-- 成本较低</p>
-<h3 id="_11">染色质构象</h3>
-<p><a class="pn" id="pn-30" href="#pn-30">30</a><strong>Hi-C</strong>：
-- 检测染色质三维结构
-- 揭示拓扑关联结构域（TAD）</p>
-<p><a class="pn" id="pn-31" href="#pn-31">31</a><strong>Capture-C</strong>：
-- 高分辨率检测特定区域互作
-- 增强子-启动子互作</p>
-<h2 id="86">8.6 前沿技术</h2>
-<h3 id="_12">基因治疗</h3>
-<p><a class="pn" id="pn-32" href="#pn-32">32</a><strong>递送系统</strong>：
-| 类型 | 特点 |
-|------|------|
-| 病毒载体 | AAV、慢病毒、腺病毒 |
-| 非病毒载体 | 脂质纳米颗粒（LNP） |
-| 基因编辑 | CRISPR体内递送 |</p>
-<p><a class="pn" id="pn-33" href="#pn-33">33</a><strong>应用</strong>：
-- 单基因遗传病（如镰状细胞贫血）
-- 癌症免疫治疗（CAR-T）
-- 眼科疾病</p>
-<h3 id="_13">合成生物学</h3>
-<p><a class="pn" id="pn-34" href="#pn-34">34</a><strong>基因线路</strong>：
-- 逻辑门（AND、OR、NOT）
-- 振荡器、开关</p>
-<p><a class="pn" id="pn-35" href="#pn-35">35</a><strong>细胞工厂</strong>：
-- 微生物合成药物（青蒿素、紫杉醇）
-- 生物燃料生产</p>
-<h3 id="_14">人工智能与生物学</h3>
-<p><a class="pn" id="pn-36" href="#pn-36">36</a><strong>AlphaFold</strong>：
-- 蛋白质结构预测
-- 覆盖2亿+蛋白质</p>
-<p><a class="pn" id="pn-37" href="#pn-37">37</a><strong>深度学习应用</strong>：
-- 基因表达预测
-- 药物发现
-- 医学影像分析</p>
-<h3 id="_15">类器官与器官芯片</h3>
-<p><a class="pn" id="pn-38" href="#pn-38">38</a><strong>类器官</strong>（Organoid）：
-- 干细胞自组织形成
-- 模拟器官结构和功能
-- 疾病建模、药物筛选</p>
-<p><a class="pn" id="pn-39" href="#pn-39">39</a><strong>器官芯片</strong>（Organ-on-chip）：
-- 微流控技术
-- 模拟器官微环境
-- 药物毒性测试</p>
-<h2 id="_16">本章小结</h2>
-<ul>
-<li>组学技术从基因组、转录组、蛋白质组、代谢组多层次研究生物系统</li>
-<li>单细胞和空间技术揭示细胞异质性和组织微环境</li>
-<li>表观基因组学研究基因调控的表观遗传机制</li>
-<li>前沿技术（基因治疗、合成生物学、AI）正在改变生物医学研究</li>
-</ul>
-<h2 id="_17">思考题</h2>
+<main><nav class="chapter-nav"><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch02_%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%A4%8D%E5%88%B6.html">下一章 →</a></nav><h1>第1章：绪论</h1><div class="article"><h2 id="_1">第一章：绪论</h2>
+<h2 id="11">1.1 分子生物学的定义</h2>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a><strong>分子生物学</strong>（Molecular Biology）是研究生物大分子（核酸和蛋白质）的结构、功能及其相互作用，揭示生命活动分子机制的学科。</p>
+<h3 id="_2">核心研究对象</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>代表分子</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核酸</td>
+<td><span class="entity molecule" title="分子">DNA</span>、<span class="entity molecule" title="分子">RNA</span></td>
+<td>遗传信息存储与传递</td>
+</tr>
+<tr>
+<td>蛋白质</td>
+<td><span class="entity molecule" title="分子">酶</span>、<span class="entity molecule" title="分子">结构蛋白</span></td>
+<td>催化反应、结构支撑</td>
+</tr>
+<tr>
+<td>复合物</td>
+<td><span class="entity complex" title="复合物">核糖体</span>、<span class="entity complex" title="复合物">染色体</span></td>
+<td>复杂功能执行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12">1.2 中心法则</h2>
+<p><a class="pn" id="pn-2" href="#pn-2">2</a><span class="entity concept" title="概念：central_dogma">中心法则</span>（Central Dogma）是分子生物学的核心理论框架，描述了遗传信息的流动方向：</p>
+<pre><code>DNA → RNA → 蛋白质
+</code></pre>
+<h3 id="_3">信息流动过程</h3>
 <ol>
-<li>单细胞RNA-seq相比bulk RNA-seq有什么优势和局限？</li>
-<li>空间转录组技术如何改变我们对组织生物学的理解？</li>
-<li>人工智能在分子生物学研究中有哪些应用前景？</li>
-</ol></div><nav class="chapter-nav"><a href="07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a></nav></main>
+<li><strong>复制</strong>（Replication）：<span class="entity process" title="过程">DNA复制</span> → DNA</li>
+<li><strong>转录</strong>（Transcription）：<span class="entity process" title="过程">DNA转录</span> → RNA  </li>
+<li><strong>翻译</strong>（Translation）：<span class="entity process" title="过程">RNA翻译</span> → 蛋白质</li>
+</ol>
+<blockquote>
+<p><a class="pn" id="pn-3" href="#pn-3">3</a><strong>补充</strong>：<span class="entity process" title="过程">逆转录</span>（Reverse Transcription）是中心法则的补充，RNA → DNA，由<span class="entity enzyme" title="酶">逆转录酶</span>催化。</p>
+</blockquote>
+<h2 id="13">1.3 分子生物学发展简史</h2>
+<h3 id="_4">里程碑事件</h3>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>事件</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1953</td>
+<td><span class="entity entity-generic" title="人物">Watson</span> &amp; <span class="entity entity-generic" title="人物">Crick</span> 提出DNA双螺旋模型</td>
+<td>分子生物学诞生</td>
+</tr>
+<tr>
+<td>1961</td>
+<td><span class="entity entity-generic" title="人物">Jacob</span> &amp; <span class="entity entity-generic" title="人物">Monod</span> 提出操纵子模型</td>
+<td>基因调控理论建立</td>
+</tr>
+<tr>
+<td>1972</td>
+<td><span class="entity technique" title="技术">重组DNA技术</span>诞生</td>
+<td>基因工程时代开启</td>
+</tr>
+<tr>
+<td>1990</td>
+<td><span class="entity entity-generic" title="项目">人类基因组计划</span>启动</td>
+<td>大规模测序时代</td>
+</tr>
+<tr>
+<td>2012</td>
+<td><span class="entity technique" title="技术">CRISPR-Cas9</span>基因编辑技术</td>
+<td>精准基因编辑时代</td>
+</tr>
+</tbody>
+</table>
+<h2 id="14">1.4 分子生物学研究方法</h2>
+<h3 id="_5">核心技术</h3>
+<ul>
+<li><strong><span class="entity technique" title="技术">核酸提取</span></strong>：从细胞中分离DNA/RNA</li>
+<li><strong><span class="entity technique" title="技术">PCR</span></strong>（聚合酶链式反应）：扩增特定DNA片段</li>
+<li><strong><span class="entity technique" title="技术">DNA测序</span></strong>：测定DNA碱基序列</li>
+<li><strong><span class="entity technique" title="技术">基因克隆</span></strong>：将基因插入载体进行扩增</li>
+<li><strong><span class="entity technique" title="技术">基因编辑</span></strong>：精确修改基因序列</li>
+</ul>
+<h2 id="_6">本章小结</h2>
+<ul>
+<li>分子生物学研究生物大分子的结构与功能</li>
+<li>中心法则描述了遗传信息 DNA → RNA → 蛋白质的流动</li>
+<li>技术发展推动了分子生物学的快速进步</li>
+</ul>
+<h2 id="_7">思考题</h2>
+<ol>
+<li>为什么说中心法则是分子生物学的核心理论？</li>
+<li>逆转录现象对中心法则有什么意义？</li>
+<li>列举3个对你影响最大的分子生物学技术。</li>
+</ol></div><nav class="chapter-nav"><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch02_%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%A4%8D%E5%88%B6.html">下一章 →</a></nav></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();
