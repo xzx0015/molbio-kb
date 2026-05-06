@@ -124,7 +124,7 @@ a:hover{color:var(--p2);text-decoration:none}
 .result:last-child{border-bottom:none}
 .footer{margin-top:60px;padding:32px 0;text-align:center;color:var(--mu);font-size:13px;border-top:1px solid var(--line)}
 .footer a{color:var(--p)}
-.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--card);margin:3px;font-size:13px;transition:all .15s;text-decoration:none;color:var(--ink2)}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--card);margin:3px;font-size:14px;transition:all .15s;text-decoration:none;color:var(--ink2)}
 .pill:hover{border-color:var(--p);color:var(--p);box-shadow:0 2px 8px rgba(29,78,216,.1);text-decoration:none}
 .pill.active{background:var(--p);color:#fff;border-color:var(--p)}
 .warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:12px 16px;color:#9a3412}
@@ -224,7 +224,6 @@ def layout(title: str, body: str, out_path: Path, description: str = "", hero_st
         ("🏷️ 实体索引", "kg/entities/index.html"),
         ("🔗 概念图谱", "kg/concepts/index.html"),
         ("🔍 搜索", "search/index.html"),
-        ("🛠️ 构建方法", "skills/index.html"),
     ]
     nav = "".join(f'<a href="{rel(out_path, href)}">{label}</a>' for label, href in nav_items)
     return f'''<!doctype html>
@@ -267,18 +266,47 @@ def entity_href(name: str, entities: dict[str, dict[str, Any]], from_path: Path)
 
 
 def build_chapters(pages: list[Page]) -> list[dict[str, str]]:
-    chapters = []
-    for md in sorted((ROOT / "content/chapters").glob("*.md")):
+    # Collect all markdown files, grouped by chapter number prefix
+    from collections import defaultdict
+    md_files = sorted((ROOT / "content/chapters").glob("*.md"))
+    groups = defaultdict(list)
+    for md in md_files:
+        prefix = md.stem[:2]  # "01", "02", etc.
+        groups[prefix].append(md)
+    
+    # Build individual pages for each md file
+    all_chapters = []
+    for md in md_files:
         raw = md.read_text(encoding="utf-8")
         title = title_from_md(raw, md.stem)
         out = Path("chapters") / f"{md.stem}.html"
-        chapters.append({"title": title, "stem": md.stem, "out": out.as_posix(), "text": clean_text(raw)})
+        all_chapters.append({"title": title, "stem": md.stem, "out": out.as_posix(), "text": clean_text(raw), "prefix": md.stem[:2]})
         body = f'<div class="crumb"><a href="{rel(out, "index.html")}">首页</a> / <a href="{rel(out, "chapters/index.html")}">课程章节</a></div><div class="section-divider"></div><article class="article">{md_to_html(raw)}</article>'
         write_page(out, title, body, pages, "chapter", raw)
-    cards = "".join(f'<div class="card chapter"><span class="icon">📄</span><h3><a href="{rel(Path("chapters/index.html"), c["out"])}">{html.escape(c["title"])}</a></h3><p class="muted">{html.escape(c["text"][:130])}...</p></div>' for c in chapters)
-    body = f'<h1>📖 课程章节</h1><p class="muted">由 <code>content/chapters/*.md</code> 自动生成，共 <b>{len(chapters)}</b> 章。</p><div class="section-divider"></div><div class="grid">{cards}</div>'
-    write_page(Path("chapters/index.html"), "课程章节", body, pages, "index", "课程章节")
-    return chapters
+    
+    # Build chapter index: one card per chapter number, with sub-sections listed
+    idx = Path("chapters/index.html")
+    chapter_cards = []
+    for prefix in sorted(groups):
+        subs = groups[prefix]
+        # Use the first sub as the main chapter title base
+        main_title = None
+        sub_list_parts = []
+        for md in subs:
+            raw = md.read_text(encoding="utf-8")
+            t = title_from_md(raw, md.stem)
+            if main_title is None:
+                main_title = t
+            out = Path("chapters") / f"{md.stem}.html"
+            sub_list_parts.append(f'<li><a href="{rel(idx, out)}">{html.escape(t)}</a></li>')
+        ch_num = int(prefix)
+        ch_names = ["", "绪论", "分子基础与复制", "信息传递与转录", "翻译与表达调控", "原核与基因组维持", "技术与真核调控", "实验技术", "组学前沿"]
+        ch_name = ch_names[ch_num] if ch_num < len(ch_names) else (main_title or f"第{ch_num}章")
+        chapter_cards.append(f'''<div class="card chapter"><span class="icon">📄</span><h2>第{ch_num}章：{html.escape(ch_name)}</h2><ul class="list" style="font-size:15px">{"".join(sub_list_parts)}</ul></div>''')
+    
+    body = f'<h1>📖 课程章节</h1><p class="muted">由 <code>content/chapters/*.md</code> 自动生成，共 <b>{len(groups)}</b> 章。</p><div class="section-divider"></div><div class="grid">{"".join(chapter_cards)}</div>'
+    write_page(idx, "课程章节", body, pages, "index", "课程章节")
+    return all_chapters
 
 
 def build_entities(pages: list[Page], entities: dict[str, dict[str, Any]]) -> None:
@@ -313,7 +341,7 @@ def build_entities(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
     idx = Path("kg/entities/index.html")
     for cat, names in sorted(groups.items()):
         links = "".join(f'<li><a href="{rel(idx, Path("kg/entities") / slug_filename(n))}">{html.escape(n)}</a></li>' for n in sorted(names))
-        sections.append(f'<div class="card entity"><h2>{html.escape(cat)} <span class="badge badge-blue">{len(names)}</span></h2><ul class="list">{links}</ul></div>')
+        sections.append(f'<div class="card entity"><h2 style="font-size:18px">{html.escape(cat)} <span class="badge badge-blue">{len(names)}</span></h2><ul class="list" style="font-size:16px;line-height:2">{links}</ul></div>')
     body = f'<h1>🏷️ 实体索引</h1><p class="muted">由 <code>kg/entities/*.json</code> 自动生成，共 <b>{len(entities)}</b> 个结构化实体。</p><div class="section-divider"></div><div class="grid">{"".join(sections)}</div>'
     write_page(idx, "实体索引", body, pages, "index", "实体索引")
 
@@ -410,7 +438,7 @@ def build_concepts(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
             href = entity_href(str(name), entities, out)
             # Truncate long names
             display = name if len(name) <= 5 else name
-            svg_lines.append(f'<a href="{href}"><rect x="{x-36}" y="{y-14}" width="72" height="28" rx="14" fill="{color}" fill-opacity="0.9"/><text x="{x}" y="{y+4}" text-anchor="middle" fill="white" font-size="11" font-weight="600">{html.escape(display[:8])}</text></a>')
+            svg_lines.append(f'<a href="{href}"><rect x="{x-42}" y="{y-15}" width="84" height="30" rx="15" fill="{color}" fill-opacity="0.9"/><text x="{x}" y="{y+5}" text-anchor="middle" fill="white" font-size="13" font-weight="600">{html.escape(display[:8])}</text></a>')
     
     svg_lines.append('</svg>')
     svg_graph = "\n".join(svg_lines)
@@ -496,22 +524,21 @@ def build_home(pages: list[Page], chapters: list[dict[str, str]], entities: dict
     chapter_links = "".join(f'<li><a href="{rel(out, c["out"])}">{html.escape(c["title"])}</a></li>' for c in chapters[:8])
     entity_pills = "".join(f'<a class="pill" href="{rel(out, Path("kg/entities") / slug_filename(n))}">{html.escape(n)}</a>' for n in sorted(entities)[:24])
     
-    # Hero stats for header
-    hero_stats = f'''<div class="hero-stats"><div class="hero-stat"><span class="hs-num">{len(chapters)}</span><span class="hs-label">课程章节</span></div><div class="hero-stat"><span class="hs-num">{len(entities)}</span><span class="hs-label">知识实体</span></div><div class="hero-stat"><span class="hs-num">{node_count}</span><span class="hs-label">概念节点</span></div><div class="hero-stat"><span class="hs-num">{rel_count}</span><span class="hs-label">语义关系</span></div></div>'''
-    
+    # Count unique chapters (by prefix)
+    ch_prefixes = set(md.stem[:2] for md in (ROOT / "content/chapters").glob("*.md"))
+    ch_count = len(ch_prefixes)
+    hero_stats = f'''<div class="hero-stats"><div class="hero-stat"><span class="hs-num">{ch_count}</span><span class="hs-label">课程章节</span></div><div class="hero-stat"><span class="hs-num">{len(entities)}</span><span class="hs-label">知识实体</span></div><div class="hero-stat"><span class="hs-num">{node_count}</span><span class="hs-label">概念节点</span></div><div class="hero-stat"><span class="hs-num">{rel_count}</span><span class="hs-label">语义关系</span></div></div>'''
     body = f'''<div class="stats">
-<div class="stat"><div class="num">{len(chapters)}</div><div class="label">课程章节</div></div>
+<div class="stat"><div class="num">{ch_count}</div><div class="label">课程章节</div></div>
 <div class="stat"><div class="num">{len(entities)}</div><div class="label">知识实体</div></div>
 <div class="stat"><div class="num">{node_count}</div><div class="label">概念节点</div></div>
 <div class="stat"><div class="num">{rel_count}</div><div class="label">语义关系</div></div>
-<div class="stat"><div class="num">{len(list((ROOT / "content/chapters").glob("*.md")))}</div><div class="label">Markdown 源</div></div>
-<div class="stat"><div class="num">{skill_count}</div><div class="label">构建方法</div></div>
 </div>
 <section class="grid">
-<div class="card chapter"><span class="icon">📖</span><h2>课程章节</h2><p class="muted">统一从 Markdown 源生成，链接稳定，共 {len(chapters)} 章。</p><ul>{chapter_links}</ul><p><a href="{rel(out, "chapters/index.html")}">查看全部章节 →</a></p></div>
+<div class="card chapter"><span class="icon">📖</span><h2>课程章节</h2><p class="muted">统一从 Markdown 源生成，共 {ch_count} 章。</p><ul>{chapter_links}</ul><p><a href="{rel(out, "chapters/index.html")}">查看全部章节 →</a></p></div>
 <div class="card entity"><span class="icon">🏷️</span><h2>实体索引</h2><p class="muted">从 JSON 实体数据生成，{len(entities)} 个实体覆盖 {len(cats)} 个类别。</p><p style="margin:8px 0">{cat_html}</p><p>{entity_pills}</p><p><a href="{rel(out, "kg/entities/index.html")}">查看实体索引 →</a></p></div>
 <div class="card concept"><span class="icon">🔗</span><h2>概念图谱</h2><p class="muted">{node_count} 个节点 · {rel_count} 条关系，展示中心法则、复制、转录、翻译、调控与实验技术之间的关系。</p><p><a href="{rel(out, "kg/concepts/index.html")}">进入概念图谱 →</a></p></div>
-<div class="card search"><span class="icon">🔍</span><h2>站内搜索</h2><p class="muted">搜索章节、实体、概念、构建方法文档，离线可用。</p><p><a href="{rel(out, "search/index.html")}">打开搜索 →</a></p></div>
+<div class="card search"><span class="icon">🔍</span><h2>站内搜索</h2><p class="muted">搜索章节、实体、概念，离线可用。</p><p><a href="{rel(out, "search/index.html")}">打开搜索 →</a></p></div>
 </section>'''
     write_page(out, SITE_TITLE, body, pages, "home", SITE_TITLE, hero_stats=hero_stats)
 
