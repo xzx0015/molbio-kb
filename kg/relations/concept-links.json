@@ -1,58 +1,673 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-03-22",
+  "lastUpdated": "2026-05-05",
   "description": "分子生物学知识图谱关系数据",
   "relationTypes": {
-    "is-a": { "label": "属于", "color": "#667eea", "directed": true },
-    "part-of": { "label": "组成部分", "color": "#764ba2", "directed": true },
-    "regulates": { "label": "调控", "color": "#e74c3c", "directed": true },
-    "catalyzes": { "label": "催化", "color": "#27ae60", "directed": true },
-    "participates": { "label": "参与", "color": "#f39c12", "directed": true },
-    "produces": { "label": "产生", "color": "#9b59b6", "directed": true },
-    "binds": { "label": "结合", "color": "#3498db", "directed": false },
-    "inhibits": { "label": "抑制", "color": "#e67e22", "directed": true },
-    "activates": { "label": "激活", "color": "#2ecc71", "directed": true },
-    "related": { "label": "相关", "color": "#95a5a6", "directed": false }
+    "is-a": {
+      "label": "属于",
+      "color": "#667eea",
+      "directed": true
+    },
+    "part-of": {
+      "label": "组成部分",
+      "color": "#764ba2",
+      "directed": true
+    },
+    "regulates": {
+      "label": "调控",
+      "color": "#e74c3c",
+      "directed": true
+    },
+    "catalyzes": {
+      "label": "催化",
+      "color": "#27ae60",
+      "directed": true
+    },
+    "participates": {
+      "label": "参与",
+      "color": "#f39c12",
+      "directed": true
+    },
+    "produces": {
+      "label": "产生",
+      "color": "#9b59b6",
+      "directed": true
+    },
+    "binds": {
+      "label": "结合",
+      "color": "#3498db",
+      "directed": false
+    },
+    "inhibits": {
+      "label": "抑制",
+      "color": "#e67e22",
+      "directed": true
+    },
+    "activates": {
+      "label": "激活",
+      "color": "#2ecc71",
+      "directed": true
+    },
+    "related": {
+      "label": "相关",
+      "color": "#95a5a6",
+      "directed": false
+    }
   },
   "nodes": [
-    { "id": "中心法则", "name": "中心法则", "category": "核心理论", "importance": "core" },
-    { "id": "DNA", "name": "DNA", "category": "分子", "importance": "core" },
-    { "id": "RNA", "name": "RNA", "category": "分子", "importance": "core" },
-    { "id": "蛋白质", "name": "蛋白质", "category": "分子", "importance": "core" },
-    { "id": "DNA复制", "name": "DNA复制", "category": "过程", "importance": "core" },
-    { "id": "转录", "name": "转录", "category": "过程", "importance": "core" },
-    { "id": "翻译", "name": "翻译", "category": "过程", "importance": "core" },
-    { "id": "DNA聚合酶", "name": "DNA聚合酶", "category": "酶", "importance": "core" },
-    { "id": "RNA聚合酶", "name": "RNA聚合酶", "category": "酶", "importance": "core" },
-    { "id": "核糖体", "name": "核糖体", "category": "复合物", "importance": "core" },
-    { "id": "基因调控", "name": "基因调控", "category": "过程", "importance": "core" },
-    { "id": "启动子", "name": "启动子", "category": "调控元件", "importance": "core" },
-    { "id": "转录因子", "name": "转录因子", "category": "蛋白质", "importance": "core" },
-    { "id": "操纵子", "name": "操纵子", "category": "调控单元", "importance": "major" },
-    { "id": "表观遗传", "name": "表观遗传", "category": "机制", "importance": "core" },
-    { "id": "PCR", "name": "PCR", "category": "技术", "importance": "core" },
-    { "id": "测序技术", "name": "测序技术", "category": "技术", "importance": "core" },
-    { "id": "基因工程", "name": "基因工程", "category": "技术", "importance": "core" },
-    { "id": "CRISPR-Cas9", "name": "CRISPR-Cas9", "category": "技术", "importance": "core" }
+    {
+      "id": "中心法则",
+      "name": "中心法则",
+      "category": "核心理论",
+      "importance": "core"
+    },
+    {
+      "id": "DNA",
+      "name": "DNA",
+      "category": "分子",
+      "importance": "core"
+    },
+    {
+      "id": "RNA",
+      "name": "RNA",
+      "category": "分子",
+      "importance": "core"
+    },
+    {
+      "id": "蛋白质",
+      "name": "蛋白质",
+      "category": "分子",
+      "importance": "core"
+    },
+    {
+      "id": "DNA复制",
+      "name": "DNA复制",
+      "category": "过程",
+      "importance": "core"
+    },
+    {
+      "id": "转录",
+      "name": "转录",
+      "category": "过程",
+      "importance": "core"
+    },
+    {
+      "id": "翻译",
+      "name": "翻译",
+      "category": "过程",
+      "importance": "core"
+    },
+    {
+      "id": "DNA聚合酶",
+      "name": "DNA聚合酶",
+      "category": "酶",
+      "importance": "core"
+    },
+    {
+      "id": "RNA聚合酶",
+      "name": "RNA聚合酶",
+      "category": "酶",
+      "importance": "core"
+    },
+    {
+      "id": "核糖体",
+      "name": "核糖体",
+      "category": "复合物",
+      "importance": "core"
+    },
+    {
+      "id": "基因调控",
+      "name": "基因调控",
+      "category": "过程",
+      "importance": "core"
+    },
+    {
+      "id": "启动子",
+      "name": "启动子",
+      "category": "调控元件",
+      "importance": "core"
+    },
+    {
+      "id": "转录因子",
+      "name": "转录因子",
+      "category": "蛋白质",
+      "importance": "core"
+    },
+    {
+      "id": "操纵子",
+      "name": "操纵子",
+      "category": "调控单元",
+      "importance": "major"
+    },
+    {
+      "id": "表观遗传",
+      "name": "表观遗传",
+      "category": "机制",
+      "importance": "core"
+    },
+    {
+      "id": "PCR",
+      "name": "PCR",
+      "category": "技术",
+      "importance": "core"
+    },
+    {
+      "id": "测序技术",
+      "name": "测序技术",
+      "category": "技术",
+      "importance": "core"
+    },
+    {
+      "id": "基因工程",
+      "name": "基因工程",
+      "category": "技术",
+      "importance": "core"
+    },
+    {
+      "id": "CRISPR-Cas9",
+      "name": "CRISPR-Cas9",
+      "category": "技术",
+      "importance": "core"
+    },
+    {
+      "id": "DNA连接酶",
+      "name": "DNA连接酶",
+      "category": "酶",
+      "importance": "core"
+    },
+    {
+      "id": "解旋酶",
+      "name": "解旋酶",
+      "category": "酶",
+      "importance": "core"
+    },
+    {
+      "id": "引物酶",
+      "name": "引物酶",
+      "category": "酶",
+      "importance": "core"
+    },
+    {
+      "id": "拓扑异构酶",
+      "name": "拓扑异构酶",
+      "category": "酶",
+      "importance": "core"
+    },
+    {
+      "id": "逆转录酶",
+      "name": "逆转录酶",
+      "category": "酶",
+      "importance": "major"
+    },
+    {
+      "id": "限制性内切酶",
+      "name": "限制性内切酶",
+      "category": "酶",
+      "importance": "core"
+    },
+    {
+      "id": "DNA甲基化",
+      "name": "DNA甲基化",
+      "category": "表观修饰",
+      "importance": "core"
+    },
+    {
+      "id": "组蛋白修饰",
+      "name": "组蛋白修饰",
+      "category": "表观修饰",
+      "importance": "core"
+    },
+    {
+      "id": "染色质重塑",
+      "name": "染色质重塑",
+      "category": "表观修饰",
+      "importance": "major"
+    },
+    {
+      "id": "突变",
+      "name": "突变",
+      "category": "机制",
+      "importance": "major"
+    },
+    {
+      "id": "miRNA",
+      "name": "miRNA",
+      "category": "小RNA",
+      "importance": "major"
+    },
+    {
+      "id": "siRNA",
+      "name": "siRNA",
+      "category": "小RNA",
+      "importance": "major"
+    },
+    {
+      "id": "外显子",
+      "name": "外显子",
+      "category": "结构",
+      "importance": "major"
+    },
+    {
+      "id": "内含子",
+      "name": "内含子",
+      "category": "结构",
+      "importance": "major"
+    },
+    {
+      "id": "RNA剪接",
+      "name": "RNA剪接",
+      "category": "过程",
+      "importance": "major"
+    },
+    {
+      "id": "质粒",
+      "name": "质粒",
+      "category": "工具",
+      "importance": "core"
+    },
+    {
+      "id": "载体",
+      "name": "载体",
+      "category": "工具",
+      "importance": "core"
+    },
+    {
+      "id": "转化",
+      "name": "转化",
+      "category": "技术",
+      "importance": "major"
+    },
+    {
+      "id": "电泳",
+      "name": "电泳",
+      "category": "技术",
+      "importance": "major"
+    },
+    {
+      "id": "Western blot",
+      "name": "Western blot",
+      "category": "技术",
+      "importance": "major"
+    },
+    {
+      "id": "细胞周期",
+      "name": "细胞周期",
+      "category": "过程",
+      "importance": "major"
+    },
+    {
+      "id": "增强子",
+      "name": "增强子",
+      "category": "调控元件",
+      "importance": "major"
+    },
+    {
+      "id": "沉默子",
+      "name": "沉默子",
+      "category": "调控元件",
+      "importance": "major"
+    },
+    {
+      "id": "阻遏蛋白",
+      "name": "阻遏蛋白",
+      "category": "蛋白质",
+      "importance": "major"
+    },
+    {
+      "id": "信号转导",
+      "name": "信号转导",
+      "category": "过程",
+      "importance": "major"
+    }
   ],
   "links": [
-    { "source": "中心法则", "target": "DNA", "type": "is-a", "description": "DNA是中心法则的起点" },
-    { "source": "中心法则", "target": "RNA", "type": "is-a", "description": "RNA是中心法则的中间载体" },
-    { "source": "中心法则", "target": "蛋白质", "type": "is-a", "description": "蛋白质是中心法则的终产物" },
-    { "source": "DNA", "target": "DNA复制", "type": "participates", "description": "DNA参与复制过程" },
-    { "source": "DNA", "target": "转录", "type": "participates", "description": "DNA作为转录模板" },
-    { "source": "RNA", "target": "转录", "type": "produces", "description": "转录产生RNA" },
-    { "source": "RNA", "target": "翻译", "type": "participates", "description": "RNA参与翻译过程" },
-    { "source": "蛋白质", "target": "翻译", "type": "produces", "description": "翻译产生蛋白质" },
-    { "source": "DNA复制", "target": "DNA聚合酶", "type": "catalyzes", "description": "DNA聚合酶催化DNA复制" },
-    { "source": "转录", "target": "RNA聚合酶", "type": "catalyzes", "description": "RNA聚合酶催化转录" },
-    { "source": "转录", "target": "启动子", "type": "participates", "description": "转录需要启动子" },
-    { "source": "翻译", "target": "核糖体", "type": "participates", "description": "翻译在核糖体上进行" },
-    { "source": "基因调控", "target": "转录", "type": "regulates", "description": "基因调控主要发生在转录水平" },
-    { "source": "基因调控", "target": "转录因子", "type": "participates", "description": "转录因子参与基因调控" },
-    { "source": "转录因子", "target": "启动子", "type": "binds", "description": "转录因子结合启动子" },
-    { "source": "PCR", "target": "DNA聚合酶", "type": "participates", "description": "PCR需要DNA聚合酶" },
-    { "source": "CRISPR-Cas9", "target": "基因工程", "type": "is-a", "description": "CRISPR是基因工程技术" },
-    { "source": "表观遗传", "target": "基因调控", "type": "regulates", "description": "表观遗传调控基因表达" }
+    {
+      "source": "中心法则",
+      "target": "DNA",
+      "type": "is-a",
+      "description": "DNA是中心法则的起点"
+    },
+    {
+      "source": "中心法则",
+      "target": "RNA",
+      "type": "is-a",
+      "description": "RNA是中心法则的中间载体"
+    },
+    {
+      "source": "中心法则",
+      "target": "蛋白质",
+      "type": "is-a",
+      "description": "蛋白质是中心法则的终产物"
+    },
+    {
+      "source": "DNA",
+      "target": "DNA复制",
+      "type": "participates",
+      "description": "DNA参与复制过程"
+    },
+    {
+      "source": "DNA",
+      "target": "转录",
+      "type": "participates",
+      "description": "DNA作为转录模板"
+    },
+    {
+      "source": "RNA",
+      "target": "转录",
+      "type": "produces",
+      "description": "转录产生RNA"
+    },
+    {
+      "source": "RNA",
+      "target": "翻译",
+      "type": "participates",
+      "description": "RNA参与翻译过程"
+    },
+    {
+      "source": "蛋白质",
+      "target": "翻译",
+      "type": "produces",
+      "description": "翻译产生蛋白质"
+    },
+    {
+      "source": "DNA复制",
+      "target": "DNA聚合酶",
+      "type": "catalyzes",
+      "description": "DNA聚合酶催化DNA复制"
+    },
+    {
+      "source": "转录",
+      "target": "RNA聚合酶",
+      "type": "catalyzes",
+      "description": "RNA聚合酶催化转录"
+    },
+    {
+      "source": "转录",
+      "target": "启动子",
+      "type": "participates",
+      "description": "转录需要启动子"
+    },
+    {
+      "source": "翻译",
+      "target": "核糖体",
+      "type": "participates",
+      "description": "翻译在核糖体上进行"
+    },
+    {
+      "source": "基因调控",
+      "target": "转录",
+      "type": "regulates",
+      "description": "基因调控主要发生在转录水平"
+    },
+    {
+      "source": "基因调控",
+      "target": "转录因子",
+      "type": "participates",
+      "description": "转录因子参与基因调控"
+    },
+    {
+      "source": "转录因子",
+      "target": "启动子",
+      "type": "binds",
+      "description": "转录因子结合启动子"
+    },
+    {
+      "source": "PCR",
+      "target": "DNA聚合酶",
+      "type": "participates",
+      "description": "PCR需要DNA聚合酶"
+    },
+    {
+      "source": "CRISPR-Cas9",
+      "target": "基因工程",
+      "type": "is-a",
+      "description": "CRISPR是基因工程技术"
+    },
+    {
+      "source": "表观遗传",
+      "target": "基因调控",
+      "type": "regulates",
+      "description": "表观遗传调控基因表达"
+    },
+    {
+      "source": "DNA复制",
+      "target": "解旋酶",
+      "type": "catalyzes",
+      "description": "解旋酶解开DNA双链"
+    },
+    {
+      "source": "DNA复制",
+      "target": "引物酶",
+      "type": "catalyzes",
+      "description": "引物酶合成RNA引物"
+    },
+    {
+      "source": "DNA复制",
+      "target": "DNA连接酶",
+      "type": "catalyzes",
+      "description": "DNA连接酶连接冈崎片段"
+    },
+    {
+      "source": "DNA复制",
+      "target": "拓扑异构酶",
+      "type": "participates",
+      "description": "拓扑异构酶缓解超螺旋张力"
+    },
+    {
+      "source": "表观遗传",
+      "target": "DNA甲基化",
+      "type": "is-a",
+      "description": "DNA甲基化是表观遗传的主要形式"
+    },
+    {
+      "source": "表观遗传",
+      "target": "组蛋白修饰",
+      "type": "is-a",
+      "description": "组蛋白修饰调控染色质状态"
+    },
+    {
+      "source": "表观遗传",
+      "target": "染色质重塑",
+      "type": "is-a",
+      "description": "染色质重塑改变核小体位置"
+    },
+    {
+      "source": "DNA甲基化",
+      "target": "基因调控",
+      "type": "regulates",
+      "description": "DNA甲基化通常抑制基因表达"
+    },
+    {
+      "source": "组蛋白修饰",
+      "target": "基因调控",
+      "type": "regulates",
+      "description": "组蛋白修饰调控染色质开放状态"
+    },
+    {
+      "source": "转录",
+      "target": "RNA剪接",
+      "type": "produces",
+      "description": "转录产物经剪接形成成熟mRNA"
+    },
+    {
+      "source": "外显子",
+      "target": "RNA剪接",
+      "type": "participates",
+      "description": "外显子保留在成熟mRNA中"
+    },
+    {
+      "source": "内含子",
+      "target": "RNA剪接",
+      "type": "participates",
+      "description": "内含子被切除"
+    },
+    {
+      "source": "miRNA",
+      "target": "基因调控",
+      "type": "regulates",
+      "description": "miRNA通过翻译抑制调控基因表达"
+    },
+    {
+      "source": "siRNA",
+      "target": "基因调控",
+      "type": "regulates",
+      "description": "siRNA介导mRNA降解实现基因沉默"
+    },
+    {
+      "source": "miRNA",
+      "target": "翻译",
+      "type": "inhibits",
+      "description": "miRNA抑制靶mRNA翻译"
+    },
+    {
+      "source": "siRNA",
+      "target": "RNA",
+      "type": "related",
+      "description": "siRNA引导RNA降解"
+    },
+    {
+      "source": "限制性内切酶",
+      "target": "基因工程",
+      "type": "participates",
+      "description": "限制性内切酶是分子克隆的关键工具"
+    },
+    {
+      "source": "质粒",
+      "target": "载体",
+      "type": "is-a",
+      "description": "质粒是最常用的载体"
+    },
+    {
+      "source": "载体",
+      "target": "基因工程",
+      "type": "participates",
+      "description": "载体携带外源基因进入宿主"
+    },
+    {
+      "source": "DNA连接酶",
+      "target": "基因工程",
+      "type": "participates",
+      "description": "DNA连接酶连接目的片段与载体"
+    },
+    {
+      "source": "转化",
+      "target": "基因工程",
+      "type": "is-a",
+      "description": "转化是将重组DNA导入宿主的关键步骤"
+    },
+    {
+      "source": "逆转录酶",
+      "target": "RNA",
+      "type": "catalyzes",
+      "description": "逆转录酶以RNA为模板合成cDNA"
+    },
+    {
+      "source": "逆转录酶",
+      "target": "PCR",
+      "type": "participates",
+      "description": "RT-PCR需要逆转录酶"
+    },
+    {
+      "source": "突变",
+      "target": "DNA",
+      "type": "related",
+      "description": "突变是DNA序列的永久性改变"
+    },
+    {
+      "source": "突变",
+      "target": "DNA复制",
+      "type": "related",
+      "description": "复制错误是突变的重要来源"
+    },
+    {
+      "source": "细胞周期",
+      "target": "DNA复制",
+      "type": "regulates",
+      "description": "DNA复制发生在S期"
+    },
+    {
+      "source": "细胞周期",
+      "target": "基因调控",
+      "type": "related",
+      "description": "细胞周期进程受精密调控"
+    },
+    {
+      "source": "增强子",
+      "target": "转录",
+      "type": "activates",
+      "description": "增强子激活转录"
+    },
+    {
+      "source": "沉默子",
+      "target": "转录",
+      "type": "inhibits",
+      "description": "沉默子抑制转录"
+    },
+    {
+      "source": "阻遏蛋白",
+      "target": "操纵子",
+      "type": "binds",
+      "description": "阻遏蛋白结合操纵子阻止转录"
+    },
+    {
+      "source": "阻遏蛋白",
+      "target": "基因调控",
+      "type": "participates",
+      "description": "阻遏蛋白负调控基因表达"
+    },
+    {
+      "source": "信号转导",
+      "target": "转录因子",
+      "type": "activates",
+      "description": "信号转导通路激活转录因子"
+    },
+    {
+      "source": "信号转导",
+      "target": "基因调控",
+      "type": "regulates",
+      "description": "细胞外信号通过转导通路调控基因表达"
+    },
+    {
+      "source": "PCR",
+      "target": "电泳",
+      "type": "related",
+      "description": "PCR产物常用电泳分析"
+    },
+    {
+      "source": "电泳",
+      "target": "DNA",
+      "type": "related",
+      "description": "凝胶电泳分离DNA片段"
+    },
+    {
+      "source": "电泳",
+      "target": "蛋白质",
+      "type": "related",
+      "description": "SDS-PAGE分离蛋白质"
+    },
+    {
+      "source": "Western blot",
+      "target": "蛋白质",
+      "type": "related",
+      "description": "Western blot检测特定蛋白质"
+    },
+    {
+      "source": "测序技术",
+      "target": "PCR",
+      "type": "related",
+      "description": "测序文库构建常用PCR扩增"
+    },
+    {
+      "source": "CRISPR-Cas9",
+      "target": "DNA",
+      "type": "binds",
+      "description": "Cas9通过gRNA靶向特定DNA序列"
+    },
+    {
+      "source": "CRISPR-Cas9",
+      "target": "突变",
+      "type": "related",
+      "description": "CRISPR可引入定点突变"
+    }
   ]
 }
