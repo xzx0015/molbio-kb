@@ -50,9 +50,113 @@ ENTITY_TYPE_CLASS = {
 }
 
 CSS = """
-:root{--bg:#f6f8fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e5e7eb;--primary:#355cde;--accent:#764ba2;--soft:#eef2ff}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}.wrap{max-width:1120px;margin:0 auto;padding:24px}.top{background:linear-gradient(135deg,#355cde,#764ba2);color:white}.top .wrap{padding-top:34px;padding-bottom:34px}.brand{font-size:28px;font-weight:800;margin:0}.subtitle{opacity:.9;margin:8px 0 0}.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 24px rgba(16,24,40,.05)}.article h1{color:var(--primary);line-height:1.25}.article h2{border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:30px}.article table{width:100%;border-collapse:collapse;margin:16px 0}.article th,.article td{border-bottom:1px solid var(--line);padding:8px;text-align:left}.article th{background:#f9fafb}.article code{background:#f3f4f6;padding:2px 5px;border-radius:5px}.article pre{background:#111827;color:#f9fafb;padding:14px;border-radius:12px;overflow:auto}.crumb{margin:16px 0;color:var(--muted)}.entity{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--soft);font-weight:600}.tag{display:inline-block;font-size:12px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:2px 8px;margin:2px}.list{padding-left:1.2em}.searchbox{width:100%;font-size:16px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white}.result{padding:14px 0;border-bottom:1px solid var(--line)}.footer{padding:28px;text-align:center;color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:white;margin:3px}.warn{background:#fff7ed;border-color:#fed7aa}.ok{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:640px){.wrap{padding:16px}.article{padding:20px}.brand{font-size:24px}}
-""".strip()
+:root{--p:#1d4ed8;--p2:#2563eb;--a:#7c3aed;--a2:#8b5cf6;--g:#059669;--o:#ea580c;--r:#dc2626;--bg:#f8fafc;--bg2:#f1f5f9;--card:#fff;--ink:#0f172a;--ink2:#334155;--mu:#64748b;--line:#e2e8f0;--line2:#cbd5e1;--soft:#eff6ff;--softa:#f5f3ff;--softg:#ecfdf5;--softo:#fff7ed;--rad:12px;--sh:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shm:0 4px 12px rgba(0,0,0,.08);}
+*,::before,::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.top{background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 30%,#7c3aed 70%,#a855f7 100%);color:#fff;position:relative;overflow:hidden}
+.top::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.top .wrap{position:relative;padding-top:40px;padding-bottom:36px}
+.brand{font-size:32px;font-weight:800;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+.brand .icon{font-size:36px}
+.subtitle{opacity:.85;margin:6px 0 0;font-size:15px;font-weight:400;max-width:600px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:14px;transition:all .2s;backdrop-filter:blur(4px)}
+.nav a:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.5);text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px 24px;box-shadow:var(--sh);transition:box-shadow .2s,transform .15s;position:relative;overflow:hidden}
+.card:hover{box-shadow:var(--shm);transform:translateY(-2px)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--p);opacity:0;transition:opacity .2s}
+.card:hover::before{opacity:1}
+.card h2,.card h3{margin:0 0 8px;font-size:17px;font-weight:700;color:var(--ink)}
+.card .icon{font-size:24px;margin-bottom:10px;display:block}
+.card.chapter::before{background:var(--p)}
+.card.entity::before{background:var(--a)}
+.card.concept::before{background:var(--g)}
+.card.search::before{background:var(--o)}
+.card.skill::before{background:var(--a2)}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin:24px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px;text-align:center;box-shadow:var(--sh);transition:box-shadow .2s,transform .15s}
+.stat:hover{box-shadow:var(--shm);transform:translateY(-2px)}
+.stat .num{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .label{color:var(--mu);font-size:13px;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.muted{color:var(--mu)}
+a{color:var(--p);text-decoration:none;transition:color .15s}
+a:hover{color:var(--p2);text-decoration:none}
+.article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px 36px;box-shadow:var(--sh)}
+.article h1{font-size:26px;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.article h2{font-size:20px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--soft);color:var(--ink)}
+.article h3{font-size:17px;font-weight:600;margin:20px 0 8px;color:var(--ink2)}
+.article p{margin:10px 0;color:var(--ink2)}
+.article ul,.article ol{margin:8px 0 8px 20px}
+.article li{margin:4px 0;color:var(--ink2)}
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.article th{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.article td{padding:10px 14px;border-bottom:1px solid var(--line);background:#fff}
+.article tr:nth-child(even) td{background:var(--bg2)}
+.article tr:hover td{background:var(--soft)}
+.article code{background:var(--soft);padding:2px 6px;border-radius:4px;font-size:.9em;color:var(--p);font-family:'SF Mono','Fira Code','Cascadia Code',monospace}
+.article pre{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:10px;overflow:auto;font-size:13px;line-height:1.6;margin:16px 0}
+.article blockquote{border-left:4px solid var(--p);margin:16px 0;padding:12px 20px;background:var(--soft);border-radius:0 8px 8px 0;color:var(--ink2)}
+.crumb{margin:0 0 20px;font-size:14px;color:var(--mu)}
+.crumb a{color:var(--mu)}
+.crumb a:hover{color:var(--p)}
+.entity{display:inline-block;padding:3px 10px;border-radius:999px;font-weight:600;font-size:13px;margin:2px;transition:all .15s}
+.entity:hover{transform:scale(1.05)}
+.entity.molecule,.entity.molecule{background:#dbeafe;color:#1e40af}
+.entity.enzyme{background:#dcfce7;color:#166534}
+.entity.protein{background:#fce7f3;color:#9d174d}
+.entity.process{background:#fef3c7;color:#92400e}
+.entity.technique{background:#e0e7ff;color:#3730a3}
+.entity.complex{background:#f3e8ff;color:#6b21a8}
+.entity.concept,.entity.core-theory{background:#ffedd5;color:#9a3412}
+.entity.regulatory{background:#fce7f3;color:#9d174d}
+.entity.mechanism{background:#d1fae5;color:#065f46}
+.tag{display:inline-block;font-size:11px;border-radius:999px;padding:2px 8px;margin:2px;font-weight:500}
+.tag.p{background:var(--soft);color:var(--p)}
+.tag.a{background:var(--softa);color:var(--a)}
+.tag.g{background:var(--softg);color:var(--g)}
+.list{padding-left:1.2em}
+.searchbox{width:100%;font-size:16px;border:2px solid var(--line);border-radius:12px;padding:14px 18px;background:var(--card);color:var(--ink);transition:border-color .2s;outline:none}
+.searchbox:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(29,78,216,.1)}
+.result{padding:16px 0;border-bottom:1px solid var(--line)}
+.result:last-child{border-bottom:none}
+.footer{margin-top:60px;padding:32px 0;text-align:center;color:var(--mu);font-size:13px;border-top:1px solid var(--line)}
+.footer a{color:var(--p)}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--card);margin:3px;font-size:13px;transition:all .15s;text-decoration:none;color:var(--ink2)}
+.pill:hover{border-color:var(--p);color:var(--p);box-shadow:0 2px 8px rgba(29,78,216,.1);text-decoration:none}
+.pill.active{background:var(--p);color:#fff;border-color:var(--p)}
+.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:12px 16px;color:#9a3412}
+.ok{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:8px;padding:12px 16px;color:#065f46}
+.info{background:var(--soft);border:1px solid #bfdbfe;border-radius:8px;padding:12px 16px;color:var(--p)}
+.hero-stats{display:flex;gap:32px;margin-top:14px;flex-wrap:wrap}
+.hero-stat{display:flex;align-items:baseline;gap:6px}
+.hero-stat .hs-num{font-size:24px;font-weight:800;opacity:.95}
+.hero-stat .hs-label{font-size:13px;opacity:.7}
+.graph{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;margin:24px 0;box-shadow:var(--sh);min-height:400px;position:relative;overflow:auto}
+.graph svg{display:block;margin:0 auto;max-width:100%}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:40px 0}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.badge-blue{background:var(--soft);color:var(--p)}
+.badge-purple{background:var(--softa);color:var(--a)}
+.badge-green{background:var(--softg);color:var(--g)}
+.badge-orange{background:var(--softo);color:var(--o)}
+.entity-detail-header{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.entity-detail-header h1{margin:0}
+.entity-category-pill{display:inline-block;padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600}
+.ec-molecule{background:#dbeafe;color:#1e40af}
+.ec-enzyme{background:#dcfce7;color:#166534}
+.ec-protein{background:#fce7f3;color:#9d174d}
+.ec-process{background:#fef3c7;color:#92400e}
+.ec-technique{background:#e0e7ff;color:#3730a3}
+.ec-complex{background:#f3e8ff;color:#6b21a8}
+.ec-concept{background:#ffedd5;color:#9a3412}
+.ec-regulatory{background:#fce7f3;color:#9d174d}
+.ec-mechanism{background:#d1fae5;color:#065f46}
+@media(max-width:768px){.wrap{padding:0 16px}.top .wrap{padding-top:28px;padding-bottom:24px}.brand{font-size:24px}.article{padding:20px;border-radius:10px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero-stats{gap:16px}.nav{gap:6px}.nav a{font-size:13px;padding:5px 10px}}
+@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--bg2:#1e293b;--card:#1e293b;--ink:#f1f5f9;--ink2:#cbd5e1;--mu:#94a3b8;--line:#334155;--line2:#475569;--soft:#1e3a5f;--softa:#2d1b69;--softg:#064e3b;--softo:#431407;--sh:0 1px 3px rgba(0,0,0,.3);--shm:0 4px 12px rgba(0,0,0,.4)}.article td{background:#1e293b}.article tr:nth-child(even) td{background:var(--bg2)}.article tr:hover td{background:var(--soft)}.searchbox{background:var(--bg)}.pill{background:var(--bg)}.entity.molecule,.entity.molecule{background:#1e3a5f;color:#93c5fd}.entity.enzyme{background:#064e3b;color:#6ee7b7}.entity.protein{background:#4a1942;color:#f9a8d4}.entity.process{background:#451a03;color:#fcd34d}.entity.technique{background:#1e3a5f;color:#a5b4fc}.entity.complex{background:#2d1b69;color:#c4b5fd}.article th{background:linear-gradient(135deg,#1e3a8a,#1d4ed8)}}
+"""
 
 @dataclass
 class Page:
@@ -113,29 +217,29 @@ def rel(from_file: Path, to_file: str | Path) -> str:
     return "/".join(quote(part) for part in relative.split("/"))
 
 
-def layout(title: str, body: str, out_path: Path, description: str = "") -> str:
+def layout(title: str, body: str, out_path: Path, description: str = "", hero_stats: str = "") -> str:
     nav_items = [
-        ("首页", "index.html"),
-        ("课程章节", "chapters/index.html"),
-        ("实体索引", "kg/entities/index.html"),
-        ("概念图谱", "kg/concepts/index.html"),
-        ("搜索", "search/index.html"),
-        ("构建方法", "skills/index.html"),
+        ("🧬 首页", "index.html"),
+        ("📖 课程章节", "chapters/index.html"),
+        ("🏷️ 实体索引", "kg/entities/index.html"),
+        ("🔗 概念图谱", "kg/concepts/index.html"),
+        ("🔍 搜索", "search/index.html"),
+        ("🛠️ 构建方法", "skills/index.html"),
     ]
     nav = "".join(f'<a href="{rel(out_path, href)}">{label}</a>' for label, href in nav_items)
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} | {SITE_TITLE}</title><meta name="description" content="{html.escape(description or SITE_TITLE)}">
 <style>{CSS}</style></head><body>
-<header class="top"><div class="wrap"><h1 class="brand">🧬 {SITE_TITLE}</h1><p class="subtitle">Molecular Biology KB · 统一生成的课程章节、实体索引、概念关系与搜索入口</p><nav class="nav">{nav}</nav></div></header>
-<main class="wrap">{body}</main><footer class="footer">Built for molecular biology teaching · Generated by scripts/build_site.py</footer>
+<header class="top"><div class="wrap"><h1 class="brand"><span class="icon">🧬</span> {SITE_TITLE}</h1><p class="subtitle">Molecular Biology Knowledge Base · 课程章节 · 实体索引 · 概念图谱 · 搜索</p>{hero_stats}<nav class="nav">{nav}</nav></div></header>
+<main class="wrap">{body}</main><footer class="footer"><p>Built for molecular biology teaching · Generated by <code>scripts/build_site.py</code></p><p style="margin-top:6px"><a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 </body></html>'''
 
 
-def write_page(path: Path, title: str, body: str, pages: list[Page], kind: str, text: str = "") -> None:
+def write_page(path: Path, title: str, body: str, pages: list[Page], kind: str, text: str = "", hero_stats: str = "") -> None:
     full = ROOT / path
     full.parent.mkdir(parents=True, exist_ok=True)
-    full.write_text(layout(title, body, path, clean_text(text)[:160]), encoding="utf-8")
+    full.write_text(layout(title, body, path, clean_text(text)[:160], hero_stats=hero_stats), encoding="utf-8")
     pages.append(Page(title=title, path=path, kind=kind, text=clean_text(text or body)))
 
 
@@ -169,10 +273,10 @@ def build_chapters(pages: list[Page]) -> list[dict[str, str]]:
         title = title_from_md(raw, md.stem)
         out = Path("chapters") / f"{md.stem}.html"
         chapters.append({"title": title, "stem": md.stem, "out": out.as_posix(), "text": clean_text(raw)})
-        body = f'<div class="crumb"><a href="{rel(out, "index.html")}">首页</a> / <a href="{rel(out, "chapters/index.html")}">课程章节</a></div><article class="article">{md_to_html(raw)}</article>'
+        body = f'<div class="crumb"><a href="{rel(out, "index.html")}">首页</a> / <a href="{rel(out, "chapters/index.html")}">课程章节</a></div><div class="section-divider"></div><article class="article">{md_to_html(raw)}</article>'
         write_page(out, title, body, pages, "chapter", raw)
-    cards = "".join(f'<div class="card"><h3><a href="{rel(Path("chapters/index.html"), c["out"])}">{html.escape(c["title"])}</a></h3><p class="muted">{html.escape(c["text"][:130])}...</p></div>' for c in chapters)
-    body = f'<h1>课程章节</h1><p class="muted">由 <code>content/chapters/*.md</code> 自动生成，共 {len(chapters)} 章。</p><div class="grid">{cards}</div>'
+    cards = "".join(f'<div class="card chapter"><span class="icon">📄</span><h3><a href="{rel(Path("chapters/index.html"), c["out"])}">{html.escape(c["title"])}</a></h3><p class="muted">{html.escape(c["text"][:130])}...</p></div>' for c in chapters)
+    body = f'<h1>📖 课程章节</h1><p class="muted">由 <code>content/chapters/*.md</code> 自动生成，共 <b>{len(chapters)}</b> 章。</p><div class="section-divider"></div><div class="grid">{cards}</div>'
     write_page(Path("chapters/index.html"), "课程章节", body, pages, "index", "课程章节")
     return chapters
 
@@ -209,8 +313,8 @@ def build_entities(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
     idx = Path("kg/entities/index.html")
     for cat, names in sorted(groups.items()):
         links = "".join(f'<li><a href="{rel(idx, Path("kg/entities") / slug_filename(n))}">{html.escape(n)}</a></li>' for n in sorted(names))
-        sections.append(f'<div class="card"><h2>{html.escape(cat)} <span class="tag">{len(names)}</span></h2><ul class="list">{links}</ul></div>')
-    body = f'<h1>实体索引</h1><p class="muted">由 <code>kg/entities/*.json</code> 自动生成，共 {len(entities)} 个结构化实体。</p><div class="grid">{"".join(sections)}</div>'
+        sections.append(f'<div class="card entity"><h2>{html.escape(cat)} <span class="badge badge-blue">{len(names)}</span></h2><ul class="list">{links}</ul></div>')
+    body = f'<h1>🏷️ 实体索引</h1><p class="muted">由 <code>kg/entities/*.json</code> 自动生成，共 <b>{len(entities)}</b> 个结构化实体。</p><div class="section-divider"></div><div class="grid">{"".join(sections)}</div>'
     write_page(idx, "实体索引", body, pages, "index", "实体索引")
 
 
@@ -220,11 +324,126 @@ def build_concepts(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
     out = Path("kg/concepts/index.html")
     nodes = data.get("nodes", [])
     links = data.get("links", [])
+    relation_types = data.get("relationTypes", {})
+    
+    # Category color map for nodes
+    cat_colors = {
+        "核心理论": "#1d4ed8", "分子": "#2563eb", "蛋白质": "#db2777", "酶": "#059669",
+        "过程": "#ea580c", "技术": "#6366f1", "复合物": "#7c3aed", "调控元件": "#db2777",
+        "调控单元": "#db2777", "机制": "#0891b2", "表观修饰": "#0891b2", "结构": "#7c3aed",
+        "小RNA": "#2563eb", "工具": "#059669", "调控": "#db2777"
+    }
+    rel_colors = {
+        "is-a": "#667eea", "part-of": "#764ba2", "regulates": "#e74c3c", "catalyzes": "#27ae60",
+        "participates": "#f39c12", "produces": "#9b59b6", "binds": "#3498db", "inhibits": "#e67e22",
+        "activates": "#2ecc71", "related": "#95a5a6"
+    }
+    
+    # Build a visual graph using layered layout
+    # Layer 0: core theory, Layer 1: molecules, Layer 2: processes, Layer 3: machinery/techniques
+    node_map = {}
+    for n in nodes:
+        if isinstance(n, dict):
+            node_map[n.get("id") or n.get("name")] = n
+    
+    layers = {"中心法则": 0}
+    # Simple BFS layering
+    for l in links:
+        src = l.get("source")
+        tgt = l.get("target")
+        if src in layers:
+            layers[tgt] = max(layers.get(tgt, 0), layers.get(src, 0) + 1)
+        elif tgt in layers:
+            layers[src] = max(layers.get(src, 0), layers.get(tgt, 0) - 1)
+    
+    for n in node_map:
+        if n not in layers:
+            layers[n] = 2
+    
+    # Group by layer
+    layer_nodes = {}
+    for nid, layer in layers.items():
+        layer_nodes.setdefault(layer, []).append(nid)
+    
+    # SVG generation
+    svg_width = 1100
+    layer_x = {}
+    for layer in sorted(layer_nodes):
+        items = layer_nodes[layer]
+        spacing = svg_width / (len(items) + 1)
+        for i, nid in enumerate(items):
+            layer_x[nid] = spacing * (i + 1)
+    
+    svg_height = max(100, (max(layer_nodes.keys()) + 1) * 120 + 60)
+    
+    svg_lines = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {svg_width} {svg_height}" style="width:100%;height:auto;font-family:system-ui,sans-serif">']
+    svg_lines.append('<defs><marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#94a3b8"/></marker></defs>')
+    
+    # Draw edges
+    edge_used = set()
+    for l in links:
+        src = l.get("source")
+        tgt = l.get("target")
+        rtype = l.get("type", "related")
+        key = (src, tgt)
+        if key in edge_used:
+            continue
+        edge_used.add(key)
+        if src in layer_x and tgt in layer_x:
+            x1, x2 = layer_x[src], layer_x[tgt]
+            y1 = layers.get(src, 0) * 120 + 40
+            y2 = layers.get(tgt, 0) * 120 + 40
+            color = rel_colors.get(rtype, "#94a3b8")
+            svg_lines.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="1.2" stroke-opacity="0.5" marker-end="url(#arrow)"/>')
+    
+    # Draw nodes
+    for n in nodes:
+        if not isinstance(n, dict):
+            continue
+        nid = n.get("id") or n.get("name")
+        name = n.get("name") or nid
+        cat = n.get("category", "")
+        color = cat_colors.get(cat, "#64748b")
+        if nid in layer_x:
+            x = layer_x[nid]
+            y = layers.get(nid, 2) * 120 + 40
+            href = entity_href(str(name), entities, out)
+            # Truncate long names
+            display = name if len(name) <= 5 else name
+            svg_lines.append(f'<a href="{href}"><rect x="{x-36}" y="{y-14}" width="72" height="28" rx="14" fill="{color}" fill-opacity="0.9"/><text x="{x}" y="{y+4}" text-anchor="middle" fill="white" font-size="11" font-weight="600">{html.escape(display[:8])}</text></a>')
+    
+    svg_lines.append('</svg>')
+    svg_graph = "\n".join(svg_lines)
+    
+    # Node pills
     node_html = "".join(f'<a class="pill" href="{entity_href(str(n.get("name") or n.get("id")), entities, out)}">{html.escape(str(n.get("name") or n.get("id")))}</a>' for n in nodes if isinstance(n, dict))
-    link_rows = "".join(f'<tr><td>{html.escape(str(l.get("source")))}</td><td>{html.escape(str(l.get("type")))}</td><td>{html.escape(str(l.get("target")))}</td><td>{html.escape(str(l.get("description", "")))}</td></tr>' for l in links if isinstance(l, dict))
-    body = f'''<h1>概念图谱</h1><p class="muted">由 <code>kg/relations/concept-links.json</code> 自动生成：{len(nodes)} 个节点，{len(links)} 条关系。</p>
-<div class="card"><h2>核心节点</h2><p>{node_html}</p></div>
-<article class="article"><h2>关系表</h2><table><thead><tr><th>源</th><th>关系</th><th>目标</th><th>说明</th></tr></thead><tbody>{link_rows}</tbody></table></article>'''
+    
+    # Legend for relation types
+    legend_parts = []
+    for k, v in relation_types.items():
+        c = rel_colors.get(k, "#95a5a6")
+        legend_parts.append(f'<span class="badge" style="background:{c}22;color:{c};border:1px solid {c}44">{v.get("label", k)}</span>')
+    legend = "".join(legend_parts)
+    
+    link_rows_parts = []
+    for l in links:
+        if not isinstance(l, dict):
+            continue
+        rt = str(l.get("type"))
+        rc = rel_colors.get(rt, "#95a5a6")
+        link_rows_parts.append(f'<tr><td><a href="{entity_href(str(l.get("source")), entities, out)}"><b>{html.escape(str(l.get("source")))}</b></a></td><td><span class="badge" style="background:{rc}22;color:{rc};border:1px solid {rc}44">{html.escape(rt)}</span></td><td><a href="{entity_href(str(l.get("target")), entities, out)}"><b>{html.escape(str(l.get("target")))}</b></a></td><td>{html.escape(str(l.get("description", "")))}</td></tr>')
+    link_rows = "".join(link_rows_parts)
+    
+    body = f'''<h1>概念图谱</h1><p class="muted">由 <code>kg/relations/concept-links.json</code> 自动生成：<b>{len(nodes)}</b> 个节点 · <b>{len(links)}</b> 条关系 · {len(relation_types)} 种关系类型</p>
+<div class="section-divider"></div>
+<h2>🌐 可视化图谱</h2>
+<div class="graph">{svg_graph}</div>
+<div class="section-divider"></div>
+<h2>🏷️ 关系图例</h2><p style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">{legend}</p>
+<div class="section-divider"></div>
+<h2>📋 所有节点</h2><div class="card"><p>{node_html}</p></div>
+<div class="section-divider"></div>
+<article class="article"><h2>📊 关系表</h2><table><thead><tr><th>源</th><th>关系</th><th>目标</th><th>说明</th></tr></thead><tbody>{link_rows}</tbody></table></article>'''
     write_page(out, "概念图谱", body, pages, "concept", json.dumps(data, ensure_ascii=False))
 
 
@@ -234,12 +453,12 @@ def build_skills(pages: list[Page]) -> None:
         raw = md.read_text(encoding="utf-8")
         title = title_from_md(raw, md.stem)
         out = Path("skills") / f"{md.stem}.html"
-        body = f'<div class="crumb"><a href="{rel(out, "index.html")}">首页</a> / <a href="{rel(out, "skills/index.html")}">构建方法</a></div><article class="article">{md_to_html(raw)}</article>'
+        body = f'<div class="crumb"><a href="{rel(out, "index.html")}">首页</a> / <a href="{rel(out, "skills/index.html")}">构建方法</a></div><div class="section-divider"></div><article class="article">{md_to_html(raw)}</article>'
         write_page(out, title, body, pages, "skill", raw)
         skills.append((title, out, clean_text(raw)))
     idx = Path("skills/index.html")
-    cards = "".join(f'<div class="card"><h3><a href="{rel(idx, p)}">{html.escape(t)}</a></h3><p class="muted">{html.escape(txt[:120])}...</p></div>' for t, p, txt in skills)
-    write_page(idx, "构建方法", f'<h1>构建方法</h1><p class="muted">保留并发布 <code>content/skills/*.md</code>，共 {len(skills)} 个流程文档。</p><div class="grid">{cards}</div>', pages, "index", "构建方法")
+    cards = "".join(f'<div class="card skill"><span class="icon">🛠️</span><h3><a href="{rel(idx, p)}">{html.escape(t)}</a></h3><p class="muted">{html.escape(txt[:120])}...</p></div>' for t, p, txt in skills)
+    write_page(idx, "构建方法", f'<h1>🛠️ 构建方法</h1><p class="muted">保留并发布 <code>content/skills/*.md</code>，共 <b>{len(skills)}</b> 个流程文档。</p><div class="section-divider"></div><div class="grid">{cards}</div>', pages, "index", "构建方法")
 
 
 def build_search(pages: list[Page]) -> None:
@@ -247,7 +466,7 @@ def build_search(pages: list[Page]) -> None:
     (ROOT / "search").mkdir(exist_ok=True)
     (ROOT / "search/search-index.json").write_text(json.dumps(idx_data, ensure_ascii=False, indent=2), encoding="utf-8")
     out = Path("search/index.html")
-    body = f'''<h1>站内搜索</h1><p class="muted">索引 {len(idx_data)} 个页面，离线可用。</p><input id="q" class="searchbox" placeholder="输入关键词，例如 DNA复制、PCR、转录因子..." autofocus><div id="results"></div>
+    body = f'''<h1>🔍 站内搜索</h1><p class="muted">索引 <b>{len(idx_data)}</b> 个页面，离线可用。</p><input id="q" class="searchbox" placeholder="输入关键词，例如 DNA复制、PCR、转录因子..." autofocus><div id="results"></div>
 <script>
 const INDEX_URL = 'search-index.json';
 let docs=[];fetch(INDEX_URL).then(r=>r.json()).then(x=>{{docs=x;render();}});
@@ -262,15 +481,39 @@ q.addEventListener('input',render);
 
 def build_home(pages: list[Page], chapters: list[dict[str, str]], entities: dict[str, dict[str, Any]]) -> None:
     out = Path("index.html")
+    # Count stats
+    rel_file = ROOT / "kg/relations/concept-links.json"
+    kg_data = json.loads(rel_file.read_text(encoding="utf-8")) if rel_file.exists() else {"nodes": [], "links": []}
+    node_count = len(kg_data.get("nodes", []))
+    rel_count = len(kg_data.get("links", []))
+    skill_count = len(list((ROOT / "content/skills").glob("*.md")))
+    
+    # Category counts
+    from collections import Counter
+    cats = Counter(str(e.get("category", "未分类")) for e in entities.values())
+    cat_html = "".join(f'<span class="badge badge-blue">{c}: {n}</span>' for c, n in cats.most_common(6))
+    
     chapter_links = "".join(f'<li><a href="{rel(out, c["out"])}">{html.escape(c["title"])}</a></li>' for c in chapters[:8])
-    entity_links = "".join(f'<a class="pill" href="{rel(out, Path("kg/entities") / slug_filename(n))}">{html.escape(n)}</a>' for n in sorted(entities)[:24])
-    body = f'''<section class="grid">
-<div class="card"><h2>课程章节</h2><p class="muted">统一从 Markdown 源生成，链接稳定。</p><ul>{chapter_links}</ul><p><a href="{rel(out, "chapters/index.html")}">查看全部章节 →</a></p></div>
-<div class="card"><h2>实体索引</h2><p class="muted">从 JSON 实体数据生成，当前 {len(entities)} 个实体。</p><p>{entity_links}</p><p><a href="{rel(out, "kg/entities/index.html")}">查看实体索引 →</a></p></div>
-<div class="card"><h2>概念图谱</h2><p class="muted">展示中心法则、复制、转录、翻译、调控和实验技术之间的关系。</p><p><a href="{rel(out, "kg/concepts/index.html")}">进入概念图谱 →</a></p></div>
-<div class="card"><h2>站内搜索</h2><p class="muted">搜索章节、实体、构建方法文档。</p><p><a href="{rel(out, "search/index.html")}">打开搜索 →</a></p></div>
+    entity_pills = "".join(f'<a class="pill" href="{rel(out, Path("kg/entities") / slug_filename(n))}">{html.escape(n)}</a>' for n in sorted(entities)[:24])
+    
+    # Hero stats for header
+    hero_stats = f'''<div class="hero-stats"><div class="hero-stat"><span class="hs-num">{len(chapters)}</span><span class="hs-label">课程章节</span></div><div class="hero-stat"><span class="hs-num">{len(entities)}</span><span class="hs-label">知识实体</span></div><div class="hero-stat"><span class="hs-num">{node_count}</span><span class="hs-label">概念节点</span></div><div class="hero-stat"><span class="hs-num">{rel_count}</span><span class="hs-label">语义关系</span></div></div>'''
+    
+    body = f'''<div class="stats">
+<div class="stat"><div class="num">{len(chapters)}</div><div class="label">课程章节</div></div>
+<div class="stat"><div class="num">{len(entities)}</div><div class="label">知识实体</div></div>
+<div class="stat"><div class="num">{node_count}</div><div class="label">概念节点</div></div>
+<div class="stat"><div class="num">{rel_count}</div><div class="label">语义关系</div></div>
+<div class="stat"><div class="num">{len(list((ROOT / "content/chapters").glob("*.md")))}</div><div class="label">Markdown 源</div></div>
+<div class="stat"><div class="num">{skill_count}</div><div class="label">构建方法</div></div>
+</div>
+<section class="grid">
+<div class="card chapter"><span class="icon">📖</span><h2>课程章节</h2><p class="muted">统一从 Markdown 源生成，链接稳定，共 {len(chapters)} 章。</p><ul>{chapter_links}</ul><p><a href="{rel(out, "chapters/index.html")}">查看全部章节 →</a></p></div>
+<div class="card entity"><span class="icon">🏷️</span><h2>实体索引</h2><p class="muted">从 JSON 实体数据生成，{len(entities)} 个实体覆盖 {len(cats)} 个类别。</p><p style="margin:8px 0">{cat_html}</p><p>{entity_pills}</p><p><a href="{rel(out, "kg/entities/index.html")}">查看实体索引 →</a></p></div>
+<div class="card concept"><span class="icon">🔗</span><h2>概念图谱</h2><p class="muted">{node_count} 个节点 · {rel_count} 条关系，展示中心法则、复制、转录、翻译、调控与实验技术之间的关系。</p><p><a href="{rel(out, "kg/concepts/index.html")}">进入概念图谱 →</a></p></div>
+<div class="card search"><span class="icon">🔍</span><h2>站内搜索</h2><p class="muted">搜索章节、实体、概念、构建方法文档，离线可用。</p><p><a href="{rel(out, "search/index.html")}">打开搜索 →</a></p></div>
 </section>'''
-    write_page(out, SITE_TITLE, body, pages, "home", SITE_TITLE)
+    write_page(out, SITE_TITLE, body, pages, "home", SITE_TITLE, hero_stats=hero_stats)
 
 
 def clean_generated() -> None:

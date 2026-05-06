@@ -1,10 +1,116 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SKILL 00: 管线总览 — 从教学资源到知识应用 | 分子生物学知识库</title><meta name="description" content="# SKILL 00: 管线总览 — 从教学资源到知识应用 &gt; 本文件是总控文档，只描述管线工序顺序和依赖关系，具体方法见各阶段SKILL。 --- ## 一、六大阶段 ``` 原始资源 (archive/) │ ▼ 01 内容采集 标准化资源 (docs/raw/) │ ▼ 02 结构分析 结构化课程 (章节编号 +">
-<style>:root{--bg:#f6f8fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e5e7eb;--primary:#355cde;--accent:#764ba2;--soft:#eef2ff}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}.wrap{max-width:1120px;margin:0 auto;padding:24px}.top{background:linear-gradient(135deg,#355cde,#764ba2);color:white}.top .wrap{padding-top:34px;padding-bottom:34px}.brand{font-size:28px;font-weight:800;margin:0}.subtitle{opacity:.9;margin:8px 0 0}.nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);padding:7px 12px;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,.04)}.card h2,.card h3{margin-top:0}.muted{color:var(--muted)}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 24px rgba(16,24,40,.05)}.article h1{color:var(--primary);line-height:1.25}.article h2{border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:30px}.article table{width:100%;border-collapse:collapse;margin:16px 0}.article th,.article td{border-bottom:1px solid var(--line);padding:8px;text-align:left}.article th{background:#f9fafb}.article code{background:#f3f4f6;padding:2px 5px;border-radius:5px}.article pre{background:#111827;color:#f9fafb;padding:14px;border-radius:12px;overflow:auto}.crumb{margin:16px 0;color:var(--muted)}.entity{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--soft);font-weight:600}.tag{display:inline-block;font-size:12px;border-radius:999px;background:#eef2ff;color:#3730a3;padding:2px 8px;margin:2px}.list{padding-left:1.2em}.searchbox{width:100%;font-size:16px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:white}.result{padding:14px 0;border-bottom:1px solid var(--line)}.footer{padding:28px;text-align:center;color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:white;margin:3px}.warn{background:#fff7ed;border-color:#fed7aa}.ok{background:#ecfdf3;border-color:#bbf7d0}@media(max-width:640px){.wrap{padding:16px}.article{padding:20px}.brand{font-size:24px}}</style></head><body>
-<header class="top"><div class="wrap"><h1 class="brand">🧬 分子生物学知识库</h1><p class="subtitle">Molecular Biology KB · 统一生成的课程章节、实体索引、概念关系与搜索入口</p><nav class="nav"><a href="../index.html">首页</a><a href="../chapters/index.html">课程章节</a><a href="../kg/entities/index.html">实体索引</a><a href="../kg/concepts/index.html">概念图谱</a><a href="../search/index.html">搜索</a><a href="index.html">构建方法</a></nav></div></header>
-<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><article class="article"><h1 id="skill-00">SKILL 00: 管线总览 — 从教学资源到知识应用</h1>
+<style>
+:root{--p:#1d4ed8;--p2:#2563eb;--a:#7c3aed;--a2:#8b5cf6;--g:#059669;--o:#ea580c;--r:#dc2626;--bg:#f8fafc;--bg2:#f1f5f9;--card:#fff;--ink:#0f172a;--ink2:#334155;--mu:#64748b;--line:#e2e8f0;--line2:#cbd5e1;--soft:#eff6ff;--softa:#f5f3ff;--softg:#ecfdf5;--softo:#fff7ed;--rad:12px;--sh:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shm:0 4px 12px rgba(0,0,0,.08);}
+*,::before,::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.top{background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 30%,#7c3aed 70%,#a855f7 100%);color:#fff;position:relative;overflow:hidden}
+.top::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.top .wrap{position:relative;padding-top:40px;padding-bottom:36px}
+.brand{font-size:32px;font-weight:800;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+.brand .icon{font-size:36px}
+.subtitle{opacity:.85;margin:6px 0 0;font-size:15px;font-weight:400;max-width:600px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:14px;transition:all .2s;backdrop-filter:blur(4px)}
+.nav a:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.5);text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px 24px;box-shadow:var(--sh);transition:box-shadow .2s,transform .15s;position:relative;overflow:hidden}
+.card:hover{box-shadow:var(--shm);transform:translateY(-2px)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--p);opacity:0;transition:opacity .2s}
+.card:hover::before{opacity:1}
+.card h2,.card h3{margin:0 0 8px;font-size:17px;font-weight:700;color:var(--ink)}
+.card .icon{font-size:24px;margin-bottom:10px;display:block}
+.card.chapter::before{background:var(--p)}
+.card.entity::before{background:var(--a)}
+.card.concept::before{background:var(--g)}
+.card.search::before{background:var(--o)}
+.card.skill::before{background:var(--a2)}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin:24px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px;text-align:center;box-shadow:var(--sh);transition:box-shadow .2s,transform .15s}
+.stat:hover{box-shadow:var(--shm);transform:translateY(-2px)}
+.stat .num{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .label{color:var(--mu);font-size:13px;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.muted{color:var(--mu)}
+a{color:var(--p);text-decoration:none;transition:color .15s}
+a:hover{color:var(--p2);text-decoration:none}
+.article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px 36px;box-shadow:var(--sh)}
+.article h1{font-size:26px;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.article h2{font-size:20px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--soft);color:var(--ink)}
+.article h3{font-size:17px;font-weight:600;margin:20px 0 8px;color:var(--ink2)}
+.article p{margin:10px 0;color:var(--ink2)}
+.article ul,.article ol{margin:8px 0 8px 20px}
+.article li{margin:4px 0;color:var(--ink2)}
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.article th{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.article td{padding:10px 14px;border-bottom:1px solid var(--line);background:#fff}
+.article tr:nth-child(even) td{background:var(--bg2)}
+.article tr:hover td{background:var(--soft)}
+.article code{background:var(--soft);padding:2px 6px;border-radius:4px;font-size:.9em;color:var(--p);font-family:'SF Mono','Fira Code','Cascadia Code',monospace}
+.article pre{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:10px;overflow:auto;font-size:13px;line-height:1.6;margin:16px 0}
+.article blockquote{border-left:4px solid var(--p);margin:16px 0;padding:12px 20px;background:var(--soft);border-radius:0 8px 8px 0;color:var(--ink2)}
+.crumb{margin:0 0 20px;font-size:14px;color:var(--mu)}
+.crumb a{color:var(--mu)}
+.crumb a:hover{color:var(--p)}
+.entity{display:inline-block;padding:3px 10px;border-radius:999px;font-weight:600;font-size:13px;margin:2px;transition:all .15s}
+.entity:hover{transform:scale(1.05)}
+.entity.molecule,.entity.molecule{background:#dbeafe;color:#1e40af}
+.entity.enzyme{background:#dcfce7;color:#166534}
+.entity.protein{background:#fce7f3;color:#9d174d}
+.entity.process{background:#fef3c7;color:#92400e}
+.entity.technique{background:#e0e7ff;color:#3730a3}
+.entity.complex{background:#f3e8ff;color:#6b21a8}
+.entity.concept,.entity.core-theory{background:#ffedd5;color:#9a3412}
+.entity.regulatory{background:#fce7f3;color:#9d174d}
+.entity.mechanism{background:#d1fae5;color:#065f46}
+.tag{display:inline-block;font-size:11px;border-radius:999px;padding:2px 8px;margin:2px;font-weight:500}
+.tag.p{background:var(--soft);color:var(--p)}
+.tag.a{background:var(--softa);color:var(--a)}
+.tag.g{background:var(--softg);color:var(--g)}
+.list{padding-left:1.2em}
+.searchbox{width:100%;font-size:16px;border:2px solid var(--line);border-radius:12px;padding:14px 18px;background:var(--card);color:var(--ink);transition:border-color .2s;outline:none}
+.searchbox:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(29,78,216,.1)}
+.result{padding:16px 0;border-bottom:1px solid var(--line)}
+.result:last-child{border-bottom:none}
+.footer{margin-top:60px;padding:32px 0;text-align:center;color:var(--mu);font-size:13px;border-top:1px solid var(--line)}
+.footer a{color:var(--p)}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--card);margin:3px;font-size:13px;transition:all .15s;text-decoration:none;color:var(--ink2)}
+.pill:hover{border-color:var(--p);color:var(--p);box-shadow:0 2px 8px rgba(29,78,216,.1);text-decoration:none}
+.pill.active{background:var(--p);color:#fff;border-color:var(--p)}
+.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:12px 16px;color:#9a3412}
+.ok{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:8px;padding:12px 16px;color:#065f46}
+.info{background:var(--soft);border:1px solid #bfdbfe;border-radius:8px;padding:12px 16px;color:var(--p)}
+.hero-stats{display:flex;gap:32px;margin-top:14px;flex-wrap:wrap}
+.hero-stat{display:flex;align-items:baseline;gap:6px}
+.hero-stat .hs-num{font-size:24px;font-weight:800;opacity:.95}
+.hero-stat .hs-label{font-size:13px;opacity:.7}
+.graph{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;margin:24px 0;box-shadow:var(--sh);min-height:400px;position:relative;overflow:auto}
+.graph svg{display:block;margin:0 auto;max-width:100%}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:40px 0}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.badge-blue{background:var(--soft);color:var(--p)}
+.badge-purple{background:var(--softa);color:var(--a)}
+.badge-green{background:var(--softg);color:var(--g)}
+.badge-orange{background:var(--softo);color:var(--o)}
+.entity-detail-header{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.entity-detail-header h1{margin:0}
+.entity-category-pill{display:inline-block;padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600}
+.ec-molecule{background:#dbeafe;color:#1e40af}
+.ec-enzyme{background:#dcfce7;color:#166534}
+.ec-protein{background:#fce7f3;color:#9d174d}
+.ec-process{background:#fef3c7;color:#92400e}
+.ec-technique{background:#e0e7ff;color:#3730a3}
+.ec-complex{background:#f3e8ff;color:#6b21a8}
+.ec-concept{background:#ffedd5;color:#9a3412}
+.ec-regulatory{background:#fce7f3;color:#9d174d}
+.ec-mechanism{background:#d1fae5;color:#065f46}
+@media(max-width:768px){.wrap{padding:0 16px}.top .wrap{padding-top:28px;padding-bottom:24px}.brand{font-size:24px}.article{padding:20px;border-radius:10px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero-stats{gap:16px}.nav{gap:6px}.nav a{font-size:13px;padding:5px 10px}}
+@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--bg2:#1e293b;--card:#1e293b;--ink:#f1f5f9;--ink2:#cbd5e1;--mu:#94a3b8;--line:#334155;--line2:#475569;--soft:#1e3a5f;--softa:#2d1b69;--softg:#064e3b;--softo:#431407;--sh:0 1px 3px rgba(0,0,0,.3);--shm:0 4px 12px rgba(0,0,0,.4)}.article td{background:#1e293b}.article tr:nth-child(even) td{background:var(--bg2)}.article tr:hover td{background:var(--soft)}.searchbox{background:var(--bg)}.pill{background:var(--bg)}.entity.molecule,.entity.molecule{background:#1e3a5f;color:#93c5fd}.entity.enzyme{background:#064e3b;color:#6ee7b7}.entity.protein{background:#4a1942;color:#f9a8d4}.entity.process{background:#451a03;color:#fcd34d}.entity.technique{background:#1e3a5f;color:#a5b4fc}.entity.complex{background:#2d1b69;color:#c4b5fd}.article th{background:linear-gradient(135deg,#1e3a8a,#1d4ed8)}}
+</style></head><body>
+<header class="top"><div class="wrap"><h1 class="brand"><span class="icon">🧬</span> 分子生物学知识库</h1><p class="subtitle">Molecular Biology Knowledge Base · 课程章节 · 实体索引 · 概念图谱 · 搜索</p><nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 课程章节</a><a href="../kg/entities/index.html">🏷️ 实体索引</a><a href="../kg/concepts/index.html">🔗 概念图谱</a><a href="../search/index.html">🔍 搜索</a><a href="index.html">🛠️ 构建方法</a></nav></div></header>
+<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-00">SKILL 00: 管线总览 — 从教学资源到知识应用</h1>
 <blockquote>
 <p>本文件是总控文档，只描述管线工序顺序和依赖关系，具体方法见各阶段SKILL。</p>
 </blockquote>
@@ -292,5 +398,5 @@
 <td>~1.5亿</td>
 </tr>
 </tbody>
-</table></article></main><footer class="footer">Built for molecular biology teaching · Generated by scripts/build_site.py</footer>
+</table></article></main><footer class="footer"><p>Built for molecular biology teaching · Generated by <code>scripts/build_site.py</code></p><p style="margin-top:6px"><a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 </body></html>
