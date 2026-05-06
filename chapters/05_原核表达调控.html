@@ -1,102 +1,74 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>第五章：原核生物基因表达调控 | 分子生物学知识库</title><meta name="description" content="# 第五章：原核生物基因表达调控 ## 5.1 基因表达调控概述 ### 调控层次 基因表达调控 发生在多个层次： ``` DNA → 转录 → RNA加工 → 翻译 → 蛋白质修饰 ↑ ↑ ↑ ↑ ↑ 染色质 转录 转录后 翻译 翻译后 ``` **原核生物特点**： - 转录和翻译偶联（无核膜分隔） - 以操纵子为">
 <style>
-:root{--p:#1d4ed8;--p2:#2563eb;--a:#7c3aed;--a2:#8b5cf6;--g:#059669;--o:#ea580c;--r:#dc2626;--bg:#f8fafc;--bg2:#f1f5f9;--card:#fff;--ink:#0f172a;--ink2:#334155;--mu:#64748b;--line:#e2e8f0;--line2:#cbd5e1;--soft:#eff6ff;--softa:#f5f3ff;--softg:#ecfdf5;--softo:#fff7ed;--rad:12px;--sh:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shm:0 4px 12px rgba(0,0,0,.08);}
-*,::before,::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-.top{background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 30%,#7c3aed 70%,#a855f7 100%);color:#fff;position:relative;overflow:hidden}
-.top::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
-.top .wrap{position:relative;padding-top:40px;padding-bottom:36px}
-.brand{font-size:32px;font-weight:800;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
-.brand .icon{font-size:36px}
-.subtitle{opacity:.85;margin:6px 0 0;font-size:15px;font-weight:400;max-width:600px}
-.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-.nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:14px;transition:all .2s;backdrop-filter:blur(4px)}
-.nav a:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.5);text-decoration:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px 24px;box-shadow:var(--sh);transition:box-shadow .2s,transform .15s;position:relative;overflow:hidden}
-.card:hover{box-shadow:var(--shm);transform:translateY(-2px)}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--p);opacity:0;transition:opacity .2s}
-.card:hover::before{opacity:1}
-.card h2,.card h3{margin:0 0 8px;font-size:17px;font-weight:700;color:var(--ink)}
-.card .icon{font-size:24px;margin-bottom:10px;display:block}
-.card.chapter::before{background:var(--p)}
-.card.entity::before{background:var(--a)}
-.card.concept::before{background:var(--g)}
-.card.search::before{background:var(--o)}
-.card.skill::before{background:var(--a2)}
-.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin:24px 0}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px;text-align:center;box-shadow:var(--sh);transition:box-shadow .2s,transform .15s}
-.stat:hover{box-shadow:var(--shm);transform:translateY(-2px)}
-.stat .num{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat .label{color:var(--mu);font-size:13px;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
-.muted{color:var(--mu)}
-a{color:var(--p);text-decoration:none;transition:color .15s}
-a:hover{color:var(--p2);text-decoration:none}
-.article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px 36px;box-shadow:var(--sh)}
-.article h1{font-size:26px;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.3}
-.article h2{font-size:20px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--soft);color:var(--ink)}
-.article h3{font-size:17px;font-weight:600;margin:20px 0 8px;color:var(--ink2)}
-.article p{margin:10px 0;color:var(--ink2)}
-.article ul,.article ol{margin:8px 0 8px 20px}
-.article li{margin:4px 0;color:var(--ink2)}
-.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-.article th{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-.article td{padding:10px 14px;border-bottom:1px solid var(--line);background:#fff}
-.article tr:nth-child(even) td{background:var(--bg2)}
-.article tr:hover td{background:var(--soft)}
-.article code{background:var(--soft);padding:2px 6px;border-radius:4px;font-size:.9em;color:var(--p);font-family:'SF Mono','Fira Code','Cascadia Code',monospace}
-.article pre{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:10px;overflow:auto;font-size:13px;line-height:1.6;margin:16px 0}
-.article blockquote{border-left:4px solid var(--p);margin:16px 0;padding:12px 20px;background:var(--soft);border-radius:0 8px 8px 0;color:var(--ink2)}
-.crumb{margin:0 0 20px;font-size:14px;color:var(--mu)}
-.crumb a{color:var(--mu)}
-.crumb a:hover{color:var(--p)}
-.entity{display:inline-block;padding:3px 10px;border-radius:999px;font-weight:600;font-size:13px;margin:2px;transition:all .15s}
-.entity:hover{transform:scale(1.05)}
-.entity.molecule,.entity.molecule{background:#dbeafe;color:#1e40af}
-.entity.enzyme{background:#dcfce7;color:#166534}
-.entity.protein{background:#fce7f3;color:#9d174d}
-.entity.process{background:#fef3c7;color:#92400e}
-.entity.technique{background:#e0e7ff;color:#3730a3}
-.entity.complex{background:#f3e8ff;color:#6b21a8}
-.entity.concept,.entity.core-theory{background:#ffedd5;color:#9a3412}
-.entity.regulatory{background:#fce7f3;color:#9d174d}
-.entity.mechanism{background:#d1fae5;color:#065f46}
-.tag{display:inline-block;font-size:11px;border-radius:999px;padding:2px 8px;margin:2px;font-weight:500}
-.tag.p{background:var(--soft);color:var(--p)}
-.tag.a{background:var(--softa);color:var(--a)}
-.tag.g{background:var(--softg);color:var(--g)}
-.list{padding-left:1.2em}
-.searchbox{width:100%;font-size:16px;border:2px solid var(--line);border-radius:12px;padding:14px 18px;background:var(--card);color:var(--ink);transition:border-color .2s;outline:none}
-.searchbox:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(29,78,216,.1)}
-.result{padding:16px 0;border-bottom:1px solid var(--line)}
-.result:last-child{border-bottom:none}
-.footer{margin-top:60px;padding:32px 0;text-align:center;color:var(--mu);font-size:13px;border-top:1px solid var(--line)}
-.footer a{color:var(--p)}
-.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--card);margin:3px;font-size:14px;transition:all .15s;text-decoration:none;color:var(--ink2)}
-.pill:hover{border-color:var(--p);color:var(--p);box-shadow:0 2px 8px rgba(29,78,216,.1);text-decoration:none}
-.pill.active{background:var(--p);color:#fff;border-color:var(--p)}
-.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:12px 16px;color:#9a3412}
-.ok{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:8px;padding:12px 16px;color:#065f46}
-.info{background:var(--soft);border:1px solid #bfdbfe;border-radius:8px;padding:12px 16px;color:var(--p)}
-.hero-stats{display:flex;gap:32px;margin-top:14px;flex-wrap:wrap}
-.hero-stat{display:flex;align-items:baseline;gap:6px}
-.hero-stat .hs-num{font-size:24px;font-weight:800;opacity:.95}
-.hero-stat .hs-label{font-size:13px;opacity:.7}
-.graph{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;margin:24px 0;box-shadow:var(--sh);min-height:400px;position:relative;overflow:auto}
-.graph svg{display:block;margin:0 auto;max-width:100%}
-.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:40px 0}
-.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600}
-.badge-blue{background:var(--soft);color:var(--p)}
-.badge-purple{background:var(--softa);color:var(--a)}
-.badge-green{background:var(--softg);color:var(--g)}
-.badge-orange{background:var(--softo);color:var(--o)}
+/* ===== shiji-kb inspired design for molbio-kb ===== */
+:root{--bg:#fdfdf8;--card:#fff;--ink:#2c2c2c;--ink2:#555;--mu:#888;--line:#e5e0d5;--p:#1d4ed8;--a:#7c3aed}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",Georgia,serif;line-height:2;max-width:900px;margin:0 auto;padding:20px;background:var(--bg);color:var(--ink);font-size:16px}
+p{margin:1.8em 0;text-indent:0}
+a{color:var(--p);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Header */
+.top{background:#fff;border-bottom:2px solid #e5e0d5;padding:16px 0;margin-bottom:24px;position:sticky;top:0;z-index:100}
+.top .wrap{max-width:900px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.brand{font-size:22px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.brand .icon{font-size:26px}
+.subtitle{display:none}
+.nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.nav a{color:#666;text-decoration:none;padding:4px 10px;border-radius:4px;font-size:14px;transition:all .2s;border:1px solid transparent;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.nav a:hover{background:#f5f5f5;color:#333;border-color:#ddd;text-decoration:none}
+/* Settings toggle */
+.settings-toggle{background:none;border:1px solid #ddd;border-radius:4px;padding:4px 10px;font-size:16px;cursor:pointer;transition:all .2s;color:#666;line-height:1}
+.settings-toggle:hover{background:#f5f5f5;border-color:#999}
+/* Stats on home */
+.stats{display:flex;gap:32px;margin:16px 0 24px;flex-wrap:wrap;font-size:15px;color:var(--mu)}
+.stat .num{font-weight:700;color:var(--ink);font-size:20px}
+/* Home cards - section style like shiji-kb */
+.section{margin:20px 0}
+.section h2{font-size:20px;border-bottom:2px solid #e5e0d5;padding-bottom:6px;margin-bottom:12px;color:var(--ink)}
+.section .subsection{margin:4px 0;font-size:15px;color:var(--ink2)}
+.section .subsection a{color:var(--ink2)}
+.section .subsection a:hover{color:var(--p)}
+/* Chapter navigation */
+.chapter-nav{display:flex;justify-content:center;align-items:center;gap:15px;padding:12px 20px;margin:15px 0}
+.chapter-nav a{padding:6px 14px;background:#fff;color:#666;text-decoration:none;border:1px solid #ddd;border-radius:4px;font-size:14px;transition:all .2s;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.chapter-nav a:hover{background:#f5f5f5;border-color:#999;color:#333}
+.chapter-nav .nav-home{color:var(--p);border-color:var(--p)}
+.chapter-nav .nav-home:hover{background:var(--p);color:#fff}
+/* Purple Numbers */
+.pn{font-size:12px;color:#9370db;margin-right:6px;vertical-align:super;cursor:pointer;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-weight:500}
+.pn:hover{color:#6b21a8}
+/* Entity highlighting - inline underlines like shiji-kb */
+.entity{font-weight:500;cursor:pointer;transition:all .2s}
+.entity.molecule{color:#1e40af;text-decoration:underline;text-decoration-color:#1e40af60;text-underline-offset:3px}
+.entity.enzyme{color:#166534;text-decoration:underline;text-decoration-color:#16653460;text-underline-offset:3px}
+.entity.protein{color:#9d174d;text-decoration:underline;text-decoration-color:#9d174d60;text-underline-offset:3px}
+.entity.process{color:#92400e;text-decoration:underline wavy;text-decoration-color:#92400e60;text-underline-offset:3px}
+.entity.technique{color:#3730a3;text-decoration:underline dashed;text-decoration-color:#3730a360;text-underline-offset:3px}
+.entity.complex{color:#6b21a8;text-decoration:underline double;text-decoration-color:#6b21a860;text-underline-offset:3px}
+.entity.concept,.entity.core-theory{color:#9a3412;font-weight:600}
+.entity.regulatory{color:#9d174d;text-decoration:underline;text-decoration-color:#9d174d60;text-underline-offset:3px}
+.entity.mechanism{color:#065f46;text-decoration:underline wavy;text-decoration-color:#065f4660;text-underline-offset:3px}
+/* Entity hidden mode - when toggle off */
+.hide-entities .entity{color:inherit!important;text-decoration:none!important;font-weight:inherit!important;cursor:text}
+/* Article / content */
+.article{margin:20px 0}
+.article h1{font-size:26px;font-weight:700;margin:0 0 16px;color:var(--ink)}
+.article h2{font-size:20px;margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid #e5e0d5;color:var(--ink)}
+.article h3{font-size:17px;margin:20px 0 8px;color:var(--ink2)}
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border:1px solid #e5e0d5}
+.article th{background:#f5f0e8;padding:10px 14px;text-align:left;font-weight:600;font-size:13px;border-bottom:2px solid #e5e0d5}
+.article td{padding:10px 14px;border-bottom:1px solid #e5e0d5}
+.article tr:nth-child(even) td{background:#fdfdf8}
+.article code{background:#f5f0e8;padding:2px 6px;border-radius:3px;font-size:.9em;font-family:'SF Mono',monospace}
+.article pre{background:#2c2c2c;color:#e8e8e8;padding:16px 20px;border-radius:8px;overflow:auto;font-size:13px;line-height:1.6;margin:16px 0}
+.article blockquote{border-left:3px solid #e5e0d5;margin:16px 0;padding:8px 20px;color:var(--ink2);background:#fdfdf8}
+/* Entity detail page */
 .entity-detail-header{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
 .entity-detail-header h1{margin:0}
-.entity-category-pill{display:inline-block;padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600}
+.entity-category-pill{display:inline-block;padding:3px 12px;border-radius:4px;font-size:13px;font-weight:500}
 .ec-molecule{background:#dbeafe;color:#1e40af}
 .ec-enzyme{background:#dcfce7;color:#166534}
 .ec-protein{background:#fce7f3;color:#9d174d}
@@ -106,19 +78,55 @@ a:hover{color:var(--p2);text-decoration:none}
 .ec-concept{background:#ffedd5;color:#9a3412}
 .ec-regulatory{background:#fce7f3;color:#9d174d}
 .ec-mechanism{background:#d1fae5;color:#065f46}
-@media(max-width:768px){.wrap{padding:0 16px}.top .wrap{padding-top:28px;padding-bottom:24px}.brand{font-size:24px}.article{padding:20px;border-radius:10px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero-stats{gap:16px}.nav{gap:6px}.nav a{font-size:13px;padding:5px 10px}}
-@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--bg2:#1e293b;--card:#1e293b;--ink:#f1f5f9;--ink2:#cbd5e1;--mu:#94a3b8;--line:#334155;--line2:#475569;--soft:#1e3a5f;--softa:#2d1b69;--softg:#064e3b;--softo:#431407;--sh:0 1px 3px rgba(0,0,0,.3);--shm:0 4px 12px rgba(0,0,0,.4)}.article td{background:#1e293b}.article tr:nth-child(even) td{background:var(--bg2)}.article tr:hover td{background:var(--soft)}.searchbox{background:var(--bg)}.pill{background:var(--bg)}.entity.molecule,.entity.molecule{background:#1e3a5f;color:#93c5fd}.entity.enzyme{background:#064e3b;color:#6ee7b7}.entity.protein{background:#4a1942;color:#f9a8d4}.entity.process{background:#451a03;color:#fcd34d}.entity.technique{background:#1e3a5f;color:#a5b4fc}.entity.complex{background:#2d1b69;color:#c4b5fd}.article th{background:linear-gradient(135deg,#1e3a8a,#1d4ed8)}}
+/* Grid / cards for home and index */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid #e5e0d5;border-radius:8px;padding:20px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card h2,.card h3{margin:0 0 8px;font-size:17px;font-weight:700}
+.card .icon{font-size:20px;margin-bottom:8px;display:block}
+/* Concept graph */
+.graph{background:var(--card);border:1px solid #e5e0d5;border-radius:8px;padding:24px;margin:24px 0;overflow:auto}
+.graph svg{display:block;margin:0 auto;max-width:100%}
+/* Pills and badges */
+.pill{display:inline-block;border:1px solid #e5e0d5;border-radius:6px;padding:4px 10px;background:var(--card);margin:3px;font-size:14px;transition:all .15s;color:var(--ink2)}
+.pill:hover{border-color:var(--p);color:var(--p);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:500}
+.badge-blue{background:#eff6ff;color:var(--p)}
+.searchbox{width:100%;font-size:16px;border:1px solid #e5e0d5;border-radius:6px;padding:12px 14px;background:var(--card);color:var(--ink);outline:none}
+.searchbox:focus{border-color:var(--p);box-shadow:0 0 0 2px rgba(29,78,216,.1)}
+.result{padding:16px 0;border-bottom:1px solid #e5e0d5}
+.result:last-child{border-bottom:none}
+.crumb{margin:0 0 16px;font-size:14px;color:var(--mu)}
+.crumb a{color:var(--mu)}
+.crumb a:hover{color:var(--p)}
+.muted{color:var(--mu);font-size:15px}
+.section-divider{height:1px;background:#e5e0d5;margin:32px 0}
+.tag{display:inline-block;font-size:11px;border-radius:4px;padding:2px 8px;margin:2px;font-weight:500;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.tag.p{background:#eff6ff;color:var(--p)}
+.tag.a{background:#f5f3ff;color:var(--a)}
+.tag.g{background:#ecfdf5;color:#059669}
+.list{padding-left:1.4em;font-size:16px;line-height:2.2}
+.list li{margin:2px 0}
+.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:12px 16px;color:#9a3412}
+.ok{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:6px;padding:12px 16px;color:#065f46}
+.footer{margin-top:60px;padding:24px 0;text-align:center;color:var(--mu);font-size:13px;border-top:1px solid #e5e0d5}
+.footer a{color:var(--p)}
+@media(max-width:768px){body{padding:12px;font-size:15px}.brand{font-size:18px}.article h1{font-size:22px}.article h2{font-size:18px}.grid{grid-template-columns:1fr}.stats{gap:16px}.chapter-nav{gap:8px}.chapter-nav a{font-size:13px;padding:4px 10px}}
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e0d8c8}.top{background:#222;border-color:#333}.card{background:#222;border-color:#333}.article th{background:#2a2a2a;border-color:#333}.article td{background:#1e1e1e}.article tr:nth-child(even) td{background:#242424}.section h2,.article h2{border-color:#333}.searchbox{background:#2a2a2a;border-color:#333;color:#e0d8c8}.pill{background:#2a2a2a;border-color:#333}.chapter-nav a{background:#2a2a2a;border-color:#333;color:#aaa}.chapter-nav a:hover{background:#333;color:#e0d8c8}.graph{background:#222;border-color:#333}.entity.molecule{color:#93c5fd;text-decoration-color:#93c5fd60}.entity.enzyme{color:#6ee7b7;text-decoration-color:#6ee7b760}.entity.protein{color:#f9a8d4;text-decoration-color:#f9a8d460}.entity.process{color:#fcd34d;text-decoration-color:#fcd34d60}.entity.technique{color:#a5b4fc;text-decoration-color:#a5b4fc60}.entity.complex{color:#c4b5fd;text-decoration-color:#c4b5fd60}}
 </style></head><body>
-<header class="top"><div class="wrap"><h1 class="brand"><span class="icon">🧬</span> 分子生物学知识库</h1><p class="subtitle">Molecular Biology Knowledge Base · 课程章节 · 实体索引 · 概念图谱 · 搜索</p><nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 课程章节</a><a href="../kg/entities/index.html">🏷️ 实体索引</a><a href="../kg/concepts/index.html">🔗 概念图谱</a><a href="../search/index.html">🔍 搜索</a></nav></div></header>
-<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">课程章节</a></div><div class="section-divider"></div><article class="article"><h1 id="_1">第五章：原核生物基因表达调控</h1>
+<header class="top"><div class="wrap">
+<span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
+<nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button></nav>
+</div></header>
+<main><nav class="chapter-nav"><a href="04_%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="05_%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">下一章 →</a></nav><div class="article"><h1 id="_1">第五章：原核生物基因表达调控</h1>
 <h2 id="51">5.1 基因表达调控概述</h2>
 <h3 id="_2">调控层次</h3>
-<p><span class="entity concept" title="概念：gene_regulation">基因表达调控</span>发生在多个层次：</p>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a><span class="entity concept" title="概念：gene_regulation">基因表达调控</span>发生在多个层次：</p>
 <pre><code>DNA → 转录 → RNA加工 → 翻译 → 蛋白质修饰
  ↑      ↑       ↑        ↑        ↑
 染色质  转录   转录后   翻译    翻译后
 </code></pre>
-<p><strong>原核生物特点</strong>：
+<p><a class="pn" id="pn-2" href="#pn-2">2</a><strong>原核生物特点</strong>：
 - 转录和翻译偶联（无核膜分隔）
 - 以操纵子为单位组织基因
 - 主要调控点在转录水平
@@ -152,7 +160,7 @@ a:hover{color:var(--p2);text-decoration:none}
 </table>
 <h2 id="52">5.2 操纵子模型</h2>
 <h3 id="_4">操纵子结构</h3>
-<p><span class="entity concept" title="概念：operon">操纵子</span>（Operon）是原核生物基因调控的基本单位：</p>
+<p><a class="pn" id="pn-3" href="#pn-3">3</a><span class="entity concept" title="概念：operon">操纵子</span>（Operon）是原核生物基因调控的基本单位：</p>
 <pre><code>调节基因 - 启动子 - 操纵基因 - 结构基因群
               ↑         ↑
          RNA聚合酶   阻遏蛋白
@@ -184,22 +192,22 @@ a:hover{color:var(--p2);text-decoration:none}
 </tbody>
 </table>
 <h3 id="_5">调控蛋白</h3>
-<p><strong>阻遏蛋白</strong>（Repressor）：
+<p><a class="pn" id="pn-4" href="#pn-4">4</a><strong>阻遏蛋白</strong>（Repressor）：
 - 结合操纵基因，阻止转录
 - 可被诱导物失活（负调控）
 - 可被辅阻遏物激活（阻遏型操纵子）</p>
-<p><strong>激活蛋白</strong>（Activator）：
+<p><a class="pn" id="pn-5" href="#pn-5">5</a><strong>激活蛋白</strong>（Activator）：
 - 结合启动子附近，促进转录
 - 通常需要效应物分子</p>
 <h2 id="53">5.3 乳糖操纵子</h2>
 <h3 id="_6">负调控机制</h3>
-<p><span class="entity entity-generic" title="概念">乳糖操纵子</span>（Lac operon）是负调控的经典模型：</p>
-<p><strong>结构</strong>：
+<p><a class="pn" id="pn-6" href="#pn-6">6</a><span class="entity entity-generic" title="概念">乳糖操纵子</span>（Lac operon）是负调控的经典模型：</p>
+<p><a class="pn" id="pn-7" href="#pn-7">7</a><strong>结构</strong>：
 - 调节基因<span class="entity entity-generic" title="基因">lacI</span>：编码阻遏蛋白
 - 启动子<span class="entity entity-generic" title="概念">P_lac</span>：RNA聚合酶结合
 - 操纵基因<span class="entity entity-generic" title="概念">O</span>：阻遏蛋白结合
 - 结构基因：<span class="entity entity-generic" title="基因">lacZ</span>（β-半乳糖苷酶）、<span class="entity entity-generic" title="基因">lacY</span>（通透酶）、<span class="entity entity-generic" title="基因">lacA</span>（转乙酰基酶）</p>
-<p><strong>调控过程</strong>：</p>
+<p><a class="pn" id="pn-8" href="#pn-8">8</a><strong>调控过程</strong>：</p>
 <table>
 <thead>
 <tr>
@@ -224,23 +232,23 @@ a:hover{color:var(--p2);text-decoration:none}
 </tr>
 </tbody>
 </table>
-<p><strong>诱导物</strong>：
+<p><a class="pn" id="pn-9" href="#pn-9">9</a><strong>诱导物</strong>：
 - 乳糖本身不是真正的诱导物
 - <span class="entity molecule" title="分子">异乳糖</span>（allolactose）是真正的诱导物
 - 实验室常用<span class="entity molecule" title="分子">IPTG</span>（异丙基-β-D-硫代半乳糖苷）作为诱导物</p>
 <h3 id="_7">正调控机制</h3>
-<p><span class="entity protein" title="蛋白">CAP蛋白</span>（Catabolite Activator Protein）介导正调控：</p>
-<p><strong>葡萄糖效应</strong>（分解代谢物阻遏）：
+<p><a class="pn" id="pn-10" href="#pn-10">10</a><span class="entity protein" title="蛋白">CAP蛋白</span>（Catabolite Activator Protein）介导正调控：</p>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>葡萄糖效应</strong>（分解代谢物阻遏）：
 - 葡萄糖存在时：优先利用葡萄糖，乳糖操纵子低表达
 - 葡萄糖缺乏时：cAMP水平升高，激活乳糖操纵子</p>
-<p><strong>机制</strong>：</p>
+<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>机制</strong>：</p>
 <pre><code>葡萄糖缺乏 → cAMP升高 → cAMP-CAP复合物形成 → 结合启动子 → 转录激活
 </code></pre>
-<p><strong>CAP结合位点</strong>：
+<p><a class="pn" id="pn-13" href="#pn-13">13</a><strong>CAP结合位点</strong>：
 - 位于启动子上游
 - 结合后弯曲DNA，促进RNA聚合酶结合</p>
 <h3 id="_8">综合调控</h3>
-<p><strong>乳糖操纵子的双重调控</strong>：</p>
+<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>乳糖操纵子的双重调控</strong>：</p>
 <table>
 <thead>
 <tr>
@@ -283,16 +291,16 @@ a:hover{color:var(--p2);text-decoration:none}
 </tbody>
 </table>
 <blockquote>
-<p>只有当葡萄糖缺乏（cAMP高）且有乳糖（阻遏蛋白失活）时，乳糖操纵子才高水平表达。</p>
+<p><a class="pn" id="pn-15" href="#pn-15">15</a>只有当葡萄糖缺乏（cAMP高）且有乳糖（阻遏蛋白失活）时，乳糖操纵子才高水平表达。</p>
 </blockquote>
 <h2 id="54">5.4 色氨酸操纵子</h2>
 <h3 id="_9">阻遏型调控</h3>
-<p><span class="entity entity-generic" title="概念">色氨酸操纵子</span>（Trp operon）是阻遏型操纵子：</p>
-<p><strong>结构</strong>：
+<p><a class="pn" id="pn-16" href="#pn-16">16</a><span class="entity entity-generic" title="概念">色氨酸操纵子</span>（Trp operon）是阻遏型操纵子：</p>
+<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>结构</strong>：
 - 调节基因<span class="entity entity-generic" title="基因">trpR</span>：编码阻遏蛋白
 - 启动子、操纵基因
 - 结构基因：<span class="entity entity-generic" title="基因">trpE</span>、<span class="entity entity-generic" title="基因">trpD</span>、<span class="entity entity-generic" title="基因">trpC</span>、<span class="entity entity-generic" title="基因">trpB</span>、<span class="entity entity-generic" title="基因">trpA</span>（色氨酸合成酶各亚基）</p>
-<p><strong>调控过程</strong>：</p>
+<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>调控过程</strong>：</p>
 <table>
 <thead>
 <tr>
@@ -318,61 +326,61 @@ a:hover{color:var(--p2);text-decoration:none}
 </tbody>
 </table>
 <h3 id="_10">衰减作用</h3>
-<p><span class="entity concept" title="概念：attenuation">衰减作用</span>（Attenuation）是色氨酸操纵子的精细调控机制：</p>
-<p><strong>前导序列</strong>（Leader sequence）：
+<p><a class="pn" id="pn-19" href="#pn-19">19</a><span class="entity concept" title="概念：attenuation">衰减作用</span>（Attenuation）是色氨酸操纵子的精细调控机制：</p>
+<p><a class="pn" id="pn-20" href="#pn-20">20</a><strong>前导序列</strong>（Leader sequence）：
 - 位于操纵基因和结构基因之间
 - 包含4个可互补配对的区域（1、2、3、4）
 - 编码14个氨基酸的前导肽（含2个Trp）</p>
-<p><strong>衰减机制</strong>：</p>
-<p><strong>情况1：色氨酸充足</strong>
+<p><a class="pn" id="pn-21" href="#pn-21">21</a><strong>衰减机制</strong>：</p>
+<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>情况1：色氨酸充足</strong>
 - 前导肽顺利翻译
 - 核糖体占据区域1，区域2自由
 - 区域3-4配对形成<span class="entity entity-generic" title="结构">终止子</span>（发夹+poly-U）
 - 转录提前终止</p>
-<p><strong>情况2：色氨酸缺乏</strong>
+<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>情况2：色氨酸缺乏</strong>
 - 前导肽翻译停滞在Trp密码子（区域1）
 - 核糖体停滞，区域2自由
 - 区域2-3配对（抗终止子）
 - 区域4无法配对，转录继续</p>
-<p><strong>衰减效率</strong>：
+<p><a class="pn" id="pn-24" href="#pn-24">24</a><strong>衰减效率</strong>：
 - 衰减作用可使转录降低约10倍
 - 与阻遏作用协同，总调控可达700倍</p>
 <h2 id="55">5.5 其他调控机制</h2>
 <h3 id="_11">阿拉伯糖操纵子</h3>
-<p><span class="entity entity-generic" title="概念">阿拉伯糖操纵子</span>（Ara operon）：</p>
-<p><strong>独特之处</strong>：
+<p><a class="pn" id="pn-25" href="#pn-25">25</a><span class="entity entity-generic" title="概念">阿拉伯糖操纵子</span>（Ara operon）：</p>
+<p><a class="pn" id="pn-26" href="#pn-26">26</a><strong>独特之处</strong>：
 - 同一蛋白（AraC）既是阻遏蛋白又是激活蛋白
 - 阿拉伯糖作为效应物改变AraC构象</p>
-<p><strong>调控模式</strong>：
+<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>调控模式</strong>：
 - 无阿拉伯糖：AraC作为阻遏蛋白
 - 有阿拉伯糖：AraC作为激活蛋白，结合CAP-cAMP</p>
 <h3 id="sos">SOS应答</h3>
-<p><span class="entity concept" title="概念：sos_response">SOS应答</span>：DNA损伤应激反应</p>
-<p><strong>关键蛋白</strong>：
+<p><a class="pn" id="pn-28" href="#pn-28">28</a><span class="entity concept" title="概念：sos_response">SOS应答</span>：DNA损伤应激反应</p>
+<p><a class="pn" id="pn-29" href="#pn-29">29</a><strong>关键蛋白</strong>：
 - <span class="entity protein" title="蛋白">LexA</span>：阻遏蛋白
 - <span class="entity protein" title="蛋白">RecA</span>：辅蛋白酶</p>
-<p><strong>机制</strong>：
+<p><a class="pn" id="pn-30" href="#pn-30">30</a><strong>机制</strong>：
 1. DNA损伤 → RecA激活
 2. RecA促进LexA自切割
 3. LexA失活，SOS基因表达
 4. DNA修复后，LexA重新积累</p>
-<p><strong>SOS基因</strong>：
+<p><a class="pn" id="pn-31" href="#pn-31">31</a><strong>SOS基因</strong>：
 - 修复基因（uvrA、uvrB等）
 - 易错聚合酶（Pol IV、Pol V）
 - 细胞分裂抑制（sulA）</p>
 <h3 id="_12">热休克应答</h3>
-<p><strong>σ³²因子</strong>：
+<p><a class="pn" id="pn-32" href="#pn-32">32</a><strong>σ³²因子</strong>：
 - 识别热休克基因启动子
 - 温度升高时表达
 - 保护蛋白质免受热损伤</p>
 <h2 id="56">5.6 翻译水平调控</h2>
 <h3 id="_13">核糖体蛋白合成</h3>
-<p><strong>自体调控</strong>（Autogenous regulation）：
+<p><a class="pn" id="pn-33" href="#pn-33">33</a><strong>自体调控</strong>（Autogenous regulation）：
 - 核糖体蛋白结合自身mRNA的SD序列
 - 抑制自身翻译
 - 协调核糖体蛋白与rRNA的合成</p>
 <h3 id="rna">反义RNA调控</h3>
-<p><strong>机制</strong>：
+<p><a class="pn" id="pn-34" href="#pn-34">34</a><strong>机制</strong>：
 - 反义RNA与mRNA互补配对
 - 阻止核糖体结合或促进降解
 - 调控质粒拷贝数等</p>
@@ -389,5 +397,10 @@ a:hover{color:var(--p2);text-decoration:none}
 <li>为什么乳糖操纵子需要双重调控（负调控+正调控）？</li>
 <li>衰减作用的分子机制是什么？为什么只存在于原核生物？</li>
 <li>比较乳糖操纵子和色氨酸操纵子的调控策略有何不同？</li>
-</ol></article></main><footer class="footer"><p>Built for molecular biology teaching · Generated by <code>scripts/build_site.py</code></p><p style="margin-top:6px"><a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
+</ol></div><nav class="chapter-nav"><a href="04_%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="05_%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">下一章 →</a></nav></main>
+<footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
+<script>
+(function(){var k="molbio-hide-entities";var s=localStorage.getItem(k);if(s==="1"){document.documentElement.classList.add("hide-entities")}})();
+function toggleEntities(){var c=document.documentElement.classList;c.toggle("hide-entities");localStorage.setItem("molbio-hide-entities",c.contains("hide-entities")?"1":"0")}
+</script>
 </body></html>

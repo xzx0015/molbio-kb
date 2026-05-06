@@ -1,102 +1,74 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>第六章：真核生物基因表达调控 | 分子生物学知识库</title><meta name="description" content="# 第六章：真核生物基因表达调控 ## 6.1 真核基因调控概述 ### 与原核生物的差异 | 特征 | 原核生物 | 真核生物 | |------|---------|---------| | 转录翻译 | 偶联 | 分隔（核膜） | | 基因组织 | 操纵子 | 单基因 | | 染色质 | 无 | 有核小体 | |">
 <style>
-:root{--p:#1d4ed8;--p2:#2563eb;--a:#7c3aed;--a2:#8b5cf6;--g:#059669;--o:#ea580c;--r:#dc2626;--bg:#f8fafc;--bg2:#f1f5f9;--card:#fff;--ink:#0f172a;--ink2:#334155;--mu:#64748b;--line:#e2e8f0;--line2:#cbd5e1;--soft:#eff6ff;--softa:#f5f3ff;--softg:#ecfdf5;--softo:#fff7ed;--rad:12px;--sh:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shm:0 4px 12px rgba(0,0,0,.08);}
-*,::before,::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-.top{background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 30%,#7c3aed 70%,#a855f7 100%);color:#fff;position:relative;overflow:hidden}
-.top::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
-.top .wrap{position:relative;padding-top:40px;padding-bottom:36px}
-.brand{font-size:32px;font-weight:800;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
-.brand .icon{font-size:36px}
-.subtitle{opacity:.85;margin:6px 0 0;font-size:15px;font-weight:400;max-width:600px}
-.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-.nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:14px;transition:all .2s;backdrop-filter:blur(4px)}
-.nav a:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.5);text-decoration:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px 24px;box-shadow:var(--sh);transition:box-shadow .2s,transform .15s;position:relative;overflow:hidden}
-.card:hover{box-shadow:var(--shm);transform:translateY(-2px)}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--p);opacity:0;transition:opacity .2s}
-.card:hover::before{opacity:1}
-.card h2,.card h3{margin:0 0 8px;font-size:17px;font-weight:700;color:var(--ink)}
-.card .icon{font-size:24px;margin-bottom:10px;display:block}
-.card.chapter::before{background:var(--p)}
-.card.entity::before{background:var(--a)}
-.card.concept::before{background:var(--g)}
-.card.search::before{background:var(--o)}
-.card.skill::before{background:var(--a2)}
-.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin:24px 0}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px;text-align:center;box-shadow:var(--sh);transition:box-shadow .2s,transform .15s}
-.stat:hover{box-shadow:var(--shm);transform:translateY(-2px)}
-.stat .num{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat .label{color:var(--mu);font-size:13px;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
-.muted{color:var(--mu)}
-a{color:var(--p);text-decoration:none;transition:color .15s}
-a:hover{color:var(--p2);text-decoration:none}
-.article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px 36px;box-shadow:var(--sh)}
-.article h1{font-size:26px;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.3}
-.article h2{font-size:20px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--soft);color:var(--ink)}
-.article h3{font-size:17px;font-weight:600;margin:20px 0 8px;color:var(--ink2)}
-.article p{margin:10px 0;color:var(--ink2)}
-.article ul,.article ol{margin:8px 0 8px 20px}
-.article li{margin:4px 0;color:var(--ink2)}
-.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-.article th{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
-.article td{padding:10px 14px;border-bottom:1px solid var(--line);background:#fff}
-.article tr:nth-child(even) td{background:var(--bg2)}
-.article tr:hover td{background:var(--soft)}
-.article code{background:var(--soft);padding:2px 6px;border-radius:4px;font-size:.9em;color:var(--p);font-family:'SF Mono','Fira Code','Cascadia Code',monospace}
-.article pre{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:10px;overflow:auto;font-size:13px;line-height:1.6;margin:16px 0}
-.article blockquote{border-left:4px solid var(--p);margin:16px 0;padding:12px 20px;background:var(--soft);border-radius:0 8px 8px 0;color:var(--ink2)}
-.crumb{margin:0 0 20px;font-size:14px;color:var(--mu)}
-.crumb a{color:var(--mu)}
-.crumb a:hover{color:var(--p)}
-.entity{display:inline-block;padding:3px 10px;border-radius:999px;font-weight:600;font-size:13px;margin:2px;transition:all .15s}
-.entity:hover{transform:scale(1.05)}
-.entity.molecule,.entity.molecule{background:#dbeafe;color:#1e40af}
-.entity.enzyme{background:#dcfce7;color:#166534}
-.entity.protein{background:#fce7f3;color:#9d174d}
-.entity.process{background:#fef3c7;color:#92400e}
-.entity.technique{background:#e0e7ff;color:#3730a3}
-.entity.complex{background:#f3e8ff;color:#6b21a8}
-.entity.concept,.entity.core-theory{background:#ffedd5;color:#9a3412}
-.entity.regulatory{background:#fce7f3;color:#9d174d}
-.entity.mechanism{background:#d1fae5;color:#065f46}
-.tag{display:inline-block;font-size:11px;border-radius:999px;padding:2px 8px;margin:2px;font-weight:500}
-.tag.p{background:var(--soft);color:var(--p)}
-.tag.a{background:var(--softa);color:var(--a)}
-.tag.g{background:var(--softg);color:var(--g)}
-.list{padding-left:1.2em}
-.searchbox{width:100%;font-size:16px;border:2px solid var(--line);border-radius:12px;padding:14px 18px;background:var(--card);color:var(--ink);transition:border-color .2s;outline:none}
-.searchbox:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(29,78,216,.1)}
-.result{padding:16px 0;border-bottom:1px solid var(--line)}
-.result:last-child{border-bottom:none}
-.footer{margin-top:60px;padding:32px 0;text-align:center;color:var(--mu);font-size:13px;border-top:1px solid var(--line)}
-.footer a{color:var(--p)}
-.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--card);margin:3px;font-size:14px;transition:all .15s;text-decoration:none;color:var(--ink2)}
-.pill:hover{border-color:var(--p);color:var(--p);box-shadow:0 2px 8px rgba(29,78,216,.1);text-decoration:none}
-.pill.active{background:var(--p);color:#fff;border-color:var(--p)}
-.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:12px 16px;color:#9a3412}
-.ok{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:8px;padding:12px 16px;color:#065f46}
-.info{background:var(--soft);border:1px solid #bfdbfe;border-radius:8px;padding:12px 16px;color:var(--p)}
-.hero-stats{display:flex;gap:32px;margin-top:14px;flex-wrap:wrap}
-.hero-stat{display:flex;align-items:baseline;gap:6px}
-.hero-stat .hs-num{font-size:24px;font-weight:800;opacity:.95}
-.hero-stat .hs-label{font-size:13px;opacity:.7}
-.graph{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;margin:24px 0;box-shadow:var(--sh);min-height:400px;position:relative;overflow:auto}
-.graph svg{display:block;margin:0 auto;max-width:100%}
-.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:40px 0}
-.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600}
-.badge-blue{background:var(--soft);color:var(--p)}
-.badge-purple{background:var(--softa);color:var(--a)}
-.badge-green{background:var(--softg);color:var(--g)}
-.badge-orange{background:var(--softo);color:var(--o)}
+/* ===== shiji-kb inspired design for molbio-kb ===== */
+:root{--bg:#fdfdf8;--card:#fff;--ink:#2c2c2c;--ink2:#555;--mu:#888;--line:#e5e0d5;--p:#1d4ed8;--a:#7c3aed}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",Georgia,serif;line-height:2;max-width:900px;margin:0 auto;padding:20px;background:var(--bg);color:var(--ink);font-size:16px}
+p{margin:1.8em 0;text-indent:0}
+a{color:var(--p);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Header */
+.top{background:#fff;border-bottom:2px solid #e5e0d5;padding:16px 0;margin-bottom:24px;position:sticky;top:0;z-index:100}
+.top .wrap{max-width:900px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.brand{font-size:22px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.brand .icon{font-size:26px}
+.subtitle{display:none}
+.nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.nav a{color:#666;text-decoration:none;padding:4px 10px;border-radius:4px;font-size:14px;transition:all .2s;border:1px solid transparent;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.nav a:hover{background:#f5f5f5;color:#333;border-color:#ddd;text-decoration:none}
+/* Settings toggle */
+.settings-toggle{background:none;border:1px solid #ddd;border-radius:4px;padding:4px 10px;font-size:16px;cursor:pointer;transition:all .2s;color:#666;line-height:1}
+.settings-toggle:hover{background:#f5f5f5;border-color:#999}
+/* Stats on home */
+.stats{display:flex;gap:32px;margin:16px 0 24px;flex-wrap:wrap;font-size:15px;color:var(--mu)}
+.stat .num{font-weight:700;color:var(--ink);font-size:20px}
+/* Home cards - section style like shiji-kb */
+.section{margin:20px 0}
+.section h2{font-size:20px;border-bottom:2px solid #e5e0d5;padding-bottom:6px;margin-bottom:12px;color:var(--ink)}
+.section .subsection{margin:4px 0;font-size:15px;color:var(--ink2)}
+.section .subsection a{color:var(--ink2)}
+.section .subsection a:hover{color:var(--p)}
+/* Chapter navigation */
+.chapter-nav{display:flex;justify-content:center;align-items:center;gap:15px;padding:12px 20px;margin:15px 0}
+.chapter-nav a{padding:6px 14px;background:#fff;color:#666;text-decoration:none;border:1px solid #ddd;border-radius:4px;font-size:14px;transition:all .2s;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.chapter-nav a:hover{background:#f5f5f5;border-color:#999;color:#333}
+.chapter-nav .nav-home{color:var(--p);border-color:var(--p)}
+.chapter-nav .nav-home:hover{background:var(--p);color:#fff}
+/* Purple Numbers */
+.pn{font-size:12px;color:#9370db;margin-right:6px;vertical-align:super;cursor:pointer;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-weight:500}
+.pn:hover{color:#6b21a8}
+/* Entity highlighting - inline underlines like shiji-kb */
+.entity{font-weight:500;cursor:pointer;transition:all .2s}
+.entity.molecule{color:#1e40af;text-decoration:underline;text-decoration-color:#1e40af60;text-underline-offset:3px}
+.entity.enzyme{color:#166534;text-decoration:underline;text-decoration-color:#16653460;text-underline-offset:3px}
+.entity.protein{color:#9d174d;text-decoration:underline;text-decoration-color:#9d174d60;text-underline-offset:3px}
+.entity.process{color:#92400e;text-decoration:underline wavy;text-decoration-color:#92400e60;text-underline-offset:3px}
+.entity.technique{color:#3730a3;text-decoration:underline dashed;text-decoration-color:#3730a360;text-underline-offset:3px}
+.entity.complex{color:#6b21a8;text-decoration:underline double;text-decoration-color:#6b21a860;text-underline-offset:3px}
+.entity.concept,.entity.core-theory{color:#9a3412;font-weight:600}
+.entity.regulatory{color:#9d174d;text-decoration:underline;text-decoration-color:#9d174d60;text-underline-offset:3px}
+.entity.mechanism{color:#065f46;text-decoration:underline wavy;text-decoration-color:#065f4660;text-underline-offset:3px}
+/* Entity hidden mode - when toggle off */
+.hide-entities .entity{color:inherit!important;text-decoration:none!important;font-weight:inherit!important;cursor:text}
+/* Article / content */
+.article{margin:20px 0}
+.article h1{font-size:26px;font-weight:700;margin:0 0 16px;color:var(--ink)}
+.article h2{font-size:20px;margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid #e5e0d5;color:var(--ink)}
+.article h3{font-size:17px;margin:20px 0 8px;color:var(--ink2)}
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border:1px solid #e5e0d5}
+.article th{background:#f5f0e8;padding:10px 14px;text-align:left;font-weight:600;font-size:13px;border-bottom:2px solid #e5e0d5}
+.article td{padding:10px 14px;border-bottom:1px solid #e5e0d5}
+.article tr:nth-child(even) td{background:#fdfdf8}
+.article code{background:#f5f0e8;padding:2px 6px;border-radius:3px;font-size:.9em;font-family:'SF Mono',monospace}
+.article pre{background:#2c2c2c;color:#e8e8e8;padding:16px 20px;border-radius:8px;overflow:auto;font-size:13px;line-height:1.6;margin:16px 0}
+.article blockquote{border-left:3px solid #e5e0d5;margin:16px 0;padding:8px 20px;color:var(--ink2);background:#fdfdf8}
+/* Entity detail page */
 .entity-detail-header{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px}
 .entity-detail-header h1{margin:0}
-.entity-category-pill{display:inline-block;padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600}
+.entity-category-pill{display:inline-block;padding:3px 12px;border-radius:4px;font-size:13px;font-weight:500}
 .ec-molecule{background:#dbeafe;color:#1e40af}
 .ec-enzyme{background:#dcfce7;color:#166534}
 .ec-protein{background:#fce7f3;color:#9d174d}
@@ -106,11 +78,47 @@ a:hover{color:var(--p2);text-decoration:none}
 .ec-concept{background:#ffedd5;color:#9a3412}
 .ec-regulatory{background:#fce7f3;color:#9d174d}
 .ec-mechanism{background:#d1fae5;color:#065f46}
-@media(max-width:768px){.wrap{padding:0 16px}.top .wrap{padding-top:28px;padding-bottom:24px}.brand{font-size:24px}.article{padding:20px;border-radius:10px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero-stats{gap:16px}.nav{gap:6px}.nav a{font-size:13px;padding:5px 10px}}
-@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--bg2:#1e293b;--card:#1e293b;--ink:#f1f5f9;--ink2:#cbd5e1;--mu:#94a3b8;--line:#334155;--line2:#475569;--soft:#1e3a5f;--softa:#2d1b69;--softg:#064e3b;--softo:#431407;--sh:0 1px 3px rgba(0,0,0,.3);--shm:0 4px 12px rgba(0,0,0,.4)}.article td{background:#1e293b}.article tr:nth-child(even) td{background:var(--bg2)}.article tr:hover td{background:var(--soft)}.searchbox{background:var(--bg)}.pill{background:var(--bg)}.entity.molecule,.entity.molecule{background:#1e3a5f;color:#93c5fd}.entity.enzyme{background:#064e3b;color:#6ee7b7}.entity.protein{background:#4a1942;color:#f9a8d4}.entity.process{background:#451a03;color:#fcd34d}.entity.technique{background:#1e3a5f;color:#a5b4fc}.entity.complex{background:#2d1b69;color:#c4b5fd}.article th{background:linear-gradient(135deg,#1e3a8a,#1d4ed8)}}
+/* Grid / cards for home and index */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid #e5e0d5;border-radius:8px;padding:20px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card h2,.card h3{margin:0 0 8px;font-size:17px;font-weight:700}
+.card .icon{font-size:20px;margin-bottom:8px;display:block}
+/* Concept graph */
+.graph{background:var(--card);border:1px solid #e5e0d5;border-radius:8px;padding:24px;margin:24px 0;overflow:auto}
+.graph svg{display:block;margin:0 auto;max-width:100%}
+/* Pills and badges */
+.pill{display:inline-block;border:1px solid #e5e0d5;border-radius:6px;padding:4px 10px;background:var(--card);margin:3px;font-size:14px;transition:all .15s;color:var(--ink2)}
+.pill:hover{border-color:var(--p);color:var(--p);text-decoration:none}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:500}
+.badge-blue{background:#eff6ff;color:var(--p)}
+.searchbox{width:100%;font-size:16px;border:1px solid #e5e0d5;border-radius:6px;padding:12px 14px;background:var(--card);color:var(--ink);outline:none}
+.searchbox:focus{border-color:var(--p);box-shadow:0 0 0 2px rgba(29,78,216,.1)}
+.result{padding:16px 0;border-bottom:1px solid #e5e0d5}
+.result:last-child{border-bottom:none}
+.crumb{margin:0 0 16px;font-size:14px;color:var(--mu)}
+.crumb a{color:var(--mu)}
+.crumb a:hover{color:var(--p)}
+.muted{color:var(--mu);font-size:15px}
+.section-divider{height:1px;background:#e5e0d5;margin:32px 0}
+.tag{display:inline-block;font-size:11px;border-radius:4px;padding:2px 8px;margin:2px;font-weight:500;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.tag.p{background:#eff6ff;color:var(--p)}
+.tag.a{background:#f5f3ff;color:var(--a)}
+.tag.g{background:#ecfdf5;color:#059669}
+.list{padding-left:1.4em;font-size:16px;line-height:2.2}
+.list li{margin:2px 0}
+.warn{background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:12px 16px;color:#9a3412}
+.ok{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:6px;padding:12px 16px;color:#065f46}
+.footer{margin-top:60px;padding:24px 0;text-align:center;color:var(--mu);font-size:13px;border-top:1px solid #e5e0d5}
+.footer a{color:var(--p)}
+@media(max-width:768px){body{padding:12px;font-size:15px}.brand{font-size:18px}.article h1{font-size:22px}.article h2{font-size:18px}.grid{grid-template-columns:1fr}.stats{gap:16px}.chapter-nav{gap:8px}.chapter-nav a{font-size:13px;padding:4px 10px}}
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e0d8c8}.top{background:#222;border-color:#333}.card{background:#222;border-color:#333}.article th{background:#2a2a2a;border-color:#333}.article td{background:#1e1e1e}.article tr:nth-child(even) td{background:#242424}.section h2,.article h2{border-color:#333}.searchbox{background:#2a2a2a;border-color:#333;color:#e0d8c8}.pill{background:#2a2a2a;border-color:#333}.chapter-nav a{background:#2a2a2a;border-color:#333;color:#aaa}.chapter-nav a:hover{background:#333;color:#e0d8c8}.graph{background:#222;border-color:#333}.entity.molecule{color:#93c5fd;text-decoration-color:#93c5fd60}.entity.enzyme{color:#6ee7b7;text-decoration-color:#6ee7b760}.entity.protein{color:#f9a8d4;text-decoration-color:#f9a8d460}.entity.process{color:#fcd34d;text-decoration-color:#fcd34d60}.entity.technique{color:#a5b4fc;text-decoration-color:#a5b4fc60}.entity.complex{color:#c4b5fd;text-decoration-color:#c4b5fd60}}
 </style></head><body>
-<header class="top"><div class="wrap"><h1 class="brand"><span class="icon">🧬</span> 分子生物学知识库</h1><p class="subtitle">Molecular Biology Knowledge Base · 课程章节 · 实体索引 · 概念图谱 · 搜索</p><nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 课程章节</a><a href="../kg/entities/index.html">🏷️ 实体索引</a><a href="../kg/concepts/index.html">🔗 概念图谱</a><a href="../search/index.html">🔍 搜索</a></nav></div></header>
-<main class="wrap"><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">课程章节</a></div><div class="section-divider"></div><article class="article"><h1 id="_1">第六章：真核生物基因表达调控</h1>
+<header class="top"><div class="wrap">
+<span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
+<nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button></nav>
+</div></header>
+<main><nav class="chapter-nav"><a href="06_%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E6%8A%80%E6%9C%AF.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">下一章 →</a></nav><div class="article"><h1 id="_1">第六章：真核生物基因表达调控</h1>
 <h2 id="61">6.1 真核基因调控概述</h2>
 <h3 id="_2">与原核生物的差异</h3>
 <table>
@@ -150,24 +158,24 @@ a:hover{color:var(--p2);text-decoration:none}
 </tbody>
 </table>
 <h3 id="_3">调控层次</h3>
-<p><span class="entity concept" title="概念：eukaryotic_regulation">真核基因表达调控</span>发生在多个层次：</p>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a><span class="entity concept" title="概念：eukaryotic_regulation">真核基因表达调控</span>发生在多个层次：</p>
 <pre><code>染色质水平 → 转录水平 → RNA加工 → mRNA运输 → 翻译水平 → 蛋白质修饰
     ↑           ↑          ↑          ↑          ↑          ↑
 表观遗传   转录因子   选择性剪接   核质运输   翻译起始   信号转导
 </code></pre>
 <h2 id="62">6.2 染色质水平调控</h2>
 <h3 id="dna">DNA甲基化</h3>
-<p><span class="entity entity-generic" title="修饰">DNA甲基化</span>：
+<p><a class="pn" id="pn-2" href="#pn-2">2</a><span class="entity entity-generic" title="修饰">DNA甲基化</span>：
 - <strong>位点</strong>：<span class="entity entity-generic" title="碱基">CpG岛</span>中的胞嘧啶（C→5mC）
 - <strong>酶</strong>：<span class="entity enzyme" title="酶">DNA甲基转移酶</span>（DNMT1维持，DNMT3a/3b从头）
 - <strong>效应</strong>：通常抑制基因表达</p>
-<p><strong>生物学意义</strong>：
+<p><a class="pn" id="pn-3" href="#pn-3">3</a><strong>生物学意义</strong>：
 - <span class="entity entity-generic" title="概念">基因组印记</span>（Imprinting）：亲本特异性表达
 - <span class="entity entity-generic" title="概念">X染色体失活</span>：雌性X染色体剂量补偿
 - 转座子沉默
 - 肿瘤抑制基因沉默</p>
 <h3 id="_4">组蛋白修饰</h3>
-<p><span class="entity concept" title="概念：histone_modification">组蛋白修饰</span>：</p>
+<p><a class="pn" id="pn-4" href="#pn-4">4</a><span class="entity concept" title="概念：histone_modification">组蛋白修饰</span>：</p>
 <table>
 <thead>
 <tr>
@@ -199,20 +207,20 @@ a:hover{color:var(--p2);text-decoration:none}
 </tr>
 </tbody>
 </table>
-<p><strong>组蛋白密码假说</strong>：
+<p><a class="pn" id="pn-5" href="#pn-5">5</a><strong>组蛋白密码假说</strong>：
 - 不同修饰组合产生特定调控效应
 - 修饰之间相互影响（交叉对话）</p>
 <h3 id="_5">染色质重塑</h3>
-<p><span class="entity complex" title="复合物">染色质重塑复合物</span>：
+<p><a class="pn" id="pn-6" href="#pn-6">6</a><span class="entity complex" title="复合物">染色质重塑复合物</span>：
 - <span class="entity complex" title="复合物">SWI/SNF</span>：利用ATP水解能量重塑核小体
 - <span class="entity complex" title="复合物">ISWI</span>、<span class="entity complex" title="复合物">CHD</span>、<span class="entity complex" title="复合物">INO80</span>家族</p>
-<p><strong>功能</strong>：
+<p><a class="pn" id="pn-7" href="#pn-7">7</a><strong>功能</strong>：
 - 改变核小体位置
 - 影响DNA可及性
 - 调控转录因子结合</p>
 <h2 id="63">6.3 转录水平调控</h2>
 <h3 id="_6">顺式作用元件</h3>
-<p><span class="entity concept" title="概念：cis_element">顺式作用元件</span>：DNA上的调控序列</p>
+<p><a class="pn" id="pn-8" href="#pn-8">8</a><span class="entity concept" title="概念：cis_element">顺式作用元件</span>：DNA上的调控序列</p>
 <table>
 <thead>
 <tr>
@@ -244,19 +252,19 @@ a:hover{color:var(--p2);text-decoration:none}
 </tr>
 </tbody>
 </table>
-<p><strong>增强子特征</strong>：
+<p><a class="pn" id="pn-9" href="#pn-9">9</a><strong>增强子特征</strong>：
 - 方向无关性
 - 位置灵活性（上游、下游、内含子）
 - 组织特异性
 - 与启动子形成染色质环</p>
 <h3 id="_7">反式作用因子</h3>
-<p><span class="entity concept" title="概念：trans_factor">反式作用因子</span>：调控蛋白</p>
-<p><strong>转录因子结构</strong>：
+<p><a class="pn" id="pn-10" href="#pn-10">10</a><span class="entity concept" title="概念：trans_factor">反式作用因子</span>：调控蛋白</p>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>转录因子结构</strong>：
 - <span class="entity entity-generic" title="结构">DNA结合域</span>：识别特定序列
 - <span class="entity entity-generic" title="结构">转录激活域</span>：招募转录 machinery
 - <span class="entity entity-generic" title="结构">二聚化结构域</span>：形成同源/异源二聚体
 - <span class="entity entity-generic" title="结构">核定位信号</span>（NLS）：进入细胞核</p>
-<p><strong>常见DNA结合域</strong>：
+<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>常见DNA结合域</strong>：
 | 结构域 | 特征 | 代表因子 |
 |--------|------|---------|
 | <span class="entity entity-generic" title="结构">同源异型域</span>（Homeodomain） | 螺旋-转角-螺旋变体 | HOX蛋白 |
@@ -264,20 +272,20 @@ a:hover{color:var(--p2);text-decoration:none}
 | <span class="entity entity-generic" title="结构">碱性亮氨酸拉链</span>（bZIP） | 亮氨酸拉链二聚化 | AP-1、CREB |
 | <span class="entity entity-generic" title="结构">螺旋-环-螺旋</span>（HLH） | HLH二聚化 | MyoD、E47 |</p>
 <h3 id="_8">转录调控网络</h3>
-<p><strong>组合调控</strong>：
+<p><a class="pn" id="pn-13" href="#pn-13">13</a><strong>组合调控</strong>：
 - 多个转录因子协同作用
 - 产生特异性的时空表达模式
 - 增强调控特异性</p>
-<p><strong>实例</strong>：
+<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>实例</strong>：
 - <span class="entity protein" title="蛋白">MyoD</span>与肌肉分化
 - <span class="entity protein" title="蛋白">Oct4</span>、<span class="entity protein" title="蛋白">Sox2</span>、<span class="entity protein" title="蛋白">Nanog</span>与干细胞多能性</p>
 <h2 id="64">6.4 转录后调控</h2>
 <h3 id="_9">选择性剪接</h3>
-<p><span class="entity concept" title="概念：alternative_splicing">选择性剪接</span>：
+<p><a class="pn" id="pn-15" href="#pn-15">15</a><span class="entity concept" title="概念：alternative_splicing">选择性剪接</span>：
 - 一个基因产生多种mRNA异构体
 - 人类约95%的基因存在选择性剪接
 - 增加蛋白质组多样性</p>
-<p><strong>剪接模式</strong>：
+<p><a class="pn" id="pn-16" href="#pn-16">16</a><strong>剪接模式</strong>：
 | 模式 | 说明 |
 |------|------|
 | 外显子跳跃 | 跳过某个外显子 |
@@ -285,66 +293,66 @@ a:hover{color:var(--p2);text-decoration:none}
 | 内含子保留 | 保留某个内含子 |
 | 可变5'剪接位点 | 使用不同的5'剪接位点 |
 | 可变3'剪接位点 | 使用不同的3'剪接位点 |</p>
-<p><strong>调控因子</strong>：
+<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>调控因子</strong>：
 - <span class="entity protein" title="蛋白">SR蛋白</span>：促进剪接
 - <span class="entity protein" title="蛋白">hnRNP蛋白&lt;/组织&gt;：抑制剪接</p>
 <h3 id="rna">RNA编辑</h3>
-<p>&lt;concept id=&quot;rna_editing&quot;&gt;RNA编辑&lt;/concept&gt;：
+<p><a class="pn" id="pn-18" href="#pn-18">18</a>&lt;concept id=&quot;rna_editing&quot;&gt;RNA编辑&lt;/concept&gt;：
 - 转录后改变RNA序列
 - 脱氨酶（ADAR、APOBEC）介导
 - 实例：APOB mRNA的C→U编辑</p>
 <h3 id="rna_1">RNA稳定性调控</h3>
-<p><strong>mRNA降解途径</strong>：
+<p><a class="pn" id="pn-19" href="#pn-19">19</a><strong>mRNA降解途径</strong>：
 1. &lt;entity type=&quot;概念&quot;&gt;脱腺苷酸化</span>：去除poly(A)尾
 2. <span class="entity entity-generic" title="概念">脱帽</span>：去除5'帽
 3. <span class="entity entity-generic" title="概念">外切酶降解</span>：5'→3'或3'→5'</p>
-<p><strong>调控元件</strong>：
+<p><a class="pn" id="pn-20" href="#pn-20">20</a><strong>调控元件</strong>：
 - <span class="entity entity-generic" title="概念">AU富含元件</span>（ARE）：促进降解
 - <span class="entity entity-generic" title="概念">miRNA</span>：通过<span class="entity entity-generic" title="概念">RNA干扰</span>抑制翻译或促进降解</p>
 <h3 id="mirna">miRNA调控</h3>
-<p><span class="entity molecule" title="分子">miRNA</span>（微小RNA）：
+<p><a class="pn" id="pn-21" href="#pn-21">21</a><span class="entity molecule" title="分子">miRNA</span>（微小RNA）：
 - 长度：21-25 nt
 - 来源：RNA聚合酶II转录，经<span class="entity enzyme" title="酶">Drosha</span>和<span class="entity enzyme" title="酶">Dicer</span>加工
 - 机制：与<span class="entity complex" title="复合物">RISC复合物</span>结合，靶向mRNA</p>
-<p><strong>调控方式</strong>：
+<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>调控方式</strong>：
 - 完全互补：mRNA切割
 - 部分互补：翻译抑制</p>
 <h2 id="65">6.5 翻译水平调控</h2>
 <h3 id="_10">全局翻译调控</h3>
-<p><strong>eIF2磷酸化</strong>：
+<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>eIF2磷酸化</strong>：
 - 应激条件下eIF2α磷酸化
 - 抑制全局翻译起始
 - 但激活特定应激基因翻译</p>
-<p><strong>mTOR通路</strong>：
+<p><a class="pn" id="pn-24" href="#pn-24">24</a><strong>mTOR通路</strong>：
 - <span class="entity entity-generic" title="激酶">mTOR激酶</span>感知营养信号
 - 磷酸化<span class="entity protein" title="蛋白">4E-BP</span>，释放eIF4E
 - 促进翻译起始</p>
 <h3 id="_11">特异性翻译调控</h3>
-<p><strong>铁响应元件</strong>（<span class="entity entity-generic" title="概念">IRE</span>）：
+<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>铁响应元件</strong>（<span class="entity entity-generic" title="概念">IRE</span>）：
 - <span class="entity protein" title="蛋白">铁调节蛋白</span>（IRP）结合IRE
 - 铁缺乏时：抑制<span class="entity protein" title="蛋白">铁蛋白</span>mRNA翻译
 - 铁充足时：IRP失活，翻译进行</p>
-<p><strong>上游开放阅读框</strong>（uORF）：
+<p><a class="pn" id="pn-26" href="#pn-26">26</a><strong>上游开放阅读框</strong>（uORF）：
 - 位于主ORF上游
 - 抑制主ORF翻译
 - 应激条件下被绕过</p>
 <h2 id="66">6.6 信号转导与基因表达</h2>
 <h3 id="_12">信号通路</h3>
-<p><strong>MAPK通路</strong>：
+<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>MAPK通路</strong>：
 - 生长因子 → Ras → Raf → MEK → ERK
 - ERK入核激活转录因子</p>
-<p><strong>Wnt/β-catenin通路</strong>：
+<p><a class="pn" id="pn-28" href="#pn-28">28</a><strong>Wnt/β-catenin通路</strong>：
 - Wnt信号稳定β-catenin
 - β-catenin入核激活TCF转录因子</p>
-<p><strong>TGF-β/Smad通路</strong>：
+<p><a class="pn" id="pn-29" href="#pn-29">29</a><strong>TGF-β/Smad通路</strong>：
 - TGF-β受体磷酸化Smad2/3
 - Smad复合物入核调控转录</p>
 <h3 id="_13">激素调控</h3>
-<p><strong>类固醇激素</strong>：
+<p><a class="pn" id="pn-30" href="#pn-30">30</a><strong>类固醇激素</strong>：
 - 脂溶性，可穿过细胞膜
 - 与核受体结合
 - 激素-受体复合物直接调控转录</p>
-<p><strong>实例</strong>：
+<p><a class="pn" id="pn-31" href="#pn-31">31</a><strong>实例</strong>：
 - 雌激素受体（ER）
 - 糖皮质激素受体（GR）</p>
 <h2 id="_14">本章小结</h2>
@@ -360,5 +368,10 @@ a:hover{color:var(--p2);text-decoration:none}
 <li>为什么真核生物需要比原核生物更复杂的调控机制？</li>
 <li>DNA甲基化和组蛋白修饰如何协同调控基因表达？</li>
 <li>选择性剪接有什么生物学意义？</li>
-</ol></article></main><footer class="footer"><p>Built for molecular biology teaching · Generated by <code>scripts/build_site.py</code></p><p style="margin-top:6px"><a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
+</ol></div><nav class="chapter-nav"><a href="06_%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E6%8A%80%E6%9C%AF.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">下一章 →</a></nav></main>
+<footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
+<script>
+(function(){var k="molbio-hide-entities";var s=localStorage.getItem(k);if(s==="1"){document.documentElement.classList.add("hide-entities")}})();
+function toggleEntities(){var c=document.documentElement.classList;c.toggle("hide-entities");localStorage.setItem("molbio-hide-entities",c.contains("hide-entities")?"1":"0")}
+</script>
 </body></html>
