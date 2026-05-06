@@ -354,20 +354,14 @@ def build_chapters(pages: list[Page]) -> list[dict[str, str]]:
         body = f'{chapter_nav}<h1>第{ch_num}章：{ch_name}</h1><div class="article">{html_body}</div>{chapter_nav}'
         write_page(out, ch_name, body, pages, "chapter", merged_text)
     
-    # Chapter index page – one card per chapter
+    # Chapter index page – one card per chapter (clean, no sub-list)
     idx = Path("chapters/index.html")
     chapter_cards = []
     for prefix in sorted_prefixes:
-        subs = groups[prefix]
         ch_num = int(prefix)
         ch_name = ch_names[ch_num] if ch_num < len(ch_names) else f"第{ch_num}章"
         out_ch = Path("chapters") / f"ch{ch_num:02d}_{ch_name}.html"
-        sub_list = []
-        for md in subs:
-            raw = md.read_text(encoding="utf-8")
-            t = title_from_md(raw, md.stem)
-            sub_list.append(f'<li>{html.escape(t)}</li>')
-        chapter_cards.append(f'''<div class="card chapter"><span class="icon">📄</span><h2>第{ch_num}章：{html.escape(ch_name)}</h2><ul class="list" style="font-size:15px">{"".join(sub_list)}</ul><p><a href="{rel(idx, out_ch)}">阅读本章 →</a></p></div>''')
+        chapter_cards.append(f'<div class="card chapter"><span class="icon">📄</span><h2>第{ch_num}章：{html.escape(ch_name)}</h2><p><a href="{rel(idx, out_ch)}">阅读本章 →</a></p></div>')
     
     body = f'<h1>📖 课程章节</h1><p class="muted">共 <b>{len(groups)}</b> 章。</p><div class="section-divider"></div><div class="grid">{"".join(chapter_cards)}</div>'
     write_page(idx, "课程章节", body, pages, "index", "课程章节")
@@ -609,7 +603,7 @@ def build_home(pages: list[Page], chapters: list[dict[str, str]], entities: dict
             t = title_from_md(raw, md.stem)
             sub_links += f'<span class="subsection">{html.escape(t)}</span> · '
         sub_links = sub_links.rstrip(" · ")
-        chapter_links += f'<div class="subsection" style="margin:8px 0"><b>{ch_num:02d}</b> <a href="{rel(out, ch_file)}" style="font-weight:700;font-size:1.1rem">{html.escape(ch_name)}</a> &nbsp; {sub_links}</div>'
+        chapter_links += f'<div class="subsection" style="margin:8px 0"><b>{ch_num:02d}</b> <a href="{rel(out, ch_file)}" style="font-weight:700;font-size:1.1rem">{html.escape(ch_name)}</a></div>'
     
     ch_count = len(groups)
     body = f'''<div class="stats"><div class="stat"><span class="num">{ch_count}章</span></div><div class="stat"><span class="num">{len(entities)}实体</span></div><div class="stat"><span class="num">{node_count}节点</span></div><div class="stat"><span class="num">{rel_count}关系</span></div></div>
