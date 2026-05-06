@@ -385,7 +385,7 @@ def build_chapters(pages: list[Page]) -> list[dict[str, str]]:
         out_ch = Path("chapters") / f"ch{ch_num:02d}_{ch_name}.html"
         chapter_cards.append(f'<div class="card chapter"><span class="icon">📄</span><h2>第{ch_num}章：{html.escape(ch_name)}</h2><p><a href="{rel(idx, out_ch)}">阅读本章 →</a></p></div>')
     
-    body = f'<h1>📖 课程章节</h1><p class="muted">共 <b>{len(groups)}</b> 章。</p><div class="section-divider"></div><div class="grid">{"".join(chapter_cards)}</div>'
+    body = f'<h1>📖 课程章节</h1><div class="section-divider"></div><div class="grid">{"".join(chapter_cards)}</div>'
     write_page(idx, "课程章节", body, pages, "index", "课程章节")
     return all_chapters
 
@@ -423,7 +423,7 @@ def build_entities(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
     for cat, names in sorted(groups.items()):
         links = "".join(f'<li><a href="{rel(idx, Path("kg/entities") / slug_filename(n))}">{html.escape(n)}</a></li>' for n in sorted(names))
         sections.append(f'<div class="card entity"><h2 style="font-size:18px">{html.escape(cat)} <span class="badge badge-blue">{len(names)}</span></h2><ul class="list" style="font-size:16px;line-height:2">{links}</ul></div>')
-    body = f'<h1>🏷️ 实体索引</h1><p class="muted">由 <code>kg/entities/*.json</code> 自动生成，共 <b>{len(entities)}</b> 个结构化实体。</p><div class="section-divider"></div><div class="grid">{"".join(sections)}</div>'
+    body = f'<h1>🏷️ 实体索引</h1><div class="section-divider"></div><div class="grid">{"".join(sections)}</div>'
     write_page(idx, "实体索引", body, pages, "index", "实体索引")
 
 
@@ -543,7 +543,7 @@ def build_concepts(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
         link_rows_parts.append(f'<tr><td><a href="{entity_href(str(l.get("source")), entities, out)}"><b>{html.escape(str(l.get("source")))}</b></a></td><td><span class="badge" style="background:{rc}22;color:{rc};border:1px solid {rc}44">{html.escape(rt)}</span></td><td><a href="{entity_href(str(l.get("target")), entities, out)}"><b>{html.escape(str(l.get("target")))}</b></a></td><td>{html.escape(str(l.get("description", "")))}</td></tr>')
     link_rows = "".join(link_rows_parts)
     
-    body = f'''<h1>概念图谱</h1><p class="muted">由 <code>kg/relations/concept-links.json</code> 自动生成：<b>{len(nodes)}</b> 个节点 · <b>{len(links)}</b> 条关系 · {len(relation_types)} 种关系类型</p>
+    body = f'''<h1>概念图谱</h1>
 <div class="section-divider"></div>
 <h2>🌐 可视化图谱</h2>
 <div class="graph">{svg_graph}</div>
@@ -628,10 +628,9 @@ def build_home(pages: list[Page], chapters: list[dict[str, str]], entities: dict
         chapter_links += f'<div class="subsection" style="margin:8px 0"><b>{ch_num:02d}</b> <a href="{rel(out, ch_file)}" style="font-weight:700;font-size:1.1rem">{html.escape(ch_name)}</a></div>'
     
     ch_count = len(groups)
-    body = f'''<div class="stats"><div class="stat"><span class="num">{ch_count}章</span></div><div class="stat"><span class="num">{len(entities)}实体</span></div><div class="stat"><span class="num">{node_count}节点</span></div><div class="stat"><span class="num">{rel_count}关系</span></div></div>
-<div class="section"><h2>📖 课程章节</h2>{chapter_links}</div>
-<div class="section"><h2>🏷️ 知识实体</h2><p class="subsection">{entity_pills}</p><p class="subsection">{cat_html}</p><p><a href="{rel(out, "kg/entities/index.html")}">查看全部 {len(entities)} 个实体 →</a></p></div>
-<div class="section"><h2>🔗 概念图谱</h2><p class="subsection">{node_count} 个节点 · {rel_count} 条关系，展示中心法则、复制、转录、翻译、调控与实验技术之间的关系。</p><p><a href="{rel(out, "kg/concepts/index.html")}">进入概念图谱 →</a></p></div>
+    body = f'''<div class="section"><h2>📖 课程章节</h2>{chapter_links}</div>
+<div class="section"><h2>🏷️ 知识实体</h2><p class="subsection">{entity_pills}</p><p class="subsection">{cat_html}</p><p><a href="{rel(out, "kg/entities/index.html")}">查看全部实体 →</a></p></div>
+<div class="section"><h2>🔗 概念图谱</h2><p class="subsection">展示中心法则、复制、转录、翻译、调控与实验技术之间的关系。</p><p><a href="{rel(out, "kg/concepts/index.html")}">进入概念图谱 →</a></p></div>
 <div class="section"><h2>🔍 站内搜索</h2><p class="subsection">全文搜索章节、实体、概念。</p><input id="q" class="searchbox" placeholder="搜索 DNA复制、PCR、转录因子..." onkeyup="if(event.key===&apos;Enter&apos;){{window.location=&apos;search/index.html?q=&apos;+encodeURIComponent(this.value)}}" style="max-width:400px"></div>'''
     write_page(out, SITE_TITLE, body, pages, "home", SITE_TITLE)
 
