@@ -470,6 +470,17 @@ def build_concepts(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
 </div>
 <div class="section-divider"></div>
 <div class="card" style="margin:16px 32px"><p style="font-size:.9rem;color:var(--mu)">💡 拖拽旋转 | 滚轮缩放 | 悬停查看名称 | 双击跳转实体详情</p></div>
+<div class="card" style="margin:8px 32px">
+  <p style="font-weight:600;margin-bottom:8px">🔗 关系图例</p>
+  <p style="display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem">
+    <span><span style="display:inline-block;width:18px;height:3px;background:#667eea;vertical-align:middle;margin-right:4px;border-radius:2px"></span>是一种(is-a)</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#764ba2;vertical-align:middle;margin-right:4px;border-radius:2px"></span>组成(part-of)</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#e74c3c;vertical-align:middle;margin-right:4px;border-radius:2px"></span>调控(regulates)</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#27ae60;vertical-align:middle;margin-right:4px;border-radius:2px"></span>催化(catalyzes)</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#f39c12;vertical-align:middle;margin-right:4px;border-radius:2px"></span>参与(participates)</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#95a5a6;vertical-align:middle;margin-right:4px;border-radius:2px"></span>相关(related)</span>
+  </p>
+</div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
 const graphData = {graph_json};
@@ -528,10 +539,12 @@ g.selectAll(".ring-label").data(cats).enter().append("text")
   .text(d => d);
 
 // Draw links
+const relColors = {{"is-a":"#667eea","part-of":"#764ba2","regulates":"#e74c3c","catalyzes":"#27ae60","participates-in":"#f39c12","related":"#95a5a6"}};
 g.selectAll(".link").data([...linkMap.values()]).enter().append("line")
   .attr("class", "link")
-  .attr("stroke", "rgba(148,163,184,.2)")
-  .attr("stroke-width", 0.6);
+  .attr("stroke", d => relColors[d.type] || "rgba(148,163,184,.3)")
+  .attr("stroke-width", d => ["is-a","part-of","regulates","catalyzes"].includes(d.type) ? 1.0 : 0.5)
+  .attr("stroke-opacity", 0.35);
 
 // Draw nodes
 const node = g.selectAll(".node").data(allNodes).enter().append("g")
