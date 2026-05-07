@@ -333,8 +333,8 @@ def build_chapters(pages: list[Page]) -> list[dict[str, str]]:
         prefix = md.stem[:2]
         groups[prefix].append(md)
     
-    ch_names = ["", "绪论", "分子基础与复制", "信息传递与转录", "翻译与表达调控",
-                "原核表达调控与基因组维持", "分子生物学技术与真核表达调控", "实验技术", "组学前沿"]
+    ch_names = ["", "绪论", "分子基础", "DNA复制与转录", "翻译与遗传密码",
+                "基因组维持", "原核基因调控", "真核基因调控", "实验技术与组学"]
     
     # Build ONE merged page per chapter (8 chapters total)
     sorted_prefixes = sorted(groups)
