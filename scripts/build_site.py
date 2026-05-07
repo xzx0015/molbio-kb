@@ -458,8 +458,18 @@ def build_concepts(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
     
     # JSON data embedded for D3
     graph_json = json.dumps(data, ensure_ascii=False)
+    n_cats = len(set(n.get("category","") for n in nodes if isinstance(n, dict)))
+    hrefs_dict = {n.get("name", n.get("id","")): entity_href(str(n.get("name", n.get("id",""))), entities, out) for n in nodes if isinstance(n, dict)}
+    hrefs_json = json.dumps(hrefs_dict, ensure_ascii=False)
     
-    body = f'''<h1>🌐 概念图谱</h1>
+    # Render graph.js from template
+    template = (ROOT / "kg/concepts/graph.template.js").read_text(encoding="utf-8")
+    graph_js = template.replace("{GRAPH_DATA}", graph_json).replace("{HREFS_JSON}", hrefs_json)
+    (ROOT / "kg/concepts/graph.js").write_text(graph_js, encoding="utf-8")
+    (ROOT / "docs/kg/concepts").mkdir(parents=True, exist_ok=True)
+    (ROOT / "docs/kg/concepts/graph.js").write_text(graph_js, encoding="utf-8")
+    
+    body = f"""<h1>🌐 概念图谱</h1>
 <div class="section-divider"></div>
 <div id="graph-container" style="width:100%;height:80vh;min-height:600px;background:var(--warm);border-radius:var(--rad);overflow:hidden;position:relative">
   <div id="tooltip" style="position:absolute;padding:6px 14px;background:rgba(0,0,0,.82);color:#fff;border-radius:8px;font-size:.85rem;pointer-events:none;display:none;z-index:10;white-space:nowrap"></div>
@@ -469,172 +479,23 @@ def build_concepts(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
   </div>
 </div>
 <div class="section-divider"></div>
-<div class="card" style="margin:16px 32px"><p style="font-size:.9rem;color:var(--mu)">💡 拖拽旋转 | 滚轮缩放 | 悬停查看名称 | 双击跳转实体详情</p></div>
+<div class="card" style="margin:16px 32px"><p style="font-size:.9rem;color:var(--mu)">💡 悬停高亮关联 | 双击跳转实体 | 拖拽节点 | 滚轮缩放</p></div>
 <div class="card" style="margin:8px 32px">
   <p style="font-weight:600;margin-bottom:8px">🔗 关系图例</p>
   <p style="display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem">
-    <span><span style="display:inline-block;width:18px;height:3px;background:#667eea;vertical-align:middle;margin-right:4px;border-radius:2px"></span>是一种(is-a)</span>
-    <span><span style="display:inline-block;width:18px;height:3px;background:#764ba2;vertical-align:middle;margin-right:4px;border-radius:2px"></span>组成(part-of)</span>
-    <span><span style="display:inline-block;width:18px;height:3px;background:#e74c3c;vertical-align:middle;margin-right:4px;border-radius:2px"></span>调控(regulates)</span>
-    <span><span style="display:inline-block;width:18px;height:3px;background:#27ae60;vertical-align:middle;margin-right:4px;border-radius:2px"></span>催化(catalyzes)</span>
-    <span><span style="display:inline-block;width:18px;height:3px;background:#f39c12;vertical-align:middle;margin-right:4px;border-radius:2px"></span>参与(participates)</span>
-    <span><span style="display:inline-block;width:18px;height:3px;background:#95a5a6;vertical-align:middle;margin-right:4px;border-radius:2px"></span>相关(related)</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#667eea;vertical-align:middle;margin-right:4px;border-radius:2px"></span>是一种</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#764ba2;vertical-align:middle;margin-right:4px;border-radius:2px"></span>组成</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#e74c3c;vertical-align:middle;margin-right:4px;border-radius:2px"></span>调控</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#27ae60;vertical-align:middle;margin-right:4px;border-radius:2px"></span>催化</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#f39c12;vertical-align:middle;margin-right:4px;border-radius:2px"></span>参与</span>
+    <span><span style="display:inline-block;width:18px;height:3px;background:#95a5a6;vertical-align:middle;margin-right:4px;border-radius:2px"></span>相关</span>
   </p>
 </div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<script>
-const graphData = {graph_json};
-
-const W = document.getElementById("graph-container").clientWidth;
-const H = document.getElementById("graph-container").clientHeight;
-const R = Math.min(W, H) * 0.38;
-
-const svg = d3.select("#graph-container").append("svg")
-  .attr("width", W).attr("height", H);
-const g = svg.append("g");
-
-// Category ring positions
-const cats = [...new Set(graphData.nodes.map(n => n.category))];
-const catRing = {{}};
-cats.forEach((c, i) => {{ catRing[c] = (i + 1) / (cats.length + 1) * Math.PI * 0.45; }});
-
-// Color scale
-const colorScale = d3.scaleOrdinal()
-  .domain(cats)
-  .range(["#1d4ed8","#2563eb","#db2777","#059669","#ea580c","#6366f1","#7c3aed","#db2777","#0891b2","#7c3aed","#64748b"]);
-
-// Pre-compute node positions on sphere
-const nodeMap = new Map();
-graphData.nodes.forEach(n => {{
-  const phi = catRing[n.category] || Math.PI * 0.5;
-  const theta = Math.random() * Math.PI * 2;
-  n.x = R * Math.cos(theta) * Math.sin(phi);
-  n.y = R * Math.cos(phi);
-  n.z = R * Math.sin(theta) * Math.sin(phi);
-  nodeMap.set(n.id || n.name, n);
-}});
-
-// Build link data - resolve source/target to node objects, keep type
-const linksData = [];
-graphData.links.forEach(l => {{
-  const src = nodeMap.get(l.source);
-  const tgt = nodeMap.get(l.target);
-  if (src && tgt) {{
-    linksData.push({{source: src, target: tgt, type: l.type || "related"}});
-  }}
-}});
-console.log("Links resolved:", linksData.length, "of", graphData.links.length);
-
-// Category ring labels
-g.selectAll(".ring-label").data(cats).enter().append("text")
-  .attr("class", "ring-label")
-  .attr("x", d => R * 1.12 * Math.cos(catRing[d] - Math.PI/2))
-  .attr("y", d => R * 1.12 * Math.sin(catRing[d] - Math.PI/2))
-  .attr("text-anchor", "middle")
-  .attr("fill", d => colorScale(d))
-  .attr("font-size", "13px")
-  .attr("font-weight", "600")
-  .text(d => d);
-
-// Draw links
-const relColors = {{"is-a":"#667eea","part-of":"#764ba2","regulates":"#e74c3c","catalyzes":"#27ae60","participates-in":"#f39c12","related":"#95a5a6"}};
-const link = g.selectAll(".link").data(linksData).enter().append("line")
-  .attr("class", "link")
-  .attr("stroke", d => relColors[d.type] || "#95a5a6")
-  .attr("stroke-width", d => ["is-a","part-of","regulates","catalyzes"].includes(d.type) ? 1.2 : 0.6)
-  .attr("stroke-opacity", 0.45);
-
-// Draw nodes
-const allNodes = graphData.nodes.filter(n => nodeMap.has(n.id || n.name));
-const node = g.selectAll(".node").data(allNodes).enter().append("g")
-  .attr("class", "node")
-  .style("cursor", "pointer");
-
-node.append("circle")
-  .attr("r", d => d.importance === "core-important" ? 6 : 4)
-  .attr("fill", d => colorScale(d.category))
-  .attr("fill-opacity", 0.9)
-  .attr("stroke", "#fff")
-  .attr("stroke-width", 1);
-
-node.on("mouseover", (ev, d) => {{
-  d3.select("#tooltip").style("display", "block").html(`<b>${{d.name}}</b><br><span style="font-size:.75rem;opacity:.7">${{d.category}}</span>`);
-  d3.select(ev.currentTarget).select("circle").attr("r", 9).attr("fill-opacity", 1).attr("stroke", "#333").attr("stroke-width", 2);
-  // Highlight connected links
-  link.attr("stroke-opacity", l => (l.source === d || l.target === d) ? 0.9 : 0.08)
-      .attr("stroke-width", l => (l.source === d || l.target === d) ? 2.5 : 0.3);
-}}).on("mousemove", ev => {{
-  d3.select("#tooltip").style("left", (ev.offsetX + 16) + "px").style("top", (ev.offsetY - 12) + "px");
-}}).on("mouseout", (ev, d) => {{
-  d3.select("#tooltip").style("display", "none");
-  d3.select(ev.currentTarget).select("circle").attr("r", d.importance === "core-important" ? 6 : 4).attr("fill-opacity", 0.9).attr("stroke", "#fff").attr("stroke-width", 1);
-  link.attr("stroke-opacity", 0.45).attr("stroke-width", d => ["is-a","part-of","regulates","catalyzes"].includes(d.type) ? 1.2 : 0.6);
-}}).on("dblclick", (ev, d) => {{
-  const hrefs = {json.dumps({n.get("name", n.get("id","")): entity_href(str(n.get("name", n.get("id",""))), entities, out) for n in nodes if isinstance(n, dict)}, ensure_ascii=False)};
-  if (hrefs[d.name]) window.location = hrefs[d.name];
-}});
-
-// 3D projection
-function project(x, y, z) {{
-  const s = 420 / (420 + z);
-  return [W/2 + x * s, H/2 + y * s, s];
-}}
-
-// Force simulation with link force
-const sim = d3.forceSimulation(allNodes)
-  .force("link", d3.forceLink(linksData).id(d => d.id || d.name).distance(30).strength(0.3))
-  .force("charge", d3.forceManyBody().strength(-15))
-  .force("center", d3.forceCenter(0, 0))
-  .force("sphere", d => {{
-    const phi = catRing[d.category] || Math.PI * 0.5;
-    const targetR = R;
-    const cx = targetR * Math.cos(d.theta) * Math.sin(phi);
-    const cy = targetR * Math.cos(phi);
-    const cz = targetR * Math.sin(d.theta) * Math.sin(phi);
-    d.x += (cx - d.x) * 0.08;
-    d.y += (cy - d.y) * 0.08;
-    d.z += (cz - d.z) * 0.08;
-    const dist = Math.sqrt(d.x*d.x + d.y*d.y + d.z*d.z);
-    if (dist > R * 1.08 || dist < R * 0.82) {{
-      const s = R / dist;
-      d.x *= s; d.y *= s; d.z *= s;
-    }}
-  }})
-  .alphaDecay(0.004)
-  .on("tick", () => {{
-    link.attr("x1", d => project(d.source.x, d.source.y, d.source.z)[0])
-        .attr("y1", d => project(d.source.x, d.source.y, d.source.z)[1])
-        .attr("x2", d => project(d.target.x, d.target.y, d.target.z)[0])
-        .attr("y2", d => project(d.target.x, d.target.y, d.target.z)[1]);
-    node.attr("transform", d => {{
-      const [px, py, s] = project(d.x, d.y, d.z);
-      return `translate(${{px}},${{py}}) scale(${{s}})`;
-    }});
-  }});
-
-// Zoom with d3.zoom
-const zoom = d3.zoom().scaleExtent([0.25, 5]).on("zoom", e => g.attr("transform", e.transform));
-svg.call(zoom);
-window.zoomIn = () => svg.transition().duration(300).call(zoom.scaleBy, 1.4);
-window.zoomOut = () => svg.transition().duration(300).call(zoom.scaleBy, 0.7);
-
-// Drag rotation
-let dragRot = null;
-svg.on("mousedown", ev => {{ if (!ev.shiftKey) dragRot = {{x: ev.clientX, y: ev.clientY}}; }});
-svg.on("mousemove", ev => {{
-  if (dragRot) {{
-    const dx = ev.clientX - dragRot.x;
-    const dy = ev.clientY - dragRot.y;
-    sim.alpha(0.15).restart();
-    allNodes.forEach(n => {{ n.theta -= dx * 0.004; }});
-    dragRot = {{x: ev.clientX, y: ev.clientY}};
-  }}
-}});
-svg.on("mouseup", () => {{ dragRot = null; }});
-</script>
+<script src="graph.js"></script>
 <div class="section-divider"></div>
 <h2 style="padding:0 32px">📊 统计</h2>
-<div class="card" style="margin:16px 32px"><p><b>{len(nodes)}</b> 个节点 · <b>{len(links)}</b> 条关系 · <b>{len(set(n.get("category","") for n in nodes if isinstance(n, dict)))}</b> 个类别</p></div>'''
+<div class="card" style="margin:16px 32px"><p><b>{len(nodes)}</b> 个节点 · <b>{len(links)}</b> 条关系 · <b>{n_cats}</b> 个类别</p></div>"""
     write_page(out, "概念图谱", body, pages, "concept", json.dumps(data, ensure_ascii=False))
 
 
