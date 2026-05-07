@@ -1,0 +1,7 @@
+{
+  "id": "dsb-repair",
+  "nameEn": "Double-Strand Break Repair",
+  "category": "过程",
+  "chapter": "第5章",
+  "definition": "DNA双链断裂（DSB）是最具细胞毒性的DNA损伤——单个未修复DSB可触发永久性细胞周期停滞或凋亡，错误修复导致染色体易位。哺乳动物细胞通过两条互补通路修复DSB：NHEJ直接将断裂末端连接（快速但易出错），HR以姐妹染色单体为模板精确恢复原始序列（仅可在S/G2期运用）。两条通路的选择受53BP1和BRCA1拮抗调控：53BP1促进NHEJ，BRCA1促进末端切除和HR——这对DSB修复通路选择范式在PARP抑制剂/BRCA突变的合成致死策略中得到临床转化。"
+}

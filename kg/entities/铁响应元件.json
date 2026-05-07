@@ -1,0 +1,7 @@
+{
+  "id": "ire",
+  "nameEn": "Iron Response Element",
+  "category": "调控",
+  "chapter": "第4章",
+  "definition": "铁响应元件（IRE）是位于铁代谢相关mRNA的非翻译区中的约30个核苷酸茎环结构，通过铁调节蛋白（IRP1/IRP2）结合调控翻译或mRNA稳定性，是维持铁稳态的经典转录后调控系统。铁充足时IRP1以[4Fe-4S]簇结合的顺乌头酸酶形式失活，IRP2被FBXL5泛素连接酶降解。铁缺乏时：铁蛋白mRNA 5’UTR的IRE被IRP结合阻断翻译起始（减少铁存储）；转铁蛋白受体mRNA 3’UTR的IRE被IRP结合保护mRNA免于降解（增加铁摄取）。"
+}

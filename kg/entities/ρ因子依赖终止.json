@@ -1,0 +1,7 @@
+{
+  "id": "rho-termination",
+  "nameEn": "Rho-Dependent Termination",
+  "category": "过程",
+  "chapter": "第3章",
+  "definition": "ρ因子依赖终止是原核生物转录终止的两种主要机制之一。ρ因子为六聚体环形ATP依赖的RNA-DNA解旋酶，识别新转录RNA上富含C贫G的非结构化rut位点，利用ATP水解能量沿RNA 5’→3’方向转位追踪RNA聚合酶。当RNA聚合酶在ρ非依赖终止子序列（茎环结构）后暂停时，追赶上的ρ因子拆解转录泡中的RNA-DNA异源双链，迫使RNA聚合酶停止延伸并释放转录本。ρ因子依赖终止为约20%的大肠杆菌转录终止负责。"
+}

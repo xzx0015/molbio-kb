@@ -1,0 +1,7 @@
+{
+  "id": "rho-independent",
+  "nameEn": "Rho-Independent Termination",
+  "category": "过程",
+  "chapter": "第3章",
+  "definition": "ρ因子非依赖终止（内在终止）是原核生物最普遍的转录终止机制（约80%终止事件），仅需新转录RNA链形成两个顺式元件：富含GC的回文序列形成稳定茎环结构（ΔG约-15至-25 kcal/mol）和下游约7-9个尿苷（U）残基组成的U串。机制：茎环形成破坏RNA聚合酶活性位点中RNA-DNA异源双链稳定性并诱导聚合酶暂停，弱碱基配对的rU-dA异源双链自然解离，RNA聚合酶后移并释放转录本。终止效率受发夹稳定性和U串长度调控。"
+}

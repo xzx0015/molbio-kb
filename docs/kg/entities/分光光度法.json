@@ -1,0 +1,7 @@
+{
+  "id": "spectrophotometry",
+  "nameEn": "Spectrophotometry",
+  "category": "技术",
+  "chapter": "第7章",
+  "definition": "分光光度法利用物质对特定波长光的吸收特性（Beer-Lambert定律A=εcl）进行定性和定量分析。核酸定量：dsDNA在260 nm有最大吸收（A260=1对应约50 μg/mL），A260/A280比值（~1.8纯DNA）评估蛋白质污染，A260/A230（>2.0）评估盐残留。蛋白质定量通过Bradford法（595 nm）、BCA法和直接A280测定。NanoDrop微量分光光度计仅需1-2 μL样品，是分子生物学实验室标配。"
+}

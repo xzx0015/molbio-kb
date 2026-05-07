@@ -1,0 +1,7 @@
+{
+  "id": "glucose-effect",
+  "nameEn": "Glucose Effect / Catabolite Repression",
+  "category": "调控",
+  "chapter": "第5章",
+  "definition": "葡萄糖效应（分解代谢物阻遏）是细菌优先利用葡萄糖时抑制其他糖类代谢操纵子转录的全局调控现象。分子机制：葡萄糖通过PTS转运时对腺苷酸环化酶和EIIA的调控间接影响cAMP-CAP复合物——葡萄糖高浓度→去磷酸化EIIA积累→抑制AC活性→cAMP浓度低→CAP无法活化→CAP依赖型操纵子（约大肠杆菌基因组50%转录单元）被抑制。葡萄糖耗尽后磷酸化EIIA激活AC→cAMP上升→CAP-cAMP结合靶启动子上游增强转录。"
+}

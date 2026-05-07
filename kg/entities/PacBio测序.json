@@ -1,0 +1,7 @@
+{
+  "id": "pacbio",
+  "nameEn": "PacBio SMRT Sequencing",
+  "category": "技术",
+  "chapter": "第6章",
+  "definition": "PacBio单分子实时测序（SMRT）是第三代测序的代表技术。核心创新为零模波导（ZMW）纳米孔——单个DNA聚合酶分子固定在底部，荧光标记dNTP扩散进入ZMW后，聚合酶催化碱基掺入时发出特征荧光信号。读长可达10-30 kb（HiFi模式通过环形一致性测序CCS产出>99.9%准确度），使复杂基因组区域和全长转录本完整解析成为可能。在T2T人类完整基因组组装中发挥了决定性作用。"
+}

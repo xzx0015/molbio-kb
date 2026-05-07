@@ -1,0 +1,7 @@
+{
+  "id": "chaperone-kg",
+  "nameEn": "Molecular Chaperone",
+  "category": "调控",
+  "chapter": "第4章",
+  "definition": "分子伴侣是一类协助其他蛋白质进行正确折叠、组装和转运的辅助蛋白，但不成为最终功能结构的一部分。核心家族：Hsp70系统——DnaK/Hsp70与共伴侣蛋白DnaJ/Hsp40和核苷酸交换因子GrpE协同，以ATP依赖的构象循环结合释放暴露疏水区的未折叠肽链防止聚集；Chaperonin系统——GroEL/GroES（原核）/TRiC/CCT（真核）提供隔离腔室为约10%的蛋白质提供单独折叠空间。Hsp90是依赖ATP的后期折叠和构象成熟分子伴侣，底物多为信号蛋白（类固醇激素受体、激酶），是肿瘤学热门靶点。"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "organoid",
+  "nameEn": "Organoid",
+  "category": "技术",
+  "chapter": "第8章",
+  "definition": "类器官源于成体干细胞或iPSC在3D细胞外基质中自组织形成的微型器官样结构，在细胞组成、空间架构和功能上高度模拟来源器官。Hans Clevers实验室2009年首次建立肠道类器官（Lgr5+干细胞在Wnt/Noggin/R-spondin条件下形成隐窝-绒毛结构），此后脑、肝、肾、肺等类器官相继建立。广泛应用于器官发育、疾病建模（患者来源肿瘤类器官预测个体化药敏）、再生医学和药物筛选，被Nature Methods评为2017年度方法。"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "uorf",
+  "nameEn": "Upstream Open Reading Frame",
+  "category": "调控",
+  "chapter": "第4章",
+  "definition": "上游开放阅读框（uORF）是位于真核mRNA 5’UTR主ORF上游的短编码序列，uORF通过截留扫描核糖体降低了主ORF翻译效率。在胁迫条件（如eIF2α磷酸化导致的全局翻译抑制）下，核糖体对uORF的识别能力下降，跳过uORF的概率增加，反而使主ORF翻译率相对增加——这是ATF4转录因子在整合应激反应中被翻译激活的分子机制。约半数人类mRNA 5’UTR含至少一个uORF，是重要的翻译调控顺式元件。"
+}

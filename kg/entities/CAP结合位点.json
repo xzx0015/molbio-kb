@@ -1,0 +1,7 @@
+{
+  "id": "cap-site",
+  "nameEn": "CAP Binding Site",
+  "category": "调控",
+  "chapter": "第5章",
+  "definition": "CAP结合位点是乳糖操纵子启动子上游约-60 bp处的约22 bp回文对称DNA序列，为分解代谢物激活蛋白（CAP/CRP-cAMP受体蛋白）的识别和结合位点。CAP必须首先与cAMP结合发生别构激活才能识别CAP位点。葡萄糖转运抑制腺苷酸环化酶活性→cAMP水平降低→CAP无法结合DNA→RNA聚合酶不能被CAP招募→乳糖操纵子无法有效转录——即使乳糖存在下也不例外。CAP-cAMP的正调控确保乳糖操纵子仅在葡萄糖缺乏+乳糖存在的双重条件下高效表达。"
+}

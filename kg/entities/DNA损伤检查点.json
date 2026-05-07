@@ -1,0 +1,7 @@
+{
+  "id": "dna-damage-checkpoint",
+  "nameEn": "DNA Damage Checkpoint",
+  "category": "过程",
+  "chapter": "第5章",
+  "definition": "DNA损伤检查点是监控基因组完整性、在检测到DNA损伤时暂停细胞周期进程为修复争取时间的信号网络。核心激酶ATM（感知DSB，被MRN复合物激活）和ATR（感知ssDNA-RPA积累，被复制应激激活）磷酸化CHK2和CHK1效应激酶：CHK1/2磷酸化CDC25磷酸酶使其被14-3-3蛋白结合、胞质隔离或泛素化降解，阻止CDC25去磷酸化和激活CDK-周期蛋白复合物，实现G1/S、S内和G2/M检验点的周期阻滞。ATM/ATR还直接磷酸化并稳定p53诱导p21和促凋亡基因表达。"
+}

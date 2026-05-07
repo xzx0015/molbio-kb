@@ -1,0 +1,7 @@
+{
+  "id": "genome-annotation",
+  "nameEn": "Genome Annotation",
+  "category": "技术",
+  "chapter": "第8章",
+  "definition": "基因组注释是对测序组装基因组序列进行生物学解读的过程，识别基因、调控元件、重复序列、非编码RNA和表观遗传标志等所有功能元件。分为三个层次：结构注释（预测基因位置和外显子-内含子边界）、功能注释（基于Pfam/InterProScan/GO/KEGG赋予功能描述）和比较注释（多物种比对识别保守非编码序列）。Ensembl和NCBI RefSeq是两大标准基因组注释数据库。"
+}

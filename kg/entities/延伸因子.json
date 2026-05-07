@@ -1,0 +1,7 @@
+{
+  "id": "elongation-factors",
+  "nameEn": "Translation Elongation Factors",
+  "category": "调控",
+  "chapter": "第4章",
+  "definition": "翻译延伸因子是催化核糖体延伸循环的GTP结合蛋白，真核为eEF1和eEF2（原核对应EF-Tu和EF-G）。延伸循环：eEF1A-GTP携带氨酰-tRNA进入A位，密码子-反密码子正确配对后GTP水解释放氨酰-tRNA；肽键形成后eEF2-GTP催化核糖体沿mRNA精确转位一个密码子。eEF1A和eEF2是细胞中最丰富的蛋白质之一，其GTP酶活性是翻译校对和时间控制的关键。白喉毒素（ADP-核糖基化eEF2）靶向延伸因子阻断蛋白质合成。"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "nanopore",
+  "nameEn": "Oxford Nanopore Sequencing",
+  "category": "技术",
+  "chapter": "第6章",
+  "definition": "Oxford Nanopore Technologies（ONT）测序是基于蛋白纳米孔的单分子长读长测序技术。DNA单链在电场驱动下穿过嵌入聚合膜中的CsgG纳米孔，不同碱基引起特征性离子电流扰动，经AI算法实时解码为核苷酸序列。优势包括超长读长（已报道>4 Mb）、设备便携（MinION仅USB大小）和实时测序。原始错误率较高（~5-15%），需一致性序列polishing。在病原体现场鉴定、结构变异检测和表观修饰直接检测中展现独特优势。"
+}

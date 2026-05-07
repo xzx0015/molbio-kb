@@ -1,0 +1,7 @@
+{
+  "id": "illumina",
+  "nameEn": "Illumina Sequencing",
+  "category": "技术",
+  "chapter": "第6章",
+  "definition": "Illumina测序（边合成边测序，SBS）是目前应用最广泛的二代测序平台。核心流程：DNA文库片段两端连接接头后通过桥式PCR在流动槽表面扩增形成DNA簇，加入荧光标记的可逆终止dNTP，聚合酶催化单碱基延伸后激光激发采集每个簇的荧光信号读取碱基，随后化学切割荧光和封闭基团恢复可延伸状态进入下一循环。Illumina通量最高、成本最低，但读长短（2x150-300 bp）。"
+}

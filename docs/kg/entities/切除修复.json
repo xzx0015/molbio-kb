@@ -1,0 +1,7 @@
+{
+  "id": "excision-repair",
+  "nameEn": "Excision Repair",
+  "category": "过程",
+  "chapter": "第5章",
+  "definition": "切除修复是修复多种DNA损伤的核心策略，包括碱基切除修复（BER）和核苷酸切除修复（NER）。共同原理：识别损伤→切除含损伤碱基或片段→以互补链为模板重新合成→连接酶封口。BER处理非螺旋扭曲性小损伤（氧化/烷化/脱氨碱基），由DNA糖基化酶发起单碱基切除；NER处理螺旋扭曲性加合物损伤（UV产物/化学加合物），切除约24-32 nt含损伤寡核苷酸。BER和NER基因缺陷导致MUTYH相关息肉病和XP/Cockayne综合征等严重遗传病。"
+}

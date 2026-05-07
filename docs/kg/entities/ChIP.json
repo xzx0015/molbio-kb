@@ -1,0 +1,7 @@
+{
+  "id": "chip-kg",
+  "nameEn": "Chromatin Immunoprecipitation",
+  "category": "技术",
+  "chapter": "第7章",
+  "definition": "染色质免疫沉淀（ChIP）是检测蛋白质与DNA体内相互作用的核心技术。原理：甲醛交联固定蛋白质-DNA相互作用→超声断裂染色质→特异性抗体免疫沉淀目标蛋白-DNA复合物→解交联释放DNA→下游分析（qPCR或ChIP-seq）。ChIP-seq已成为绘制转录因子结合位点和组蛋白修饰景观的标准方法，是ENCODE和Roadmap Epigenomics等大型项目的主要数据来源。"
+}

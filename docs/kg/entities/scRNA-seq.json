@@ -1,0 +1,7 @@
+{
+  "id": "scrna-seq",
+  "nameEn": "Single-Cell RNA Sequencing",
+  "category": "技术",
+  "chapter": "第8章",
+  "definition": "单细胞RNA测序在单个细胞水平对转录组进行高通量分析，解决了传统bulk RNA-seq只能获取群体平均信号的局限，可揭示细胞异质性和稀有细胞类型。主流平台10x Genomics基于微流控液滴技术，单个细胞与带barcode凝胶珠在油包水液滴中配对。数据经降维（PCA/t-SNE/UMAP）和聚类分析揭示细胞亚群。已成为绘制细胞图谱（人类细胞图谱HCA）和解析发育轨迹的革命性工具。"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "wgbs",
+  "nameEn": "Whole Genome Bisulfite Sequencing",
+  "category": "技术",
+  "chapter": "第8章",
+  "definition": "全基因组亚硫酸氢盐测序（WGBS）是检测DNA甲基化的金标准方法。亚硫酸氢钠将未甲基化胞嘧啶脱氨转化为尿嘧啶（PCR后为T），而5-甲基胞嘧啶被保护不变，随后全基因组测序在单碱基分辨率定量每个CpG位点的甲基化比率。WGBS是表观基因组学研究基础工具，但成本高且无法区分5mC与5hmC。RRBS利用MspI限制酶富集CpG密集区域后测序，以约1%的数据量覆盖大部分CpG岛和启动子。"
+}

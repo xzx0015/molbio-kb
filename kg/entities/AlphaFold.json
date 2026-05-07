@@ -1,0 +1,7 @@
+{
+  "id": "alphafold-kg",
+  "nameEn": "AlphaFold",
+  "category": "技术",
+  "chapter": "第8章",
+  "definition": "AlphaFold是由DeepMind开发的人工智能蛋白质结构预测系统，能从氨基酸序列直接预测蛋白质三维结构。AlphaFold2（2021年，CASP14中位GDT_TS得分92.4达实验精度）核心架构为基于Transformer的Evoformer模块，处理多序列比对和残基对表示，通过迭代信息传递捕捉共进化信号和空间约束，最终由结构模块直接在三维空间输出原子坐标。AlphaFold蛋白质结构数据库已预测超过2亿个结构，彻底改变了结构生物学。"
+}

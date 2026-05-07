@@ -1,0 +1,7 @@
+{
+  "id": "cell-line",
+  "nameEn": "Immortalized Cell Line",
+  "category": "技术",
+  "chapter": "第7章",
+  "definition": "传代细胞系是通过自发突变（HeLa——1951年来自Henrietta Lacks宫颈癌组织的首个人类细胞系）、病毒癌基因转化（SV40大T抗原、HPV E6/E7灭活p53和Rb）或端粒酶hTERT过表达获得无限增殖能力的细胞群体。优势在于无限供应和均质遗传背景；缺陷包括基因组异常和表型偏离来源组织。据估计15-20%的细胞系实验存在错误鉴定，STR分析是细胞系验证的金标准。"
+}

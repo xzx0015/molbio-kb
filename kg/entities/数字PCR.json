@@ -1,0 +1,7 @@
+{
+  "id": "dpcr",
+  "nameEn": "Digital PCR",
+  "category": "技术",
+  "chapter": "第8章",
+  "definition": "数字PCR（dPCR）将PCR反应体系分割为数千至数百万个独立微反应器，每个含0或1个靶标分子，分散后进行终点PCR扩增，统计阳性微反应器数并通过泊松分布计算起始靶标分子绝对拷贝数。dPCR不依赖标准曲线和Ct值，无需内参基因校准，对抑制剂耐受性强，可实现<1%等位基因频率的稀有突变检测。主流平台包括Bio-Rad QX系统（液滴数字PCR，ddPCR）和Thermo Fisher QuantStudio 3D。"
+}

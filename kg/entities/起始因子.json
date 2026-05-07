@@ -1,0 +1,7 @@
+{
+  "id": "initiation-factors",
+  "nameEn": "Translation Initiation Factors",
+  "category": "调控",
+  "chapter": "第4章",
+  "definition": "真核翻译起始因子（eIFs）是协调帽依赖性翻译起始的多蛋白因子家族。关键eIF包括：eIF4F复合物（eIF4E帽结合蛋白+eIF4A解旋酶+eIF4G骨架蛋白）识别mRNA 5’帽并解旋5’UTR二级结构；eIF2-GTP将Met-tRNAi递送至40S小亚基P位形成43S预起始复合物；eIF3（约13亚基）桥接eIF4G和40S亚基；eIF1和eIF1A确保起始密码子精确识别。起始是翻译的最主要调控层面，eIF2α磷酸化和4E-BP介导的eIF4E抑制是两条关键负调控通路。"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "sos-genes",
+  "nameEn": "SOS Response Genes",
+  "category": "调控",
+  "chapter": "第5章",
+  "definition": "SOS反应是细菌面临严重DNA损伤时由约60个基因组成的全局性应激应答网络，核心为RecA-LexA调控环路。无损伤时LexA阻遏蛋白二聚体结合SOS基因启动子区的SOS box抑制转录。DNA损伤导致ssDNA积累→RecA在ssDNA上聚合为活性RecA*核蛋白丝→RecA*促进LexA的Ala84-Gly85肽键自切割失活→SOS基因时序性表达：先uvrA/uvrB/uvrD（NER修复）→recA（放大信号）→最后sulA（细胞分裂抑制因子）。损伤修复后ssDNA信号消失，恢复的LexA重新抑制SOS。"
+}

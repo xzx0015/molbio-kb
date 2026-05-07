@@ -1,0 +1,7 @@
+{
+  "id": "gibson",
+  "nameEn": "Gibson Assembly",
+  "category": "技术",
+  "chapter": "第7章",
+  "definition": "Gibson Assembly是由Daniel Gibson于2009年开发的一步等温DNA组装技术，可在同一反应中无缝连接多个DNA片段。三种酶协同：T5外切核酸酶从5’端消化产生互补单链悬垂→DNA聚合酶填补空隙→Taq连接酶封闭缺口。相邻片段仅需15-40 bp重叠序列即可精确组装，产物为无缝连接。该技术推动了合成生物学革命——Venter研究组利用其合成了全部1.08 Mb的M. mycoides基因组。"
+}

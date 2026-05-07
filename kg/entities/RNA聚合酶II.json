@@ -1,0 +1,7 @@
+{
+  "id": "pol-ii",
+  "nameEn": "RNA Polymerase II",
+  "category": "酶",
+  "chapter": "第3章",
+  "definition": "RNA聚合酶II（Pol II）是真核生物中转录所有蛋白质编码基因mRNA和多种非编码RNA（snRNA、snoRNA、miRNA前体等）的12亚基酶复合物。其最大亚基Rpb1含独特的高度重复C端结构域（CTD），由七肽重复序列YSPTSPS的52（人类）至26（酵母）个串联拷贝组成。CTD在转录周期中经历动态磷酸化循环：低磷酸化CTD在启动子区被TFIIH/CDK7磷酸化Ser5进入延伸、P-TEFb/CDK9磷酸化Ser2驱动生产性延伸并招募RNA加工因子。CTD的磷酸化密码是协调转录与RNA加工各步骤时空耦合的核心机制。"
+}

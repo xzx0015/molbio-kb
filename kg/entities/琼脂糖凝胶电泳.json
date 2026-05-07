@@ -1,0 +1,7 @@
+{
+  "id": "agarose-gel",
+  "nameEn": "Agarose Gel Electrophoresis",
+  "category": "技术",
+  "chapter": "第7章",
+  "definition": "琼脂糖凝胶电泳是分离和分析DNA片段的首选方法。琼脂糖在加热溶于缓冲液后冷却形成由氢键交联的网状凝胶，DNA磷酸骨架带均匀负电荷向正极迁移，迁移速率与分子量对数成反比。凝胶浓度决定分离范围：0.7%胶分离0.8-10 kb，1.5%胶分离0.2-3 kb。SYBR Safe/GelRed等荧光嵌入染料使DNA在紫外或蓝光下可视化，通过DNA ladder估算样品片段大小和浓度。"
+}

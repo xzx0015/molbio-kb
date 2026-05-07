@@ -1,0 +1,7 @@
+{
+  "id": "ms-proteomics",
+  "nameEn": "Mass Spectrometry Proteomics",
+  "category": "技术",
+  "chapter": "第8章",
+  "definition": "质谱蛋白质组学是利用质谱技术对复杂生物样品中蛋白质进行大规模鉴定和定量的学科。经典bottom-up流程：蛋白质经胰蛋白酶消化为肽段→LC分离→ESI离子化→质谱仪（Orbitrap或TOF）采集MS1和MS2谱图→数据库搜索（MaxQuant/Sequest）鉴定肽段推断蛋白质。定量策略包括非标定量（LFQ）、同位素标记（SILAC/TMT/iTRAQ）和数据非依赖采集（DIA/SWATH）。蛋白质组学已与基因组学和转录组学并列成为系统生物学三大支柱。"
+}

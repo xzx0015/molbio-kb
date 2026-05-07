@@ -1,0 +1,7 @@
+{
+  "id": "qpcr",
+  "nameEn": "Real-Time Quantitative PCR",
+  "category": "技术",
+  "chapter": "第8章",
+  "definition": "实时定量PCR（qPCR）是在PCR反应中通过荧光信号实时监测每个循环的扩增产物积累量，利用Ct值/Cq值定量起始模板浓度的技术。荧光检测策略：SYBR Green I嵌入dsDNA（需熔解曲线验证特异性）；TaqMan探针——含荧光基团和猝灭基团的水解探针，在延伸阶段被Taq酶裂解释放荧光。qPCR是基因表达分析和病原体载量检测的金标准，通过ΔΔCt法或标准曲线法进行定量。"
+}

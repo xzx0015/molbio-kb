@@ -1,0 +1,7 @@
+{
+  "id": "golden-gate",
+  "nameEn": "Golden Gate Cloning",
+  "category": "技术",
+  "chapter": "第7章",
+  "definition": "Golden Gate克隆利用IIs型限制酶（BsaI/BpiI/BsmBI）在识别序列之外切割产生自定义4 bp悬垂的DNA组装方法。MoClo模块化克隆系统中，每个DNA片段两端融合IIs型酶识别位点，经限制-连接循环后酶切位点被切除而目的片段以预设顺序无缝连接。由于连接产物丧失酶识别位点，反应可在一管中进行限制和连接的多次循环，效率极高，已成为植物合成生物学和代谢工程多基因通路组装的标准方法。"
+}

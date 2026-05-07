@@ -1,0 +1,7 @@
+{
+  "id": "release-factors",
+  "nameEn": "Translation Release Factors",
+  "category": "调控",
+  "chapter": "第4章",
+  "definition": "翻译释放因子是识别mRNA终止密码子（UAA/UAG/UGA）并催化肽基-tRNA酯键水解释放完整多肽链的蛋白质。原核生物：RF1识别UAA和UAG，RF2识别UAA和UGA，通过高度保守的GGQ基序插入肽基转移酶中心催化水解释放。真核生物：eRF1以单一蛋白质识别所有三种终止密码子，eRF3-GTP辅助催化释放。终止完成后核糖体再循环因子（RRF/ABCE1和EF-G/eIF3j）拆分大小亚基释放mRNA和tRNA进入下一轮翻译。"
+}

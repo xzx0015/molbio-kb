@@ -54,6 +54,24 @@
     "text": "课程章节"
   },
   {
+    "title": "5’帽结构",
+    "url": "kg/entities/5’帽结构.html",
+    "kind": "entity",
+    "text": "{\"id\": \"5-cap\", \"nameEn\": \"5’ Cap Structure\", \"category\": \"分子\", \"chapter\": \"第4章\", \"definition\": \"5’帽结构（m7GpppN）是真核mRNA 5’端的独特化学修饰，由反向连接的7-甲基鸟苷酸通过5’-5’三磷酸桥连接至转录本第一个核苷酸。帽结构由三种酶共转录添加：RNA三磷酸酶移除γ磷酸→鸟苷酸转移酶连接GMP→鸟嘌呤-N7-甲基转移酶甲基化产生m7G帽。帽结构功能：保护mRNA 5’端免于5’→3’外切酶XRN1降解、作为eIF4E的识别位点促进翻译起始、通过帽结合复合物（CBC）促进剪接和多聚腺苷酸化。\"}"
+  },
+  {
+    "title": "AlphaFold",
+    "url": "kg/entities/AlphaFold.html",
+    "kind": "entity",
+    "text": "{\"id\": \"alphafold-kg\", \"nameEn\": \"AlphaFold\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"AlphaFold是由DeepMind开发的人工智能蛋白质结构预测系统，能从氨基酸序列直接预测蛋白质三维结构。AlphaFold2（2021年，CASP14中位GDT_TS得分92.4达实验精度）核心架构为基于Transformer的Evoformer模块，处理多序列比对和残基对表示，通过迭代信息传递捕捉共进化信号和空间约束，最终由结构模块直接在三维空间输出原子坐标。AlphaFold蛋白质结构数据库已预测超过2亿个结构，彻底改变了结构生物学。\"}"
+  },
+  {
+    "title": "CAP结合位点",
+    "url": "kg/entities/CAP结合位点.html",
+    "kind": "entity",
+    "text": "{\"id\": \"cap-site\", \"nameEn\": \"CAP Binding Site\", \"category\": \"调控\", \"chapter\": \"第5章\", \"definition\": \"CAP结合位点是乳糖操纵子启动子上游约-60 bp处的约22 bp回文对称DNA序列，为分解代谢物激活蛋白（CAP/CRP-cAMP受体蛋白）的识别和结合位点。CAP必须首先与cAMP结合发生别构激活才能识别CAP位点。葡萄糖转运抑制腺苷酸环化酶活性→cAMP水平降低→CAP无法结合DNA→RNA聚合酶不能被CAP招募→乳糖操纵子无法有效转录——即使乳糖存在下也不例外。CAP-cAMP的正调控确保乳糖操纵子仅在葡萄糖缺乏+乳糖存在的双重条件下高效表达。\"}"
+  },
+  {
     "title": "周期蛋白依赖性激酶",
     "url": "kg/entities/周期蛋白依赖性激酶.html",
     "kind": "entity",
@@ -66,10 +84,22 @@
     "text": "{\"id\": \"crispr-cas9\", \"nameEn\": \"CRISPR-Cas9\", \"category\": \"技术\", \"chapter\": \"第6章\", \"importance\": \"core-important\", \"keyConcepts\": [{\"term\": \"sgRNA\", \"definition\": \"单引导RNA，由crRNA和tracrRNA融合而成，负责识别靶DNA序列并引导Cas9\"}, {\"term\": \"Cas9蛋白\", \"definition\": \"CRISPR系统的效应核酸酶，含RuvC和HNH两个核酸酶结构域，各切割一条DNA链\"}, {\"term\": \"PAM序列\", \"definition\": \"原型间隔序列邻近基序，SpCas9识别NGG，是Cas9切割的必要前提\"}, {\"term\": \"NHEJ修复\", \"definition\": \"非同源末端连接，切割后细胞的默认修复途径，常引入indel导致基因敲除\"}, {\"term\": \"HDR修复\", \"definition\": \"同源定向修复，提供修复模板可实现精确的基因编辑\"}], \"keyPoints\": [\"源于细菌适应性免疫系统的革命性基因编辑技术\", \"sgRNA识别靶序列（需PAM），Cas9切割DNA双链\", \"Doudna和Charpentier获2020年诺贝尔化学奖\", \"应用：基因敲除、基因敲入、碱基编辑、基因调控、表观遗传编辑\"], \"relatedEntities\": [\"DNA\", \"基因工程\", \"DNA 修复\", \"非同源末端连接\", \"同源重组修复\", \"载体\"], \"definition\": \"CRISPR-Cas9是目前应用最广泛的基因编辑技术，源自细菌和古菌的CRISPR（规律成簇间隔短回文重复序列）适应性免疫系统。在这一系统中，Cas9蛋白在单引导RNA（sgRNA）的引导下识别靶标DNA序列——sgRNA的5'端20个核苷酸（间隔序列）与靶DNA互补配对，同时要求靶序列紧邻一个短PAM基序（SpCas9为5'-NGG-3'）。识别成功后，Cas9的RuvC和HNH结构域分别切割DNA的非靶链和靶链，产生双链断裂（DSB）。细胞的DNA损伤修复机制随后被激活：非同源末端连接（NHEJ）途径在断裂位点引入随机插入/缺失实现基因敲除，而同源定向修复（HDR）途径可利用外源修复模板实现精确的基因替换或插入。自2012年Jinek等人证明Cas9可编程切割后，CRISPR已衍生出碱基编辑器（CBE/ABE）、先导编辑（Prime Editing）、CRISPRi/a（转录干扰/激活）等众多变体，彻底改变了功能基因组学和基因治疗研究。\"}"
   },
   {
+    "title": "ChIP",
+    "url": "kg/entities/ChIP.html",
+    "kind": "entity",
+    "text": "{\"id\": \"chip-kg\", \"nameEn\": \"Chromatin Immunoprecipitation\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"染色质免疫沉淀（ChIP）是检测蛋白质与DNA体内相互作用的核心技术。原理：甲醛交联固定蛋白质-DNA相互作用→超声断裂染色质→特异性抗体免疫沉淀目标蛋白-DNA复合物→解交联释放DNA→下游分析（qPCR或ChIP-seq）。ChIP-seq已成为绘制转录因子结合位点和组蛋白修饰景观的标准方法，是ENCODE和Roadmap Epigenomics等大型项目的主要数据来源。\"}"
+  },
+  {
     "title": "Chargaff法则",
     "url": "kg/entities/Chargaff法则.html",
     "kind": "entity",
     "text": "{\"id\": \"chargaff\", \"nameEn\": \"Chargaff's Rules\", \"category\": \"核心理论\", \"chapter\": \"第2章\", \"importance\": \"core-major\", \"definition\": \"Chargaff法则（Chargaff's rules）由Erwin Chargaff于1950年代基于大量不同物种DNA的碱基组成分析建立，是Watson-Crick双螺旋模型中碱基互补配对原则的关键化学证据。第一法则：双链DNA中腺嘌呤(A)与胸腺嘧啶(T)的摩尔数相等、鸟嘌呤(G)与胞嘧啶(C)的摩尔数相等（A=T，G=C），但A+T与G+C的比例在不同物种间差异显著。第二法则：同一物种不同组织的DNA碱基组成一致，提示DNA是遗传物质。Chargaff法则为Watson和Crick在1953年推导A=T和G≡C的碱基配对规则提供了直接的定量化学约束，被Crick本人称为'Watson-Crick模型中仅次于X射线衍射数据的最重要的实验线索'。\", \"keyConcepts\": [{\"term\": \"A=T\", \"definition\": \"腺嘌呤和胸腺嘧啶等摩尔数，由2个氢键配对\"}, {\"term\": \"G≡C\", \"definition\": \"鸟嘌呤和胞嘧啶等摩尔数，由3个氢键配对\"}, {\"term\": \"GC含量\", \"definition\": \"(G+C)/(A+T+G+C)的比值，不同物种差异大（25-75%）\"}], \"keyPoints\": [\"A=T，G=C是碱基互补配对的化学基础\", \"来自多种物种DNA碱基组成的定量分析\", \"直接引导Watson和Crick推导出双螺旋模型\", \"GC含量在不同物种间差异显著（系统发育信息）\"], \"relatedEntities\": [\"DNA\", \"核苷酸\", \"密码子\", \"DNA 复制\"]}"
+  },
+  {
+    "title": "Co-IP",
+    "url": "kg/entities/Co-IP.html",
+    "kind": "entity",
+    "text": "{\"id\": \"co-ip\", \"nameEn\": \"Co-Immunoprecipitation\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"免疫共沉淀（Co-IP）是检测蛋白质-蛋白质相互作用的经典技术。使用针对诱饵蛋白的特异性抗体在非变性条件下从细胞裂解液中免疫沉淀诱饵蛋白，其相互作用搭档蛋白被一同共沉淀，通过Western blot或质谱鉴定。Co-IP反映体内自然状态下的真实相互作用，是蛋白质复合物验证的金标准实验。TAP（串联亲和纯化）通过两步独立纯化大幅降低背景噪音，已成为蛋白质复合物组学系统性表征的标准策略。\"}"
   },
   {
     "title": "DNA 聚合酶",
@@ -102,6 +132,12 @@
     "text": "{\"id\": \"dna-replication\", \"nameEn\": \"DNA Replication\", \"category\": \"过程\", \"chapter\": \"第3章\", \"importance\": \"core-important\", \"keyConcepts\": [{\"term\": \"半保留复制\", \"definition\": \"Meselson-Stahl实验证实，每个子代DNA分子包含一条亲本链和一条新合成链\"}, {\"term\": \"复制叉\", \"definition\": \"DNA双链在复制起点解旋后形成的Y形结构，是活跃复制发生的位点\"}, {\"term\": \"复制起点\", \"definition\": \"基因组中DNA复制起始的特定位点，原核单一起点、真核多起点\"}, {\"term\": \"冈崎片段\", \"definition\": \"后随链上不连续合成的短DNA片段（原核约1000-2000 nt，真核约100-200 nt）\"}], \"keyPoints\": [\"遵循半保留复制原则\", \"前导链连续合成，后随链不连续合成（半不连续复制）\", \"需要引物提供3'-OH起始\", \"多酶协同：解旋酶、SSB、引物酶、DNA聚合酶、连接酶\"], \"relatedEntities\": [\"DNA\", \"DNA 聚合酶\", \"解旋酶\", \"引物酶\", \"DNA 连接酶\", \"核苷酸\", \"中心法则\"], \"definition\": \"DNA复制是细胞在分裂前将遗传物质精确拷贝一份传递给子代细胞的分子过程，是中心法则中DNA→DNA的信息传递步骤。复制从基因组特定的复制起点（origin of replication）开始，由解旋酶解开DNA双链形成复制叉，DNA聚合酶以两条亲本链为模板、按碱基互补配对原则合成新链。由于DNA聚合酶只能沿5'→3'方向合成且需要引物提供起始3'-OH，两条新链的合成模式不同：一条（前导链）连续合成，另一条（后随链）通过冈崎片段不连续合成后由DNA连接酶连接。整个复制过程高度保真，DNA聚合酶的校对功能、错配修复系统和多种质量检验点共同将错误率控制在约10⁻¹⁰/碱基对/细胞分裂。\"}"
   },
   {
+    "title": "DNA损伤检查点",
+    "url": "kg/entities/DNA损伤检查点.html",
+    "kind": "entity",
+    "text": "{\"id\": \"dna-damage-checkpoint\", \"nameEn\": \"DNA Damage Checkpoint\", \"category\": \"过程\", \"chapter\": \"第5章\", \"definition\": \"DNA损伤检查点是监控基因组完整性、在检测到DNA损伤时暂停细胞周期进程为修复争取时间的信号网络。核心激酶ATM（感知DSB，被MRN复合物激活）和ATR（感知ssDNA-RPA积累，被复制应激激活）磷酸化CHK2和CHK1效应激酶：CHK1/2磷酸化CDC25磷酸酶使其被14-3-3蛋白结合、胞质隔离或泛素化降解，阻止CDC25去磷酸化和激活CDK-周期蛋白复合物，实现G1/S、S内和G2/M检验点的周期阻滞。ATM/ATR还直接磷酸化并稳定p53诱导p21和促凋亡基因表达。\"}"
+  },
+  {
     "title": "DNA甲基化",
     "url": "kg/entities/DNA甲基化.html",
     "kind": "entity",
@@ -114,10 +150,46 @@
     "text": "{\"id\": \"dna-transposon\", \"nameEn\": \"DNA Transposon\", \"category\": \"基因组\", \"chapter\": \"第5章\", \"importance\": \"core-major\", \"definition\": \"DNA转座子是通过'切割-粘贴'（cut-and-paste）或'复制-粘贴'（replicative）机制在基因组中移动的离散DNA序列，是Barbara McClintock于1940年代在玉米中发现的可移动遗传元件（获1983年诺贝尔奖）。其结构简单：两端为反方向重复序列（TIR），中间编码转座酶（transposase）——唯一必需的酶蛋白，负责识别TIR、切除转座子和在靶位点重新插入。人类基因组中约3%为DNA转座子序列，绝大多数因累积突变而丧失了跳跃能力（化石转座子）。然而，一些基因组巧妙地'驯化'了转座子——最著名的例子是脊椎动物免疫系统的RAG1/RAG2重组酶，它们源自古代转座子、现已被精确整合入V(D)J重组系统催化抗体和T细胞受体的体细胞多样性。Sleeping Beauty转座子系统是目前基因治疗和插入突变筛选中最具应用潜力的合成DNA转座子。\", \"keyConcepts\": [{\"term\": \"转座酶\", \"definition\": \"催化DNA转座子切除和插入的酶，识别两端TIR序列\"}, {\"term\": \"TIR\", \"definition\": \"反向末端重复，转座酶识别和切割的靶序列\"}, {\"term\": \"靶位点重复\", \"definition\": \"插入后在两端产生的短正向重复（TSD），不同转座子特征长度不同\"}], \"keyPoints\": [\"切割-粘贴移动的遗传元件\", \"两端为反向重复(TIR)，中间编码转座酶\", \"人类基因组约3%为已失活的DNA转座子化石\", \"V(D)J重组系统源自转座子驯化\"], \"relatedEntities\": [\"DNA 重组\", \"逆转录转座子\", \"突变\", \"基因组注释\"]}"
   },
   {
+    "title": "GC-MS",
+    "url": "kg/entities/GC-MS.html",
+    "kind": "entity",
+    "text": "{\"id\": \"gc-ms\", \"nameEn\": \"GC-MS\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"气相色谱-质谱联用（GC-MS）将气相色谱的高分离能力与质谱的鉴定能力相结合，是代谢组学中检测挥发性小分子代谢物的主力平台。样品经衍生化后在GC柱中根据沸点分离，依次进入质谱仪经电子轰击离子化产生特征碎片谱图，通过与标准品保留时间和质谱库匹配进行鉴定和定量。GC-MS优势在于重现性好、质谱库完善，但限于挥发性化合物。与LC-MS互补，更擅长初级代谢物靶向分析。\"}"
+  },
+  {
+    "title": "Gibson Assembly",
+    "url": "kg/entities/Gibson Assembly.html",
+    "kind": "entity",
+    "text": "{\"id\": \"gibson\", \"nameEn\": \"Gibson Assembly\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"Gibson Assembly是由Daniel Gibson于2009年开发的一步等温DNA组装技术，可在同一反应中无缝连接多个DNA片段。三种酶协同：T5外切核酸酶从5’端消化产生互补单链悬垂→DNA聚合酶填补空隙→Taq连接酶封闭缺口。相邻片段仅需15-40 bp重叠序列即可精确组装，产物为无缝连接。该技术推动了合成生物学革命——Venter研究组利用其合成了全部1.08 Mb的M. mycoides基因组。\"}"
+  },
+  {
+    "title": "Golden Gate克隆",
+    "url": "kg/entities/Golden Gate克隆.html",
+    "kind": "entity",
+    "text": "{\"id\": \"golden-gate\", \"nameEn\": \"Golden Gate Cloning\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"Golden Gate克隆利用IIs型限制酶（BsaI/BpiI/BsmBI）在识别序列之外切割产生自定义4 bp悬垂的DNA组装方法。MoClo模块化克隆系统中，每个DNA片段两端融合IIs型酶识别位点，经限制-连接循环后酶切位点被切除而目的片段以预设顺序无缝连接。由于连接产物丧失酶识别位点，反应可在一管中进行限制和连接的多次循环，效率极高，已成为植物合成生物学和代谢工程多基因通路组装的标准方法。\"}"
+  },
+  {
+    "title": "Hi-C",
+    "url": "kg/entities/Hi-C.html",
+    "kind": "entity",
+    "text": "{\"id\": \"hi-c\", \"nameEn\": \"Hi-C\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"Hi-C是染色质构象捕获技术的高通量延伸，通过甲醛交联固定染色质三维相互作用→限制酶消化→邻近连接→解交联后深度测序，在全基因组尺度上检测DNA位点之间染色质相互作用的频率。数据分析生成接触矩阵，邻近对角线的高强度信号即拓扑关联结构域（TAD）。Hi-C首次在Kb分辨率绘制了人类基因组三维折叠图谱，揭示了CTCF/cohesin介导的环挤出模型是TAD形成的主要机制。\"}"
+  },
+  {
     "title": "Holliday模型",
     "url": "kg/entities/Holliday模型.html",
     "kind": "entity",
     "text": "{\"id\": \"holliday\", \"nameEn\": \"Holliday Junction Model\", \"category\": \"核心理论\", \"chapter\": \"第5章\", \"importance\": \"core-major\", \"definition\": \"Holliday模型由Robin Holliday于1964年提出，是描述同源重组过程中DNA链交换和分支迁移的经典分子模型。其核心核心特征为Holliday连接体（Holliday junction）——重组过程中四条DNA单链在两个同源双链分子间交换配对形成的四臂十字交叉结构。模型描述重组过程为：①两个同源DNA双链在同一位置产生单链切口→②单链从各自双链解离→③异源单链通过互补碱基配对侵入对方双链形成Holliday连接体→④分支迁移扩展异源双链区→⑤Holliday连接体被解离酶（resolvase）以两种方式之一切割：水平切割（horizontally）产生非交换产物（patch），垂直切割（vertically）产生交换产物（splice/crossover）。该模型经Meselson-Radding修正（1975年）和Szostak双链断裂修复模型（1983年）的发展，已成为理解减数分裂同源重组和DSB修复的分子框架。\", \"keyConcepts\": [{\"term\": \"Holliday连接体\", \"definition\": \"四臂DNA十字交叉结构，由链交换和分支迁移形成的重组中间体\"}, {\"term\": \"分支迁移\", \"definition\": \"Holliday连接体沿DNA移动的过程，扩展或收缩异源双链区\"}, {\"term\": \"解离\", \"definition\": \"解离酶在Holliday连接体处切割决定是否产生染色体交叉\"}], \"keyPoints\": [\"经典的同源重组分子模型（1964年）\", \"核心特征是Holliday连接体四臂结构\", \"分支迁移改变异源双链区长度\", \"解离方式决定重组产物是否含交叉（crossover）\"], \"relatedEntities\": [\"DNA 重组\", \"同源重组修复\", \"非同源末端连接\"]}"
+  },
+  {
+    "title": "Illumina测序",
+    "url": "kg/entities/Illumina测序.html",
+    "kind": "entity",
+    "text": "{\"id\": \"illumina\", \"nameEn\": \"Illumina Sequencing\", \"category\": \"技术\", \"chapter\": \"第6章\", \"definition\": \"Illumina测序（边合成边测序，SBS）是目前应用最广泛的二代测序平台。核心流程：DNA文库片段两端连接接头后通过桥式PCR在流动槽表面扩增形成DNA簇，加入荧光标记的可逆终止dNTP，聚合酶催化单碱基延伸后激光激发采集每个簇的荧光信号读取碱基，随后化学切割荧光和封闭基团恢复可延伸状态进入下一循环。Illumina通量最高、成本最低，但读长短（2x150-300 bp）。\"}"
+  },
+  {
+    "title": "LC-MS",
+    "url": "kg/entities/LC-MS.html",
+    "kind": "entity",
+    "text": "{\"id\": \"lc-ms\", \"nameEn\": \"LC-MS/MS\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"液相色谱-质谱联用（LC-MS/MS）是当代代谢组学和蛋白质组学最核心的分析工具。在代谢组学中可覆盖脂质、次级代谢物等非挥发性分子，无需衍生化；在蛋白质组学中，反相C18柱联合ESI电离-Orbitrap高分辨质谱是最常见配置。LC-MS/MS具备MRM和PRM等高灵敏度靶向定量模式，可在复杂生物基质中精确测定飞克级别的靶标分子。与GC-MS、NMR构成代谢组学三大互补分析平台。\"}"
   },
   {
     "title": "MAPK通路",
@@ -132,10 +204,22 @@
     "text": "{\"id\": \"northern-blot\", \"name\": \"Northern blot\", \"nameEn\": \"Northern Blot\", \"category\": \"技术\", \"chapter\": \"第 11 章\", \"importance\": \"core-major\", \"definition\": \"Northern blot（RNA印迹）是检测特定RNA分子表达水平和大小的经典分子生物学技术，由Alwine等人于1977年建立，因与Southern blot的类比而得名。其基本流程为：从细胞或组织中提取总RNA或mRNA，经变性琼脂糖凝胶电泳按大小分离，转移（印迹）至尼龙膜或硝酸纤维素膜，再与放射性同位素或化学发光标记的特异性探针杂交，通过放射自显影或化学发光检测目标条带。Northern blot提供的不仅是定量信息，还能反映RNA的完整性和剪接异构体，这是RT-PCR和微阵列等替代技术难以同时提供的。虽然通量低、操作相对繁琐，但在验证RNA测序结果、检测特定转录本的表达变化中仍具有不可替代的参考价值。\", \"keyConcepts\": [{\"term\": \"甲醛变性胶\", \"definition\": \"用于 RNA 分离的变性琼脂糖凝胶\"}, {\"term\": \"探针\", \"definition\": \"标记的 DNA 或 RNA 片段，用于检测特定 RNA\"}, {\"term\": \"杂交\", \"definition\": \"探针与靶 RNA 的碱基配对过程\"}, {\"term\": \"转膜\", \"definition\": \"将凝胶中的 RNA 转移到膜上\"}, {\"term\": \"放射性标记\", \"definition\": \"用放射性同位素标记探针\"}], \"keyPoints\": [\"Northern blot 用于检测特定 RNA 的大小和表达量\", \"RNA 需要变性处理以防止二级结构\", \"探针特异性决定检测特异性\", \"Northern blot 可分析 RNA 加工和剪接\", \"RT-qPCR 已部分替代 Northern blot\"], \"relatedEntities\": [\"分子生物学技术\", \"RNA\", \"探针\", \"Southern blot\"], \"references\": [\"Alwine JC, et al. Detection of specific RNAs or specific fragments of DNA among fractionated DNA. PNAS, 1977\"]}"
   },
   {
+    "title": "Oxford Nanopore测序",
+    "url": "kg/entities/Oxford Nanopore测序.html",
+    "kind": "entity",
+    "text": "{\"id\": \"nanopore\", \"nameEn\": \"Oxford Nanopore Sequencing\", \"category\": \"技术\", \"chapter\": \"第6章\", \"definition\": \"Oxford Nanopore Technologies（ONT）测序是基于蛋白纳米孔的单分子长读长测序技术。DNA单链在电场驱动下穿过嵌入聚合膜中的CsgG纳米孔，不同碱基引起特征性离子电流扰动，经AI算法实时解码为核苷酸序列。优势包括超长读长（已报道>4 Mb）、设备便携（MinION仅USB大小）和实时测序。原始错误率较高（~5-15%），需一致性序列polishing。在病原体现场鉴定、结构变异检测和表观修饰直接检测中展现独特优势。\"}"
+  },
+  {
     "title": "PCR",
     "url": "kg/entities/PCR.html",
     "kind": "entity",
     "text": "{\"id\": \"pcr\", \"nameEn\": \"Polymerase Chain Reaction\", \"category\": \"技术\", \"chapter\": \"第6章\", \"importance\": \"core-important\", \"keyConcepts\": [{\"term\": \"变性\", \"definition\": \"94-98°C加热使DNA双链解离为单链模板\"}, {\"term\": \"退火\", \"definition\": \"降温至50-65°C使引物与模板上的互补序列特异性杂交\"}, {\"term\": \"延伸\", \"definition\": \"72°C下Taq DNA聚合酶从引物3'端延伸合成新链\"}, {\"term\": \"指数扩增\", \"definition\": \"每轮循环产物作为下一轮模板，n个循环后目标片段扩增约2ⁿ倍\"}], \"keyPoints\": [\"由Kary Mullis于1985年发明（1993年诺贝尔化学奖）\", \"核心组分：模板DNA、上下游引物、Taq DNA聚合酶、dNTPs、Mg²⁺缓冲液\", \"标准30-35个循环可在数小时内扩增目标DNA百万倍\", \"衍生技术：RT-PCR、qPCR、数字PCR\"], \"relatedEntities\": [\"DNA\", \"DNA 聚合酶\", \"引物酶\", \"DNA 复制\", \"测序技术\"], \"definition\": \"聚合酶链式反应（PCR）是一种在体外快速、特异性地扩增特定DNA片段的技术，由Kary Mullis于1985年发明，是分子生物学最具革命性的技术之一。PCR基于DNA半保留复制的原理，通过反复循环三个温度步骤——高温变性（94-98°C使DNA双链解离）、低温退火（50-65°C使引物与靶序列互补配对）和中温延伸（72°C，Taq DNA聚合酶从引物3'端合成新链）——在数小时内将靶DNA序列从单个拷贝扩增至数十亿拷贝。Taq聚合酶（来自嗜热菌Thermus aquaticus）的引入是PCR实用化的关键：该酶在95°C仍保持活性，免去了每轮循环补加聚合酶的繁琐操作。PCR已衍生出众多变体，包括逆转录PCR（RT-PCR，检测RNA）、实时定量PCR（qPCR，实时监测扩增进程精确定量）和数字PCR（dPCR，单分子绝对定量），广泛应用于基因克隆、临床诊断、法医鉴定和病原体检测。\"}"
+  },
+  {
+    "title": "PacBio测序",
+    "url": "kg/entities/PacBio测序.html",
+    "kind": "entity",
+    "text": "{\"id\": \"pacbio\", \"nameEn\": \"PacBio SMRT Sequencing\", \"category\": \"技术\", \"chapter\": \"第6章\", \"definition\": \"PacBio单分子实时测序（SMRT）是第三代测序的代表技术。核心创新为零模波导（ZMW）纳米孔——单个DNA聚合酶分子固定在底部，荧光标记dNTP扩散进入ZMW后，聚合酶催化碱基掺入时发出特征荧光信号。读长可达10-30 kb（HiFi模式通过环形一致性测序CCS产出>99.9%准确度），使复杂基因组区域和全长转录本完整解析成为可能。在T2T人类完整基因组组装中发挥了决定性作用。\"}"
   },
   {
     "title": "RNA 干扰",
@@ -162,10 +246,28 @@
     "text": "{\"id\": \"rna-splicing\", \"nameEn\": \"RNA Splicing\", \"category\": \"过程\", \"chapter\": \"第3章\", \"importance\": \"core-important\", \"keyConcepts\": [{\"term\": \"剪接体\", \"definition\": \"由5种snRNP（U1/U2/U4/U5/U6）和数百种蛋白质组成的大型核糖核蛋白复合物，催化pre-mRNA剪接\"}, {\"term\": \"5'剪接位点\", \"definition\": \"内含子5'端保守序列（GU），被U1 snRNP识别\"}, {\"term\": \"分支点\", \"definition\": \"内含子内部保守腺苷酸（A），攻击5'剪接位点引发第一次转酯反应\"}, {\"term\": \"3'剪接位点\", \"definition\": \"内含子3'端保守序列（AG），上游外显子的3'OH攻击此处完成第二次转酯反应\"}], \"keyPoints\": [\"剪接体通过两次转酯反应切除内含子、连接外显子\", \"选择性剪接使一个基因产生多个蛋白质异构体\", \"约95%的人类多外显子基因经历选择性剪接\", \"剪接突变是多种遗传病和肿瘤的重要病因\"], \"relatedEntities\": [\"内含子\", \"外显子\", \"选择性剪接\", \"mRNA\", \"RNA 聚合酶\", \"真核生物\"], \"definition\": \"RNA剪接是pre-mRNA加工过程中的关键步骤，指将初级转录本中的非编码内含子精确切除、并将编码外显子连接形成成熟mRNA的过程，是真核生物区别于原核生物最显著的基因表达特征之一。绝大多数真核蛋白质编码基因的pre-mRNA需经历剪接。剪接由剪接体（spliceosome）——一种由五种富含尿苷的小核糖核蛋白颗粒（U1、U2、U4、U5、U6 snRNP）和超过150种辅助蛋白组成的大型动态RNA-蛋白质机器——催化，通过两次连续的转酯反应完成：第一次转酯反应中，分支点腺苷的2'-OH攻击5'剪接位点，形成套索状中间体；第二次反应中，上游外显子的3'-OH攻击3'剪接位点，释放套索内含子并连接两个外显子。选择性剪接（alternative splicing）使单个基因能通过不同剪接模式产生多种mRNA异构体，极大地扩展了真核基因组的编码潜力。\"}"
   },
   {
+    "title": "RNA聚合酶II",
+    "url": "kg/entities/RNA聚合酶II.html",
+    "kind": "entity",
+    "text": "{\"id\": \"pol-ii\", \"nameEn\": \"RNA Polymerase II\", \"category\": \"酶\", \"chapter\": \"第3章\", \"definition\": \"RNA聚合酶II（Pol II）是真核生物中转录所有蛋白质编码基因mRNA和多种非编码RNA（snRNA、snoRNA、miRNA前体等）的12亚基酶复合物。其最大亚基Rpb1含独特的高度重复C端结构域（CTD），由七肽重复序列YSPTSPS的52（人类）至26（酵母）个串联拷贝组成。CTD在转录周期中经历动态磷酸化循环：低磷酸化CTD在启动子区被TFIIH/CDK7磷酸化Ser5进入延伸、P-TEFb/CDK9磷酸化Ser2驱动生产性延伸并招募RNA加工因子。CTD的磷酸化密码是协调转录与RNA加工各步骤时空耦合的核心机制。\"}"
+  },
+  {
     "title": "SNP",
     "url": "kg/entities/SNP.html",
     "kind": "entity",
     "text": "{\"id\": \"snp\", \"name\": \"SNP\", \"nameEn\": \"Single Nucleotide Polymorphism\", \"category\": \"基因组\", \"chapter\": \"第 10 章\", \"importance\": \"core-major\", \"definition\": \"单核苷酸多态性（SNP）是基因组中最丰富的遗传变异类型，指在群体中频率≥1%的单个核苷酸位点上发生的替换（A/G/C/T之间的转换或颠换），人类基因组中平均每300个碱基对即存在一个SNP，总数估计超过一千万个。绝大多数SNP位于非编码区，对表型无明显影响；位于编码区（cSNP）的可造成同义、错义或无义突变，可能改变蛋白质功能；位于调控区域的SNP可能影响转录因子结合或RNA剪接。SNP作为遗传标记被广泛应用于全基因组关联研究（GWAS），通过比较病例组与对照组的等位基因频率差异，发现与复杂疾病（如2型糖尿病、高血压、癌症易感性）关联的风险位点。国际HapMap计划和千人基因组计划已系统性地编目了全球主要人群的SNP资源。\", \"keyConcepts\": [{\"term\": \"等位基因\", \"definition\": \"同一基因座上的不同序列变异\"}, {\"term\": \"基因型\", \"definition\": \"个体在某个 SNP 位点的等位基因组成\"}, {\"term\": \"次要等位基因频率\", \"definition\": \"人群中次要等位基因的出现频率\"}, {\"term\": \"同义 SNP\", \"definition\": \"不改变氨基酸的 SNP\"}, {\"term\": \"非同义 SNP\", \"definition\": \"改变氨基酸的 SNP\"}, {\"term\": \"GWAS\", \"definition\": \"全基因组关联研究，用于发现疾病相关 SNP\"}], \"keyPoints\": [\"SNP 是人类基因组中最丰富的遗传变异\", \"人类基因组约有 300 万个 SNP\", \"SNP 可作为遗传标记用于连锁分析\", \"GWAS 用于发现疾病相关的 SNP\", \"SNP 可用于个体化医学和药物基因组学\"], \"relatedEntities\": [\"基因组\", \"突变\", \"遗传密码\", \"多态性\"], \"references\": [\"International HapMap Consortium. The International HapMap Project. Nature, 2003\"]}"
+  },
+  {
+    "title": "SOS基因",
+    "url": "kg/entities/SOS基因.html",
+    "kind": "entity",
+    "text": "{\"id\": \"sos-genes\", \"nameEn\": \"SOS Response Genes\", \"category\": \"调控\", \"chapter\": \"第5章\", \"definition\": \"SOS反应是细菌面临严重DNA损伤时由约60个基因组成的全局性应激应答网络，核心为RecA-LexA调控环路。无损伤时LexA阻遏蛋白二聚体结合SOS基因启动子区的SOS box抑制转录。DNA损伤导致ssDNA积累→RecA在ssDNA上聚合为活性RecA*核蛋白丝→RecA*促进LexA的Ala84-Gly85肽键自切割失活→SOS基因时序性表达：先uvrA/uvrB/uvrD（NER修复）→recA（放大信号）→最后sulA（细胞分裂抑制因子）。损伤修复后ssDNA信号消失，恢复的LexA重新抑制SOS。\"}"
+  },
+  {
+    "title": "Sanger测序",
+    "url": "kg/entities/Sanger测序.html",
+    "kind": "entity",
+    "text": "{\"id\": \"sanger-seq\", \"nameEn\": \"Sanger Sequencing\", \"category\": \"技术\", \"chapter\": \"第6章\", \"definition\": \"Sanger测序（双脱氧链终止法）由Frederick Sanger于1977年发明（1980年诺贝尔奖），是测序技术的奠基之作。原理：加入少量ddNTP（缺少3’-OH）作为链终止剂，随机终止延伸反应产生覆盖全序列的长度梯度产物，经毛细管电泳分离后荧光检测读出序列。读长可达800-1000 bp，准确度>99.999%，至今仍是临床基因检测和分子克隆验证的金标准。\"}"
   },
   {
     "title": "Southern blot",
@@ -178,6 +280,12 @@
     "url": "kg/entities/TGF-β/Smad通路.html",
     "kind": "entity",
     "text": "{\"id\": \"tgfb\", \"name\": \"TGF-β/Smad通路\", \"nameEn\": \"TGF-β/Smad Pathway\", \"category\": \"机制\", \"chapter\": \"第7章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"TGF-β受体\", \"definition\": \"Ⅰ型和Ⅱ型丝/苏氨酸激酶受体，配体结合后Ⅱ型磷酸化激活Ⅰ型\"}, {\"term\": \"R-Smad\", \"definition\": \"受体调控型Smad（Smad2/3响应TGF-β，Smad1/5/8响应BMP）\"}, {\"term\": \"Co-Smad\", \"definition\": \"Smad4，与磷酸化R-Smad形成异源复合物入核调控靶基因\"}], \"keyPoints\": [\"TGF-β超家族通过受体Smad通路调控增殖/分化/凋亡\", \"在正常上皮中抑制增殖，在晚期肿瘤中促进侵袭转移\", \"Smad4是胰腺癌中的高频突变肿瘤抑制因子\"], \"relatedEntities\": [\"信号转导\", \"转录因子\", \"细胞凋亡\", \"细胞周期\"], \"definition\": \"TGF-β/Smad通路是TGF-β超家族信号转导的经典胞内通路，在胚胎发育、免疫调节和肿瘤发生中发挥双面性作用。配体结合诱导Ⅱ型受体磷酸化Ⅰ型受体，活化的Ⅰ型受体磷酸化R-Smad（Smad2/3），磷酸化R-Smad与Smad4形成异源复合物入核，与DNA结合伴侣转录因子合作调控靶基因。TGF-β在肿瘤中表现双重角色：正常和癌前细胞中抑制增殖（诱导p15/p21，抑制c-Myc）；晚期肿瘤中反而促进EMT和转移。慢性炎症和纤维化中TGF-β过度活化驱动ECM沉积。\"}"
+  },
+  {
+    "title": "WGBS",
+    "url": "kg/entities/WGBS.html",
+    "kind": "entity",
+    "text": "{\"id\": \"wgbs\", \"nameEn\": \"Whole Genome Bisulfite Sequencing\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"全基因组亚硫酸氢盐测序（WGBS）是检测DNA甲基化的金标准方法。亚硫酸氢钠将未甲基化胞嘧啶脱氨转化为尿嘧啶（PCR后为T），而5-甲基胞嘧啶被保护不变，随后全基因组测序在单碱基分辨率定量每个CpG位点的甲基化比率。WGBS是表观基因组学研究基础工具，但成本高且无法区分5mC与5hmC。RRBS利用MspI限制酶富集CpG密集区域后测序，以约1%的数据量覆盖大部分CpG岛和启动子。\"}"
   },
   {
     "title": "Western blot",
@@ -216,16 +324,82 @@
     "text": "{\"id\": \"mirna-regulation\", \"nameEn\": \"miRNA-Mediated Regulation\", \"category\": \"调控\", \"chapter\": \"第4章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"种子序列\", \"definition\": \"miRNA第2-8位核苷酸，是靶mRNA识别的主要决定因素\"}, {\"term\": \"miRISC\", \"definition\": \"含miRNA和Argonaute蛋白的RISC，AGO2具内切酶活性\"}, {\"term\": \"3'UTR\", \"definition\": \"mRNA 3'非翻译区，miRNA优先结合的靶区域\"}], \"keyPoints\": [\"一个miRNA可调控数百个靶基因\", \"主要通过mRNA去腺苷化-脱帽-降解实现沉默\", \"深度参与发育、分化和免疫调控\"], \"relatedEntities\": [\"miRNA\", \"RNA 干扰\", \"siRNA\", \"mRNA降解途径\", \"基因调控\"], \"definition\": \"miRNA介导的基因调控是转录后水平基因沉默的主要机制之一。miRNA通过种子序列（第2-8位核苷酸）识别靶mRNA 3'UTR，引导miRISC复合物执行翻译抑制和/或mRNA降解。动物细胞中多数miRNA与靶mRNA仅为不完全配对，miRISC主要通过GW182介导的mRNA去腺苷化、脱帽和5'→3'外切降解实现沉默。一个miRNA可调控数百个靶基因，一个mRNA的3'UTR也可能被多个miRNA协同调控——形成复杂的转录后调控网络。\"}"
   },
   {
+    "title": "rRNA功能",
+    "url": "kg/entities/rRNA功能.html",
+    "kind": "entity",
+    "text": "{\"id\": \"rrna-function\", \"nameEn\": \"rRNA Functions\", \"category\": \"分子\", \"chapter\": \"第4章\", \"definition\": \"核糖体RNA（rRNA）不仅是核糖体的结构骨架，更是翻译催化活性的主要承担者。23S/28S rRNA的大亚基结构域V构成肽基转移酶中心（PTC）——催化肽键形成的活性位点完全由rRNA的腺嘌呤A2451（大肠杆菌编号）等核苷酸构成，蛋白质仅起辅助稳定结构的作用，使核糖体成为自然界最重要的核酶。16S/18S rRNA的3’端参与mRNA招募，解码中心的A1492/A1493「构象开关」监控密码子-反密码子配对正确性。rRNA还是系统发育的最重要分子标记——Woese通过16S rRNA比较发现了古菌这一独立生命域。\"}"
+  },
+  {
+    "title": "scRNA-seq",
+    "url": "kg/entities/scRNA-seq.html",
+    "kind": "entity",
+    "text": "{\"id\": \"scrna-seq\", \"nameEn\": \"Single-Cell RNA Sequencing\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"单细胞RNA测序在单个细胞水平对转录组进行高通量分析，解决了传统bulk RNA-seq只能获取群体平均信号的局限，可揭示细胞异质性和稀有细胞类型。主流平台10x Genomics基于微流控液滴技术，单个细胞与带barcode凝胶珠在油包水液滴中配对。数据经降维（PCA/t-SNE/UMAP）和聚类分析揭示细胞亚群。已成为绘制细胞图谱（人类细胞图谱HCA）和解析发育轨迹的革命性工具。\"}"
+  },
+  {
     "title": "siRNA",
     "url": "kg/entities/siRNA.html",
     "kind": "entity",
     "text": "{\"id\": \"sirna\", \"name\": \"siRNA\", \"nameEn\": \"small interfering RNA\", \"category\": \"调控\", \"chapter\": \"第 9 章\", \"importance\": \"core-major\", \"definition\": \"小干扰RNA（siRNA）是一类长度约21个核苷酸的双链RNA分子，是RNA干扰（RNAi）途径的核心效应分子。siRNA可来源于外源导入的长双链RNA经Dicer酶切割，或通过化学合成、短发夹RNA（shRNA）表达载体等方式引入细胞。在胞质中，siRNA双链中的引导链被整合入RNA诱导沉默复合物（RISC），通过完美的Watson-Crick碱基互补配对与靶mRNA结合，激活Argonaute-2蛋白的内切酶活性在其配对区中央切割mRNA，导致靶基因的序列特异性沉默。与miRNA通过部分配对和翻译抑制发挥作用不同，siRNA通常实现完全的mRNA降解，沉默效率更高。siRNA作为研究工具（基因敲低）和潜在治疗手段在临床上受到关注，Patisiran（靶向TTR基因的siRNA药物）于2018年获批用于治疗遗传性转甲状腺素蛋白淀粉样变性，开启了RNAi疗法的新纪元。\", \"keyConcepts\": [{\"term\": \"dsRNA\", \"definition\": \"双链 RNA，siRNA 的前体\"}, {\"term\": \"Dicer\", \"definition\": \"切割 dsRNA 产生 siRNA 的核酸酶\"}, {\"term\": \"RISC\", \"definition\": \"RNA 诱导沉默复合物，装载 siRNA 后切割靶 mRNA\"}, {\"term\": \"Argonaute\", \"definition\": \"RISC 的核心蛋白，具有切割活性\"}, {\"term\": \"shRNA\", \"definition\": \"短发夹 RNA，可在细胞内产生 siRNA\"}], \"keyPoints\": [\"siRNA 由 Fire 和 Mello 发现，获 2006 年诺贝尔奖\", \"siRNA 与靶 mRNA 完全互补配对\", \"siRNA 介导靶 mRNA 的切割降解\", \"siRNA 是 RNA 干扰的核心分子\", \"siRNA 技术在基因功能研究和治疗中应用广泛\"], \"relatedEntities\": [\"RNA 干扰\", \"miRNA\", \"非编码 RNA\", \"基因调控\"], \"references\": [\"Fire A, Mello CC. Potent and specific genetic interference by double-stranded RNA in Caenorhabditis elegans. Nature, 1998\"]}"
   },
   {
+    "title": "ρ因子依赖终止",
+    "url": "kg/entities/ρ因子依赖终止.html",
+    "kind": "entity",
+    "text": "{\"id\": \"rho-termination\", \"nameEn\": \"Rho-Dependent Termination\", \"category\": \"过程\", \"chapter\": \"第3章\", \"definition\": \"ρ因子依赖终止是原核生物转录终止的两种主要机制之一。ρ因子为六聚体环形ATP依赖的RNA-DNA解旋酶，识别新转录RNA上富含C贫G的非结构化rut位点，利用ATP水解能量沿RNA 5’→3’方向转位追踪RNA聚合酶。当RNA聚合酶在ρ非依赖终止子序列（茎环结构）后暂停时，追赶上的ρ因子拆解转录泡中的RNA-DNA异源双链，迫使RNA聚合酶停止延伸并释放转录本。ρ因子依赖终止为约20%的大肠杆菌转录终止负责。\"}"
+  },
+  {
+    "title": "ρ因子非依赖终止",
+    "url": "kg/entities/ρ因子非依赖终止.html",
+    "kind": "entity",
+    "text": "{\"id\": \"rho-independent\", \"nameEn\": \"Rho-Independent Termination\", \"category\": \"过程\", \"chapter\": \"第3章\", \"definition\": \"ρ因子非依赖终止（内在终止）是原核生物最普遍的转录终止机制（约80%终止事件），仅需新转录RNA链形成两个顺式元件：富含GC的回文序列形成稳定茎环结构（ΔG约-15至-25 kcal/mol）和下游约7-9个尿苷（U）残基组成的U串。机制：茎环形成破坏RNA聚合酶活性位点中RNA-DNA异源双链稳定性并诱导聚合酶暂停，弱碱基配对的rU-dA异源双链自然解离，RNA聚合酶后移并释放转录本。终止效率受发夹稳定性和U串长度调控。\"}"
+  },
+  {
+    "title": "σ32因子",
+    "url": "kg/entities/σ32因子.html",
+    "kind": "entity",
+    "text": "{\"id\": \"sigma32\", \"nameEn\": \"Sigma 32 Factor\", \"category\": \"调控\", \"chapter\": \"第5章\", \"definition\": \"σ32（RpoH基因产物）是大肠杆菌的热休克σ因子，在温度升高和蛋白毒性应激下重编程约10%的细菌基因转录。常温下σ32被DnaK-DnaJ-GrpE分子伴侣系统和FtsH蛋白酶协同维持极低稳态水平（半衰期<1分钟）。温度骤升导致蛋白质去折叠→分子伴侣被隔离结合变性蛋白→σ32释放→稳定性剧增→快速激活热休克基因（编码DnaK、GroEL等分子伴侣）的转录。蛋白毒性应激解除后积累的分子伴侣重新结合σ32将其递交给FtsH降解——形成分子伴侣-σ因子反馈稳态回路。\"}"
+  },
+  {
+    "title": "σ因子",
+    "url": "kg/entities/σ因子.html",
+    "kind": "entity",
+    "text": "{\"id\": \"sigma-factor\", \"nameEn\": \"Sigma Factor\", \"category\": \"调控\", \"chapter\": \"第3章\", \"definition\": \"σ因子是原核生物RNA聚合酶的可逆亚基，赋予核心酶（α2ββ’ω）启动子序列特异识别能力，是决定原核基因全局转录模式的关键调控元件。σ因子通过识别启动子-10区（Pribnow框）和-35区保守序列介导RNA聚合酶与启动子DNA的结合。大肠杆菌管家σ70（rpoD）负责大多数生长必需基因的基础转录；选择性σ因子在特定应激下重编程转录组：σ32（rpoH）激活热休克蛋白基因，σ54（rpoN）调控氮代谢和鞭毛基因，σS（rpoS）在稳定期激活抗逆基因。σ因子竞争核心酶是细菌适应环境变化的核心策略。\"}"
+  },
+  {
+    "title": "一级结构",
+    "url": "kg/entities/一级结构.html",
+    "kind": "entity",
+    "text": "{\"id\": \"primary-structure\", \"nameEn\": \"Primary Structure\", \"category\": \"分子\", \"chapter\": \"第2章\", \"definition\": \"蛋白质的一级结构是从N端到C端的氨基酸线性序列，由mRNA上密码子序列直接通过遗传密码翻译而来。每个肽键（-CO-NH-）因共振具有约40%的双键特性，使肽键呈平面性且以反式构象为主（脯氨酸除外）。一级结构包含了蛋白质折叠和功能的全部信息——Anfinsen经典实验证明纯化的变性核糖核酸酶A在去除变性剂后能自发恢复全部酶活性和天然构象，即氨基酸序列决定三维结构的热力学假说。\"}"
+  },
+  {
+    "title": "三级结构",
+    "url": "kg/entities/三级结构.html",
+    "kind": "entity",
+    "text": "{\"id\": \"tertiary-structure\", \"nameEn\": \"Tertiary Structure\", \"category\": \"分子\", \"chapter\": \"第2章\", \"definition\": \"蛋白质的三级结构是完整多肽链在空间中折叠形成的三维构象，由二级结构和无规卷曲片段通过多种非共价相互作用和共价二硫键共同维持。折叠的主要驱动力——疏水效应将非极性侧链埋藏在蛋白疏水核心；极性侧链倾向于表面暴露与水分子形成氢键。范德华力、静电相互作用（盐桥）和氢键精细调控局部构象。三级结构通过X射线晶体学、NMR和冷冻电镜（cryo-EM）进行实验测定。蛋白质折叠的能量景观漏斗模型描述从高能变性态到最低自由能天然态的多路径折叠过程。\"}"
+  },
+  {
+    "title": "上游开放阅读框",
+    "url": "kg/entities/上游开放阅读框.html",
+    "kind": "entity",
+    "text": "{\"id\": \"uorf\", \"nameEn\": \"Upstream Open Reading Frame\", \"category\": \"调控\", \"chapter\": \"第4章\", \"definition\": \"上游开放阅读框（uORF）是位于真核mRNA 5’UTR主ORF上游的短编码序列，uORF通过截留扫描核糖体降低了主ORF翻译效率。在胁迫条件（如eIF2α磷酸化导致的全局翻译抑制）下，核糖体对uORF的识别能力下降，跳过uORF的概率增加，反而使主ORF翻译率相对增加——这是ATF4转录因子在整合应激反应中被翻译激活的分子机制。约半数人类mRNA 5’UTR含至少一个uORF，是重要的翻译调控顺式元件。\"}"
+  },
+  {
     "title": "中心法则",
     "url": "kg/entities/中心法则.html",
     "kind": "entity",
     "text": "{\"id\": \"central-dogma\", \"nameEn\": \"Central Dogma\", \"category\": \"核心理论\", \"chapter\": \"第1章\", \"importance\": \"core-important\", \"keyConcepts\": [{\"term\": \"DNA复制\", \"definition\": \"以DNA为模板合成子代DNA，实现遗传物质的精确拷贝\"}, {\"term\": \"转录\", \"definition\": \"以DNA为模板合成RNA，将遗传信息从DNA传递至RNA\"}, {\"term\": \"翻译\", \"definition\": \"以mRNA为模板合成蛋白质，将核苷酸序列信息转化为氨基酸序列\"}, {\"term\": \"逆转录\", \"definition\": \"以RNA为模板合成DNA，由逆转录酶催化，修正了信息单向流动的原初假设\"}, {\"term\": \"RNA复制\", \"definition\": \"某些RNA病毒以RNA为模板复制RNA基因组\"}], \"keyPoints\": [\"DNA→RNA→蛋白质是遗传信息流动的主轴\", \"逆转录和RNA复制的发现证明了信息流并非绝对单向\", \"中心法则是理解所有分子生物学过程的统一框架\", \"每种信息传递步骤由特异的聚合酶催化\"], \"relatedEntities\": [\"DNA\", \"RNA\", \"蛋白质\", \"DNA 聚合酶\", \"RNA 聚合酶\", \"逆转录酶\", \"转录\", \"翻译\"], \"definition\": \"中心法则（Central Dogma）由Francis Crick于1958年提出，是分子生物学最基本的理论框架，描述了遗传信息在生物体系中的流动路径：信息可从DNA传递至DNA（复制）、从DNA传递至RNA（转录）、从RNA传递至蛋白质（翻译），但不能从蛋白质反向传递至核酸。这一'禁止反向信息流'的原则——即序列信息一旦转化为蛋白质的氨基酸序列，就无法再被'读取'回核苷酸序列——是中心法则最核心的断言。1970年Temin和Baltimore发现逆转录酶后，RNA→DNA的信息流被补充进来，形成了更完整的中心法则图景。现代理解进一步涵盖了RNA→RNA（RNA病毒复制）和某些情况下的RNA→DNA→RNA（逆转录转座子）等特殊信息流路径，但蛋白质→核酸的逆向信息流从未被发现。\"}"
+  },
+  {
+    "title": "二级结构",
+    "url": "kg/entities/二级结构.html",
+    "kind": "entity",
+    "text": "{\"id\": \"secondary-structure\", \"nameEn\": \"Secondary Structure\", \"category\": \"分子\", \"chapter\": \"第2章\", \"definition\": \"蛋白质的二级结构是多肽链主链局部的规则空间排列，由主链原子间氢键稳定。α螺旋为右手螺旋，每圈3.6个残基（螺距5.4 Å），i和i+4残基主链间形成链内氢键；脯氨酸为螺旋破坏者、甘氨酸增加构象柔性。β折叠由两条或多条接近完全伸展的β股以平行或反平行方式侧向排列，相邻股间形成链间氢键。Ramachandran图以φ（Cα-N旋转角）和ψ（Cα-C旋转角）描述主链构象空间并直观定义二级结构的容许区域。\"}"
+  },
+  {
+    "title": "传代细胞系",
+    "url": "kg/entities/传代细胞系.html",
+    "kind": "entity",
+    "text": "{\"id\": \"cell-line\", \"nameEn\": \"Immortalized Cell Line\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"传代细胞系是通过自发突变（HeLa——1951年来自Henrietta Lacks宫颈癌组织的首个人类细胞系）、病毒癌基因转化（SV40大T抗原、HPV E6/E7灭活p53和Rb）或端粒酶hTERT过表达获得无限增殖能力的细胞群体。优势在于无限供应和均质遗传背景；缺陷包括基因组异常和表型偏离来源组织。据估计15-20%的细胞系实验存在错误鉴定，STR分析是细胞系验证的金标准。\"}"
   },
   {
     "title": "信号肽假说",
@@ -240,10 +414,46 @@
     "text": "{\"id\": \"signal-transduction\", \"nameEn\": \"Signal Transduction\", \"category\": \"过程\", \"chapter\": \"第6章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"受体\", \"definition\": \"细胞表面或胞内识别并结合信号分子（配体）的蛋白质，将胞外信号转化为胞内信号\"}, {\"term\": \"第二信使\", \"definition\": \"胞内小分子信号中介（cAMP、Ca²⁺、IP₃、DAG），将受体活化信号放大并传递\"}, {\"term\": \"蛋白激酶级联\", \"definition\": \"信号传递的核心机制，上游激酶磷酸化并激活下游激酶，逐级放大信号\"}, {\"term\": \"转录因子激活\", \"definition\": \"信号转导的终端效应之一，活化的转录因子进入细胞核调控靶基因表达\"}], \"keyPoints\": [\"胞外信号通过受体→信号分子级联→效应器→基因表达变化\", \"GPCR、RTK、Wnt、TGF-β、JAK-STAT等为主要信号通路\", \"信号在传递过程中被显著放大\", \"信号通路异常与癌症、糖尿病等多种疾病相关\"], \"relatedEntities\": [\"转录因子\", \"磷酸化\", \"基因调控\", \"细胞周期\", \"细胞凋亡\"], \"definition\": \"信号转导是细胞将来自外界环境或邻近细胞的信号（生长因子、激素、神经递质等）通过细胞表面或胞内受体的识别，经胞内信号分子级联放大和传递，最终引发特定生物学效应（基因表达改变、细胞增殖、分化、迁移或凋亡）的分子过程。典型的信号通路包括：配体结合受体→激活转导蛋白（G蛋白、接头蛋白）→产生第二信使（cAMP、Ca²⁺）或激活蛋白激酶级联（如MAPK通路：Ras→Raf→MEK→ERK）→磷酸化并激活转录因子→调控靶基因表达。信号转导具有信号放大（单个配体-受体事件可激活数百个下游分子）、特异性（不同受体-配体组合激活不同通路）、适应性（持续刺激导致受体脱敏/内吞）和整合性（多条通路交汇形成信号网络）等关键特征。靶向信号通路中异常激活的激酶（如BCR-ABL的伊马替尼、EGFR的吉非替尼）是精准医学的重要策略。\"}"
   },
   {
+    "title": "全基因组复制",
+    "url": "kg/entities/全基因组复制.html",
+    "kind": "entity",
+    "text": "{\"id\": \"wgd\", \"nameEn\": \"Whole Genome Duplication\", \"category\": \"过程\", \"chapter\": \"第8章\", \"definition\": \"全基因组复制（WGD）是指生物体完整染色体组的倍增事件，是基因组进化和物种形成的主要驱动力量。WGD提供大量冗余基因拷贝，其中一个拷贝可维持必需功能而另一个释放约束自由演化为新功能（新功能化）或两个拷贝分担祖先基因的亚功能（亚功能化）。脊椎动物进化史中至少发生两轮古老WGD事件（2R假说）。植物中WGD极为普遍——所有被子植物都是古多倍体的后代，小麦T. aestivum是异源六倍体（AABBDD基因组）。\"}"
+  },
+  {
+    "title": "全基因组测序",
+    "url": "kg/entities/全基因组测序.html",
+    "kind": "entity",
+    "text": "{\"id\": \"wgs\", \"nameEn\": \"Whole Genome Sequencing\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"全基因组测序（WGS）对生物体完整基因组DNA序列进行高通量测定，涵盖编码区、非编码区、调控元件、重复序列和结构变异。与全外显子测序相比，WGS能检测非编码区调控突变、重复序列扩增和平衡性染色体重排等WES盲区。已从人类基因组计划（13年、约30亿美元）发展至几天内完成、成本低至数百美元。临床应用涵盖罕见遗传病诊断和肿瘤全基因组分析。\"}"
+  },
+  {
+    "title": "全外显子测序",
+    "url": "kg/entities/全外显子测序.html",
+    "kind": "entity",
+    "text": "{\"id\": \"wes\", \"nameEn\": \"Whole Exome Sequencing\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"全外显子测序（WES）对基因组全部蛋白质编码区域（外显子组，约占人类基因组的1-2%、约30 Mb）进行靶向捕获和高深度测序。基因组DNA经超声打断后与靶向外显子捕获探针杂交富集，再通过NGS测序（通常>100x深度）检测SNV和小indel。WES成本仅为WGS的1/3-1/5，分析负担轻（约85%已知致病突变位于外显子区），但无法检测深度内含子突变和非编码调控突变。临床诊断率为25-35%。\"}"
+  },
+  {
+    "title": "共聚焦显微镜",
+    "url": "kg/entities/共聚焦显微镜.html",
+    "kind": "entity",
+    "text": "{\"id\": \"confocal\", \"nameEn\": \"Confocal Microscopy\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"共聚焦显微镜通过激发针孔将照明光聚焦于焦平面，检测光路中的共轭针孔仅允许焦平面发射荧光通过排除离焦光线，实现光学切片效果和高分辨率三维成像。激光扫描共聚焦通过振镜逐点扫描逐层采集重建三维图像。转盘共聚焦使用多针孔阵列盘高速并行扫描，更适合活细胞动态成像（减少光毒性）。共聚焦显微镜搭配荧光蛋白和免疫荧光标记是亚细胞定位和蛋白质动态可视化的核心工具。\"}"
+  },
+  {
     "title": "内含子",
     "url": "kg/entities/内含子.html",
     "kind": "entity",
     "text": "{\"id\": \"intron\", \"name\": \"内含子\", \"nameEn\": \"Intron\", \"category\": \"分子\", \"chapter\": \"第 5 章\", \"importance\": \"core-important\", \"definition\": \"内含子是真核生物基因中的非编码间隔序列，位于外显子之间，在转录后经RNA剪接被精确切除，不出现在成熟mRNA中。内含子的存在是原核生物与真核生物基因结构最显著的区别之一，内含子的长度变异极大——从几十个核苷酸到数十万碱基对不等，可在基因中占据主要比例。内含子-外显子边界由保守的剪接信号界定：5'剪接位点（GU）和3'剪接位点（AG），以及位于内含子内部的分支点腺苷（A），它们是剪接体组装和催化反应的关键识别位点。内含子的生物学意义远超简单的'间隔序列'：选择性剪接（alternative splicing）使得一个基因可通过不同剪接方式产生多个蛋白质异构体，极大地扩展了真核基因组的编码潜力（人类约95%的多外显子基因经历选择性剪接）。此外，内含子中还编码了大量的非编码RNA（如snoRNA、miRNA），在RNA加工和基因调控中发挥重要作用。\", \"keyConcepts\": [{\"term\": \"外显子\", \"definition\": \"基因中编码蛋白质的序列\"}, {\"term\": \"RNA 剪接\", \"definition\": \"切除内含子、连接外显子的过程\"}, {\"term\": \"剪接体\", \"definition\": \"催化 RNA 剪接的核糖核蛋白复合物\"}, {\"term\": \"5'剪接位点\", \"definition\": \"内含子 5'端的 GU 序列\"}, {\"term\": \"3'剪接位点\", \"definition\": \"内含子 3'端的 AG 序列\"}, {\"term\": \"分支点\", \"definition\": \"内含子中的保守 A 残基，参与剪接反应\"}], \"keyPoints\": [\"内含子是基因的间隔序列\", \"内含子在转录后被剪接切除\", \"内含子占人类基因组的绝大部分\", \"内含子可能含有调控元件\", \"内含子突变可导致剪接异常和疾病\"], \"relatedEntities\": [\"外显子\", \"RNA 加工\", \"剪接体\", \"基因转录\"], \"references\": [\"Berget SM, et al. An amazing sequence arrangement at the 5' ends of adenovirus 2 messenger RNA. PNAS, 1977\"]}"
+  },
+  {
+    "title": "分光光度法",
+    "url": "kg/entities/分光光度法.html",
+    "kind": "entity",
+    "text": "{\"id\": \"spectrophotometry\", \"nameEn\": \"Spectrophotometry\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"分光光度法利用物质对特定波长光的吸收特性（Beer-Lambert定律A=εcl）进行定性和定量分析。核酸定量：dsDNA在260 nm有最大吸收（A260=1对应约50 μg/mL），A260/A280比值（~1.8纯DNA）评估蛋白质污染，A260/A230（>2.0）评估盐残留。蛋白质定量通过Bradford法（595 nm）、BCA法和直接A280测定。NanoDrop微量分光光度计仅需1-2 μL样品，是分子生物学实验室标配。\"}"
+  },
+  {
+    "title": "分子伴侣",
+    "url": "kg/entities/分子伴侣.html",
+    "kind": "entity",
+    "text": "{\"id\": \"chaperone-kg\", \"nameEn\": \"Molecular Chaperone\", \"category\": \"调控\", \"chapter\": \"第4章\", \"definition\": \"分子伴侣是一类协助其他蛋白质进行正确折叠、组装和转运的辅助蛋白，但不成为最终功能结构的一部分。核心家族：Hsp70系统——DnaK/Hsp70与共伴侣蛋白DnaJ/Hsp40和核苷酸交换因子GrpE协同，以ATP依赖的构象循环结合释放暴露疏水区的未折叠肽链防止聚集；Chaperonin系统——GroEL/GroES（原核）/TRiC/CCT（真核）提供隔离腔室为约10%的蛋白质提供单独折叠空间。Hsp90是依赖ATP的后期折叠和构象成熟分子伴侣，底物多为信号蛋白（类固醇激素受体、激酶），是肿瘤学热门靶点。\"}"
   },
   {
     "title": "分子生物学",
@@ -252,10 +462,28 @@
     "text": "{\"id\": \"molecular-biology\", \"nameEn\": \"Molecular Biology\", \"category\": \"核心理论\", \"chapter\": \"第1章\", \"importance\": \"core-important\", \"definition\": \"分子生物学是在分子水平上研究生命现象的科学，其核心研究对象为生物大分子（DNA、RNA和蛋白质）的结构、功能及其相互作用，特别是遗传信息的存储、复制、表达和调控机制。分子生物学的诞生以1953年Watson和Crick的DNA双螺旋结构为标志性事件，此后中心法则、遗传密码的破译、操纵子模型（1961年Jacob-Monod）、重组DNA技术（1973年Cohen-Boyer）和PCR（1985年Mullis）相继奠定了这一学科的理论和技术基石。现代分子生物学已深度交叉融合基因组学、表观遗传学、合成生物学、系统生物学和基因编辑等前沿领域，其技术体系深刻改变了人类对生命本质和疾病机制的理解。\", \"keyConcepts\": [{\"term\": \"中心法则\", \"definition\": \"遗传信息DNA→RNA→蛋白质的单向流动原则\"}, {\"term\": \"DNA双螺旋\", \"definition\": \"两条多核苷酸链反向平行碱基互补配对，遗传信息存储的化学基础\"}, {\"term\": \"基因表达调控\", \"definition\": \"多层次控制基因在正确时空以正确量表达\"}], \"keyPoints\": [\"以DNA、RNA和蛋白质三大生物大分子为核心研究对象\", \"DNA双螺旋结构的发现标志学科诞生\", \"重组DNA技术和PCR是两大核心实验技术支柱\", \"与基因组学、表观遗传学和合成生物学深度融合\"], \"relatedEntities\": [\"DNA\", \"RNA\", \"蛋白质\", \"中心法则\", \"基因调控\"]}"
   },
   {
+    "title": "切除修复",
+    "url": "kg/entities/切除修复.html",
+    "kind": "entity",
+    "text": "{\"id\": \"excision-repair\", \"nameEn\": \"Excision Repair\", \"category\": \"过程\", \"chapter\": \"第5章\", \"definition\": \"切除修复是修复多种DNA损伤的核心策略，包括碱基切除修复（BER）和核苷酸切除修复（NER）。共同原理：识别损伤→切除含损伤碱基或片段→以互补链为模板重新合成→连接酶封口。BER处理非螺旋扭曲性小损伤（氧化/烷化/脱氨碱基），由DNA糖基化酶发起单碱基切除；NER处理螺旋扭曲性加合物损伤（UV产物/化学加合物），切除约24-32 nt含损伤寡核苷酸。BER和NER基因缺陷导致MUTYH相关息肉病和XP/Cockayne综合征等严重遗传病。\"}"
+  },
+  {
     "title": "前导序列",
     "url": "kg/entities/前导序列.html",
     "kind": "entity",
     "text": "{\"id\": \"leader-sequence\", \"nameEn\": \"Leader Sequence\", \"category\": \"调控\", \"chapter\": \"第5章\", \"importance\": \"core-major\", \"definition\": \"前导序列在分子生物学中有两层含义：①在转录调控中，指操纵子mRNA 5'端位于第一个结构基因起始密码子上游的非翻译区域（如前导序列在前导肽编码区域中形成可变的茎环结构介导色氨酸操纵子的衰减调控）；②在蛋白质分选中，指某些蛋白质（特别是线粒体和叶绿体蛋白质）N端的前序列（presequence或transit peptide），指导蛋白质跨越细胞器膜进入目标区室后被加工切除。在大肠杆菌色氨酸操纵子中，前导序列（trpL）编码14个氨基酸的前导肽，其中含有两个相邻的色氨酸密码子作为传感器——当色氨酸缺乏时核糖体停留在色氨酸密码子处，改变下游mRNA的二级结构从终止子转变为抗终止子，允许转录继续。这个精巧的核糖体-mRNA耦合机制使细菌能够以转录-翻译偶联的方式快速响应氨基酸水平变化。\", \"keyConcepts\": [{\"term\": \"trpL\", \"definition\": \"色氨酸操纵子前导序列，编码14个氨基酸的前导肽含两个邻接色氨酸密码子\"}, {\"term\": \"衰减调控\", \"definition\": \"核糖体在mRNA上翻译前导肽的速率控制下游终止子/抗终止子的形成\"}, {\"term\": \"转录-翻译偶联\", \"definition\": \"原核生物中转录和翻译同时进行，核糖体紧跟RNA聚合酶沿mRNA移动\"}], \"keyPoints\": [\"操纵子mRNA 5'端非翻译区，或蛋白质分选的靶向序列\", \"色氨酸操纵子前导序列是衰减调控的核心元件\", \"前导肽中色氨酸密码子作为氨基酸水平的传感器\"], \"relatedEntities\": [\"操纵子\", \"转录\", \"翻译\", \"阻遏蛋白\", \"衰减机制\"]}"
+  },
+  {
+    "title": "原代培养",
+    "url": "kg/entities/原代培养.html",
+    "kind": "entity",
+    "text": "{\"id\": \"primary-culture\", \"nameEn\": \"Primary Cell Culture\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"原代培养是直接从活体组织或器官中通过酶消化（胰蛋白酶/胶原酶）或机械解离分离细胞并在体外进行首次培养的方法。原代细胞保留了来源组织的分化表型和生理功能，是最接近体内状态的体外实验模型。但寿命有限（Hayflick极限约50-60次群体倍增后进入复制性衰老），培养条件苛刻且批次差异大。原代肝细胞是药物代谢和肝毒性测试的金标准模型，原代神经元是神经生物学的核心研究工具。\"}"
+  },
+  {
+    "title": "双链断裂修复",
+    "url": "kg/entities/双链断裂修复.html",
+    "kind": "entity",
+    "text": "{\"id\": \"dsb-repair\", \"nameEn\": \"Double-Strand Break Repair\", \"category\": \"过程\", \"chapter\": \"第5章\", \"definition\": \"DNA双链断裂（DSB）是最具细胞毒性的DNA损伤——单个未修复DSB可触发永久性细胞周期停滞或凋亡，错误修复导致染色体易位。哺乳动物细胞通过两条互补通路修复DSB：NHEJ直接将断裂末端连接（快速但易出错），HR以姐妹染色单体为模板精确恢复原始序列（仅可在S/G2期运用）。两条通路的选择受53BP1和BRCA1拮抗调控：53BP1促进NHEJ，BRCA1促进末端切除和HR——这对DSB修复通路选择范式在PARP抑制剂/BRCA突变的合成致死策略中得到临床转化。\"}"
   },
   {
     "title": "反密码子",
@@ -264,10 +492,22 @@
     "text": "{\"id\": \"anticodon\", \"name\": \"反密码子\", \"nameEn\": \"Anticodon\", \"category\": \"分子\", \"chapter\": \"第 6 章\", \"importance\": \"core-major\", \"definition\": \"反密码子是位于tRNA反密码子环上的三个核苷酸序列，在翻译过程中与mRNA上的密码子通过碱基互补配对进行识别（通常是反向平行的配对，即反密码子第1位识别密码子第3位）。tRNA携带的特定氨基酸由其反密码子决定，每个tRNA分子通过氨酰tRNA合成酶（aaRS）被加载上对应的氨基酸，确保遗传信息的忠实翻译。反密码子-密码子识别的核心特点是摆动假说（Wobble Hypothesis，Crick 1966）：反密码子第1位（5'端）与密码子第3位（3'端）的配对不如其他位置严格，因此一个tRNA可识别多个同义密码子——例如携带肌苷（I）在反密码子第1位的tRNA可识别密码子第3位的U、C或A。这种摆动机制的进化意义在于减少生物体所需的tRNA种类（理论上识别61个有义密码子需61种tRNA，实际只需约30-40种），同时在一定程度上容忍密码子第三位的突变而不改变翻译产物。\", \"keyConcepts\": [{\"term\": \"反密码子环\", \"definition\": \"tRNA 上含有反密码子的环状结构\"}, {\"term\": \"密码子-反密码子配对\", \"definition\": \"mRNA 密码子与 tRNA 反密码子的碱基配对\"}, {\"term\": \"摆动假说\", \"definition\": \"Crick 提出的密码子-反密码子配对第三位的灵活性\"}, {\"term\": \"摆动配对\", \"definition\": \"反密码子第一位碱基与密码子第三位碱基的非标准配对\"}, {\"term\": \"次黄嘌呤\", \"definition\": \"常出现在反密码子第一位的修饰碱基，可与 U/C/A 配对\"}], \"keyPoints\": [\"反密码子位于 tRNA 的反密码子环上\", \"反密码子与密码子反向互补配对\", \"摆动配对增加了翻译的灵活性\", \"次黄嘌呤（I）在反密码子中常见\", \"密码子-反密码子配对确保翻译的准确性\"], \"relatedEntities\": [\"密码子\", \"tRNA\", \"遗传密码\", \"蛋白质翻译\"], \"references\": [\"Crick FH. Codon-anticodon pairing: the wobble hypothesis. J Mol Biol, 1966\"]}"
   },
   {
+    "title": "发夹结构",
+    "url": "kg/entities/发夹结构.html",
+    "kind": "entity",
+    "text": "{\"id\": \"hairpin\", \"nameEn\": \"Hairpin Structure\", \"category\": \"分子\", \"chapter\": \"第2章\", \"definition\": \"发夹结构（茎环结构）是单链核酸中由链内互补碱基配对形成的经典二级结构，由一个双链茎（通常4-20 bp的不完全配对双链）和一个单链环（3-8个核苷酸）组成。发夹是核酸结构的基本语法单元，几乎参与所有RNA功能：ρ非依赖终止子发夹诱导RNA聚合酶暂停；锤头核酶的催化核心；miRNA/siRNA前体pre-miRNA是Dicer酶切底物。发夹的热力学稳定性由茎区GC含量和长度决定。\"}"
+  },
+  {
     "title": "同源重组修复",
     "url": "kg/entities/同源重组修复.html",
     "kind": "entity",
     "text": "{\"id\": \"hr-repair\", \"nameEn\": \"Homologous Recombination Repair\", \"category\": \"过程\", \"chapter\": \"第5章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"Rad51\", \"definition\": \"真核生物同源重组的核心重组酶，在ssDNA上形成核蛋白丝介导链入侵\"}, {\"term\": \"BRCA1/BRCA2\", \"definition\": \"HR修复的关键调控因子，BRCA2直接介导Rad51装载至ssDNA\"}, {\"term\": \"姐妹染色单体\", \"definition\": \"S期复制产生的同源模板，是HR修复的首选模板\"}], \"keyPoints\": [\"依赖同源序列作为修复模板，精确无错修复\", \"限于S/G2期（需姐妹染色单体作为模板）\", \"BRCA1/2突变导致HR缺陷→遗传性乳腺癌/卵巢癌\", \"PARP抑制剂的合成致死原理基于HR缺陷\"], \"relatedEntities\": [\"DNA 重组\", \"双链断裂修复\", \"非同源末端连接\", \"DNA 复制\", \"突变\"], \"definition\": \"同源重组修复（HR）是利用未受损的同源DNA序列（在体细胞中首选姐妹染色单体）作为模板，通过链入侵和DNA合成精确恢复断裂位点原始序列的DSB修复途径。由于需要同源模板的存在，HR仅可能在S期晚期和G2期发挥作用（此时每条染色体已复制存在姐妹染色单体）。其核心步骤包括：断裂末端被MRN-CtIP复合物切除产生3'悬垂单链→RPA结合保护ssDNA→BRCA2介导Rad51置换RPA在ssDNA上形成核蛋白丝→Rad51-ssDNA丝寻找并侵入同源双链形成D环→DNA聚合酶以同源链为模板延伸→Holliday连接体被解离酶切割完成修复。BRCA1和BRCA2基因的突变使HR修复严重受损，导致基因组不稳定，携带者面临极高的乳腺癌和卵巢癌风险。这一缺陷赋予PARP抑制剂（奥拉帕尼等）合成致死效应——HR缺陷的肿瘤细胞同时抑制PARP后无法修复自发性单链断裂，累积的损伤导致细胞死亡。\"}"
+  },
+  {
+    "title": "同线性分析",
+    "url": "kg/entities/同线性分析.html",
+    "kind": "entity",
+    "text": "{\"id\": \"synteny\", \"nameEn\": \"Synteny Analysis\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"同线性（synteny）指物种间基因组中基因顺序和方向的保守性，或同一基因组内因WGD产生的旁系同源基因区块（paralogons），是推断进化关系的最可靠证据之一。同线性分析通过全基因组比对鉴定保守共线区块，可用于重构建祖先基因组结构、精确定义直系同源关系、推断染色体重排的发生和时序。人类-小鼠-鸡基因组的同线性比较是研究脊椎动物染色体进化的经典范例。\"}"
   },
   {
     "title": "启动子",
@@ -288,10 +528,34 @@
     "text": "{\"id\": \"pyrimidine-dimer\", \"nameEn\": \"Pyrimidine Dimer\", \"category\": \"分子\", \"chapter\": \"第5章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"CPD\", \"definition\": \"环丁烷嘧啶二聚体，紫外线诱导的最主要DNA光产物（占约75%）\"}, {\"term\": \"6-4光产物\", \"definition\": \"6-4嘧啶-嘧啶酮光产物，占UV诱导损伤的约25%，螺旋扭曲更显著\"}], \"keyPoints\": [\"UV辐射（特别是UVB 280-320nm）诱导的主要DNA损伤\", \"相邻嘧啶间形成共价交联，阻断DNA复制和转录\", \"由NER修复；CPD光裂合酶可直接逆转（部分物种）\", \"是人类皮肤癌（基底细胞癌、鳞状细胞癌、黑色素瘤）的主要病因\"], \"relatedEntities\": [\"核苷酸切除修复\", \"切除修复\", \"诱发性损伤\", \"突变\", \"直接修复\"], \"definition\": \"嘧啶二聚体是紫外线（UV）辐射诱导的最主要DNA损伤类型，指DNA同一链上相邻的两个嘧啶碱基（T-T、T-C或C-C）之间形成共价交联，产生环丁烷嘧啶二聚体（CPD，约占UV损伤的75%）或6-4嘧啶-嘧啶酮光产物（6-4PP，约占25%）。这些共价交联扭曲了DNA双螺旋的局部结构，物理阻碍DNA复制叉和RNA聚合酶的前进，若不被修复将导致复制叉塌陷、突变积累（C→T转换是UV照射的经典'UV特征突变'）和细胞凋亡。嘧啶二聚体主要由核苷酸切除修复（NER）进行修复。在进化上部分生物（细菌、真菌、植物和有袋类动物，但胎盘哺乳动物已丢失）保留了DNA光裂合酶（photolyase），该酶利用蓝光能量直接逆转CPD为非交联嘧啶——这种古老的直接修复机制简洁优雅。人类皮肤长期暴露于UV辐射导致累积的嘧啶二聚体修复不完全，是皮肤癌的主要病因。\"}"
   },
   {
+    "title": "器官芯片",
+    "url": "kg/entities/器官芯片.html",
+    "kind": "entity",
+    "text": "{\"id\": \"organ-chip\", \"nameEn\": \"Organ-on-a-Chip\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"器官芯片是整合微流控技术、活细胞和组织工程，在邮票大小的芯片中重建人体器官最小功能单元（肺泡-毛细血管界面、肝小叶、肾近端小管等）的微生理系统。微通道中以接近体内的流速持续灌注培养基，细胞在机械力（流体剪切力、周期性拉伸）和化学梯度下培养，再现器官层面的生理功能和疾病表型。有望补充甚至替代动物实验进行药物毒性测试，多个器官芯片串联可模拟多器官药代动力学。\"}"
+  },
+  {
+    "title": "四级结构",
+    "url": "kg/entities/四级结构.html",
+    "kind": "entity",
+    "text": "{\"id\": \"quaternary-structure\", \"nameEn\": \"Quaternary Structure\", \"category\": \"分子\", \"chapter\": \"第2章\", \"definition\": \"蛋白质的四级结构指多个独立折叠的多肽链通过非共价相互作用组装为功能性寡聚体的空间排布。四级结构赋予单体蛋白不具备的功能优势：别构调控——血红蛋白的O2结合协同性（T态→R态转换）依赖αβ亚基界面的四级结构变化；活性位点共享——多个亚基共同组成催化口袋；稳定性增强——亚基界面掩埋大疏水面积降低溶剂暴露。X射线晶体学和冷冻电镜是测定四级结构的主要方法，化学交联质谱提供溶液中的近邻距离约束。\"}"
+  },
+  {
     "title": "基因工程",
     "url": "kg/entities/基因工程.html",
     "kind": "entity",
     "text": "{\"id\": \"genetic-engineering\", \"nameEn\": \"Genetic Engineering\", \"category\": \"技术\", \"chapter\": \"第6章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"限制酶\", \"definition\": \"识别特定DNA序列并精确切割的核酸酶，基因工程的'分子剪刀'\"}, {\"term\": \"DNA连接酶\", \"definition\": \"催化DNA片段间磷酸二酯键形成，将目的基因与载体'缝合'\"}, {\"term\": \"载体\", \"definition\": \"携带外源DNA进入宿主细胞的DNA分子，如质粒、病毒载体\"}, {\"term\": \"转化/转染\", \"definition\": \"将重组DNA导入宿主细胞（细菌为转化、真核细胞为转染）的过程\"}], \"keyPoints\": [\"利用限制酶和DNA连接酶将外源基因插入载体\", \"通过转化/转染导入宿主细胞，筛选阳性克隆\", \"核心工具：限制酶、DNA连接酶、质粒载体、宿主菌/细胞\", \"已广泛应用于重组蛋白生产、转基因动植物、基因治疗\"], \"relatedEntities\": [\"限制性内切酶\", \"DNA 连接酶\", \"载体\", \"质粒\", \"转化\", \"CRISPR-Cas9\", \"PCR\"], \"definition\": \"基因工程（重组DNA技术）是利用分子生物学技术对DNA进行体外操作——包括切割、连接、修饰和扩增——将目的基因与载体DNA重组后导入宿主细胞进行复制、表达或整合的技术体系。其标准工作流程为：①获取目的基因（PCR扩增或化学合成）；②用限制酶分别切割目的基因和载体（质粒、噬菌体或病毒），产生互补黏性末端或平末端；③用DNA连接酶将目的基因连接到载体上形成重组DNA分子；④通过转化（细菌）或转染（真核细胞）将重组DNA导入宿主细胞；⑤利用抗生素抗性、蓝白斑筛选或荧光标记筛选阳性克隆；⑥扩增阳性克隆获取大量重组DNA或诱导表达获得重组蛋白。1973年Cohen和Boyer首次实现细菌间功能基因的转移标志着基因工程的开端。\"}"
+  },
+  {
+    "title": "基因线路",
+    "url": "kg/entities/基因线路.html",
+    "kind": "entity",
+    "text": "{\"id\": \"genetic-circuit\", \"nameEn\": \"Genetic Circuit\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"基因线路是合成生物学的核心概念，指将标准化DNA编码的基因调控元件按工程学逻辑设计构建的能执行特定计算功能的合成基因调控网络。经典合成线路：负反馈振荡器（Repressilator）——三种阻遏蛋白顺序抑制形成环形负反馈产生自主周期性GFP荧光振荡；遗传开关——两个相互抑制的阻遏蛋白+诱导物控制的可逆双稳态开关；逻辑门——AND/NAND等布尔逻辑门通过转录因子输入信号的组合调控输出基因表达。基因线路正从原理验证向实用化迈进。\"}"
+  },
+  {
+    "title": "基因组注释",
+    "url": "kg/entities/基因组注释.html",
+    "kind": "entity",
+    "text": "{\"id\": \"genome-annotation\", \"nameEn\": \"Genome Annotation\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"基因组注释是对测序组装基因组序列进行生物学解读的过程，识别基因、调控元件、重复序列、非编码RNA和表观遗传标志等所有功能元件。分为三个层次：结构注释（预测基因位置和外显子-内含子边界）、功能注释（基于Pfam/InterProScan/GO/KEGG赋予功能描述）和比较注释（多物种比对识别保守非编码序列）。Ensembl和NCBI RefSeq是两大标准基因组注释数据库。\"}"
   },
   {
     "title": "基因调控",
@@ -312,10 +576,22 @@
     "text": "{\"id\": \"exon\", \"name\": \"外显子\", \"nameEn\": \"Exon\", \"category\": \"分子\", \"chapter\": \"第 5 章\", \"importance\": \"core-important\", \"definition\": \"外显子是基因中编码蛋白质氨基酸序列或构成成熟RNA功能区域（对于非编码RNA基因）的DNA序列片段，在RNA剪接后被保留在成熟RNA分子中。在蛋白质编码基因中，只有外显子序列最终被翻译为多肽链，人类基因组中外显子仅占全基因组的约1-2%，但承载了绝大部分已知的致病突变。外显子-内含子结构使得选择性剪接成为可能：通过切除不同的内含子和可变地组合外显子（包括外显子跳跃、5'/3'剪接位点的可变选择、内含子保留等方式），单个基因可产生数十甚至数千种不同的mRNA异构体，极大地扩展了基因组的信息容量。外显子组测序（whole exome sequencing，WES）仅针对基因组中约1%的编码区域进行深度测序，是鉴定单基因遗传病致病突变的最常用策略之一，在临床遗传学中发挥着核心作用。\", \"keyConcepts\": [{\"term\": \"内含子\", \"definition\": \"基因中不编码蛋白质的间隔序列，转录后被切除\"}, {\"term\": \"RNA 剪接\", \"definition\": \"切除内含子、连接外显子的过程\"}, {\"term\": \"选择性剪接\", \"definition\": \"同一 pre-mRNA 通过不同剪接方式产生多种 mRNA 异构体\"}, {\"term\": \"剪接位点\", \"definition\": \"外显子与内含子交界处的保守序列\"}, {\"term\": \"外显子-内含子边界\", \"definition\": \"5'剪接位点（GT）和 3'剪接位点（AG）\"}], \"keyPoints\": [\"外显子是基因的编码区域\", \"真核基因由外显子和内含子交替组成\", \"RNA 剪接连接外显子形成成熟 mRNA\", \"选择性剪接增加蛋白质多样性\", \"外显子突变可导致疾病\"], \"relatedEntities\": [\"内含子\", \"RNA 加工\", \"基因转录\", \"蛋白质翻译\"], \"references\": [\"Gilbert W. Why genes in pieces? Nature, 1978\"]}"
   },
   {
+    "title": "实时定量PCR",
+    "url": "kg/entities/实时定量PCR.html",
+    "kind": "entity",
+    "text": "{\"id\": \"qpcr\", \"nameEn\": \"Real-Time Quantitative PCR\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"实时定量PCR（qPCR）是在PCR反应中通过荧光信号实时监测每个循环的扩增产物积累量，利用Ct值/Cq值定量起始模板浓度的技术。荧光检测策略：SYBR Green I嵌入dsDNA（需熔解曲线验证特异性）；TaqMan探针——含荧光基团和猝灭基团的水解探针，在延伸阶段被Taq酶裂解释放荧光。qPCR是基因表达分析和病原体载量检测的金标准，通过ΔΔCt法或标准曲线法进行定量。\"}"
+  },
+  {
     "title": "密码子",
     "url": "kg/entities/密码子.html",
     "kind": "entity",
     "text": "{\"id\": \"codon\", \"name\": \"密码子\", \"nameEn\": \"Codon\", \"category\": \"分子\", \"chapter\": \"第 6 章\", \"importance\": \"core-important\", \"definition\": \"密码子是mRNA上每三个连续核苷酸组成的基本编码单元，每个密码子特异性地决定一个氨基酸或翻译信号（起始或终止）。遗传密码总共有64个密码子（4³）：61个编码20种标准氨基酸，3个为终止密码子（UAA、UAG、UGA），AUG不仅编码甲硫氨酸同时也是翻译起始信号。遗传密码的简并性（degeneracy）指多数氨基酸由多个同义密码子编码，且同义密码子通常仅在第三位碱基上有差别——这是摆动假说的分子基础。遗传密码的通用性（universality）是分子生物学最根本的原则之一：从细菌到人类，几乎所有的生物使用同一套遗传密码表。但存在少数例外：人类线粒体使用稍有不同的密码子（UGA编码色氨酸而非终止，AGA/AGG为终止而非精氨酸），某些纤毛虫中UAA和UAG编码谷氨酰胺。密码子使用偏好性（codon usage bias）在不同物种间差异显著，这对异源表达系统的设计至关重要。\", \"keyConcepts\": [{\"term\": \"起始密码子\", \"definition\": \"AUG，编码甲硫氨酸，标志翻译起始\"}, {\"term\": \"终止密码子\", \"definition\": \"UAA、UAG、UGA，不编码氨基酸，导致翻译终止\"}, {\"term\": \"有义密码子\", \"definition\": \"编码氨基酸的 61 个密码子\"}, {\"term\": \"同义密码子\", \"definition\": \"编码同一氨基酸的不同密码子\"}, {\"term\": \"密码子简并性\", \"definition\": \"多个密码子编码同一氨基酸的现象\"}, {\"term\": \"密码子使用偏好\", \"definition\": \"不同生物对同义密码子的使用频率差异\"}], \"keyPoints\": [\"64 个密码子：61 个有义密码子 + 3 个终止密码子\", \"AUG 是起始密码子兼甲硫氨酸密码子\", \"密码子简并性主要发生在第三位\", \"密码子与反密码子配对具有摆动性\", \"线粒体和某些生物使用变异的遗传密码\"], \"relatedEntities\": [\"遗传密码\", \"反密码子\", \"tRNA\", \"蛋白质翻译\"], \"references\": [\"Nirenberg MW, Matthaei JH. The dependence of cell-free protein synthesis in E. coli upon naturally occurring or synthetic template polyribonucleotides. PNAS, 1961\"]}"
+  },
+  {
+    "title": "延伸因子",
+    "url": "kg/entities/延伸因子.html",
+    "kind": "entity",
+    "text": "{\"id\": \"elongation-factors\", \"nameEn\": \"Translation Elongation Factors\", \"category\": \"调控\", \"chapter\": \"第4章\", \"definition\": \"翻译延伸因子是催化核糖体延伸循环的GTP结合蛋白，真核为eEF1和eEF2（原核对应EF-Tu和EF-G）。延伸循环：eEF1A-GTP携带氨酰-tRNA进入A位，密码子-反密码子正确配对后GTP水解释放氨酰-tRNA；肽键形成后eEF2-GTP催化核糖体沿mRNA精确转位一个密码子。eEF1A和eEF2是细胞中最丰富的蛋白质之一，其GTP酶活性是翻译校对和时间控制的关键。白喉毒素（ADP-核糖基化eEF2）靶向延伸因子阻断蛋白质合成。\"}"
   },
   {
     "title": "引物酶",
@@ -334,6 +610,12 @@
     "url": "kg/entities/操纵子.html",
     "kind": "entity",
     "text": "{\"id\": \"operon\", \"name\": \"操纵子\", \"nameEn\": \"Operon\", \"category\": \"调控\", \"chapter\": \"第 7 章\", \"importance\": \"core-important\", \"definition\": \"操纵子（Operon）是原核生物基因组中由协同调控的多个结构基因连同其上游共同调控序列组成的功能单位，是原核生物实现协同基因表达调控的核心机制，由Jacob和Monod于1961年通过对大肠杆菌乳糖操纵子的经典遗传分析首次阐明（获1965年诺贝尔奖）。典型操纵子包含：①结构基因——编码代谢途径中各步骤的酶蛋白；②启动子——RNA聚合酶结合并起始转录的位点；③操纵基因——位于启动子附近，被特异性调控蛋白（阻遏蛋白或激活蛋白）结合以调控转录。乳糖操纵子（lac operon）是最经典的范例：无乳糖时，LacI阻遏蛋白结合操纵基因阻止转录；有乳糖存在时，诱导物别乳糖结合LacI使之从DNA解离，RNA聚合酶可顺利转录lacZ（β-半乳糖苷酶）、lacY（透性酶）和lacA（转乙酰酶）。色氨酸操纵子（trp operon）则为可阻遏操纵子：色氨酸丰度时作为共阻遏物激活TrpR阻遏蛋白结合操纵基因关闭转录，体现了生物合成途径的终产物反馈调控。\", \"keyConcepts\": [{\"term\": \"乳糖操纵子\", \"definition\": \"大肠杆菌中调控乳糖代谢的操纵子，lac 操纵子\"}, {\"term\": \"色氨酸操纵子\", \"definition\": \"大肠杆菌中调控色氨酸合成的操纵子，trp 操纵子\"}, {\"term\": \"阻遏蛋白\", \"definition\": \"结合操纵基因抑制转录的蛋白质\"}, {\"term\": \"诱导物\", \"definition\": \"解除阻遏的小分子，如乳糖的代谢物异乳糖\"}, {\"term\": \"辅阻遏物\", \"definition\": \"辅助阻遏蛋白结合操纵基因的小分子，如色氨酸\"}, {\"term\": \"衰减作用\", \"definition\": \"色氨酸操纵子特有的转录衰减调控机制\"}], \"keyPoints\": [\"操纵子是原核生物基因调控的基本单位\", \"操纵子包含启动子、操纵基因和结构基因\", \"乳糖操纵子是可诱导型操纵子的典型\", \"色氨酸操纵子是可阻遏型操纵子的典型\", \"操纵子模型由 Jacob 和 Monod 提出\"], \"relatedEntities\": [\"基因调控\", \"阻遏蛋白\", \"启动子\", \"转录因子\"], \"references\": [\"Jacob F, Monod J. Genetic regulatory mechanisms in the synthesis of proteins. J Mol Biol, 1961\"]}"
+  },
+  {
+    "title": "数字PCR",
+    "url": "kg/entities/数字PCR.html",
+    "kind": "entity",
+    "text": "{\"id\": \"dpcr\", \"nameEn\": \"Digital PCR\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"数字PCR（dPCR）将PCR反应体系分割为数千至数百万个独立微反应器，每个含0或1个靶标分子，分散后进行终点PCR扩增，统计阳性微反应器数并通过泊松分布计算起始靶标分子绝对拷贝数。dPCR不依赖标准曲线和Ct值，无需内参基因校准，对抑制剂耐受性强，可实现<1%等位基因频率的稀有突变检测。主流平台包括Bio-Rad QX系统（液滴数字PCR，ddPCR）和Thermo Fisher QuantStudio 3D。\"}"
   },
   {
     "title": "染色质重塑",
@@ -396,10 +678,28 @@
     "text": "{\"id\": \"sequencing\", \"name\": \"测序技术\", \"nameEn\": \"Sequencing Technology\", \"category\": \"技术\", \"chapter\": \"第 11 章\", \"importance\": \"core-important\", \"definition\": \"DNA/RNA测序技术是测定核酸分子精确核苷酸序列的方法学体系，经历了三代革命性发展。第一代测序以Sanger双脱氧链终止法（1977年）为标志：利用ddNTP（缺少3'-OH基团）随机终止DNA链延伸反应，通过高分辨率聚丙烯酰胺凝胶电泳或毛细管电泳读出序列，读长可达800-1000 bp，准确度极高（>99.999%），至今仍是临床基因检测的'金标准'。第二代测序（NGS, 2005年起）以Illumina边合成边测序技术为代表：DNA样品经文库构建后在流动槽表面进行桥式PCR扩增形成簇，通过可逆终止荧光标记dNTP进行循环测序，单次运行可产生数十亿条短读长（150-300 bp），极大降低了测序成本（人类全基因组测序从30亿美元降至几百美元）。第三代测序（如PacBio SMRT和Oxford Nanopore）绕过PCR扩增直接对单个DNA分子进行实时测序，读长可达数万至数千万碱基对，使复杂基因组区域（如着丝粒、端粒、重复序列）的完整组装成为可能。三种测序技术的互补结合已成为现代基因组学研究的标配策略。\", \"keyConcepts\": [{\"term\": \"Sanger 测序\", \"definition\": \"链终止法测序，使用双脱氧核苷酸\"}, {\"term\": \"二代测序\", \"definition\": \"高通量测序技术，如 Illumina 测序\"}, {\"term\": \"三代测序\", \"definition\": \"单分子测序技术，如 PacBio 和 Nanopore\"}, {\"term\": \"边合成边测序\", \"definition\": \"Illumina 的测序原理\"}, {\"term\": \"单分子实时测序\", \"definition\": \"PacBio 的测序原理\"}], \"keyPoints\": [\"Sanger 测序是第一代测序技术\", \"二代测序实现了高通量、低成本测序\", \"三代测序可获得长读长序列\", \"人类基因组计划推动了测序技术发展\", \"测序技术在精准医学中应用广泛\"], \"relatedEntities\": [\"分子生物学技术\", \"基因组\", \"DNA\", \"PCR\"], \"references\": [\"Sanger F, et al. DNA sequencing with chain-terminating inhibitors. PNAS, 1977\"]}"
   },
   {
+    "title": "琼脂糖凝胶电泳",
+    "url": "kg/entities/琼脂糖凝胶电泳.html",
+    "kind": "entity",
+    "text": "{\"id\": \"agarose-gel\", \"nameEn\": \"Agarose Gel Electrophoresis\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"琼脂糖凝胶电泳是分离和分析DNA片段的首选方法。琼脂糖在加热溶于缓冲液后冷却形成由氢键交联的网状凝胶，DNA磷酸骨架带均匀负电荷向正极迁移，迁移速率与分子量对数成反比。凝胶浓度决定分离范围：0.7%胶分离0.8-10 kb，1.5%胶分离0.2-3 kb。SYBR Safe/GelRed等荧光嵌入染料使DNA在紫外或蓝光下可视化，通过DNA ladder估算样品片段大小和浓度。\"}"
+  },
+  {
     "title": "电泳",
     "url": "kg/entities/电泳.html",
     "kind": "entity",
     "text": "{\"id\": \"electrophoresis\", \"name\": \"电泳\", \"nameEn\": \"Electrophoresis\", \"category\": \"技术\", \"chapter\": \"第 11 章\", \"importance\": \"core-major\", \"definition\": \"电泳是利用带电分子在电场中迁移速率差异进行分离的技术，是分子生物学实验中最基础的分析和分离手段。在凝胶电泳中，带负电的核酸分子（DNA/RNA）在琼脂糖或聚丙烯酰胺凝胶中由负极向正极迁移，迁移速率与分子量对数成反比（小分子迁移快），同时受凝胶浓度、电场强度和缓冲体系影响。琼脂糖凝胶电泳分离范围约100 bp-50 kb，聚丙烯酰胺凝胶电泳（PAGE）分辨率可达单个碱基差异。SDS-PAGE是分析蛋白质分子量的标准方法：SDS变性蛋白质并赋予其均匀的负电荷密度，使迁移速率仅取决于分子量。脉冲场凝胶电泳（PFGE）通过交替改变电场方向分离大分子DNA（>50 kb至数Mb），是细菌分子分型和基因组大片段分析的核心工具。电泳不仅用于分离，更是Southern/Northern/Western三种印迹技术、Sanger测序和多种核酸检测方法的前置步骤。\", \"keyConcepts\": [{\"term\": \"琼脂糖凝胶电泳\", \"definition\": \"用于 DNA 和 RNA 分离的电泳方法\"}, {\"term\": \"SDS-PAGE\", \"definition\": \"用于蛋白质分离的聚丙烯酰胺凝胶电泳\"}, {\"term\": \"DNA Marker\", \"definition\": \"已知大小的 DNA 片段，用于估算样品大小\"}, {\"term\": \"溴化乙锭\", \"definition\": \"DNA 染料，可在紫外光下显示 DNA 条带\"}, {\"term\": \"迁移率\", \"definition\": \"分子在电场中的移动速度，与大小成反比\"}], \"keyPoints\": [\"电泳根据分子大小分离生物大分子\", \"琼脂糖凝胶用于 DNA/RNA 分离\", \"SDS-PAGE 用于蛋白质分离\", \"DNA 在琼脂糖凝胶中按大小分离\", \"电泳是分子生物学实验的基础技术\"], \"relatedEntities\": [\"分子生物学技术\", \"DNA\", \"蛋白质\", \"Western blot\"], \"references\": [\"Helling RB, et al. An analysis of the T4 bacteriophage lysis-lysogeny decision at the molecular level. J Virol, 1974\"]}"
+  },
+  {
+    "title": "疏水作用",
+    "url": "kg/entities/疏水作用.html",
+    "kind": "entity",
+    "text": "{\"id\": \"hydrophobic-effect\", \"nameEn\": \"Hydrophobic Effect\", \"category\": \"机制\", \"chapter\": \"第2章\", \"definition\": \"疏水效应是非极性分子或基团在水溶液中自发聚集减少与极性溶剂水分子接触面积的热力学现象，是蛋白质折叠最主要的驱动力。本质上并非非极性分子间存在真正吸引力，而是水的熵惩罚效应：非极性基团暴露于水中时，周围水分子被迫形成高度有序的笼状结构（熵减），系统总自由能上升。当非极性侧链埋藏在蛋白质疏水核心内部时，束缚的水分子被释放到本体溶液中重获移动自由（熵增），总自由能下降驱动折叠。\"}"
+  },
+  {
+    "title": "直接修复",
+    "url": "kg/entities/直接修复.html",
+    "kind": "entity",
+    "text": "{\"id\": \"direct-repair\", \"nameEn\": \"Direct Repair\", \"category\": \"过程\", \"chapter\": \"第5章\", \"definition\": \"直接修复是最简捷的DNA损伤修复方式——以单个酶反应直接逆转碱基化学修饰恢复至原始状态。代表性机制：光复活——DNA光裂合酶利用蓝光能量（350-450 nm）直接逆转CPD为非交联嘧啶，此酶在胎盘哺乳动物中已进化丢失；MGMT（O6-甲基鸟嘌呤-DNA甲基转移酶）将烷化损伤O6-甲基鸟嘌呤的甲基基团不可逆转移至自身活性位点半胱氨酸残基，为一次性自杀酶。MGMT启动子甲基化沉默者对抗烷化剂替莫唑胺更敏感——这是胶质母细胞瘤的重要药物基因组学标志。\"}"
   },
   {
     "title": "碱基切除修复",
@@ -414,10 +714,28 @@
     "text": "{\"id\": \"mutation\", \"name\": \"突变\", \"nameEn\": \"Mutation\", \"category\": \"基因组\", \"chapter\": \"第 3 章\", \"importance\": \"core-important\", \"definition\": \"突变是DNA序列的可遗传性改变，是遗传变异的根本来源和进化的原材料。按发生尺度分类：基因突变包括碱基替换（转换A↔G、C↔T或颠换嘌呤↔嘧啶）、插入、缺失（indel），可导致错义突变（氨基酸替换）、无义突变（提前出现终止密码子）、移码突变（改变阅读框）或剪接突变（破坏正常剪接）；染色体水平突变包括缺失、重复、倒位、易位以及染色体数目异常（非整倍体、多倍体）。按来源分类：自发突变源于DNA复制错误（碱基错配、聚合酶滑移导致的重复序列扩展/收缩）和碱基自发脱氨/脱嘌呤等化学损伤；诱发突变为环境因素所致（紫外线诱导嘧啶二聚体、电离辐射造成双链断裂、化学诱变剂如烷化剂修饰碱基）。生物体已进化出多层次DNA损伤修复系统（DNA损伤应答DDR网络）以对抗突变积累。驱动突变（driver mutation）赋予生长优势，是癌症发生的分子基础；乘客突变（passenger mutation）则为伴随事件。\", \"keyConcepts\": [{\"term\": \"点突变\", \"definition\": \"单个核苷酸的改变，包括转换和颠换\"}, {\"term\": \"插入\", \"definition\": \"DNA 序列中插入额外的核苷酸\"}, {\"term\": \"缺失\", \"definition\": \"DNA 序列中丢失核苷酸\"}, {\"term\": \"移码突变\", \"definition\": \"插入或缺失非 3 的倍数个核苷酸，导致阅读框改变\"}, {\"term\": \"错义突变\", \"definition\": \"改变氨基酸的点突变\"}, {\"term\": \"无义突变\", \"definition\": \"产生终止密码子的点突变\"}, {\"term\": \"同义突变\", \"definition\": \"不改变氨基酸的点突变\"}], \"keyPoints\": [\"突变是遗传变异的根本来源\", \"突变可由复制错误、辐射、化学物质等引起\", \"DNA 修复系统可纠正大部分突变\", \"突变可导致遗传病或癌症\", \"突变也是进化的原材料\"], \"relatedEntities\": [\"DNA 修复\", \"SNP\", \"遗传密码\", \"DNA 复制\"], \"references\": [\"Drake JW. A constant rate of spontaneous mutation in DNA-based microbes. PNAS, 1991\"]}"
   },
   {
+    "title": "类器官",
+    "url": "kg/entities/类器官.html",
+    "kind": "entity",
+    "text": "{\"id\": \"organoid\", \"nameEn\": \"Organoid\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"类器官源于成体干细胞或iPSC在3D细胞外基质中自组织形成的微型器官样结构，在细胞组成、空间架构和功能上高度模拟来源器官。Hans Clevers实验室2009年首次建立肠道类器官（Lgr5+干细胞在Wnt/Noggin/R-spondin条件下形成隐窝-绒毛结构），此后脑、肝、肾、肺等类器官相继建立。广泛应用于器官发育、疾病建模（患者来源肿瘤类器官预测个体化药敏）、再生医学和药物筛选，被Nature Methods评为2017年度方法。\"}"
+  },
+  {
+    "title": "类固醇激素",
+    "url": "kg/entities/类固醇激素.html",
+    "kind": "entity",
+    "text": "{\"id\": \"steroid-hormone\", \"nameEn\": \"Steroid Hormones\", \"category\": \"调控\", \"chapter\": \"第6章\", \"definition\": \"类固醇激素（糖皮质激素如皮质醇、性激素如雌二醇和睾酮等）是由胆固醇衍生的脂溶性激素，通过自由扩散穿过细胞膜与核内受体结合直接调控基因转录。类固醇激素受体（SHR）为核受体超家族成员，含DNA结合域（两锌指结构识别HRE）和C端配体结合域（LBD）。无配体时受体与Hsp90等分子伴侣形成胞质非活性复合物；配体结合后分子伴侣解离、受体二聚化入核结合HRE招募共激活因子（SRC/p160和CBP/p300 HAT）重塑染色质激活靶基因。糖皮质激素受体激动剂（地塞米松）是最广泛使用的抗炎免疫抑制药物。\"}"
+  },
+  {
     "title": "线粒体",
     "url": "kg/entities/线粒体.html",
     "kind": "entity",
     "text": "{\"id\": \"mitochondria\", \"name\": \"线粒体\", \"nameEn\": \"Mitochondria\", \"category\": \"分子\", \"chapter\": \"第2章\", \"importance\": \"core-important\", \"definition\": \"线粒体是真核细胞的半自主细胞器，通过氧化磷酸化（OXPHOS）将营养物质中的化学能转化为ATP，为细胞提供约90%的能量需求，被誉为'细胞的能量工厂'。线粒体具有双层膜结构：外膜含电压依赖性阴离子通道（VDAC/孔蛋白），允许小分子自由通透；内膜高度折叠形成嵴（cristae），大幅增加表面积以容纳电子传递链（复合物Ⅰ-Ⅳ）和ATP合酶（复合物Ⅴ）。线粒体拥有自身的小型环状双链DNA基因组（mtDNA，人类约16.6 kb，编码13个氧化磷酸化蛋白亚基、22个tRNA和2个rRNA），但绝大多数线粒体蛋白（约99%）由核基因组编码后输入线粒体，因此线粒体为半自主细胞器。线粒体还深度参与钙离子稳态维持、铁硫簇组装、活性氧信号调控以及凋亡的内在途径调控（通过释放细胞色素c激活caspase级联）。线粒体疾病（mtDNA突变导致的母系遗传病，如Leber遗传性视神经病变和MELAS综合征）和线粒体功能障碍是神经退行性疾病和代谢综合征的重要研究方向。\", \"keyConcepts\": [{\"term\": \"外膜\", \"definition\": \"线粒体外层膜，通透性较高\"}, {\"term\": \"内膜\", \"definition\": \"线粒体内层膜，形成嵴，含有电子传递链\"}, {\"term\": \"嵴\", \"definition\": \"内膜向内折叠形成的结构，增加表面积\"}, {\"term\": \"基质\", \"definition\": \"内膜包围的空间，含有三羧酸循环酶系\"}, {\"term\": \"mtDNA\", \"definition\": \"线粒体DNA，环状双链，母系遗传\"}, {\"term\": \"氧化磷酸化\", \"definition\": \"通过电子传递链和ATP合酶产生ATP的过程\"}], \"keyPoints\": [\"线粒体是半自主细胞器，含有自己的DNA和核糖体\", \"线粒体DNA母系遗传，用于进化研究和亲子鉴定\", \"线粒体通过分裂增殖，与细胞周期不完全同步\", \"线粒体功能障碍与多种疾病相关（线粒体病）\", \"线粒体在细胞凋亡中起关键作用\"], \"relatedEntities\": [\"DNA\", \"RNA\", \"核糖体\", \"细胞凋亡\", \"ATP\"], \"references\": [\"Alberts B, et al. Molecular Biology of the Cell. 6th ed. Garland Science, 2015\"]}"
+  },
+  {
+    "title": "组合调控",
+    "url": "kg/entities/组合调控.html",
+    "kind": "entity",
+    "text": "{\"id\": \"combinatorial-control\", \"nameEn\": \"Combinatorial Regulation\", \"category\": \"调控\", \"chapter\": \"第4章\", \"definition\": \"组合调控是有限数量转录因子通过不同组合方式（同源/异源二聚化、协同或竞争结合邻近DNA位点）调控大量基因时空特异性表达的核心设计原则，解释了人类仅编码约1600种转录因子却能精细调控超过20000个基因的悖论。因子间的协同性极大地提高了DNA结合的序列特异性和亲和力。典型实例：干扰素-β增强小体的8种转录因子严格组合组装仅在被病毒感染的细胞中发生；Oct4-Sox2-Nanog核心多能性网络通过组合调控决定胚胎干细胞命运。\"}"
   },
   {
     "title": "组蛋白修饰",
@@ -444,6 +762,12 @@
     "text": "{\"id\": \"cell-cycle-kg\", \"nameEn\": \"Cell Cycle\", \"category\": \"过程\", \"chapter\": \"第3章\", \"importance\": \"core-important\", \"keyConcepts\": [{\"term\": \"G1期\", \"definition\": \"细胞生长和蛋白质合成，为DNA复制做准备\"}, {\"term\": \"S期\", \"definition\": \"DNA合成期，每条染色体的DNA被精确复制为两条姐妹染色单体\"}, {\"term\": \"G2期\", \"definition\": \"DNA复制完成后的第二个生长期，细胞检查DNA完整性并准备进入有丝分裂\"}, {\"term\": \"M期\", \"definition\": \"有丝分裂期，复制后的染色体被均匀分配到两个子细胞中\"}], \"keyPoints\": [\"G1→S→G2→M四个连续时相\", \"CDK-周期蛋白复合物是核心驱动引擎\", \"检验点确保各阶段正确完成才进入下一阶段\", \"细胞周期失调是癌症的共性特征\"], \"relatedEntities\": [\"周期蛋白依赖性激酶\", \"周期蛋白\", \"细胞周期检验点\", \"细胞凋亡\", \"DNA 复制\"], \"definition\": \"细胞周期是细胞从一次分裂完成到下一次分裂结束所经历的有序事件序列，由间期（G1→S→G2）和分裂期（M期）组成。G1期是决定细胞是否继续增殖的关键决策点——通过限制点（Restriction Point）后细胞将不可逆地进入增殖程序。S期染色体DNA被精确复制为姐妹染色单体。G2期为有丝分裂做最后的准备工作。M期（有丝分裂+胞质分裂）将复制后的遗传物质均等分配到两个子细胞。细胞周期的有序推进依赖CDK（周期蛋白依赖性激酶）的周期性激活和失活：不同周期蛋白在特定时相合成并与相应CDK结合，使CDK磷酸化关键底物驱动时相转换。多个检验点监控DNA完整性、复制完成情况和纺锤体组装，在检测到异常时暂停周期进程进行修复。细胞周期调控失常是几乎所有恶性肿瘤的共同特征。\"}"
   },
   {
+    "title": "细胞工厂",
+    "url": "kg/entities/细胞工厂.html",
+    "kind": "entity",
+    "text": "{\"id\": \"cell-factory\", \"nameEn\": \"Microbial Cell Factory\", \"category\": \"概念\", \"chapter\": \"第8章\", \"definition\": \"细胞工厂是通过代谢工程和合成生物学手段对微生物或细胞进行基因改造，使其定向高效合成高附加值化合物（药物、燃料、化学品）的生物制造平台。经典成果：大肠杆菌生产胰岛素（首个重组蛋白药物，1982年Humulin获批）、酵母生产抗疟疾药物青蒿素前体青蒿酸（Keasling实验室，2006年）和大麻素。代谢工程设计策略：优化限速酶表达、敲除竞争分支途径、引入异源合成途径、辅因子工程以及动态调控。酿酒酵母和谷氨酸棒杆菌是高端化学品合成的优先底盘微生物。\"}"
+  },
+  {
     "title": "细胞膜",
     "url": "kg/entities/细胞膜.html",
     "kind": "entity",
@@ -462,16 +786,52 @@
     "text": "{\"id\": \"insulator\", \"name\": \"绝缘子\", \"nameEn\": \"Insulator\", \"category\": \"调控\", \"chapter\": \"第7-8章\", \"importance\": \"core-basic\", \"definition\": \"绝缘子（Insulator）是基因组中具有两种独立功能的边界调控元件：①增强子阻断活性——当绝缘子位于增强子和启动子之间时，阻止增强子对启动子的激活作用，但允许增强子作用于绝缘子同侧的其他启动子，确保基因调控的特异性和独立；②异染色质屏障活性——阻止组成型异染色质的蔓延扩散，保护邻近常染色质区域的基因免受沉默。脊椎动物绝缘子的标志性实例是CTCF结合位点：CTCF（CCCTC结合因子）是一种11锌指蛋白，在人类基因组中有数万个结合位点，通过与cohesin复合物协同作用介导染色质环的形成，在三维基因组组织中发挥核心作用——约一半的拓扑关联结构域（TAD）边界为CTCF结合位点。CTCF结合位点的DNA甲基化可阻断CTCF结合，导致绝缘子功能丧失——这是IGF2-H19印记基因座研究的经典范例：在母源等位基因上CTCF结合绝缘子阻止下游增强子上游IGF2启动子；在父源等位基因上该位点为甲基化状态、CTCF无法结合，增强子激活IGF2。\", \"keyConcepts\": [{\"term\": \"增强子阻断\", \"definition\": \"绝缘子阻止增强子远距离激活基因\"}, {\"term\": \"异染色质屏障\", \"definition\": \"绝缘子阻止异染色质扩散到常染色质区域\"}, {\"term\": \"CTCF\", \"definition\": \"绝缘子结合蛋白，介导染色质环化\"}, {\"term\": \"染色质环\", \"definition\": \"CTCF介导的染色质空间结构，形成拓扑关联结构域\"}, {\"term\": \"TAD\", \"definition\": \"拓扑关联结构域，染色质的基本功能单位\"}, {\"term\": \"基因座控制区\", \"definition\": \"LCR，含有绝缘子元件的调控区域\"}], \"keyPoints\": [\"绝缘子确保基因独立调控\", \"CTCF是哺乳动物主要的绝缘子结合蛋白\", \"绝缘子参与染色质三维结构组织\", \"TAD是染色质的基本功能单位\", \"绝缘子异常与基因表达失调相关\"], \"relatedEntities\": [\"增强子\", \"沉默子\", \"基因调控\", \"染色质\", \"CTCF\"], \"references\": [\"Gaszner M, Felsenfeld G. Insulators: exploiting transcriptional and epigenetic mechanisms. Nat Rev Genet, 2006\"]}"
   },
   {
+    "title": "罕见密码子",
+    "url": "kg/entities/罕见密码子.html",
+    "kind": "entity",
+    "text": "{\"id\": \"rare-codon\", \"nameEn\": \"Rare Codon\", \"category\": \"调控\", \"chapter\": \"第4章\", \"definition\": \"罕见密码子是基因组中使用频率显著低于其同义密码子的三联体密码子，对应低丰度的同源tRNA。大肠杆菌中AGG/AGA（精氨酸）、AUA（异亮氨酸）和CUA（亮氨酸）为最典型罕见密码子。mRNA中罕见密码子簇的出现导致核糖体在该区域停滞等待稀有tRNA，降低翻译延伸速率甚至触发提前终止和蛋白质截短——这是大肠杆菌中表达哺乳动物蛋白时常遇到的问题，解决方法为密码子优化或共表达稀有tRNA基因。生物体也主动利用罕见密码子作为翻译速率调控的减速带，协调新生多肽链的共翻译折叠。\"}"
+  },
+  {
     "title": "翻译",
     "url": "kg/entities/翻译.html",
     "kind": "entity",
     "text": "{\"id\": \"translation-kg\", \"nameEn\": \"Translation\", \"category\": \"过程\", \"chapter\": \"第4章\", \"importance\": \"core-important\", \"definition\": \"翻译是以mRNA为模板、在核糖体上合成多肽链的过程，是中心法则中RNA→蛋白质的信息传递步骤。翻译分为三个主要阶段：①起始——小亚基识别mRNA的5'帽并扫描至起始密码子AUG，起始Met-tRNAᵢ通过eIF2-GTP递送至P位，大亚基加入组装为80S（真核）/70S（原核）完整核糖体；②延伸——氨酰-tRNA在eEF1A（原核EF-Tu）帮助下进入A位，核糖体大亚基的肽基转移酶中心（由rRNA催化）将P位肽基转移至A位氨基酸形成肽键，eEF2（原核EF-G）催化核糖体沿mRNA转位一个密码子；③终止——释放因子识别终止密码子触发肽基-tRNA水解释放多肽链、核糖体亚基解离。翻译的高保真性依赖于氨酰-tRNA合成酶对tRNA-氨基酸配对的精确校对以及核糖体解码中心对密码子-反密码子配对的监控。\", \"keyConcepts\": [{\"term\": \"起始\", \"definition\": \"小亚基扫描至AUG、起始tRNA进入P位、大亚基加入完成组装\"}, {\"term\": \"延伸\", \"definition\": \"氨酰-tRNA进入A位→肽键形成→核糖体转位一个密码子的循环\"}, {\"term\": \"终止\", \"definition\": \"释放因子识别UAA/UAG/UGA→水解释放多肽→亚基解离\"}], \"keyPoints\": [\"mRNA→蛋白质，完成遗传信息的最终表达\", \"在核糖体上进行，需mRNA、tRNA、多种翻译因子的协同\", \"起始是限速步骤，受多重调控\", \"许多抗生素通过抑制细菌翻译发挥作用\"], \"relatedEntities\": [\"DNA\", \"RNA\", \"蛋白质\", \"mRNA\", \"tRNA\", \"核糖体\", \"密码子\", \"氨基酸\"]}"
   },
   {
+    "title": "聚丙烯酰胺凝胶电泳",
+    "url": "kg/entities/聚丙烯酰胺凝胶电泳.html",
+    "kind": "entity",
+    "text": "{\"id\": \"page\", \"nameEn\": \"PAGE\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"聚丙烯酰胺凝胶电泳（PAGE）利用丙烯酰胺和双丙烯酰胺聚合形成的孔径均一的筛分介质，在电场中按分子大小分离生物大分子。SDS-PAGE是最常用的蛋白质分析变体：SDS以约1.4 g/g蛋白质的比例结合多肽链赋予均匀负电荷密度，使迁移率主要取决于分子量（12%胶分离10-40 kDa，8%胶分离40-100 kDa）。Native-PAGE保留蛋白质天然构象和活性。PAGE也是DNA测序（Sanger法）和寡核苷酸纯化的基础工具。\"}"
+  },
+  {
+    "title": "自体调控",
+    "url": "kg/entities/自体调控.html",
+    "kind": "entity",
+    "text": "{\"id\": \"autoregulation\", \"nameEn\": \"Autoregulation\", \"category\": \"调控\", \"chapter\": \"第5章\", \"definition\": \"自体调控是调控蛋白调控自身基因转录的现象，是实现基因表达稳态的负反馈或正反馈回路。AraC既是araBAD操纵子的激活因子又是自身基因araC的转录抑制因子（负自体调控），维持AraC蛋白浓度稳态且不受阿拉伯糖浓度波动的剧烈影响。λ噬菌体的CI阻遏蛋白是正自体调控的经典：CI结合自身启动子——低浓度时激活自身转录（正反馈建立稳定阻遏维持溶原性），高浓度时抑制自身转录（防止过度表达浪费资源）。正负自体调控的精妙组合赋予基因调控网络鲁棒性。\"}"
+  },
+  {
+    "title": "自发性损伤",
+    "url": "kg/entities/自发性损伤.html",
+    "kind": "entity",
+    "text": "{\"id\": \"spontaneous-damage\", \"nameEn\": \"Spontaneous DNA Damage\", \"category\": \"过程\", \"chapter\": \"第5章\", \"definition\": \"自发性DNA损伤是无外源因素下由细胞内化学环境导致的DNA化学改变，是基因组不稳定的最大单一来源——每个哺乳动物细胞每天发生数万至数十万次自发损伤。主要类型：碱基自发脱嘌呤（每天约10000次/细胞）、胞嘧啶自发脱氨基产生尿嘧啶（C→U，复制时导致C→T转换——人类基因组最常见点突变类型）、以及线粒体呼吸链泄漏的活性氧产生8-oxoG等氧化碱基。BER、NER和MMR等修复通路的协同将这些损伤的净突变率控制在极低水平。\"}"
+  },
+  {
     "title": "自噬",
     "url": "kg/entities/自噬.html",
     "kind": "entity",
     "text": "{\"id\": \"autophagy\", \"name\": \"自噬\", \"nameEn\": \"Autophagy\", \"category\": \"过程\", \"chapter\": \"第5章\", \"importance\": \"core-major\", \"definition\": \"自噬（Autophagy）是细胞将自身胞质成分（受损细胞器、蛋白质聚集体和病原体）包裹入双层膜结构的自噬体，与溶酶体（动物）或液泡（酵母和植物）融合进行降解和循环再利用的进化保守过程，可分为巨自噬（macroautophagy，最典型）、微自噬和分子伴侣介导的自噬三种类型。自噬的核心分子机器由超过30种ATG（autophagy-related）基因编码的蛋白质组成：mTORC1在营养充足时磷酸化抑制ULK1/ATG1复合物；饥饿、缺氧等信号抑制mTORC1，ULK1复合物激活后磷酸化下游Beclin-1-VPS34 PI3K复合物产生PI3P，招募WIPI和ATG12-ATG5-ATG16L1复合物催化LC3/ATG8的磷脂酰乙醇胺（PE）脂化，脂化的LC3（LC3-II）插入自噬体膜并介导货物受体的选择性自噬（如p62/SQSTM1识别泛素化蛋白聚集体）。自噬的双重角色在疾病中尤为突出：①通过清除损伤线粒体和蛋白聚集体发挥细胞保护作用，自噬功能减退与神经退行性疾病（帕金森病中PINK1/Parkin介导的线粒体自噬通路缺陷）和衰老相关；②在某些癌症晚期，自噬反而帮助肿瘤细胞在缺氧和营养匮乏的微环境中存活，此时抑制自噬成为治疗策略（临床使用氯喹/羟氯喹作为自噬抑制剂）。\", \"keyConcepts\": [{\"term\": \"自噬体\", \"definition\": \"双层膜结构，包裹待降解的胞质成分\"}, {\"term\": \"溶酶体\", \"definition\": \"含有水解酶的细胞器，降解自噬体内容物\"}, {\"term\": \"自噬溶酶体\", \"definition\": \"自噬体与溶酶体融合后的结构\"}, {\"term\": \"ATG基因\", \"definition\": \"自噬相关基因，编码自噬 machinery 蛋白\"}, {\"term\": \"mTOR\", \"definition\": \"营养感应激酶，抑制自噬的主要调控因子\"}, {\"term\": \"LC3\", \"definition\": \"自噬体膜蛋白，自噬的标志物\"}], \"keyPoints\": [\"自噬是细胞自我更新的重要机制\", \"自噬在营养缺乏时提供能量和原料\", \"自噬异常与癌症、神经退行性疾病和感染相关\", \"自噬可选择性降解受损细胞器（线粒体自噬）\", \"2016年诺贝尔生理学或医学奖授予自噬研究\"], \"relatedEntities\": [\"溶酶体\", \"线粒体\", \"mTOR\", \"细胞凋亡\", \"蛋白质\"], \"references\": [\"Mizushima N, Ohsumi Y. Autophagy: renovation of cells and tissues. Cell, 2011\"]}"
+  },
+  {
+    "title": "荧光法",
+    "url": "kg/entities/荧光法.html",
+    "kind": "entity",
+    "text": "{\"id\": \"fluorometry\", \"nameEn\": \"Fluorescence-Based Methods\", \"category\": \"技术\", \"chapter\": \"第7章\", \"definition\": \"荧光分析法利用荧光团吸收激发光子后发射更长波长发射光的物理特性进行检测，灵敏度可达皮摩尔级别。在分子生物学中广泛应用：荧光蛋白（GFP及其颜色变体如YFP/CFP/mCherry，2008年诺贝尔化学奖）遗传融合实现活细胞内实时定位和动态监测；免疫荧光——荧光标记抗体在固定细胞/组织切片上定位蛋白；FRET（荧光共振能量转移）——两个邻近荧光团间的非辐射能量转移效率随距离的6次方衰减，是检测纳米级蛋白质相互作用的分子尺子。\"}"
+  },
+  {
+    "title": "葡萄糖效应",
+    "url": "kg/entities/葡萄糖效应.html",
+    "kind": "entity",
+    "text": "{\"id\": \"glucose-effect\", \"nameEn\": \"Glucose Effect / Catabolite Repression\", \"category\": \"调控\", \"chapter\": \"第5章\", \"definition\": \"葡萄糖效应（分解代谢物阻遏）是细菌优先利用葡萄糖时抑制其他糖类代谢操纵子转录的全局调控现象。分子机制：葡萄糖通过PTS转运时对腺苷酸环化酶和EIIA的调控间接影响cAMP-CAP复合物——葡萄糖高浓度→去磷酸化EIIA积累→抑制AC活性→cAMP浓度低→CAP无法活化→CAP依赖型操纵子（约大肠杆菌基因组50%转录单元）被抑制。葡萄糖耗尽后磷酸化EIIA激活AC→cAMP上升→CAP-cAMP结合靶启动子上游增强转录。\"}"
   },
   {
     "title": "蛋白质",
@@ -486,16 +846,46 @@
     "text": "{\"id\": \"epigenetics\", \"nameEn\": \"Epigenetics\", \"category\": \"调控\", \"chapter\": \"第3章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"DNA甲基化\", \"definition\": \"CpG岛胞嘧啶5位甲基化，通常与基因沉默相关\"}, {\"term\": \"组蛋白修饰\", \"definition\": \"组蛋白尾部的共价修饰（乙酰化、甲基化、磷酸化等），调控染色质结构和基因可及性\"}, {\"term\": \"染色质重塑\", \"definition\": \"ATP依赖的核小体重定位，改变局部DNA可及性\"}, {\"term\": \"非编码RNA\", \"definition\": \"miRNA、lncRNA等通过碱基配对或招募染色质修饰复合物调控基因表达\"}], \"keyPoints\": [\"不改变DNA序列而改变基因表达的遗传性变化\", \"DNA甲基化、组蛋白修饰、染色质重塑和非编码RNA为四大机制\", \"在发育、细胞分化和疾病中发挥关键作用\", \"表观遗传改变是可逆的，为治疗提供可能\"], \"relatedEntities\": [\"DNA甲基化\", \"组蛋白修饰\", \"染色质重塑\", \"miRNA\", \"基因调控\"], \"definition\": \"表观遗传学是研究在不改变DNA一级序列的情况下，基因表达发生可遗传变化的学科。表观遗传修饰构成了DNA序列之外的'第二层'遗传信息——序列相同的基因在不同细胞类型中通过差异化的表观修饰实现选择性激活或沉默。核心的分子机制包括：①DNA甲基化——DNMT催化CpG位点添加甲基，启动子CpG岛超甲基化导致稳定的基因沉默；②组蛋白翻译后修饰——'组蛋白密码'假说认为特定修饰组合定义了染色质的功能状态（H3K4me3标记活性启动子，H3K27me3标记Polycomb抑制染色质）；③ATP依赖的染色质重塑——SWI/SNF等复合物利用ATP水解能量滑动或移除核小体，调控转录因子和RNA聚合酶的DNA可及性；④非编码RNA——特别是lncRNA可通过招募染色质修饰复合物（如Xist RNA招募PRC2介导X染色体失活）在特定基因座建立表观遗传状态。表观遗传的可逆性使其成为极具吸引力的治疗靶点。\"}"
   },
   {
+    "title": "衰减机制",
+    "url": "kg/entities/衰减机制.html",
+    "kind": "entity",
+    "text": "{\"id\": \"attenuation\", \"nameEn\": \"Attenuation\", \"category\": \"调控\", \"chapter\": \"第5章\", \"definition\": \"衰减是原核生物合成代谢操纵子独有的转录调控机制，利用转录-翻译偶联特性通过核糖体在mRNA前导序列上翻译前导肽的速率间接控制RNA聚合酶是否继续转录。以色氨酸操纵子为代表：前导序列trpL编码14个氨基酸前导肽，第10和11位为两个邻接色氨酸密码子。色氨酸缺乏时核糖体停滞在色氨酸密码子处，下游形成抗终止子构象（2-3茎环），RNA聚合酶继续转录；色氨酸充足时核糖体高效翻译覆盖序列1，允许形成终止子构象（3-4茎环）使RNA聚合酶在U串处终止。衰减实现了比单纯阻遏/去阻遏更精细和更快速的反馈调控。\"}"
+  },
+  {
     "title": "解旋酶",
     "url": "kg/entities/解旋酶.html",
     "kind": "entity",
     "text": "{\"id\": \"helicase\", \"name\": \"解旋酶\", \"nameEn\": \"Helicase\", \"category\": \"酶\", \"chapter\": \"第 3 章\", \"importance\": \"core-major\", \"definition\": \"解旋酶（Helicase）是一类利用核苷三磷酸（通常是ATP）水解的能量，在核酸双链或二级结构上进行定向移位并解离互补链或破坏RNA二级结构的分子马达蛋白。DNA解旋酶是DNA复制起始阶段的核心酶：在原核生物中，DnaB解旋酶被装载蛋白DnaC递送到复制起点解开的DNA上，沿后随链5'→3'方向移动，在前方解旋双链、为DNA聚合酶Ⅲ提供单链模板。MCM2-7六聚体复合物则是真核DNA复制的许可因子和解旋酶核心，在G1期装载到复制起点，S期被CDK/DDK磷酸化激活后在复制叉前解旋双链。RecQ家族解旋酶（人类有RECQL1-5五个成员，BLM/WRN/RECQL4缺陷分别引起Bloom综合征、Werner综合征和Rothmund-Thomson综合征）在DNA重组修复、复制叉稳定性和端粒维持中发挥关键作用，其缺陷导致基因组不稳定和早衰表型。DEAD/H-box RNA解旋酶超家族成员参与所有RNA代谢过程：eIF4A（DEAD-box）在翻译起始中解旋mRNA 5'UTR的二级结构，剪接体中的解旋酶介导RNA-RNA和RNA-蛋白质重排。\", \"keyConcepts\": [{\"term\": \"DnaB 解旋酶\", \"definition\": \"大肠杆菌中主要的复制解旋酶\"}, {\"term\": \"MCM 复合物\", \"definition\": \"真核生物的复制解旋酶，在复制起始中起作用\"}, {\"term\": \"RecQ 解旋酶\", \"definition\": \"参与 DNA 修复的解旋酶家族\"}, {\"term\": \"SV40 大 T 抗原\", \"definition\": \"SV40 病毒的解旋酶，常用于体外研究\"}, {\"term\": \"ATP 依赖性\", \"definition\": \"解旋酶需要 ATP 水解提供能量\"}], \"keyPoints\": [\"解旋酶解开 DNA 双链，为复制和转录提供单链模板\", \"解旋酶是 DNA 复制的关键酶之一\", \"解旋酶具有方向性（5'→3'或 3'→5'）\", \"解旋酶缺陷可导致基因组不稳定和疾病\", \"解旋酶在 DNA 修复和重组中也发挥作用\"], \"relatedEntities\": [\"DNA 复制\", \"DNA 修复\", \"DNA 聚合酶\", \"基因转录\"], \"references\": [\"Lohman TM, Bjornson KP. Mechanisms of helicase-catalyzed DNA unwinding. Annu Rev Biochem, 1996\"], \"structure\": {\"pdbId\": \"1CRN\", \"pdbUrl\": \"https://www.rcsb.org/structure/1CRN\", \"alphafoldUrl\": \"https://alphafold.ebi.ac.uk/entry/P03004\", \"description\": \"大肠杆菌 DnaB 解旋酶结构\", \"imageUrl\": \"https://cdn.rcsb.org/images/1c/1crn/1crn_assembly-1.jpeg\"}}"
   },
   {
+    "title": "诱发性损伤",
+    "url": "kg/entities/诱发性损伤.html",
+    "kind": "entity",
+    "text": "{\"id\": \"induced-damage\", \"nameEn\": \"Induced DNA Damage\", \"category\": \"过程\", \"chapter\": \"第5章\", \"definition\": \"诱发性DNA损伤是由外部物理、化学或生物因素导致的DNA化学结构改变，是癌症和遗传病的重要病因。主要外源损伤源：紫外线辐射诱导嘧啶二聚体（CPD和6-4光产物）；电离辐射造成单链和双链断裂及碱基损伤；化学致癌物——苯并[a]芘经CYP450活化形成二醇环氧化物加合物、黄曲霉毒素B1形成AFB1-鸟嘌呤加合物（TP53第249密码子G→T颠换热点，肝癌）；化疗药物顺铂形成链内和链间交联阻碍复制和转录。\"}"
+  },
+  {
+    "title": "诱导物",
+    "url": "kg/entities/诱导物.html",
+    "kind": "entity",
+    "text": "{\"id\": \"inducer\", \"nameEn\": \"Inducer\", \"category\": \"调控\", \"chapter\": \"第5章\", \"definition\": \"诱导物是与阻遏蛋白结合改变其DNA结合构象从而解除转录抑制的小分子效应物（通常为代谢底物或其类似物）。经典范例：乳糖操纵子的生理诱导物为别乳糖（allolactose，β-半乳糖苷酶从乳糖的转糖基副反应产生），常用实验诱导物为IPTG——不能被代谢的非水解类似物，可使lac操纵子持续处于诱导状态而IPTG浓度恒定。阿拉伯糖操纵子中阿拉伯糖本身作为诱导物灭活AraC阻遏蛋白。诱导物-阻遏蛋白的别构调控原理在哺乳动物TET-ON/OFF系统中得到工程化应用。\"}"
+  },
+  {
     "title": "质粒",
     "url": "kg/entities/质粒.html",
     "kind": "entity",
     "text": "{\"id\": \"plasmid\", \"name\": \"质粒\", \"nameEn\": \"Plasmid\", \"category\": \"分子\", \"chapter\": \"第 11 章\", \"importance\": \"core-major\", \"definition\": \"质粒是细菌中独立于染色体之外、能自主复制的环状双链DNA分子（少数质粒为线状），大小从数千碱基对到数百千碱基对不等。质粒天然携带多种功能基因，最典型的是抗生素抗性基因和毒力因子基因，为宿主菌提供选择性优势。作为基因工程中最核心的载体工具，人工质粒/克隆载体整合了以下关键元件：①多克隆位点（MCS）——含密集的限制酶单一识别位点，便于外源DNA的定向插入；②选择性标记基因——抗生素抗性基因（氨苄青霉素Ampʳ、卡那霉素Kanʳ）便于筛选阳性克隆；③复制起点（ori）——决定质粒在宿主菌中的拷贝数和复制类型（pMB1衍生ori为多拷贝型>100 copies/cell，pSC101衍生ori为严格控制型~5 copies/cell）。此外，表达载体在MCS上游整合强启动子（T7、lac、CMV）和调控元件，用于目标蛋白的高效表达。pBR322（第一个被广泛采用的克隆载体，1977年）、pUC系列（高拷贝、含lacZα的蓝白斑筛选）和pET系列（T7启动子驱动的表达载体）是分子克隆中最具代表性的载体系统。\", \"keyConcepts\": [{\"term\": \"复制起点\", \"definition\": \"质粒 DNA 复制的起始位点\"}, {\"term\": \"抗生素抗性基因\", \"definition\": \"质粒上编码抗生素抗性的基因，用于筛选\"}, {\"term\": \"多克隆位点\", \"definition\": \"质粒上含有多个限制性酶切位点的区域\"}, {\"term\": \"拷贝数\", \"definition\": \"每个细胞中质粒的数量\"}, {\"term\": \"接合\", \"definition\": \"细菌间通过性菌毛转移质粒的过程\"}], \"keyPoints\": [\"质粒是独立于细菌染色体的 DNA 分子\", \"质粒可自主复制并遗传给子代细胞\", \"质粒是基因工程的主要载体\", \"质粒携带抗生素抗性基因便于筛选\", \"质粒可在细菌间水平转移\"], \"relatedEntities\": [\"基因工程\", \"DNA 复制\", \"载体\", \"转化\"], \"references\": [\"Cohen SN. The manipulation of genes. Sci Am, 1975\"]}"
+  },
+  {
+    "title": "质谱蛋白质组学",
+    "url": "kg/entities/质谱蛋白质组学.html",
+    "kind": "entity",
+    "text": "{\"id\": \"ms-proteomics\", \"nameEn\": \"Mass Spectrometry Proteomics\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"质谱蛋白质组学是利用质谱技术对复杂生物样品中蛋白质进行大规模鉴定和定量的学科。经典bottom-up流程：蛋白质经胰蛋白酶消化为肽段→LC分离→ESI离子化→质谱仪（Orbitrap或TOF）采集MS1和MS2谱图→数据库搜索（MaxQuant/Sequest）鉴定肽段推断蛋白质。定量策略包括非标定量（LFQ）、同位素标记（SILAC/TMT/iTRAQ）和数据非依赖采集（DIA/SWATH）。蛋白质组学已与基因组学和转录组学并列成为系统生物学三大支柱。\"}"
+  },
+  {
+    "title": "起始因子",
+    "url": "kg/entities/起始因子.html",
+    "kind": "entity",
+    "text": "{\"id\": \"initiation-factors\", \"nameEn\": \"Translation Initiation Factors\", \"category\": \"调控\", \"chapter\": \"第4章\", \"definition\": \"真核翻译起始因子（eIFs）是协调帽依赖性翻译起始的多蛋白因子家族。关键eIF包括：eIF4F复合物（eIF4E帽结合蛋白+eIF4A解旋酶+eIF4G骨架蛋白）识别mRNA 5’帽并解旋5’UTR二级结构；eIF2-GTP将Met-tRNAi递送至40S小亚基P位形成43S预起始复合物；eIF3（约13亚基）桥接eIF4G和40S亚基；eIF1和eIF1A确保起始密码子精确识别。起始是翻译的最主要调控层面，eIF2α磷酸化和4E-BP介导的eIF4E抑制是两条关键负调控通路。\"}"
   },
   {
     "title": "转化",
@@ -540,10 +930,40 @@
     "text": "{\"id\": \"alt-splicing\", \"nameEn\": \"Alternative Splicing\", \"category\": \"过程\", \"chapter\": \"第3章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"外显子跳跃\", \"definition\": \"最常见的选择性剪接模式，特定外显子被整体切除或保留\"}, {\"term\": \"5'/3'可变剪接位点\", \"definition\": \"使用可变的5'或3'剪接位点，产生长度变化的外显子\"}, {\"term\": \"内含子保留\", \"definition\": \"内含子未被切除而保留在成熟mRNA中\"}, {\"term\": \"SR蛋白\", \"definition\": \"富含丝氨酸/精氨酸的剪接调控蛋白，结合外显子剪接增强子促进外显子包含\"}], \"keyPoints\": [\"使一个基因产生多个蛋白质异构体\", \"约95%人类多外显子基因经历选择性剪接\", \"由顺式剪接信号和反式剪接因子协同调控\", \"组织特异性和发育阶段特异性剪接模式\"], \"relatedEntities\": [\"RNA剪接\", \"外显子\", \"内含子\", \"转录\", \"基因调控\"], \"definition\": \"选择性剪接是pre-mRNA通过可变地组合外显子和切除内含子，从单一基因产生多种不同mRNA和蛋白质异构体的过程，是高等真核生物蛋白质组多样性的核心来源——人类约95%的多外显子基因经历选择性剪接，解释了为何约20,000个蛋白质编码基因能产生远超此数的蛋白质种类。主要模式包括外显子跳跃（cassette exon）、互斥外显子、5'/3'可变剪接位点的选择以及内含子保留。剪接位点的选择由两类顺式作用RNA序列（剪接增强子ESE/ISE和剪接沉默子ESS/ISS）和反式作用剪接因子（SR蛋白和hnRNP蛋白家族）之间的动态相互作用决定。选择性剪接的异常与约15-50%的人类遗传病和多种癌症直接相关——如脊髓性肌萎缩症（SMN1/SMN2基因）、额颞叶痴呆（Tau蛋白异构体失衡），因此纠正剪接缺陷已成为新兴治疗策略。\"}"
   },
   {
+    "title": "递送系统",
+    "url": "kg/entities/递送系统.html",
+    "kind": "entity",
+    "text": "{\"id\": \"delivery-system\", \"nameEn\": \"Gene Delivery Systems\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"基因递送系统是将外源核酸安全高效地转入靶细胞或体内靶组织的运输工具，是基因治疗临床转化的核心瓶颈。两大类系统：病毒载体——AAV（非整合、低免疫原性、载量约4.7 kb，体内基因治疗首选如Luxturna）、慢病毒（整合染色体、适合体外修饰造血干细胞如CAR-T）和腺病毒（高载量、瞬时表达）；非病毒载体——脂质纳米颗粒（LNP，如mRNA COVID-19疫苗）和聚合物纳米颗粒等，优势在安全性和可重复给药，但递送效率普遍低于病毒载体。\"}"
+  },
+  {
+    "title": "酵母双杂交",
+    "url": "kg/entities/酵母双杂交.html",
+    "kind": "entity",
+    "text": "{\"id\": \"yeast-two-hybrid\", \"nameEn\": \"Yeast Two-Hybrid\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"酵母双杂交（Y2H）是检测蛋白质-蛋白质相互作用的经典遗传学技术，基于Gal4转录因子的模块化可拆分特性：Gal4的DNA结合域（DBD）与转录激活域（AD）分离时不能激活转录。将诱饵蛋白融合DBD、猎物蛋白融合AD：若两者相互作用→DBD和AD被牵引至空间邻近→重建功能性Gal4→激活报告基因（lacZ/β-半乳糖苷酶或HIS3营养缺陷型筛选标志）的表达。Y2H易于高通量，已用于绘制全蛋白质组规模相互作用网络。限于核内可溶相互作用的检测。\"}"
+  },
+  {
     "title": "酶",
     "url": "kg/entities/酶.html",
     "kind": "entity",
     "text": "{\"id\": \"enzyme\", \"name\": \"酶\", \"nameEn\": \"Enzyme\", \"category\": \"分子\", \"chapter\": \"第2章\", \"importance\": \"core-important\", \"definition\": \"酶是生物催化剂，绝大多数是蛋白质（少数为RNA即核酶），通过降低生化反应的活化能（而非改变反应平衡和自由能变化ΔG）显著加速反应速率（通常提升10⁶至10¹²倍），其催化特性包括：高效性、底物专一性（对底物的化学结构和立体构型的高度选择性）、和活性可调节性（通过别构调控、可逆共价修饰或蛋白水解激活）。酶催化反应遵循Michaelis-Menten动力学：V = Vmax[S]/(Km+[S])，Vmax反映酶被底物饱和时的最大速率（取决于总酶浓度和催化常数kcat），Km（Michaelis常数）衡量酶对底物的亲和力（数值上等于半饱和底物浓度）。酶活性的调控模式包括：竞争性抑制（抑制剂结合活性位点增加表观Km）、非竞争性抑制（降低Vmax不影响Km）、反竞争性抑制（同时降低Vmax和Km）；别构调控（正或负效应因子结合于活性位点之外的别构位点改变酶构象和活性）；以及共价修饰调控（磷酸化/去磷酸化是最普遍的调控方式）和酶原激活（蛋白酶切割前体产生活性酶，如消化酶和凝血因子）。酶的命名通常以'-ase'后缀表示，国际生化学会酶学委员会（EC）根据催化反应类型将其分为六大类：氧化还原酶（EC 1）、转移酶（EC 2）、水解酶（EC 3）、裂合酶（EC 4）、异构酶（EC 5）和连接酶/合成酶（EC 6）。\", \"keyConcepts\": [{\"term\": \"活性中心\", \"definition\": \"酶分子中与底物结合并催化反应的区域\"}, {\"term\": \"底物\", \"definition\": \"酶作用的反应物\"}, {\"term\": \"辅因子\", \"definition\": \"辅助酶发挥作用的非蛋白质成分，如金属离子或辅酶\"}, {\"term\": \"米氏常数(Km)\", \"definition\": \"酶对底物亲和力的量度，Km值越小亲和力越大\"}, {\"term\": \"最大反应速率(Vmax)\", \"definition\": \"酶被底物饱和时的反应速率\"}, {\"term\": \"竞争性抑制\", \"definition\": \"抑制剂与底物竞争结合活性中心\"}, {\"term\": \"非竞争性抑制\", \"definition\": \"抑制剂结合酶的其他位点，改变酶的构象\"}], \"keyPoints\": [\"酶具有高效性：可比非催化反应快10⁶-10¹²倍\", \"酶具有专一性：一种酶通常只催化一种或一类反应\", \"酶活性受温度、pH、抑制剂等因素调节\", \"酶的命名通常以底物加-ase后缀\", \"酶的分类：氧化还原酶、转移酶、水解酶、裂合酶、异构酶、连接酶\"], \"relatedEntities\": [\"蛋白质\", \"DNA聚合酶\", \"RNA聚合酶\", \"限制酶\", \"激酶\"], \"references\": [\"Berg JM, Tymoczko JL, Gatto GJ. Biochemistry. 8th ed. W.H. Freeman, 2015\"]}"
+  },
+  {
+    "title": "释放因子",
+    "url": "kg/entities/释放因子.html",
+    "kind": "entity",
+    "text": "{\"id\": \"release-factors\", \"nameEn\": \"Translation Release Factors\", \"category\": \"调控\", \"chapter\": \"第4章\", \"definition\": \"翻译释放因子是识别mRNA终止密码子（UAA/UAG/UGA）并催化肽基-tRNA酯键水解释放完整多肽链的蛋白质。原核生物：RF1识别UAA和UAG，RF2识别UAA和UGA，通过高度保守的GGQ基序插入肽基转移酶中心催化水解释放。真核生物：eRF1以单一蛋白质识别所有三种终止密码子，eRF3-GTP辅助催化释放。终止完成后核糖体再循环因子（RRF/ABCE1和EF-G/eIF3j）拆分大小亚基释放mRNA和tRNA进入下一轮翻译。\"}"
+  },
+  {
+    "title": "铁响应元件",
+    "url": "kg/entities/铁响应元件.html",
+    "kind": "entity",
+    "text": "{\"id\": \"ire\", \"nameEn\": \"Iron Response Element\", \"category\": \"调控\", \"chapter\": \"第4章\", \"definition\": \"铁响应元件（IRE）是位于铁代谢相关mRNA的非翻译区中的约30个核苷酸茎环结构，通过铁调节蛋白（IRP1/IRP2）结合调控翻译或mRNA稳定性，是维持铁稳态的经典转录后调控系统。铁充足时IRP1以[4Fe-4S]簇结合的顺乌头酸酶形式失活，IRP2被FBXL5泛素连接酶降解。铁缺乏时：铁蛋白mRNA 5’UTR的IRE被IRP结合阻断翻译起始（减少铁存储）；转铁蛋白受体mRNA 3’UTR的IRE被IRP结合保护mRNA免于降解（增加铁摄取）。\"}"
+  },
+  {
+    "title": "阻遏型操纵子",
+    "url": "kg/entities/阻遏型操纵子.html",
+    "kind": "entity",
+    "text": "{\"id\": \"repressible-operon\", \"nameEn\": \"Repressible Operon\", \"category\": \"调控\", \"chapter\": \"第5章\", \"definition\": \"阻遏型操纵子是在终产物浓度升高时被抑制（关闭）的合成代谢操纵子。以色氨酸操纵子为经典模型：TrpR阻遏蛋白单独不能结合DNA，需色氨酸作为共阻遏物结合激活TrpR后才能识别操纵基因阻止转录。色氨酸丰度高→TrpR-色氨酸复合物结合DNA→操纵子关闭；色氨酸稀缺时TrpR无共阻遏物失活→操纵子开放。这一负反馈逻辑实现了终产物对合成途径的反馈抑制——细菌不在色氨酸充裕时浪费能量合成本已充足的应用代谢物。trp操纵子还通过衰减机制实现更精细的第二层控制。\"}"
   },
   {
     "title": "阻遏蛋白",
