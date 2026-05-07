@@ -23,6 +23,7 @@ graphData.nodes.forEach(n => {
   n.x = CX + r * Math.cos(a);
   n.y = CY + r * Math.sin(a);
   nodeMap.set(n.id || n.name, n);
+  nodeMap.set(n.name, n);  // also key by Chinese name for link resolution
 });
 
 const linksData = [];
