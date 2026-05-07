@@ -161,326 +161,516 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><nav class="chapter-nav"><a href="ch05_%E5%8E%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7%E4%B8%8E%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第6章</span>分子生物学技术与真核表达调控</div><div class="article"><h2>第六章：分子生物学技术</h2>
-<h2>6.1 PCR技术</h2>
-<p><a class="pn" id="pn-1" href="#pn-1">1</a>### 原理</p>
-<p><a class="pn" id="pn-2" href="#pn-2">2</a>&lt;&lt;span class=&quot;entity&quot;&gt;中心法则&lt;/span&gt;告诉我们，&lt;span class=&quot;entity&quot;&gt;DNA复制&lt;/span&gt;是遗传信息传递的基础。&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;（聚合酶链式反应）技术正是模拟这一过程，在体外快速扩增特定&lt;span class=&quot;entity&quot;&gt;DNA&lt;/span&gt;片段。</p>
-<p><a class="pn" id="pn-3" href="#pn-3">3</a>**发明者**：&lt;span class=&quot;entity&quot;&gt;Kary Mullis 1983&lt;/span&gt;因此获得1993年诺贝尔化学奖。</p>
-<p><a class="pn" id="pn-4" href="#pn-4">4</a>### 反应体系</p>
-<p><a class="pn" id="pn-5" href="#pn-5">5</a>| 组分 | 作用 | 示例 |</p>
-<p><a class="pn" id="pn-6" href="#pn-6">6</a>|------|------|------|</p>
-<p><a class="pn" id="pn-7" href="#pn-7">7</a>| &lt;span class=&quot;entity&quot;&gt;模板DNA&lt;/span&gt; | 扩增的原始材料 | 基因组DNA |</p>
-<p><a class="pn" id="pn-8" href="#pn-8">8</a>| &lt;span class=&quot;entity&quot;&gt;引物&lt;/span&gt; | 确定扩增起始位点 | 上下游各一条 |</p>
-<p><a class="pn" id="pn-9" href="#pn-9">9</a>| &lt;span class=&quot;entity&quot;&gt;DNA聚合酶&lt;/span&gt; | 催化DNA合成 | &lt;span class=&quot;entity&quot;&gt;Taq酶&lt;/span&gt; |</p>
-<p><a class="pn" id="pn-10" href="#pn-10">10</a>| &lt;span class=&quot;entity&quot;&gt;dNTPs&lt;/span&gt; | 原料 | dATP、dTTP、dGTP、dCTP |</p>
-<p><a class="pn" id="pn-11" href="#pn-11">11</a>| &lt;span class=&quot;entity&quot;&gt;缓冲液&lt;/span&gt; | 提供适宜环境 | 含&lt;span class=&quot;entity&quot;&gt;Mg²⁺&lt;/span&gt;、&lt;span class=&quot;entity&quot;&gt;pH 8.3&lt;/span&gt; |</p>
-<p><a class="pn" id="pn-12" href="#pn-12">12</a>### 反应步骤</p>
-<p><a class="pn" id="pn-13" href="#pn-13">13</a>```</p>
-<p><a class="pn" id="pn-14" href="#pn-14">14</a>&lt;span class=&quot;entity&quot;&gt;94-95°C&lt;/span&gt;变性 → &lt;span class=&quot;entity&quot;&gt;50-65°C&lt;/span&gt;退火 → &lt;span class=&quot;entity&quot;&gt;72°C&lt;/span&gt;延伸</p>
-<p><a class="pn" id="pn-15" href="#pn-15">15</a>     ↓</p>
-<p><a class="pn" id="pn-16" href="#pn-16">16</a>   30-35个循环</p>
-<p><a class="pn" id="pn-17" href="#pn-17">17</a>     ↓</p>
-<p><a class="pn" id="pn-18" href="#pn-18">18</a>  DNA指数扩增（2ⁿ）</p>
-<p><a class="pn" id="pn-19" href="#pn-19">19</a>```</p>
-<p><a class="pn" id="pn-20" href="#pn-20">20</a>**关键参数**：</p>
-<p><a class="pn" id="pn-21" href="#pn-21">21</a>- 变性温度：&lt;span class=&quot;entity&quot;&gt;94-95°C&lt;/span&gt;，时间：&lt;span class=&quot;entity&quot;&gt;30秒-2分钟&lt;/span&gt;</p>
-<p><a class="pn" id="pn-22" href="#pn-22">22</a>- 退火温度：取决于引物Tm值，通常&lt;span class=&quot;entity&quot;&gt;低于Tm 5°C&lt;/span&gt;</p>
-<p><a class="pn" id="pn-23" href="#pn-23">23</a>- 延伸时间：&lt;span class=&quot;entity&quot;&gt;1分钟/kb&lt;/span&gt;</p>
-<p><a class="pn" id="pn-24" href="#pn-24">24</a>### Taq酶特点</p>
-<p><a class="pn" id="pn-25" href="#pn-25">25</a>&lt;span class=&quot;entity&quot;&gt;Taq DNA聚合酶&lt;/span&gt;是从&lt;span class=&quot;entity&quot;&gt;嗜热菌&lt;/span&gt;&lt;span class=&quot;entity&quot;&gt;Thermus aquaticus&lt;/span&gt;中分离的：</p>
-<p><a class="pn" id="pn-26" href="#pn-26">26</a>- ✅ 耐热，在&lt;span class=&quot;entity&quot;&gt;95°C&lt;/span&gt;不失活</p>
-<p><a class="pn" id="pn-27" href="#pn-27">27</a>- ✅ 最适温度&lt;span class=&quot;entity&quot;&gt;72-80°C&lt;/span&gt;</p>
-<p><a class="pn" id="pn-28" href="#pn-28">28</a>- ❌ 无&lt;span class=&quot;entity&quot;&gt;3&amp;#x27;-5&amp;#x27;外切酶活性&lt;/span&gt;，无校对功能</p>
-<p><a class="pn" id="pn-29" href="#pn-29">29</a>- ❌ 错误率较高（约&lt;span class=&quot;entity&quot;&gt;10⁻⁴&lt;/span&gt;）</p>
-<p><a class="pn" id="pn-30" href="#pn-30">30</a>**高保真酶**：如&lt;span class=&quot;entity&quot;&gt;Pfu酶&lt;/span&gt;、&lt;span class=&quot;entity&quot;&gt;Phusion酶&lt;/span&gt;，具有校对功能。</p>
-<h2>6.2 DNA测序技术</h2>
-<p><a class="pn" id="pn-31" href="#pn-31">31</a>### Sanger测序（第一代）</p>
-<p><a class="pn" id="pn-32" href="#pn-32">32</a>**原理**：&lt;span class=&quot;entity&quot;&gt;双脱氧终止法&lt;/span&gt;</p>
-<p><a class="pn" id="pn-33" href="#pn-33">33</a>```</p>
-<p><a class="pn" id="pn-34" href="#pn-34">34</a>DNA合成反应 + 少量双脱氧核苷酸（ddNTP）</p>
-<p><a class="pn" id="pn-35" href="#pn-35">35</a>         ↓</p>
-<p><a class="pn" id="pn-36" href="#pn-36">36</a>    随机终止产生不同长度片段</p>
-<p><a class="pn" id="pn-37" href="#pn-37">37</a>         ↓</p>
-<p><a class="pn" id="pn-38" href="#pn-38">38</a>    电泳分离，读取序列</p>
-<p><a class="pn" id="pn-39" href="#pn-39">39</a>```</p>
-<p><a class="pn" id="pn-40" href="#pn-40">40</a>**特点**：</p>
-<p><a class="pn" id="pn-41" href="#pn-41">41</a>- 读长：500-1000 bp</p>
-<p><a class="pn" id="pn-42" href="#pn-42">42</a>- 准确率：&gt;99.9%</p>
-<p><a class="pn" id="pn-43" href="#pn-43">43</a>- 通量：低（每次反应一条序列）</p>
-<p><a class="pn" id="pn-44" href="#pn-44">44</a>### 高通量测序（第二代）</p>
-<p><a class="pn" id="pn-45" href="#pn-45">45</a>| 平台 | 技术原理 | 读长 | 应用 |</p>
-<p><a class="pn" id="pn-46" href="#pn-46">46</a>|------|---------|------|------|</p>
-<p><a class="pn" id="pn-47" href="#pn-47">47</a>| &lt;span class=&quot;entity&quot;&gt;Illumina&lt;/span&gt; | 桥式PCR + 荧光标记 | 150-300 bp | 全基因组、RNA-seq |</p>
-<p><a class="pn" id="pn-48" href="#pn-48">48</a>| &lt;span class=&quot;entity&quot;&gt;Ion Torrent&lt;/span&gt; | 半导体测序 | 200-400 bp | 靶向测序 |</p>
-<p><a class="pn" id="pn-49" href="#pn-49">49</a>| &lt;span class=&quot;entity&quot;&gt;SOLiD&lt;/span&gt; | 连接测序 | 50-75 bp | 重测序 |</p>
-<p><a class="pn" id="pn-50" href="#pn-50">50</a>**Illumina测序流程**：</p>
-<p><a class="pn" id="pn-51" href="#pn-51">51</a>1. 文库制备：DNA片段化 + 接头连接</p>
-<p><a class="pn" id="pn-52" href="#pn-52">52</a>2. 簇生成：桥式PCR扩增</p>
-<p><a class="pn" id="pn-53" href="#pn-53">53</a>3. 测序：边合成边测序（SBS）</p>
-<p><a class="pn" id="pn-54" href="#pn-54">54</a>4. 数据分析：图像 → 碱基识别</p>
-<p><a class="pn" id="pn-55" href="#pn-55">55</a>### 第三代测序</p>
-<p><a class="pn" id="pn-56" href="#pn-56">56</a>**PacBio（单分子实时测序）**：</p>
-<p><a class="pn" id="pn-57" href="#pn-57">57</a>- 读长：10-20 kb，最长可达100 kb</p>
-<p><a class="pn" id="pn-58" href="#pn-58">58</a>- 优势：直接检测&lt;span class=&quot;entity&quot;&gt;DNA甲基化&lt;/span&gt;</p>
-<p><a class="pn" id="pn-59" href="#pn-59">59</a>- 应用：基因组组装、结构变异检测</p>
-<p><a class="pn" id="pn-60" href="#pn-60">60</a>**Oxford Nanopore**：</p>
-<p><a class="pn" id="pn-61" href="#pn-61">61</a>- 原理：纳米孔单分子测序</p>
-<p><a class="pn" id="pn-62" href="#pn-62">62</a>- 特点：便携、实时、超长读长</p>
-<p><a class="pn" id="pn-63" href="#pn-63">63</a>- 设备：MinION（USB大小）</p>
-<h2>6.3 基因克隆</h2>
-<p><a class="pn" id="pn-64" href="#pn-64">64</a>### 载体系统</p>
-<p><a class="pn" id="pn-65" href="#pn-65">65</a>| 载体类型 | 容量 | 宿主 | 应用 |</p>
-<p><a class="pn" id="pn-66" href="#pn-66">66</a>|---------|------|------|------|</p>
-<p><a class="pn" id="pn-67" href="#pn-67">67</a>| &lt;span class=&quot;entity&quot;&gt;质粒&lt;/span&gt; | 2-10 kb | 细菌 | 常规克隆 |</p>
-<p><a class="pn" id="pn-68" href="#pn-68">68</a>| &lt;span class=&quot;entity&quot;&gt;噬菌体&lt;/span&gt; | 9-23 kb | 细菌 | cDNA文库 |</p>
-<p><a class="pn" id="pn-69" href="#pn-69">69</a>| &lt;span class=&quot;entity&quot;&gt;BAC&lt;/span&gt; | 100-300 kb | 细菌 | 基因组文库 |</p>
-<p><a class="pn" id="pn-70" href="#pn-70">70</a>| &lt;span class=&quot;entity&quot;&gt;YAC&lt;/span&gt; | 0.5-2 Mb | 酵母 | 大片段克隆 |</p>
-<p><a class="pn" id="pn-71" href="#pn-71">71</a>### 克隆流程</p>
-<p><a class="pn" id="pn-72" href="#pn-72">72</a>```</p>
-<p><a class="pn" id="pn-73" href="#pn-73">73</a>目的基因获取 ←&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;/&lt;span class=&quot;entity&quot;&gt;化学合成&lt;/span&gt;/&lt;span class=&quot;entity&quot;&gt;文库筛选&lt;/span&gt;</p>
-<p><a class="pn" id="pn-74" href="#pn-74">74</a>      ↓</p>
-<p><a class="pn" id="pn-75" href="#pn-75">75</a>载体准备 ← &lt;span class=&quot;entity&quot;&gt;限制性内切酶&lt;/span&gt;切割</p>
-<p><a class="pn" id="pn-76" href="#pn-76">76</a>      ↓</p>
-<p><a class="pn" id="pn-77" href="#pn-77">77</a>连接反应 ← &lt;span class=&quot;entity&quot;&gt;DNA连接酶&lt;/span&gt;</p>
-<p><a class="pn" id="pn-78" href="#pn-78">78</a>      ↓</p>
-<p><a class="pn" id="pn-79" href="#pn-79">79</a>转化/转染 ← 导入宿主细胞</p>
-<p><a class="pn" id="pn-80" href="#pn-80">80</a>      ↓</p>
-<p><a class="pn" id="pn-81" href="#pn-81">81</a>筛选鉴定 ← &lt;span class=&quot;entity&quot;&gt;抗生素抗性&lt;/span&gt;、&lt;span class=&quot;entity&quot;&gt;蓝白斑筛选&lt;/span&gt;</p>
-<p><a class="pn" id="pn-82" href="#pn-82">82</a>```</p>
-<p><a class="pn" id="pn-83" href="#pn-83">83</a>### 限制性内切酶</p>
-<p><a class="pn" id="pn-84" href="#pn-84">84</a>**识别序列特点**：</p>
-<p><a class="pn" id="pn-85" href="#pn-85">85</a>- 通常为4-8 bp的&lt;span class=&quot;entity&quot;&gt;回文序列&lt;/span&gt;</p>
-<p><a class="pn" id="pn-86" href="#pn-86">86</a>- 切割产生粘性末端或平末端</p>
-<p><a class="pn" id="pn-87" href="#pn-87">87</a>| 酶 | 识别序列 | 末端 |</p>
-<p><a class="pn" id="pn-88" href="#pn-88">88</a>|---|---------|------|</p>
-<p><a class="pn" id="pn-89" href="#pn-89">89</a>| &lt;span class=&quot;entity&quot;&gt;EcoRI&lt;/span&gt; | G↓AATTC | 5&#x27;粘性 |</p>
-<p><a class="pn" id="pn-90" href="#pn-90">90</a>| &lt;span class=&quot;entity&quot;&gt;BamHI&lt;/span&gt; | G↓GATCC | 5&#x27;粘性 |</p>
-<p><a class="pn" id="pn-91" href="#pn-91">91</a>| &lt;span class=&quot;entity&quot;&gt;HindIII&lt;/span&gt; | A↓AGCTT | 5&#x27;粘性 |</p>
-<p><a class="pn" id="pn-92" href="#pn-92">92</a>| &lt;span class=&quot;entity&quot;&gt;SmaI&lt;/span&gt; | CCC↓GGG | 平末端 |</p>
-<h2>6.4 基因编辑技术</h2>
-<p><a class="pn" id="pn-93" href="#pn-93">93</a>### CRISPR-Cas9系统</p>
-<p><a class="pn" id="pn-94" href="#pn-94">94</a>**发现**：&lt;span class=&quot;entity&quot;&gt;Jennifer Doudna &amp;amp; Emmanuelle Charpentier 2012&lt;/span&gt;，获2020年诺贝尔化学奖。</p>
-<p><a class="pn" id="pn-95" href="#pn-95">95</a>**组成**：</p>
-<p><a class="pn" id="pn-96" href="#pn-96">96</a>- &lt;span class=&quot;entity&quot;&gt;Cas9蛋白&lt;/span&gt;：核酸酶，切割DNA</p>
-<p><a class="pn" id="pn-97" href="#pn-97">97</a>- &lt;span class=&quot;entity&quot;&gt;sgRNA&lt;/span&gt;：向导RNA，引导Cas9到靶位点</p>
-<p><a class="pn" id="pn-98" href="#pn-98">98</a>**原理**：</p>
-<p><a class="pn" id="pn-99" href="#pn-99">99</a>```</p>
-<p><a class="pn" id="pn-100" href="#pn-100">100</a>sgRNA识别靶序列（PAM: NGG）</p>
-<p><a class="pn" id="pn-101" href="#pn-101">101</a>        ↓</p>
-<p><a class="pn" id="pn-102" href="#pn-102">102</a>Cas9切割DNA双链</p>
-<p><a class="pn" id="pn-103" href="#pn-103">103</a>        ↓</p>
-<p><a class="pn" id="pn-104" href="#pn-104">104</a>细胞修复（NHEJ或HDR）</p>
-<p><a class="pn" id="pn-105" href="#pn-105">105</a>        ↓</p>
-<p><a class="pn" id="pn-106" href="#pn-106">106</a>基因敲除或精确编辑</p>
-<p><a class="pn" id="pn-107" href="#pn-107">107</a>```</p>
-<p><a class="pn" id="pn-108" href="#pn-108">108</a>**应用**：</p>
-<p><a class="pn" id="pn-109" href="#pn-109">109</a>- &lt;span class=&quot;entity&quot;&gt;遗传病&lt;/span&gt;治疗（如&lt;span class=&quot;entity&quot;&gt;镰状细胞贫血&lt;/span&gt;）</p>
-<p><a class="pn" id="pn-110" href="#pn-110">110</a>- &lt;span class=&quot;entity&quot;&gt;癌症&lt;/span&gt;免疫治疗</p>
-<p><a class="pn" id="pn-111" href="#pn-111">111</a>- 功能基因研究</p>
-<p><a class="pn" id="pn-112" href="#pn-112">112</a>- 作物改良</p>
-<p><a class="pn" id="pn-113" href="#pn-113">113</a>### 碱基编辑器</p>
-<p><a class="pn" id="pn-114" href="#pn-114">114</a>**CBE（胞嘧啶碱基编辑器）**：C → T</p>
-<p><a class="pn" id="pn-115" href="#pn-115">115</a>**ABE（腺嘌呤碱基编辑器）**：A → G</p>
-<p><a class="pn" id="pn-116" href="#pn-116">116</a>**优势**：不切断DNA双链，减少随机插入/缺失</p>
-<h2>6.5 基因表达分析</h2>
-<p><a class="pn" id="pn-117" href="#pn-117">117</a>### RT-PCR</p>
-<p><a class="pn" id="pn-118" href="#pn-118">118</a>**原理**：</p>
-<p><a class="pn" id="pn-119" href="#pn-119">119</a>```</p>
-<p><a class="pn" id="pn-120" href="#pn-120">120</a>RNA →&lt;span class=&quot;entity&quot;&gt;逆转录&lt;/span&gt;→ cDNA →&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;→ 扩增产物</p>
-<p><a class="pn" id="pn-121" href="#pn-121">121</a>```</p>
-<p><a class="pn" id="pn-122" href="#pn-122">122</a>**关键酶**：&lt;span class=&quot;entity&quot;&gt;逆转录酶&lt;/span&gt;（如M-MLV、AMV）</p>
-<p><a class="pn" id="pn-123" href="#pn-123">123</a>**应用**：</p>
-<p><a class="pn" id="pn-124" href="#pn-124">124</a>- 检测基因表达水平</p>
-<p><a class="pn" id="pn-125" href="#pn-125">125</a>- 验证RNA-seq结果</p>
-<p><a class="pn" id="pn-126" href="#pn-126">126</a>- 病毒检测（如&lt;span class=&quot;entity&quot;&gt;COVID-19&lt;/span&gt;RT-PCR检测）</p>
-<p><a class="pn" id="pn-127" href="#pn-127">127</a>### RNA干扰（RNAi）</p>
-<p><a class="pn" id="pn-128" href="#pn-128">128</a>**机制**：</p>
-<p><a class="pn" id="pn-129" href="#pn-129">129</a>- &lt;span class=&quot;entity&quot;&gt;dsRNA&lt;/span&gt;被&lt;span class=&quot;entity&quot;&gt;Dicer&lt;/span&gt;切割为&lt;span class=&quot;entity&quot;&gt;siRNA&lt;/span&gt;（21-23 nt）</p>
-<p><a class="pn" id="pn-130" href="#pn-130">130</a>- siRNA与&lt;span class=&quot;entity&quot;&gt;RISC复合物&lt;/span&gt;结合</p>
-<p><a class="pn" id="pn-131" href="#pn-131">131</a>- 靶向降解互补mRNA</p>
-<p><a class="pn" id="pn-132" href="#pn-132">132</a>**应用**：</p>
-<p><a class="pn" id="pn-133" href="#pn-133">133</a>- 基因功能研究（基因敲低）</p>
-<p><a class="pn" id="pn-134" href="#pn-134">134</a>- 治疗（如&lt;span class=&quot;entity&quot;&gt;年龄相关性黄斑变性&lt;/span&gt;）</p>
-<h2>本章小结</h2>
-<p><a class="pn" id="pn-135" href="#pn-135">135</a>- &lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;是体外DNA扩增的核心技术</p>
-<p><a class="pn" id="pn-136" href="#pn-136">136</a>- 测序技术从Sanger发展到高通量、单分子测序</p>
-<p><a class="pn" id="pn-137" href="#pn-137">137</a>- 基因克隆依赖载体系统和限制酶</p>
-<p><a class="pn" id="pn-138" href="#pn-138">138</a>- &lt;span class=&quot;entity&quot;&gt;CRISPR-Cas9&lt;/span&gt;革命性地改变了基因编辑</p>
-<p><a class="pn" id="pn-139" href="#pn-139">139</a>- RNA技术（RT-PCR、RNAi）是基因表达研究的重要工具</p>
-<h2>思考题</h2>
-<p><a class="pn" id="pn-140" href="#pn-140">140</a>1. 为什么PCR需要引物，而DNA复制在体内不需要外源引物？</p>
-<p><a class="pn" id="pn-141" href="#pn-141">141</a>2. 比较第一代、第二代、第三代测序技术的优缺点。</p>
-<p><a class="pn" id="pn-142" href="#pn-142">142</a>3. CRISPR-Cas9与传统基因编辑技术（如ZFN、TALEN）相比有什么优势？</p>
-<p><a class="pn" id="pn-143" href="#pn-143">143</a>---</p>
-<h2>第六章：真核生物基因表达调控</h2>
-<h2>6.1 真核基因调控概述</h2>
-<p><a class="pn" id="pn-144" href="#pn-144">144</a>### 与原核生物的差异</p>
-<p><a class="pn" id="pn-145" href="#pn-145">145</a>| 特征 | 原核生物 | 真核生物 |</p>
-<p><a class="pn" id="pn-146" href="#pn-146">146</a>|------|---------|---------|</p>
-<p><a class="pn" id="pn-147" href="#pn-147">147</a>| 转录翻译 | 偶联 | 分隔（核膜） |</p>
-<p><a class="pn" id="pn-148" href="#pn-148">148</a>| 基因组织 | 操纵子 | 单基因 |</p>
-<p><a class="pn" id="pn-149" href="#pn-149">149</a>| 染色质 | 无 | 有核小体 |</p>
-<p><a class="pn" id="pn-150" href="#pn-150">150</a>| 主要调控点 | 转录 | 多水平 |</p>
-<p><a class="pn" id="pn-151" href="#pn-151">151</a>| RNA加工 | 无 | 复杂（加帽、加尾、剪接） |</p>
-<p><a class="pn" id="pn-152" href="#pn-152">152</a>### 调控层次</p>
-<p><a class="pn" id="pn-153" href="#pn-153">153</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：eukaryotic_regulation&quot;&gt;真核基因表达调控&lt;/span&gt;发生在多个层次：</p>
-<p><a class="pn" id="pn-154" href="#pn-154">154</a>```</p>
-<p><a class="pn" id="pn-155" href="#pn-155">155</a>染色质水平 → 转录水平 → RNA加工 → mRNA运输 → 翻译水平 → 蛋白质修饰</p>
-<p><a class="pn" id="pn-156" href="#pn-156">156</a>    ↑           ↑          ↑          ↑          ↑          ↑</p>
-<p><a class="pn" id="pn-157" href="#pn-157">157</a>表观遗传   转录因子   选择性剪接   核质运输   翻译起始   信号转导</p>
-<p><a class="pn" id="pn-158" href="#pn-158">158</a>```</p>
-<h2>6.2 染色质水平调控</h2>
-<p><a class="pn" id="pn-159" href="#pn-159">159</a>### DNA甲基化</p>
-<p><a class="pn" id="pn-160" href="#pn-160">160</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;DNA甲基化&lt;/span&gt;：</p>
-<p><a class="pn" id="pn-161" href="#pn-161">161</a>- **位点**：&lt;span class=&quot;entity entity-generic&quot; title=&quot;碱基&quot;&gt;CpG岛&lt;/span&gt;中的胞嘧啶（C→5mC）</p>
-<p><a class="pn" id="pn-162" href="#pn-162">162</a>- **酶**：&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;DNA甲基转移酶&lt;/span&gt;（DNMT1维持，DNMT3a/3b从头）</p>
-<p><a class="pn" id="pn-163" href="#pn-163">163</a>- **效应**：通常抑制基因表达</p>
-<p><a class="pn" id="pn-164" href="#pn-164">164</a>**生物学意义**：</p>
-<p><a class="pn" id="pn-165" href="#pn-165">165</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;基因组印记&lt;/span&gt;（Imprinting）：亲本特异性表达</p>
-<p><a class="pn" id="pn-166" href="#pn-166">166</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;X染色体失活&lt;/span&gt;：雌性X染色体剂量补偿</p>
-<p><a class="pn" id="pn-167" href="#pn-167">167</a>- 转座子沉默</p>
-<p><a class="pn" id="pn-168" href="#pn-168">168</a>- 肿瘤抑制基因沉默</p>
-<p><a class="pn" id="pn-169" href="#pn-169">169</a>### 组蛋白修饰</p>
-<p><a class="pn" id="pn-170" href="#pn-170">170</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：histone_modification&quot;&gt;组蛋白修饰&lt;/span&gt;：</p>
-<p><a class="pn" id="pn-171" href="#pn-171">171</a>| 修饰 | 位点 | 效应 |</p>
-<p><a class="pn" id="pn-172" href="#pn-172">172</a>|------|------|------|</p>
-<p><a class="pn" id="pn-173" href="#pn-173">173</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;乙酰化&lt;/span&gt;（Ac） | 赖氨酸 | 激活转录 |</p>
-<p><a class="pn" id="pn-174" href="#pn-174">174</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;甲基化&lt;/span&gt;（Me） | 赖氨酸/精氨酸 | H3K4me3激活，H3K27me3抑制 |</p>
-<p><a class="pn" id="pn-175" href="#pn-175">175</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;磷酸化&lt;/span&gt;（P） | 丝氨酸 | 调控染色质结构 |</p>
-<p><a class="pn" id="pn-176" href="#pn-176">176</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;泛素化&lt;/span&gt;（Ub） | 赖氨酸 | 调控转录 |</p>
-<p><a class="pn" id="pn-177" href="#pn-177">177</a>**组蛋白密码假说**：</p>
-<p><a class="pn" id="pn-178" href="#pn-178">178</a>- 不同修饰组合产生特定调控效应</p>
-<p><a class="pn" id="pn-179" href="#pn-179">179</a>- 修饰之间相互影响（交叉对话）</p>
-<p><a class="pn" id="pn-180" href="#pn-180">180</a>### 染色质重塑</p>
-<p><a class="pn" id="pn-181" href="#pn-181">181</a>&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;染色质重塑复合物&lt;/span&gt;：</p>
-<p><a class="pn" id="pn-182" href="#pn-182">182</a>- &lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;SWI/SNF&lt;/span&gt;：利用ATP水解能量重塑核小体</p>
-<p><a class="pn" id="pn-183" href="#pn-183">183</a>- &lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;ISWI&lt;/span&gt;、&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;CHD&lt;/span&gt;、&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;INO80&lt;/span&gt;家族</p>
-<p><a class="pn" id="pn-184" href="#pn-184">184</a>**功能**：</p>
-<p><a class="pn" id="pn-185" href="#pn-185">185</a>- 改变核小体位置</p>
-<p><a class="pn" id="pn-186" href="#pn-186">186</a>- 影响DNA可及性</p>
-<p><a class="pn" id="pn-187" href="#pn-187">187</a>- 调控转录因子结合</p>
-<h2>6.3 转录水平调控</h2>
-<p><a class="pn" id="pn-188" href="#pn-188">188</a>### 顺式作用元件</p>
-<p><a class="pn" id="pn-189" href="#pn-189">189</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：cis_element&quot;&gt;顺式作用元件&lt;/span&gt;：DNA上的调控序列</p>
-<p><a class="pn" id="pn-190" href="#pn-190">190</a>| 元件 | 位置 | 功能 |</p>
-<p><a class="pn" id="pn-191" href="#pn-191">191</a>|------|------|------|</p>
-<p><a class="pn" id="pn-192" href="#pn-192">192</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;启动子&lt;/span&gt;（Promoter） | 转录起始点附近 | 基础转录装置组装 |</p>
-<p><a class="pn" id="pn-193" href="#pn-193">193</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;增强子&lt;/span&gt;（Enhancer） | 远端（1kb-1Mb） | 显著增强转录效率 |</p>
-<p><a class="pn" id="pn-194" href="#pn-194">194</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;沉默子&lt;/span&gt;（Silencer） | 远端 | 抑制转录 |</p>
-<p><a class="pn" id="pn-195" href="#pn-195">195</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;绝缘子&lt;/span&gt;（Insulator） | 边界 | 阻断增强子/沉默子作用 |</p>
-<p><a class="pn" id="pn-196" href="#pn-196">196</a>**增强子特征**：</p>
-<p><a class="pn" id="pn-197" href="#pn-197">197</a>- 方向无关性</p>
-<p><a class="pn" id="pn-198" href="#pn-198">198</a>- 位置灵活性（上游、下游、内含子）</p>
-<p><a class="pn" id="pn-199" href="#pn-199">199</a>- 组织特异性</p>
-<p><a class="pn" id="pn-200" href="#pn-200">200</a>- 与启动子形成染色质环</p>
-<p><a class="pn" id="pn-201" href="#pn-201">201</a>### 反式作用因子</p>
-<p><a class="pn" id="pn-202" href="#pn-202">202</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：trans_factor&quot;&gt;反式作用因子&lt;/span&gt;：调控蛋白</p>
-<p><a class="pn" id="pn-203" href="#pn-203">203</a>**转录因子结构**：</p>
-<p><a class="pn" id="pn-204" href="#pn-204">204</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;DNA结合域&lt;/span&gt;：识别特定序列</p>
-<p><a class="pn" id="pn-205" href="#pn-205">205</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;转录激活域&lt;/span&gt;：招募转录 machinery</p>
-<p><a class="pn" id="pn-206" href="#pn-206">206</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;二聚化结构域&lt;/span&gt;：形成同源/异源二聚体</p>
-<p><a class="pn" id="pn-207" href="#pn-207">207</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;核定位信号&lt;/span&gt;（NLS）：进入细胞核</p>
-<p><a class="pn" id="pn-208" href="#pn-208">208</a>**常见DNA结合域**：</p>
-<p><a class="pn" id="pn-209" href="#pn-209">209</a>| 结构域 | 特征 | 代表因子 |</p>
-<p><a class="pn" id="pn-210" href="#pn-210">210</a>|--------|------|---------|</p>
-<p><a class="pn" id="pn-211" href="#pn-211">211</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;同源异型域&lt;/span&gt;（Homeodomain） | 螺旋-转角-螺旋变体 | HOX蛋白 |</p>
-<p><a class="pn" id="pn-212" href="#pn-212">212</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;锌指&lt;/span&gt;（Zinc finger） | Zn²⁺稳定 | SP1、TFIIIA |</p>
-<p><a class="pn" id="pn-213" href="#pn-213">213</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;碱性亮氨酸拉链&lt;/span&gt;（bZIP） | 亮氨酸拉链二聚化 | AP-1、CREB |</p>
-<p><a class="pn" id="pn-214" href="#pn-214">214</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;螺旋-环-螺旋&lt;/span&gt;（HLH） | HLH二聚化 | MyoD、E47 |</p>
-<p><a class="pn" id="pn-215" href="#pn-215">215</a>### 转录调控网络</p>
-<p><a class="pn" id="pn-216" href="#pn-216">216</a>**组合调控**：</p>
-<p><a class="pn" id="pn-217" href="#pn-217">217</a>- 多个转录因子协同作用</p>
-<p><a class="pn" id="pn-218" href="#pn-218">218</a>- 产生特异性的时空表达模式</p>
-<p><a class="pn" id="pn-219" href="#pn-219">219</a>- 增强调控特异性</p>
-<p><a class="pn" id="pn-220" href="#pn-220">220</a>**实例**：</p>
-<p><a class="pn" id="pn-221" href="#pn-221">221</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;MyoD&lt;/span&gt;与肌肉分化</p>
-<p><a class="pn" id="pn-222" href="#pn-222">222</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Oct4&lt;/span&gt;、&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Sox2&lt;/span&gt;、&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Nanog&lt;/span&gt;与干细胞多能性</p>
-<h2>6.4 转录后调控</h2>
-<p><a class="pn" id="pn-223" href="#pn-223">223</a>### 选择性剪接</p>
-<p><a class="pn" id="pn-224" href="#pn-224">224</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：alternative_splicing&quot;&gt;选择性剪接&lt;/span&gt;：</p>
-<p><a class="pn" id="pn-225" href="#pn-225">225</a>- 一个基因产生多种mRNA异构体</p>
-<p><a class="pn" id="pn-226" href="#pn-226">226</a>- 人类约95%的基因存在选择性剪接</p>
-<p><a class="pn" id="pn-227" href="#pn-227">227</a>- 增加蛋白质组多样性</p>
-<p><a class="pn" id="pn-228" href="#pn-228">228</a>**剪接模式**：</p>
-<p><a class="pn" id="pn-229" href="#pn-229">229</a>| 模式 | 说明 |</p>
-<p><a class="pn" id="pn-230" href="#pn-230">230</a>|------|------|</p>
-<p><a class="pn" id="pn-231" href="#pn-231">231</a>| 外显子跳跃 | 跳过某个外显子 |</p>
-<p><a class="pn" id="pn-232" href="#pn-232">232</a>| 互斥外显子 | 两个外显子只保留一个 |</p>
-<p><a class="pn" id="pn-233" href="#pn-233">233</a>| 内含子保留 | 保留某个内含子 |</p>
-<p><a class="pn" id="pn-234" href="#pn-234">234</a>| 可变5&#x27;剪接位点 | 使用不同的5&#x27;剪接位点 |</p>
-<p><a class="pn" id="pn-235" href="#pn-235">235</a>| 可变3&#x27;剪接位点 | 使用不同的3&#x27;剪接位点 |</p>
-<p><a class="pn" id="pn-236" href="#pn-236">236</a>**调控因子**：</p>
-<p><a class="pn" id="pn-237" href="#pn-237">237</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;SR蛋白&lt;/span&gt;：促进剪接</p>
-<p><a class="pn" id="pn-238" href="#pn-238">238</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;hnRNP蛋白&amp;lt;/组织&amp;gt;：抑制剪接</p>
-<p><a class="pn" id="pn-239" href="#pn-239">239</a>### RNA编辑</p>
-<p><a class="pn" id="pn-240" href="#pn-240">240</a>&amp;lt;concept id=&amp;quot;rna_editing&amp;quot;&amp;gt;RNA编辑&amp;lt;/concept&amp;gt;：</p>
-<p><a class="pn" id="pn-241" href="#pn-241">241</a>- 转录后改变RNA序列</p>
-<p><a class="pn" id="pn-242" href="#pn-242">242</a>- 脱氨酶（ADAR、APOBEC）介导</p>
-<p><a class="pn" id="pn-243" href="#pn-243">243</a>- 实例：APOB mRNA的C→U编辑</p>
-<p><a class="pn" id="pn-244" href="#pn-244">244</a>### RNA稳定性调控</p>
-<p><a class="pn" id="pn-245" href="#pn-245">245</a>**mRNA降解途径**：</p>
-<p><a class="pn" id="pn-246" href="#pn-246">246</a>1. &amp;lt;entity type=&amp;quot;概念&amp;quot;&amp;gt;脱腺苷酸化&lt;/span&gt;：去除poly(A)尾</p>
-<p><a class="pn" id="pn-247" href="#pn-247">247</a>2. &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;脱帽&lt;/span&gt;：去除5&#x27;帽</p>
-<p><a class="pn" id="pn-248" href="#pn-248">248</a>3. &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;外切酶降解&lt;/span&gt;：5&#x27;→3&#x27;或3&#x27;→5&#x27;</p>
-<p><a class="pn" id="pn-249" href="#pn-249">249</a>**调控元件**：</p>
-<p><a class="pn" id="pn-250" href="#pn-250">250</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;AU富含元件&lt;/span&gt;（ARE）：促进降解</p>
-<p><a class="pn" id="pn-251" href="#pn-251">251</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;miRNA&lt;/span&gt;：通过&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;RNA干扰&lt;/span&gt;抑制翻译或促进降解</p>
-<p><a class="pn" id="pn-252" href="#pn-252">252</a>### miRNA调控</p>
-<p><a class="pn" id="pn-253" href="#pn-253">253</a>&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;miRNA&lt;/span&gt;（微小RNA）：</p>
-<p><a class="pn" id="pn-254" href="#pn-254">254</a>- 长度：21-25 nt</p>
-<p><a class="pn" id="pn-255" href="#pn-255">255</a>- 来源：RNA聚合酶II转录，经&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Drosha&lt;/span&gt;和&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Dicer&lt;/span&gt;加工</p>
-<p><a class="pn" id="pn-256" href="#pn-256">256</a>- 机制：与&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;RISC复合物&lt;/span&gt;结合，靶向mRNA</p>
-<p><a class="pn" id="pn-257" href="#pn-257">257</a>**调控方式**：</p>
-<p><a class="pn" id="pn-258" href="#pn-258">258</a>- 完全互补：mRNA切割</p>
-<p><a class="pn" id="pn-259" href="#pn-259">259</a>- 部分互补：翻译抑制</p>
-<h2>6.5 翻译水平调控</h2>
-<p><a class="pn" id="pn-260" href="#pn-260">260</a>### 全局翻译调控</p>
-<p><a class="pn" id="pn-261" href="#pn-261">261</a>**eIF2磷酸化**：</p>
-<p><a class="pn" id="pn-262" href="#pn-262">262</a>- 应激条件下eIF2α磷酸化</p>
-<p><a class="pn" id="pn-263" href="#pn-263">263</a>- 抑制全局翻译起始</p>
-<p><a class="pn" id="pn-264" href="#pn-264">264</a>- 但激活特定应激基因翻译</p>
-<p><a class="pn" id="pn-265" href="#pn-265">265</a>**mTOR通路**：</p>
-<p><a class="pn" id="pn-266" href="#pn-266">266</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;激酶&quot;&gt;mTOR激酶&lt;/span&gt;感知营养信号</p>
-<p><a class="pn" id="pn-267" href="#pn-267">267</a>- 磷酸化&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;4E-BP&lt;/span&gt;，释放eIF4E</p>
-<p><a class="pn" id="pn-268" href="#pn-268">268</a>- 促进翻译起始</p>
-<p><a class="pn" id="pn-269" href="#pn-269">269</a>### 特异性翻译调控</p>
-<p><a class="pn" id="pn-270" href="#pn-270">270</a>**铁响应元件**（&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;IRE&lt;/span&gt;）：</p>
-<p><a class="pn" id="pn-271" href="#pn-271">271</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;铁调节蛋白&lt;/span&gt;（IRP）结合IRE</p>
-<p><a class="pn" id="pn-272" href="#pn-272">272</a>- 铁缺乏时：抑制&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;铁蛋白&lt;/span&gt;mRNA翻译</p>
-<p><a class="pn" id="pn-273" href="#pn-273">273</a>- 铁充足时：IRP失活，翻译进行</p>
-<p><a class="pn" id="pn-274" href="#pn-274">274</a>**上游开放阅读框**（uORF）：</p>
-<p><a class="pn" id="pn-275" href="#pn-275">275</a>- 位于主ORF上游</p>
-<p><a class="pn" id="pn-276" href="#pn-276">276</a>- 抑制主ORF翻译</p>
-<p><a class="pn" id="pn-277" href="#pn-277">277</a>- 应激条件下被绕过</p>
-<h2>6.6 信号转导与基因表达</h2>
-<p><a class="pn" id="pn-278" href="#pn-278">278</a>### 信号通路</p>
-<p><a class="pn" id="pn-279" href="#pn-279">279</a>**MAPK通路**：</p>
-<p><a class="pn" id="pn-280" href="#pn-280">280</a>- 生长因子 → Ras → Raf → MEK → ERK</p>
-<p><a class="pn" id="pn-281" href="#pn-281">281</a>- ERK入核激活转录因子</p>
-<p><a class="pn" id="pn-282" href="#pn-282">282</a>**Wnt/β-catenin通路**：</p>
-<p><a class="pn" id="pn-283" href="#pn-283">283</a>- Wnt信号稳定β-catenin</p>
-<p><a class="pn" id="pn-284" href="#pn-284">284</a>- β-catenin入核激活TCF转录因子</p>
-<p><a class="pn" id="pn-285" href="#pn-285">285</a>**TGF-β/Smad通路**：</p>
-<p><a class="pn" id="pn-286" href="#pn-286">286</a>- TGF-β受体磷酸化Smad2/3</p>
-<p><a class="pn" id="pn-287" href="#pn-287">287</a>- Smad复合物入核调控转录</p>
-<p><a class="pn" id="pn-288" href="#pn-288">288</a>### 激素调控</p>
-<p><a class="pn" id="pn-289" href="#pn-289">289</a>**类固醇激素**：</p>
-<p><a class="pn" id="pn-290" href="#pn-290">290</a>- 脂溶性，可穿过细胞膜</p>
-<p><a class="pn" id="pn-291" href="#pn-291">291</a>- 与核受体结合</p>
-<p><a class="pn" id="pn-292" href="#pn-292">292</a>- 激素-受体复合物直接调控转录</p>
-<p><a class="pn" id="pn-293" href="#pn-293">293</a>**实例**：</p>
-<p><a class="pn" id="pn-294" href="#pn-294">294</a>- 雌激素受体（ER）</p>
-<p><a class="pn" id="pn-295" href="#pn-295">295</a>- 糖皮质激素受体（GR）</p>
-<h2>本章小结</h2>
-<p><a class="pn" id="pn-296" href="#pn-296">296</a>- 真核基因调控发生在多水平，比原核更复杂</p>
-<p><a class="pn" id="pn-297" href="#pn-297">297</a>- 染色质修饰（DNA甲基化、组蛋白修饰）是表观遗传调控的基础</p>
-<p><a class="pn" id="pn-298" href="#pn-298">298</a>- 转录因子通过顺式元件和反式因子精细调控</p>
-<p><a class="pn" id="pn-299" href="#pn-299">299</a>- 转录后调控（选择性剪接、miRNA）增加调控层次</p>
-<p><a class="pn" id="pn-300" href="#pn-300">300</a>- 信号转导通路将胞外信号转化为基因表达变化</p>
-<h2>思考题</h2>
-<p><a class="pn" id="pn-301" href="#pn-301">301</a>1. 为什么真核生物需要比原核生物更复杂的调控机制？</p>
-<p><a class="pn" id="pn-302" href="#pn-302">302</a>2. DNA甲基化和组蛋白修饰如何协同调控基因表达？</p>
-<p><a class="pn" id="pn-303" href="#pn-303">303</a>3. 选择性剪接有什么生物学意义？</p></div><nav class="chapter-nav"><a href="ch05_%E5%8E%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7%E4%B8%8E%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">下一章 →</a></nav></main>
+<main><nav class="chapter-nav"><a href="ch05_%E5%8E%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7%E4%B8%8E%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第6章</span>分子生物学技术与真核表达调控</div><div class="article"><h2 id="_1">第六章：分子生物学技术</h2>
+<h2 id="61-pcr">6.1 PCR技术</h2>
+<h3 id="_2">原理</h3>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a>&lt;<span class="entity">中心法则</span>告诉我们，<span class="entity">DNA复制</span>是遗传信息传递的基础。<span class="entity">PCR</span>（聚合酶链式反应）技术正是模拟这一过程，在体外快速扩增特定<span class="entity">DNA</span>片段。</p>
+<p><a class="pn" id="pn-2" href="#pn-2">2</a><strong>发明者</strong>：<span class="entity">Kary Mullis 1983</span>因此获得1993年诺贝尔化学奖。</p>
+<h3 id="_3">反应体系</h3>
+<table>
+<thead>
+<tr>
+<th>组分</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity">模板DNA</span></td>
+<td>扩增的原始材料</td>
+<td>基因组DNA</td>
+</tr>
+<tr>
+<td><span class="entity">引物</span></td>
+<td>确定扩增起始位点</td>
+<td>上下游各一条</td>
+</tr>
+<tr>
+<td><span class="entity">DNA聚合酶</span></td>
+<td>催化DNA合成</td>
+<td><span class="entity">Taq酶</span></td>
+</tr>
+<tr>
+<td><span class="entity">dNTPs</span></td>
+<td>原料</td>
+<td>dATP、dTTP、dGTP、dCTP</td>
+</tr>
+<tr>
+<td><span class="entity">缓冲液</span></td>
+<td>提供适宜环境</td>
+<td>含<span class="entity">Mg²⁺</span>、<span class="entity">pH 8.3</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">反应步骤</h3>
+<pre><code>&lt;span class=&quot;entity&quot;&gt;94-95°C&lt;/span&gt;变性 → &lt;span class=&quot;entity&quot;&gt;50-65°C&lt;/span&gt;退火 → &lt;span class=&quot;entity&quot;&gt;72°C&lt;/span&gt;延伸
+     ↓
+   30-35个循环
+     ↓
+  DNA指数扩增（2ⁿ）
+</code></pre>
+<p><a class="pn" id="pn-3" href="#pn-3">3</a><strong>关键参数</strong>：
+- 变性温度：<span class="entity">94-95°C</span>，时间：<span class="entity">30秒-2分钟</span>
+- 退火温度：取决于引物Tm值，通常<span class="entity">低于Tm 5°C</span>
+- 延伸时间：<span class="entity">1分钟/kb</span></p>
+<h3 id="taq">Taq酶特点</h3>
+<p><a class="pn" id="pn-4" href="#pn-4">4</a><span class="entity">Taq DNA聚合酶</span>是从<span class="entity">嗜热菌</span><span class="entity">Thermus aquaticus</span>中分离的：
+- ✅ 耐热，在<span class="entity">95°C</span>不失活
+- ✅ 最适温度<span class="entity">72-80°C</span>
+- ❌ 无<span class="entity">3&#x27;-5&#x27;外切酶活性</span>，无校对功能
+- ❌ 错误率较高（约<span class="entity">10⁻⁴</span>）</p>
+<p><a class="pn" id="pn-5" href="#pn-5">5</a><strong>高保真酶</strong>：如<span class="entity">Pfu酶</span>、<span class="entity">Phusion酶</span>，具有校对功能。</p>
+<h2 id="62-dna">6.2 DNA测序技术</h2>
+<h3 id="sanger">Sanger测序（第一代）</h3>
+<p><a class="pn" id="pn-6" href="#pn-6">6</a><strong>原理</strong>：<span class="entity">双脱氧终止法</span></p>
+<pre><code>DNA合成反应 + 少量双脱氧核苷酸（ddNTP）
+         ↓
+    随机终止产生不同长度片段
+         ↓
+    电泳分离，读取序列
+</code></pre>
+<p><a class="pn" id="pn-7" href="#pn-7">7</a><strong>特点</strong>：
+- 读长：500-1000 bp
+- 准确率：&gt;99.9%
+- 通量：低（每次反应一条序列）</p>
+<h3 id="_5">高通量测序（第二代）</h3>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>技术原理</th>
+<th>读长</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity">Illumina</span></td>
+<td>桥式PCR + 荧光标记</td>
+<td>150-300 bp</td>
+<td>全基因组、RNA-seq</td>
+</tr>
+<tr>
+<td><span class="entity">Ion Torrent</span></td>
+<td>半导体测序</td>
+<td>200-400 bp</td>
+<td>靶向测序</td>
+</tr>
+<tr>
+<td><span class="entity">SOLiD</span></td>
+<td>连接测序</td>
+<td>50-75 bp</td>
+<td>重测序</td>
+</tr>
+</tbody>
+</table>
+<p><a class="pn" id="pn-8" href="#pn-8">8</a><strong>Illumina测序流程</strong>：
+1. 文库制备：DNA片段化 + 接头连接
+2. 簇生成：桥式PCR扩增
+3. 测序：边合成边测序（SBS）
+4. 数据分析：图像 → 碱基识别</p>
+<h3 id="_6">第三代测序</h3>
+<p><a class="pn" id="pn-9" href="#pn-9">9</a><strong>PacBio（单分子实时测序）</strong>：
+- 读长：10-20 kb，最长可达100 kb
+- 优势：直接检测<span class="entity">DNA甲基化</span>
+- 应用：基因组组装、结构变异检测</p>
+<p><a class="pn" id="pn-10" href="#pn-10">10</a><strong>Oxford Nanopore</strong>：
+- 原理：纳米孔单分子测序
+- 特点：便携、实时、超长读长
+- 设备：MinION（USB大小）</p>
+<h2 id="63">6.3 基因克隆</h2>
+<h3 id="_7">载体系统</h3>
+<table>
+<thead>
+<tr>
+<th>载体类型</th>
+<th>容量</th>
+<th>宿主</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity">质粒</span></td>
+<td>2-10 kb</td>
+<td>细菌</td>
+<td>常规克隆</td>
+</tr>
+<tr>
+<td><span class="entity">噬菌体</span></td>
+<td>9-23 kb</td>
+<td>细菌</td>
+<td>cDNA文库</td>
+</tr>
+<tr>
+<td><span class="entity">BAC</span></td>
+<td>100-300 kb</td>
+<td>细菌</td>
+<td>基因组文库</td>
+</tr>
+<tr>
+<td><span class="entity">YAC</span></td>
+<td>0.5-2 Mb</td>
+<td>酵母</td>
+<td>大片段克隆</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">克隆流程</h3>
+<pre><code>目的基因获取 ←&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;/&lt;span class=&quot;entity&quot;&gt;化学合成&lt;/span&gt;/&lt;span class=&quot;entity&quot;&gt;文库筛选&lt;/span&gt;
+      ↓
+载体准备 ← &lt;span class=&quot;entity&quot;&gt;限制性内切酶&lt;/span&gt;切割
+      ↓
+连接反应 ← &lt;span class=&quot;entity&quot;&gt;DNA连接酶&lt;/span&gt;
+      ↓
+转化/转染 ← 导入宿主细胞
+      ↓
+筛选鉴定 ← &lt;span class=&quot;entity&quot;&gt;抗生素抗性&lt;/span&gt;、&lt;span class=&quot;entity&quot;&gt;蓝白斑筛选&lt;/span&gt;
+</code></pre>
+<h3 id="_9">限制性内切酶</h3>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>识别序列特点</strong>：
+- 通常为4-8 bp的<span class="entity">回文序列</span>
+- 切割产生粘性末端或平末端</p>
+<table>
+<thead>
+<tr>
+<th>酶</th>
+<th>识别序列</th>
+<th>末端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity">EcoRI</span></td>
+<td>G↓AATTC</td>
+<td>5'粘性</td>
+</tr>
+<tr>
+<td><span class="entity">BamHI</span></td>
+<td>G↓GATCC</td>
+<td>5'粘性</td>
+</tr>
+<tr>
+<td><span class="entity">HindIII</span></td>
+<td>A↓AGCTT</td>
+<td>5'粘性</td>
+</tr>
+<tr>
+<td><span class="entity">SmaI</span></td>
+<td>CCC↓GGG</td>
+<td>平末端</td>
+</tr>
+</tbody>
+</table>
+<h2 id="64">6.4 基因编辑技术</h2>
+<h3 id="crispr-cas9">CRISPR-Cas9系统</h3>
+<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>发现</strong>：<span class="entity">Jennifer Doudna &amp; Emmanuelle Charpentier 2012</span>，获2020年诺贝尔化学奖。</p>
+<p><a class="pn" id="pn-13" href="#pn-13">13</a><strong>组成</strong>：
+- <span class="entity">Cas9蛋白</span>：核酸酶，切割DNA
+- <span class="entity">sgRNA</span>：向导RNA，引导Cas9到靶位点</p>
+<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>原理</strong>：</p>
+<pre><code>sgRNA识别靶序列（PAM: NGG）
+        ↓
+Cas9切割DNA双链
+        ↓
+细胞修复（NHEJ或HDR）
+        ↓
+基因敲除或精确编辑
+</code></pre>
+<p><a class="pn" id="pn-15" href="#pn-15">15</a><strong>应用</strong>：
+- <span class="entity">遗传病</span>治疗（如<span class="entity">镰状细胞贫血</span>）
+- <span class="entity">癌症</span>免疫治疗
+- 功能基因研究
+- 作物改良</p>
+<h3 id="_10">碱基编辑器</h3>
+<p><a class="pn" id="pn-16" href="#pn-16">16</a><strong>CBE（胞嘧啶碱基编辑器）</strong>：C → T
+<strong>ABE（腺嘌呤碱基编辑器）</strong>：A → G</p>
+<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>优势</strong>：不切断DNA双链，减少随机插入/缺失</p>
+<h2 id="65">6.5 基因表达分析</h2>
+<h3 id="rt-pcr">RT-PCR</h3>
+<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>原理</strong>：</p>
+<pre><code>RNA →&lt;span class=&quot;entity&quot;&gt;逆转录&lt;/span&gt;→ cDNA →&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;→ 扩增产物
+</code></pre>
+<p><a class="pn" id="pn-19" href="#pn-19">19</a><strong>关键酶</strong>：<span class="entity">逆转录酶</span>（如M-MLV、AMV）</p>
+<p><a class="pn" id="pn-20" href="#pn-20">20</a><strong>应用</strong>：
+- 检测基因表达水平
+- 验证RNA-seq结果
+- 病毒检测（如<span class="entity">COVID-19</span>RT-PCR检测）</p>
+<h3 id="rnarnai">RNA干扰（RNAi）</h3>
+<p><a class="pn" id="pn-21" href="#pn-21">21</a><strong>机制</strong>：
+- <span class="entity">dsRNA</span>被<span class="entity">Dicer</span>切割为<span class="entity">siRNA</span>（21-23 nt）
+- siRNA与<span class="entity">RISC复合物</span>结合
+- 靶向降解互补mRNA</p>
+<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>应用</strong>：
+- 基因功能研究（基因敲低）
+- 治疗（如<span class="entity">年龄相关性黄斑变性</span>）</p>
+<h2 id="_11">本章小结</h2>
+<ul>
+<li><span class="entity">PCR</span>是体外DNA扩增的核心技术</li>
+<li>测序技术从Sanger发展到高通量、单分子测序</li>
+<li>基因克隆依赖载体系统和限制酶</li>
+<li><span class="entity">CRISPR-Cas9</span>革命性地改变了基因编辑</li>
+<li>RNA技术（RT-PCR、RNAi）是基因表达研究的重要工具</li>
+</ul>
+<h2 id="_12">思考题</h2>
+<ol>
+<li>为什么PCR需要引物，而DNA复制在体内不需要外源引物？</li>
+<li>比较第一代、第二代、第三代测序技术的优缺点。</li>
+<li>CRISPR-Cas9与传统基因编辑技术（如ZFN、TALEN）相比有什么优势？</li>
+</ol>
+<hr />
+<h2 id="_13">第六章：真核生物基因表达调控</h2>
+<h2 id="61">6.1 真核基因调控概述</h2>
+<h3 id="_14">与原核生物的差异</h3>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>原核生物</th>
+<th>真核生物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转录翻译</td>
+<td>偶联</td>
+<td>分隔（核膜）</td>
+</tr>
+<tr>
+<td>基因组织</td>
+<td>操纵子</td>
+<td>单基因</td>
+</tr>
+<tr>
+<td>染色质</td>
+<td>无</td>
+<td>有核小体</td>
+</tr>
+<tr>
+<td>主要调控点</td>
+<td>转录</td>
+<td>多水平</td>
+</tr>
+<tr>
+<td>RNA加工</td>
+<td>无</td>
+<td>复杂（加帽、加尾、剪接）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">调控层次</h3>
+<p><a class="pn" id="pn-23" href="#pn-23">23</a><span class="entity concept" title="概念：eukaryotic_regulation">真核基因表达调控</span>发生在多个层次：</p>
+<pre><code>染色质水平 → 转录水平 → RNA加工 → mRNA运输 → 翻译水平 → 蛋白质修饰
+    ↑           ↑          ↑          ↑          ↑          ↑
+表观遗传   转录因子   选择性剪接   核质运输   翻译起始   信号转导
+</code></pre>
+<h2 id="62">6.2 染色质水平调控</h2>
+<h3 id="dna">DNA甲基化</h3>
+<p><a class="pn" id="pn-24" href="#pn-24">24</a><span class="entity entity-generic" title="修饰">DNA甲基化</span>：
+- <strong>位点</strong>：<span class="entity entity-generic" title="碱基">CpG岛</span>中的胞嘧啶（C→5mC）
+- <strong>酶</strong>：<span class="entity enzyme" title="酶">DNA甲基转移酶</span>（DNMT1维持，DNMT3a/3b从头）
+- <strong>效应</strong>：通常抑制基因表达</p>
+<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>生物学意义</strong>：
+- <span class="entity entity-generic" title="概念">基因组印记</span>（Imprinting）：亲本特异性表达
+- <span class="entity entity-generic" title="概念">X染色体失活</span>：雌性X染色体剂量补偿
+- 转座子沉默
+- 肿瘤抑制基因沉默</p>
+<h3 id="_16">组蛋白修饰</h3>
+<p><a class="pn" id="pn-26" href="#pn-26">26</a><span class="entity concept" title="概念：histone_modification">组蛋白修饰</span>：</p>
+<table>
+<thead>
+<tr>
+<th>修饰</th>
+<th>位点</th>
+<th>效应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="修饰">乙酰化</span>（Ac）</td>
+<td>赖氨酸</td>
+<td>激活转录</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">甲基化</span>（Me）</td>
+<td>赖氨酸/精氨酸</td>
+<td>H3K4me3激活，H3K27me3抑制</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">磷酸化</span>（P）</td>
+<td>丝氨酸</td>
+<td>调控染色质结构</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">泛素化</span>（Ub）</td>
+<td>赖氨酸</td>
+<td>调控转录</td>
+</tr>
+</tbody>
+</table>
+<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>组蛋白密码假说</strong>：
+- 不同修饰组合产生特定调控效应
+- 修饰之间相互影响（交叉对话）</p>
+<h3 id="_17">染色质重塑</h3>
+<p><a class="pn" id="pn-28" href="#pn-28">28</a><span class="entity complex" title="复合物">染色质重塑复合物</span>：
+- <span class="entity complex" title="复合物">SWI/SNF</span>：利用ATP水解能量重塑核小体
+- <span class="entity complex" title="复合物">ISWI</span>、<span class="entity complex" title="复合物">CHD</span>、<span class="entity complex" title="复合物">INO80</span>家族</p>
+<p><a class="pn" id="pn-29" href="#pn-29">29</a><strong>功能</strong>：
+- 改变核小体位置
+- 影响DNA可及性
+- 调控转录因子结合</p>
+<h2 id="63_1">6.3 转录水平调控</h2>
+<h3 id="_18">顺式作用元件</h3>
+<p><a class="pn" id="pn-30" href="#pn-30">30</a><span class="entity concept" title="概念：cis_element">顺式作用元件</span>：DNA上的调控序列</p>
+<table>
+<thead>
+<tr>
+<th>元件</th>
+<th>位置</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="概念">启动子</span>（Promoter）</td>
+<td>转录起始点附近</td>
+<td>基础转录装置组装</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">增强子</span>（Enhancer）</td>
+<td>远端（1kb-1Mb）</td>
+<td>显著增强转录效率</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">沉默子</span>（Silencer）</td>
+<td>远端</td>
+<td>抑制转录</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">绝缘子</span>（Insulator）</td>
+<td>边界</td>
+<td>阻断增强子/沉默子作用</td>
+</tr>
+</tbody>
+</table>
+<p><a class="pn" id="pn-31" href="#pn-31">31</a><strong>增强子特征</strong>：
+- 方向无关性
+- 位置灵活性（上游、下游、内含子）
+- 组织特异性
+- 与启动子形成染色质环</p>
+<h3 id="_19">反式作用因子</h3>
+<p><a class="pn" id="pn-32" href="#pn-32">32</a><span class="entity concept" title="概念：trans_factor">反式作用因子</span>：调控蛋白</p>
+<p><a class="pn" id="pn-33" href="#pn-33">33</a><strong>转录因子结构</strong>：
+- <span class="entity entity-generic" title="结构">DNA结合域</span>：识别特定序列
+- <span class="entity entity-generic" title="结构">转录激活域</span>：招募转录 machinery
+- <span class="entity entity-generic" title="结构">二聚化结构域</span>：形成同源/异源二聚体
+- <span class="entity entity-generic" title="结构">核定位信号</span>（NLS）：进入细胞核</p>
+<p><a class="pn" id="pn-34" href="#pn-34">34</a><strong>常见DNA结合域</strong>：
+| 结构域 | 特征 | 代表因子 |
+|--------|------|---------|
+| <span class="entity entity-generic" title="结构">同源异型域</span>（Homeodomain） | 螺旋-转角-螺旋变体 | HOX蛋白 |
+| <span class="entity entity-generic" title="结构">锌指</span>（Zinc finger） | Zn²⁺稳定 | SP1、TFIIIA |
+| <span class="entity entity-generic" title="结构">碱性亮氨酸拉链</span>（bZIP） | 亮氨酸拉链二聚化 | AP-1、CREB |
+| <span class="entity entity-generic" title="结构">螺旋-环-螺旋</span>（HLH） | HLH二聚化 | MyoD、E47 |</p>
+<h3 id="_20">转录调控网络</h3>
+<p><a class="pn" id="pn-35" href="#pn-35">35</a><strong>组合调控</strong>：
+- 多个转录因子协同作用
+- 产生特异性的时空表达模式
+- 增强调控特异性</p>
+<p><a class="pn" id="pn-36" href="#pn-36">36</a><strong>实例</strong>：
+- <span class="entity protein" title="蛋白">MyoD</span>与肌肉分化
+- <span class="entity protein" title="蛋白">Oct4</span>、<span class="entity protein" title="蛋白">Sox2</span>、<span class="entity protein" title="蛋白">Nanog</span>与干细胞多能性</p>
+<h2 id="64_1">6.4 转录后调控</h2>
+<h3 id="_21">选择性剪接</h3>
+<p><a class="pn" id="pn-37" href="#pn-37">37</a><span class="entity concept" title="概念：alternative_splicing">选择性剪接</span>：
+- 一个基因产生多种mRNA异构体
+- 人类约95%的基因存在选择性剪接
+- 增加蛋白质组多样性</p>
+<p><a class="pn" id="pn-38" href="#pn-38">38</a><strong>剪接模式</strong>：
+| 模式 | 说明 |
+|------|------|
+| 外显子跳跃 | 跳过某个外显子 |
+| 互斥外显子 | 两个外显子只保留一个 |
+| 内含子保留 | 保留某个内含子 |
+| 可变5'剪接位点 | 使用不同的5'剪接位点 |
+| 可变3'剪接位点 | 使用不同的3'剪接位点 |</p>
+<p><a class="pn" id="pn-39" href="#pn-39">39</a><strong>调控因子</strong>：
+- <span class="entity protein" title="蛋白">SR蛋白</span>：促进剪接
+- <span class="entity protein" title="蛋白">hnRNP蛋白&lt;/组织&gt;：抑制剪接</p>
+<h3 id="rna">RNA编辑</h3>
+<p><a class="pn" id="pn-40" href="#pn-40">40</a>&lt;concept id=&quot;rna_editing&quot;&gt;RNA编辑&lt;/concept&gt;：
+- 转录后改变RNA序列
+- 脱氨酶（ADAR、APOBEC）介导
+- 实例：APOB mRNA的C→U编辑</p>
+<h3 id="rna_1">RNA稳定性调控</h3>
+<p><a class="pn" id="pn-41" href="#pn-41">41</a><strong>mRNA降解途径</strong>：
+1. &lt;entity type=&quot;概念&quot;&gt;脱腺苷酸化</span>：去除poly(A)尾
+2. <span class="entity entity-generic" title="概念">脱帽</span>：去除5'帽
+3. <span class="entity entity-generic" title="概念">外切酶降解</span>：5'→3'或3'→5'</p>
+<p><a class="pn" id="pn-42" href="#pn-42">42</a><strong>调控元件</strong>：
+- <span class="entity entity-generic" title="概念">AU富含元件</span>（ARE）：促进降解
+- <span class="entity entity-generic" title="概念">miRNA</span>：通过<span class="entity entity-generic" title="概念">RNA干扰</span>抑制翻译或促进降解</p>
+<h3 id="mirna">miRNA调控</h3>
+<p><a class="pn" id="pn-43" href="#pn-43">43</a><span class="entity molecule" title="分子">miRNA</span>（微小RNA）：
+- 长度：21-25 nt
+- 来源：RNA聚合酶II转录，经<span class="entity enzyme" title="酶">Drosha</span>和<span class="entity enzyme" title="酶">Dicer</span>加工
+- 机制：与<span class="entity complex" title="复合物">RISC复合物</span>结合，靶向mRNA</p>
+<p><a class="pn" id="pn-44" href="#pn-44">44</a><strong>调控方式</strong>：
+- 完全互补：mRNA切割
+- 部分互补：翻译抑制</p>
+<h2 id="65_1">6.5 翻译水平调控</h2>
+<h3 id="_22">全局翻译调控</h3>
+<p><a class="pn" id="pn-45" href="#pn-45">45</a><strong>eIF2磷酸化</strong>：
+- 应激条件下eIF2α磷酸化
+- 抑制全局翻译起始
+- 但激活特定应激基因翻译</p>
+<p><a class="pn" id="pn-46" href="#pn-46">46</a><strong>mTOR通路</strong>：
+- <span class="entity entity-generic" title="激酶">mTOR激酶</span>感知营养信号
+- 磷酸化<span class="entity protein" title="蛋白">4E-BP</span>，释放eIF4E
+- 促进翻译起始</p>
+<h3 id="_23">特异性翻译调控</h3>
+<p><a class="pn" id="pn-47" href="#pn-47">47</a><strong>铁响应元件</strong>（<span class="entity entity-generic" title="概念">IRE</span>）：
+- <span class="entity protein" title="蛋白">铁调节蛋白</span>（IRP）结合IRE
+- 铁缺乏时：抑制<span class="entity protein" title="蛋白">铁蛋白</span>mRNA翻译
+- 铁充足时：IRP失活，翻译进行</p>
+<p><a class="pn" id="pn-48" href="#pn-48">48</a><strong>上游开放阅读框</strong>（uORF）：
+- 位于主ORF上游
+- 抑制主ORF翻译
+- 应激条件下被绕过</p>
+<h2 id="66">6.6 信号转导与基因表达</h2>
+<h3 id="_24">信号通路</h3>
+<p><a class="pn" id="pn-49" href="#pn-49">49</a><strong>MAPK通路</strong>：
+- 生长因子 → Ras → Raf → MEK → ERK
+- ERK入核激活转录因子</p>
+<p><a class="pn" id="pn-50" href="#pn-50">50</a><strong>Wnt/β-catenin通路</strong>：
+- Wnt信号稳定β-catenin
+- β-catenin入核激活TCF转录因子</p>
+<p><a class="pn" id="pn-51" href="#pn-51">51</a><strong>TGF-β/Smad通路</strong>：
+- TGF-β受体磷酸化Smad2/3
+- Smad复合物入核调控转录</p>
+<h3 id="_25">激素调控</h3>
+<p><a class="pn" id="pn-52" href="#pn-52">52</a><strong>类固醇激素</strong>：
+- 脂溶性，可穿过细胞膜
+- 与核受体结合
+- 激素-受体复合物直接调控转录</p>
+<p><a class="pn" id="pn-53" href="#pn-53">53</a><strong>实例</strong>：
+- 雌激素受体（ER）
+- 糖皮质激素受体（GR）</p>
+<h2 id="_26">本章小结</h2>
+<ul>
+<li>真核基因调控发生在多水平，比原核更复杂</li>
+<li>染色质修饰（DNA甲基化、组蛋白修饰）是表观遗传调控的基础</li>
+<li>转录因子通过顺式元件和反式因子精细调控</li>
+<li>转录后调控（选择性剪接、miRNA）增加调控层次</li>
+<li>信号转导通路将胞外信号转化为基因表达变化</li>
+</ul>
+<h2 id="_27">思考题</h2>
+<ol>
+<li>为什么真核生物需要比原核生物更复杂的调控机制？</li>
+<li>DNA甲基化和组蛋白修饰如何协同调控基因表达？</li>
+<li>选择性剪接有什么生物学意义？</li>
+</ol></div><nav class="chapter-nav"><a href="ch05_%E5%8E%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7%E4%B8%8E%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">下一章 →</a></nav></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

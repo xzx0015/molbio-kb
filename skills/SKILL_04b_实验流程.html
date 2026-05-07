@@ -161,549 +161,904 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL_04b: 实验流程 — 分子生物学技术的关系网络</h1>
-<p>&gt; 定义分子生物学实验技术之间的关系网络，包括步骤序列、技术替代和技术组合，建立实验技能学习的结构化路径。</p>
-<p>---</p>
-<h2>一、关系类型定义</h2>
-<p>### 1.1 步骤序列 (sequence / precedes)</p>
-<p>**定义**：表示实验步骤之间的先后顺序关系，前一步骤的输出是后一步骤的输入。</p>
-<p>**Schema**：</p>
-<p>```</p>
-<p>(步骤A, precedes, 步骤B, [dependency, output-input])</p>
-<p>```</p>
-<p>**方向**：步骤A → 步骤B（单向）</p>
-<p>**属性**：</p>
-<p>- `dependency`: 依赖类型（强/弱）</p>
-<p>  - `strong`: 步骤B必须等待步骤A完成（如：纯化必须在提取之后）</p>
-<p>  - `weak`: 步骤B可以在步骤A进行中开始（如：准备试剂与样品处理）</p>
-<p>- `output-input`: 前一步的输出作为后一步的输入（true/false）</p>
-<p>- `time-gap`: 时间间隔（立即/短时间/长时间）</p>
-<p>- `condition`: 转换条件（温度/pH/时间等）</p>
-<p>**示例**：DNA提取实验步骤序列</p>
-<p>| 步骤 | 关系 | 下一步骤 | 依赖 | 输出-输入 |</p>
-<p>|------|------|----------|------|-----------|</p>
-<p>| 样品收集 | precedes | 细胞裂解 | 强 | 是 |</p>
-<p>| 细胞裂解 | precedes | DNA分离 | 强 | 是 |</p>
-<p>| DNA分离 | precedes | DNA纯化 | 强 | 是 |</p>
-<p>| DNA纯化 | precedes | DNA定量 | 强 | 是 |</p>
-<p>| DNA定量 | precedes | 质量检测 | 弱 | 否 |</p>
-<p>| 质量检测 | precedes | 储存/使用 | 强 | 是 |</p>
-<p>**完整实验流程示例**：</p>
-<p>#### 1. DNA提取流程</p>
-<p>```</p>
-<p>样品准备</p>
-<p>  → 细胞裂解（裂解液 + 蛋白酶K）</p>
-<p>    → DNA释放</p>
-<p>      → 酚-氯仿抽提 或 柱式纯化</p>
-<p>        → DNA沉淀（乙醇/异丙醇）</p>
-<p>          → DNA洗涤（70%乙醇）</p>
-<p>            → DNA溶解（TE缓冲液/水）</p>
-<p>              → 浓度测定（NanoDrop/荧光法）</p>
-<p>                → 质量检测（电泳/分光光度计）</p>
-<p>                  → [合格] → 储存(-20°C) / 下游实验</p>
-<p>                  → [不合格] → 重新提取</p>
-<p>```</p>
-<p>#### 2. RNA提取流程（TRIzol法）</p>
-<p>```</p>
-<p>样品收集与液氮速冻</p>
-<p>  → 样品研磨/匀浆</p>
-<p>    → TRIzol裂解</p>
-<p>      → 氯仿相分离</p>
-<p>        → 水相回收</p>
-<p>          → 异丙醇沉淀RNA</p>
-<p>            → 75%乙醇洗涤</p>
-<p>              → RNA溶解（DEPC水）</p>
-<p>                → DNase I处理（去除DNA污染）</p>
-<p>                  → 再次纯化</p>
-<p>                    → 浓度与纯度检测</p>
-<p>                      → 完整性检测（RIN值）</p>
-<p>                        → 逆转录 / 储存(-80°C)</p>
-<p>```</p>
-<p>#### 3. PCR实验流程</p>
-<p>```</p>
-<p>模板DNA准备</p>
-<p>  → 引物设计（软件设计 + BLAST验证）</p>
-<p>    → 反应体系配制</p>
-<p>      │   ├── DNA模板</p>
-<p>      │   ├── 正向引物</p>
-<p>      │   ├── 反向引物</p>
-<p>      │   ├── dNTPs</p>
-<p>      │   ├── 缓冲液</p>
-<p>      │   ├── Mg²⁺</p>
-<p>      │   └── Taq酶</p>
-<p>      ↓</p>
-<p>    热循环仪设置</p>
-<p>      │   ├── 预变性（94-95°C, 2-5min）</p>
-<p>      │   ├── 循环（30-35次）</p>
-<p>      │   │     ├── 变性（94°C, 30s）</p>
-<p>      │   │     ├── 退火（50-65°C, 30s）</p>
-<p>      │   │     └── 延伸（72°C, 1kb/min）</p>
-<p>      │   └── 终延伸（72°C, 5-10min）</p>
-<p>      ↓</p>
-<p>    产物检测（琼脂糖电泳）</p>
-<p>      → 结果分析</p>
-<p>        → [阳性] → 产物纯化 / 测序验证</p>
-<p>        → [阴性] → 优化条件 / 重新设计</p>
-<p>```</p>
-<p>#### 4. Western Blot流程</p>
-<p>```</p>
-<p>蛋白质样品制备</p>
-<p>  → 蛋白质定量（BCA/Bradford法）</p>
-<p>    → SDS-PAGE电泳</p>
-<p>      │   ├── 制胶（分离胶 + 浓缩胶）</p>
-<p>      │   ├── 样品变性（95°C, 5min）</p>
-<p>      │   ├── 上样</p>
-<p>      │   ├── 电泳（80V浓缩 → 120V分离）</p>
-<p>      │   └──  marker观察</p>
-<p>      ↓</p>
-<p>    转膜</p>
-<p>      │   ├── 膜平衡（PVDF/NC膜）</p>
-<p>      │   ├── 三明治组装</p>
-<p>      │   ├── 转印（湿转/半干转/干转）</p>
-<p>      │   └── 转印效率检测（丽春红染色）</p>
-<p>      ↓</p>
-<p>    封闭（5%脱脂奶粉/BSA）</p>
-<p>      → 一抗孵育（4°C过夜）</p>
-<p>        → 洗涤（TBST × 3）</p>
-<p>          → 二抗孵育（室温1-2h）</p>
-<p>            → 洗涤（TBST × 3）</p>
-<p>              → 显色/发光（ECL/荧光）</p>
-<p>                → 成像与分析</p>
-<p>```</p>
-<p>**发现方法**：</p>
-<p>1. **模式匹配**：&quot;首先...然后...&quot;、&quot;接着...&quot;、&quot;之后...&quot;</p>
-<p>2. **动词分析**：提取表示顺序的动词（提取→纯化→检测）</p>
-<p>3. **输入输出匹配**：前一步的输出名词与后一步的输入名词匹配</p>
-<p>4. **LLM推理**：从实验描述中提取步骤顺序</p>
-<p>---</p>
-<p>### 1.2 技术替代 (alternative-to)</p>
-<p>**定义**：表示两种或多种技术可以互相替代，用于相同或类似的目的。</p>
-<p>**Schema**：</p>
-<p>```</p>
-<p>(技术A, alternative-to, 技术B, [criteria, preference-context])</p>
-<p>```</p>
-<p>**方向**：双向（无向关系）</p>
-<p>**属性**：</p>
-<p>- `criteria`: 比较维度（灵敏度/特异性/成本/时间/设备要求）</p>
-<p>- `preference-context`: 优先选择的场景</p>
-<p>- `equivalence`: 等效程度（完全等效/部分等效/条件等效）</p>
-<p>- `trade-offs`: 权衡因素列表</p>
-<p>**示例**：</p>
-<p>| 技术A | 关系 | 技术B | 比较维度 | 优选场景 |</p>
-<p>|-------|------|-------|----------|----------|</p>
-<p>| Northern Blot | alternative-to | RT-PCR | 灵敏度/定量性 | Northern用于RNA大小确认，RT-PCR用于定量 |</p>
-<p>| RT-PCR | alternative-to | RT-qPCR | 定量精度 | RT-qPCR用于精确定量 |</p>
-<p>| Western Blot | alternative-to | ELISA | 通量/特异性 | ELISA用于高通量，Western用于分子量确认 |</p>
-<p>| Sanger测序 | alternative-to | NGS | 成本/通量/读长 | Sanger用于验证，NGS用于大规模筛选 |</p>
-<p>| 质粒提取（碱裂解法） | alternative-to | 质粒提取（柱式法） | 成本/时间/纯度 | 柱式法快速，碱裂解法经济 |</p>
-<p>| 转染（脂质体） | alternative-to | 转染（电穿孔） | 效率/细胞毒性 | 脂质体用于易转染细胞，电穿孔用于难转染细胞 |</p>
-<p>| 基因敲除（CRISPR） | alternative-to | 基因敲除（RNAi） | 永久性/效率 | CRISPR永久敲除，RNAi瞬时敲低 |</p>
-<p>**详细对比示例**：</p>
-<p>#### 1. RNA检测：Northern Blot vs RT-PCR</p>
-<p>| 维度 | Northern Blot | RT-PCR |</p>
-<p>|------|---------------|--------|</p>
-<p>| 原理 | 杂交检测 | 逆转录+扩增 |</p>
-<p>| 灵敏度 | 中（ng级） | 高（pg级） |</p>
-<p>| 特异性 | 高（大小+序列） | 高（序列特异性） |</p>
-<p>| 定量性 | 半定量 | 精确定量（qPCR） |</p>
-<p>| 样品量 | 需要较多（10-20μg） | 需要较少（ng级） |</p>
-<p>| 时间 | 2-3天 | 半天-1天 |</p>
-<p>| 设备 | 电泳+转膜设备 | 热循环仪 |</p>
-<p>| 优势 | 可检测RNA大小、可变剪切 | 高灵敏度、精确定量 |</p>
-<p>| 劣势 | 灵敏度低、耗时长 | 无法直接看RNA大小 |</p>
-<p>#### 2. 蛋白质检测：Western Blot vs ELISA</p>
-<p>| 维度 | Western Blot | ELISA |</p>
-<p>|------|--------------|-------|</p>
-<p>| 原理 | 电泳分离+免疫检测 | 固相免疫检测 |</p>
-<p>| 灵敏度 | 中（pg级） | 高（fg级） |</p>
-<p>| 特异性 | 高（分子量+抗体） | 中（依赖抗体） |</p>
-<p>| 通量 | 低（每次1-10个样品） | 高（96/384孔板） |</p>
-<p>| 分子量信息 | 有 | 无 |</p>
-<p>| 定量性 | 半定量 | 精确定量 |</p>
-<p>| 时间 | 2-3天 | 半天 |</p>
-<p>| 优势 | 分子量确认、翻译后修饰检测 | 高通量、精确定量 |</p>
-<p>| 劣势 | 通量低、耗时长 | 无分子量信息 |</p>
-<p>#### 3. 基因功能研究：CRISPR vs RNAi</p>
-<p>| 维度 | CRISPR-Cas9 | RNAi |</p>
-<p>|------|-------------|------|</p>
-<p>| 机制 | DNA切割、基因敲除 | mRNA降解、基因敲低 |</p>
-<p>| 效果 | 永久性、完全敲除 | 瞬时性、部分敲低（70-90%） |</p>
-<p>| 脱靶效应 | 低（优化后） | 中 |</p>
-<p>| 设计难度 | 需要PAM序列 | 较简单 |</p>
-<p>| 成本 | 中 | 低 |</p>
-<p>| 时间 | 2-4周建立细胞系 | 几天 |</p>
-<p>| 可逆性 | 不可逆 | 可逆 |</p>
-<p>| 优势 | 永久、完全敲除、可敲入 | 快速、简单、成本低 |</p>
-<p>| 劣势 | 周期长、可能致死 | 不完全敲低、瞬时 |</p>
-<p>**发现方法**：</p>
-<p>1. **关键词匹配**：&quot;也可以用...&quot;、&quot;替代方法...&quot;、&quot;另一种选择是...&quot;</p>
-<p>2. **目的匹配**：相同实验目的的不同技术路径</p>
-<p>3. **教材对比**：教材中并列介绍的技术</p>
-<p>4. **LLM推理**：从技术描述中推断可替代性</p>
-<p>---</p>
-<p>### 1.3 技术组合 (combination-of / uses)</p>
-<p>**定义**：表示复杂技术由多个基础技术组合而成，或某技术使用/依赖其他技术。</p>
-<p>**Schema**：</p>
-<p>```</p>
-<p>(复合技术, combination-of, 基础技术, [role, necessity])</p>
-<p>```</p>
-<p>**方向**：复合技术 → 基础技术（单向）</p>
-<p>**属性**：</p>
-<p>- `role`: 在组合中的作用（核心/辅助/前置/验证）</p>
-<p>- `necessity`: 必要性（必需/可选/增强）</p>
-<p>- `order`: 执行顺序（并行/串行）</p>
-<p>**示例**：</p>
-<p>| 复合技术 | 关系 | 基础技术 | 作用 | 必要性 |</p>
-<p>|----------|------|----------|------|--------|</p>
-<p>| ChIP-seq | combination-of | ChIP | 核心 | 必需 |</p>
-<p>| ChIP-seq | combination-of | 高通量测序 | 核心 | 必需 |</p>
-<p>| ChIP-seq | combination-of | 生物信息学分析 | 核心 | 必需 |</p>
-<p>| RNA-seq | combination-of | RNA提取 | 前置 | 必需 |</p>
-<p>| RNA-seq | combination-of | 文库制备 | 核心 | 必需 |</p>
-<p>| RNA-seq | combination-of | 高通量测序 | 核心 | 必需 |</p>
-<p>| RNA-seq | combination-of | 差异表达分析 | 核心 | 必需 |</p>
-<p>| CRISPR-Cas9 | combination-of | sgRNA设计 | 核心 | 必需 |</p>
-<p>| CRISPR-Cas9 | combination-of | Cas9表达 | 核心 | 必需 |</p>
-<p>| CRISPR-Cas9 | combination-of | 转染 | 核心 | 必需 |</p>
-<p>| CRISPR-Cas9 | combination-of | 单克隆筛选 | 辅助 | 可选 |</p>
-<p>| RT-qPCR | combination-of | 逆转录（RT） | 核心 | 必需 |</p>
-<p>| RT-qPCR | combination-of | 实时定量PCR（qPCR） | 核心 | 必需 |</p>
-<p>| 质谱蛋白质组学 | combination-of | 蛋白质提取 | 前置 | 必需 |</p>
-<p>| 质谱蛋白质组学 | combination-of | 蛋白质酶切 | 核心 | 必需 |</p>
-<p>| 质谱蛋白质组学 | combination-of | LC-MS/MS | 核心 | 必需 |</p>
-<p>| 质谱蛋白质组学 | combination-of | 蛋白质鉴定 | 核心 | 必需 |</p>
-<p>**技术组合层级示例**：</p>
-<p>```</p>
-<p>ChIP-seq</p>
-<p>├── 湿实验部分</p>
-<p>│   ├── 交联（Crosslinking）</p>
-<p>│   ├── 染色质断裂（Sonication/Enzyme）</p>
-<p>│   ├── 免疫沉淀（IP）</p>
-<p>│   ├── 解交联（Reverse crosslinking）</p>
-<p>│   ├── DNA纯化</p>
-<p>│   └── 文库制备</p>
-<p>│       ├── 末端修复</p>
-<p>│       ├── 加A尾</p>
-<p>│       ├── 接头连接</p>
-<p>│       └── PCR扩增</p>
-<p>├── 测序部分</p>
-<p>│   └── 高通量测序（Illumina）</p>
-<p>└── 干实验部分</p>
-<p>    ├── 质量控制（FastQC）</p>
-<p>    ├── 比对（Bowtie2/BWA）</p>
-<p>    ├── 峰 calling（MACS2）</p>
-<p>    ├── 注释（ChIPseeker）</p>
-<p>    └──  motif分析（HOMER/MEME）</p>
-<p>```</p>
-<p>```</p>
-<p>CRISPR-Cas9基因编辑</p>
-<p>├── 设计阶段</p>
-<p>│   ├── 靶点选择（sgRNA设计）</p>
-<p>│   ├── 脱靶预测（Cas-OFFinder）</p>
-<p>│   └── 载体构建</p>
-<p>│       ├── sgRNA克隆</p>
-<p>│       └── Cas9表达载体</p>
-<p>├── 实验阶段</p>
-<p>│   ├── 细胞培养</p>
-<p>│   ├── 转染/电穿孔</p>
-<p>│   │   ├── 质粒转染</p>
-<p>│   │   ├── RNP复合物递送</p>
-<p>│   │   └── 病毒转导</p>
-<p>│   └── 筛选</p>
-<p>│       ├── 抗生素筛选</p>
-<p>│       └── 单克隆分离</p>
-<p>└── 验证阶段</p>
-<p>    ├── 基因组DNA提取</p>
-<p>    ├── 编辑效率检测（T7E1）</p>
-<p>    ├── 测序验证（Sanger/NGS）</p>
-<p>    └── 功能验证</p>
-<p>```</p>
-<p>**发现方法**：</p>
-<p>1. **名称分析**：&quot;X-seq&quot;、&quot;X-PCR&quot;等复合技术命名</p>
-<p>2. **流程分解**：从完整流程中提取子技术</p>
-<p>3. **依赖分析**：某技术需要其他技术作为前置</p>
-<p>4. **LLM推理**：从技术描述中提取组成关系</p>
-<p>---</p>
-<h2>二、实验技术知识图谱</h2>
-<p>### 2.1 技术分类体系</p>
-<p>```</p>
-<p>分子生物学实验技术</p>
-<p>├── 核酸操作技术</p>
-<p>│   ├── 核酸提取</p>
-<p>│   │   ├── DNA提取</p>
-<p>│   │   │   ├── 基因组DNA提取</p>
-<p>│   │   │   ├── 质粒DNA提取</p>
-<p>│   │   │   └── 线粒体DNA提取</p>
-<p>│   │   └── RNA提取</p>
-<p>│   │       ├── 总RNA提取</p>
-<p>│   │       ├── mRNA纯化</p>
-<p>│   │       └── miRNA提取</p>
-<p>│   ├── 核酸扩增</p>
-<p>│   │   ├── PCR</p>
-<p>│   │   │   ├── 常规PCR</p>
-<p>│   │   │   ├── 热启动PCR</p>
-<p>│   │   │   ├──  touchdown PCR</p>
-<p>│   │   │   └── 巢式PCR</p>
-<p>│   │   ├── 定量PCR</p>
-<p>│   │   │   ├── RT-qPCR</p>
-<p>│   │   │   └── 数字PCR</p>
-<p>│   │   └── 等温扩增</p>
-<p>│   │       ├── LAMP</p>
-<p>│   │       └── RPA</p>
-<p>│   ├── 核酸电泳</p>
-<p>│   │   ├── 琼脂糖凝胶电泳</p>
-<p>│   │   ├── PAGE</p>
-<p>│   │   └── 脉冲场凝胶电泳</p>
-<p>│   ├── 核酸杂交</p>
-<p>│   │   ├── Southern Blot</p>
-<p>│   │   ├── Northern Blot</p>
-<p>│   │   └── 原位杂交</p>
-<p>│   └── 核酸测序</p>
-<p>│       ├── Sanger测序</p>
-<p>│       └── 高通量测序</p>
-<p>│           ├── DNA-seq</p>
-<p>│           ├── RNA-seq</p>
-<p>│           ├── ChIP-seq</p>
-<p>│           ├── ATAC-seq</p>
-<p>│           └── 单细胞测序</p>
-<p>├── 蛋白质操作技术</p>
-<p>│   ├── 蛋白质提取与分离</p>
-<p>│   │   ├── 蛋白质提取</p>
-<p>│   │   ├── SDS-PAGE</p>
-<p>│   │   ├── 双向电泳</p>
-<p>│   │   └── 层析</p>
-<p>│   │       ├── 离子交换层析</p>
-<p>│   │       ├── 凝胶过滤层析</p>
-<p>│   │       └── 亲和层析</p>
-<p>│   ├── 蛋白质检测</p>
-<p>│   │   ├── Western Blot</p>
-<p>│   │   ├── ELISA</p>
-<p>│   │   ├── 免疫组化</p>
-<p>│   │   └── 免疫荧光</p>
-<p>│   ├── 蛋白质相互作用</p>
-<p>│   │   ├── Co-IP</p>
-<p>│   │   ├── Yeast Two-Hybrid</p>
-<p>│   │   ├── FRET</p>
-<p>│   │   └── 质谱蛋白质组学</p>
-<p>│   └── 蛋白质修饰分析</p>
-<p>│       ├── 磷酸化检测</p>
-<p>│       ├── 泛素化检测</p>
-<p>│       └── 质谱修饰分析</p>
-<p>├── 细胞操作技术</p>
-<p>│   ├── 细胞培养</p>
-<p>│   ├── 细胞转染</p>
-<p>│   │   ├── 脂质体转染</p>
-<p>│   │   ├── 电穿孔</p>
-<p>│   │   └── 病毒转导</p>
-<p>│   ├── 基因编辑</p>
-<p>│   │   ├── CRISPR-Cas9</p>
-<p>│   │   ├── TALEN</p>
-<p>│   │   └── ZFN</p>
-<p>│   ├── 流式细胞术</p>
-<p>│   └── 显微操作</p>
-<p>└── 生物信息学分析</p>
-<p>    ├── 序列分析</p>
-<p>    ├── 基因组分析</p>
-<p>    ├── 转录组分析</p>
-<p>    ├── 蛋白质组分析</p>
-<p>    └── 系统生物学</p>
-<p>```</p>
-<p>### 2.2 技术关系网络示例</p>
-<p>#### PCR技术家族关系</p>
-<p>```</p>
-<p>PCR</p>
-<p>├── precedes → 产物纯化</p>
-<p>├── precedes → 克隆</p>
-<p>├── precedes → 测序</p>
-<p>├── alternative-to → 等温扩增</p>
-<p>├── combination-of → 逆转录 = RT-PCR</p>
-<p>├── combination-of → 实时荧光 = qPCR</p>
-<p>├── combination-of → 逆转录 + 实时荧光 = RT-qPCR</p>
-<p>└── combination-of → 数字PCR</p>
-<p>RT-PCR</p>
-<p>├── precedes → 电泳检测</p>
-<p>├── alternative-to → Northern Blot</p>
-<p>└── combination-of → qPCR = RT-qPCR</p>
-<p>qPCR</p>
-<p>├── alternative-to → 常规PCR（定量能力）</p>
-<p>├── alternative-to → 数字PCR</p>
-<p>└── combination-of → RT = RT-qPCR</p>
-<p>```</p>
-<p>#### 测序技术演进关系</p>
-<p>```</p>
-<p>Sanger测序</p>
-<p>├── precedes → NGS（历史发展）</p>
-<p>├── alternative-to → NGS（小规模验证）</p>
-<p>├── combination-of → 克隆 = 克隆测序</p>
-<p>└── used-by → 片段验证</p>
-<p>NGS（二代测序）</p>
-<p>├── precedes → 生物信息学分析</p>
-<p>├── alternative-to → Sanger（大规模应用）</p>
-<p>├── combination-of → ChIP = ChIP-seq</p>
-<p>├── combination-of → RNA提取 + 文库制备 = RNA-seq</p>
-<p>├── combination-of → DNA-seq</p>
-<p>├── combination-of → ATAC = ATAC-seq</p>
-<p>└── precedes → 三代测序（技术演进）</p>
-<p>三代测序</p>
-<p>├── alternative-to → NGS（读长优势）</p>
-<p>└── combination-of → 各种应用</p>
-<p>```</p>
-<p>---</p>
-<h2>三、关系发现方法</h2>
-<p>### 3.1 规则匹配模式</p>
-<p>```python</p>
-<p>EXPERIMENT_RELATION_PATTERNS = {</p>
-<p>    # 步骤序列</p>
-<p>    &quot;precedes&quot;: [</p>
-<p>        r&quot;首先({step})，然后({step})&quot;,</p>
-<p>        r&quot;({step})后，进行({step})&quot;,</p>
-<p>        r&quot;({step})完成后，({step})&quot;,</p>
-<p>        r&quot;({step})是({step})的前置步骤&quot;,</p>
-<p>        r&quot;({step})的产物用于({step})&quot;,</p>
-<p>    ],</p>
-<p>    # 技术替代</p>
-<p>    &quot;alternative-to&quot;: [</p>
-<p>        r&quot;({tech})也可以用({tech})替代&quot;,</p>
-<p>        r&quot;({tech})和({tech})都可以用于&quot;,</p>
-<p>        r&quot;({tech})的替代方法是({tech})&quot;,</p>
-<p>        r&quot;除了({tech})，还可以使用({tech})&quot;,</p>
-<p>    ],</p>
-<p>    # 技术组合</p>
-<p>    &quot;combination-of&quot;: [</p>
-<p>        r&quot;({tech})是({tech})和({tech})的组合&quot;,</p>
-<p>        r&quot;({tech})结合了({tech})和({tech})&quot;,</p>
-<p>        r&quot;({tech})包括({tech})&quot;,</p>
-<p>        r&quot;({tech})使用({tech})&quot;,</p>
-<p>        r&quot;({tech})依赖({tech})&quot;,</p>
-<p>    ],</p>
-<p>}</p>
-<p>```</p>
-<p>### 3.2 LLM推理提示词</p>
-<p>```markdown</p>
-<h2>任务</h2>
-<p>分析以下分子生物学实验技术之间的关系。</p>
-<h2>技术信息</h2>
-<p>技术A: {tech_a}</p>
-<p>技术B: {tech_b}</p>
-<h2>上下文描述</h2>
-<p>{context}</p>
-<h2>关系类型选项</h2>
-<p>1. **precedes**: A是B的前置步骤（A完成后才能进行B）</p>
-<p>2. **alternative-to**: A和B是替代关系（可用于相同目的）</p>
-<p>3. **combination-of**: A是B的组合/包含B（A使用或依赖B）</p>
-<p>4. **output-of**: A的产物是B的输入</p>
-<p>5. **prerequisite**: A是B的必要前提</p>
-<p>6. **none**: 无明确关系</p>
-<h2>输出格式</h2>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;relation_type&quot;: &quot;关系类型&quot;,</p>
-<p>  &quot;direction&quot;: &quot;A→B / B→A / 双向&quot;,</p>
-<p>  &quot;confidence&quot;: 0.0-1.0,</p>
-<p>  &quot;reasoning&quot;: &quot;推理理由&quot;,</p>
-<p>  &quot;attributes&quot;: {</p>
-<p>    &quot;dependency&quot;: &quot;强/弱&quot;,</p>
-<p>    &quot;output_input&quot;: true/false,</p>
-<p>    &quot;trade_offs&quot;: [&quot;权衡因素&quot;]</p>
-<p>  }</p>
-<p>}</p>
-<p>```</p>
-<h2>示例</h2>
-<p>- precedes: &quot;细胞裂解 precedes DNA纯化&quot;</p>
-<p>- alternative-to: &quot;Northern Blot alternative-to RT-PCR&quot;</p>
-<p>- combination-of: &quot;ChIP-seq combination-of ChIP&quot;</p>
-<p>```</p>
-<p>---</p>
-<h2>四、学习路径生成</h2>
-<p>基于实验流程关系网络，可以自动生成学习路径：</p>
-<p>```python</p>
-<p>def generate_learning_path(target_technique, student_level):</p>
-<p>    &quot;&quot;&quot;生成学习路径&quot;&quot;&quot;</p>
-<p>    # 1. 获取前置技术（prerequisite/precedes）</p>
-<p>    prerequisites = get_prerequisites(target_technique)</p>
-<p>    # 2. 获取基础技术（combination-of）</p>
-<p>    basic_techs = get_basic_techniques(target_technique)</p>
-<p>    # 3. 获取替代技术（alternative-to，用于对比学习）</p>
-<p>    alternatives = get_alternatives(target_technique)</p>
-<p>    # 4. 根据学生水平排序</p>
-<p>    if student_level == &quot;beginner&quot;:</p>
-<p>        path = prerequisites + basic_techs</p>
-<p>    elif student_level == &quot;intermediate&quot;:</p>
-<p>        path = prerequisites + basic_techs + [target_technique]</p>
-<p>    else:</p>
-<p>        path = prerequisites + basic_techs + [target_technique] + alternatives</p>
-<p>    return path</p>
-<h1>示例：ChIP-seq学习路径</h1>
-<p>learning_path = generate_learning_path(&quot;ChIP-seq&quot;, &quot;intermediate&quot;)</p>
-<h1>输出: [&quot;DNA提取&quot;, &quot;PCR&quot;, &quot;ChIP&quot;, &quot;高通量测序&quot;, &quot;生物信息学基础&quot;, &quot;ChIP-seq&quot;]</h1>
-<p>```</p>
-<p>---</p>
-<h2>五、数据格式</h2>
-<p>### 5.1 实验技术关系JSON</p>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;relation_id&quot;: &quot;exp_rel_001&quot;,</p>
-<p>  &quot;relation_type&quot;: &quot;precedes&quot;,</p>
-<p>  &quot;subject&quot;: {</p>
-<p>    &quot;id&quot;: &quot;tech_001&quot;,</p>
-<p>    &quot;name&quot;: &quot;细胞裂解&quot;,</p>
-<p>    &quot;type&quot;: &quot;experimental_step&quot;,</p>
-<p>    &quot;category&quot;: &quot;DNA提取&quot;</p>
-<p>  },</p>
-<p>  &quot;object&quot;: {</p>
-<p>    &quot;id&quot;: &quot;tech_002&quot;,</p>
-<p>    &quot;name&quot;: &quot;DNA纯化&quot;,</p>
-<p>    &quot;type&quot;: &quot;experimental_step&quot;,</p>
-<p>    &quot;category&quot;: &quot;DNA提取&quot;</p>
-<p>  },</p>
-<p>  &quot;properties&quot;: {</p>
-<p>    &quot;confidence&quot;: 1.0,</p>
-<p>    &quot;dependency&quot;: &quot;strong&quot;,</p>
-<p>    &quot;output_input&quot;: true,</p>
-<p>    &quot;evidence&quot;: [&quot;教材第3章&quot;]</p>
-<p>  },</p>
-<p>  &quot;source&quot;: {</p>
-<p>    &quot;method&quot;: &quot;rule_matching&quot;,</p>
-<p>    &quot;text&quot;: &quot;细胞裂解后，进行DNA纯化&quot;</p>
-<p>  }</p>
-<p>}</p>
-<p>```</p>
-<p>### 5.2 实验流程模板</p>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;experiment_id&quot;: &quot;exp_001&quot;,</p>
-<p>  &quot;name&quot;: &quot;DNA提取&quot;,</p>
-<p>  &quot;category&quot;: &quot;核酸操作&quot;,</p>
-<p>  &quot;steps&quot;: [</p>
-<p>    {</p>
-<p>      &quot;step_id&quot;: &quot;step_001&quot;,</p>
-<p>      &quot;name&quot;: &quot;样品收集&quot;,</p>
-<p>      &quot;order&quot;: 1,</p>
-<p>      &quot;prerequisites&quot;: [],</p>
-<p>      &quot;outputs&quot;: [&quot;样品&quot;],</p>
-<p>      &quot;duration&quot;: &quot;10min&quot;</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;step_id&quot;: &quot;step_002&quot;,</p>
-<p>      &quot;name&quot;: &quot;细胞裂解&quot;,</p>
-<p>      &quot;order&quot;: 2,</p>
-<p>      &quot;prerequisites&quot;: [&quot;step_001&quot;],</p>
-<p>      &quot;inputs&quot;: [&quot;样品&quot;],</p>
-<p>      &quot;outputs&quot;: [&quot;裂解液&quot;],</p>
-<p>      &quot;duration&quot;: &quot;30min&quot;</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;step_id&quot;: &quot;step_003&quot;,</p>
-<p>      &quot;name&quot;: &quot;DNA纯化&quot;,</p>
-<p>      &quot;order&quot;: 3,</p>
-<p>      &quot;prerequisites&quot;: [&quot;step_002&quot;],</p>
-<p>      &quot;inputs&quot;: [&quot;裂解液&quot;],</p>
-<p>      &quot;outputs&quot;: [&quot;纯化DNA&quot;],</p>
-<p>      &quot;duration&quot;: &quot;1h&quot;</p>
-<p>    }</p>
-<p>  ]</p>
-<p>}</p>
-<p>```</p></article></main>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill_04b">SKILL_04b: 实验流程 — 分子生物学技术的关系网络</h1>
+<blockquote>
+<p>定义分子生物学实验技术之间的关系网络，包括步骤序列、技术替代和技术组合，建立实验技能学习的结构化路径。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、关系类型定义</h2>
+<h3 id="11-sequence-precedes">1.1 步骤序列 (sequence / precedes)</h3>
+<p><strong>定义</strong>：表示实验步骤之间的先后顺序关系，前一步骤的输出是后一步骤的输入。</p>
+<p><strong>Schema</strong>：</p>
+<pre><code>(步骤A, precedes, 步骤B, [dependency, output-input])
+</code></pre>
+<p><strong>方向</strong>：步骤A → 步骤B（单向）</p>
+<p><strong>属性</strong>：
+- <code>dependency</code>: 依赖类型（强/弱）
+  - <code>strong</code>: 步骤B必须等待步骤A完成（如：纯化必须在提取之后）
+  - <code>weak</code>: 步骤B可以在步骤A进行中开始（如：准备试剂与样品处理）
+- <code>output-input</code>: 前一步的输出作为后一步的输入（true/false）
+- <code>time-gap</code>: 时间间隔（立即/短时间/长时间）
+- <code>condition</code>: 转换条件（温度/pH/时间等）</p>
+<p><strong>示例</strong>：DNA提取实验步骤序列</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>关系</th>
+<th>下一步骤</th>
+<th>依赖</th>
+<th>输出-输入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>样品收集</td>
+<td>precedes</td>
+<td>细胞裂解</td>
+<td>强</td>
+<td>是</td>
+</tr>
+<tr>
+<td>细胞裂解</td>
+<td>precedes</td>
+<td>DNA分离</td>
+<td>强</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DNA分离</td>
+<td>precedes</td>
+<td>DNA纯化</td>
+<td>强</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DNA纯化</td>
+<td>precedes</td>
+<td>DNA定量</td>
+<td>强</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DNA定量</td>
+<td>precedes</td>
+<td>质量检测</td>
+<td>弱</td>
+<td>否</td>
+</tr>
+<tr>
+<td>质量检测</td>
+<td>precedes</td>
+<td>储存/使用</td>
+<td>强</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<p><strong>完整实验流程示例</strong>：</p>
+<h4 id="1-dna">1. DNA提取流程</h4>
+<pre><code>样品准备
+  → 细胞裂解（裂解液 + 蛋白酶K）
+    → DNA释放
+      → 酚-氯仿抽提 或 柱式纯化
+        → DNA沉淀（乙醇/异丙醇）
+          → DNA洗涤（70%乙醇）
+            → DNA溶解（TE缓冲液/水）
+              → 浓度测定（NanoDrop/荧光法）
+                → 质量检测（电泳/分光光度计）
+                  → [合格] → 储存(-20°C) / 下游实验
+                  → [不合格] → 重新提取
+</code></pre>
+<h4 id="2-rnatrizol">2. RNA提取流程（TRIzol法）</h4>
+<pre><code>样品收集与液氮速冻
+  → 样品研磨/匀浆
+    → TRIzol裂解
+      → 氯仿相分离
+        → 水相回收
+          → 异丙醇沉淀RNA
+            → 75%乙醇洗涤
+              → RNA溶解（DEPC水）
+                → DNase I处理（去除DNA污染）
+                  → 再次纯化
+                    → 浓度与纯度检测
+                      → 完整性检测（RIN值）
+                        → 逆转录 / 储存(-80°C)
+</code></pre>
+<h4 id="3-pcr">3. PCR实验流程</h4>
+<pre><code>模板DNA准备
+  → 引物设计（软件设计 + BLAST验证）
+    → 反应体系配制
+      │   ├── DNA模板
+      │   ├── 正向引物
+      │   ├── 反向引物
+      │   ├── dNTPs
+      │   ├── 缓冲液
+      │   ├── Mg²⁺
+      │   └── Taq酶
+      ↓
+    热循环仪设置
+      │   ├── 预变性（94-95°C, 2-5min）
+      │   ├── 循环（30-35次）
+      │   │     ├── 变性（94°C, 30s）
+      │   │     ├── 退火（50-65°C, 30s）
+      │   │     └── 延伸（72°C, 1kb/min）
+      │   └── 终延伸（72°C, 5-10min）
+      ↓
+    产物检测（琼脂糖电泳）
+      → 结果分析
+        → [阳性] → 产物纯化 / 测序验证
+        → [阴性] → 优化条件 / 重新设计
+</code></pre>
+<h4 id="4-western-blot">4. Western Blot流程</h4>
+<pre><code>蛋白质样品制备
+  → 蛋白质定量（BCA/Bradford法）
+    → SDS-PAGE电泳
+      │   ├── 制胶（分离胶 + 浓缩胶）
+      │   ├── 样品变性（95°C, 5min）
+      │   ├── 上样
+      │   ├── 电泳（80V浓缩 → 120V分离）
+      │   └──  marker观察
+      ↓
+    转膜
+      │   ├── 膜平衡（PVDF/NC膜）
+      │   ├── 三明治组装
+      │   ├── 转印（湿转/半干转/干转）
+      │   └── 转印效率检测（丽春红染色）
+      ↓
+    封闭（5%脱脂奶粉/BSA）
+      → 一抗孵育（4°C过夜）
+        → 洗涤（TBST × 3）
+          → 二抗孵育（室温1-2h）
+            → 洗涤（TBST × 3）
+              → 显色/发光（ECL/荧光）
+                → 成像与分析
+</code></pre>
+<p><strong>发现方法</strong>：
+1. <strong>模式匹配</strong>："首先...然后..."、"接着..."、"之后..."
+2. <strong>动词分析</strong>：提取表示顺序的动词（提取→纯化→检测）
+3. <strong>输入输出匹配</strong>：前一步的输出名词与后一步的输入名词匹配
+4. <strong>LLM推理</strong>：从实验描述中提取步骤顺序</p>
+<hr />
+<h3 id="12-alternative-to">1.2 技术替代 (alternative-to)</h3>
+<p><strong>定义</strong>：表示两种或多种技术可以互相替代，用于相同或类似的目的。</p>
+<p><strong>Schema</strong>：</p>
+<pre><code>(技术A, alternative-to, 技术B, [criteria, preference-context])
+</code></pre>
+<p><strong>方向</strong>：双向（无向关系）</p>
+<p><strong>属性</strong>：
+- <code>criteria</code>: 比较维度（灵敏度/特异性/成本/时间/设备要求）
+- <code>preference-context</code>: 优先选择的场景
+- <code>equivalence</code>: 等效程度（完全等效/部分等效/条件等效）
+- <code>trade-offs</code>: 权衡因素列表</p>
+<p><strong>示例</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>技术A</th>
+<th>关系</th>
+<th>技术B</th>
+<th>比较维度</th>
+<th>优选场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Northern Blot</td>
+<td>alternative-to</td>
+<td>RT-PCR</td>
+<td>灵敏度/定量性</td>
+<td>Northern用于RNA大小确认，RT-PCR用于定量</td>
+</tr>
+<tr>
+<td>RT-PCR</td>
+<td>alternative-to</td>
+<td>RT-qPCR</td>
+<td>定量精度</td>
+<td>RT-qPCR用于精确定量</td>
+</tr>
+<tr>
+<td>Western Blot</td>
+<td>alternative-to</td>
+<td>ELISA</td>
+<td>通量/特异性</td>
+<td>ELISA用于高通量，Western用于分子量确认</td>
+</tr>
+<tr>
+<td>Sanger测序</td>
+<td>alternative-to</td>
+<td>NGS</td>
+<td>成本/通量/读长</td>
+<td>Sanger用于验证，NGS用于大规模筛选</td>
+</tr>
+<tr>
+<td>质粒提取（碱裂解法）</td>
+<td>alternative-to</td>
+<td>质粒提取（柱式法）</td>
+<td>成本/时间/纯度</td>
+<td>柱式法快速，碱裂解法经济</td>
+</tr>
+<tr>
+<td>转染（脂质体）</td>
+<td>alternative-to</td>
+<td>转染（电穿孔）</td>
+<td>效率/细胞毒性</td>
+<td>脂质体用于易转染细胞，电穿孔用于难转染细胞</td>
+</tr>
+<tr>
+<td>基因敲除（CRISPR）</td>
+<td>alternative-to</td>
+<td>基因敲除（RNAi）</td>
+<td>永久性/效率</td>
+<td>CRISPR永久敲除，RNAi瞬时敲低</td>
+</tr>
+</tbody>
+</table>
+<p><strong>详细对比示例</strong>：</p>
+<h4 id="1-rnanorthern-blot-vs-rt-pcr">1. RNA检测：Northern Blot vs RT-PCR</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Northern Blot</th>
+<th>RT-PCR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原理</td>
+<td>杂交检测</td>
+<td>逆转录+扩增</td>
+</tr>
+<tr>
+<td>灵敏度</td>
+<td>中（ng级）</td>
+<td>高（pg级）</td>
+</tr>
+<tr>
+<td>特异性</td>
+<td>高（大小+序列）</td>
+<td>高（序列特异性）</td>
+</tr>
+<tr>
+<td>定量性</td>
+<td>半定量</td>
+<td>精确定量（qPCR）</td>
+</tr>
+<tr>
+<td>样品量</td>
+<td>需要较多（10-20μg）</td>
+<td>需要较少（ng级）</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>2-3天</td>
+<td>半天-1天</td>
+</tr>
+<tr>
+<td>设备</td>
+<td>电泳+转膜设备</td>
+<td>热循环仪</td>
+</tr>
+<tr>
+<td>优势</td>
+<td>可检测RNA大小、可变剪切</td>
+<td>高灵敏度、精确定量</td>
+</tr>
+<tr>
+<td>劣势</td>
+<td>灵敏度低、耗时长</td>
+<td>无法直接看RNA大小</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-western-blot-vs-elisa">2. 蛋白质检测：Western Blot vs ELISA</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Western Blot</th>
+<th>ELISA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原理</td>
+<td>电泳分离+免疫检测</td>
+<td>固相免疫检测</td>
+</tr>
+<tr>
+<td>灵敏度</td>
+<td>中（pg级）</td>
+<td>高（fg级）</td>
+</tr>
+<tr>
+<td>特异性</td>
+<td>高（分子量+抗体）</td>
+<td>中（依赖抗体）</td>
+</tr>
+<tr>
+<td>通量</td>
+<td>低（每次1-10个样品）</td>
+<td>高（96/384孔板）</td>
+</tr>
+<tr>
+<td>分子量信息</td>
+<td>有</td>
+<td>无</td>
+</tr>
+<tr>
+<td>定量性</td>
+<td>半定量</td>
+<td>精确定量</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>2-3天</td>
+<td>半天</td>
+</tr>
+<tr>
+<td>优势</td>
+<td>分子量确认、翻译后修饰检测</td>
+<td>高通量、精确定量</td>
+</tr>
+<tr>
+<td>劣势</td>
+<td>通量低、耗时长</td>
+<td>无分子量信息</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-crispr-vs-rnai">3. 基因功能研究：CRISPR vs RNAi</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>CRISPR-Cas9</th>
+<th>RNAi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机制</td>
+<td>DNA切割、基因敲除</td>
+<td>mRNA降解、基因敲低</td>
+</tr>
+<tr>
+<td>效果</td>
+<td>永久性、完全敲除</td>
+<td>瞬时性、部分敲低（70-90%）</td>
+</tr>
+<tr>
+<td>脱靶效应</td>
+<td>低（优化后）</td>
+<td>中</td>
+</tr>
+<tr>
+<td>设计难度</td>
+<td>需要PAM序列</td>
+<td>较简单</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>中</td>
+<td>低</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>2-4周建立细胞系</td>
+<td>几天</td>
+</tr>
+<tr>
+<td>可逆性</td>
+<td>不可逆</td>
+<td>可逆</td>
+</tr>
+<tr>
+<td>优势</td>
+<td>永久、完全敲除、可敲入</td>
+<td>快速、简单、成本低</td>
+</tr>
+<tr>
+<td>劣势</td>
+<td>周期长、可能致死</td>
+<td>不完全敲低、瞬时</td>
+</tr>
+</tbody>
+</table>
+<p><strong>发现方法</strong>：
+1. <strong>关键词匹配</strong>："也可以用..."、"替代方法..."、"另一种选择是..."
+2. <strong>目的匹配</strong>：相同实验目的的不同技术路径
+3. <strong>教材对比</strong>：教材中并列介绍的技术
+4. <strong>LLM推理</strong>：从技术描述中推断可替代性</p>
+<hr />
+<h3 id="13-combination-of-uses">1.3 技术组合 (combination-of / uses)</h3>
+<p><strong>定义</strong>：表示复杂技术由多个基础技术组合而成，或某技术使用/依赖其他技术。</p>
+<p><strong>Schema</strong>：</p>
+<pre><code>(复合技术, combination-of, 基础技术, [role, necessity])
+</code></pre>
+<p><strong>方向</strong>：复合技术 → 基础技术（单向）</p>
+<p><strong>属性</strong>：
+- <code>role</code>: 在组合中的作用（核心/辅助/前置/验证）
+- <code>necessity</code>: 必要性（必需/可选/增强）
+- <code>order</code>: 执行顺序（并行/串行）</p>
+<p><strong>示例</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>复合技术</th>
+<th>关系</th>
+<th>基础技术</th>
+<th>作用</th>
+<th>必要性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChIP-seq</td>
+<td>combination-of</td>
+<td>ChIP</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>ChIP-seq</td>
+<td>combination-of</td>
+<td>高通量测序</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>ChIP-seq</td>
+<td>combination-of</td>
+<td>生物信息学分析</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>RNA-seq</td>
+<td>combination-of</td>
+<td>RNA提取</td>
+<td>前置</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>RNA-seq</td>
+<td>combination-of</td>
+<td>文库制备</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>RNA-seq</td>
+<td>combination-of</td>
+<td>高通量测序</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>RNA-seq</td>
+<td>combination-of</td>
+<td>差异表达分析</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>CRISPR-Cas9</td>
+<td>combination-of</td>
+<td>sgRNA设计</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>CRISPR-Cas9</td>
+<td>combination-of</td>
+<td>Cas9表达</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>CRISPR-Cas9</td>
+<td>combination-of</td>
+<td>转染</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>CRISPR-Cas9</td>
+<td>combination-of</td>
+<td>单克隆筛选</td>
+<td>辅助</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>RT-qPCR</td>
+<td>combination-of</td>
+<td>逆转录（RT）</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>RT-qPCR</td>
+<td>combination-of</td>
+<td>实时定量PCR（qPCR）</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>质谱蛋白质组学</td>
+<td>combination-of</td>
+<td>蛋白质提取</td>
+<td>前置</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>质谱蛋白质组学</td>
+<td>combination-of</td>
+<td>蛋白质酶切</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>质谱蛋白质组学</td>
+<td>combination-of</td>
+<td>LC-MS/MS</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+<tr>
+<td>质谱蛋白质组学</td>
+<td>combination-of</td>
+<td>蛋白质鉴定</td>
+<td>核心</td>
+<td>必需</td>
+</tr>
+</tbody>
+</table>
+<p><strong>技术组合层级示例</strong>：</p>
+<pre><code>ChIP-seq
+├── 湿实验部分
+│   ├── 交联（Crosslinking）
+│   ├── 染色质断裂（Sonication/Enzyme）
+│   ├── 免疫沉淀（IP）
+│   ├── 解交联（Reverse crosslinking）
+│   ├── DNA纯化
+│   └── 文库制备
+│       ├── 末端修复
+│       ├── 加A尾
+│       ├── 接头连接
+│       └── PCR扩增
+├── 测序部分
+│   └── 高通量测序（Illumina）
+└── 干实验部分
+    ├── 质量控制（FastQC）
+    ├── 比对（Bowtie2/BWA）
+    ├── 峰 calling（MACS2）
+    ├── 注释（ChIPseeker）
+    └──  motif分析（HOMER/MEME）
+</code></pre>
+<pre><code>CRISPR-Cas9基因编辑
+├── 设计阶段
+│   ├── 靶点选择（sgRNA设计）
+│   ├── 脱靶预测（Cas-OFFinder）
+│   └── 载体构建
+│       ├── sgRNA克隆
+│       └── Cas9表达载体
+├── 实验阶段
+│   ├── 细胞培养
+│   ├── 转染/电穿孔
+│   │   ├── 质粒转染
+│   │   ├── RNP复合物递送
+│   │   └── 病毒转导
+│   └── 筛选
+│       ├── 抗生素筛选
+│       └── 单克隆分离
+└── 验证阶段
+    ├── 基因组DNA提取
+    ├── 编辑效率检测（T7E1）
+    ├── 测序验证（Sanger/NGS）
+    └── 功能验证
+</code></pre>
+<p><strong>发现方法</strong>：
+1. <strong>名称分析</strong>："X-seq"、"X-PCR"等复合技术命名
+2. <strong>流程分解</strong>：从完整流程中提取子技术
+3. <strong>依赖分析</strong>：某技术需要其他技术作为前置
+4. <strong>LLM推理</strong>：从技术描述中提取组成关系</p>
+<hr />
+<h2 id="_2">二、实验技术知识图谱</h2>
+<h3 id="21">2.1 技术分类体系</h3>
+<pre><code>分子生物学实验技术
+├── 核酸操作技术
+│   ├── 核酸提取
+│   │   ├── DNA提取
+│   │   │   ├── 基因组DNA提取
+│   │   │   ├── 质粒DNA提取
+│   │   │   └── 线粒体DNA提取
+│   │   └── RNA提取
+│   │       ├── 总RNA提取
+│   │       ├── mRNA纯化
+│   │       └── miRNA提取
+│   ├── 核酸扩增
+│   │   ├── PCR
+│   │   │   ├── 常规PCR
+│   │   │   ├── 热启动PCR
+│   │   │   ├──  touchdown PCR
+│   │   │   └── 巢式PCR
+│   │   ├── 定量PCR
+│   │   │   ├── RT-qPCR
+│   │   │   └── 数字PCR
+│   │   └── 等温扩增
+│   │       ├── LAMP
+│   │       └── RPA
+│   ├── 核酸电泳
+│   │   ├── 琼脂糖凝胶电泳
+│   │   ├── PAGE
+│   │   └── 脉冲场凝胶电泳
+│   ├── 核酸杂交
+│   │   ├── Southern Blot
+│   │   ├── Northern Blot
+│   │   └── 原位杂交
+│   └── 核酸测序
+│       ├── Sanger测序
+│       └── 高通量测序
+│           ├── DNA-seq
+│           ├── RNA-seq
+│           ├── ChIP-seq
+│           ├── ATAC-seq
+│           └── 单细胞测序
+├── 蛋白质操作技术
+│   ├── 蛋白质提取与分离
+│   │   ├── 蛋白质提取
+│   │   ├── SDS-PAGE
+│   │   ├── 双向电泳
+│   │   └── 层析
+│   │       ├── 离子交换层析
+│   │       ├── 凝胶过滤层析
+│   │       └── 亲和层析
+│   ├── 蛋白质检测
+│   │   ├── Western Blot
+│   │   ├── ELISA
+│   │   ├── 免疫组化
+│   │   └── 免疫荧光
+│   ├── 蛋白质相互作用
+│   │   ├── Co-IP
+│   │   ├── Yeast Two-Hybrid
+│   │   ├── FRET
+│   │   └── 质谱蛋白质组学
+│   └── 蛋白质修饰分析
+│       ├── 磷酸化检测
+│       ├── 泛素化检测
+│       └── 质谱修饰分析
+├── 细胞操作技术
+│   ├── 细胞培养
+│   ├── 细胞转染
+│   │   ├── 脂质体转染
+│   │   ├── 电穿孔
+│   │   └── 病毒转导
+│   ├── 基因编辑
+│   │   ├── CRISPR-Cas9
+│   │   ├── TALEN
+│   │   └── ZFN
+│   ├── 流式细胞术
+│   └── 显微操作
+└── 生物信息学分析
+    ├── 序列分析
+    ├── 基因组分析
+    ├── 转录组分析
+    ├── 蛋白质组分析
+    └── 系统生物学
+</code></pre>
+<h3 id="22">2.2 技术关系网络示例</h3>
+<h4 id="pcr">PCR技术家族关系</h4>
+<pre><code>PCR
+├── precedes → 产物纯化
+├── precedes → 克隆
+├── precedes → 测序
+├── alternative-to → 等温扩增
+├── combination-of → 逆转录 = RT-PCR
+├── combination-of → 实时荧光 = qPCR
+├── combination-of → 逆转录 + 实时荧光 = RT-qPCR
+└── combination-of → 数字PCR
+
+RT-PCR
+├── precedes → 电泳检测
+├── alternative-to → Northern Blot
+└── combination-of → qPCR = RT-qPCR
+
+qPCR
+├── alternative-to → 常规PCR（定量能力）
+├── alternative-to → 数字PCR
+└── combination-of → RT = RT-qPCR
+</code></pre>
+<h4 id="_3">测序技术演进关系</h4>
+<pre><code>Sanger测序
+├── precedes → NGS（历史发展）
+├── alternative-to → NGS（小规模验证）
+├── combination-of → 克隆 = 克隆测序
+└── used-by → 片段验证
+
+NGS（二代测序）
+├── precedes → 生物信息学分析
+├── alternative-to → Sanger（大规模应用）
+├── combination-of → ChIP = ChIP-seq
+├── combination-of → RNA提取 + 文库制备 = RNA-seq
+├── combination-of → DNA-seq
+├── combination-of → ATAC = ATAC-seq
+└── precedes → 三代测序（技术演进）
+
+三代测序
+├── alternative-to → NGS（读长优势）
+└── combination-of → 各种应用
+</code></pre>
+<hr />
+<h2 id="_4">三、关系发现方法</h2>
+<h3 id="31">3.1 规则匹配模式</h3>
+<pre><code class="language-python">EXPERIMENT_RELATION_PATTERNS = {
+    # 步骤序列
+    &quot;precedes&quot;: [
+        r&quot;首先({step})，然后({step})&quot;,
+        r&quot;({step})后，进行({step})&quot;,
+        r&quot;({step})完成后，({step})&quot;,
+        r&quot;({step})是({step})的前置步骤&quot;,
+        r&quot;({step})的产物用于({step})&quot;,
+    ],
+
+    # 技术替代
+    &quot;alternative-to&quot;: [
+        r&quot;({tech})也可以用({tech})替代&quot;,
+        r&quot;({tech})和({tech})都可以用于&quot;,
+        r&quot;({tech})的替代方法是({tech})&quot;,
+        r&quot;除了({tech})，还可以使用({tech})&quot;,
+    ],
+
+    # 技术组合
+    &quot;combination-of&quot;: [
+        r&quot;({tech})是({tech})和({tech})的组合&quot;,
+        r&quot;({tech})结合了({tech})和({tech})&quot;,
+        r&quot;({tech})包括({tech})&quot;,
+        r&quot;({tech})使用({tech})&quot;,
+        r&quot;({tech})依赖({tech})&quot;,
+    ],
+}
+</code></pre>
+<h3 id="32-llm">3.2 LLM推理提示词</h3>
+<pre><code class="language-markdown">## 任务
+分析以下分子生物学实验技术之间的关系。
+
+## 技术信息
+技术A: {tech_a}
+技术B: {tech_b}
+
+## 上下文描述
+{context}
+
+## 关系类型选项
+1. **precedes**: A是B的前置步骤（A完成后才能进行B）
+2. **alternative-to**: A和B是替代关系（可用于相同目的）
+3. **combination-of**: A是B的组合/包含B（A使用或依赖B）
+4. **output-of**: A的产物是B的输入
+5. **prerequisite**: A是B的必要前提
+6. **none**: 无明确关系
+
+## 输出格式
+```json
+{
+  &quot;relation_type&quot;: &quot;关系类型&quot;,
+  &quot;direction&quot;: &quot;A→B / B→A / 双向&quot;,
+  &quot;confidence&quot;: 0.0-1.0,
+  &quot;reasoning&quot;: &quot;推理理由&quot;,
+  &quot;attributes&quot;: {
+    &quot;dependency&quot;: &quot;强/弱&quot;,
+    &quot;output_input&quot;: true/false,
+    &quot;trade_offs&quot;: [&quot;权衡因素&quot;]
+  }
+}
+</code></pre>
+<h2 id="_5">示例</h2>
+<ul>
+<li>precedes: "细胞裂解 precedes DNA纯化"</li>
+<li>alternative-to: "Northern Blot alternative-to RT-PCR"</li>
+<li>combination-of: "ChIP-seq combination-of ChIP"</li>
+</ul>
+<pre><code>
+---
+
+## 四、学习路径生成
+
+基于实验流程关系网络，可以自动生成学习路径：
+
+```python
+def generate_learning_path(target_technique, student_level):
+    &quot;&quot;&quot;生成学习路径&quot;&quot;&quot;
+
+    # 1. 获取前置技术（prerequisite/precedes）
+    prerequisites = get_prerequisites(target_technique)
+
+    # 2. 获取基础技术（combination-of）
+    basic_techs = get_basic_techniques(target_technique)
+
+    # 3. 获取替代技术（alternative-to，用于对比学习）
+    alternatives = get_alternatives(target_technique)
+
+    # 4. 根据学生水平排序
+    if student_level == &quot;beginner&quot;:
+        path = prerequisites + basic_techs
+    elif student_level == &quot;intermediate&quot;:
+        path = prerequisites + basic_techs + [target_technique]
+    else:
+        path = prerequisites + basic_techs + [target_technique] + alternatives
+
+    return path
+
+# 示例：ChIP-seq学习路径
+learning_path = generate_learning_path(&quot;ChIP-seq&quot;, &quot;intermediate&quot;)
+# 输出: [&quot;DNA提取&quot;, &quot;PCR&quot;, &quot;ChIP&quot;, &quot;高通量测序&quot;, &quot;生物信息学基础&quot;, &quot;ChIP-seq&quot;]
+</code></pre>
+<hr />
+<h2 id="_6">五、数据格式</h2>
+<h3 id="51-json">5.1 实验技术关系JSON</h3>
+<pre><code class="language-json">{
+  &quot;relation_id&quot;: &quot;exp_rel_001&quot;,
+  &quot;relation_type&quot;: &quot;precedes&quot;,
+  &quot;subject&quot;: {
+    &quot;id&quot;: &quot;tech_001&quot;,
+    &quot;name&quot;: &quot;细胞裂解&quot;,
+    &quot;type&quot;: &quot;experimental_step&quot;,
+    &quot;category&quot;: &quot;DNA提取&quot;
+  },
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;tech_002&quot;,
+    &quot;name&quot;: &quot;DNA纯化&quot;,
+    &quot;type&quot;: &quot;experimental_step&quot;,
+    &quot;category&quot;: &quot;DNA提取&quot;
+  },
+  &quot;properties&quot;: {
+    &quot;confidence&quot;: 1.0,
+    &quot;dependency&quot;: &quot;strong&quot;,
+    &quot;output_input&quot;: true,
+    &quot;evidence&quot;: [&quot;教材第3章&quot;]
+  },
+  &quot;source&quot;: {
+    &quot;method&quot;: &quot;rule_matching&quot;,
+    &quot;text&quot;: &quot;细胞裂解后，进行DNA纯化&quot;
+  }
+}
+</code></pre>
+<h3 id="52">5.2 实验流程模板</h3>
+<pre><code class="language-json">{
+  &quot;experiment_id&quot;: &quot;exp_001&quot;,
+  &quot;name&quot;: &quot;DNA提取&quot;,
+  &quot;category&quot;: &quot;核酸操作&quot;,
+  &quot;steps&quot;: [
+    {
+      &quot;step_id&quot;: &quot;step_001&quot;,
+      &quot;name&quot;: &quot;样品收集&quot;,
+      &quot;order&quot;: 1,
+      &quot;prerequisites&quot;: [],
+      &quot;outputs&quot;: [&quot;样品&quot;],
+      &quot;duration&quot;: &quot;10min&quot;
+    },
+    {
+      &quot;step_id&quot;: &quot;step_002&quot;,
+      &quot;name&quot;: &quot;细胞裂解&quot;,
+      &quot;order&quot;: 2,
+      &quot;prerequisites&quot;: [&quot;step_001&quot;],
+      &quot;inputs&quot;: [&quot;样品&quot;],
+      &quot;outputs&quot;: [&quot;裂解液&quot;],
+      &quot;duration&quot;: &quot;30min&quot;
+    },
+    {
+      &quot;step_id&quot;: &quot;step_003&quot;,
+      &quot;name&quot;: &quot;DNA纯化&quot;,
+      &quot;order&quot;: 3,
+      &quot;prerequisites&quot;: [&quot;step_002&quot;],
+      &quot;inputs&quot;: [&quot;裂解液&quot;],
+      &quot;outputs&quot;: [&quot;纯化DNA&quot;],
+      &quot;duration&quot;: &quot;1h&quot;
+    }
+  ]
+}
+</code></pre></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

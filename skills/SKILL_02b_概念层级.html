@@ -161,376 +161,653 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 02b: 概念层级 — 核心概念→衍生概念→应用实例</h1>
-<p>&gt; 构建分子生物学课程的概念层级体系，区分核心概念、衍生概念和应用实例，形成知识金字塔。</p>
-<p>---</p>
-<h2>一、核心概念</h2>
-<p>### 1.1 三层概念模型</p>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-02b">SKILL 02b: 概念层级 — 核心概念→衍生概念→应用实例</h1>
+<blockquote>
+<p>构建分子生物学课程的概念层级体系，区分核心概念、衍生概念和应用实例，形成知识金字塔。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、核心概念</h2>
+<h3 id="11">1.1 三层概念模型</h3>
 <p>分子生物学知识可划分为三个层级：</p>
-<p>```</p>
-<p>                    ┌─────────────────┐</p>
-<p>    应用层          │   应用实例      │  实验技术、案例分析、前沿应用</p>
-<p>                    │  (Application)  │  如：PCR实验设计、CRISPR基因编辑</p>
-<p>                    ├─────────────────┤</p>
-<p>    衍生层          │   衍生概念      │  由核心概念派生，用于描述具体机制</p>
-<p>                    │  (Derived)      │  如：前导链、滞后链、冈崎片段</p>
-<p>                    ├─────────────────┤</p>
-<p>    核心层          │   核心概念      │  课程最基础、最核心的概念</p>
-<p>                    │  (Core)         │  如：DNA复制、转录、翻译</p>
-<p>                    └─────────────────┘</p>
-<p>```</p>
-<p>### 1.2 概念层级定义</p>
-<p>**核心概念（Core）**：</p>
-<p>- 课程最基础、最重要的概念</p>
-<p>- 学生必须掌握的核心知识</p>
-<p>- 通常是课程大纲的一级主题</p>
-<p>- 数量：每章3-5个</p>
-<p>**衍生概念（Derived）**：</p>
-<p>- 由核心概念派生或细化的概念</p>
-<p>- 用于描述具体机制、过程或结构</p>
-<p>- 理解核心概念后才能掌握</p>
-<p>- 数量：每个核心概念2-4个衍生概念</p>
-<p>**应用实例（Application）**：</p>
-<p>- 概念在实际中的应用</p>
-<p>- 实验技术、案例分析、问题解决</p>
-<p>- 体现知识的实用价值</p>
-<p>- 数量：灵活，根据教学目标确定</p>
-<p>---</p>
-<h2>二、概念分类体系</h2>
-<p>### 2.1 12类实体类型</p>
+<pre><code>                    ┌─────────────────┐
+    应用层          │   应用实例      │  实验技术、案例分析、前沿应用
+                    │  (Application)  │  如：PCR实验设计、CRISPR基因编辑
+                    ├─────────────────┤
+    衍生层          │   衍生概念      │  由核心概念派生，用于描述具体机制
+                    │  (Derived)      │  如：前导链、滞后链、冈崎片段
+                    ├─────────────────┤
+    核心层          │   核心概念      │  课程最基础、最核心的概念
+                    │  (Core)         │  如：DNA复制、转录、翻译
+                    └─────────────────┘
+</code></pre>
+<h3 id="12">1.2 概念层级定义</h3>
+<p><strong>核心概念（Core）</strong>：
+- 课程最基础、最重要的概念
+- 学生必须掌握的核心知识
+- 通常是课程大纲的一级主题
+- 数量：每章3-5个</p>
+<p><strong>衍生概念（Derived）</strong>：
+- 由核心概念派生或细化的概念
+- 用于描述具体机制、过程或结构
+- 理解核心概念后才能掌握
+- 数量：每个核心概念2-4个衍生概念</p>
+<p><strong>应用实例（Application）</strong>：
+- 概念在实际中的应用
+- 实验技术、案例分析、问题解决
+- 体现知识的实用价值
+- 数量：灵活，根据教学目标确定</p>
+<hr />
+<h2 id="_2">二、概念分类体系</h2>
+<h3 id="21-12">2.1 12类实体类型</h3>
 <p>分子生物学课程涉及的概念可分为以下12类：</p>
-<p>| 类型 | 标记 | 示例 | 层级分布 |</p>
-<p>|------|------|------|----------|</p>
-<p>| **分子** | `&amp;` | DNA、RNA、蛋白质 | 核心/衍生 |</p>
-<p>| **大分子结构** | `=` | 双螺旋、核小体、核糖体 | 核心/衍生 |</p>
-<p>| **酶/蛋白质** | `@` | DNA聚合酶、RNA聚合酶 | 核心/衍生 |</p>
-<p>| **生物过程** | `~` | 复制、转录、翻译 | 核心 |</p>
-<p>| **细胞结构** | `#` | 细胞核、线粒体、内质网 | 核心/衍生 |</p>
-<p>| **基因元件** | `^` | 启动子、增强子、内含子 | 衍生 |</p>
-<p>| **技术方法** | `$` | PCR、电泳、测序 | 应用 |</p>
-<p>| **实验材料** | `*` | 引物、探针、质粒 | 应用 |</p>
-<p>| **疾病/表型** | `!` | 癌症、遗传病、突变 | 应用 |</p>
-<p>| **理论/模型** | `%` | 中心法则、操纵子模型 | 核心 |</p>
-<p>| **人物/发现** | `+` | Watson、Crick、双螺旋发现 | 核心 |</p>
-<p>| **定量参数** | `?` | Tm值、酶活、浓度 | 衍生 |</p>
-<p>### 2.2 标记符号对照</p>
-<p>```markdown</p>
-<p>原文：DNA聚合酶在复制叉处催化DNA链的延伸。</p>
-<p>标注后：</p>
-<p>&lt;span class=&quot;entity&quot;&gt;DNA聚合酶&lt;/span&gt;在&lt;span class=&quot;entity&quot;&gt;复制叉&lt;/span&gt;处催化&lt;span class=&quot;entity&quot;&gt;DNA&lt;/span&gt;链的〖~延伸〗。</p>
-<p>标记说明：</p>
-<p>- &lt;span class=&quot;entity&quot;&gt; &lt;/span&gt; 酶/蛋白质</p>
-<p>- &lt;span class=&quot;entity&quot;&gt; &lt;/span&gt; 大分子结构</p>
-<p>- &lt;span class=&quot;entity&quot;&gt; &lt;/span&gt; 分子</p>
-<p>- 〖~ 〗 生物过程</p>
-<p>```</p>
-<p>---</p>
-<h2>三、核心概念识别</h2>
-<p>### 3.1 识别标准</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>标记</th>
+<th>示例</th>
+<th>层级分布</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>分子</strong></td>
+<td><code>&amp;</code></td>
+<td>DNA、RNA、蛋白质</td>
+<td>核心/衍生</td>
+</tr>
+<tr>
+<td><strong>大分子结构</strong></td>
+<td><code>=</code></td>
+<td>双螺旋、核小体、核糖体</td>
+<td>核心/衍生</td>
+</tr>
+<tr>
+<td><strong>酶/蛋白质</strong></td>
+<td><code>@</code></td>
+<td>DNA聚合酶、RNA聚合酶</td>
+<td>核心/衍生</td>
+</tr>
+<tr>
+<td><strong>生物过程</strong></td>
+<td><code>~</code></td>
+<td>复制、转录、翻译</td>
+<td>核心</td>
+</tr>
+<tr>
+<td><strong>细胞结构</strong></td>
+<td><code>#</code></td>
+<td>细胞核、线粒体、内质网</td>
+<td>核心/衍生</td>
+</tr>
+<tr>
+<td><strong>基因元件</strong></td>
+<td><code>^</code></td>
+<td>启动子、增强子、内含子</td>
+<td>衍生</td>
+</tr>
+<tr>
+<td><strong>技术方法</strong></td>
+<td><code>$</code></td>
+<td>PCR、电泳、测序</td>
+<td>应用</td>
+</tr>
+<tr>
+<td><strong>实验材料</strong></td>
+<td><code>*</code></td>
+<td>引物、探针、质粒</td>
+<td>应用</td>
+</tr>
+<tr>
+<td><strong>疾病/表型</strong></td>
+<td><code>!</code></td>
+<td>癌症、遗传病、突变</td>
+<td>应用</td>
+</tr>
+<tr>
+<td><strong>理论/模型</strong></td>
+<td><code>%</code></td>
+<td>中心法则、操纵子模型</td>
+<td>核心</td>
+</tr>
+<tr>
+<td><strong>人物/发现</strong></td>
+<td><code>+</code></td>
+<td>Watson、Crick、双螺旋发现</td>
+<td>核心</td>
+</tr>
+<tr>
+<td><strong>定量参数</strong></td>
+<td><code>?</code></td>
+<td>Tm值、酶活、浓度</td>
+<td>衍生</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 标记符号对照</h3>
+<pre><code class="language-markdown">原文：DNA聚合酶在复制叉处催化DNA链的延伸。
+
+标注后：
+&lt;span class=&quot;entity&quot;&gt;DNA聚合酶&lt;/span&gt;在&lt;span class=&quot;entity&quot;&gt;复制叉&lt;/span&gt;处催化&lt;span class=&quot;entity&quot;&gt;DNA&lt;/span&gt;链的〖~延伸〗。
+
+标记说明：
+- &lt;span class=&quot;entity&quot;&gt; &lt;/span&gt; 酶/蛋白质
+- &lt;span class=&quot;entity&quot;&gt; &lt;/span&gt; 大分子结构
+- &lt;span class=&quot;entity&quot;&gt; &lt;/span&gt; 分子
+- 〖~ 〗 生物过程
+</code></pre>
+<hr />
+<h2 id="_3">三、核心概念识别</h2>
+<h3 id="31">3.1 识别标准</h3>
 <p>一个概念被判定为核心概念需满足以下条件：</p>
-<p>| 标准 | 说明 | 检查方法 |</p>
-<p>|------|------|----------|</p>
-<p>| 大纲地位 | 出现在课程大纲的一级主题中 | 对照教学大纲 |</p>
-<p>| 出现频率 | 在全课程中出现&gt;20次 | 全文检索统计 |</p>
-<p>| 前置依赖 | 被多个后续概念依赖 | 依赖图分析 |</p>
-<p>| 跨章引用 | 被其他章节频繁引用 | 交叉引用统计 |</p>
-<p>| 评估权重 | 在考试中占较高分值 | 历年试题分析 |</p>
-<p>### 3.2 核心概念示例（DNA复制章节）</p>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;chapter&quot;: &quot;02_DNA复制&quot;,</p>
-<p>  &quot;core_concepts&quot;: [</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;C02.01&quot;,</p>
-<p>      &quot;name&quot;: &quot;DNA复制&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;DNA Replication&quot;,</p>
-<p>      &quot;definition&quot;: &quot;以亲代DNA为模板合成子代DNA的过程&quot;,</p>
-<p>      &quot;level&quot;: &quot;core&quot;,</p>
-<p>      &quot;type&quot;: &quot;process&quot;,</p>
-<p>      &quot;importance&quot;: 5,</p>
-<p>      &quot;prerequisites&quot;: [&quot;C01.03&quot;]</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;C02.02&quot;,</p>
-<p>      &quot;name&quot;: &quot;半保留复制&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;Semi-conservative Replication&quot;,</p>
-<p>      &quot;definition&quot;: &quot;每个子代DNA分子包含一条亲代链和一条新合成链&quot;,</p>
-<p>      &quot;level&quot;: &quot;core&quot;,</p>
-<p>      &quot;type&quot;: &quot;mechanism&quot;,</p>
-<p>      &quot;importance&quot;: 5,</p>
-<p>      &quot;prerequisites&quot;: [&quot;C02.01&quot;]</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;C02.03&quot;,</p>
-<p>      &quot;name&quot;: &quot;DNA聚合酶&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;DNA Polymerase&quot;,</p>
-<p>      &quot;definition&quot;: &quot;催化DNA链延伸的酶&quot;,</p>
-<p>      &quot;level&quot;: &quot;core&quot;,</p>
-<p>      &quot;type&quot;: &quot;enzyme&quot;,</p>
-<p>      &quot;importance&quot;: 5,</p>
-<p>      &quot;prerequisites&quot;: [&quot;C02.01&quot;]</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;C02.04&quot;,</p>
-<p>      &quot;name&quot;: &quot;复制叉&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;Replication Fork&quot;,</p>
-<p>      &quot;definition&quot;: &quot;DNA复制时形成的Y形结构&quot;,</p>
-<p>      &quot;level&quot;: &quot;core&quot;,</p>
-<p>      &quot;type&quot;: &quot;structure&quot;,</p>
-<p>      &quot;importance&quot;: 4,</p>
-<p>      &quot;prerequisites&quot;: [&quot;C02.01&quot;]</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;C02.05&quot;,</p>
-<p>      &quot;name&quot;: &quot;端粒酶&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;Telomerase&quot;,</p>
-<p>      &quot;definition&quot;: &quot;延长染色体末端端粒的逆转录酶&quot;,</p>
-<p>      &quot;level&quot;: &quot;core&quot;,</p>
-<p>      &quot;type&quot;: &quot;enzyme&quot;,</p>
-<p>      &quot;importance&quot;: 4,</p>
-<p>      &quot;prerequisites&quot;: [&quot;C02.01&quot;, &quot;C02.03&quot;]</p>
-<p>    }</p>
-<p>  ]</p>
-<p>}</p>
-<p>```</p>
-<p>---</p>
-<h2>四、衍生概念构建</h2>
-<p>### 4.1 衍生规则</p>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>说明</th>
+<th>检查方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大纲地位</td>
+<td>出现在课程大纲的一级主题中</td>
+<td>对照教学大纲</td>
+</tr>
+<tr>
+<td>出现频率</td>
+<td>在全课程中出现&gt;20次</td>
+<td>全文检索统计</td>
+</tr>
+<tr>
+<td>前置依赖</td>
+<td>被多个后续概念依赖</td>
+<td>依赖图分析</td>
+</tr>
+<tr>
+<td>跨章引用</td>
+<td>被其他章节频繁引用</td>
+<td>交叉引用统计</td>
+</tr>
+<tr>
+<td>评估权重</td>
+<td>在考试中占较高分值</td>
+<td>历年试题分析</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-dna">3.2 核心概念示例（DNA复制章节）</h3>
+<pre><code class="language-json">{
+  &quot;chapter&quot;: &quot;02_DNA复制&quot;,
+  &quot;core_concepts&quot;: [
+    {
+      &quot;id&quot;: &quot;C02.01&quot;,
+      &quot;name&quot;: &quot;DNA复制&quot;,
+      &quot;name_en&quot;: &quot;DNA Replication&quot;,
+      &quot;definition&quot;: &quot;以亲代DNA为模板合成子代DNA的过程&quot;,
+      &quot;level&quot;: &quot;core&quot;,
+      &quot;type&quot;: &quot;process&quot;,
+      &quot;importance&quot;: 5,
+      &quot;prerequisites&quot;: [&quot;C01.03&quot;]
+    },
+    {
+      &quot;id&quot;: &quot;C02.02&quot;,
+      &quot;name&quot;: &quot;半保留复制&quot;,
+      &quot;name_en&quot;: &quot;Semi-conservative Replication&quot;,
+      &quot;definition&quot;: &quot;每个子代DNA分子包含一条亲代链和一条新合成链&quot;,
+      &quot;level&quot;: &quot;core&quot;,
+      &quot;type&quot;: &quot;mechanism&quot;,
+      &quot;importance&quot;: 5,
+      &quot;prerequisites&quot;: [&quot;C02.01&quot;]
+    },
+    {
+      &quot;id&quot;: &quot;C02.03&quot;,
+      &quot;name&quot;: &quot;DNA聚合酶&quot;,
+      &quot;name_en&quot;: &quot;DNA Polymerase&quot;,
+      &quot;definition&quot;: &quot;催化DNA链延伸的酶&quot;,
+      &quot;level&quot;: &quot;core&quot;,
+      &quot;type&quot;: &quot;enzyme&quot;,
+      &quot;importance&quot;: 5,
+      &quot;prerequisites&quot;: [&quot;C02.01&quot;]
+    },
+    {
+      &quot;id&quot;: &quot;C02.04&quot;,
+      &quot;name&quot;: &quot;复制叉&quot;,
+      &quot;name_en&quot;: &quot;Replication Fork&quot;,
+      &quot;definition&quot;: &quot;DNA复制时形成的Y形结构&quot;,
+      &quot;level&quot;: &quot;core&quot;,
+      &quot;type&quot;: &quot;structure&quot;,
+      &quot;importance&quot;: 4,
+      &quot;prerequisites&quot;: [&quot;C02.01&quot;]
+    },
+    {
+      &quot;id&quot;: &quot;C02.05&quot;,
+      &quot;name&quot;: &quot;端粒酶&quot;,
+      &quot;name_en&quot;: &quot;Telomerase&quot;,
+      &quot;definition&quot;: &quot;延长染色体末端端粒的逆转录酶&quot;,
+      &quot;level&quot;: &quot;core&quot;,
+      &quot;type&quot;: &quot;enzyme&quot;,
+      &quot;importance&quot;: 4,
+      &quot;prerequisites&quot;: [&quot;C02.01&quot;, &quot;C02.03&quot;]
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h2 id="_4">四、衍生概念构建</h2>
+<h3 id="41">4.1 衍生规则</h3>
 <p>衍生概念从核心概念派生，遵循以下规则：</p>
-<p>```</p>
-<p>核心概念 + 维度 → 衍生概念</p>
-<p>维度包括：</p>
-<p>- 结构维度：组成、部位、变体</p>
-<p>- 过程维度：阶段、方向、方式</p>
-<p>- 功能维度：活性、调控、相互作用</p>
-<p>- 分类维度：类型、家族、亚型</p>
-<p>```</p>
-<p>### 4.2 衍生概念示例</p>
-<p>**从&quot;DNA复制&quot;派生**：</p>
-<p>| 维度 | 衍生概念 | 定义 | 标记 |</p>
-<p>|------|----------|------|------|</p>
-<p>| 方向 | 双向复制 | 从起点向两个方向同时进行 | `~双向复制` |</p>
-<p>| 连续性 | 半不连续复制 | 前导链连续，滞后链不连续 | `~半不连续复制` |</p>
-<p>| 阶段 | 起始阶段 | 复制起点识别和解旋 | `~起始` |</p>
-<p>| 阶段 | 延伸阶段 | DNA链的合成延伸 | `~延伸` |</p>
-<p>| 阶段 | 终止阶段 | 复制完成和连接 | `~终止` |</p>
-<p>**从&quot;DNA聚合酶&quot;派生**：</p>
-<p>| 维度 | 衍生概念 | 定义 | 标记 |</p>
-<p>|------|----------|------|------|</p>
-<p>| 类型 | DNA聚合酶I | 参与修复和引物切除 | `@DNA聚合酶I` |</p>
-<p>| 类型 | DNA聚合酶II | 参与DNA修复 | `@DNA聚合酶II` |</p>
-<p>| 类型 | DNA聚合酶III | 主要复制酶 | `@DNA聚合酶III` |</p>
-<p>| 活性 | 5&#x27;→3&#x27;聚合活性 | 催化DNA链延伸 | `?5&#x27;→3&#x27;聚合活性` |</p>
-<p>| 活性 | 3&#x27;→5&#x27;外切活性 | 校对功能 | `?3&#x27;→5&#x27;外切活性` |</p>
-<p>### 4.3 衍生概念数据结构</p>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;chapter&quot;: &quot;02_DNA复制&quot;,</p>
-<p>  &quot;derived_concepts&quot;: [</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;D02.01&quot;,</p>
-<p>      &quot;name&quot;: &quot;前导链&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;Leading Strand&quot;,</p>
-<p>      &quot;definition&quot;: &quot;连续合成的DNA链&quot;,</p>
-<p>      &quot;level&quot;: &quot;derived&quot;,</p>
-<p>      &quot;type&quot;: &quot;structure&quot;,</p>
-<p>      &quot;derived_from&quot;: &quot;C02.01&quot;,</p>
-<p>      &quot;dimension&quot;: &quot;连续性&quot;,</p>
-<p>      &quot;importance&quot;: 3</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;D02.02&quot;,</p>
-<p>      &quot;name&quot;: &quot;滞后链&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;Lagging Strand&quot;,</p>
-<p>      &quot;definition&quot;: &quot;不连续合成的DNA链&quot;,</p>
-<p>      &quot;level&quot;: &quot;derived&quot;,</p>
-<p>      &quot;type&quot;: &quot;structure&quot;,</p>
-<p>      &quot;derived_from&quot;: &quot;C02.01&quot;,</p>
-<p>      &quot;dimension&quot;: &quot;连续性&quot;,</p>
-<p>      &quot;importance&quot;: 3</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;D02.03&quot;,</p>
-<p>      &quot;name&quot;: &quot;冈崎片段&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;Okazaki Fragments&quot;,</p>
-<p>      &quot;definition&quot;: &quot;滞后链上合成的不连续短片段&quot;,</p>
-<p>      &quot;level&quot;: &quot;derived&quot;,</p>
-<p>      &quot;type&quot;: &quot;structure&quot;,</p>
-<p>      &quot;derived_from&quot;: &quot;D02.02&quot;,</p>
-<p>      &quot;dimension&quot;: &quot;结构&quot;,</p>
-<p>      &quot;importance&quot;: 3</p>
-<p>    }</p>
-<p>  ]</p>
-<p>}</p>
-<p>```</p>
-<p>---</p>
-<h2>五、应用实例构建</h2>
-<p>### 5.1 应用类型</p>
+<pre><code>核心概念 + 维度 → 衍生概念
+
+维度包括：
+- 结构维度：组成、部位、变体
+- 过程维度：阶段、方向、方式
+- 功能维度：活性、调控、相互作用
+- 分类维度：类型、家族、亚型
+</code></pre>
+<h3 id="42">4.2 衍生概念示例</h3>
+<p><strong>从"DNA复制"派生</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>衍生概念</th>
+<th>定义</th>
+<th>标记</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方向</td>
+<td>双向复制</td>
+<td>从起点向两个方向同时进行</td>
+<td><code>~双向复制</code></td>
+</tr>
+<tr>
+<td>连续性</td>
+<td>半不连续复制</td>
+<td>前导链连续，滞后链不连续</td>
+<td><code>~半不连续复制</code></td>
+</tr>
+<tr>
+<td>阶段</td>
+<td>起始阶段</td>
+<td>复制起点识别和解旋</td>
+<td><code>~起始</code></td>
+</tr>
+<tr>
+<td>阶段</td>
+<td>延伸阶段</td>
+<td>DNA链的合成延伸</td>
+<td><code>~延伸</code></td>
+</tr>
+<tr>
+<td>阶段</td>
+<td>终止阶段</td>
+<td>复制完成和连接</td>
+<td><code>~终止</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>从"DNA聚合酶"派生</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>衍生概念</th>
+<th>定义</th>
+<th>标记</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>DNA聚合酶I</td>
+<td>参与修复和引物切除</td>
+<td><code>@DNA聚合酶I</code></td>
+</tr>
+<tr>
+<td>类型</td>
+<td>DNA聚合酶II</td>
+<td>参与DNA修复</td>
+<td><code>@DNA聚合酶II</code></td>
+</tr>
+<tr>
+<td>类型</td>
+<td>DNA聚合酶III</td>
+<td>主要复制酶</td>
+<td><code>@DNA聚合酶III</code></td>
+</tr>
+<tr>
+<td>活性</td>
+<td>5'→3'聚合活性</td>
+<td>催化DNA链延伸</td>
+<td><code>?5'→3'聚合活性</code></td>
+</tr>
+<tr>
+<td>活性</td>
+<td>3'→5'外切活性</td>
+<td>校对功能</td>
+<td><code>?3'→5'外切活性</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="43">4.3 衍生概念数据结构</h3>
+<pre><code class="language-json">{
+  &quot;chapter&quot;: &quot;02_DNA复制&quot;,
+  &quot;derived_concepts&quot;: [
+    {
+      &quot;id&quot;: &quot;D02.01&quot;,
+      &quot;name&quot;: &quot;前导链&quot;,
+      &quot;name_en&quot;: &quot;Leading Strand&quot;,
+      &quot;definition&quot;: &quot;连续合成的DNA链&quot;,
+      &quot;level&quot;: &quot;derived&quot;,
+      &quot;type&quot;: &quot;structure&quot;,
+      &quot;derived_from&quot;: &quot;C02.01&quot;,
+      &quot;dimension&quot;: &quot;连续性&quot;,
+      &quot;importance&quot;: 3
+    },
+    {
+      &quot;id&quot;: &quot;D02.02&quot;,
+      &quot;name&quot;: &quot;滞后链&quot;,
+      &quot;name_en&quot;: &quot;Lagging Strand&quot;,
+      &quot;definition&quot;: &quot;不连续合成的DNA链&quot;,
+      &quot;level&quot;: &quot;derived&quot;,
+      &quot;type&quot;: &quot;structure&quot;,
+      &quot;derived_from&quot;: &quot;C02.01&quot;,
+      &quot;dimension&quot;: &quot;连续性&quot;,
+      &quot;importance&quot;: 3
+    },
+    {
+      &quot;id&quot;: &quot;D02.03&quot;,
+      &quot;name&quot;: &quot;冈崎片段&quot;,
+      &quot;name_en&quot;: &quot;Okazaki Fragments&quot;,
+      &quot;definition&quot;: &quot;滞后链上合成的不连续短片段&quot;,
+      &quot;level&quot;: &quot;derived&quot;,
+      &quot;type&quot;: &quot;structure&quot;,
+      &quot;derived_from&quot;: &quot;D02.02&quot;,
+      &quot;dimension&quot;: &quot;结构&quot;,
+      &quot;importance&quot;: 3
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h2 id="_5">五、应用实例构建</h2>
+<h3 id="51">5.1 应用类型</h3>
 <p>应用实例分为以下类型：</p>
-<p>| 类型 | 说明 | 示例 |</p>
-<p>|------|------|------|</p>
-<p>| **实验技术** | 基于概念开发的实验方法 | PCR、DNA测序、基因克隆 |</p>
-<p>| **案例分析** | 概念在真实研究中的应用 | Meselson-Stahl实验 |</p>
-<p>| **问题解决** | 利用概念解决生物学问题 | 突变检测、基因诊断 |</p>
-<p>| **前沿应用** | 最新技术进展 | CRISPR基因编辑、mRNA疫苗 |</p>
-<p>| **临床转化** | 医学应用 | 基因治疗、分子诊断 |</p>
-<p>### 5.2 应用实例数据结构</p>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;chapter&quot;: &quot;02_DNA复制&quot;,</p>
-<p>  &quot;applications&quot;: [</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;A02.01&quot;,</p>
-<p>      &quot;name&quot;: &quot;PCR技术&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;Polymerase Chain Reaction&quot;,</p>
-<p>      &quot;level&quot;: &quot;application&quot;,</p>
-<p>      &quot;type&quot;: &quot;technique&quot;,</p>
-<p>      &quot;based_on&quot;: [&quot;C02.03&quot;, &quot;C02.01&quot;],</p>
-<p>      &quot;description&quot;: &quot;基于DNA复制的体外扩增技术&quot;,</p>
-<p>      &quot;components&quot;: [&quot;DNA模板&quot;, &quot;引物&quot;, &quot;dNTPs&quot;, &quot;DNA聚合酶&quot;],</p>
-<p>      &quot;steps&quot;: [&quot;变性&quot;, &quot;退火&quot;, &quot;延伸&quot;],</p>
-<p>      &quot;importance&quot;: 5</p>
-<p>    },</p>
-<p>    {</p>
-<p>      &quot;id&quot;: &quot;A02.02&quot;,</p>
-<p>      &quot;name&quot;: &quot;Meselson-Stahl实验&quot;,</p>
-<p>      &quot;name_en&quot;: &quot;Meselson-Stahl Experiment&quot;,</p>
-<p>      &quot;level&quot;: &quot;application&quot;,</p>
-<p>      &quot;type&quot;: &quot;case_study&quot;,</p>
-<p>      &quot;based_on&quot;: [&quot;C02.02&quot;],</p>
-<p>      &quot;description&quot;: &quot;证明DNA半保留复制的经典实验&quot;,</p>
-<p>      &quot;year&quot;: 1958,</p>
-<p>      &quot;method&quot;: &quot;密度梯度离心&quot;,</p>
-<p>      &quot;conclusion&quot;: &quot;DNA复制是半保留的&quot;,</p>
-<p>      &quot;importance&quot;: 4</p>
-<p>    }</p>
-<p>  ]</p>
-<p>}</p>
-<p>```</p>
-<p>---</p>
-<h2>六、概念层级树</h2>
-<p>### 6.1 树形结构表示</p>
-<p>```</p>
-<p>DNA复制（核心）</p>
-<p>├── 半保留复制（核心）</p>
-<p>│   └── Meselson-Stahl实验（应用）</p>
-<p>├── DNA聚合酶（核心）</p>
-<p>│   ├── DNA聚合酶I（衍生）</p>
-<p>│   ├── DNA聚合酶II（衍生）</p>
-<p>│   ├── DNA聚合酶III（衍生）</p>
-<p>│   └── PCR技术（应用）</p>
-<p>├── 复制叉（核心）</p>
-<p>│   ├── 前导链（衍生）</p>
-<p>│   ├── 滞后链（衍生）</p>
-<p>│   │   └── 冈崎片段（衍生）</p>
-<p>│   └── DNA连接酶（衍生）</p>
-<p>└── 端粒酶（核心）</p>
-<p>    └── 端粒延长机制（衍生）</p>
-<p>```</p>
-<p>### 6.2 数据结构</p>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;concept_tree&quot;: {</p>
-<p>    &quot;id&quot;: &quot;C02.01&quot;,</p>
-<p>    &quot;name&quot;: &quot;DNA复制&quot;,</p>
-<p>    &quot;level&quot;: &quot;core&quot;,</p>
-<p>    &quot;children&quot;: [</p>
-<p>      {</p>
-<p>        &quot;id&quot;: &quot;C02.02&quot;,</p>
-<p>        &quot;name&quot;: &quot;半保留复制&quot;,</p>
-<p>        &quot;level&quot;: &quot;core&quot;,</p>
-<p>        &quot;children&quot;: [</p>
-<p>          {</p>
-<p>            &quot;id&quot;: &quot;A02.02&quot;,</p>
-<p>            &quot;name&quot;: &quot;Meselson-Stahl实验&quot;,</p>
-<p>            &quot;level&quot;: &quot;application&quot;</p>
-<p>          }</p>
-<p>        ]</p>
-<p>      },</p>
-<p>      {</p>
-<p>        &quot;id&quot;: &quot;C02.03&quot;,</p>
-<p>        &quot;name&quot;: &quot;DNA聚合酶&quot;,</p>
-<p>        &quot;level&quot;: &quot;core&quot;,</p>
-<p>        &quot;children&quot;: [</p>
-<p>          {</p>
-<p>            &quot;id&quot;: &quot;D02.04&quot;,</p>
-<p>            &quot;name&quot;: &quot;DNA聚合酶I&quot;,</p>
-<p>            &quot;level&quot;: &quot;derived&quot;</p>
-<p>          },</p>
-<p>          {</p>
-<p>            &quot;id&quot;: &quot;D02.05&quot;,</p>
-<p>            &quot;name&quot;: &quot;DNA聚合酶II&quot;,</p>
-<p>            &quot;level&quot;: &quot;derived&quot;</p>
-<p>          },</p>
-<p>          {</p>
-<p>            &quot;id&quot;: &quot;D02.06&quot;,</p>
-<p>            &quot;name&quot;: &quot;DNA聚合酶III&quot;,</p>
-<p>            &quot;level&quot;: &quot;derived&quot;</p>
-<p>          },</p>
-<p>          {</p>
-<p>            &quot;id&quot;: &quot;A02.01&quot;,</p>
-<p>            &quot;name&quot;: &quot;PCR技术&quot;,</p>
-<p>            &quot;level&quot;: &quot;application&quot;</p>
-<p>          }</p>
-<p>        ]</p>
-<p>      }</p>
-<p>    ]</p>
-<p>  }</p>
-<p>}</p>
-<p>```</p>
-<p>---</p>
-<h2>七、工具链</h2>
-<p>### 7.1 脚本一览</p>
-<p>| 脚本 | 位置 | 功能 |</p>
-<p>|------|------|------|</p>
-<p>| `concept_extract.py` | scripts/ | 从标注文本提取概念 |</p>
-<p>| `concept_classify.py` | scripts/ | 对概念进行层级分类 |</p>
-<p>| `concept_hierarchy.py` | scripts/ | 构建概念层级树 |</p>
-<p>| `concept_tree_build.py` | scripts/ | 生成概念树可视化 |</p>
-<p>| `lint_concepts.py` | scripts/ | 概念层级验证 |</p>
-<p>### 7.2 处理流程</p>
-<p>```bash</p>
-<h1>1. 提取所有概念</h1>
-<p>python scripts/concept_extract.py</p>
-<h1>2. 对概念进行层级分类</h1>
-<p>python scripts/concept_classify.py</p>
-<h1>3. 构建概念层级树</h1>
-<p>python scripts/concept_hierarchy.py</p>
-<h1>4. 生成可视化</h1>
-<p>python scripts/concept_tree_build.py</p>
-<h1>5. 验证</h1>
-<p>python scripts/lint_concepts.py</p>
-<p>```</p>
-<p>---</p>
-<h2>八、质量检查</h2>
-<p>### 8.1 lint_concepts.py 检查项</p>
-<p>**概念层级检查**：</p>
-<p>- 每个概念有明确的level标记（core/derived/application）</p>
-<p>- 核心概念数量适中（每章3-5个）</p>
-<p>- 衍生概念有明确的derived_from指向</p>
-<p>- 应用实例有明确的based_on指向</p>
-<p>**概念完整性检查**：</p>
-<p>- 概念有定义</p>
-<p>- 概念有英文名称</p>
-<p>- 概念有类型标记</p>
-<p>**常见问题及修复**：</p>
-<p>| 问题 | 表现 | 修复方式 |</p>
-<p>|------|------|---------|</p>
-<p>| 核心概念过多 | 每章&gt;10个核心概念 | 合并相关概念，或降级为衍生概念 |</p>
-<p>| 悬空衍生概念 | derived_from指向不存在的概念 | 修正指向或补充缺失概念 |</p>
-<p>| 循环派生 | A派生B，B又派生A | 检查并打破循环 |</p>
-<p>| 概念缺失定义 | 只有名称没有定义 | 补充概念定义 |</p>
-<p>---</p>
-<h2>九、扩展到其他课程</h2>
-<p>| 课程类型 | 核心概念示例 | 衍生维度 |</p>
-<p>|----------|--------------|----------|</p>
-<p>| 细胞生物学 | 细胞膜、细胞器 | 结构、功能、类型 |</p>
-<p>| 生物化学 | 代谢途径、酶动力学 | 底物、产物、调控 |</p>
-<p>| 遗传学 | 孟德尔定律、连锁互换 | 基因型、表现型、概率 |</p>
-<p>| 微生物学 | 细菌结构、病毒复制 | 形态、生理、分类 |</p>
-<p>---</p>
-<p>*本SKILL文档基于分子生物学课程的概念层级构建经验提炼。*</p>
-<p>*核心产出：15章×平均4核心概念 ≈ 60核心概念，~180衍生概念，~90应用实例。*</p></article></main>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>实验技术</strong></td>
+<td>基于概念开发的实验方法</td>
+<td>PCR、DNA测序、基因克隆</td>
+</tr>
+<tr>
+<td><strong>案例分析</strong></td>
+<td>概念在真实研究中的应用</td>
+<td>Meselson-Stahl实验</td>
+</tr>
+<tr>
+<td><strong>问题解决</strong></td>
+<td>利用概念解决生物学问题</td>
+<td>突变检测、基因诊断</td>
+</tr>
+<tr>
+<td><strong>前沿应用</strong></td>
+<td>最新技术进展</td>
+<td>CRISPR基因编辑、mRNA疫苗</td>
+</tr>
+<tr>
+<td><strong>临床转化</strong></td>
+<td>医学应用</td>
+<td>基因治疗、分子诊断</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2 应用实例数据结构</h3>
+<pre><code class="language-json">{
+  &quot;chapter&quot;: &quot;02_DNA复制&quot;,
+  &quot;applications&quot;: [
+    {
+      &quot;id&quot;: &quot;A02.01&quot;,
+      &quot;name&quot;: &quot;PCR技术&quot;,
+      &quot;name_en&quot;: &quot;Polymerase Chain Reaction&quot;,
+      &quot;level&quot;: &quot;application&quot;,
+      &quot;type&quot;: &quot;technique&quot;,
+      &quot;based_on&quot;: [&quot;C02.03&quot;, &quot;C02.01&quot;],
+      &quot;description&quot;: &quot;基于DNA复制的体外扩增技术&quot;,
+      &quot;components&quot;: [&quot;DNA模板&quot;, &quot;引物&quot;, &quot;dNTPs&quot;, &quot;DNA聚合酶&quot;],
+      &quot;steps&quot;: [&quot;变性&quot;, &quot;退火&quot;, &quot;延伸&quot;],
+      &quot;importance&quot;: 5
+    },
+    {
+      &quot;id&quot;: &quot;A02.02&quot;,
+      &quot;name&quot;: &quot;Meselson-Stahl实验&quot;,
+      &quot;name_en&quot;: &quot;Meselson-Stahl Experiment&quot;,
+      &quot;level&quot;: &quot;application&quot;,
+      &quot;type&quot;: &quot;case_study&quot;,
+      &quot;based_on&quot;: [&quot;C02.02&quot;],
+      &quot;description&quot;: &quot;证明DNA半保留复制的经典实验&quot;,
+      &quot;year&quot;: 1958,
+      &quot;method&quot;: &quot;密度梯度离心&quot;,
+      &quot;conclusion&quot;: &quot;DNA复制是半保留的&quot;,
+      &quot;importance&quot;: 4
+    }
+  ]
+}
+</code></pre>
+<hr />
+<h2 id="_6">六、概念层级树</h2>
+<h3 id="61">6.1 树形结构表示</h3>
+<pre><code>DNA复制（核心）
+├── 半保留复制（核心）
+│   └── Meselson-Stahl实验（应用）
+├── DNA聚合酶（核心）
+│   ├── DNA聚合酶I（衍生）
+│   ├── DNA聚合酶II（衍生）
+│   ├── DNA聚合酶III（衍生）
+│   └── PCR技术（应用）
+├── 复制叉（核心）
+│   ├── 前导链（衍生）
+│   ├── 滞后链（衍生）
+│   │   └── 冈崎片段（衍生）
+│   └── DNA连接酶（衍生）
+└── 端粒酶（核心）
+    └── 端粒延长机制（衍生）
+</code></pre>
+<h3 id="62">6.2 数据结构</h3>
+<pre><code class="language-json">{
+  &quot;concept_tree&quot;: {
+    &quot;id&quot;: &quot;C02.01&quot;,
+    &quot;name&quot;: &quot;DNA复制&quot;,
+    &quot;level&quot;: &quot;core&quot;,
+    &quot;children&quot;: [
+      {
+        &quot;id&quot;: &quot;C02.02&quot;,
+        &quot;name&quot;: &quot;半保留复制&quot;,
+        &quot;level&quot;: &quot;core&quot;,
+        &quot;children&quot;: [
+          {
+            &quot;id&quot;: &quot;A02.02&quot;,
+            &quot;name&quot;: &quot;Meselson-Stahl实验&quot;,
+            &quot;level&quot;: &quot;application&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;C02.03&quot;,
+        &quot;name&quot;: &quot;DNA聚合酶&quot;,
+        &quot;level&quot;: &quot;core&quot;,
+        &quot;children&quot;: [
+          {
+            &quot;id&quot;: &quot;D02.04&quot;,
+            &quot;name&quot;: &quot;DNA聚合酶I&quot;,
+            &quot;level&quot;: &quot;derived&quot;
+          },
+          {
+            &quot;id&quot;: &quot;D02.05&quot;,
+            &quot;name&quot;: &quot;DNA聚合酶II&quot;,
+            &quot;level&quot;: &quot;derived&quot;
+          },
+          {
+            &quot;id&quot;: &quot;D02.06&quot;,
+            &quot;name&quot;: &quot;DNA聚合酶III&quot;,
+            &quot;level&quot;: &quot;derived&quot;
+          },
+          {
+            &quot;id&quot;: &quot;A02.01&quot;,
+            &quot;name&quot;: &quot;PCR技术&quot;,
+            &quot;level&quot;: &quot;application&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<hr />
+<h2 id="_7">七、工具链</h2>
+<h3 id="71">7.1 脚本一览</h3>
+<table>
+<thead>
+<tr>
+<th>脚本</th>
+<th>位置</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>concept_extract.py</code></td>
+<td>scripts/</td>
+<td>从标注文本提取概念</td>
+</tr>
+<tr>
+<td><code>concept_classify.py</code></td>
+<td>scripts/</td>
+<td>对概念进行层级分类</td>
+</tr>
+<tr>
+<td><code>concept_hierarchy.py</code></td>
+<td>scripts/</td>
+<td>构建概念层级树</td>
+</tr>
+<tr>
+<td><code>concept_tree_build.py</code></td>
+<td>scripts/</td>
+<td>生成概念树可视化</td>
+</tr>
+<tr>
+<td><code>lint_concepts.py</code></td>
+<td>scripts/</td>
+<td>概念层级验证</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72">7.2 处理流程</h3>
+<pre><code class="language-bash"># 1. 提取所有概念
+python scripts/concept_extract.py
+
+# 2. 对概念进行层级分类
+python scripts/concept_classify.py
+
+# 3. 构建概念层级树
+python scripts/concept_hierarchy.py
+
+# 4. 生成可视化
+python scripts/concept_tree_build.py
+
+# 5. 验证
+python scripts/lint_concepts.py
+</code></pre>
+<hr />
+<h2 id="_8">八、质量检查</h2>
+<h3 id="81-lint_conceptspy">8.1 lint_concepts.py 检查项</h3>
+<p><strong>概念层级检查</strong>：
+- 每个概念有明确的level标记（core/derived/application）
+- 核心概念数量适中（每章3-5个）
+- 衍生概念有明确的derived_from指向
+- 应用实例有明确的based_on指向</p>
+<p><strong>概念完整性检查</strong>：
+- 概念有定义
+- 概念有英文名称
+- 概念有类型标记</p>
+<p><strong>常见问题及修复</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>表现</th>
+<th>修复方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核心概念过多</td>
+<td>每章&gt;10个核心概念</td>
+<td>合并相关概念，或降级为衍生概念</td>
+</tr>
+<tr>
+<td>悬空衍生概念</td>
+<td>derived_from指向不存在的概念</td>
+<td>修正指向或补充缺失概念</td>
+</tr>
+<tr>
+<td>循环派生</td>
+<td>A派生B，B又派生A</td>
+<td>检查并打破循环</td>
+</tr>
+<tr>
+<td>概念缺失定义</td>
+<td>只有名称没有定义</td>
+<td>补充概念定义</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">九、扩展到其他课程</h2>
+<table>
+<thead>
+<tr>
+<th>课程类型</th>
+<th>核心概念示例</th>
+<th>衍生维度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>细胞生物学</td>
+<td>细胞膜、细胞器</td>
+<td>结构、功能、类型</td>
+</tr>
+<tr>
+<td>生物化学</td>
+<td>代谢途径、酶动力学</td>
+<td>底物、产物、调控</td>
+</tr>
+<tr>
+<td>遗传学</td>
+<td>孟德尔定律、连锁互换</td>
+<td>基因型、表现型、概率</td>
+</tr>
+<tr>
+<td>微生物学</td>
+<td>细菌结构、病毒复制</td>
+<td>形态、生理、分类</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>本SKILL文档基于分子生物学课程的概念层级构建经验提炼。</em>
+<em>核心产出：15章×平均4核心概念 ≈ 60核心概念，~180衍生概念，~90应用实例。</em></p></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

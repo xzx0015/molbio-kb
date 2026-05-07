@@ -2018,6 +2018,36 @@
       "source": "基因线路",
       "target": "基因工程",
       "type": "related"
+    },
+    {
+      "source": "dna-replication",
+      "target": "central-dogma",
+      "type": "part-of"
+    },
+    {
+      "source": "dna",
+      "target": "central-dogma",
+      "type": "part-of"
+    },
+    {
+      "source": "rna",
+      "target": "central-dogma",
+      "type": "part-of"
+    },
+    {
+      "source": "protein",
+      "target": "central-dogma",
+      "type": "part-of"
+    },
+    {
+      "source": "dna",
+      "target": "dna-replication",
+      "type": "substrate"
+    },
+    {
+      "source": "dna-replication",
+      "target": "dna",
+      "type": "produces"
     }
   ],
   "relationTypes": {

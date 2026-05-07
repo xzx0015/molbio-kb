@@ -161,579 +161,692 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 06a: 知识点智能检索系统</h1>
-<p>&gt; 基于知识图谱的多维度智能检索系统，支持实体检索、关系检索、概念检索及关联推荐。</p>
-<p>---</p>
-<h2>一、系统概述</h2>
-<p>### 1.1 设计目标</p>
-<p>- **多维度检索**：支持按实体、关系、概念分类、关键词等多种方式检索</p>
-<p>- **语义理解**：理解用户查询意图，支持自然语言查询</p>
-<p>- **关联推荐**：基于知识图谱的关联推荐，发现相关知识</p>
-<p>- **可视化展示**：知识图谱局部可视化，直观展示知识关系</p>
-<p>### 1.2 核心功能</p>
-<p>```</p>
-<p>┌─────────────────────────────────────────────────────────────────┐</p>
-<p>│                     知识点智能检索系统                          │</p>
-<p>├─────────────────────────────────────────────────────────────────┤</p>
-<p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │</p>
-<p>│  │ 实体检索    │  │ 关系检索    │  │ 概念检索    │  │ 语义检索│ │</p>
-<p>│  │             │  │             │  │             │  │        │ │</p>
-<p>│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │</p>
-<p>├─────────────────────────────────────────────────────────────────┤</p>
-<p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │</p>
-<p>│  │ 关联推荐    │  │ 前置知识    │  │ 可视化展示  │             │</p>
-<p>│  │             │  │ 提示        │  │             │             │</p>
-<p>│  └─────────────┘  └─────────────┘  └─────────────┘             │</p>
-<p>└─────────────────────────────────────────────────────────────────┘</p>
-<p>```</p>
-<p>---</p>
-<h2>二、检索维度</h2>
-<p>### 2.1 实体检索</p>
-<p>**定义**：按具体实体（如酶、分子、结构等）进行精确或模糊匹配</p>
-<p>**检索类型**：</p>
-<p>| 检索方式 | 示例 | 说明 |</p>
-<p>|---------|------|------|</p>
-<p>| 精确匹配 | &quot;DNA聚合酶III&quot; | 完全匹配实体名称 |</p>
-<p>| 前缀匹配 | &quot;DNA聚&quot; | 匹配以关键词开头的实体 |</p>
-<p>| 模糊匹配 | &quot;DNA聚合&quot; | 包含关键词的实体 |</p>
-<p>| 同义词匹配 | &quot;DNA pol&quot; | 匹配实体的英文/缩写形式 |</p>
-<p>**实现示例**：</p>
-<p>```python</p>
-<h1>Cypher查询 - 实体精确匹配</h1>
-<p>MATCH (c:Concept)</p>
-<p>WHERE c.name = &#x27;DNA聚合酶III&#x27; </p>
-<p>   OR c.name_zh = &#x27;DNA聚合酶III&#x27;</p>
-<p>RETURN c</p>
-<h1>Cypher查询 - 实体模糊匹配</h1>
-<p>MATCH (c:Concept)</p>
-<p>WHERE c.name CONTAINS &#x27;聚合酶&#x27;</p>
-<p>   OR c.name_zh CONTAINS &#x27;聚合酶&#x27;</p>
-<p>RETURN c</p>
-<p>ORDER BY c.importance DESC</p>
-<h1>同义词扩展</h1>
-<p>MATCH (c:Concept)-[:HAS_ALIAS]-&gt;(a:Alias)</p>
-<p>WHERE a.name IN [&#x27;DNA pol&#x27;, &#x27;DNA polymerase&#x27;]</p>
-<p>RETURN c</p>
-<p>```</p>
-<p>### 2.2 关系检索</p>
-<p>**定义**：按知识之间的关系进行检索，发现概念间的联系</p>
-<p>**关系类型**：</p>
-<p>| 关系类型 | 说明 | 示例 |</p>
-<p>|---------|------|------|</p>
-<p>| `requires` | 前置依赖 | 学习A需要先学B |</p>
-<p>| `isPartOf` | 组成部分 | A是B的一部分 |</p>
-<p>| `hasSubConcept` | 包含子概念 | B包含A |</p>
-<p>| `relatedTo` | 相关关系 | A与B相关 |</p>
-<p>| `leadsTo` | 导致/产生 | A导致B |</p>
-<p>**实现示例**：</p>
-<p>```python</p>
-<h1>查询某概念的所有前置知识</h1>
-<p>MATCH (c:Concept {name: &#x27;DNA复制&#x27;})-[:requires]-&gt;(pre:Concept)</p>
-<p>RETURN pre.name, pre.difficulty</p>
-<h1>查询某概念的所有子概念</h1>
-<p>MATCH (c:Concept {name: &#x27;DNA复制&#x27;})-[:hasSubConcept]-&gt;(sub:Concept)</p>
-<p>RETURN sub.name, sub.importance</p>
-<p>ORDER BY sub.importance DESC</p>
-<h1>查询两个概念之间的关系路径</h1>
-<p>MATCH path = shortestPath(</p>
-<p>    (a:Concept {name: &#x27;DNA聚合酶&#x27;})-[:requires|isPartOf|relatedTo*]-(b:Concept {name: &#x27;冈崎片段&#x27;})</p>
-<p>)</p>
-<p>RETURN path</p>
-<p>```</p>
-<p>### 2.3 概念分类检索</p>
-<p>**定义**：按概念分类树进行层级检索</p>
-<p>**分类维度**：</p>
-<p>```</p>
-<p>中心法则</p>
-<p>├── DNA复制</p>
-<p>│   ├── 复制机制</p>
-<p>│   ├── 复制酶</p>
-<p>│   └── 复制调控</p>
-<p>├── 转录</p>
-<p>│   ├── 转录机制</p>
-<p>│   ├── RNA聚合酶</p>
-<p>│   └── 转录调控</p>
-<p>└── 翻译</p>
-<p>    ├── 翻译机制</p>
-<p>    ├── 核糖体</p>
-<p>    └── 翻译后修饰</p>
-<p>```</p>
-<p>**实现示例**：</p>
-<p>```python</p>
-<h1>查询某分类下的所有概念</h1>
-<p>MATCH (c:Concept)-[:isPartOf*]-&gt;(parent:Concept {name: &#x27;DNA复制&#x27;})</p>
-<p>RETURN c.name, c.difficulty</p>
-<h1>按分类层级检索</h1>
-<p>MATCH (c:Concept)</p>
-<p>WHERE c.category IN [&#x27;复制酶&#x27;, &#x27;复制机制&#x27;]</p>
-<p>RETURN c.name</p>
-<p>ORDER BY c.importance DESC</p>
-<h1>查询某概念的所有上级分类</h1>
-<p>MATCH (c:Concept {name: &#x27;DNA聚合酶III&#x27;})-[:isPartOf*]-&gt;(parent:Concept)</p>
-<p>RETURN parent.name</p>
-<p>```</p>
-<p>### 2.4 语义检索</p>
-<p>**定义**：基于语义理解的智能检索，支持自然语言查询</p>
-<p>**语义理解流程**：</p>
-<p>```</p>
-<p>用户输入: &quot;DNA复制需要什么酶&quot;</p>
-<p>   ↓</p>
-<p>[意图识别] → 查询意图: 查询某概念的相关实体（酶）</p>
-<p>   ↓</p>
-<p>[实体识别] → 主体: DNA复制, 目标类型: 酶</p>
-<p>   ↓</p>
-<p>[查询构建] → 构建图查询</p>
-<p>   ↓</p>
-<p>[执行检索] → 返回结果</p>
-<p>```</p>
-<p>**实现示例**：</p>
-<p>```python</p>
-<h1>自然语言查询解析</h1>
-<p>def parse_nl_query(query: str) -&gt; dict:</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    解析自然语言查询</p>
-<p>    示例: &quot;DNA复制需要什么酶&quot; </p>
-<p>    返回: {</p>
-<p>        &quot;intent&quot;: &quot;find_related&quot;,</p>
-<p>        &quot;subject&quot;: &quot;DNA复制&quot;,</p>
-<p>        &quot;relation_type&quot;: &quot;involves&quot;,</p>
-<p>        &quot;target_type&quot;: &quot;酶&quot;</p>
-<p>    }</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    # 使用NLP模型进行意图识别和实体抽取</p>
-<p>    pass</p>
-<h1>语义扩展查询</h1>
-<p>def semantic_search(query: str, expand: bool = True) -&gt; list:</p>
-<p>    # 1. 基础关键词匹配</p>
-<p>    base_results = keyword_search(query)</p>
-<p>    # 2. 语义扩展（同义词、上下位词）</p>
-<p>    if expand:</p>
-<p>        synonyms = get_synonyms(query)</p>
-<p>        hypernyms = get_hypernyms(query)</p>
-<p>        expanded_query = OR(query, synonyms, hypernyms)</p>
-<p>        base_results.extend(keyword_search(expanded_query))</p>
-<p>    # 3. 去重排序</p>
-<p>    return deduplicate_and_rank(base_results)</p>
-<p>```</p>
-<p>---</p>
-<h2>三、关联推荐</h2>
-<p>### 3.1 相关知识点推荐</p>
-<p>**推荐策略**：</p>
-<p>1. **共现推荐**：在同一学习路径中经常一起出现的知识点</p>
-<p>2. **依赖推荐**：当前知识点的前置/后续知识</p>
-<p>3. **相似推荐**：概念相似度高的知识点</p>
-<p>4. **应用推荐**：当前知识点的应用场景</p>
-<p>**实现示例**：</p>
-<p>```python</p>
-<h1>相关知识点推荐算法</h1>
-<p>def recommend_related(concept_id: str, limit: int = 5) -&gt; list:</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    基于知识图谱的相关知识点推荐</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    recommendations = []</p>
-<p>    # 1. 直接关联（前置/后续知识）</p>
-<p>    cypher_direct = &quot;&quot;&quot;</p>
-<p>    MATCH (c:Concept {id: $concept_id})-[:requires|isPrerequisiteFor]-&gt;(related:Concept)</p>
-<p>    RETURN related, &#x27;dependency&#x27; as reason</p>
-<p>    LIMIT $limit</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    recommendations.extend(run_query(cypher_direct))</p>
-<p>    # 2. 共同前置知识（相似知识点）</p>
-<p>    cypher_similar = &quot;&quot;&quot;</p>
-<p>    MATCH (c:Concept {id: $concept_id})-[:requires]-&gt;(common:Concept)&lt;-[:requires]-(similar:Concept)</p>
-<p>    WHERE similar &lt;&gt; c</p>
-<p>    RETURN similar, &#x27;similar&#x27; as reason, count(common) as common_count</p>
-<p>    ORDER BY common_count DESC</p>
-<p>    LIMIT $limit</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    recommendations.extend(run_query(cypher_similar))</p>
-<p>    # 3. 同分类其他知识点</p>
-<p>    cypher_category = &quot;&quot;&quot;</p>
-<p>    MATCH (c:Concept {id: $concept_id})-[:isPartOf]-&gt;(parent:Concept)&lt;-[:isPartOf]-(sibling:Concept)</p>
-<p>    WHERE sibling &lt;&gt; c</p>
-<p>    RETURN sibling, &#x27;sibling&#x27; as reason</p>
-<p>    LIMIT $limit</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    recommendations.extend(run_query(cypher_category))</p>
-<p>    return deduplicate(recommendations)</p>
-<p>```</p>
-<p>### 3.2 前置知识提示</p>
-<p>**功能说明**：在学习某知识点前，提示需要掌握的前置知识</p>
-<p>**交互设计**：</p>
-<p>```</p>
-<p>┌─────────────────────────────────────────────────────────────┐</p>
-<p>│  正在学习: DNA复制                                          │</p>
-<p>├─────────────────────────────────────────────────────────────┤</p>
-<p>│  ⚠️ 前置知识检查                                            │</p>
-<p>│  学习此知识点前，建议先掌握以下内容：                        │</p>
-<p>│                                                             │</p>
-<p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │</p>
-<p>│  │ DNA结构     │  │ 碱基配对    │  │ 酶的基本概念│         │</p>
-<p>│  │ [已掌握 ✓]  │  │ [未掌握 ⚠]  │  │ [已掌握 ✓]  │         │</p>
-<p>│  └─────────────┘  └─────────────┘  └─────────────┘         │</p>
-<p>│                                                             │</p>
-<p>│  [跳过并继续]  [先学习前置知识]                             │</p>
-<p>└─────────────────────────────────────────────────────────────┘</p>
-<p>```</p>
-<p>**实现示例**：</p>
-<p>```python</p>
-<p>def check_prerequisites(concept_id: str, user_id: str) -&gt; dict:</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    检查用户是否已掌握某知识点的前置知识</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    # 1. 查询所有前置知识</p>
-<p>    cypher = &quot;&quot;&quot;</p>
-<p>    MATCH (c:Concept {id: $concept_id})-[:requires]-&gt;(prereq:Concept)</p>
-<p>    RETURN prereq.id as prereq_id, prereq.name as prereq_name</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    prerequisites = run_query(cypher, concept_id=concept_id)</p>
-<p>    # 2. 查询用户掌握度</p>
-<p>    result = {&quot;missing&quot;: [], &quot;mastered&quot;: []}</p>
-<p>    for prereq in prerequisites:</p>
-<p>        mastery = get_user_mastery(user_id, prereq[&quot;prereq_id&quot;])</p>
-<p>        if mastery &gt;= 0.7:</p>
-<p>            result[&quot;mastered&quot;].append(prereq)</p>
-<p>        else:</p>
-<p>            result[&quot;missing&quot;].append(prereq)</p>
-<p>    return result</p>
-<p>```</p>
-<p>---</p>
-<h2>四、可视化展示</h2>
-<p>### 4.1 知识图谱局部可视化</p>
-<p>**展示内容**：</p>
-<p>1. **中心节点**：当前查询的知识点</p>
-<p>2. **直接关联**：前置知识、后续知识、子概念、父概念</p>
-<p>3. **间接关联**：二级关联的知识点（可选）</p>
-<p>**可视化设计**：</p>
-<p>```</p>
-<p>                    ┌─────────────┐</p>
-<p>                    │   中心法则   │</p>
-<p>                    │   (父概念)   │</p>
-<p>                    └──────┬──────┘</p>
-<p>                           │</p>
-<p>              ┌────────────┼────────────┐</p>
-<p>              │            │            │</p>
-<p>         ┌────┴────┐  ┌────┴────┐  ┌────┴────┐</p>
-<p>         │ DNA结构 │  │ DNA复制 │  │ 复制起点│</p>
-<p>         │(前置知识)│  │【当前】 │  │(子概念) │</p>
-<p>         └─────────┘  └────┬────┘  └─────────┘</p>
-<p>                           │</p>
-<p>              ┌────────────┼────────────┐</p>
-<p>              │            │            │</p>
-<p>         ┌────┴────┐  ┌────┴────┐  ┌────┴────┐</p>
-<p>         │DNA聚合酶│  │冈崎片段 │  │ 引物酶  │</p>
-<p>         │(相关酶) │  │(相关机制)│  │(相关酶) │</p>
-<p>         └─────────┘  └─────────┘  └─────────┘</p>
-<p>```</p>
-<p>**颜色与样式规范**：</p>
-<p>| 节点类型 | 颜色 | 形状 | 说明 |</p>
-<p>|---------|------|------|------|</p>
-<p>| 当前节点 | #FF6B6B | 圆形 | 红色高亮 |</p>
-<p>| 前置知识 | #4ECDC4 | 圆形 | 青色，虚线边 |</p>
-<p>| 后续知识 | #95E1D3 | 圆形 | 浅绿，虚线边 |</p>
-<p>| 父概念 | #F7DC6F | 方形 | 黄色 |</p>
-<p>| 子概念 | #BB8FCE | 方形 | 紫色 |</p>
-<p>| 相关概念 | #85C1E2 | 圆形 | 蓝色 |</p>
-<p>**实现技术**：</p>
-<p>```javascript</p>
-<p>// D3.js 知识图谱可视化</p>
-<p>function renderKnowledgeGraph(container, data) {</p>
-<p>    const width = 800;</p>
-<p>    const height = 600;</p>
-<p>    const svg = d3.select(container)</p>
-<p>        .append(&quot;svg&quot;)</p>
-<p>        .attr(&quot;width&quot;, width)</p>
-<p>        .attr(&quot;height&quot;, height);</p>
-<p>    // 定义力导向模拟</p>
-<p>    const simulation = d3.forceSimulation(data.nodes)</p>
-<p>        .force(&quot;link&quot;, d3.forceLink(data.links).id(d =&gt; d.id))</p>
-<p>        .force(&quot;charge&quot;, d3.forceManyBody().strength(-300))</p>
-<p>        .force(&quot;center&quot;, d3.forceCenter(width / 2, height / 2));</p>
-<p>    // 绘制连线</p>
-<p>    const link = svg.append(&quot;g&quot;)</p>
-<p>        .selectAll(&quot;line&quot;)</p>
-<p>        .data(data.links)</p>
-<p>        .enter().append(&quot;line&quot;)</p>
-<p>        .attr(&quot;stroke&quot;, d =&gt; getLinkColor(d.type))</p>
-<p>        .attr(&quot;stroke-width&quot;, 2)</p>
-<p>        .attr(&quot;stroke-dasharray&quot;, d =&gt; d.type === &#x27;requires&#x27; ? &quot;5,5&quot; : null);</p>
-<p>    // 绘制节点</p>
-<p>    const node = svg.append(&quot;g&quot;)</p>
-<p>        .selectAll(&quot;g&quot;)</p>
-<p>        .data(data.nodes)</p>
-<p>        .enter().append(&quot;g&quot;)</p>
-<p>        .call(d3.drag()</p>
-<p>            .on(&quot;start&quot;, dragstarted)</p>
-<p>            .on(&quot;drag&quot;, dragged)</p>
-<p>            .on(&quot;end&quot;, dragended));</p>
-<p>    // 节点形状和颜色</p>
-<p>    node.append(d =&gt; d.type === &#x27;current&#x27; ? &#x27;circle&#x27; : </p>
-<p>                 d.category === &#x27;parent&#x27; ? &#x27;rect&#x27; : &#x27;circle&#x27;)</p>
-<p>        .attr(&quot;r&quot;, d =&gt; d.type === &#x27;current&#x27; ? 30 : 20)</p>
-<p>        .attr(&quot;fill&quot;, d =&gt; getNodeColor(d.type, d.category))</p>
-<p>        .attr(&quot;stroke&quot;, &quot;#fff&quot;)</p>
-<p>        .attr(&quot;stroke-width&quot;, 2);</p>
-<p>    // 节点标签</p>
-<p>    node.append(&quot;text&quot;)</p>
-<p>        .text(d =&gt; d.name)</p>
-<p>        .attr(&quot;text-anchor&quot;, &quot;middle&quot;)</p>
-<p>        .attr(&quot;dy&quot;, 5)</p>
-<p>        .attr(&quot;font-size&quot;, &quot;12px&quot;)</p>
-<p>        .attr(&quot;fill&quot;, &quot;#333&quot;);</p>
-<p>    // 更新位置</p>
-<p>    simulation.on(&quot;tick&quot;, () =&gt; {</p>
-<p>        link</p>
-<p>            .attr(&quot;x1&quot;, d =&gt; d.source.x)</p>
-<p>            .attr(&quot;y1&quot;, d =&gt; d.source.y)</p>
-<p>            .attr(&quot;x2&quot;, d =&gt; d.target.x)</p>
-<p>            .attr(&quot;y2&quot;, d =&gt; d.target.y);</p>
-<p>        node.attr(&quot;transform&quot;, d =&gt; `translate(${d.x},${d.y})`);</p>
-<p>    });</p>
-<p>}</p>
-<p>```</p>
-<p>### 4.2 知识卡片设计</p>
-<p>**卡片内容**：</p>
-<p>```</p>
-<p>┌─────────────────────────────────────────────────────────────┐</p>
-<p>│  DNA复制                                                    │</p>
-<p>│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │</p>
-<p>│  📚 分类: 中心法则 &gt; DNA复制                                 │</p>
-<p>│  📊 难度: ⭐⭐⭐ (进阶)                                       │</p>
-<p>│  ⏱️ 建议时长: 45分钟                                         │</p>
-<p>│  🔥 重要程度: 核心知识点                                     │</p>
-<p>├─────────────────────────────────────────────────────────────┤</p>
-<p>│  📖 定义                                                    │</p>
-<p>│  DNA复制是指DNA双链在细胞分裂前进行精确拷贝的过程，         │</p>
-<p>│  确保遗传信息准确传递给子代细胞。                           │</p>
-<p>├─────────────────────────────────────────────────────────────┤</p>
-<p>│  🔑 关键概念                                                │</p>
-<p>│  • 半保留复制机制                                          │</p>
-<p>│  • 复制叉与前导链/后随链                                    │</p>
-<p>│  • DNA聚合酶的作用                                         │</p>
-<p>│  • 冈崎片段与DNA连接酶                                      │</p>
-<p>├─────────────────────────────────────────────────────────────┤</p>
-<p>│  📎 相关知识点                                              │</p>
-<p>│  [DNA聚合酶] [冈崎片段] [复制起点] [细胞周期]               │</p>
-<p>├─────────────────────────────────────────────────────────────┤</p>
-<p>│  ⚠️ 前置知识                                                │</p>
-<p>│  ✓ DNA结构  ✓ 碱基配对  ⚠ 酶的基本概念                     │</p>
-<p>├─────────────────────────────────────────────────────────────┤</p>
-<p>│  [开始学习]  [查看图谱]  [练习题目]                         │</p>
-<p>└─────────────────────────────────────────────────────────────┘</p>
-<p>```</p>
-<p>---</p>
-<h2>五、用户交互流程</h2>
-<p>### 5.1 检索流程</p>
-<p>```</p>
-<p>┌─────────┐     ┌─────────┐     ┌─────────┐     ┌─────────┐</p>
-<p>│ 用户输入 │ ──→ │ 查询解析 │ ──→ │ 执行检索 │ ──→ │ 结果展示 │</p>
-<p>│ 查询词   │     │         │     │         │     │         │</p>
-<p>└─────────┘     └─────────┘     └─────────┘     └─────────┘</p>
-<p>                      │               │</p>
-<p>                      ↓               ↓</p>
-<p>                ┌─────────┐     ┌─────────┐</p>
-<p>                │意图识别 │     │多源检索 │</p>
-<p>                │实体抽取 │     │结果融合 │</p>
-<p>                └─────────┘     └─────────┘</p>
-<p>```</p>
-<p>### 5.2 交互界面设计</p>
-<p>**搜索页面**：</p>
-<p>```</p>
-<p>┌─────────────────────────────────────────────────────────────┐</p>
-<p>│  🔍 分子生物学知识检索                        [用户头像]    │</p>
-<p>├─────────────────────────────────────────────────────────────┤</p>
-<p>│                                                             │</p>
-<p>│     ┌─────────────────────────────────────────────────┐    │</p>
-<p>│     │ 搜索知识点、概念、酶、分子...                    │ 🔍 │</p>
-<p>│     └─────────────────────────────────────────────────┘    │</p>
-<p>│                                                             │</p>
-<p>│     热门搜索: [DNA复制] [转录] [翻译] [PCR] [CRISPR]       │</p>
-<p>│                                                             │</p>
-<p>│  ┌────────────────────────────────────────────────────────┐│</p>
-<p>│  │ 筛选条件:                                              ││</p>
-<p>│  │ [全部 ▼] [难度: 全部 ▼] [分类: 全部 ▼] [重要程度 ▼]    ││</p>
-<p>│  └────────────────────────────────────────────────────────┘│</p>
-<p>│                                                             │</p>
-<p>│  搜索结果 (共 12 条):                                       │</p>
-<p>│  ┌────────────────────────────────────────────────────────┐│</p>
-<p>│  │ 1. DNA复制                                             ││</p>
-<p>│  │    分类: 中心法则 &gt; DNA复制  |  难度: ⭐⭐⭐           ││</p>
-<p>│  │    DNA分子自我复制的过程，包括半保留复制机制...        ││</p>
-<p>│  │    [查看详情] [加入学习路径]                           ││</p>
-<p>│  └────────────────────────────────────────────────────────┘│</p>
-<p>│  ┌────────────────────────────────────────────────────────┐│</p>
-<p>│  │ 2. DNA聚合酶                                           ││</p>
-<p>│  │    ...                                                 ││</p>
-<p>│  └────────────────────────────────────────────────────────┘│</p>
-<p>│                                                             │</p>
-<p>└─────────────────────────────────────────────────────────────┘</p>
-<p>```</p>
-<p>---</p>
-<h2>六、API接口设计</h2>
-<p>### 6.1 检索接口</p>
-<p>```yaml</p>
-<h1>全文检索</h1>
-<p>GET /api/search</p>
-<p>参数:</p>
-<p>  q: 查询词 (必填)</p>
-<p>  type: 检索类型 (entity|concept|relation|all, 默认all)</p>
-<p>  difficulty: 难度过滤 (basic|intermediate|advanced)</p>
-<p>  category: 分类过滤</p>
-<p>  importance: 重要程度过滤 (core|important|supplementary)</p>
-<p>  limit: 返回数量 (默认10)</p>
-<p>  offset: 偏移量 (默认0)</p>
-<p>返回:</p>
-<p>  total: 总结果数</p>
-<p>  results: 结果列表</p>
-<p>    - id: 知识点ID</p>
-<p>      name: 名称</p>
-<p>      category: 分类</p>
-<p>      difficulty: 难度</p>
-<p>      importance: 重要程度</p>
-<p>      snippet: 内容摘要</p>
-<p>      match_score: 匹配分数</p>
-<h1>实体详情</h1>
-<p>GET /api/concepts/{id}</p>
-<p>返回:</p>
-<p>  id: 知识点ID</p>
-<p>  name: 名称</p>
-<p>  name_en: 英文名称</p>
-<p>  category: 分类路径</p>
-<p>  definition: 定义</p>
-<p>  difficulty: 难度</p>
-<p>  importance: 重要程度</p>
-<p>  study_time: 建议学习时长</p>
-<p>  prerequisites: 前置知识列表</p>
-<p>  sub_concepts: 子概念列表</p>
-<p>  related_concepts: 相关概念列表</p>
-<p>  questions: 关联题目数量</p>
-<h1>关系查询</h1>
-<p>GET /api/concepts/{id}/relations</p>
-<p>参数:</p>
-<p>  relation_type: 关系类型 (requires|isPartOf|relatedTo|all)</p>
-<p>  depth: 查询深度 (1-3, 默认1)</p>
-<p>返回:</p>
-<p>  nodes: 节点列表</p>
-<p>  edges: 关系列表</p>
-<p>```</p>
-<p>### 6.2 推荐接口</p>
-<p>```yaml</p>
-<h1>相关推荐</h1>
-<p>GET /api/concepts/{id}/recommendations</p>
-<p>参数:</p>
-<p>  type: 推荐类型 (related|prerequisite|similar|all)</p>
-<p>  limit: 数量 (默认5)</p>
-<p>返回:</p>
-<p>  recommendations:</p>
-<p>    - concept: 推荐知识点</p>
-<p>      reason: 推荐理由</p>
-<p>      score: 推荐分数</p>
-<h1>前置知识检查</h1>
-<p>GET /api/concepts/{id}/prerequisites/check</p>
-<p>参数:</p>
-<p>  user_id: 用户ID</p>
-<p>返回:</p>
-<p>  prerequisites:</p>
-<p>    - concept: 前置知识点</p>
-<p>      required_level: 要求掌握度</p>
-<p>      user_level: 用户当前掌握度</p>
-<p>      status: 状态 (mastered|partial|missing)</p>
-<p>```</p>
-<p>### 6.3 可视化接口</p>
-<p>```yaml</p>
-<h1>知识图谱数据</h1>
-<p>GET /api/concepts/{id}/graph</p>
-<p>参数:</p>
-<p>  depth: 深度 (1-3, 默认2)</p>
-<p>  include_indirect: 是否包含间接关联 (默认false)</p>
-<p>返回:</p>
-<p>  nodes:</p>
-<p>    - id: 节点ID</p>
-<p>      name: 名称</p>
-<p>      type: 节点类型 (current|prerequisite|sub_concept|parent|related)</p>
-<p>      category: 分类</p>
-<p>      x: x坐标</p>
-<p>      y: y坐标</p>
-<p>  edges:</p>
-<p>    - source: 源节点ID</p>
-<p>      target: 目标节点ID</p>
-<p>      type: 关系类型</p>
-<p>      label: 关系标签</p>
-<p>```</p>
-<p>---</p>
-<h2>七、性能优化</h2>
-<p>### 7.1 索引策略</p>
-<p>```python</p>
-<h1>Neo4j 索引创建</h1>
-<p>CREATE INDEX concept_name_index FOR (c:Concept) ON (c.name);</p>
-<p>CREATE INDEX concept_category_index FOR (c:Concept) ON (c.category);</p>
-<p>CREATE INDEX concept_difficulty_index FOR (c:Concept) ON (c.difficulty);</p>
-<h1>Elasticsearch 索引配置</h1>
-<p>PUT /molbio_concepts</p>
-<p>{</p>
-<p>  &quot;mappings&quot;: {</p>
-<p>    &quot;properties&quot;: {</p>
-<p>      &quot;name&quot;: {&quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_max_word&quot;},</p>
-<p>      &quot;name_en&quot;: {&quot;type&quot;: &quot;text&quot;},</p>
-<p>      &quot;definition&quot;: {&quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_max_word&quot;},</p>
-<p>      &quot;category&quot;: {&quot;type&quot;: &quot;keyword&quot;},</p>
-<p>      &quot;difficulty&quot;: {&quot;type&quot;: &quot;keyword&quot;},</p>
-<p>      &quot;importance&quot;: {&quot;type&quot;: &quot;keyword&quot;}</p>
-<p>    }</p>
-<p>  }</p>
-<p>}</p>
-<p>```</p>
-<p>### 7.2 缓存策略</p>
-<p>```python</p>
-<h1>Redis缓存配置</h1>
-<p>CACHE_CONFIG = {</p>
-<p>    &quot;concept_detail&quot;: {&quot;ttl&quot;: 3600},      # 知识点详情缓存1小时</p>
-<p>    &quot;search_results&quot;: {&quot;ttl&quot;: 300},       # 搜索结果缓存5分钟</p>
-<p>    &quot;graph_data&quot;: {&quot;ttl&quot;: 1800},          # 图谱数据缓存30分钟</p>
-<p>    &quot;recommendations&quot;: {&quot;ttl&quot;: 600},      # 推荐结果缓存10分钟</p>
-<p>    &quot;hot_concepts&quot;: {&quot;ttl&quot;: 3600}         # 热门知识点缓存1小时</p>
-<p>}</p>
-<h1>缓存键设计</h1>
-<p>def get_cache_key(prefix, *args):</p>
-<p>    return f&quot;{prefix}:{&#x27;:&#x27;.join(str(arg) for arg in args)}&quot;</p>
-<h1>示例</h1>
-<p>cache_key = get_cache_key(&quot;concept&quot;, &quot;detail&quot;, concept_id)</p>
-<h1>结果: &quot;concept:detail:dna_replication&quot;</h1>
-<p>```</p>
-<p>### 7.3 查询优化</p>
-<p>```python</p>
-<h1>分页查询优化</h1>
-<p>def paginated_search(query, page=1, per_page=10):</p>
-<p>    # 使用SKIP和LIMIT进行分页</p>
-<p>    cypher = &quot;&quot;&quot;</p>
-<p>    MATCH (c:Concept)</p>
-<p>    WHERE c.name CONTAINS $query</p>
-<p>    RETURN c</p>
-<p>    ORDER BY c.importance DESC, c.name</p>
-<p>    SKIP $skip</p>
-<p>    LIMIT $limit</p>
-<p>    &quot;&quot;&quot;</p>
-<p>    skip = (page - 1) * per_page</p>
-<p>    return run_query(cypher, query=query, skip=skip, limit=per_page)</p>
-<h1>异步并行查询</h1>
-<p>async def parallel_search(query):</p>
-<p>    # 同时执行多个查询</p>
-<p>    tasks = [</p>
-<p>        search_neo4j(query),</p>
-<p>        search_elasticsearch(query),</p>
-<p>        search_cache(query)</p>
-<p>    ]</p>
-<p>    results = await asyncio.gather(*tasks)</p>
-<p>    return merge_results(results)</p>
-<p>```</p>
-<p>---</p>
-<h2>八、总结</h2>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-06a">SKILL 06a: 知识点智能检索系统</h1>
+<blockquote>
+<p>基于知识图谱的多维度智能检索系统，支持实体检索、关系检索、概念检索及关联推荐。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、系统概述</h2>
+<h3 id="11">1.1 设计目标</h3>
+<ul>
+<li><strong>多维度检索</strong>：支持按实体、关系、概念分类、关键词等多种方式检索</li>
+<li><strong>语义理解</strong>：理解用户查询意图，支持自然语言查询</li>
+<li><strong>关联推荐</strong>：基于知识图谱的关联推荐，发现相关知识</li>
+<li><strong>可视化展示</strong>：知识图谱局部可视化，直观展示知识关系</li>
+</ul>
+<h3 id="12">1.2 核心功能</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│                     知识点智能检索系统                          │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │
+│  │ 实体检索    │  │ 关系检索    │  │ 概念检索    │  │ 语义检索│ │
+│  │             │  │             │  │             │  │        │ │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │ 关联推荐    │  │ 前置知识    │  │ 可视化展示  │             │
+│  │             │  │ 提示        │  │             │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2 id="_2">二、检索维度</h2>
+<h3 id="21">2.1 实体检索</h3>
+<p><strong>定义</strong>：按具体实体（如酶、分子、结构等）进行精确或模糊匹配</p>
+<p><strong>检索类型</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>检索方式</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>精确匹配</td>
+<td>"DNA聚合酶III"</td>
+<td>完全匹配实体名称</td>
+</tr>
+<tr>
+<td>前缀匹配</td>
+<td>"DNA聚"</td>
+<td>匹配以关键词开头的实体</td>
+</tr>
+<tr>
+<td>模糊匹配</td>
+<td>"DNA聚合"</td>
+<td>包含关键词的实体</td>
+</tr>
+<tr>
+<td>同义词匹配</td>
+<td>"DNA pol"</td>
+<td>匹配实体的英文/缩写形式</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实现示例</strong>：</p>
+<pre><code class="language-python"># Cypher查询 - 实体精确匹配
+MATCH (c:Concept)
+WHERE c.name = 'DNA聚合酶III' 
+   OR c.name_zh = 'DNA聚合酶III'
+RETURN c
+
+# Cypher查询 - 实体模糊匹配
+MATCH (c:Concept)
+WHERE c.name CONTAINS '聚合酶'
+   OR c.name_zh CONTAINS '聚合酶'
+RETURN c
+ORDER BY c.importance DESC
+
+# 同义词扩展
+MATCH (c:Concept)-[:HAS_ALIAS]-&gt;(a:Alias)
+WHERE a.name IN ['DNA pol', 'DNA polymerase']
+RETURN c
+</code></pre>
+<h3 id="22">2.2 关系检索</h3>
+<p><strong>定义</strong>：按知识之间的关系进行检索，发现概念间的联系</p>
+<p><strong>关系类型</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>关系类型</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>requires</code></td>
+<td>前置依赖</td>
+<td>学习A需要先学B</td>
+</tr>
+<tr>
+<td><code>isPartOf</code></td>
+<td>组成部分</td>
+<td>A是B的一部分</td>
+</tr>
+<tr>
+<td><code>hasSubConcept</code></td>
+<td>包含子概念</td>
+<td>B包含A</td>
+</tr>
+<tr>
+<td><code>relatedTo</code></td>
+<td>相关关系</td>
+<td>A与B相关</td>
+</tr>
+<tr>
+<td><code>leadsTo</code></td>
+<td>导致/产生</td>
+<td>A导致B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实现示例</strong>：</p>
+<pre><code class="language-python"># 查询某概念的所有前置知识
+MATCH (c:Concept {name: 'DNA复制'})-[:requires]-&gt;(pre:Concept)
+RETURN pre.name, pre.difficulty
+
+# 查询某概念的所有子概念
+MATCH (c:Concept {name: 'DNA复制'})-[:hasSubConcept]-&gt;(sub:Concept)
+RETURN sub.name, sub.importance
+ORDER BY sub.importance DESC
+
+# 查询两个概念之间的关系路径
+MATCH path = shortestPath(
+    (a:Concept {name: 'DNA聚合酶'})-[:requires|isPartOf|relatedTo*]-(b:Concept {name: '冈崎片段'})
+)
+RETURN path
+</code></pre>
+<h3 id="23">2.3 概念分类检索</h3>
+<p><strong>定义</strong>：按概念分类树进行层级检索</p>
+<p><strong>分类维度</strong>：</p>
+<pre><code>中心法则
+├── DNA复制
+│   ├── 复制机制
+│   ├── 复制酶
+│   └── 复制调控
+├── 转录
+│   ├── 转录机制
+│   ├── RNA聚合酶
+│   └── 转录调控
+└── 翻译
+    ├── 翻译机制
+    ├── 核糖体
+    └── 翻译后修饰
+</code></pre>
+<p><strong>实现示例</strong>：</p>
+<pre><code class="language-python"># 查询某分类下的所有概念
+MATCH (c:Concept)-[:isPartOf*]-&gt;(parent:Concept {name: 'DNA复制'})
+RETURN c.name, c.difficulty
+
+# 按分类层级检索
+MATCH (c:Concept)
+WHERE c.category IN ['复制酶', '复制机制']
+RETURN c.name
+ORDER BY c.importance DESC
+
+# 查询某概念的所有上级分类
+MATCH (c:Concept {name: 'DNA聚合酶III'})-[:isPartOf*]-&gt;(parent:Concept)
+RETURN parent.name
+</code></pre>
+<h3 id="24">2.4 语义检索</h3>
+<p><strong>定义</strong>：基于语义理解的智能检索，支持自然语言查询</p>
+<p><strong>语义理解流程</strong>：</p>
+<pre><code>用户输入: &quot;DNA复制需要什么酶&quot;
+   ↓
+[意图识别] → 查询意图: 查询某概念的相关实体（酶）
+   ↓
+[实体识别] → 主体: DNA复制, 目标类型: 酶
+   ↓
+[查询构建] → 构建图查询
+   ↓
+[执行检索] → 返回结果
+</code></pre>
+<p><strong>实现示例</strong>：</p>
+<pre><code class="language-python"># 自然语言查询解析
+def parse_nl_query(query: str) -&gt; dict:
+    &quot;&quot;&quot;
+    解析自然语言查询
+    示例: &quot;DNA复制需要什么酶&quot; 
+    返回: {
+        &quot;intent&quot;: &quot;find_related&quot;,
+        &quot;subject&quot;: &quot;DNA复制&quot;,
+        &quot;relation_type&quot;: &quot;involves&quot;,
+        &quot;target_type&quot;: &quot;酶&quot;
+    }
+    &quot;&quot;&quot;
+    # 使用NLP模型进行意图识别和实体抽取
+    pass
+
+# 语义扩展查询
+def semantic_search(query: str, expand: bool = True) -&gt; list:
+    # 1. 基础关键词匹配
+    base_results = keyword_search(query)
+
+    # 2. 语义扩展（同义词、上下位词）
+    if expand:
+        synonyms = get_synonyms(query)
+        hypernyms = get_hypernyms(query)
+        expanded_query = OR(query, synonyms, hypernyms)
+        base_results.extend(keyword_search(expanded_query))
+
+    # 3. 去重排序
+    return deduplicate_and_rank(base_results)
+</code></pre>
+<hr />
+<h2 id="_3">三、关联推荐</h2>
+<h3 id="31">3.1 相关知识点推荐</h3>
+<p><strong>推荐策略</strong>：</p>
+<ol>
+<li><strong>共现推荐</strong>：在同一学习路径中经常一起出现的知识点</li>
+<li><strong>依赖推荐</strong>：当前知识点的前置/后续知识</li>
+<li><strong>相似推荐</strong>：概念相似度高的知识点</li>
+<li><strong>应用推荐</strong>：当前知识点的应用场景</li>
+</ol>
+<p><strong>实现示例</strong>：</p>
+<pre><code class="language-python"># 相关知识点推荐算法
+def recommend_related(concept_id: str, limit: int = 5) -&gt; list:
+    &quot;&quot;&quot;
+    基于知识图谱的相关知识点推荐
+    &quot;&quot;&quot;
+    recommendations = []
+
+    # 1. 直接关联（前置/后续知识）
+    cypher_direct = &quot;&quot;&quot;
+    MATCH (c:Concept {id: $concept_id})-[:requires|isPrerequisiteFor]-&gt;(related:Concept)
+    RETURN related, 'dependency' as reason
+    LIMIT $limit
+    &quot;&quot;&quot;
+    recommendations.extend(run_query(cypher_direct))
+
+    # 2. 共同前置知识（相似知识点）
+    cypher_similar = &quot;&quot;&quot;
+    MATCH (c:Concept {id: $concept_id})-[:requires]-&gt;(common:Concept)&lt;-[:requires]-(similar:Concept)
+    WHERE similar &lt;&gt; c
+    RETURN similar, 'similar' as reason, count(common) as common_count
+    ORDER BY common_count DESC
+    LIMIT $limit
+    &quot;&quot;&quot;
+    recommendations.extend(run_query(cypher_similar))
+
+    # 3. 同分类其他知识点
+    cypher_category = &quot;&quot;&quot;
+    MATCH (c:Concept {id: $concept_id})-[:isPartOf]-&gt;(parent:Concept)&lt;-[:isPartOf]-(sibling:Concept)
+    WHERE sibling &lt;&gt; c
+    RETURN sibling, 'sibling' as reason
+    LIMIT $limit
+    &quot;&quot;&quot;
+    recommendations.extend(run_query(cypher_category))
+
+    return deduplicate(recommendations)
+</code></pre>
+<h3 id="32">3.2 前置知识提示</h3>
+<p><strong>功能说明</strong>：在学习某知识点前，提示需要掌握的前置知识</p>
+<p><strong>交互设计</strong>：</p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│  正在学习: DNA复制                                          │
+├─────────────────────────────────────────────────────────────┤
+│  ⚠️ 前置知识检查                                            │
+│  学习此知识点前，建议先掌握以下内容：                        │
+│                                                             │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
+│  │ DNA结构     │  │ 碱基配对    │  │ 酶的基本概念│         │
+│  │ [已掌握 ✓]  │  │ [未掌握 ⚠]  │  │ [已掌握 ✓]  │         │
+│  └─────────────┘  └─────────────┘  └─────────────┘         │
+│                                                             │
+│  [跳过并继续]  [先学习前置知识]                             │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>实现示例</strong>：</p>
+<pre><code class="language-python">def check_prerequisites(concept_id: str, user_id: str) -&gt; dict:
+    &quot;&quot;&quot;
+    检查用户是否已掌握某知识点的前置知识
+    &quot;&quot;&quot;
+    # 1. 查询所有前置知识
+    cypher = &quot;&quot;&quot;
+    MATCH (c:Concept {id: $concept_id})-[:requires]-&gt;(prereq:Concept)
+    RETURN prereq.id as prereq_id, prereq.name as prereq_name
+    &quot;&quot;&quot;
+    prerequisites = run_query(cypher, concept_id=concept_id)
+
+    # 2. 查询用户掌握度
+    result = {&quot;missing&quot;: [], &quot;mastered&quot;: []}
+    for prereq in prerequisites:
+        mastery = get_user_mastery(user_id, prereq[&quot;prereq_id&quot;])
+        if mastery &gt;= 0.7:
+            result[&quot;mastered&quot;].append(prereq)
+        else:
+            result[&quot;missing&quot;].append(prereq)
+
+    return result
+</code></pre>
+<hr />
+<h2 id="_4">四、可视化展示</h2>
+<h3 id="41">4.1 知识图谱局部可视化</h3>
+<p><strong>展示内容</strong>：</p>
+<ol>
+<li><strong>中心节点</strong>：当前查询的知识点</li>
+<li><strong>直接关联</strong>：前置知识、后续知识、子概念、父概念</li>
+<li><strong>间接关联</strong>：二级关联的知识点（可选）</li>
+</ol>
+<p><strong>可视化设计</strong>：</p>
+<pre><code>                    ┌─────────────┐
+                    │   中心法则   │
+                    │   (父概念)   │
+                    └──────┬──────┘
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+         ┌────┴────┐  ┌────┴────┐  ┌────┴────┐
+         │ DNA结构 │  │ DNA复制 │  │ 复制起点│
+         │(前置知识)│  │【当前】 │  │(子概念) │
+         └─────────┘  └────┬────┘  └─────────┘
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+         ┌────┴────┐  ┌────┴────┐  ┌────┴────┐
+         │DNA聚合酶│  │冈崎片段 │  │ 引物酶  │
+         │(相关酶) │  │(相关机制)│  │(相关酶) │
+         └─────────┘  └─────────┘  └─────────┘
+</code></pre>
+<p><strong>颜色与样式规范</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>节点类型</th>
+<th>颜色</th>
+<th>形状</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>当前节点</td>
+<td>#FF6B6B</td>
+<td>圆形</td>
+<td>红色高亮</td>
+</tr>
+<tr>
+<td>前置知识</td>
+<td>#4ECDC4</td>
+<td>圆形</td>
+<td>青色，虚线边</td>
+</tr>
+<tr>
+<td>后续知识</td>
+<td>#95E1D3</td>
+<td>圆形</td>
+<td>浅绿，虚线边</td>
+</tr>
+<tr>
+<td>父概念</td>
+<td>#F7DC6F</td>
+<td>方形</td>
+<td>黄色</td>
+</tr>
+<tr>
+<td>子概念</td>
+<td>#BB8FCE</td>
+<td>方形</td>
+<td>紫色</td>
+</tr>
+<tr>
+<td>相关概念</td>
+<td>#85C1E2</td>
+<td>圆形</td>
+<td>蓝色</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实现技术</strong>：</p>
+<pre><code class="language-javascript">// D3.js 知识图谱可视化
+function renderKnowledgeGraph(container, data) {
+    const width = 800;
+    const height = 600;
+
+    const svg = d3.select(container)
+        .append(&quot;svg&quot;)
+        .attr(&quot;width&quot;, width)
+        .attr(&quot;height&quot;, height);
+
+    // 定义力导向模拟
+    const simulation = d3.forceSimulation(data.nodes)
+        .force(&quot;link&quot;, d3.forceLink(data.links).id(d =&gt; d.id))
+        .force(&quot;charge&quot;, d3.forceManyBody().strength(-300))
+        .force(&quot;center&quot;, d3.forceCenter(width / 2, height / 2));
+
+    // 绘制连线
+    const link = svg.append(&quot;g&quot;)
+        .selectAll(&quot;line&quot;)
+        .data(data.links)
+        .enter().append(&quot;line&quot;)
+        .attr(&quot;stroke&quot;, d =&gt; getLinkColor(d.type))
+        .attr(&quot;stroke-width&quot;, 2)
+        .attr(&quot;stroke-dasharray&quot;, d =&gt; d.type === 'requires' ? &quot;5,5&quot; : null);
+
+    // 绘制节点
+    const node = svg.append(&quot;g&quot;)
+        .selectAll(&quot;g&quot;)
+        .data(data.nodes)
+        .enter().append(&quot;g&quot;)
+        .call(d3.drag()
+            .on(&quot;start&quot;, dragstarted)
+            .on(&quot;drag&quot;, dragged)
+            .on(&quot;end&quot;, dragended));
+
+    // 节点形状和颜色
+    node.append(d =&gt; d.type === 'current' ? 'circle' : 
+                 d.category === 'parent' ? 'rect' : 'circle')
+        .attr(&quot;r&quot;, d =&gt; d.type === 'current' ? 30 : 20)
+        .attr(&quot;fill&quot;, d =&gt; getNodeColor(d.type, d.category))
+        .attr(&quot;stroke&quot;, &quot;#fff&quot;)
+        .attr(&quot;stroke-width&quot;, 2);
+
+    // 节点标签
+    node.append(&quot;text&quot;)
+        .text(d =&gt; d.name)
+        .attr(&quot;text-anchor&quot;, &quot;middle&quot;)
+        .attr(&quot;dy&quot;, 5)
+        .attr(&quot;font-size&quot;, &quot;12px&quot;)
+        .attr(&quot;fill&quot;, &quot;#333&quot;);
+
+    // 更新位置
+    simulation.on(&quot;tick&quot;, () =&gt; {
+        link
+            .attr(&quot;x1&quot;, d =&gt; d.source.x)
+            .attr(&quot;y1&quot;, d =&gt; d.source.y)
+            .attr(&quot;x2&quot;, d =&gt; d.target.x)
+            .attr(&quot;y2&quot;, d =&gt; d.target.y);
+
+        node.attr(&quot;transform&quot;, d =&gt; `translate(${d.x},${d.y})`);
+    });
+}
+</code></pre>
+<h3 id="42">4.2 知识卡片设计</h3>
+<p><strong>卡片内容</strong>：</p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│  DNA复制                                                    │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│  📚 分类: 中心法则 &gt; DNA复制                                 │
+│  📊 难度: ⭐⭐⭐ (进阶)                                       │
+│  ⏱️ 建议时长: 45分钟                                         │
+│  🔥 重要程度: 核心知识点                                     │
+├─────────────────────────────────────────────────────────────┤
+│  📖 定义                                                    │
+│  DNA复制是指DNA双链在细胞分裂前进行精确拷贝的过程，         │
+│  确保遗传信息准确传递给子代细胞。                           │
+├─────────────────────────────────────────────────────────────┤
+│  🔑 关键概念                                                │
+│  • 半保留复制机制                                          │
+│  • 复制叉与前导链/后随链                                    │
+│  • DNA聚合酶的作用                                         │
+│  • 冈崎片段与DNA连接酶                                      │
+├─────────────────────────────────────────────────────────────┤
+│  📎 相关知识点                                              │
+│  [DNA聚合酶] [冈崎片段] [复制起点] [细胞周期]               │
+├─────────────────────────────────────────────────────────────┤
+│  ⚠️ 前置知识                                                │
+│  ✓ DNA结构  ✓ 碱基配对  ⚠ 酶的基本概念                     │
+├─────────────────────────────────────────────────────────────┤
+│  [开始学习]  [查看图谱]  [练习题目]                         │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2 id="_5">五、用户交互流程</h2>
+<h3 id="51">5.1 检索流程</h3>
+<pre><code>┌─────────┐     ┌─────────┐     ┌─────────┐     ┌─────────┐
+│ 用户输入 │ ──→ │ 查询解析 │ ──→ │ 执行检索 │ ──→ │ 结果展示 │
+│ 查询词   │     │         │     │         │     │         │
+└─────────┘     └─────────┘     └─────────┘     └─────────┘
+                      │               │
+                      ↓               ↓
+                ┌─────────┐     ┌─────────┐
+                │意图识别 │     │多源检索 │
+                │实体抽取 │     │结果融合 │
+                └─────────┘     └─────────┘
+</code></pre>
+<h3 id="52">5.2 交互界面设计</h3>
+<p><strong>搜索页面</strong>：</p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│  🔍 分子生物学知识检索                        [用户头像]    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│     ┌─────────────────────────────────────────────────┐    │
+│     │ 搜索知识点、概念、酶、分子...                    │ 🔍 │
+│     └─────────────────────────────────────────────────┘    │
+│                                                             │
+│     热门搜索: [DNA复制] [转录] [翻译] [PCR] [CRISPR]       │
+│                                                             │
+│  ┌────────────────────────────────────────────────────────┐│
+│  │ 筛选条件:                                              ││
+│  │ [全部 ▼] [难度: 全部 ▼] [分类: 全部 ▼] [重要程度 ▼]    ││
+│  └────────────────────────────────────────────────────────┘│
+│                                                             │
+│  搜索结果 (共 12 条):                                       │
+│  ┌────────────────────────────────────────────────────────┐│
+│  │ 1. DNA复制                                             ││
+│  │    分类: 中心法则 &gt; DNA复制  |  难度: ⭐⭐⭐           ││
+│  │    DNA分子自我复制的过程，包括半保留复制机制...        ││
+│  │    [查看详情] [加入学习路径]                           ││
+│  └────────────────────────────────────────────────────────┘│
+│  ┌────────────────────────────────────────────────────────┐│
+│  │ 2. DNA聚合酶                                           ││
+│  │    ...                                                 ││
+│  └────────────────────────────────────────────────────────┘│
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2 id="api">六、API接口设计</h2>
+<h3 id="61">6.1 检索接口</h3>
+<pre><code class="language-yaml"># 全文检索
+GET /api/search
+参数:
+  q: 查询词 (必填)
+  type: 检索类型 (entity|concept|relation|all, 默认all)
+  difficulty: 难度过滤 (basic|intermediate|advanced)
+  category: 分类过滤
+  importance: 重要程度过滤 (core|important|supplementary)
+  limit: 返回数量 (默认10)
+  offset: 偏移量 (默认0)
+返回:
+  total: 总结果数
+  results: 结果列表
+    - id: 知识点ID
+      name: 名称
+      category: 分类
+      difficulty: 难度
+      importance: 重要程度
+      snippet: 内容摘要
+      match_score: 匹配分数
+
+# 实体详情
+GET /api/concepts/{id}
+返回:
+  id: 知识点ID
+  name: 名称
+  name_en: 英文名称
+  category: 分类路径
+  definition: 定义
+  difficulty: 难度
+  importance: 重要程度
+  study_time: 建议学习时长
+  prerequisites: 前置知识列表
+  sub_concepts: 子概念列表
+  related_concepts: 相关概念列表
+  questions: 关联题目数量
+
+# 关系查询
+GET /api/concepts/{id}/relations
+参数:
+  relation_type: 关系类型 (requires|isPartOf|relatedTo|all)
+  depth: 查询深度 (1-3, 默认1)
+返回:
+  nodes: 节点列表
+  edges: 关系列表
+</code></pre>
+<h3 id="62">6.2 推荐接口</h3>
+<pre><code class="language-yaml"># 相关推荐
+GET /api/concepts/{id}/recommendations
+参数:
+  type: 推荐类型 (related|prerequisite|similar|all)
+  limit: 数量 (默认5)
+返回:
+  recommendations:
+    - concept: 推荐知识点
+      reason: 推荐理由
+      score: 推荐分数
+
+# 前置知识检查
+GET /api/concepts/{id}/prerequisites/check
+参数:
+  user_id: 用户ID
+返回:
+  prerequisites:
+    - concept: 前置知识点
+      required_level: 要求掌握度
+      user_level: 用户当前掌握度
+      status: 状态 (mastered|partial|missing)
+</code></pre>
+<h3 id="63">6.3 可视化接口</h3>
+<pre><code class="language-yaml"># 知识图谱数据
+GET /api/concepts/{id}/graph
+参数:
+  depth: 深度 (1-3, 默认2)
+  include_indirect: 是否包含间接关联 (默认false)
+返回:
+  nodes:
+    - id: 节点ID
+      name: 名称
+      type: 节点类型 (current|prerequisite|sub_concept|parent|related)
+      category: 分类
+      x: x坐标
+      y: y坐标
+  edges:
+    - source: 源节点ID
+      target: 目标节点ID
+      type: 关系类型
+      label: 关系标签
+</code></pre>
+<hr />
+<h2 id="_6">七、性能优化</h2>
+<h3 id="71">7.1 索引策略</h3>
+<pre><code class="language-python"># Neo4j 索引创建
+CREATE INDEX concept_name_index FOR (c:Concept) ON (c.name);
+CREATE INDEX concept_category_index FOR (c:Concept) ON (c.category);
+CREATE INDEX concept_difficulty_index FOR (c:Concept) ON (c.difficulty);
+
+# Elasticsearch 索引配置
+PUT /molbio_concepts
+{
+  &quot;mappings&quot;: {
+    &quot;properties&quot;: {
+      &quot;name&quot;: {&quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_max_word&quot;},
+      &quot;name_en&quot;: {&quot;type&quot;: &quot;text&quot;},
+      &quot;definition&quot;: {&quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_max_word&quot;},
+      &quot;category&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+      &quot;difficulty&quot;: {&quot;type&quot;: &quot;keyword&quot;},
+      &quot;importance&quot;: {&quot;type&quot;: &quot;keyword&quot;}
+    }
+  }
+}
+</code></pre>
+<h3 id="72">7.2 缓存策略</h3>
+<pre><code class="language-python"># Redis缓存配置
+CACHE_CONFIG = {
+    &quot;concept_detail&quot;: {&quot;ttl&quot;: 3600},      # 知识点详情缓存1小时
+    &quot;search_results&quot;: {&quot;ttl&quot;: 300},       # 搜索结果缓存5分钟
+    &quot;graph_data&quot;: {&quot;ttl&quot;: 1800},          # 图谱数据缓存30分钟
+    &quot;recommendations&quot;: {&quot;ttl&quot;: 600},      # 推荐结果缓存10分钟
+    &quot;hot_concepts&quot;: {&quot;ttl&quot;: 3600}         # 热门知识点缓存1小时
+}
+
+# 缓存键设计
+def get_cache_key(prefix, *args):
+    return f&quot;{prefix}:{':'.join(str(arg) for arg in args)}&quot;
+
+# 示例
+cache_key = get_cache_key(&quot;concept&quot;, &quot;detail&quot;, concept_id)
+# 结果: &quot;concept:detail:dna_replication&quot;
+</code></pre>
+<h3 id="73">7.3 查询优化</h3>
+<pre><code class="language-python"># 分页查询优化
+def paginated_search(query, page=1, per_page=10):
+    # 使用SKIP和LIMIT进行分页
+    cypher = &quot;&quot;&quot;
+    MATCH (c:Concept)
+    WHERE c.name CONTAINS $query
+    RETURN c
+    ORDER BY c.importance DESC, c.name
+    SKIP $skip
+    LIMIT $limit
+    &quot;&quot;&quot;
+    skip = (page - 1) * per_page
+    return run_query(cypher, query=query, skip=skip, limit=per_page)
+
+# 异步并行查询
+async def parallel_search(query):
+    # 同时执行多个查询
+    tasks = [
+        search_neo4j(query),
+        search_elasticsearch(query),
+        search_cache(query)
+    ]
+    results = await asyncio.gather(*tasks)
+    return merge_results(results)
+</code></pre>
+<hr />
+<h2 id="_7">八、总结</h2>
 <p>知识点智能检索系统的核心特性：</p>
-<p>1. **多维度检索**：支持实体、关系、概念、语义四种检索方式</p>
-<p>2. **智能推荐**：基于知识图谱的关联推荐和前置知识提示</p>
-<p>3. **可视化展示**：D3.js驱动的知识图谱可视化，直观展示知识关系</p>
-<p>4. **高性能**：多级缓存、索引优化、异步查询确保响应速度</p>
-<p>5. **用户友好**：清晰的交互流程和丰富的知识卡片展示</p></article></main>
+<ol>
+<li><strong>多维度检索</strong>：支持实体、关系、概念、语义四种检索方式</li>
+<li><strong>智能推荐</strong>：基于知识图谱的关联推荐和前置知识提示</li>
+<li><strong>可视化展示</strong>：D3.js驱动的知识图谱可视化，直观展示知识关系</li>
+<li><strong>高性能</strong>：多级缓存、索引优化、异步查询确保响应速度</li>
+<li><strong>用户友好</strong>：清晰的交互流程和丰富的知识卡片展示</li>
+</ol></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

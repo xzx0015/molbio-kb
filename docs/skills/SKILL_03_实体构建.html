@@ -161,139 +161,343 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 03: 实体构建 — 分子生物学知识库实体体系总览</h1>
-<p>&gt; 从基因、蛋白到实验技术，构建分子生物学领域的结构化实体标注体系。</p>
-<p>---</p>
-<h2>一、实体构建阶段概述</h2>
-<p>### 1.1 阶段定位</p>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-03">SKILL 03: 实体构建 — 分子生物学知识库实体体系总览</h1>
+<blockquote>
+<p>从基因、蛋白到实验技术，构建分子生物学领域的结构化实体标注体系。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、实体构建阶段概述</h2>
+<h3 id="11">1.1 阶段定位</h3>
 <p>实体构建是知识库建设的核心阶段，承接内容采集与结构分析，为后续关系构建和本体构建提供基础实体数据。</p>
-<p>```</p>
-<p>内容采集(SKILL_01) → 结构分析(SKILL_02) → 【实体构建(SKILL_03)】 → 关系构建(SKILL_04) → 本体构建(SKILL_05)</p>
-<p>```</p>
-<p>### 1.2 阶段目标</p>
-<p>1. **建立实体类型体系** — 定义12类生物学实体及其标注规范</p>
-<p>2. **完成实体标注** — 对课程内容进行标准化实体标记</p>
-<p>3. **实现实体消歧** — 解决同名实体跨物种/跨语境的歧义问题</p>
-<p>4. **持续质量反思** — 建立标注错误修正的系统性流程</p>
-<p>### 1.3 阶段产出</p>
-<p>| 产出物 | 文件/目录 | 说明 |</p>
-<p>|--------|----------|------|</p>
-<p>| 实体标注规范 | `SKILL_03a_实体标注.md` | 12类实体的详细标注规则 |</p>
-<p>| 实体消歧策略 | `SKILL_03b_实体消歧.md` | 跨物种/跨语境消歧方法 |</p>
-<p>| 标注反思流程 | `SKILL_03c_标注反思.md` | 系统性错误修正流程 |</p>
-<p>| 标注数据文件 | `chapter_md/*.tagged.md` | 带实体标记的课程内容 |</p>
-<p>| 实体索引 | `kg/entities/data/entity_index.json` | 实体目录与引用统计 |</p>
-<p>| 消歧映射表 | `kg/entities/data/disambiguation_map.json` | 同名实体消歧规则 |</p>
-<p>| 别名映射表 | `kg/entities/data/entity_aliases.json` | 实体别名与规范名对应 |</p>
-<p>---</p>
-<h2>二、12类实体体系概览</h2>
-<p>### 2.1 实体类型总表</p>
-<p>| 符号 | 类型 | 说明 | 示例 |</p>
-<p>|------|------|------|------|</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 基因 | 基因名称、基因符号 | `&lt;span class=&quot;entity&quot;&gt;lacZ&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 蛋白 | 蛋白质、酶、复合物 | `&lt;span class=&quot;entity&quot;&gt;RNA聚合酶&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 细胞结构 | 细胞器、亚细胞结构 | `&lt;span class=&quot;entity&quot;&gt;细胞核&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 分子过程 | 生物学过程、反应 | `&lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;翻译&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 技术方法 | 实验技术、分析方法 | `&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;Western Blot&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 代谢物 | 小分子、代谢中间产物 | `&lt;span class=&quot;entity&quot;&gt;ATP&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;NADH&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 试剂材料 | 实验试剂、培养基、耗材 | `&lt;span class=&quot;entity&quot;&gt;琼脂糖&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 条件参数 | 温度、pH、浓度等参数 | `&lt;span class=&quot;entity&quot;&gt;37°C&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;pH7.4&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 文献来源 | 经典文献、发现者 | `&lt;span class=&quot;entity&quot;&gt;Watson&amp;amp;Crick1953&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 核心概念 | 理论、法则、模型 | `&lt;span class=&quot;entity&quot;&gt;中心法则&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 疾病/表型 | 疾病、表型特征 | `&lt;span class=&quot;entity&quot;&gt;癌症&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;耐药性&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | 数值数据 | 定量数据、测量值 | `&lt;span class=&quot;entity&quot;&gt;Tm=65°C&lt;/span&gt;` |</p>
-<p>### 2.2 实体分类原则</p>
-<p>#### 原则一：功能优先于位置</p>
-<p>同一实体按其主要功能分类，而非物理位置：</p>
-<p>- `&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;`（基因）→ 不标为 `&lt;span class=&quot;entity&quot;&gt;p53蛋白&lt;/span&gt;`</p>
-<p>- `&lt;span class=&quot;entity&quot;&gt;RNA聚合酶&lt;/span&gt;`（蛋白）→ 不标为 `&lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;`的过程</p>
-<p>#### 原则二：具体实例优先于抽象概念</p>
-<p>- `&lt;span class=&quot;entity&quot;&gt;lacZ&lt;/span&gt;`（具体基因）vs `&lt;span class=&quot;entity&quot;&gt;乳糖操纵子模型&lt;/span&gt;`（概念）</p>
-<p>- `&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;`（具体技术）vs `&lt;span class=&quot;entity&quot;&gt;PCR原理&lt;/span&gt;`（概念）</p>
-<p>#### 原则三：标注粒度适中</p>
-<p>- ✓ `&lt;span class=&quot;entity&quot;&gt;p53基因&lt;/span&gt;` 或 `&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;`（上下文明确时）</p>
-<p>- ✗ ~~`&lt;span class=&quot;entity&quot;&gt;p53基因&lt;/span&gt;蛋白产物`~~（不跨词标注）</p>
-<p>---</p>
-<h2>三、标注流程</h2>
-<p>### 3.1 四阶段流水线</p>
-<p>```</p>
-<p>原始课程内容(.md)</p>
-<p>    ↓ 阶段1: AI语义标注</p>
-<p>标注文件(chapter_md/*.tagged.md)</p>
-<p>    ↓ 阶段2: 质量控制</p>
-<p>验证通过的标注文件</p>
-<p>    ↓ 阶段3: 实体提取与索引构建</p>
-<p>entity_index.json + entity_aliases.json</p>
-<p>    ↓ 阶段4: 消歧与增强</p>
-<p>disambiguation_map.json + species_map.json</p>
-<p>```</p>
-<p>### 3.2 阶段详解</p>
-<p>#### 阶段1：AI语义标注</p>
-<p>使用LLM对课程内容进行批量实体标注，详见 `SKILL_03a_实体标注.md`。</p>
-<p>#### 阶段2：质量控制</p>
-<p>- **语法检查**：验证标记闭合、格式正确</p>
-<p>- **完整性验证**：确保标注不改变原文</p>
-<p>- **人工抽检**：每批次抽检2-3章</p>
-<p>#### 阶段3：实体提取</p>
-<p>从标注文件中提取实体，构建索引：</p>
-<p>- 规范实体名（别名合并后）</p>
-<p>- 出现位置（章节、段落）</p>
-<p>- 引用频次统计</p>
-<p>#### 阶段4：消歧增强</p>
-<p>- 同名基因/蛋白跨物种消歧</p>
-<p>- 别名映射（如 p53 ↔ TP53 ↔ 肿瘤蛋白53）</p>
-<p>- 物种标注（人类/小鼠/大肠杆菌等）</p>
-<p>---</p>
-<h2>四、与古籍标注体系的对比</h2>
-<p>### 4.1 继承的设计模式</p>
+<pre><code>内容采集(SKILL_01) → 结构分析(SKILL_02) → 【实体构建(SKILL_03)】 → 关系构建(SKILL_04) → 本体构建(SKILL_05)
+</code></pre>
+<h3 id="12">1.2 阶段目标</h3>
+<ol>
+<li><strong>建立实体类型体系</strong> — 定义12类生物学实体及其标注规范</li>
+<li><strong>完成实体标注</strong> — 对课程内容进行标准化实体标记</li>
+<li><strong>实现实体消歧</strong> — 解决同名实体跨物种/跨语境的歧义问题</li>
+<li><strong>持续质量反思</strong> — 建立标注错误修正的系统性流程</li>
+</ol>
+<h3 id="13">1.3 阶段产出</h3>
+<table>
+<thead>
+<tr>
+<th>产出物</th>
+<th>文件/目录</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实体标注规范</td>
+<td><code>SKILL_03a_实体标注.md</code></td>
+<td>12类实体的详细标注规则</td>
+</tr>
+<tr>
+<td>实体消歧策略</td>
+<td><code>SKILL_03b_实体消歧.md</code></td>
+<td>跨物种/跨语境消歧方法</td>
+</tr>
+<tr>
+<td>标注反思流程</td>
+<td><code>SKILL_03c_标注反思.md</code></td>
+<td>系统性错误修正流程</td>
+</tr>
+<tr>
+<td>标注数据文件</td>
+<td><code>chapter_md/*.tagged.md</code></td>
+<td>带实体标记的课程内容</td>
+</tr>
+<tr>
+<td>实体索引</td>
+<td><code>kg/entities/data/entity_index.json</code></td>
+<td>实体目录与引用统计</td>
+</tr>
+<tr>
+<td>消歧映射表</td>
+<td><code>kg/entities/data/disambiguation_map.json</code></td>
+<td>同名实体消歧规则</td>
+</tr>
+<tr>
+<td>别名映射表</td>
+<td><code>kg/entities/data/entity_aliases.json</code></td>
+<td>实体别名与规范名对应</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="12_1">二、12类实体体系概览</h2>
+<h3 id="21">2.1 实体类型总表</h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>类型</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>基因</td>
+<td>基因名称、基因符号</td>
+<td><code>&lt;span class="entity"&gt;lacZ&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;p53&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>蛋白</td>
+<td>蛋白质、酶、复合物</td>
+<td><code>&lt;span class="entity"&gt;RNA聚合酶&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>细胞结构</td>
+<td>细胞器、亚细胞结构</td>
+<td><code>&lt;span class="entity"&gt;细胞核&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>分子过程</td>
+<td>生物学过程、反应</td>
+<td><code>&lt;span class="entity"&gt;转录&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;翻译&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>技术方法</td>
+<td>实验技术、分析方法</td>
+<td><code>&lt;span class="entity"&gt;PCR&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;Western Blot&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>代谢物</td>
+<td>小分子、代谢中间产物</td>
+<td><code>&lt;span class="entity"&gt;ATP&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;NADH&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>试剂材料</td>
+<td>实验试剂、培养基、耗材</td>
+<td><code>&lt;span class="entity"&gt;琼脂糖&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>条件参数</td>
+<td>温度、pH、浓度等参数</td>
+<td><code>&lt;span class="entity"&gt;37°C&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;pH7.4&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>文献来源</td>
+<td>经典文献、发现者</td>
+<td><code>&lt;span class="entity"&gt;Watson&amp;amp;Crick1953&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>核心概念</td>
+<td>理论、法则、模型</td>
+<td><code>&lt;span class="entity"&gt;中心法则&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>疾病/表型</td>
+<td>疾病、表型特征</td>
+<td><code>&lt;span class="entity"&gt;癌症&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;耐药性&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td>数值数据</td>
+<td>定量数据、测量值</td>
+<td><code>&lt;span class="entity"&gt;Tm=65°C&lt;/span&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 实体分类原则</h3>
+<h4 id="_2">原则一：功能优先于位置</h4>
+<p>同一实体按其主要功能分类，而非物理位置：
+- <code>&lt;span class="entity"&gt;p53&lt;/span&gt;</code>（基因）→ 不标为 <code>&lt;span class="entity"&gt;p53蛋白&lt;/span&gt;</code>
+- <code>&lt;span class="entity"&gt;RNA聚合酶&lt;/span&gt;</code>（蛋白）→ 不标为 <code>&lt;span class="entity"&gt;转录&lt;/span&gt;</code>的过程</p>
+<h4 id="_3">原则二：具体实例优先于抽象概念</h4>
+<ul>
+<li><code>&lt;span class="entity"&gt;lacZ&lt;/span&gt;</code>（具体基因）vs <code>&lt;span class="entity"&gt;乳糖操纵子模型&lt;/span&gt;</code>（概念）</li>
+<li><code>&lt;span class="entity"&gt;PCR&lt;/span&gt;</code>（具体技术）vs <code>&lt;span class="entity"&gt;PCR原理&lt;/span&gt;</code>（概念）</li>
+</ul>
+<h4 id="_4">原则三：标注粒度适中</h4>
+<ul>
+<li>✓ <code>&lt;span class="entity"&gt;p53基因&lt;/span&gt;</code> 或 <code>&lt;span class="entity"&gt;p53&lt;/span&gt;</code>（上下文明确时）</li>
+<li>✗ ~~<code>&lt;span class="entity"&gt;p53基因&lt;/span&gt;蛋白产物</code>~~（不跨词标注）</li>
+</ul>
+<hr />
+<h2 id="_5">三、标注流程</h2>
+<h3 id="31">3.1 四阶段流水线</h3>
+<pre><code>原始课程内容(.md)
+    ↓ 阶段1: AI语义标注
+标注文件(chapter_md/*.tagged.md)
+    ↓ 阶段2: 质量控制
+验证通过的标注文件
+    ↓ 阶段3: 实体提取与索引构建
+entity_index.json + entity_aliases.json
+    ↓ 阶段4: 消歧与增强
+disambiguation_map.json + species_map.json
+</code></pre>
+<h3 id="32">3.2 阶段详解</h3>
+<h4 id="1ai">阶段1：AI语义标注</h4>
+<p>使用LLM对课程内容进行批量实体标注，详见 <code>SKILL_03a_实体标注.md</code>。</p>
+<h4 id="2">阶段2：质量控制</h4>
+<ul>
+<li><strong>语法检查</strong>：验证标记闭合、格式正确</li>
+<li><strong>完整性验证</strong>：确保标注不改变原文</li>
+<li><strong>人工抽检</strong>：每批次抽检2-3章</li>
+</ul>
+<h4 id="3">阶段3：实体提取</h4>
+<p>从标注文件中提取实体，构建索引：
+- 规范实体名（别名合并后）
+- 出现位置（章节、段落）
+- 引用频次统计</p>
+<h4 id="4">阶段4：消歧增强</h4>
+<ul>
+<li>同名基因/蛋白跨物种消歧</li>
+<li>别名映射（如 p53 ↔ TP53 ↔ 肿瘤蛋白53）</li>
+<li>物种标注（人类/小鼠/大肠杆菌等）</li>
+</ul>
+<hr />
+<h2 id="_6">四、与古籍标注体系的对比</h2>
+<h3 id="41">4.1 继承的设计模式</h3>
 <p>从《史记》实体标注体系（SKILL_03a）继承的核心模式：</p>
-<p>| 设计模式 | 古籍应用 | 分子生物学应用 |</p>
-<p>|----------|----------|----------------|</p>
-<p>| Token标记 | `&lt;span class=&quot;entity&quot;&gt;刘邦&lt;/span&gt;` | `&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;` |</p>
-<p>| 内联消歧 | `&lt;span class=&quot;entity&quot;&gt;台\&lt;/span&gt;` | `&lt;span class=&quot;entity&quot;&gt;p53\&lt;/span&gt;` |</p>
-<p>| 元数据外挂 | disambiguation_map.json | species_map.json |</p>
-<p>| 别名系统 | entity_aliases.json | gene_aliases.json |</p>
-<p>### 4.2 生物学特有扩展</p>
-<p>| 扩展点 | 说明 |</p>
-<p>|--------|------|</p>
-<p>| 物种维度 | 基因/蛋白必须标注物种来源 |</p>
-<p>| 数值类型 | 实验参数、定量数据需要结构化 |</p>
-<p>| 层级关系 | 基因→转录本→蛋白的层级 |</p>
-<p>| 动态过程 | 分子过程的时序性 |</p>
-<p>---</p>
-<h2>五、工具链</h2>
-<p>### 5.1 标注工具</p>
-<p>| 工具 | 功能 |</p>
-<p>|------|------|</p>
-<p>| `tag_entities.py` | AI批量标注 |</p>
-<p>| `lint_markdown.py` | 标注语法检查 |</p>
-<p>| `validate_tagging.py` | 标注完整性验证 |</p>
-<p>### 5.2 索引工具</p>
-<p>| 工具 | 功能 |</p>
-<p>|------|------|</p>
-<p>| `build_entity_index.py` | 实体索引构建 |</p>
-<p>| `build_gene_aliases.py` | 基因别名映射 |</p>
-<p>| `disambiguate_genes.py` | 基因消歧 |</p>
-<p>---</p>
-<h2>六、质量指标</h2>
-<p>### 6.1 标注覆盖率</p>
-<p>- 目标：核心概念覆盖率 ≥ 95%</p>
-<p>- 方法：抽样检查关键章节</p>
-<p>### 6.2 消歧准确率</p>
-<p>- 目标：同名实体消歧准确率 ≥ 90%</p>
-<p>- 方法：人工验证歧义case</p>
-<p>### 6.3 标注一致性</p>
-<p>- 目标：同一实体标注一致率 ≥ 98%</p>
-<p>- 方法：跨章节一致性检查</p>
-<p>---</p>
-<h2>七、相关文档</h2>
-<p>- **SKILL_03a_实体标注.md** — 12类实体的详细标注规范</p>
-<p>- **SKILL_03b_实体消歧.md** — 跨物种/跨语境消歧策略</p>
-<p>- **SKILL_03c_标注反思.md** — 系统性错误修正流程</p>
-<p>- **SKILL_02_结构分析.md** — 前置阶段：内容结构分析</p>
-<p>- **SKILL_04_关系构建.md** — 后续阶段：实体关系构建</p>
-<p>---</p>
-<p>*本SKILL文档基于分子生物学课程特点设计，参考《史记》实体标注体系（SKILL_03a）的设计模式。*</p></article></main>
+<table>
+<thead>
+<tr>
+<th>设计模式</th>
+<th>古籍应用</th>
+<th>分子生物学应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Token标记</td>
+<td><code>&lt;span class="entity"&gt;刘邦&lt;/span&gt;</code></td>
+<td><code>&lt;span class="entity"&gt;p53&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td>内联消歧</td>
+<td><code>&lt;span class="entity"&gt;台\&lt;/span&gt;</code></td>
+<td><code>&lt;span class="entity"&gt;p53\&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td>元数据外挂</td>
+<td>disambiguation_map.json</td>
+<td>species_map.json</td>
+</tr>
+<tr>
+<td>别名系统</td>
+<td>entity_aliases.json</td>
+<td>gene_aliases.json</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42">4.2 生物学特有扩展</h3>
+<table>
+<thead>
+<tr>
+<th>扩展点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物种维度</td>
+<td>基因/蛋白必须标注物种来源</td>
+</tr>
+<tr>
+<td>数值类型</td>
+<td>实验参数、定量数据需要结构化</td>
+</tr>
+<tr>
+<td>层级关系</td>
+<td>基因→转录本→蛋白的层级</td>
+</tr>
+<tr>
+<td>动态过程</td>
+<td>分子过程的时序性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">五、工具链</h2>
+<h3 id="51">5.1 标注工具</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tag_entities.py</code></td>
+<td>AI批量标注</td>
+</tr>
+<tr>
+<td><code>lint_markdown.py</code></td>
+<td>标注语法检查</td>
+</tr>
+<tr>
+<td><code>validate_tagging.py</code></td>
+<td>标注完整性验证</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2 索引工具</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>build_entity_index.py</code></td>
+<td>实体索引构建</td>
+</tr>
+<tr>
+<td><code>build_gene_aliases.py</code></td>
+<td>基因别名映射</td>
+</tr>
+<tr>
+<td><code>disambiguate_genes.py</code></td>
+<td>基因消歧</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_8">六、质量指标</h2>
+<h3 id="61">6.1 标注覆盖率</h3>
+<ul>
+<li>目标：核心概念覆盖率 ≥ 95%</li>
+<li>方法：抽样检查关键章节</li>
+</ul>
+<h3 id="62">6.2 消歧准确率</h3>
+<ul>
+<li>目标：同名实体消歧准确率 ≥ 90%</li>
+<li>方法：人工验证歧义case</li>
+</ul>
+<h3 id="63">6.3 标注一致性</h3>
+<ul>
+<li>目标：同一实体标注一致率 ≥ 98%</li>
+<li>方法：跨章节一致性检查</li>
+</ul>
+<hr />
+<h2 id="_9">七、相关文档</h2>
+<ul>
+<li><strong>SKILL_03a_实体标注.md</strong> — 12类实体的详细标注规范</li>
+<li><strong>SKILL_03b_实体消歧.md</strong> — 跨物种/跨语境消歧策略</li>
+<li><strong>SKILL_03c_标注反思.md</strong> — 系统性错误修正流程</li>
+<li><strong>SKILL_02_结构分析.md</strong> — 前置阶段：内容结构分析</li>
+<li><strong>SKILL_04_关系构建.md</strong> — 后续阶段：实体关系构建</li>
+</ul>
+<hr />
+<p><em>本SKILL文档基于分子生物学课程特点设计，参考《史记》实体标注体系（SKILL_03a）的设计模式。</em></p></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

@@ -161,342 +161,552 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 02a: 章节切分 — 按教学周/章节/知识点编号</h1>
-<p>&gt; 从分子生物学课程的章节结构化实践中提炼，适用于理工科课程的篇章拆分、段落编号和知识点划分。</p>
-<p>---</p>
-<h2>一、核心概念</h2>
-<p>### 1.1 三层结构</p>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-02a">SKILL 02a: 章节切分 — 按教学周/章节/知识点编号</h1>
+<blockquote>
+<p>从分子生物学课程的章节结构化实践中提炼，适用于理工科课程的篇章拆分、段落编号和知识点划分。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、核心概念</h2>
+<h3 id="11">1.1 三层结构</h3>
 <p>课程文本需要三层结构化：</p>
-<p>```</p>
-<p>课程（Course）      15-20个独立文件，两位数编号</p>
-<p>  └─ 章节（Chapter）  教学单元，二/三级标题</p>
-<p>      └─ 知识点（Knowledge Point）  带Purple Numbers的原子学习单元</p>
-<p>```</p>
-<p>### 1.2 Purple Numbers（紫色编号）</p>
-<p>**定义**：每个知识点的唯一、永久、不可变标识符。</p>
-<p>```</p>
-<p>[0]      章名段</p>
-<p>[1]      第一知识点</p>
-<p>[1.1]    第一知识点的第一子点</p>
-<p>[1.1.1]  三级子点</p>
-<p>[2]      第二知识点</p>
-<p>```</p>
-<p>**为什么叫&quot;Purple Numbers&quot;**：</p>
-<p>- 源自Project Xanadu的概念 — 文档中每个段落都有永久地址</p>
-<p>- 一旦分配，永不改变（即使周围内容重组）</p>
-<p>- 渲染时显示为可点击的锚点链接</p>
-<p>**为什么重要**：</p>
-<p>- 跨文档引用：`02_DNA复制#pn-3.1` 永远指向同一知识点</p>
-<p>- 实体索引关联：`entity_index.json` 中每个概念引用格式为 `[chapter, paragraph_id]`</p>
-<p>- 前置依赖关联：依赖关系定位到具体知识点</p>
-<p>- 学习路径定位：精确到知识点级别的学习导航</p>
-<p>---</p>
-<h2>二、阶段1：课程拆分</h2>
-<p>### 2.1 拆分规则</p>
+<pre><code>课程（Course）      15-20个独立文件，两位数编号
+  └─ 章节（Chapter）  教学单元，二/三级标题
+      └─ 知识点（Knowledge Point）  带Purple Numbers的原子学习单元
+</code></pre>
+<h3 id="12-purple-numbers">1.2 Purple Numbers（紫色编号）</h3>
+<p><strong>定义</strong>：每个知识点的唯一、永久、不可变标识符。</p>
+<pre><code>[0]      章名段
+[1]      第一知识点
+[1.1]    第一知识点的第一子点
+[1.1.1]  三级子点
+[2]      第二知识点
+</code></pre>
+<p><strong>为什么叫"Purple Numbers"</strong>：
+- 源自Project Xanadu的概念 — 文档中每个段落都有永久地址
+- 一旦分配，永不改变（即使周围内容重组）
+- 渲染时显示为可点击的锚点链接</p>
+<p><strong>为什么重要</strong>：
+- 跨文档引用：<code>02_DNA复制#pn-3.1</code> 永远指向同一知识点
+- 实体索引关联：<code>entity_index.json</code> 中每个概念引用格式为 <code>[chapter, paragraph_id]</code>
+- 前置依赖关联：依赖关系定位到具体知识点
+- 学习路径定位：精确到知识点级别的学习导航</p>
+<hr />
+<h2 id="1">二、阶段1：课程拆分</h2>
+<h3 id="21">2.1 拆分规则</h3>
 <p>将完整课程文本按章节拆分为独立文件。</p>
-<p>**命名规范**：`{两位编号}_{章节名}.md`</p>
-<p>```</p>
-<p>01_绪论与历史.md</p>
-<p>02_DNA复制.md</p>
-<p>03_转录与RNA加工.md</p>
-<p>...</p>
-<p>15_分子生物学前沿.md</p>
-<p>```</p>
-<p>**分子生物学典型章节分布**：</p>
-<p>| 模块 | 章节数 | 编号范围 | 特征 |</p>
-<p>|------|--------|---------|------|</p>
-<p>| 基础篇 | 3-4 | 01-04 | 绪论、DNA结构、RNA结构 |</p>
-<p>| 中心法则 | 4-5 | 05-09 | 复制、转录、翻译、调控 |</p>
-<p>| 技术篇 | 3-4 | 10-13 | PCR、测序、克隆、编辑 |</p>
-<p>| 组学篇 | 2-3 | 14-16 | 基因组学、蛋白质组学 |</p>
-<p>### 2.2 拆分脚本逻辑</p>
-<p>```python</p>
-<h1>识别章节边界：一级标题以&quot;第N章&quot;或章节名开头</h1>
-<p>CHAPTER_PATTERNS = [</p>
-<p>    r&#x27;^# 第[一二三四五六七八九十\d]+章&#x27;,</p>
-<p>    r&#x27;^# \d+\.\s+&#x27;,  # 如 &quot;# 1. 绪论&quot;</p>
-<p>]</p>
-<p>def split_by_chapter(full_text):</p>
-<p>    chapters = []</p>
-<p>    current = []</p>
-<p>    for line in full_text.split(&#x27;\n&#x27;):</p>
-<p>        if any(re.match(p, line) for p in CHAPTER_PATTERNS):</p>
-<p>            if current:</p>
-<p>                chapters.append(current)</p>
-<p>            current = [line]</p>
-<p>        else:</p>
-<p>            current.append(line)</p>
-<p>    return chapters</p>
-<p>```</p>
-<p>**注意事项**：</p>
-<p>- 编号补零到2位，确保文件系统排序正确</p>
-<p>- 保持原文完整性，不做任何内容修改</p>
-<p>- 章节文件大小控制在合理范围（建议&lt;100KB）</p>
-<p>---</p>
-<h2>三、阶段2：知识点编号</h2>
-<p>### 3.1 编号规则</p>
-<p>**基本规则**：</p>
-<p>- 每个知识点获得一个编号</p>
-<p>- `[0]` 保留给章名</p>
-<p>- 正文从 `[1]` 开始递增</p>
-<p>- 子知识点用点分层：`[1.1]`、`[1.2]`、`[2.1]`</p>
-<p>**何时使用子编号**：</p>
-<p>- 原知识点内容过长（&gt;800字），按语义切分后用子编号</p>
-<p>- 包含多个并列要点，分别编号</p>
-<p>- 示例/案例单独编号，从属于上一知识点</p>
-<p>**短列表不编号**：简单列举项（如&quot;三种DNA聚合酶：Pol I, Pol II, Pol III&quot;）不需要子编号；详细说明需要子编号：</p>
-<p>```markdown</p>
-<h1>✓ 短列表（无子编号）：</h1>
-<p>[2] 原核生物有三种DNA聚合酶：Pol I、Pol II和Pol III。</p>
-<h1>✓ 详细说明（有子编号）：</h1>
-<p>[3] DNA聚合酶家族：</p>
-<p>- [3.1] **DNA聚合酶I**：主要参与引物切除和缺口填补，具有5&#x27;→3&#x27;外切酶活性。</p>
-<p>- [3.2] **DNA聚合酶II**：参与DNA修复，具有3&#x27;→5&#x27;外切酶活性。</p>
-<p>- [3.3] **DNA聚合酶III**：主要复制酶，具有高持续合成能力。</p>
-<p>```</p>
-<p>**编号放置位置**：行首，紧跟空格</p>
-<p>```markdown</p>
-<p>[1] DNA复制是指以亲代DNA为模板合成子代DNA的过程。</p>
-<p>[1.1] 半保留复制：每个子代DNA分子包含一条亲代链和一条新合成链。</p>
-<p>[1.2] 半不连续复制：前导链连续合成，滞后链以冈崎片段不连续合成。</p>
-<p>```</p>
-<p>### 3.2 编号的不可变性</p>
-<p>**关键原则**：Purple Numbers一旦分配，永不更改。</p>
+<p><strong>命名规范</strong>：<code>{两位编号}_{章节名}.md</code></p>
+<pre><code>01_绪论与历史.md
+02_DNA复制.md
+03_转录与RNA加工.md
+...
+15_分子生物学前沿.md
+</code></pre>
+<p><strong>分子生物学典型章节分布</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>章节数</th>
+<th>编号范围</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础篇</td>
+<td>3-4</td>
+<td>01-04</td>
+<td>绪论、DNA结构、RNA结构</td>
+</tr>
+<tr>
+<td>中心法则</td>
+<td>4-5</td>
+<td>05-09</td>
+<td>复制、转录、翻译、调控</td>
+</tr>
+<tr>
+<td>技术篇</td>
+<td>3-4</td>
+<td>10-13</td>
+<td>PCR、测序、克隆、编辑</td>
+</tr>
+<tr>
+<td>组学篇</td>
+<td>2-3</td>
+<td>14-16</td>
+<td>基因组学、蛋白质组学</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 拆分脚本逻辑</h3>
+<pre><code class="language-python"># 识别章节边界：一级标题以&quot;第N章&quot;或章节名开头
+CHAPTER_PATTERNS = [
+    r'^# 第[一二三四五六七八九十\d]+章',
+    r'^# \d+\.\s+',  # 如 &quot;# 1. 绪论&quot;
+]
+
+def split_by_chapter(full_text):
+    chapters = []
+    current = []
+    for line in full_text.split('\n'):
+        if any(re.match(p, line) for p in CHAPTER_PATTERNS):
+            if current:
+                chapters.append(current)
+            current = [line]
+        else:
+            current.append(line)
+    return chapters
+</code></pre>
+<p><strong>注意事项</strong>：
+- 编号补零到2位，确保文件系统排序正确
+- 保持原文完整性，不做任何内容修改
+- 章节文件大小控制在合理范围（建议&lt;100KB）</p>
+<hr />
+<h2 id="2">三、阶段2：知识点编号</h2>
+<h3 id="31">3.1 编号规则</h3>
+<p><strong>基本规则</strong>：
+- 每个知识点获得一个编号
+- <code>[0]</code> 保留给章名
+- 正文从 <code>[1]</code> 开始递增
+- 子知识点用点分层：<code>[1.1]</code>、<code>[1.2]</code>、<code>[2.1]</code></p>
+<p><strong>何时使用子编号</strong>：
+- 原知识点内容过长（&gt;800字），按语义切分后用子编号
+- 包含多个并列要点，分别编号
+- 示例/案例单独编号，从属于上一知识点</p>
+<p><strong>短列表不编号</strong>：简单列举项（如"三种DNA聚合酶：Pol I, Pol II, Pol III"）不需要子编号；详细说明需要子编号：</p>
+<pre><code class="language-markdown"># ✓ 短列表（无子编号）：
+[2] 原核生物有三种DNA聚合酶：Pol I、Pol II和Pol III。
+
+# ✓ 详细说明（有子编号）：
+[3] DNA聚合酶家族：
+- [3.1] **DNA聚合酶I**：主要参与引物切除和缺口填补，具有5'→3'外切酶活性。
+- [3.2] **DNA聚合酶II**：参与DNA修复，具有3'→5'外切酶活性。
+- [3.3] **DNA聚合酶III**：主要复制酶，具有高持续合成能力。
+</code></pre>
+<p><strong>编号放置位置</strong>：行首，紧跟空格</p>
+<pre><code class="language-markdown">[1] DNA复制是指以亲代DNA为模板合成子代DNA的过程。
+
+[1.1] 半保留复制：每个子代DNA分子包含一条亲代链和一条新合成链。
+
+[1.2] 半不连续复制：前导链连续合成，滞后链以冈崎片段不连续合成。
+</code></pre>
+<h3 id="32">3.2 编号的不可变性</h3>
+<p><strong>关键原则</strong>：Purple Numbers一旦分配，永不更改。</p>
 <p>即使后续编辑（插入知识点、重组内容），已有编号保持不变。新插入的知识点使用子编号：</p>
-<p>```markdown</p>
-<p>[3] 原有知识点</p>
-<p>[3.1] 后续插入的知识点（不改变[3]和[4]的编号）</p>
-<p>[4] 原有知识点</p>
-<p>```</p>
+<pre><code class="language-markdown">[3] 原有知识点
+[3.1] 后续插入的知识点（不改变[3]和[4]的编号）
+[4] 原有知识点
+</code></pre>
 <p>这确保了所有外部引用（实体索引、前置依赖、跨文档链接）始终有效。</p>
-<p>---</p>
-<h2>四、阶段3：语义小节划分</h2>
-<p>### 4.1 小节层级</p>
-<p>```markdown</p>
-<h1>[0] 章名                    ← 一级标题（每章唯一）</h1>
-<h2>小节标题                    ← 二级标题（主要知识模块）</h2>
-<p>### 子节标题                   ← 三级标题（细分主题）</p>
-<p>[1.1] 知识点内容...</p>
-<p>```</p>
-<p>### 4.2 小节格式</p>
-<p>**格式：标题带编号**</p>
-<p>```markdown</p>
-<h2>[1] DNA复制的基本特征</h2>
-<p>[1.1] DNA复制是半保留复制...</p>
-<p>[1.2] DNA复制具有高度忠实性...</p>
-<h2>[2] 复制起点与复制子</h2>
-<p>[2.1] 复制起点（oriC）的特征...</p>
-<p>[2.2] 复制子的概念...</p>
-<p>```</p>
-<p>锚点直接取自标题中的编号：`#pn-1`、`#pn-2`。</p>
-<p>### 4.3 按内容类型定制小节策略</p>
-<p>| 内容类型 | 划分原则 | 典型小节 |</p>
-<p>|----------|---------|---------|</p>
-<p>| 概念介绍 | 按概念层次 | &quot;定义&quot;、&quot;特征&quot;、&quot;分类&quot; |</p>
-<p>| 机制讲解 | 按过程阶段 | &quot;起始&quot;、&quot;延伸&quot;、&quot;终止&quot; |</p>
-<p>| 比较分析 | 按对比维度 | &quot;原核vs真核&quot;、&quot;结构差异&quot;、&quot;功能差异&quot; |</p>
-<p>| 技术应用 | 按操作步骤 | &quot;原理&quot;、&quot;步骤&quot;、&quot;应用&quot;、&quot;优缺点&quot; |</p>
-<p>| 前沿进展 | 按时间/主题 | &quot;经典研究&quot;、&quot;最新进展&quot;、&quot;未来方向&quot; |</p>
-<p>### 4.4 小节标题规范</p>
-<p>**好的标题**：</p>
-<p>- &quot;DNA聚合酶的结构与功能&quot; — 具体明确</p>
-<p>- &quot;原核生物vs真核生物转录比较&quot; — 对比清晰</p>
-<p>- &quot;CRISPR-Cas9系统的工作原理&quot; — 聚焦核心</p>
-<p>**差的标题**：</p>
-<p>- &quot;第一部分&quot; — 无信息量</p>
-<p>- &quot;内容1-5&quot; — 纯位置描述</p>
-<p>- &quot;介绍&quot; — 过于笼统</p>
-<p>**标题中清理实体标记**：小节标题在 `sections_data.json` 中存储时，去除所有实体标记符号：</p>
-<p>```python</p>
-<p>def clean_title(title):</p>
-<p>    &quot;&quot;&quot;去除标题中的实体标记&quot;&quot;&quot;</p>
-<p>    for ch in [&#x27;@&#x27;, &#x27;=&#x27;, &#x27;$&#x27;, &#x27;%&#x27;, &#x27;&amp;&#x27;, &#x27;^&#x27;, &#x27;~&#x27;, &#x27;*&#x27;, &#x27;!&#x27;, &#x27;〖&#x27;, &#x27;〗&#x27;]:</p>
-<p>        title = title.replace(ch, &#x27;&#x27;)</p>
-<p>    return title.strip()</p>
-<p>```</p>
-<p>### 4.5 自动小节生成</p>
+<hr />
+<h2 id="3">四、阶段3：语义小节划分</h2>
+<h3 id="41">4.1 小节层级</h3>
+<pre><code class="language-markdown"># [0] 章名                    ← 一级标题（每章唯一）
+
+## 小节标题                    ← 二级标题（主要知识模块）
+
+### 子节标题                   ← 三级标题（细分主题）
+
+[1.1] 知识点内容...
+</code></pre>
+<h3 id="42">4.2 小节格式</h3>
+<p><strong>格式：标题带编号</strong></p>
+<pre><code class="language-markdown">## [1] DNA复制的基本特征
+[1.1] DNA复制是半保留复制...
+[1.2] DNA复制具有高度忠实性...
+
+## [2] 复制起点与复制子
+[2.1] 复制起点（oriC）的特征...
+[2.2] 复制子的概念...
+</code></pre>
+<p>锚点直接取自标题中的编号：<code>#pn-1</code>、<code>#pn-2</code>。</p>
+<h3 id="43">4.3 按内容类型定制小节策略</h3>
+<table>
+<thead>
+<tr>
+<th>内容类型</th>
+<th>划分原则</th>
+<th>典型小节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>概念介绍</td>
+<td>按概念层次</td>
+<td>"定义"、"特征"、"分类"</td>
+</tr>
+<tr>
+<td>机制讲解</td>
+<td>按过程阶段</td>
+<td>"起始"、"延伸"、"终止"</td>
+</tr>
+<tr>
+<td>比较分析</td>
+<td>按对比维度</td>
+<td>"原核vs真核"、"结构差异"、"功能差异"</td>
+</tr>
+<tr>
+<td>技术应用</td>
+<td>按操作步骤</td>
+<td>"原理"、"步骤"、"应用"、"优缺点"</td>
+</tr>
+<tr>
+<td>前沿进展</td>
+<td>按时间/主题</td>
+<td>"经典研究"、"最新进展"、"未来方向"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44">4.4 小节标题规范</h3>
+<p><strong>好的标题</strong>：
+- "DNA聚合酶的结构与功能" — 具体明确
+- "原核生物vs真核生物转录比较" — 对比清晰
+- "CRISPR-Cas9系统的工作原理" — 聚焦核心</p>
+<p><strong>差的标题</strong>：
+- "第一部分" — 无信息量
+- "内容1-5" — 纯位置描述
+- "介绍" — 过于笼统</p>
+<p><strong>标题中清理实体标记</strong>：小节标题在 <code>sections_data.json</code> 中存储时，去除所有实体标记符号：</p>
+<pre><code class="language-python">def clean_title(title):
+    &quot;&quot;&quot;去除标题中的实体标记&quot;&quot;&quot;
+    for ch in ['@', '=', '$', '%', '&amp;', '^', '~', '*', '!', '〖', '〗']:
+        title = title.replace(ch, '')
+    return title.strip()
+</code></pre>
+<h3 id="45">4.5 自动小节生成</h3>
 <p>对于结构不清晰的章节，使用启发式算法生成建议：</p>
-<p>```python</p>
-<p>def auto_generate_sections(paragraphs, chunk_size=5):</p>
-<p>    &quot;&quot;&quot;每5个知识点为一组，分析内容生成标题&quot;&quot;&quot;</p>
-<p>    sections = []</p>
-<p>    for i in range(0, len(paragraphs), chunk_size):</p>
-<p>        chunk = paragraphs[i:i+chunk_size]</p>
-<p>        sample = &#x27; &#x27;.join(chunk[:2])</p>
-<p>        title = infer_title(sample)</p>
-<p>        sections.append({&quot;anchor&quot;: chunk[0].pn, &quot;title&quot;: title})</p>
-<p>    return sections</p>
-<p>def infer_title(text):</p>
-<p>    &quot;&quot;&quot;基于关键词的启发式标题推断&quot;&quot;&quot;</p>
-<p>    if &#x27;酶&#x27; in text and &#x27;活性&#x27; in text: return &#x27;酶学特征&#x27;</p>
-<p>    if &#x27;结构&#x27; in text: return &#x27;结构与组成&#x27;</p>
-<p>    if &#x27;过程&#x27; in text or &#x27;步骤&#x27; in text: return &#x27;过程与机制&#x27;</p>
-<p>    if &#x27;比较&#x27; in text or &#x27;差异&#x27; in text: return &#x27;比较分析&#x27;</p>
-<p>    if &#x27;应用&#x27; in text or &#x27;技术&#x27; in text: return &#x27;技术应用&#x27;</p>
-<p>    return &#x27;基础概念&#x27;  # 默认</p>
-<p>```</p>
-<p>**重要**：自动生成的标题仅为建议，必须人工审核后使用。</p>
-<p>---</p>
-<h2>五、数据结构</h2>
-<p>### 5.1 sections_data.json</p>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;02_DNA复制&quot;: [</p>
-<p>    {&quot;anchor&quot;: &quot;1&quot;, &quot;title&quot;: &quot;DNA复制的基本特征&quot;},</p>
-<p>    {&quot;anchor&quot;: &quot;5&quot;, &quot;title&quot;: &quot;复制起点与复制子&quot;},</p>
-<p>    {&quot;anchor&quot;: &quot;12&quot;, &quot;title&quot;: &quot;DNA聚合酶家族&quot;},</p>
-<p>    {&quot;anchor&quot;: &quot;25&quot;, &quot;title&quot;: &quot;复制叉与引物合成&quot;},</p>
-<p>    {&quot;anchor&quot;: &quot;38&quot;, &quot;title&quot;: &quot;前导链与滞后链&quot;},</p>
-<p>    {&quot;anchor&quot;: &quot;50&quot;, &quot;title&quot;: &quot;端粒与端粒酶&quot;}</p>
-<p>  ],</p>
-<p>  &quot;03_转录与RNA加工&quot;: [</p>
-<p>    {&quot;anchor&quot;: &quot;1&quot;, &quot;title&quot;: &quot;转录概述&quot;},</p>
-<p>    {&quot;anchor&quot;: &quot;6&quot;, &quot;title&quot;: &quot;原核生物转录&quot;},</p>
-<p>    {&quot;anchor&quot;: &quot;20&quot;, &quot;title&quot;: &quot;真核生物转录&quot;},</p>
-<p>    {&quot;anchor&quot;: &quot;35&quot;, &quot;title&quot;: &quot;RNA加工与修饰&quot;}</p>
-<p>  ]</p>
-<p>}</p>
-<p>```</p>
-<p>**规则**：</p>
-<p>- 每章最多15个小节（超过则需合并）</p>
-<p>- `anchor` 指向该节第一个知识点的Purple Number</p>
-<p>- `title` 不含实体标记符号</p>
-<p>- 不包含固定尾部（本章小结、思考题等）</p>
-<p>### 5.2 HTML锚点格式</p>
-<p>所有锚点统一使用 `pn-` 前缀：</p>
-<p>```html</p>
-<p>&lt;!-- 知识点锚点 --&gt;</p>
-<p>&lt;a href=&quot;#pn-1.1&quot; id=&quot;pn-1.1&quot; class=&quot;para-num&quot; title=&quot;点击复制链接&quot;&gt;[1.1]&lt;/a&gt;</p>
-<p>&lt;!-- 索引页的小节链接 --&gt;</p>
-<p>&lt;a href=&quot;chapters/02_DNA复制.tagged.html#pn-1&quot;&gt;</p>
-<p>  [1] DNA复制的基本特征</p>
-<p>&lt;/a&gt;</p>
-<p>```</p>
-<p>---</p>
-<h2>六、工具链</h2>
-<p>### 6.1 脚本一览</p>
-<p>| 脚本 | 位置 | 功能 |</p>
-<p>|------|------|------|</p>
-<p>| `section_extract.py` | scripts/ | 提取 `## [N] 标题` 格式的小节 |</p>
-<p>| `section_extract_all.py` | scripts/ | 完整提取（含无编号标题），生成 `sections_data.json` |</p>
-<p>| `section_add_to_chapter.py` | scripts/ | 为指定章节添加小节标题 |</p>
-<p>| `section_auto_generate.py` | scripts/ | 为无分段章节自动生成小节建议 |</p>
-<p>| `section_update_index.py` | scripts/ | 用小节链接更新index.html导航 |</p>
-<p>| `lint_markdown.py` | scripts/ | 知识点编号验证 + 标题层级检查 |</p>
-<p>### 6.2 处理流程</p>
-<p>```bash</p>
-<h1>1. 提取所有章节的小节结构</h1>
-<p>python scripts/section_extract_all.py</p>
-<h1>2. 对缺少小节的章节生成建议（需人工审核）</h1>
-<p>python scripts/section_auto_generate.py</p>
-<h1>3. 为指定章节添加小节</h1>
-<p>python scripts/section_add_to_chapter.py 02</p>
-<h1>4. 更新索引页的小节导航</h1>
-<p>python scripts/section_update_index.py</p>
-<h1>5. 验证格式</h1>
-<p>python scripts/lint_markdown.py chapter_md/02_DNA复制.tagged.md</p>
-<p>```</p>
-<p>---</p>
-<h2>七、质量检查</h2>
-<p>### 7.1 lint_markdown.py 相关检查项</p>
-<p>**知识点编号检查**：</p>
-<p>- 格式正确：`[数字]` 或 `[数字.数字...]`（不允许 `[1.a]`、`[一]`）</p>
-<p>- 顶层编号连续（[1]→[2]→[3]，不允许跳跃 [1]→[3]）</p>
-<p>- 子编号连续（[1.1]→[1.2]→[1.3]）</p>
-<p>**标题层级检查**：</p>
-<p>- 一级标题唯一（每章只有一个 `#`）</p>
-<p>- 不允许层级跳跃（`#` 直接到 `###`，跳过 `##`）</p>
-<p>- 标题非空</p>
-<p>**常见问题及修复**：</p>
-<p>| 问题 | 表现 | 修复方式 |</p>
-<p>|------|------|---------|</p>
-<p>| 编号跳跃 | [1]→[3] 缺少[2] | 检查是否遗漏知识点或编号写错 |</p>
-<p>| 层级跳跃 | # 后直接 ### | 补充 ## 二级标题 |</p>
-<p>| 重复编号 | 两个 [3.1] | 给后一个重新编号 [3.2] |</p>
-<p>| 空标题 | `## ` 后无内容 | 添加有意义的标题文字 |</p>
-<p>---</p>
-<h2>八、特殊情况处理</h2>
-<p>### 8.1 本章小结/思考题</p>
-<p>每章末尾通常有&quot;本章小结&quot;和&quot;思考题&quot;，格式特殊：</p>
-<p>```markdown</p>
-<h2>本章小结</h2>
-<p>[N] 本章主要介绍了...（多行合并为一个知识点编号）</p>
-<h2>思考题</h2>
-<p>- [N.1] 什么是半保留复制？</p>
-<p>- [N.2] 比较DNA聚合酶I、II、III的功能差异。</p>
-<p>```</p>
-<p>**修复工具**：`fmt_fix_summary.py` — 将小结的多编号合并为单编号。</p>
-<p>### 8.2 例题/案例</p>
+<pre><code class="language-python">def auto_generate_sections(paragraphs, chunk_size=5):
+    &quot;&quot;&quot;每5个知识点为一组，分析内容生成标题&quot;&quot;&quot;
+    sections = []
+    for i in range(0, len(paragraphs), chunk_size):
+        chunk = paragraphs[i:i+chunk_size]
+        sample = ' '.join(chunk[:2])
+        title = infer_title(sample)
+        sections.append({&quot;anchor&quot;: chunk[0].pn, &quot;title&quot;: title})
+    return sections
+
+def infer_title(text):
+    &quot;&quot;&quot;基于关键词的启发式标题推断&quot;&quot;&quot;
+    if '酶' in text and '活性' in text: return '酶学特征'
+    if '结构' in text: return '结构与组成'
+    if '过程' in text or '步骤' in text: return '过程与机制'
+    if '比较' in text or '差异' in text: return '比较分析'
+    if '应用' in text or '技术' in text: return '技术应用'
+    return '基础概念'  # 默认
+</code></pre>
+<p><strong>重要</strong>：自动生成的标题仅为建议，必须人工审核后使用。</p>
+<hr />
+<h2 id="_2">五、数据结构</h2>
+<h3 id="51-sections_datajson">5.1 sections_data.json</h3>
+<pre><code class="language-json">{
+  &quot;02_DNA复制&quot;: [
+    {&quot;anchor&quot;: &quot;1&quot;, &quot;title&quot;: &quot;DNA复制的基本特征&quot;},
+    {&quot;anchor&quot;: &quot;5&quot;, &quot;title&quot;: &quot;复制起点与复制子&quot;},
+    {&quot;anchor&quot;: &quot;12&quot;, &quot;title&quot;: &quot;DNA聚合酶家族&quot;},
+    {&quot;anchor&quot;: &quot;25&quot;, &quot;title&quot;: &quot;复制叉与引物合成&quot;},
+    {&quot;anchor&quot;: &quot;38&quot;, &quot;title&quot;: &quot;前导链与滞后链&quot;},
+    {&quot;anchor&quot;: &quot;50&quot;, &quot;title&quot;: &quot;端粒与端粒酶&quot;}
+  ],
+  &quot;03_转录与RNA加工&quot;: [
+    {&quot;anchor&quot;: &quot;1&quot;, &quot;title&quot;: &quot;转录概述&quot;},
+    {&quot;anchor&quot;: &quot;6&quot;, &quot;title&quot;: &quot;原核生物转录&quot;},
+    {&quot;anchor&quot;: &quot;20&quot;, &quot;title&quot;: &quot;真核生物转录&quot;},
+    {&quot;anchor&quot;: &quot;35&quot;, &quot;title&quot;: &quot;RNA加工与修饰&quot;}
+  ]
+}
+</code></pre>
+<p><strong>规则</strong>：
+- 每章最多15个小节（超过则需合并）
+- <code>anchor</code> 指向该节第一个知识点的Purple Number
+- <code>title</code> 不含实体标记符号
+- 不包含固定尾部（本章小结、思考题等）</p>
+<h3 id="52-html">5.2 HTML锚点格式</h3>
+<p>所有锚点统一使用 <code>pn-</code> 前缀：</p>
+<pre><code class="language-html">&lt;!-- 知识点锚点 --&gt;
+&lt;a href=&quot;#pn-1.1&quot; id=&quot;pn-1.1&quot; class=&quot;para-num&quot; title=&quot;点击复制链接&quot;&gt;[1.1]&lt;/a&gt;
+
+&lt;!-- 索引页的小节链接 --&gt;
+&lt;a href=&quot;chapters/02_DNA复制.tagged.html#pn-1&quot;&gt;
+  [1] DNA复制的基本特征
+&lt;/a&gt;
+</code></pre>
+<hr />
+<h2 id="_3">六、工具链</h2>
+<h3 id="61">6.1 脚本一览</h3>
+<table>
+<thead>
+<tr>
+<th>脚本</th>
+<th>位置</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>section_extract.py</code></td>
+<td>scripts/</td>
+<td>提取 <code>## [N] 标题</code> 格式的小节</td>
+</tr>
+<tr>
+<td><code>section_extract_all.py</code></td>
+<td>scripts/</td>
+<td>完整提取（含无编号标题），生成 <code>sections_data.json</code></td>
+</tr>
+<tr>
+<td><code>section_add_to_chapter.py</code></td>
+<td>scripts/</td>
+<td>为指定章节添加小节标题</td>
+</tr>
+<tr>
+<td><code>section_auto_generate.py</code></td>
+<td>scripts/</td>
+<td>为无分段章节自动生成小节建议</td>
+</tr>
+<tr>
+<td><code>section_update_index.py</code></td>
+<td>scripts/</td>
+<td>用小节链接更新index.html导航</td>
+</tr>
+<tr>
+<td><code>lint_markdown.py</code></td>
+<td>scripts/</td>
+<td>知识点编号验证 + 标题层级检查</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62">6.2 处理流程</h3>
+<pre><code class="language-bash"># 1. 提取所有章节的小节结构
+python scripts/section_extract_all.py
+
+# 2. 对缺少小节的章节生成建议（需人工审核）
+python scripts/section_auto_generate.py
+
+# 3. 为指定章节添加小节
+python scripts/section_add_to_chapter.py 02
+
+# 4. 更新索引页的小节导航
+python scripts/section_update_index.py
+
+# 5. 验证格式
+python scripts/lint_markdown.py chapter_md/02_DNA复制.tagged.md
+</code></pre>
+<hr />
+<h2 id="_4">七、质量检查</h2>
+<h3 id="71-lint_markdownpy">7.1 lint_markdown.py 相关检查项</h3>
+<p><strong>知识点编号检查</strong>：
+- 格式正确：<code>[数字]</code> 或 <code>[数字.数字...]</code>（不允许 <code>[1.a]</code>、<code>[一]</code>）
+- 顶层编号连续（[1]→[2]→[3]，不允许跳跃 [1]→[3]）
+- 子编号连续（[1.1]→[1.2]→[1.3]）</p>
+<p><strong>标题层级检查</strong>：
+- 一级标题唯一（每章只有一个 <code>#</code>）
+- 不允许层级跳跃（<code>#</code> 直接到 <code>###</code>，跳过 <code>##</code>）
+- 标题非空</p>
+<p><strong>常见问题及修复</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>表现</th>
+<th>修复方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>编号跳跃</td>
+<td>[1]→[3] 缺少[2]</td>
+<td>检查是否遗漏知识点或编号写错</td>
+</tr>
+<tr>
+<td>层级跳跃</td>
+<td># 后直接 ###</td>
+<td>补充 ## 二级标题</td>
+</tr>
+<tr>
+<td>重复编号</td>
+<td>两个 [3.1]</td>
+<td>给后一个重新编号 [3.2]</td>
+</tr>
+<tr>
+<td>空标题</td>
+<td><code>##</code> 后无内容</td>
+<td>添加有意义的标题文字</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">八、特殊情况处理</h2>
+<h3 id="81">8.1 本章小结/思考题</h3>
+<p>每章末尾通常有"本章小结"和"思考题"，格式特殊：</p>
+<pre><code class="language-markdown">## 本章小结
+[N] 本章主要介绍了...（多行合并为一个知识点编号）
+
+## 思考题
+- [N.1] 什么是半保留复制？
+- [N.2] 比较DNA聚合酶I、II、III的功能差异。
+</code></pre>
+<p><strong>修复工具</strong>：<code>fmt_fix_summary.py</code> — 将小结的多编号合并为单编号。</p>
+<h3 id="82">8.2 例题/案例</h3>
 <p>包含详细例题的知识点需要标注类型：</p>
-<p>```markdown</p>
-<p>::: example</p>
-<p>[5.1] **例题**：某DNA片段含30%A，求其他碱基比例。</p>
-<p>*解析：根据Chargaff规则，A=T=30%，G=C=20%...*</p>
-<p>:::</p>
-<p>```</p>
-<p>### 8.3 表格数据</p>
+<pre><code class="language-markdown">::: example
+[5.1] **例题**：某DNA片段含30%A，求其他碱基比例。
+*解析：根据Chargaff规则，A=T=30%，G=C=20%...*
+:::
+</code></pre>
+<h3 id="83">8.3 表格数据</h3>
 <p>课程中的数据表格需要特殊处理：</p>
-<p>```markdown</p>
-<p>| 酶 | 功能 | 方向性 | 外切酶活性 |</p>
-<p>| --- | --- | --- | --- |</p>
-<p>| [r1] Pol I | 修复、引物切除 | 5&#x27;→3&#x27; | 5&#x27;→3&#x27;和3&#x27;→5&#x27; |</p>
-<p>| [r2] Pol II | 修复 | 5&#x27;→3&#x27; | 3&#x27;→5&#x27; |</p>
-<p>| [r3] Pol III | 主要复制酶 | 5&#x27;→3&#x27; | 3&#x27;→5&#x27; |</p>
-<p>```</p>
-<p>表格行使用 `[rN]` 格式（`r` 前缀区别于知识点编号 `[1.1]`）。</p>
-<p>### 8.4 超长小节</p>
+<pre><code class="language-markdown">| 酶 | 功能 | 方向性 | 外切酶活性 |
+| --- | --- | --- | --- |
+| [r1] Pol I | 修复、引物切除 | 5'→3' | 5'→3'和3'→5' |
+| [r2] Pol II | 修复 | 5'→3' | 3'→5' |
+| [r3] Pol III | 主要复制酶 | 5'→3' | 3'→5' |
+</code></pre>
+<p>表格行使用 <code>[rN]</code> 格式（<code>r</code> 前缀区别于知识点编号 <code>[1.1]</code>）。</p>
+<h3 id="84">8.4 超长小节</h3>
 <p>如果一个小节超过20个知识点，应进一步拆分：</p>
-<p>```python</p>
-<p>MAX_SECTIONS_PER_CHAPTER = 15  # 小节上限</p>
-<p>MIN_PARAGRAPHS_PER_SECTION = 3  # 太短的小节应合并</p>
-<p>MAX_PARAGRAPHS_PER_SECTION = 20 # 太长的小节应拆分</p>
-<p>```</p>
-<p>---</p>
-<h2>九、文件命名规范</h2>
-<p>| 文件类型 | 格式 | 示例 |</p>
-<p>|----------|------|------|</p>
-<p>| 标注Markdown | `NN_章节名.tagged.md` | `02_DNA复制.tagged.md` |</p>
-<p>| 发布HTML | `NN_章节名.html` | `02_DNA复制.html`（不含`.tagged`） |</p>
-<p>| 原始文本 | `NN_章节名.md` | `02_DNA复制.md` |</p>
-<p>- 两位数字编号补零（01-99）</p>
-<p>- 下划线分隔编号和章名</p>
-<p>- `.tagged.md` 表示已完成实体标注</p>
-<p>- HTML发布时移除 `.tagged` 后缀</p>
-<p>---</p>
-<h2>十、经验教训</h2>
-<p>1. **编号是基础设施** — Purple Numbers是整个知识系统的定位基础（实体索引、前置依赖、跨文档引用都依赖它），设计必须在最早期确定且不可变。</p>
-<p>2. **语义分段优于机械分段** — &quot;每500字切一段&quot;远不如&quot;按知识模块切分&quot;有价值。小节标题是学习者的导航地图。</p>
-<p>3. **内容类型决定结构** — 概念介绍按层次、机制讲解按阶段、比较分析按维度，不同内容的最佳分段策略完全不同。</p>
-<p>4. **自动生成只是起点** — 启发式规则生成的小节标题准确率约60%，必须人工审核。但它大幅降低了从零开始的工作量。</p>
-<p>5. **小节数量要克制** — 每章5-15个小节是合理范围。太多（&gt;20）等于没有分段，太少（&lt;3）等于只有标题。</p>
-<p>6. **锚点格式统一** — `#pn-{number}` 作为唯一锚点格式贯穿整个系统（源文件、HTML、索引、API），避免多套ID体系。</p>
-<p>7. **先切分后标注** — 先完成章节拆分和知识点编号，再做概念标注。如果顺序反过来，每次修改编号都要重新关联所有概念引用。</p>
-<p>---</p>
-<h2>十一、扩展到其他课程</h2>
-<p>### 10.1 直接复用</p>
-<p>- Purple Numbers编号系统（格式和规则通用）</p>
-<p>- `lint_markdown.py` 编号验证逻辑</p>
-<p>- `section_extract_all.py` 小节提取逻辑</p>
-<p>- `sections_data.json` 数据格式</p>
-<p>- HTML锚点渲染（`#pn-` 格式）</p>
-<p>### 10.2 需要适配</p>
-<p>| 项目 | 需调整内容 |</p>
-<p>|------|-----------|</p>
-<p>| 章节拆分 | 不同课程的模块/单元结构不同 |</p>
-<p>| 知识点密度 | 理论课vs实验课的知识点粒度不同 |</p>
-<p>| 小节策略 | 数学按定理，历史按时期，语言按技能 |</p>
-<p>| 自动生成关键词 | 不同学科用语不同 |</p>
-<p>| 特殊段落 | &quot;本章小结&quot;是标准格式，其他课程可能有差异 |</p>
-<p>### 10.3 规模参考</p>
-<p>| 课程 | 章节数 | 预估知识点数 | 小节数 |</p>
-<p>|------|--------|-------------|--------|</p>
-<p>| 分子生物学 | 15 | ~450 | ~90 |</p>
-<p>| 细胞生物学 | 18 | ~540 | ~110 |</p>
-<p>| 生物化学 | 20 | ~600 | ~120 |</p>
-<p>| 遗传学 | 12 | ~360 | ~70 |</p>
-<p>---</p>
-<p>*本SKILL文档基于分子生物学课程的章节结构化经验提炼。*</p>
-<p>*核心产出：15章×平均30知识点 ≈ 450个编号知识点，~90个语义小节。*</p></article></main>
+<pre><code class="language-python">MAX_SECTIONS_PER_CHAPTER = 15  # 小节上限
+MIN_PARAGRAPHS_PER_SECTION = 3  # 太短的小节应合并
+MAX_PARAGRAPHS_PER_SECTION = 20 # 太长的小节应拆分
+</code></pre>
+<hr />
+<h2 id="_6">九、文件命名规范</h2>
+<table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>格式</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标注Markdown</td>
+<td><code>NN_章节名.tagged.md</code></td>
+<td><code>02_DNA复制.tagged.md</code></td>
+</tr>
+<tr>
+<td>发布HTML</td>
+<td><code>NN_章节名.html</code></td>
+<td><code>02_DNA复制.html</code>（不含<code>.tagged</code>）</td>
+</tr>
+<tr>
+<td>原始文本</td>
+<td><code>NN_章节名.md</code></td>
+<td><code>02_DNA复制.md</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>两位数字编号补零（01-99）</li>
+<li>下划线分隔编号和章名</li>
+<li><code>.tagged.md</code> 表示已完成实体标注</li>
+<li>HTML发布时移除 <code>.tagged</code> 后缀</li>
+</ul>
+<hr />
+<h2 id="_7">十、经验教训</h2>
+<ol>
+<li>
+<p><strong>编号是基础设施</strong> — Purple Numbers是整个知识系统的定位基础（实体索引、前置依赖、跨文档引用都依赖它），设计必须在最早期确定且不可变。</p>
+</li>
+<li>
+<p><strong>语义分段优于机械分段</strong> — "每500字切一段"远不如"按知识模块切分"有价值。小节标题是学习者的导航地图。</p>
+</li>
+<li>
+<p><strong>内容类型决定结构</strong> — 概念介绍按层次、机制讲解按阶段、比较分析按维度，不同内容的最佳分段策略完全不同。</p>
+</li>
+<li>
+<p><strong>自动生成只是起点</strong> — 启发式规则生成的小节标题准确率约60%，必须人工审核。但它大幅降低了从零开始的工作量。</p>
+</li>
+<li>
+<p><strong>小节数量要克制</strong> — 每章5-15个小节是合理范围。太多（&gt;20）等于没有分段，太少（&lt;3）等于只有标题。</p>
+</li>
+<li>
+<p><strong>锚点格式统一</strong> — <code>#pn-{number}</code> 作为唯一锚点格式贯穿整个系统（源文件、HTML、索引、API），避免多套ID体系。</p>
+</li>
+<li>
+<p><strong>先切分后标注</strong> — 先完成章节拆分和知识点编号，再做概念标注。如果顺序反过来，每次修改编号都要重新关联所有概念引用。</p>
+</li>
+</ol>
+<hr />
+<h2 id="_8">十一、扩展到其他课程</h2>
+<h3 id="101">10.1 直接复用</h3>
+<ul>
+<li>Purple Numbers编号系统（格式和规则通用）</li>
+<li><code>lint_markdown.py</code> 编号验证逻辑</li>
+<li><code>section_extract_all.py</code> 小节提取逻辑</li>
+<li><code>sections_data.json</code> 数据格式</li>
+<li>HTML锚点渲染（<code>#pn-</code> 格式）</li>
+</ul>
+<h3 id="102">10.2 需要适配</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>需调整内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>章节拆分</td>
+<td>不同课程的模块/单元结构不同</td>
+</tr>
+<tr>
+<td>知识点密度</td>
+<td>理论课vs实验课的知识点粒度不同</td>
+</tr>
+<tr>
+<td>小节策略</td>
+<td>数学按定理，历史按时期，语言按技能</td>
+</tr>
+<tr>
+<td>自动生成关键词</td>
+<td>不同学科用语不同</td>
+</tr>
+<tr>
+<td>特殊段落</td>
+<td>"本章小结"是标准格式，其他课程可能有差异</td>
+</tr>
+</tbody>
+</table>
+<h3 id="103">10.3 规模参考</h3>
+<table>
+<thead>
+<tr>
+<th>课程</th>
+<th>章节数</th>
+<th>预估知识点数</th>
+<th>小节数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分子生物学</td>
+<td>15</td>
+<td>~450</td>
+<td>~90</td>
+</tr>
+<tr>
+<td>细胞生物学</td>
+<td>18</td>
+<td>~540</td>
+<td>~110</td>
+</tr>
+<tr>
+<td>生物化学</td>
+<td>20</td>
+<td>~600</td>
+<td>~120</td>
+</tr>
+<tr>
+<td>遗传学</td>
+<td>12</td>
+<td>~360</td>
+<td>~70</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>本SKILL文档基于分子生物学课程的章节结构化经验提炼。</em>
+<em>核心产出：15章×平均30知识点 ≈ 450个编号知识点，~90个语义小节。</em></p></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

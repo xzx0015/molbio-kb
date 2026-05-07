@@ -161,271 +161,375 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL_04: 关系构建 — 分子生物学知识图谱的关系发现体系</h1>
-<p>&gt; 设计一套适合分子生物学课程知识库的关系类型体系和发现方法，将孤立的概念、实验流程和调控网络连接成结构化知识图谱。</p>
-<p>---</p>
-<h2>一、关系类型体系总览</h2>
-<p>### 1.1 三大关系类别</p>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill_04">SKILL_04: 关系构建 — 分子生物学知识图谱的关系发现体系</h1>
+<blockquote>
+<p>设计一套适合分子生物学课程知识库的关系类型体系和发现方法，将孤立的概念、实验流程和调控网络连接成结构化知识图谱。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、关系类型体系总览</h2>
+<h3 id="11">1.1 三大关系类别</h3>
 <p>分子生物学知识图谱包含三类核心关系：</p>
-<p>| 类别 | 文档 | 核心内容 | 适用场景 |</p>
-<p>|------|------|----------|----------|</p>
-<p>| **概念关系** | SKILL_04a | 概念间的语义关联（上下位、因果、组成、调控） | 理论知识体系构建 |</p>
-<p>| **实验流程** | SKILL_04b | 实验技术的关系网络（步骤序列、技术替代、技术组合） | 实验技能学习路径 |</p>
-<p>| **调控网络** | SKILL_04c | 分子调控关系（转录调控、信号通路、代谢网络） | 机制理解与应用 |</p>
-<p>### 1.2 关系Schema统一格式</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>文档</th>
+<th>核心内容</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>概念关系</strong></td>
+<td>SKILL_04a</td>
+<td>概念间的语义关联（上下位、因果、组成、调控）</td>
+<td>理论知识体系构建</td>
+</tr>
+<tr>
+<td><strong>实验流程</strong></td>
+<td>SKILL_04b</td>
+<td>实验技术的关系网络（步骤序列、技术替代、技术组合）</td>
+<td>实验技能学习路径</td>
+</tr>
+<tr>
+<td><strong>调控网络</strong></td>
+<td>SKILL_04c</td>
+<td>分子调控关系（转录调控、信号通路、代谢网络）</td>
+<td>机制理解与应用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-schema">1.2 关系Schema统一格式</h3>
 <p>所有关系采用统一的三元组格式：</p>
-<p>```</p>
-<p>(主体: Entity, 关系: RelationType, 客体: Entity, [属性: Properties])</p>
-<p>```</p>
-<p>**属性字段**（可选）：</p>
-<p>- `confidence`: 置信度 (0.0-1.0)</p>
-<p>- `evidence`: 证据来源（教材章节/文献/实验数据）</p>
-<p>- `context`: 上下文信息（细胞类型/组织/条件）</p>
-<p>- `direction`: 方向性（正向/负向/双向）</p>
-<p>- `strength`: 强度（强/中/弱）</p>
-<p>---</p>
-<h2>二、关系发现方法论</h2>
-<p>### 2.1 混合发现策略</p>
-<p>采用**规则匹配 + LLM推理**的混合方法：</p>
-<p>```</p>
-<p>┌─────────────────────────────────────────────────────────────┐</p>
-<p>│                    关系发现流程                              │</p>
-<p>├─────────────────────────────────────────────────────────────┤</p>
-<p>│  阶段1: 规则匹配（高置信度、可解释）                          │</p>
-<p>│    ├── 模式匹配：正则/句法规则提取显式关系                    │</p>
-<p>│    ├── 本体推理：基于上下位关系推导隐含关系                   │</p>
-<p>│    └── 数据库映射：利用已知数据库（GO/KEGG/Reactome）         │</p>
-<p>│                                                             │</p>
-<p>│  阶段2: LLM推理（覆盖复杂语义）                               │</p>
-<p>│    ├── 语义理解：从文本描述中推断关系                         │</p>
-<p>│    ├── 上下文推理：结合实验条件判断调控方向                   │</p>
-<p>│    └── 跨文档关联：连接分散在不同章节的知识                   │</p>
-<p>│                                                             │</p>
-<p>│  阶段3: 人工校验（质量保证）                                  │</p>
-<p>│    ├── 专家审核：生物学专家验证关键关系                       │</p>
-<p>│    ├── 一致性检查：检测矛盾关系                               │</p>
-<p>│    └── 置信度校准：调整自动发现的置信度                       │</p>
-<p>└─────────────────────────────────────────────────────────────┘</p>
-<p>```</p>
-<p>### 2.2 规则匹配方法</p>
-<p>#### 2.2.1 显式关系模式</p>
+<pre><code>(主体: Entity, 关系: RelationType, 客体: Entity, [属性: Properties])
+</code></pre>
+<p><strong>属性字段</strong>（可选）：
+- <code>confidence</code>: 置信度 (0.0-1.0)
+- <code>evidence</code>: 证据来源（教材章节/文献/实验数据）
+- <code>context</code>: 上下文信息（细胞类型/组织/条件）
+- <code>direction</code>: 方向性（正向/负向/双向）
+- <code>strength</code>: 强度（强/中/弱）</p>
+<hr />
+<h2 id="_2">二、关系发现方法论</h2>
+<h3 id="21">2.1 混合发现策略</h3>
+<p>采用<strong>规则匹配 + LLM推理</strong>的混合方法：</p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                    关系发现流程                              │
+├─────────────────────────────────────────────────────────────┤
+│  阶段1: 规则匹配（高置信度、可解释）                          │
+│    ├── 模式匹配：正则/句法规则提取显式关系                    │
+│    ├── 本体推理：基于上下位关系推导隐含关系                   │
+│    └── 数据库映射：利用已知数据库（GO/KEGG/Reactome）         │
+│                                                             │
+│  阶段2: LLM推理（覆盖复杂语义）                               │
+│    ├── 语义理解：从文本描述中推断关系                         │
+│    ├── 上下文推理：结合实验条件判断调控方向                   │
+│    └── 跨文档关联：连接分散在不同章节的知识                   │
+│                                                             │
+│  阶段3: 人工校验（质量保证）                                  │
+│    ├── 专家审核：生物学专家验证关键关系                       │
+│    ├── 一致性检查：检测矛盾关系                               │
+│    └── 置信度校准：调整自动发现的置信度                       │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="22">2.2 规则匹配方法</h3>
+<h4 id="221">2.2.1 显式关系模式</h4>
 <p>从教材文本中直接匹配关键词：</p>
-<p>```python</p>
-<h1>上下位关系模式</h1>
-<p>HYPONYM_PATTERNS = [</p>
-<p>    r&quot;({concept})是({concept})的一种&quot;,</p>
-<p>    r&quot;({concept})属于({concept})&quot;,</p>
-<p>    r&quot;({concept})包括({concept})&quot;,</p>
-<p>    r&quot;({concept})可分为({concept})&quot;,</p>
-<p>]</p>
-<h1>组成关系模式</h1>
-<p>COMPOSITION_PATTERNS = [</p>
-<p>    r&quot;({concept})由({concept})和({concept})组成&quot;,</p>
-<p>    r&quot;({concept})包含({concept})&quot;,</p>
-<p>    r&quot;({concept})的组分包括({concept})&quot;,</p>
-<p>]</p>
-<h1>因果关系模式</h1>
-<p>CAUSAL_PATTERNS = [</p>
-<p>    r&quot;({concept})导致({concept})&quot;,</p>
-<p>    r&quot;({concept})引起({concept})&quot;,</p>
-<p>    r&quot;({concept})造成({concept})&quot;,</p>
-<p>    r&quot;由于({concept})，({concept})&quot;,</p>
-<p>]</p>
-<h1>调控关系模式</h1>
-<p>REGULATION_PATTERNS = [</p>
-<p>    r&quot;({concept})激活({concept})&quot;,</p>
-<p>    r&quot;({concept})抑制({concept})&quot;,</p>
-<p>    r&quot;({concept})促进({concept})&quot;,</p>
-<p>    r&quot;({concept})下调({concept})&quot;,</p>
-<p>    r&quot;({concept})上调({concept})&quot;,</p>
-<p>]</p>
-<p>```</p>
-<p>#### 2.2.2 本体推理规则</p>
+<pre><code class="language-python"># 上下位关系模式
+HYPONYM_PATTERNS = [
+    r&quot;({concept})是({concept})的一种&quot;,
+    r&quot;({concept})属于({concept})&quot;,
+    r&quot;({concept})包括({concept})&quot;,
+    r&quot;({concept})可分为({concept})&quot;,
+]
+
+# 组成关系模式
+COMPOSITION_PATTERNS = [
+    r&quot;({concept})由({concept})和({concept})组成&quot;,
+    r&quot;({concept})包含({concept})&quot;,
+    r&quot;({concept})的组分包括({concept})&quot;,
+]
+
+# 因果关系模式
+CAUSAL_PATTERNS = [
+    r&quot;({concept})导致({concept})&quot;,
+    r&quot;({concept})引起({concept})&quot;,
+    r&quot;({concept})造成({concept})&quot;,
+    r&quot;由于({concept})，({concept})&quot;,
+]
+
+# 调控关系模式
+REGULATION_PATTERNS = [
+    r&quot;({concept})激活({concept})&quot;,
+    r&quot;({concept})抑制({concept})&quot;,
+    r&quot;({concept})促进({concept})&quot;,
+    r&quot;({concept})下调({concept})&quot;,
+    r&quot;({concept})上调({concept})&quot;,
+]
+</code></pre>
+<h4 id="222">2.2.2 本体推理规则</h4>
 <p>基于已有关系推导新关系：</p>
-<p>```</p>
-<h1>传递性推理</h1>
-<p>IF (A is-a B) AND (B is-a C) THEN (A is-a C)</p>
-<h1>组成推理</h1>
-<p>IF (X part-of Y) AND (Y part-of Z) THEN (X part-of Z)</p>
-<h1>调控推理</h1>
-<p>IF (A activates B) AND (B activates C) THEN (A indirectly-activates C)</p>
-<p>IF (A inhibits B) AND (B activates C) THEN (A indirectly-inhibits C)</p>
-<p>```</p>
-<p>### 2.3 LLM推理方法</p>
-<p>#### 2.3.1 关系分类提示词</p>
-<p>```markdown</p>
-<p>分析以下分子生物学概念之间的关系：</p>
-<p>概念A: {entity_a}</p>
-<p>概念B: {entity_b}</p>
-<p>上下文: {context}</p>
-<p>请判断它们之间是否存在以下关系类型：</p>
-<p>1. is-a (上下位): A是B的一种/类型</p>
-<p>2. part-of (组成): A是B的组成部分</p>
-<p>3. causes (因果): A导致B发生</p>
-<p>4. regulates (调控): A调控B的活性/表达</p>
-<p>5. precedes (时序): A在B之前发生</p>
-<p>6. associates-with (关联): A与B相关但无明确因果</p>
-<p>输出格式：</p>
-<p>{</p>
-<p>  &quot;relation_type&quot;: &quot;关系类型&quot;,</p>
-<p>  &quot;direction&quot;: &quot;正向/负向/双向/无向&quot;,</p>
-<p>  &quot;confidence&quot;: 0.0-1.0,</p>
-<p>  &quot;reasoning&quot;: &quot;推理理由（50字以内）&quot;,</p>
-<p>  &quot;evidence&quot;: &quot;证据文本片段&quot;</p>
-<p>}</p>
-<p>如果无明确关系，输出 {&quot;relation_type&quot;: &quot;none&quot;}</p>
-<p>```</p>
-<p>#### 2.3.2 实验流程关系提示词</p>
-<p>```markdown</p>
-<p>分析以下实验步骤之间的关系：</p>
-<p>步骤A: {step_a}</p>
-<p>步骤B: {step_b}</p>
-<p>所属实验: {experiment}</p>
-<p>请判断关系类型：</p>
-<p>1. sequence (序列): A是B的前置步骤</p>
-<p>2. alternative (替代): A和B是替代方案</p>
-<p>3. combination (组合): A和B组合使用</p>
-<p>4. prerequisite (前提): A是B的必要条件</p>
-<p>5. output-of (产出): A的产物是B的输入</p>
-<p>输出格式同上。</p>
-<p>```</p>
-<p>#### 2.3.3 调控网络关系提示词</p>
-<p>```markdown</p>
-<p>分析以下分子间的调控关系：</p>
-<p>分子A: {molecule_a} (类型: {type_a})</p>
-<p>分子B: {molecule_b} (类型: {type_b})</p>
-<p>生物过程: {process}</p>
-<p>请判断：</p>
-<p>1. A是否调控B的表达/活性？</p>
-<p>2. 调控方向是激活还是抑制？</p>
-<p>3. 是直接调控还是间接调控？</p>
-<p>4. 调控机制是什么（转录/翻译/修饰/降解）？</p>
-<p>输出格式：</p>
-<p>{</p>
-<p>  &quot;relation_type&quot;: &quot;activates/inhibits/regulates/none&quot;,</p>
-<p>  &quot;mechanism&quot;: &quot;mechanism_type&quot;,</p>
-<p>  &quot;direct&quot;: true/false,</p>
-<p>  &quot;confidence&quot;: 0.0-1.0,</p>
-<p>  &quot;evidence&quot;: &quot;支持证据&quot;</p>
-<p>}</p>
-<p>```</p>
-<p>---</p>
-<h2>三、数据来源与整合</h2>
-<p>### 3.1 内部数据来源</p>
-<p>| 来源 | 内容 | 关系类型 |</p>
-<p>|------|------|----------|</p>
-<p>| 教材文本 | 概念定义、实验步骤、机制描述 | 全部类型 |</p>
-<p>| 课程讲义 | 教学重点、知识脉络 | 概念关系 |</p>
-<p>| 实验手册 | 操作流程、注意事项 | 实验流程 |</p>
-<p>| 习题库 | 知识点关联 | 概念关系 |</p>
-<p>### 3.2 外部数据库</p>
-<p>| 数据库 | 用途 | 关系类型 |</p>
-<p>|--------|------|----------|</p>
-<p>| **Gene Ontology (GO)** | 功能注释、层级关系 | is-a, part-of |</p>
-<p>| **KEGG** | 通路关系、代谢网络 | pathway, reaction |</p>
-<p>| **Reactome** | 信号通路、分子互作 | regulates, binds-to |</p>
-<p>| **BioGRID** | 蛋白-蛋白相互作用 | interacts-with |</p>
-<p>| **ChEMBL** | 化合物-靶点关系 | inhibits, activates |</p>
-<p>| **TRANSFAC/JASPAR** | 转录因子-靶基因 | regulates |</p>
-<p>| **UniProt** | 蛋白功能、修饰 | has-function, modified-by |</p>
-<p>### 3.3 数据整合策略</p>
-<p>```python</p>
-<p>def integrate_external_databases():</p>
-<p>    &quot;&quot;&quot;整合外部数据库关系&quot;&quot;&quot;</p>
-<p>    # 1. 导入GO术语层级</p>
-<p>    go_is_a = load_go_ontology()  # is-a关系</p>
-<p>    go_part_of = load_go_relationships()  # part-of关系</p>
-<p>    # 2. 导入KEGG通路</p>
-<p>    kegg_pathways = load_kegg_pathways()  # pathway关系</p>
-<p>    kegg_reactions = load_kegg_reactions()  # substrate-product关系</p>
-<p>    # 3. 导入PPI网络</p>
-<p>    ppi_network = load_biogrid_data()  # interacts-with关系</p>
-<p>    # 4. 导入调控网络</p>
-<p>    tf_targets = load_jaspar_data()  # TF-target关系</p>
-<p>    # 5. 映射到本地实体</p>
-<p>    mapped_relations = map_to_local_entities(</p>
-<p>        go_is_a, go_part_of, kegg_pathways, </p>
-<p>        kegg_reactions, ppi_network, tf_targets</p>
-<p>    )</p>
-<p>    # 6. 冲突检测与解决</p>
-<p>    resolved_relations = resolve_conflicts(mapped_relations)</p>
-<p>    return resolved_relations</p>
-<p>```</p>
-<p>---</p>
-<h2>四、关系数据格式</h2>
-<p>### 4.1 JSON Schema</p>
-<p>```json</p>
-<p>{</p>
-<p>  &quot;relation_id&quot;: &quot;rel_001&quot;,</p>
-<p>  &quot;relation_type&quot;: &quot;activates&quot;,</p>
-<p>  &quot;subject&quot;: {</p>
-<p>    &quot;id&quot;: &quot;ent_001&quot;,</p>
-<p>    &quot;name&quot;: &quot;p53&quot;,</p>
-<p>    &quot;type&quot;: &quot;protein&quot;,</p>
-<p>    &quot;category&quot;: &quot;transcription_factor&quot;</p>
-<p>  },</p>
-<p>  &quot;object&quot;: {</p>
-<p>    &quot;id&quot;: &quot;ent_002&quot;, </p>
-<p>    &quot;name&quot;: &quot;p21&quot;,</p>
-<p>    &quot;type&quot;: &quot;gene&quot;,</p>
-<p>    &quot;category&quot;: &quot;cell_cycle_regulator&quot;</p>
-<p>  },</p>
-<p>  &quot;properties&quot;: {</p>
-<p>    &quot;confidence&quot;: 0.95,</p>
-<p>    &quot;direction&quot;: &quot;positive&quot;,</p>
-<p>    &quot;mechanism&quot;: &quot;transcriptional_activation&quot;,</p>
-<p>    &quot;evidence&quot;: [&quot;文献PMID:12345678&quot;, &quot;教材第5章&quot;],</p>
-<p>    &quot;context&quot;: {</p>
-<p>      &quot;cell_type&quot;: &quot;fibroblast&quot;,</p>
-<p>      &quot;condition&quot;: &quot;DNA_damage&quot;</p>
-<p>    }</p>
-<p>  },</p>
-<p>  &quot;source&quot;: {</p>
-<p>    &quot;method&quot;: &quot;llm_inference&quot;,</p>
-<p>    &quot;text&quot;: &quot;p53蛋白激活p21基因的转录&quot;,</p>
-<p>    &quot;chapter&quot;: &quot;ch05_cell_cycle&quot;</p>
-<p>  },</p>
-<p>  &quot;verified&quot;: true,</p>
-<p>  &quot;created_at&quot;: &quot;2026-03-17&quot;,</p>
-<p>  &quot;updated_at&quot;: &quot;2026-03-17&quot;</p>
-<p>}</p>
-<p>```</p>
-<p>### 4.2 CSV导出格式</p>
-<p>```csv</p>
-<p>relation_id,subject_id,subject_name,subject_type,relation_type,object_id,object_name,object_type,confidence,evidence</p>
-<p>rel_001,ent_001,p53,protein,activates,ent_002,p21,gene,0.95,教材第5章</p>
-<p>rel_002,ent_003,DNA,concept,has-part,ent_004,gene,concept,1.0,教材第2章</p>
-<p>rel_003,ent_005,RT-PCR,technique,alternative-to,ent_006,Northern_Blot,technique,0.85,教材第8章</p>
-<p>```</p>
-<p>---</p>
-<h2>五、质量控制</h2>
-<p>### 5.1 一致性检查</p>
-<p>```python</p>
-<p>def validate_relation_consistency(relations):</p>
-<p>    &quot;&quot;&quot;检查关系一致性&quot;&quot;&quot;</p>
-<p>    issues = []</p>
-<p>    # 检查1: 反对称关系</p>
-<p>    for rel in relations:</p>
-<p>        if rel[&#x27;relation_type&#x27;] == &#x27;is-a&#x27;:</p>
-<p>            # 检查是否存在反向关系</p>
-<p>            reverse = find_reverse_relation(relations, rel)</p>
-<p>            if reverse and reverse[&#x27;relation_type&#x27;] == &#x27;is-a&#x27;:</p>
-<p>                issues.append(f&quot;循环is-a: {rel[&#x27;subject&#x27;]} ↔ {rel[&#x27;object&#x27;]}&quot;)</p>
-<p>    # 检查2: 矛盾调控</p>
-<p>    for entity in get_all_entities():</p>
-<p>        activators = get_activators(entity, relations)</p>
-<p>        inhibitors = get_inhibitors(entity, relations)</p>
-<p>        common = set(activators) &amp; set(inhibitors)</p>
-<p>        if common:</p>
-<p>            issues.append(f&quot;矛盾调控: {entity} 被 {common} 同时激活和抑制&quot;)</p>
-<p>    # 检查3: 传递闭包</p>
-<p>    for rel in relations:</p>
-<p>        if rel[&#x27;relation_type&#x27;] in [&#x27;is-a&#x27;, &#x27;part-of&#x27;]:</p>
-<p>            # 检查传递性是否一致</p>
-<p>            transitive_issues = check_transitivity(rel, relations)</p>
-<p>            issues.extend(transitive_issues)</p>
-<p>    return issues</p>
-<p>```</p></article></main>
+<pre><code># 传递性推理
+IF (A is-a B) AND (B is-a C) THEN (A is-a C)
+
+# 组成推理
+IF (X part-of Y) AND (Y part-of Z) THEN (X part-of Z)
+
+# 调控推理
+IF (A activates B) AND (B activates C) THEN (A indirectly-activates C)
+IF (A inhibits B) AND (B activates C) THEN (A indirectly-inhibits C)
+</code></pre>
+<h3 id="23-llm">2.3 LLM推理方法</h3>
+<h4 id="231">2.3.1 关系分类提示词</h4>
+<pre><code class="language-markdown">分析以下分子生物学概念之间的关系：
+
+概念A: {entity_a}
+概念B: {entity_b}
+上下文: {context}
+
+请判断它们之间是否存在以下关系类型：
+1. is-a (上下位): A是B的一种/类型
+2. part-of (组成): A是B的组成部分
+3. causes (因果): A导致B发生
+4. regulates (调控): A调控B的活性/表达
+5. precedes (时序): A在B之前发生
+6. associates-with (关联): A与B相关但无明确因果
+
+输出格式：
+{
+  &quot;relation_type&quot;: &quot;关系类型&quot;,
+  &quot;direction&quot;: &quot;正向/负向/双向/无向&quot;,
+  &quot;confidence&quot;: 0.0-1.0,
+  &quot;reasoning&quot;: &quot;推理理由（50字以内）&quot;,
+  &quot;evidence&quot;: &quot;证据文本片段&quot;
+}
+
+如果无明确关系，输出 {&quot;relation_type&quot;: &quot;none&quot;}
+</code></pre>
+<h4 id="232">2.3.2 实验流程关系提示词</h4>
+<pre><code class="language-markdown">分析以下实验步骤之间的关系：
+
+步骤A: {step_a}
+步骤B: {step_b}
+所属实验: {experiment}
+
+请判断关系类型：
+1. sequence (序列): A是B的前置步骤
+2. alternative (替代): A和B是替代方案
+3. combination (组合): A和B组合使用
+4. prerequisite (前提): A是B的必要条件
+5. output-of (产出): A的产物是B的输入
+
+输出格式同上。
+</code></pre>
+<h4 id="233">2.3.3 调控网络关系提示词</h4>
+<pre><code class="language-markdown">分析以下分子间的调控关系：
+
+分子A: {molecule_a} (类型: {type_a})
+分子B: {molecule_b} (类型: {type_b})
+生物过程: {process}
+
+请判断：
+1. A是否调控B的表达/活性？
+2. 调控方向是激活还是抑制？
+3. 是直接调控还是间接调控？
+4. 调控机制是什么（转录/翻译/修饰/降解）？
+
+输出格式：
+{
+  &quot;relation_type&quot;: &quot;activates/inhibits/regulates/none&quot;,
+  &quot;mechanism&quot;: &quot;mechanism_type&quot;,
+  &quot;direct&quot;: true/false,
+  &quot;confidence&quot;: 0.0-1.0,
+  &quot;evidence&quot;: &quot;支持证据&quot;
+}
+</code></pre>
+<hr />
+<h2 id="_3">三、数据来源与整合</h2>
+<h3 id="31">3.1 内部数据来源</h3>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>内容</th>
+<th>关系类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>教材文本</td>
+<td>概念定义、实验步骤、机制描述</td>
+<td>全部类型</td>
+</tr>
+<tr>
+<td>课程讲义</td>
+<td>教学重点、知识脉络</td>
+<td>概念关系</td>
+</tr>
+<tr>
+<td>实验手册</td>
+<td>操作流程、注意事项</td>
+<td>实验流程</td>
+</tr>
+<tr>
+<td>习题库</td>
+<td>知识点关联</td>
+<td>概念关系</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 外部数据库</h3>
+<table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>用途</th>
+<th>关系类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gene Ontology (GO)</strong></td>
+<td>功能注释、层级关系</td>
+<td>is-a, part-of</td>
+</tr>
+<tr>
+<td><strong>KEGG</strong></td>
+<td>通路关系、代谢网络</td>
+<td>pathway, reaction</td>
+</tr>
+<tr>
+<td><strong>Reactome</strong></td>
+<td>信号通路、分子互作</td>
+<td>regulates, binds-to</td>
+</tr>
+<tr>
+<td><strong>BioGRID</strong></td>
+<td>蛋白-蛋白相互作用</td>
+<td>interacts-with</td>
+</tr>
+<tr>
+<td><strong>ChEMBL</strong></td>
+<td>化合物-靶点关系</td>
+<td>inhibits, activates</td>
+</tr>
+<tr>
+<td><strong>TRANSFAC/JASPAR</strong></td>
+<td>转录因子-靶基因</td>
+<td>regulates</td>
+</tr>
+<tr>
+<td><strong>UniProt</strong></td>
+<td>蛋白功能、修饰</td>
+<td>has-function, modified-by</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 数据整合策略</h3>
+<pre><code class="language-python">def integrate_external_databases():
+    &quot;&quot;&quot;整合外部数据库关系&quot;&quot;&quot;
+
+    # 1. 导入GO术语层级
+    go_is_a = load_go_ontology()  # is-a关系
+    go_part_of = load_go_relationships()  # part-of关系
+
+    # 2. 导入KEGG通路
+    kegg_pathways = load_kegg_pathways()  # pathway关系
+    kegg_reactions = load_kegg_reactions()  # substrate-product关系
+
+    # 3. 导入PPI网络
+    ppi_network = load_biogrid_data()  # interacts-with关系
+
+    # 4. 导入调控网络
+    tf_targets = load_jaspar_data()  # TF-target关系
+
+    # 5. 映射到本地实体
+    mapped_relations = map_to_local_entities(
+        go_is_a, go_part_of, kegg_pathways, 
+        kegg_reactions, ppi_network, tf_targets
+    )
+
+    # 6. 冲突检测与解决
+    resolved_relations = resolve_conflicts(mapped_relations)
+
+    return resolved_relations
+</code></pre>
+<hr />
+<h2 id="_4">四、关系数据格式</h2>
+<h3 id="41-json-schema">4.1 JSON Schema</h3>
+<pre><code class="language-json">{
+  &quot;relation_id&quot;: &quot;rel_001&quot;,
+  &quot;relation_type&quot;: &quot;activates&quot;,
+  &quot;subject&quot;: {
+    &quot;id&quot;: &quot;ent_001&quot;,
+    &quot;name&quot;: &quot;p53&quot;,
+    &quot;type&quot;: &quot;protein&quot;,
+    &quot;category&quot;: &quot;transcription_factor&quot;
+  },
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;ent_002&quot;, 
+    &quot;name&quot;: &quot;p21&quot;,
+    &quot;type&quot;: &quot;gene&quot;,
+    &quot;category&quot;: &quot;cell_cycle_regulator&quot;
+  },
+  &quot;properties&quot;: {
+    &quot;confidence&quot;: 0.95,
+    &quot;direction&quot;: &quot;positive&quot;,
+    &quot;mechanism&quot;: &quot;transcriptional_activation&quot;,
+    &quot;evidence&quot;: [&quot;文献PMID:12345678&quot;, &quot;教材第5章&quot;],
+    &quot;context&quot;: {
+      &quot;cell_type&quot;: &quot;fibroblast&quot;,
+      &quot;condition&quot;: &quot;DNA_damage&quot;
+    }
+  },
+  &quot;source&quot;: {
+    &quot;method&quot;: &quot;llm_inference&quot;,
+    &quot;text&quot;: &quot;p53蛋白激活p21基因的转录&quot;,
+    &quot;chapter&quot;: &quot;ch05_cell_cycle&quot;
+  },
+  &quot;verified&quot;: true,
+  &quot;created_at&quot;: &quot;2026-03-17&quot;,
+  &quot;updated_at&quot;: &quot;2026-03-17&quot;
+}
+</code></pre>
+<h3 id="42-csv">4.2 CSV导出格式</h3>
+<pre><code class="language-csv">relation_id,subject_id,subject_name,subject_type,relation_type,object_id,object_name,object_type,confidence,evidence
+rel_001,ent_001,p53,protein,activates,ent_002,p21,gene,0.95,教材第5章
+rel_002,ent_003,DNA,concept,has-part,ent_004,gene,concept,1.0,教材第2章
+rel_003,ent_005,RT-PCR,technique,alternative-to,ent_006,Northern_Blot,technique,0.85,教材第8章
+</code></pre>
+<hr />
+<h2 id="_5">五、质量控制</h2>
+<h3 id="51">5.1 一致性检查</h3>
+<pre><code class="language-python">def validate_relation_consistency(relations):
+    &quot;&quot;&quot;检查关系一致性&quot;&quot;&quot;
+    issues = []
+
+    # 检查1: 反对称关系
+    for rel in relations:
+        if rel['relation_type'] == 'is-a':
+            # 检查是否存在反向关系
+            reverse = find_reverse_relation(relations, rel)
+            if reverse and reverse['relation_type'] == 'is-a':
+                issues.append(f&quot;循环is-a: {rel['subject']} ↔ {rel['object']}&quot;)
+
+    # 检查2: 矛盾调控
+    for entity in get_all_entities():
+        activators = get_activators(entity, relations)
+        inhibitors = get_inhibitors(entity, relations)
+        common = set(activators) &amp; set(inhibitors)
+        if common:
+            issues.append(f&quot;矛盾调控: {entity} 被 {common} 同时激活和抑制&quot;)
+
+    # 检查3: 传递闭包
+    for rel in relations:
+        if rel['relation_type'] in ['is-a', 'part-of']:
+            # 检查传递性是否一致
+            transitive_issues = check_transitivity(rel, relations)
+            issues.extend(transitive_issues)
+
+    return issues
+</code></pre></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

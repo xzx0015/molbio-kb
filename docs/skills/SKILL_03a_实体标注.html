@@ -161,166 +161,233 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 03a: 分子生物学实体标注 — 从原文到结构化实体的完整方法</h1>
-<p>&gt; 为分子生物学课程内容设计12类实体标注体系，涵盖基因、蛋白、细胞结构到实验技术的全谱系生物学概念。</p>
-<p>---</p>
-<h2>一、标注体系设计</h2>
-<p>### 1.1 核心原则</p>
-<p>**&quot;内容与样式分离&quot;** — 用轻量Token标记原文，渲染交给程序。</p>
-<p>Token标记的优势：</p>
-<p>- 原文保持可读（标注后的markdown仍可直接阅读）</p>
-<p>- 版本可控（git diff友好，纯文本差异清晰）</p>
-<p>- 渲染无关（同一份标注文件可渲染为HTML、PDF等）</p>
-<p>- 跨平台兼容（支持标准Markdown渲染器）</p>
-<p>### 1.2 12类实体标记符号</p>
-<p>| 符号 | 类型 | 说明 | 示例 |</p>
-<p>|------|------|------|------|</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **基因** | 基因名称、基因符号、基因座 | `&lt;span class=&quot;entity&quot;&gt;lacZ&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **蛋白** | 蛋白质、多肽、酶、蛋白复合物 | `&lt;span class=&quot;entity&quot;&gt;RNA聚合酶&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;p53蛋白&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **细胞结构** | 细胞器、亚细胞结构、细胞组分 | `&lt;span class=&quot;entity&quot;&gt;细胞核&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;线粒体&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **分子过程** | 生物学过程、分子反应、代谢途径 | `&lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;翻译&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **技术方法** | 实验技术、分析方法、操作步骤 | `&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;Western Blot&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **代谢物** | 小分子、代谢中间产物、信号分子 | `&lt;span class=&quot;entity&quot;&gt;ATP&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;cAMP&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **试剂材料** | 实验试剂、培养基、缓冲液、耗材 | `&lt;span class=&quot;entity&quot;&gt;琼脂糖&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;LB培养基&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **条件参数** | 温度、pH、浓度、时间等实验条件 | `&lt;span class=&quot;entity&quot;&gt;37°C&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;pH7.4&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **文献来源** | 经典文献、发现者、里程碑研究 | `&lt;span class=&quot;entity&quot;&gt;Watson&amp;amp;Crick1953&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **核心概念** | 理论、法则、模型、假说 | `&lt;span class=&quot;entity&quot;&gt;中心法则&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **疾病/表型** | 疾病、表型特征、生理状态 | `&lt;span class=&quot;entity&quot;&gt;癌症&lt;/span&gt;`、`&lt;span class=&quot;entity&quot;&gt;耐药性&lt;/span&gt;` |</p>
-<p>| `&lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;` | **数值数据** | 定量数据、测量值、统计结果 | `&lt;span class=&quot;entity&quot;&gt;Tm=65°C&lt;/span&gt;` |</p>
-<p>### 1.3 标注格式规范</p>
-<p>#### 基础格式</p>
-<p>```markdown</p>
-<p>所有实体使用〖TYPE 内容〗格式，其中TYPE为上述12类符号之一。</p>
-<p>示例：</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;基因编码&lt;span class=&quot;entity&quot;&gt;p53蛋白&lt;/span&gt;，在&lt;span class=&quot;entity&quot;&gt;癌症&lt;/span&gt;发生中起关键作用。</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;过程由&lt;span class=&quot;entity&quot;&gt;RNA聚合酶&lt;/span&gt;催化，发生在&lt;span class=&quot;entity&quot;&gt;细胞核&lt;/span&gt;中。</p>
-<p>- 使用&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;技术扩增&lt;span class=&quot;entity&quot;&gt;目的基因&lt;/span&gt;，反应条件为&lt;span class=&quot;entity&quot;&gt;95°C&lt;/span&gt;预变性。</p>
-<p>```</p>
-<p>#### 内联消歧语法</p>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-03a">SKILL 03a: 分子生物学实体标注 — 从原文到结构化实体的完整方法</h1>
+<blockquote>
+<p>为分子生物学课程内容设计12类实体标注体系，涵盖基因、蛋白、细胞结构到实验技术的全谱系生物学概念。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、标注体系设计</h2>
+<h3 id="11">1.1 核心原则</h3>
+<p><strong>"内容与样式分离"</strong> — 用轻量Token标记原文，渲染交给程序。</p>
+<p>Token标记的优势：
+- 原文保持可读（标注后的markdown仍可直接阅读）
+- 版本可控（git diff友好，纯文本差异清晰）
+- 渲染无关（同一份标注文件可渲染为HTML、PDF等）
+- 跨平台兼容（支持标准Markdown渲染器）</p>
+<h3 id="12-12">1.2 12类实体标记符号</h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>类型</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>基因</strong></td>
+<td>基因名称、基因符号、基因座</td>
+<td><code>&lt;span class="entity"&gt;lacZ&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;p53&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>蛋白</strong></td>
+<td>蛋白质、多肽、酶、蛋白复合物</td>
+<td><code>&lt;span class="entity"&gt;RNA聚合酶&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;p53蛋白&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>细胞结构</strong></td>
+<td>细胞器、亚细胞结构、细胞组分</td>
+<td><code>&lt;span class="entity"&gt;细胞核&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;线粒体&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>分子过程</strong></td>
+<td>生物学过程、分子反应、代谢途径</td>
+<td><code>&lt;span class="entity"&gt;转录&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;翻译&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>技术方法</strong></td>
+<td>实验技术、分析方法、操作步骤</td>
+<td><code>&lt;span class="entity"&gt;PCR&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;Western Blot&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>代谢物</strong></td>
+<td>小分子、代谢中间产物、信号分子</td>
+<td><code>&lt;span class="entity"&gt;ATP&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;cAMP&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>试剂材料</strong></td>
+<td>实验试剂、培养基、缓冲液、耗材</td>
+<td><code>&lt;span class="entity"&gt;琼脂糖&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;LB培养基&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>条件参数</strong></td>
+<td>温度、pH、浓度、时间等实验条件</td>
+<td><code>&lt;span class="entity"&gt;37°C&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;pH7.4&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>文献来源</strong></td>
+<td>经典文献、发现者、里程碑研究</td>
+<td><code>&lt;span class="entity"&gt;Watson&amp;amp;Crick1953&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>核心概念</strong></td>
+<td>理论、法则、模型、假说</td>
+<td><code>&lt;span class="entity"&gt;中心法则&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>疾病/表型</strong></td>
+<td>疾病、表型特征、生理状态</td>
+<td><code>&lt;span class="entity"&gt;癌症&lt;/span&gt;</code>、<code>&lt;span class="entity"&gt;耐药性&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;span class="entity"&gt;X&lt;/span&gt;</code></td>
+<td><strong>数值数据</strong></td>
+<td>定量数据、测量值、统计结果</td>
+<td><code>&lt;span class="entity"&gt;Tm=65°C&lt;/span&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="13">1.3 标注格式规范</h3>
+<h4 id="_2">基础格式</h4>
+<pre><code class="language-markdown">所有实体使用〖TYPE 内容〗格式，其中TYPE为上述12类符号之一。
+
+示例：
+- &lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;基因编码&lt;span class=&quot;entity&quot;&gt;p53蛋白&lt;/span&gt;，在&lt;span class=&quot;entity&quot;&gt;癌症&lt;/span&gt;发生中起关键作用。
+- &lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;过程由&lt;span class=&quot;entity&quot;&gt;RNA聚合酶&lt;/span&gt;催化，发生在&lt;span class=&quot;entity&quot;&gt;细胞核&lt;/span&gt;中。
+- 使用&lt;span class=&quot;entity&quot;&gt;PCR&lt;/span&gt;技术扩增&lt;span class=&quot;entity&quot;&gt;目的基因&lt;/span&gt;，反应条件为&lt;span class=&quot;entity&quot;&gt;95°C&lt;/span&gt;预变性。
+</code></pre>
+<h4 id="_3">内联消歧语法</h4>
 <p>当同一实体在不同语境下指代不同概念时，使用消歧语法：</p>
-<p>```markdown</p>
-<p>格式：〖TYPE 显示名|规范名〗</p>
-<p>示例：</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;与&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;的序列相似性为80%</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;P450&lt;/span&gt;是药物代谢的主要酶</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;复制&lt;/span&gt;与&lt;span class=&quot;entity&quot;&gt;复制&lt;/span&gt;机制不同</p>
-<p>```</p>
+<pre><code class="language-markdown">格式：〖TYPE 显示名|规范名〗
+
+示例：
+- &lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;与&lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;的序列相似性为80%
+- &lt;span class=&quot;entity&quot;&gt;P450&lt;/span&gt;是药物代谢的主要酶
+- &lt;span class=&quot;entity&quot;&gt;复制&lt;/span&gt;与&lt;span class=&quot;entity&quot;&gt;复制&lt;/span&gt;机制不同
+</code></pre>
 <p>渲染输出：</p>
-<p>```html</p>
-<p>&lt;span class=&quot;gene&quot; title=&quot;类型：基因，规范名：人类p53&quot; data-canonical=&quot;人类p53&quot;&gt;p53&lt;/span&gt;</p>
-<p>```</p>
-<p>#### 物种标注规范</p>
+<pre><code class="language-html">&lt;span class=&quot;gene&quot; title=&quot;类型：基因，规范名：人类p53&quot; data-canonical=&quot;人类p53&quot;&gt;p53&lt;/span&gt;
+</code></pre>
+<h4 id="_4">物种标注规范</h4>
 <p>基因和蛋白实体应明确标注物种来源：</p>
-<p>```markdown</p>
-<p>标准格式：</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt; 或 &lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt;</p>
-<p>示例：</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;TP53&lt;/span&gt;（人类p53基因）</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;Trp53&lt;/span&gt;（小鼠p53基因）</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;lacZ&lt;/span&gt;（大肠杆菌lacZ基因）</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;（指定具体变体）</p>
-<p>```</p>
-<p>---</p>
-<h2>二、12类实体详细定义</h2>
-<p>### 2.1 基因 &lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;</p>
-<p>**定义**：具有遗传功能的DNA片段，包括编码基因、非编码基因、调控序列等。</p>
-<p>**标注范围**：</p>
-<p>- ✓ 基因符号（如 p53, lacZ, GFP）</p>
-<p>- ✓ 基因全称（如 tumor protein 53）</p>
-<p>- ✓ 基因座名称（如 17p13.1）</p>
-<p>- ✓ 基因变体（如 p53-R175H）</p>
-<p>**不标注**：</p>
-<p>- ✗ 普通DNA序列（如 &quot;GC含量&quot; 中的 GC）</p>
-<p>- ✗ 泛指基因概念（如 &quot;基因表达&quot; 中的 &quot;基因&quot; 不单独标）</p>
-<p>**示例**：</p>
-<p>```markdown</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;TP53&lt;/span&gt;基因突变与多种&lt;span class=&quot;entity&quot;&gt;癌症&lt;/span&gt;相关</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;lacZ&lt;/span&gt;编码β-半乳糖苷酶</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;EGFR&lt;/span&gt;是表皮生长因子受体基因</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;BRCA1&lt;/span&gt;突变增加乳腺癌风险</p>
-<p>```</p>
-<p>**边界情况**：</p>
-<p>| 场景 | 处理方式 | 示例 |</p>
-<p>|------|----------|------|</p>
-<p>| 基因家族 | 标注具体成员 | &lt;span class=&quot;entity&quot;&gt;p53家族&lt;/span&gt;（家族名）；&lt;span class=&quot;entity&quot;&gt;p63&lt;/span&gt;（具体成员） |</p>
-<p>| 基因+蛋白同时提及 | 分别标注 | &lt;span class=&quot;entity&quot;&gt;p53基因&lt;/span&gt;编码&lt;span class=&quot;entity&quot;&gt;p53蛋白&lt;/span&gt; |</p>
-<p>| 基因符号大小写 | 保留原文 | &lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;（人类）；&lt;span class=&quot;entity&quot;&gt;Trp53&lt;/span&gt;（小鼠） |</p>
-<p>---</p>
-<p>### 2.2 蛋白 &lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;</p>
-<p>**定义**：由基因编码的氨基酸聚合物，包括单体蛋白、多亚基蛋白、酶、蛋白复合物。</p>
-<p>**标注范围**：</p>
-<p>- ✓ 蛋白名称（如 RNA聚合酶, p53蛋白）</p>
-<p>- ✓ 酶名称（如 DNA聚合酶, 限制性内切酶）</p>
-<p>- ✓ 蛋白复合物（如 核糖体, 蛋白酶体）</p>
-<p>- ✓ 抗体（如 抗p53抗体）</p>
-<p>**不标注**：</p>
-<p>- ✗ 氨基酸残基（如 &quot;丝氨酸磷酸化&quot; 中的丝氨酸）</p>
-<p>- ✗ 泛指蛋白质概念</p>
-<p>**示例**：</p>
-<p>```markdown</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;RNA聚合酶&lt;/span&gt;催化RNA合成的&lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;过程</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;DNA聚合酶III&lt;/span&gt;是大肠杆菌主要的复制酶</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;p53蛋白&lt;/span&gt;通过调控细胞周期发挥抑癌作用</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;绿色荧光蛋白&lt;/span&gt;常用于细胞成像</p>
-<p>```</p>
-<p>**边界情况**：</p>
-<p>| 场景 | 处理方式 | 示例 |</p>
-<p>|------|----------|------|</p>
-<p>| 酶 vs 蛋白 | 酶优先标为蛋白 | &lt;span class=&quot;entity&quot;&gt;DNA聚合酶&lt;/span&gt;（酶也是蛋白） |</p>
-<p>| 蛋白复合物 | 整体标注 | &lt;span class=&quot;entity&quot;&gt;RNA聚合酶全酶&lt;/span&gt; |</p>
-<p>| 蛋白修饰状态 | 标注基础蛋白 | &lt;span class=&quot;entity&quot;&gt;p53蛋白&lt;/span&gt;磷酸化 → 不标磷酸化状态 |</p>
-<p>---</p>
-<p>### 2.3 细胞结构 &lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;</p>
-<p>**定义**：细胞的物理结构，包括细胞器、膜结构、细胞骨架等亚细胞组分。</p>
-<p>**标注范围**：</p>
-<p>- ✓ 细胞器（细胞核、线粒体、内质网、高尔基体等）</p>
-<p>- ✓ 膜结构（细胞膜、核膜、线粒体内膜等）</p>
-<p>- ✓ 细胞骨架（微管、微丝、中间纤维）</p>
-<p>- ✓ 亚细胞区室（细胞质、核仁、核基质）</p>
-<p>**不标注**：</p>
-<p>- ✗ 整个细胞（如 &quot;大肠杆菌细胞&quot; 中的细胞）</p>
-<p>- ✗ 组织/器官层次结构</p>
-<p>**示例**：</p>
-<p>```markdown</p>
-<p>- DNA复制发生在&lt;span class=&quot;entity&quot;&gt;细胞核&lt;/span&gt;中</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;线粒体&lt;/span&gt;是细胞的能量工厂</p>
-<p>- 蛋白质在&lt;span class=&quot;entity&quot;&gt;内质网&lt;/span&gt;合成后经&lt;span class=&quot;entity&quot;&gt;高尔基体&lt;/span&gt;加工</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;核孔复合物&lt;/span&gt;调控核质间物质运输</p>
-<p>```</p>
-<p>**边界情况**：</p>
-<p>| 场景 | 处理方式 | 示例 |</p>
-<p>|------|----------|------|</p>
-<p>| 细胞器膜 | 标注具体膜结构 | &lt;span class=&quot;entity&quot;&gt;线粒体内膜&lt;/span&gt; |</p>
-<p>| 细胞结构+功能 | 标注结构 | &lt;span class=&quot;entity&quot;&gt;核糖体&lt;/span&gt;（结构）；不标&quot;翻译场所&quot; |</p>
-<p>| 病毒结构 | 可标注 | &lt;span class=&quot;entity&quot;&gt;病毒包膜&lt;/span&gt; |</p>
-<p>---</p>
-<p>### 2.4 分子过程 &lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;</p>
-<p>**定义**：生物体内的分子水平过程，包括代谢反应、基因表达过程、信号转导等。</p>
-<p>**标注范围**：</p>
-<p>- ✓ 中心法则过程（复制、转录、翻译、逆转录）</p>
-<p>- ✓ 代谢途径（糖酵解、三羧酸循环、氧化磷酸化）</p>
-<p>- ✓ 修饰过程（磷酸化、乙酰化、泛素化）</p>
-<p>- ✓ 细胞过程（细胞周期、凋亡、分化）</p>
-<p>**不标注**：</p>
-<p>- ✗ 物理过程（如扩散、渗透）</p>
-<p>- ✗ 实验操作（如离心、电泳）→ 标为技术方法</p>
-<p>**示例**：</p>
-<p>```markdown</p>
-<p>- 遗传信息通过&lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;和&lt;span class=&quot;entity&quot;&gt;翻译&lt;/span&gt;实现表达</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;DNA复制&lt;/span&gt;是半保留复制过程</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;糖酵解&lt;/span&gt;在细胞质中将葡萄糖分解为丙酮酸</p>
-<p>- &lt;span class=&quot;entity&quot;&gt;细胞凋亡&lt;/span&gt;是程序性细胞死亡过程</p>
-<p>```</p>
-<p>**边界情况**：</p>
-<p>| 场景 | 处理方式 | 示例 |</p>
-<p>|------|----------|------|</p>
-<p>| 过程 vs 结果 | 标过程 | &lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;产生mRNA |</p>
-<p>| 过程+位置 | 仅标过程 | &lt;span class=&quot;entity&quot;&gt;翻译&lt;/span&gt;在核糖体上进行 → 不标核糖体 |</p>
-<p>| 多步骤过程 | 可整体或分步 | &lt;span class=&quot;entity&quot;&gt;基因表达&lt;/span&gt;或分别标&lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;&lt;span class=&quot;entity&quot;&gt;翻译&lt;/span&gt; |</p>
-<p>---</p>
-<p>### 2.5 技术方法 &lt;span class=&quot;entity&quot;&gt;X&lt;/span&gt;</p>
-<p>**定义**：分子生物学研究中使用的实验技术、分析方法和操作步骤。</p>
-<p>**标注范围**：</p></article></main>
+<pre><code class="language-markdown">标准格式：
+- &lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt; 或 &lt;span class=&quot;entity&quot;&gt;基因名&lt;/span&gt;
+
+示例：
+- &lt;span class=&quot;entity&quot;&gt;TP53&lt;/span&gt;（人类p53基因）
+- &lt;span class=&quot;entity&quot;&gt;Trp53&lt;/span&gt;（小鼠p53基因）
+- &lt;span class=&quot;entity&quot;&gt;lacZ&lt;/span&gt;（大肠杆菌lacZ基因）
+- &lt;span class=&quot;entity&quot;&gt;p53&lt;/span&gt;（指定具体变体）
+</code></pre>
+<hr />
+<h2 id="12">二、12类实体详细定义</h2>
+<h3 id="21-x">2.1 基因 <span class="entity">X</span></h3>
+<p><strong>定义</strong>：具有遗传功能的DNA片段，包括编码基因、非编码基因、调控序列等。</p>
+<p><strong>标注范围</strong>：
+- ✓ 基因符号（如 p53, lacZ, GFP）
+- ✓ 基因全称（如 tumor protein 53）
+- ✓ 基因座名称（如 17p13.1）
+- ✓ 基因变体（如 p53-R175H）</p>
+<p><strong>不标注</strong>：
+- ✗ 普通DNA序列（如 "GC含量" 中的 GC）
+- ✗ 泛指基因概念（如 "基因表达" 中的 "基因" 不单独标）</p>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-markdown">- &lt;span class=&quot;entity&quot;&gt;TP53&lt;/span&gt;基因突变与多种&lt;span class=&quot;entity&quot;&gt;癌症&lt;/span&gt;相关
+- &lt;span class=&quot;entity&quot;&gt;lacZ&lt;/span&gt;编码β-半乳糖苷酶
+- &lt;span class=&quot;entity&quot;&gt;EGFR&lt;/span&gt;是表皮生长因子受体基因
+- &lt;span class=&quot;entity&quot;&gt;BRCA1&lt;/span&gt;突变增加乳腺癌风险
+</code></pre>
+<p><strong>边界情况</strong>：
+| 场景 | 处理方式 | 示例 |
+|------|----------|------|
+| 基因家族 | 标注具体成员 | <span class="entity">p53家族</span>（家族名）；<span class="entity">p63</span>（具体成员） |
+| 基因+蛋白同时提及 | 分别标注 | <span class="entity">p53基因</span>编码<span class="entity">p53蛋白</span> |
+| 基因符号大小写 | 保留原文 | <span class="entity">p53</span>（人类）；<span class="entity">Trp53</span>（小鼠） |</p>
+<hr />
+<h3 id="22-x">2.2 蛋白 <span class="entity">X</span></h3>
+<p><strong>定义</strong>：由基因编码的氨基酸聚合物，包括单体蛋白、多亚基蛋白、酶、蛋白复合物。</p>
+<p><strong>标注范围</strong>：
+- ✓ 蛋白名称（如 RNA聚合酶, p53蛋白）
+- ✓ 酶名称（如 DNA聚合酶, 限制性内切酶）
+- ✓ 蛋白复合物（如 核糖体, 蛋白酶体）
+- ✓ 抗体（如 抗p53抗体）</p>
+<p><strong>不标注</strong>：
+- ✗ 氨基酸残基（如 "丝氨酸磷酸化" 中的丝氨酸）
+- ✗ 泛指蛋白质概念</p>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-markdown">- &lt;span class=&quot;entity&quot;&gt;RNA聚合酶&lt;/span&gt;催化RNA合成的&lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;过程
+- &lt;span class=&quot;entity&quot;&gt;DNA聚合酶III&lt;/span&gt;是大肠杆菌主要的复制酶
+- &lt;span class=&quot;entity&quot;&gt;p53蛋白&lt;/span&gt;通过调控细胞周期发挥抑癌作用
+- &lt;span class=&quot;entity&quot;&gt;绿色荧光蛋白&lt;/span&gt;常用于细胞成像
+</code></pre>
+<p><strong>边界情况</strong>：
+| 场景 | 处理方式 | 示例 |
+|------|----------|------|
+| 酶 vs 蛋白 | 酶优先标为蛋白 | <span class="entity">DNA聚合酶</span>（酶也是蛋白） |
+| 蛋白复合物 | 整体标注 | <span class="entity">RNA聚合酶全酶</span> |
+| 蛋白修饰状态 | 标注基础蛋白 | <span class="entity">p53蛋白</span>磷酸化 → 不标磷酸化状态 |</p>
+<hr />
+<h3 id="23-x">2.3 细胞结构 <span class="entity">X</span></h3>
+<p><strong>定义</strong>：细胞的物理结构，包括细胞器、膜结构、细胞骨架等亚细胞组分。</p>
+<p><strong>标注范围</strong>：
+- ✓ 细胞器（细胞核、线粒体、内质网、高尔基体等）
+- ✓ 膜结构（细胞膜、核膜、线粒体内膜等）
+- ✓ 细胞骨架（微管、微丝、中间纤维）
+- ✓ 亚细胞区室（细胞质、核仁、核基质）</p>
+<p><strong>不标注</strong>：
+- ✗ 整个细胞（如 "大肠杆菌细胞" 中的细胞）
+- ✗ 组织/器官层次结构</p>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-markdown">- DNA复制发生在&lt;span class=&quot;entity&quot;&gt;细胞核&lt;/span&gt;中
+- &lt;span class=&quot;entity&quot;&gt;线粒体&lt;/span&gt;是细胞的能量工厂
+- 蛋白质在&lt;span class=&quot;entity&quot;&gt;内质网&lt;/span&gt;合成后经&lt;span class=&quot;entity&quot;&gt;高尔基体&lt;/span&gt;加工
+- &lt;span class=&quot;entity&quot;&gt;核孔复合物&lt;/span&gt;调控核质间物质运输
+</code></pre>
+<p><strong>边界情况</strong>：
+| 场景 | 处理方式 | 示例 |
+|------|----------|------|
+| 细胞器膜 | 标注具体膜结构 | <span class="entity">线粒体内膜</span> |
+| 细胞结构+功能 | 标注结构 | <span class="entity">核糖体</span>（结构）；不标"翻译场所" |
+| 病毒结构 | 可标注 | <span class="entity">病毒包膜</span> |</p>
+<hr />
+<h3 id="24-x">2.4 分子过程 <span class="entity">X</span></h3>
+<p><strong>定义</strong>：生物体内的分子水平过程，包括代谢反应、基因表达过程、信号转导等。</p>
+<p><strong>标注范围</strong>：
+- ✓ 中心法则过程（复制、转录、翻译、逆转录）
+- ✓ 代谢途径（糖酵解、三羧酸循环、氧化磷酸化）
+- ✓ 修饰过程（磷酸化、乙酰化、泛素化）
+- ✓ 细胞过程（细胞周期、凋亡、分化）</p>
+<p><strong>不标注</strong>：
+- ✗ 物理过程（如扩散、渗透）
+- ✗ 实验操作（如离心、电泳）→ 标为技术方法</p>
+<p><strong>示例</strong>：</p>
+<pre><code class="language-markdown">- 遗传信息通过&lt;span class=&quot;entity&quot;&gt;转录&lt;/span&gt;和&lt;span class=&quot;entity&quot;&gt;翻译&lt;/span&gt;实现表达
+- &lt;span class=&quot;entity&quot;&gt;DNA复制&lt;/span&gt;是半保留复制过程
+- &lt;span class=&quot;entity&quot;&gt;糖酵解&lt;/span&gt;在细胞质中将葡萄糖分解为丙酮酸
+- &lt;span class=&quot;entity&quot;&gt;细胞凋亡&lt;/span&gt;是程序性细胞死亡过程
+</code></pre>
+<p><strong>边界情况</strong>：
+| 场景 | 处理方式 | 示例 |
+|------|----------|------|
+| 过程 vs 结果 | 标过程 | <span class="entity">转录</span>产生mRNA |
+| 过程+位置 | 仅标过程 | <span class="entity">翻译</span>在核糖体上进行 → 不标核糖体 |
+| 多步骤过程 | 可整体或分步 | <span class="entity">基因表达</span>或分别标<span class="entity">转录</span><span class="entity">翻译</span> |</p>
+<hr />
+<h3 id="25-x">2.5 技术方法 <span class="entity">X</span></h3>
+<p><strong>定义</strong>：分子生物学研究中使用的实验技术、分析方法和操作步骤。</p>
+<p><strong>标注范围</strong>：</p></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

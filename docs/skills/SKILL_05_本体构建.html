@@ -161,492 +161,531 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 05: 本体构建 — 分子生物学课程知识图谱</h1>
-<p>&gt; 构建分子生物学课程的 OWL/RDF 本体体系，支持知识检索、学习路径规划和智能教学应用。</p>
-<p>---</p>
-<h2>一、本体概览</h2>
-<p>### 1.1 设计目标</p>
-<p>- **概念层次化**：从中心法则到具体机制的完整分类体系</p>
-<p>- **学习路径化**：支持基础→进阶→应用的学习轨迹</p>
-<p>- **知识关联化**：前置依赖、相关知识点、应用场景的语义关联</p>
-<p>- **教学智能化**：支撑自适应学习、薄弱点诊断、题库推荐</p>
-<p>### 1.2 核心本体结构</p>
-<p>```</p>
-<p>MolBioOntology (分子生物学本体)</p>
-<p>├── Concept (概念本体) — 知识内容分类</p>
-<p>├── LearningPath (学习路径本体) — 学习轨迹与进度</p>
-<p>├── Prerequisite (前置依赖本体) — 知识点依赖图谱</p>
-<p>├── Assessment (评估本体) — 题目、难度、掌握度</p>
-<p>└── User (用户本体) — 学习者画像与状态</p>
-<p>```</p>
-<p>---</p>
-<h2>二、概念本体 (Concept Ontology)</h2>
-<p>### 2.1 分类树结构</p>
-<p>```</p>
-<p>MolBioConcept (分子生物学概念)</p>
-<p>├── CentralDogma (中心法则)</p>
-<p>│   ├── DNAReplication (DNA复制)</p>
-<p>│   │   ├── ReplicationMechanism (复制机制)</p>
-<p>│   │   │   ├── SemiConservativeReplication (半保留复制)</p>
-<p>│   │   │   ├── ReplicationFork (复制叉)</p>
-<p>│   │   │   ├── LeadingStrand (前导链)</p>
-<p>│   │   │   ├── LaggingStrand (后随链)</p>
-<p>│   │   │   └── OkazakiFragment (冈崎片段)</p>
-<p>│   │   ├── ReplicationEnzymes (复制相关酶)</p>
-<p>│   │   │   ├── DNAHelicase (解旋酶)</p>
-<p>│   │   │   ├── DNAPolymerase (DNA聚合酶)</p>
-<p>│   │   │   │   ├── DNAPolymeraseI (DNA聚合酶I)</p>
-<p>│   │   │   │   ├── DNAPolymeraseII (DNA聚合酶II)</p>
-<p>│   │   │   │   └── DNAPolymeraseIII (DNA聚合酶III)</p>
-<p>│   │   │   ├── Primase (引物酶)</p>
-<p>│   │   │   ├── DNA Ligase (DNA连接酶)</p>
-<p>│   │   │   └── Topoisomerase (拓扑异构酶)</p>
-<p>│   │   ├── ReplicationRegulation (复制调控)</p>
-<p>│   │   │   ├── OriginOfReplication (复制起点)</p>
-<p>│   │   │   ├── ReplicationLicensing (复制许可)</p>
-<p>│   │   │   └── CellCycleControl (细胞周期控制)</p>
-<p>│   │   └── ReplicationErrors (复制错误与修复)</p>
-<p>│   │       ├── MismatchRepair (错配修复)</p>
-<p>│   │       ├── NucleotideExcisionRepair (核苷酸切除修复)</p>
-<p>│   │       └── BaseExcisionRepair (碱基切除修复)</p>
-<p>│   │</p>
-<p>│   ├── Transcription (转录)</p>
-<p>│   │   ├── TranscriptionMechanism (转录机制)</p>
-<p>│   │   │   ├── Initiation (起始)</p>
-<p>│   │   │   ├── Elongation (延伸)</p>
-<p>│   │   │   └── Termination (终止)</p>
-<p>│   │   ├── RNA Polymerase (RNA聚合酶)</p>
-<p>│   │   │   ├── RNAPolymeraseI (RNA聚合酶I)</p>
-<p>│   │   │   ├── RNAPolymeraseII (RNA聚合酶II)</p>
-<p>│   │   │   └── RNAPolymeraseIII (RNA聚合酶III)</p>
-<p>│   │   ├── TranscriptionFactors (转录因子)</p>
-<p>│   │   │   ├── GeneralTranscriptionFactors (通用转录因子)</p>
-<p>│   │   │   │   ├── TFIID (TFIID复合物)</p>
-<p>│   │   │   │   ├── TFIIB (TFIIB)</p>
-<p>│   │   │   │   └── TFIIF (TFIIF)</p>
-<p>│   │   │   └── SpecificTranscriptionFactors (特异性转录因子)</p>
-<p>│   │   ├── PostTranscriptionalModification (转录后修饰)</p>
-<p>│   │   │   ├── Capping (5&#x27;端加帽)</p>
-<p>│   │   │   ├── Splicing (剪接)</p>
-<p>│   │   │   │   ├── Spliceosome (剪接体)</p>
-<p>│   │   │   │   ├── Intron (内含子)</p>
-<p>│   │   │   │   └── Exon (外显子)</p>
-<p>│   │   │   └── Polyadenylation (多聚腺苷酸化)</p>
-<p>│   │   └── RegulationOfTranscription (转录调控)</p>
-<p>│   │       ├── OperonModel (操纵子模型)</p>
-<p>│   │       ├── LacOperon (乳糖操纵子)</p>
-<p>│   │       └── TrpOperon (色氨酸操纵子)</p>
-<p>│   │</p>
-<p>│   └── Translation (翻译)</p>
-<p>│       ├── TranslationMechanism (翻译机制)</p>
-<p>│       │   ├── Initiation (起始)</p>
-<p>│       │   ├── Elongation (延伸)</p>
-<p>│       │   └── Termination (终止)</p>
-<p>│       ├── Ribosome (核糖体)</p>
-<p>│       │   ├── SmallSubunit (小亚基)</p>
-<p>│       │   ├── LargeSubunit (大亚基)</p>
-<p>│       │   ├── A Site (A位点)</p>
-<p>│       │   ├── P Site (P位点)</p>
-<p>│       │   └── E Site (E位点)</p>
-<p>│       ├── tRNA (转运RNA)</p>
-<p>│       │   ├── Anticodon (反密码子)</p>
-<p>│       │   ├── Aminoacylation (氨酰化)</p>
-<p>│       │   └── WobbleHypothesis (摆动假说)</p>
-<p>│       ├── GeneticCode (遗传密码)</p>
-<p>│       │   ├── Codon (密码子)</p>
-<p>│       │   ├── StartCodon (起始密码子)</p>
-<p>│       │   ├── StopCodon (终止密码子)</p>
-<p>│       │   └── Degeneracy (简并性)</p>
-<p>│       └── PostTranslationalModification (翻译后修饰)</p>
-<p>│           ├── ProteinFolding (蛋白质折叠)</p>
-<p>│           ├── Glycosylation (糖基化)</p>
-<p>│           └── Phosphorylation (磷酸化)</p>
-<p>│</p>
-<p>├── GeneExpressionRegulation (基因表达调控)</p>
-<p>│   ├── Epigenetics (表观遗传学)</p>
-<p>│   │   ├── DNAMethylation (DNA甲基化)</p>
-<p>│   │   ├── HistoneModification (组蛋白修饰)</p>
-<p>│   │   └── ChromatinRemodeling (染色质重塑)</p>
-<p>│   ├── NonCodingRNA (非编码RNA)</p>
-<p>│   │   ├── miRNA (微小RNA)</p>
-<p>│   │   ├── siRNA (小干扰RNA)</p>
-<p>│   │   └── lncRNA (长链非编码RNA)</p>
-<p>│   └── SignalTransduction (信号转导)</p>
-<p>│       ├── Receptor (受体)</p>
-<p>│       ├── SecondMessenger (第二信使)</p>
-<p>│       └── TranscriptionFactorActivation (转录因子激活)</p>
-<p>│</p>
-<p>├── MolecularTechniques (分子生物学技术)</p>
-<p>│   ├── PCR (聚合酶链式反应)</p>
-<p>│   │   ├── StandardPCR (标准PCR)</p>
-<p>│   │   ├── RTPCR (逆转录PCR)</p>
-<p>│   │   └── RealTimePCR (实时定量PCR)</p>
-<p>│   ├── Electrophoresis (电泳技术)</p>
-<p>│   │   ├── GelElectrophoresis (凝胶电泳)</p>
-<p>│   │   └── CapillaryElectrophoresis (毛细管电泳)</p>
-<p>│   ├── Sequencing (测序技术)</p>
-<p>│   │   ├── SangerSequencing (桑格测序)</p>
-<p>│   │   ├── NextGenerationSequencing (二代测序)</p>
-<p>│   │   └── ThirdGenerationSequencing (三代测序)</p>
-<p>│   ├── Cloning (克隆技术)</p>
-<p>│   │   ├── RestrictionEnzyme (限制性内切酶)</p>
-<p>│   │   ├── Vector (载体)</p>
-<p>│   │   └── Transformation (转化)</p>
-<p>│   └── CRISPR (基因编辑)</p>
-<p>│       ├── Cas9 (Cas9蛋白)</p>
-<p>│       ├── gRNA (向导RNA)</p>
-<p>│       └── OffTargetEffects (脱靶效应)</p>
-<p>│</p>
-<p>└── ApplicationDomain (应用领域)</p>
-<p>    ├── MedicalApplication (医学应用)</p>
-<p>    │   ├── GeneticDisease (遗传病)</p>
-<p>    │   ├── CancerBiology (肿瘤生物学)</p>
-<p>    │   └── GeneTherapy (基因治疗)</p>
-<p>    ├── AgriculturalApplication (农业应用)</p>
-<p>    │   ├── GMO (转基因生物)</p>
-<p>    │   └── MolecularBreeding (分子育种)</p>
-<p>    └── IndustrialApplication (工业应用)</p>
-<p>        ├── SyntheticBiology (合成生物学)</p>
-<p>        └── Biopharmaceuticals (生物制药)</p>
-<p>```</p>
-<p>### 2.2 OWL/RDF 表示规范</p>
-<p>#### 命名空间</p>
-<p>```turtle</p>
-<p>@prefix mb: &lt;http://molbio.edu/ontology/2025/1/&gt; .</p>
-<p>@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .</p>
-<p>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .</p>
-<p>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</p>
-<p>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</p>
-<p>```</p>
-<p>#### 类定义示例</p>
-<p>```turtle</p>
-<h1>顶层类</h1>
-<p>mb:CentralDogma a owl:Class ;</p>
-<p>    rdfs:label &quot;中心法则&quot;@zh, &quot;Central Dogma&quot;@en ;</p>
-<p>    rdfs:comment &quot;分子生物学的核心理论框架，描述遗传信息从DNA到RNA到蛋白质的流动&quot;@zh .</p>
-<h1>子类定义</h1>
-<p>mb:DNAReplication a owl:Class ;</p>
-<p>    rdfs:subClassOf mb:CentralDogma ;</p>
-<p>    rdfs:label &quot;DNA复制&quot;@zh, &quot;DNA Replication&quot;@en ;</p>
-<p>    rdfs:comment &quot;DNA分子自我复制的过程&quot;@zh .</p>
-<p>mb:ReplicationMechanism a owl:Class ;</p>
-<p>    rdfs:subClassOf mb:DNAReplication ;</p>
-<p>    rdfs:label &quot;复制机制&quot;@zh, &quot;Replication Mechanism&quot;@en .</p>
-<h1>实例定义（具体知识点）</h1>
-<p>mb:SemiConservativeReplication a mb:ReplicationMechanism ;</p>
-<p>    rdfs:label &quot;半保留复制&quot;@zh, &quot;Semi-conservative Replication&quot;@en ;</p>
-<p>    rdfs:comment &quot;DNA复制时，每条亲代链作为模板合成新的互补链，形成两个子代DNA分子，每个子代分子包含一条亲代链和一条新链&quot;@zh ;</p>
-<p>    mb:hasDifficulty &quot;basic&quot; ;</p>
-<p>    mb:estimatedStudyTime &quot;30&quot;^^xsd:integer ;</p>
-<p>    mb:hasImportance &quot;core&quot; .</p>
-<p>```</p>
-<p>### 2.3 属性定义</p>
-<p>```turtle</p>
-<h1>数据属性</h1>
-<p>mb:hasDifficulty a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:MolBioConcept ;</p>
-<p>    rdfs:range xsd:string ;</p>
-<p>    rdfs:label &quot;难度等级&quot;@zh ;</p>
-<p>    rdfs:comment &quot;知识点的难度等级：basic(基础), intermediate(进阶), advanced(高级)&quot;@zh .</p>
-<p>mb:estimatedStudyTime a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:MolBioConcept ;</p>
-<p>    rdfs:range xsd:integer ;</p>
-<p>    rdfs:label &quot;建议学习时长(分钟)&quot;@zh .</p>
-<p>mb:hasImportance a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:MolBioConcept ;</p>
-<p>    rdfs:range xsd:string ;</p>
-<p>    rdfs:label &quot;重要程度&quot;@zh ;</p>
-<p>    rdfs:comment &quot;core(核心), important(重要), supplementary(补充)&quot;@zh .</p>
-<h1>对象属性</h1>
-<p>mb:hasSubConcept a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:MolBioConcept ;</p>
-<p>    rdfs:range mb:MolBioConcept ;</p>
-<p>    rdfs:label &quot;包含子概念&quot;@zh .</p>
-<p>mb:isPartOf a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:MolBioConcept ;</p>
-<p>    rdfs:range mb:MolBioConcept ;</p>
-<p>    rdfs:label &quot;属于&quot;@zh ;</p>
-<p>    owl:inverseOf mb:hasSubConcept .</p>
-<p>```</p>
-<p>---</p>
-<h2>三、学习路径本体 (Learning Path Ontology)</h2>
-<p>### 3.1 学习阶段定义</p>
-<p>```turtle</p>
-<p>mb:LearningStage a owl:Class ;</p>
-<p>    rdfs:label &quot;学习阶段&quot;@zh .</p>
-<p>mb:FoundationStage a mb:LearningStage ;</p>
-<p>    rdfs:label &quot;基础阶段&quot;@zh ;</p>
-<p>    rdfs:comment &quot;掌握基本概念和原理&quot;@zh .</p>
-<p>mb:IntermediateStage a mb:LearningStage ;</p>
-<p>    rdfs:label &quot;进阶阶段&quot;@zh ;</p>
-<p>    rdfs:comment &quot;理解机制细节和调控&quot;@zh .</p>
-<p>mb:AdvancedStage a mb:LearningStage ;</p>
-<p>    rdfs:label &quot;应用阶段&quot;@zh ;</p>
-<p>    rdfs:comment &quot;能够应用知识解决问题&quot;@zh .</p>
-<p>```</p>
-<p>### 3.2 学习路径定义</p>
-<p>```turtle</p>
-<p>mb:LearningPath a owl:Class ;</p>
-<p>    rdfs:label &quot;学习路径&quot;@zh .</p>
-<p>mb:hasStage a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:LearningPath ;</p>
-<p>    rdfs:range mb:LearningStage .</p>
-<p>mb:hasConcept a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:LearningStage ;</p>
-<p>    rdfs:range mb:MolBioConcept .</p>
-<h1>示例：DNA复制的学习路径</h1>
-<p>mb:DNAReplicationPath a mb:LearningPath ;</p>
-<p>    rdfs:label &quot;DNA复制学习路径&quot;@zh ;</p>
-<p>    mb:hasStage mb:DNAReplicationFoundation ;</p>
-<p>    mb:hasStage mb:DNAReplicationIntermediate ;</p>
-<p>    mb:hasStage mb:DNAReplicationAdvanced .</p>
-<p>mb:DNAReplicationFoundation a mb:LearningStage ;</p>
-<p>    rdfs:label &quot;DNA复制-基础阶段&quot;@zh ;</p>
-<p>    mb:hasConcept mb:SemiConservativeReplication ;</p>
-<p>    mb:hasConcept mb:ReplicationFork ;</p>
-<p>    mb:hasConcept mb:DNAPolymerase .</p>
-<p>mb:DNAReplicationIntermediate a mb:LearningStage ;</p>
-<p>    rdfs:label &quot;DNA复制-进阶阶段&quot;@zh ;</p>
-<p>    mb:hasConcept mb:LeadingStrand ;</p>
-<p>    mb:hasConcept mb:LaggingStrand ;</p>
-<p>    mb:hasConcept mb:OkazakiFragment ;</p>
-<p>    mb:hasConcept mb:Primase .</p>
-<p>mb:DNAReplicationAdvanced a mb:LearningStage ;</p>
-<p>    rdfs:label &quot;DNA复制-应用阶段&quot;@zh ;</p>
-<p>    mb:hasConcept mb:ReplicationRegulation ;</p>
-<p>    mb:hasConcept mb:MismatchRepair .</p>
-<p>```</p>
-<p>---</p>
-<h2>四、前置依赖本体 (Prerequisite Ontology)</h2>
-<p>### 4.1 依赖关系定义</p>
-<p>```turtle</p>
-<p>mb:requires a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:MolBioConcept ;</p>
-<p>    rdfs:range mb:MolBioConcept ;</p>
-<p>    rdfs:label &quot;前置知识&quot;@zh ;</p>
-<p>    rdfs:comment &quot;学习此知识点前必须先掌握的前置知识&quot;@zh .</p>
-<p>mb:isPrerequisiteFor a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:MolBioConcept ;</p>
-<p>    rdfs:range mb:MolBioConcept ;</p>
-<p>    rdfs:label &quot;是...的前置知识&quot;@zh ;</p>
-<p>    owl:inverseOf mb:requires .</p>
-<p>mb:requiresLevel a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:requires ;</p>
-<p>    rdfs:range xsd:string ;</p>
-<p>    rdfs:label &quot;依赖程度&quot;@zh ;</p>
-<p>    rdfs:comment &quot;strong(强依赖), weak(弱依赖), recommended(推荐)&quot;@zh .</p>
-<p>```</p>
-<p>### 4.2 依赖图谱示例</p>
-<p>```</p>
-<p>DNA复制</p>
-<p>├── 前置：DNA结构 (强依赖)</p>
-<p>├── 前置：碱基配对原则 (强依赖)</p>
-<p>├── 前置：酶的基本概念 (弱依赖)</p>
-<p>└── 是以下知识的前置：</p>
-<p>    ├── 复制错误修复 (强依赖)</p>
-<p>    ├── PCR技术 (强依赖)</p>
-<p>    └── 细胞周期调控 (弱依赖)</p>
-<p>转录</p>
-<p>├── 前置：DNA结构 (强依赖)</p>
-<p>├── 前置：RNA与DNA的区别 (强依赖)</p>
-<p>├── 前置：DNA复制 (推荐)</p>
-<p>└── 是以下知识的前置：</p>
-<p>    ├── 转录调控 (强依赖)</p>
-<p>    ├── 转录后修饰 (强依赖)</p>
-<p>    └── 翻译 (弱依赖)</p>
-<p>翻译</p>
-<p>├── 前置：转录 (强依赖)</p>
-<p>├── 前置：RNA结构 (强依赖)</p>
-<p>├── 前置：遗传密码 (强依赖)</p>
-<p>└── 是以下知识的前置：</p>
-<p>    ├── 翻译后修饰 (强依赖)</p>
-<p>    └── 蛋白质功能 (弱依赖)</p>
-<p>```</p>
-<p>### 4.3 RDF表示</p>
-<p>```turtle</p>
-<h1>DNA复制的前置依赖</h1>
-<p>mb:DNAReplication mb:requires mb:DNAStructure ;</p>
-<p>    mb:requiresLevel &quot;strong&quot; .</p>
-<p>mb:DNAReplication mb:requires mb:BasePairing ;</p>
-<p>    mb:requiresLevel &quot;strong&quot; .</p>
-<p>mb:DNAReplication mb:requires mb:EnzymeBasic ;</p>
-<p>    mb:requiresLevel &quot;weak&quot; .</p>
-<h1>DNA复制是后续知识的前置</h1>
-<p>mb:MismatchRepair mb:requires mb:DNAReplication ;</p>
-<p>    mb:requiresLevel &quot;strong&quot; .</p>
-<p>mb:PCR mb:requires mb:DNAReplication ;</p>
-<p>    mb:requiresLevel &quot;strong&quot; .</p>
-<p>```</p>
-<p>---</p>
-<h2>五、评估本体 (Assessment Ontology)</h2>
-<p>### 5.1 题目类型定义</p>
-<p>```turtle</p>
-<p>mb:Question a owl:Class ;</p>
-<p>    rdfs:label &quot;题目&quot;@zh .</p>
-<p>mb:SingleChoice a mb:Question ;</p>
-<p>    rdfs:label &quot;单选题&quot;@zh .</p>
-<p>mb:MultipleChoice a mb:Question ;</p>
-<p>    rdfs:label &quot;多选题&quot;@zh .</p>
-<p>mb:FillInBlank a mb:Question ;</p>
-<p>    rdfs:label &quot;填空题&quot;@zh .</p>
-<p>mb:ShortAnswer a mb:Question ;</p>
-<p>    rdfs:label &quot;简答题&quot;@zh .</p>
-<p>mb:Calculation a mb:Question ;</p>
-<p>    rdfs:label &quot;计算题&quot;@zh .</p>
-<p>mb:CaseAnalysis a mb:Question ;</p>
-<p>    rdfs:label &quot;案例分析题&quot;@zh .</p>
-<p>```</p>
-<p>### 5.2 题目属性</p>
-<p>```turtle</p>
-<p>mb:hasQuestionText a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:Question ;</p>
-<p>    rdfs:range xsd:string ;</p>
-<p>    rdfs:label &quot;题目内容&quot;@zh .</p>
-<p>mb:hasAnswer a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:Question ;</p>
-<p>    rdfs:range xsd:string ;</p>
-<p>    rdfs:label &quot;参考答案&quot;@zh .</p>
-<p>mb:questionDifficulty a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:Question ;</p>
-<p>    rdfs:range xsd:string ;</p>
-<p>    rdfs:label &quot;题目难度&quot;@zh ;</p>
-<p>    rdfs:comment &quot;L1(基础), L2(简单), L3(中等), L4(较难), L5(困难)&quot;@zh .</p>
-<p>mb:discriminationIndex a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:Question ;</p>
-<p>    rdfs:range xsd:float ;</p>
-<p>    rdfs:label &quot;区分度&quot;@zh .</p>
-<p>mb:testConcept a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:Question ;</p>
-<p>    rdfs:range mb:MolBioConcept ;</p>
-<p>    rdfs:label &quot;考查知识点&quot;@zh .</p>
-<p>mb:requiresConcepts a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:Question ;</p>
-<p>    rdfs:range mb:MolBioConcept ;</p>
-<p>    rdfs:label &quot;涉及知识点&quot;@zh .</p>
-<p>```</p>
-<p>---</p>
-<h2>六、用户本体 (User Ontology)</h2>
-<p>### 6.1 学习者画像</p>
-<p>```turtle</p>
-<p>mb:Learner a owl:Class ;</p>
-<p>    rdfs:label &quot;学习者&quot;@zh .</p>
-<p>mb:hasLearnerProfile a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:Learner ;</p>
-<p>    rdfs:range mb:LearnerProfile .</p>
-<p>mb:LearnerProfile a owl:Class ;</p>
-<p>    rdfs:label &quot;学习者画像&quot;@zh .</p>
-<p>mb:learningStyle a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:LearnerProfile ;</p>
-<p>    rdfs:range xsd:string ;</p>
-<p>    rdfs:label &quot;学习风格&quot;@zh ;</p>
-<p>    rdfs:comment &quot;visual(视觉型), auditory(听觉型), kinesthetic(动觉型), reading(阅读型)&quot;@zh .</p>
-<p>mb:currentLevel a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:LearnerProfile ;</p>
-<p>    rdfs:range xsd:string ;</p>
-<p>    rdfs:label &quot;当前水平&quot;@zh ;</p>
-<p>    rdfs:comment &quot;beginner(初学者), intermediate(中级), advanced(高级)&quot;@zh .</p>
-<p>```</p>
-<p>### 6.2 学习状态追踪</p>
-<p>```turtle</p>
-<p>mb:ConceptMastery a owl:Class ;</p>
-<p>    rdfs:label &quot;知识点掌握度&quot;@zh .</p>
-<p>mb:forConcept a owl:ObjectProperty ;</p>
-<p>    rdfs:domain mb:ConceptMastery ;</p>
-<p>    rdfs:range mb:MolBioConcept .</p>
-<p>mb:masteryLevel a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:ConceptMastery ;</p>
-<p>    rdfs:range xsd:float ;</p>
-<p>    rdfs:label &quot;掌握程度(0-1)&quot;@zh .</p>
-<p>mb:lastStudied a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:ConceptMastery ;</p>
-<p>    rdfs:range xsd:dateTime ;</p>
-<p>    rdfs:label &quot;最后学习时间&quot;@zh .</p>
-<p>mb:studyCount a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:ConceptMastery ;</p>
-<p>    rdfs:range xsd:integer ;</p>
-<p>    rdfs:label &quot;学习次数&quot;@zh .</p>
-<p>mb:testAccuracy a owl:DatatypeProperty ;</p>
-<p>    rdfs:domain mb:ConceptMastery ;</p>
-<p>    rdfs:range xsd:float ;</p>
-<p>    rdfs:label &quot;测试正确率&quot;@zh .</p>
-<p>```</p>
-<p>---</p>
-<h2>七、完整本体文件结构</h2>
-<p>```</p>
-<p>molbio-ontology/</p>
-<p>├── molbio.ttl              # 主本体文件</p>
-<p>├── concepts/</p>
-<p>│   ├── central_dogma.ttl   # 中心法则概念</p>
-<p>│   ├── replication.ttl     # DNA复制概念</p>
-<p>│   ├── transcription.ttl   # 转录概念</p>
-<p>│   ├── translation.ttl     # 翻译概念</p>
-<p>│   ├── regulation.ttl      # 调控概念</p>
-<p>│   ├── techniques.ttl      # 技术概念</p>
-<p>│   └── applications.ttl    # 应用概念</p>
-<p>├── learning/</p>
-<p>│   ├── paths.ttl           # 学习路径定义</p>
-<p>│   └── stages.ttl          # 学习阶段定义</p>
-<p>├── prerequisites/</p>
-<p>│   └── dependencies.ttl    # 前置依赖关系</p>
-<p>├── assessment/</p>
-<p>│   └── question_types.ttl  # 评估相关定义</p>
-<p>└── user/</p>
-<p>    └── learner.ttl         # 用户相关定义</p>
-<p>```</p>
-<p>---</p>
-<h2>八、使用示例</h2>
-<p>### 8.1 SPARQL查询示例</p>
-<p>```sparql</p>
-<h1>查询DNA复制的所有子概念</h1>
-<p>SELECT ?concept ?label</p>
-<p>WHERE {</p>
-<p>    ?concept rdfs:subClassOf mb:DNAReplication .</p>
-<p>    ?concept rdfs:label ?label .</p>
-<p>    FILTER(LANG(?label) = &quot;zh&quot;)</p>
-<p>}</p>
-<h1>查询某知识点的前置知识</h1>
-<p>SELECT ?prereq ?label ?level</p>
-<p>WHERE {</p>
-<p>    mb:DNAReplication mb:requires ?prereq .</p>
-<p>    OPTIONAL { ?prereq rdfs:label ?label }</p>
-<p>    OPTIONAL { mb:DNAReplication mb:requiresLevel ?level }</p>
-<p>}</p>
-<h1>查询学习路径中的所有知识点</h1>
-<p>SELECT ?stage ?concept ?label</p>
-<p>WHERE {</p>
-<p>    mb:DNAReplicationPath mb:hasStage ?stage .</p>
-<p>    ?stage mb:hasConcept ?concept .</p>
-<p>    ?concept rdfs:label ?label .</p>
-<p>    FILTER(LANG(?label) = &quot;zh&quot;)</p>
-<p>}</p>
-<p>ORDER BY ?stage</p>
-<p>```</p>
-<p>### 8.2 Python使用示例</p>
-<p>```python</p>
-<p>from rdflib import Graph, Namespace, RDF, RDFS</p>
-<h1>加载本体</h1>
-<p>g = Graph()</p>
-<p>g.parse(&quot;molbio-ontology/molbio.ttl&quot;, format=&quot;turtle&quot;)</p>
-<p>MB = Namespace(&quot;http://molbio.edu/ontology/2025/1/&quot;)</p>
-<h1>获取DNA复制的所有子概念</h1>
-<p>subconcepts = g.subjects(RDFS.subClassOf, MB.DNAReplication)</p>
-<p>for concept in subconcepts:</p>
-<p>    label = g.value(concept, RDFS.label, None, default=concept)</p>
-<p>    print(f&quot;{concept}: {label}&quot;)</p>
-<h1>获取某知识点的前置依赖</h1>
-<p>prereqs = g.objects(MB.DNAReplication, MB.requires)</p>
-<p>for prereq in prereqs:</p>
-<p>    label = g.value(prereq, RDFS.label)</p>
-<p>    print(f&quot;前置知识: {label}&quot;)</p>
-<p>```</p>
-<p>---</p>
-<h2>九、设计原则总结</h2>
-<p>1. **自底向上构建**：从具体知识点归纳出类层次，而非从理论推演</p>
-<p>2. **中间层最丰富**：顶层（中心法则）过粗，底层（具体酶）过细，中间层（复制机制/复制酶）承载核心分类信息</p>
-<p>3. **多重继承支持**：某些概念可属于多个类（如PCR既是技术又涉及复制原理）</p>
-<p>4. **依赖关系显式化**：前置知识关系是学习路径规划的核心</p>
-<p>5. **教学属性完备**：难度、时长、重要程度等属性支撑智能推荐</p>
-<p>6. **可扩展性**：模块化文件结构便于后续添加新概念和应用领域</p></article></main>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-05">SKILL 05: 本体构建 — 分子生物学课程知识图谱</h1>
+<blockquote>
+<p>构建分子生物学课程的 OWL/RDF 本体体系，支持知识检索、学习路径规划和智能教学应用。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、本体概览</h2>
+<h3 id="11">1.1 设计目标</h3>
+<ul>
+<li><strong>概念层次化</strong>：从中心法则到具体机制的完整分类体系</li>
+<li><strong>学习路径化</strong>：支持基础→进阶→应用的学习轨迹</li>
+<li><strong>知识关联化</strong>：前置依赖、相关知识点、应用场景的语义关联</li>
+<li><strong>教学智能化</strong>：支撑自适应学习、薄弱点诊断、题库推荐</li>
+</ul>
+<h3 id="12">1.2 核心本体结构</h3>
+<pre><code>MolBioOntology (分子生物学本体)
+├── Concept (概念本体) — 知识内容分类
+├── LearningPath (学习路径本体) — 学习轨迹与进度
+├── Prerequisite (前置依赖本体) — 知识点依赖图谱
+├── Assessment (评估本体) — 题目、难度、掌握度
+└── User (用户本体) — 学习者画像与状态
+</code></pre>
+<hr />
+<h2 id="concept-ontology">二、概念本体 (Concept Ontology)</h2>
+<h3 id="21">2.1 分类树结构</h3>
+<pre><code>MolBioConcept (分子生物学概念)
+├── CentralDogma (中心法则)
+│   ├── DNAReplication (DNA复制)
+│   │   ├── ReplicationMechanism (复制机制)
+│   │   │   ├── SemiConservativeReplication (半保留复制)
+│   │   │   ├── ReplicationFork (复制叉)
+│   │   │   ├── LeadingStrand (前导链)
+│   │   │   ├── LaggingStrand (后随链)
+│   │   │   └── OkazakiFragment (冈崎片段)
+│   │   ├── ReplicationEnzymes (复制相关酶)
+│   │   │   ├── DNAHelicase (解旋酶)
+│   │   │   ├── DNAPolymerase (DNA聚合酶)
+│   │   │   │   ├── DNAPolymeraseI (DNA聚合酶I)
+│   │   │   │   ├── DNAPolymeraseII (DNA聚合酶II)
+│   │   │   │   └── DNAPolymeraseIII (DNA聚合酶III)
+│   │   │   ├── Primase (引物酶)
+│   │   │   ├── DNA Ligase (DNA连接酶)
+│   │   │   └── Topoisomerase (拓扑异构酶)
+│   │   ├── ReplicationRegulation (复制调控)
+│   │   │   ├── OriginOfReplication (复制起点)
+│   │   │   ├── ReplicationLicensing (复制许可)
+│   │   │   └── CellCycleControl (细胞周期控制)
+│   │   └── ReplicationErrors (复制错误与修复)
+│   │       ├── MismatchRepair (错配修复)
+│   │       ├── NucleotideExcisionRepair (核苷酸切除修复)
+│   │       └── BaseExcisionRepair (碱基切除修复)
+│   │
+│   ├── Transcription (转录)
+│   │   ├── TranscriptionMechanism (转录机制)
+│   │   │   ├── Initiation (起始)
+│   │   │   ├── Elongation (延伸)
+│   │   │   └── Termination (终止)
+│   │   ├── RNA Polymerase (RNA聚合酶)
+│   │   │   ├── RNAPolymeraseI (RNA聚合酶I)
+│   │   │   ├── RNAPolymeraseII (RNA聚合酶II)
+│   │   │   └── RNAPolymeraseIII (RNA聚合酶III)
+│   │   ├── TranscriptionFactors (转录因子)
+│   │   │   ├── GeneralTranscriptionFactors (通用转录因子)
+│   │   │   │   ├── TFIID (TFIID复合物)
+│   │   │   │   ├── TFIIB (TFIIB)
+│   │   │   │   └── TFIIF (TFIIF)
+│   │   │   └── SpecificTranscriptionFactors (特异性转录因子)
+│   │   ├── PostTranscriptionalModification (转录后修饰)
+│   │   │   ├── Capping (5'端加帽)
+│   │   │   ├── Splicing (剪接)
+│   │   │   │   ├── Spliceosome (剪接体)
+│   │   │   │   ├── Intron (内含子)
+│   │   │   │   └── Exon (外显子)
+│   │   │   └── Polyadenylation (多聚腺苷酸化)
+│   │   └── RegulationOfTranscription (转录调控)
+│   │       ├── OperonModel (操纵子模型)
+│   │       ├── LacOperon (乳糖操纵子)
+│   │       └── TrpOperon (色氨酸操纵子)
+│   │
+│   └── Translation (翻译)
+│       ├── TranslationMechanism (翻译机制)
+│       │   ├── Initiation (起始)
+│       │   ├── Elongation (延伸)
+│       │   └── Termination (终止)
+│       ├── Ribosome (核糖体)
+│       │   ├── SmallSubunit (小亚基)
+│       │   ├── LargeSubunit (大亚基)
+│       │   ├── A Site (A位点)
+│       │   ├── P Site (P位点)
+│       │   └── E Site (E位点)
+│       ├── tRNA (转运RNA)
+│       │   ├── Anticodon (反密码子)
+│       │   ├── Aminoacylation (氨酰化)
+│       │   └── WobbleHypothesis (摆动假说)
+│       ├── GeneticCode (遗传密码)
+│       │   ├── Codon (密码子)
+│       │   ├── StartCodon (起始密码子)
+│       │   ├── StopCodon (终止密码子)
+│       │   └── Degeneracy (简并性)
+│       └── PostTranslationalModification (翻译后修饰)
+│           ├── ProteinFolding (蛋白质折叠)
+│           ├── Glycosylation (糖基化)
+│           └── Phosphorylation (磷酸化)
+│
+├── GeneExpressionRegulation (基因表达调控)
+│   ├── Epigenetics (表观遗传学)
+│   │   ├── DNAMethylation (DNA甲基化)
+│   │   ├── HistoneModification (组蛋白修饰)
+│   │   └── ChromatinRemodeling (染色质重塑)
+│   ├── NonCodingRNA (非编码RNA)
+│   │   ├── miRNA (微小RNA)
+│   │   ├── siRNA (小干扰RNA)
+│   │   └── lncRNA (长链非编码RNA)
+│   └── SignalTransduction (信号转导)
+│       ├── Receptor (受体)
+│       ├── SecondMessenger (第二信使)
+│       └── TranscriptionFactorActivation (转录因子激活)
+│
+├── MolecularTechniques (分子生物学技术)
+│   ├── PCR (聚合酶链式反应)
+│   │   ├── StandardPCR (标准PCR)
+│   │   ├── RTPCR (逆转录PCR)
+│   │   └── RealTimePCR (实时定量PCR)
+│   ├── Electrophoresis (电泳技术)
+│   │   ├── GelElectrophoresis (凝胶电泳)
+│   │   └── CapillaryElectrophoresis (毛细管电泳)
+│   ├── Sequencing (测序技术)
+│   │   ├── SangerSequencing (桑格测序)
+│   │   ├── NextGenerationSequencing (二代测序)
+│   │   └── ThirdGenerationSequencing (三代测序)
+│   ├── Cloning (克隆技术)
+│   │   ├── RestrictionEnzyme (限制性内切酶)
+│   │   ├── Vector (载体)
+│   │   └── Transformation (转化)
+│   └── CRISPR (基因编辑)
+│       ├── Cas9 (Cas9蛋白)
+│       ├── gRNA (向导RNA)
+│       └── OffTargetEffects (脱靶效应)
+│
+└── ApplicationDomain (应用领域)
+    ├── MedicalApplication (医学应用)
+    │   ├── GeneticDisease (遗传病)
+    │   ├── CancerBiology (肿瘤生物学)
+    │   └── GeneTherapy (基因治疗)
+    ├── AgriculturalApplication (农业应用)
+    │   ├── GMO (转基因生物)
+    │   └── MolecularBreeding (分子育种)
+    └── IndustrialApplication (工业应用)
+        ├── SyntheticBiology (合成生物学)
+        └── Biopharmaceuticals (生物制药)
+</code></pre>
+<h3 id="22-owlrdf">2.2 OWL/RDF 表示规范</h3>
+<h4 id="_2">命名空间</h4>
+<pre><code class="language-turtle">@prefix mb: &lt;http://molbio.edu/ontology/2025/1/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+</code></pre>
+<h4 id="_3">类定义示例</h4>
+<pre><code class="language-turtle"># 顶层类
+mb:CentralDogma a owl:Class ;
+    rdfs:label &quot;中心法则&quot;@zh, &quot;Central Dogma&quot;@en ;
+    rdfs:comment &quot;分子生物学的核心理论框架，描述遗传信息从DNA到RNA到蛋白质的流动&quot;@zh .
+
+# 子类定义
+mb:DNAReplication a owl:Class ;
+    rdfs:subClassOf mb:CentralDogma ;
+    rdfs:label &quot;DNA复制&quot;@zh, &quot;DNA Replication&quot;@en ;
+    rdfs:comment &quot;DNA分子自我复制的过程&quot;@zh .
+
+mb:ReplicationMechanism a owl:Class ;
+    rdfs:subClassOf mb:DNAReplication ;
+    rdfs:label &quot;复制机制&quot;@zh, &quot;Replication Mechanism&quot;@en .
+
+# 实例定义（具体知识点）
+mb:SemiConservativeReplication a mb:ReplicationMechanism ;
+    rdfs:label &quot;半保留复制&quot;@zh, &quot;Semi-conservative Replication&quot;@en ;
+    rdfs:comment &quot;DNA复制时，每条亲代链作为模板合成新的互补链，形成两个子代DNA分子，每个子代分子包含一条亲代链和一条新链&quot;@zh ;
+    mb:hasDifficulty &quot;basic&quot; ;
+    mb:estimatedStudyTime &quot;30&quot;^^xsd:integer ;
+    mb:hasImportance &quot;core&quot; .
+</code></pre>
+<h3 id="23">2.3 属性定义</h3>
+<pre><code class="language-turtle"># 数据属性
+mb:hasDifficulty a owl:DatatypeProperty ;
+    rdfs:domain mb:MolBioConcept ;
+    rdfs:range xsd:string ;
+    rdfs:label &quot;难度等级&quot;@zh ;
+    rdfs:comment &quot;知识点的难度等级：basic(基础), intermediate(进阶), advanced(高级)&quot;@zh .
+
+mb:estimatedStudyTime a owl:DatatypeProperty ;
+    rdfs:domain mb:MolBioConcept ;
+    rdfs:range xsd:integer ;
+    rdfs:label &quot;建议学习时长(分钟)&quot;@zh .
+
+mb:hasImportance a owl:DatatypeProperty ;
+    rdfs:domain mb:MolBioConcept ;
+    rdfs:range xsd:string ;
+    rdfs:label &quot;重要程度&quot;@zh ;
+    rdfs:comment &quot;core(核心), important(重要), supplementary(补充)&quot;@zh .
+
+# 对象属性
+mb:hasSubConcept a owl:ObjectProperty ;
+    rdfs:domain mb:MolBioConcept ;
+    rdfs:range mb:MolBioConcept ;
+    rdfs:label &quot;包含子概念&quot;@zh .
+
+mb:isPartOf a owl:ObjectProperty ;
+    rdfs:domain mb:MolBioConcept ;
+    rdfs:range mb:MolBioConcept ;
+    rdfs:label &quot;属于&quot;@zh ;
+    owl:inverseOf mb:hasSubConcept .
+</code></pre>
+<hr />
+<h2 id="learning-path-ontology">三、学习路径本体 (Learning Path Ontology)</h2>
+<h3 id="31">3.1 学习阶段定义</h3>
+<pre><code class="language-turtle">mb:LearningStage a owl:Class ;
+    rdfs:label &quot;学习阶段&quot;@zh .
+
+mb:FoundationStage a mb:LearningStage ;
+    rdfs:label &quot;基础阶段&quot;@zh ;
+    rdfs:comment &quot;掌握基本概念和原理&quot;@zh .
+
+mb:IntermediateStage a mb:LearningStage ;
+    rdfs:label &quot;进阶阶段&quot;@zh ;
+    rdfs:comment &quot;理解机制细节和调控&quot;@zh .
+
+mb:AdvancedStage a mb:LearningStage ;
+    rdfs:label &quot;应用阶段&quot;@zh ;
+    rdfs:comment &quot;能够应用知识解决问题&quot;@zh .
+</code></pre>
+<h3 id="32">3.2 学习路径定义</h3>
+<pre><code class="language-turtle">mb:LearningPath a owl:Class ;
+    rdfs:label &quot;学习路径&quot;@zh .
+
+mb:hasStage a owl:ObjectProperty ;
+    rdfs:domain mb:LearningPath ;
+    rdfs:range mb:LearningStage .
+
+mb:hasConcept a owl:ObjectProperty ;
+    rdfs:domain mb:LearningStage ;
+    rdfs:range mb:MolBioConcept .
+
+# 示例：DNA复制的学习路径
+mb:DNAReplicationPath a mb:LearningPath ;
+    rdfs:label &quot;DNA复制学习路径&quot;@zh ;
+    mb:hasStage mb:DNAReplicationFoundation ;
+    mb:hasStage mb:DNAReplicationIntermediate ;
+    mb:hasStage mb:DNAReplicationAdvanced .
+
+mb:DNAReplicationFoundation a mb:LearningStage ;
+    rdfs:label &quot;DNA复制-基础阶段&quot;@zh ;
+    mb:hasConcept mb:SemiConservativeReplication ;
+    mb:hasConcept mb:ReplicationFork ;
+    mb:hasConcept mb:DNAPolymerase .
+
+mb:DNAReplicationIntermediate a mb:LearningStage ;
+    rdfs:label &quot;DNA复制-进阶阶段&quot;@zh ;
+    mb:hasConcept mb:LeadingStrand ;
+    mb:hasConcept mb:LaggingStrand ;
+    mb:hasConcept mb:OkazakiFragment ;
+    mb:hasConcept mb:Primase .
+
+mb:DNAReplicationAdvanced a mb:LearningStage ;
+    rdfs:label &quot;DNA复制-应用阶段&quot;@zh ;
+    mb:hasConcept mb:ReplicationRegulation ;
+    mb:hasConcept mb:MismatchRepair .
+</code></pre>
+<hr />
+<h2 id="prerequisite-ontology">四、前置依赖本体 (Prerequisite Ontology)</h2>
+<h3 id="41">4.1 依赖关系定义</h3>
+<pre><code class="language-turtle">mb:requires a owl:ObjectProperty ;
+    rdfs:domain mb:MolBioConcept ;
+    rdfs:range mb:MolBioConcept ;
+    rdfs:label &quot;前置知识&quot;@zh ;
+    rdfs:comment &quot;学习此知识点前必须先掌握的前置知识&quot;@zh .
+
+mb:isPrerequisiteFor a owl:ObjectProperty ;
+    rdfs:domain mb:MolBioConcept ;
+    rdfs:range mb:MolBioConcept ;
+    rdfs:label &quot;是...的前置知识&quot;@zh ;
+    owl:inverseOf mb:requires .
+
+mb:requiresLevel a owl:DatatypeProperty ;
+    rdfs:domain mb:requires ;
+    rdfs:range xsd:string ;
+    rdfs:label &quot;依赖程度&quot;@zh ;
+    rdfs:comment &quot;strong(强依赖), weak(弱依赖), recommended(推荐)&quot;@zh .
+</code></pre>
+<h3 id="42">4.2 依赖图谱示例</h3>
+<pre><code>DNA复制
+├── 前置：DNA结构 (强依赖)
+├── 前置：碱基配对原则 (强依赖)
+├── 前置：酶的基本概念 (弱依赖)
+└── 是以下知识的前置：
+    ├── 复制错误修复 (强依赖)
+    ├── PCR技术 (强依赖)
+    └── 细胞周期调控 (弱依赖)
+
+转录
+├── 前置：DNA结构 (强依赖)
+├── 前置：RNA与DNA的区别 (强依赖)
+├── 前置：DNA复制 (推荐)
+└── 是以下知识的前置：
+    ├── 转录调控 (强依赖)
+    ├── 转录后修饰 (强依赖)
+    └── 翻译 (弱依赖)
+
+翻译
+├── 前置：转录 (强依赖)
+├── 前置：RNA结构 (强依赖)
+├── 前置：遗传密码 (强依赖)
+└── 是以下知识的前置：
+    ├── 翻译后修饰 (强依赖)
+    └── 蛋白质功能 (弱依赖)
+</code></pre>
+<h3 id="43-rdf">4.3 RDF表示</h3>
+<pre><code class="language-turtle"># DNA复制的前置依赖
+mb:DNAReplication mb:requires mb:DNAStructure ;
+    mb:requiresLevel &quot;strong&quot; .
+
+mb:DNAReplication mb:requires mb:BasePairing ;
+    mb:requiresLevel &quot;strong&quot; .
+
+mb:DNAReplication mb:requires mb:EnzymeBasic ;
+    mb:requiresLevel &quot;weak&quot; .
+
+# DNA复制是后续知识的前置
+mb:MismatchRepair mb:requires mb:DNAReplication ;
+    mb:requiresLevel &quot;strong&quot; .
+
+mb:PCR mb:requires mb:DNAReplication ;
+    mb:requiresLevel &quot;strong&quot; .
+</code></pre>
+<hr />
+<h2 id="assessment-ontology">五、评估本体 (Assessment Ontology)</h2>
+<h3 id="51">5.1 题目类型定义</h3>
+<pre><code class="language-turtle">mb:Question a owl:Class ;
+    rdfs:label &quot;题目&quot;@zh .
+
+mb:SingleChoice a mb:Question ;
+    rdfs:label &quot;单选题&quot;@zh .
+
+mb:MultipleChoice a mb:Question ;
+    rdfs:label &quot;多选题&quot;@zh .
+
+mb:FillInBlank a mb:Question ;
+    rdfs:label &quot;填空题&quot;@zh .
+
+mb:ShortAnswer a mb:Question ;
+    rdfs:label &quot;简答题&quot;@zh .
+
+mb:Calculation a mb:Question ;
+    rdfs:label &quot;计算题&quot;@zh .
+
+mb:CaseAnalysis a mb:Question ;
+    rdfs:label &quot;案例分析题&quot;@zh .
+</code></pre>
+<h3 id="52">5.2 题目属性</h3>
+<pre><code class="language-turtle">mb:hasQuestionText a owl:DatatypeProperty ;
+    rdfs:domain mb:Question ;
+    rdfs:range xsd:string ;
+    rdfs:label &quot;题目内容&quot;@zh .
+
+mb:hasAnswer a owl:DatatypeProperty ;
+    rdfs:domain mb:Question ;
+    rdfs:range xsd:string ;
+    rdfs:label &quot;参考答案&quot;@zh .
+
+mb:questionDifficulty a owl:DatatypeProperty ;
+    rdfs:domain mb:Question ;
+    rdfs:range xsd:string ;
+    rdfs:label &quot;题目难度&quot;@zh ;
+    rdfs:comment &quot;L1(基础), L2(简单), L3(中等), L4(较难), L5(困难)&quot;@zh .
+
+mb:discriminationIndex a owl:DatatypeProperty ;
+    rdfs:domain mb:Question ;
+    rdfs:range xsd:float ;
+    rdfs:label &quot;区分度&quot;@zh .
+
+mb:testConcept a owl:ObjectProperty ;
+    rdfs:domain mb:Question ;
+    rdfs:range mb:MolBioConcept ;
+    rdfs:label &quot;考查知识点&quot;@zh .
+
+mb:requiresConcepts a owl:ObjectProperty ;
+    rdfs:domain mb:Question ;
+    rdfs:range mb:MolBioConcept ;
+    rdfs:label &quot;涉及知识点&quot;@zh .
+</code></pre>
+<hr />
+<h2 id="user-ontology">六、用户本体 (User Ontology)</h2>
+<h3 id="61">6.1 学习者画像</h3>
+<pre><code class="language-turtle">mb:Learner a owl:Class ;
+    rdfs:label &quot;学习者&quot;@zh .
+
+mb:hasLearnerProfile a owl:ObjectProperty ;
+    rdfs:domain mb:Learner ;
+    rdfs:range mb:LearnerProfile .
+
+mb:LearnerProfile a owl:Class ;
+    rdfs:label &quot;学习者画像&quot;@zh .
+
+mb:learningStyle a owl:DatatypeProperty ;
+    rdfs:domain mb:LearnerProfile ;
+    rdfs:range xsd:string ;
+    rdfs:label &quot;学习风格&quot;@zh ;
+    rdfs:comment &quot;visual(视觉型), auditory(听觉型), kinesthetic(动觉型), reading(阅读型)&quot;@zh .
+
+mb:currentLevel a owl:DatatypeProperty ;
+    rdfs:domain mb:LearnerProfile ;
+    rdfs:range xsd:string ;
+    rdfs:label &quot;当前水平&quot;@zh ;
+    rdfs:comment &quot;beginner(初学者), intermediate(中级), advanced(高级)&quot;@zh .
+</code></pre>
+<h3 id="62">6.2 学习状态追踪</h3>
+<pre><code class="language-turtle">mb:ConceptMastery a owl:Class ;
+    rdfs:label &quot;知识点掌握度&quot;@zh .
+
+mb:forConcept a owl:ObjectProperty ;
+    rdfs:domain mb:ConceptMastery ;
+    rdfs:range mb:MolBioConcept .
+
+mb:masteryLevel a owl:DatatypeProperty ;
+    rdfs:domain mb:ConceptMastery ;
+    rdfs:range xsd:float ;
+    rdfs:label &quot;掌握程度(0-1)&quot;@zh .
+
+mb:lastStudied a owl:DatatypeProperty ;
+    rdfs:domain mb:ConceptMastery ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label &quot;最后学习时间&quot;@zh .
+
+mb:studyCount a owl:DatatypeProperty ;
+    rdfs:domain mb:ConceptMastery ;
+    rdfs:range xsd:integer ;
+    rdfs:label &quot;学习次数&quot;@zh .
+
+mb:testAccuracy a owl:DatatypeProperty ;
+    rdfs:domain mb:ConceptMastery ;
+    rdfs:range xsd:float ;
+    rdfs:label &quot;测试正确率&quot;@zh .
+</code></pre>
+<hr />
+<h2 id="_4">七、完整本体文件结构</h2>
+<pre><code>molbio-ontology/
+├── molbio.ttl              # 主本体文件
+├── concepts/
+│   ├── central_dogma.ttl   # 中心法则概念
+│   ├── replication.ttl     # DNA复制概念
+│   ├── transcription.ttl   # 转录概念
+│   ├── translation.ttl     # 翻译概念
+│   ├── regulation.ttl      # 调控概念
+│   ├── techniques.ttl      # 技术概念
+│   └── applications.ttl    # 应用概念
+├── learning/
+│   ├── paths.ttl           # 学习路径定义
+│   └── stages.ttl          # 学习阶段定义
+├── prerequisites/
+│   └── dependencies.ttl    # 前置依赖关系
+├── assessment/
+│   └── question_types.ttl  # 评估相关定义
+└── user/
+    └── learner.ttl         # 用户相关定义
+</code></pre>
+<hr />
+<h2 id="_5">八、使用示例</h2>
+<h3 id="81-sparql">8.1 SPARQL查询示例</h3>
+<pre><code class="language-sparql"># 查询DNA复制的所有子概念
+SELECT ?concept ?label
+WHERE {
+    ?concept rdfs:subClassOf mb:DNAReplication .
+    ?concept rdfs:label ?label .
+    FILTER(LANG(?label) = &quot;zh&quot;)
+}
+
+# 查询某知识点的前置知识
+SELECT ?prereq ?label ?level
+WHERE {
+    mb:DNAReplication mb:requires ?prereq .
+    OPTIONAL { ?prereq rdfs:label ?label }
+    OPTIONAL { mb:DNAReplication mb:requiresLevel ?level }
+}
+
+# 查询学习路径中的所有知识点
+SELECT ?stage ?concept ?label
+WHERE {
+    mb:DNAReplicationPath mb:hasStage ?stage .
+    ?stage mb:hasConcept ?concept .
+    ?concept rdfs:label ?label .
+    FILTER(LANG(?label) = &quot;zh&quot;)
+}
+ORDER BY ?stage
+</code></pre>
+<h3 id="82-python">8.2 Python使用示例</h3>
+<pre><code class="language-python">from rdflib import Graph, Namespace, RDF, RDFS
+
+# 加载本体
+g = Graph()
+g.parse(&quot;molbio-ontology/molbio.ttl&quot;, format=&quot;turtle&quot;)
+
+MB = Namespace(&quot;http://molbio.edu/ontology/2025/1/&quot;)
+
+# 获取DNA复制的所有子概念
+subconcepts = g.subjects(RDFS.subClassOf, MB.DNAReplication)
+for concept in subconcepts:
+    label = g.value(concept, RDFS.label, None, default=concept)
+    print(f&quot;{concept}: {label}&quot;)
+
+# 获取某知识点的前置依赖
+prereqs = g.objects(MB.DNAReplication, MB.requires)
+for prereq in prereqs:
+    label = g.value(prereq, RDFS.label)
+    print(f&quot;前置知识: {label}&quot;)
+</code></pre>
+<hr />
+<h2 id="_6">九、设计原则总结</h2>
+<ol>
+<li><strong>自底向上构建</strong>：从具体知识点归纳出类层次，而非从理论推演</li>
+<li><strong>中间层最丰富</strong>：顶层（中心法则）过粗，底层（具体酶）过细，中间层（复制机制/复制酶）承载核心分类信息</li>
+<li><strong>多重继承支持</strong>：某些概念可属于多个类（如PCR既是技术又涉及复制原理）</li>
+<li><strong>依赖关系显式化</strong>：前置知识关系是学习路径规划的核心</li>
+<li><strong>教学属性完备</strong>：难度、时长、重要程度等属性支撑智能推荐</li>
+<li><strong>可扩展性</strong>：模块化文件结构便于后续添加新概念和应用领域</li>
+</ol></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

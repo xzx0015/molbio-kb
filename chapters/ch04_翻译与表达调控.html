@@ -161,344 +161,674 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><nav class="chapter-nav"><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch05_%E5%8E%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7%E4%B8%8E%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第4章</span>翻译与表达调控</div><div class="article"><h2>第四章：翻译</h2>
-<h2>4.1 遗传密码</h2>
-<p><a class="pn" id="pn-1" href="#pn-1">1</a>### 密码子特征</p>
-<p><a class="pn" id="pn-2" href="#pn-2">2</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：genetic_code&quot;&gt;遗传密码&lt;/span&gt;：mRNA上编码氨基酸的三联体密码子</p>
-<p><a class="pn" id="pn-3" href="#pn-3">3</a>| 特征 | 说明 |</p>
-<p><a class="pn" id="pn-4" href="#pn-4">4</a>|------|------|</p>
-<p><a class="pn" id="pn-5" href="#pn-5">5</a>| 密码子数 | 64个（4³） |</p>
-<p><a class="pn" id="pn-6" href="#pn-6">6</a>| 编码氨基酸 | 61个 |</p>
-<p><a class="pn" id="pn-7" href="#pn-7">7</a>| 终止密码子 | 3个：UAA、UAG、UGA |</p>
-<p><a class="pn" id="pn-8" href="#pn-8">8</a>| 起始密码子 | AUG（编码Met） |</p>
-<p><a class="pn" id="pn-9" href="#pn-9">9</a>**密码子特点**：</p>
-<p><a class="pn" id="pn-10" href="#pn-10">10</a>- **简并性**：多个密码子编码同一氨基酸（如Leu有6个密码子）</p>
-<p><a class="pn" id="pn-11" href="#pn-11">11</a>- **通用性**：几乎所有生物共用（线粒体有例外）</p>
-<p><a class="pn" id="pn-12" href="#pn-12">12</a>- **连续性**：无标点，不重叠</p>
-<p><a class="pn" id="pn-13" href="#pn-13">13</a>- **方向性**：5&#x27;→3&#x27;阅读</p>
-<p><a class="pn" id="pn-14" href="#pn-14">14</a>- **不重叠性**：每个核苷酸只属于一个密码子</p>
-<p><a class="pn" id="pn-15" href="#pn-15">15</a>### 密码子表</p>
-<p><a class="pn" id="pn-16" href="#pn-16">16</a>| 第一位 | U | C | A | G |</p>
-<p><a class="pn" id="pn-17" href="#pn-17">17</a>|--------|---|---|---|---|</p>
-<p><a class="pn" id="pn-18" href="#pn-18">18</a>| **U** | Phe | Ser | Tyr | Cys |</p>
-<p><a class="pn" id="pn-19" href="#pn-19">19</a>| | Phe | Ser | Tyr | Cys |</p>
-<p><a class="pn" id="pn-20" href="#pn-20">20</a>| | Leu | Ser | STOP | STOP |</p>
-<p><a class="pn" id="pn-21" href="#pn-21">21</a>| | Leu | Ser | STOP | Trp |</p>
-<p><a class="pn" id="pn-22" href="#pn-22">22</a>| **C** | Leu | Pro | His | Arg |</p>
-<p><a class="pn" id="pn-23" href="#pn-23">23</a>| | Leu | Pro | His | Arg |</p>
-<p><a class="pn" id="pn-24" href="#pn-24">24</a>| | Leu | Pro | Gln | Arg |</p>
-<p><a class="pn" id="pn-25" href="#pn-25">25</a>| | Leu | Pro | Gln | Arg |</p>
-<p><a class="pn" id="pn-26" href="#pn-26">26</a>| **A** | Ile | Thr | Asn | Ser |</p>
-<p><a class="pn" id="pn-27" href="#pn-27">27</a>| | Ile | Thr | Asn | Ser |</p>
-<p><a class="pn" id="pn-28" href="#pn-28">28</a>| | Ile | Thr | Lys | Arg |</p>
-<p><a class="pn" id="pn-29" href="#pn-29">29</a>| | Met | Thr | Lys | Arg |</p>
-<p><a class="pn" id="pn-30" href="#pn-30">30</a>| **G** | Val | Ala | Asp | Gly |</p>
-<p><a class="pn" id="pn-31" href="#pn-31">31</a>| | Val | Ala | Asp | Gly |</p>
-<p><a class="pn" id="pn-32" href="#pn-32">32</a>| | Val | Ala | Glu | Gly |</p>
-<p><a class="pn" id="pn-33" href="#pn-33">33</a>| | Val | Ala | Glu | Gly |</p>
-<h2>4.2 tRNA与氨基酸活化</h2>
-<p><a class="pn" id="pn-34" href="#pn-34">34</a>### tRNA结构</p>
-<p><a class="pn" id="pn-35" href="#pn-35">35</a>&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;tRNA&lt;/span&gt;（转运RNA）的功能：</p>
-<p><a class="pn" id="pn-36" href="#pn-36">36</a>- 携带特定氨基酸</p>
-<p><a class="pn" id="pn-37" href="#pn-37">37</a>- 识别mRNA上的密码子（&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;反密码子&lt;/span&gt;）</p>
-<p><a class="pn" id="pn-38" href="#pn-38">38</a>**结构特征**：</p>
-<p><a class="pn" id="pn-39" href="#pn-39">39</a>- 长度：73-93个核苷酸</p>
-<p><a class="pn" id="pn-40" href="#pn-40">40</a>- 三叶草二级结构</p>
-<p><a class="pn" id="pn-41" href="#pn-41">41</a>- L形三级结构</p>
-<p><a class="pn" id="pn-42" href="#pn-42">42</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;氨基酸臂&lt;/span&gt;：3&#x27;端CCA，结合氨基酸</p>
-<p><a class="pn" id="pn-43" href="#pn-43">43</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;反密码子环&lt;/span&gt;：识别密码子</p>
-<p><a class="pn" id="pn-44" href="#pn-44">44</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;D环&lt;/span&gt;和&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;TψC环&lt;/span&gt;：结构稳定</p>
-<p><a class="pn" id="pn-45" href="#pn-45">45</a>### 氨基酸活化</p>
-<p><a class="pn" id="pn-46" href="#pn-46">46</a>&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;氨酰-tRNA合成酶&lt;/span&gt;（aaRS）：</p>
-<p><a class="pn" id="pn-47" href="#pn-47">47</a>- 催化氨基酸与tRNA连接</p>
-<p><a class="pn" id="pn-48" href="#pn-48">48</a>- 高度特异性（一种酶对应一种氨基酸）</p>
-<p><a class="pn" id="pn-49" href="#pn-49">49</a>- 两步反应：</p>
-<p><a class="pn" id="pn-50" href="#pn-50">50</a>  1. 氨基酸 + ATP → 氨酰-AMP + PPi</p>
-<p><a class="pn" id="pn-51" href="#pn-51">51</a>  2. 氨酰-AMP + tRNA → 氨酰-tRNA + AMP</p>
-<p><a class="pn" id="pn-52" href="#pn-52">52</a>**校对机制**：</p>
-<p><a class="pn" id="pn-53" href="#pn-53">53</a>- 合成酶的编辑活性</p>
-<p><a class="pn" id="pn-54" href="#pn-54">54</a>- 识别tRNA的反密码子和受体茎</p>
-<p><a class="pn" id="pn-55" href="#pn-55">55</a>- 确保翻译保真性</p>
-<p><a class="pn" id="pn-56" href="#pn-56">56</a>### 摆动配对</p>
-<p><a class="pn" id="pn-57" href="#pn-57">57</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：wobble&quot;&gt;摆动假说&lt;/span&gt;：反密码子5&#x27;位碱基与密码子3&#x27;位配对有一定灵活性</p>
-<p><a class="pn" id="pn-58" href="#pn-58">58</a>| 反密码子5&#x27;位 | 可配对密码子3&#x27;位 |</p>
-<p><a class="pn" id="pn-59" href="#pn-59">59</a>|-------------|-----------------|</p>
-<p><a class="pn" id="pn-60" href="#pn-60">60</a>| C | G |</p>
-<p><a class="pn" id="pn-61" href="#pn-61">61</a>| A | U |</p>
-<p><a class="pn" id="pn-62" href="#pn-62">62</a>| U | A或G |</p>
-<p><a class="pn" id="pn-63" href="#pn-63">63</a>| G | C或U |</p>
-<p><a class="pn" id="pn-64" href="#pn-64">64</a>| I（次黄嘌呤） | U、C或A |</p>
-<h2>4.3 核糖体</h2>
-<p><a class="pn" id="pn-65" href="#pn-65">65</a>### 核糖体结构</p>
-<p><a class="pn" id="pn-66" href="#pn-66">66</a>&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;核糖体&lt;/span&gt;是蛋白质合成的场所：</p>
-<p><a class="pn" id="pn-67" href="#pn-67">67</a>| 亚基 | 原核 | 真核 |</p>
-<p><a class="pn" id="pn-68" href="#pn-68">68</a>|------|------|------|</p>
-<p><a class="pn" id="pn-69" href="#pn-69">69</a>| 大亚基 | 50S（23S+5S rRNA + 蛋白质） | 60S（28S+5.8S+5S rRNA + 蛋白质） |</p>
-<p><a class="pn" id="pn-70" href="#pn-70">70</a>| 小亚基 | 30S（16S rRNA + 蛋白质） | 40S（18S rRNA + 蛋白质） |</p>
-<p><a class="pn" id="pn-71" href="#pn-71">71</a>| 完整 | 70S | 80S |</p>
-<p><a class="pn" id="pn-72" href="#pn-72">72</a>**rRNA功能**：</p>
-<p><a class="pn" id="pn-73" href="#pn-73">73</a>- 催化肽键形成（核酶活性）</p>
-<p><a class="pn" id="pn-74" href="#pn-74">74</a>- 提供结构框架</p>
-<p><a class="pn" id="pn-75" href="#pn-75">75</a>- 参与tRNA和mRNA结合</p>
-<p><a class="pn" id="pn-76" href="#pn-76">76</a>### 核糖体功能位点</p>
-<p><a class="pn" id="pn-77" href="#pn-77">77</a>| 位点 | 名称 | 功能 |</p>
-<p><a class="pn" id="pn-78" href="#pn-78">78</a>|------|------|------|</p>
-<p><a class="pn" id="pn-79" href="#pn-79">79</a>| **A位** | 氨酰位（Aminoacyl site） | 接受新氨酰-tRNA |</p>
-<p><a class="pn" id="pn-80" href="#pn-80">80</a>| **P位** | 肽酰位（Peptidyl site） | 携带正在延伸的肽链 |</p>
-<p><a class="pn" id="pn-81" href="#pn-81">81</a>| **E位** | 出口位（Exit site） | 释放空载tRNA |</p>
-<p><a class="pn" id="pn-82" href="#pn-82">82</a>### 核糖体组装</p>
-<p><a class="pn" id="pn-83" href="#pn-83">83</a>**原核生物**：</p>
-<p><a class="pn" id="pn-84" href="#pn-84">84</a>- 30S亚基：16S rRNA + 21种蛋白质</p>
-<p><a class="pn" id="pn-85" href="#pn-85">85</a>- 50S亚基：23S rRNA + 5S rRNA + 34种蛋白质</p>
-<p><a class="pn" id="pn-86" href="#pn-86">86</a>**真核生物**：</p>
-<p><a class="pn" id="pn-87" href="#pn-87">87</a>- 在核仁中组装</p>
-<p><a class="pn" id="pn-88" href="#pn-88">88</a>- 需要snoRNA指导rRNA修饰</p>
-<p><a class="pn" id="pn-89" href="#pn-89">89</a>- 组装后输出到细胞质</p>
-<h2>4.4 翻译过程</h2>
-<p><a class="pn" id="pn-90" href="#pn-90">90</a>### 起始阶段</p>
-<p><a class="pn" id="pn-91" href="#pn-91">91</a>**原核生物**：</p>
-<p><a class="pn" id="pn-92" href="#pn-92">92</a>1. **小亚基识别mRNA**：&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;SD序列&lt;/span&gt;（Shine-Dalgarno）与16S rRNA 3&#x27;端互补</p>
-<p><a class="pn" id="pn-93" href="#pn-93">93</a>2. **起始tRNA进入**：fMet-tRNAᶠᴹᵉᵗ进入P位</p>
-<p><a class="pn" id="pn-94" href="#pn-94">94</a>3. **大亚基结合**：形成70S起始复合物</p>
-<p><a class="pn" id="pn-95" href="#pn-95">95</a>**真核生物**：</p>
-<p><a class="pn" id="pn-96" href="#pn-96">96</a>1. **5&#x27;帽识别**：eIF4F复合物识别m⁷G帽</p>
-<p><a class="pn" id="pn-97" href="#pn-97">97</a>2. **扫描机制**：43S前起始复合物从5&#x27;端扫描到AUG</p>
-<p><a class="pn" id="pn-98" href="#pn-98">98</a>3. **起始密码子识别**：Kozak序列（GCCRCC**AUG**G）</p>
-<p><a class="pn" id="pn-99" href="#pn-99">99</a>4. **大亚基结合**：形成80S起始复合物</p>
-<p><a class="pn" id="pn-100" href="#pn-100">100</a>**起始因子**：</p>
-<p><a class="pn" id="pn-101" href="#pn-101">101</a>| 因子 | 功能 |</p>
-<p><a class="pn" id="pn-102" href="#pn-102">102</a>|------|------|</p>
-<p><a class="pn" id="pn-103" href="#pn-103">103</a>| IF1/IF2/IF3 | 原核起始因子 |</p>
-<p><a class="pn" id="pn-104" href="#pn-104">104</a>| eIF1-eIF6 | 真核起始因子（eIF4F识别帽结构） |</p>
-<p><a class="pn" id="pn-105" href="#pn-105">105</a>### 延伸阶段</p>
-<p><a class="pn" id="pn-106" href="#pn-106">106</a>**延伸循环**：</p>
-<p><a class="pn" id="pn-107" href="#pn-107">107</a>1. **氨酰-tRNA进入A位**：EF-Tu（原核）/eEF1A（真核）护送</p>
-<p><a class="pn" id="pn-108" href="#pn-108">108</a>2. **肽键形成**：&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;肽酰转移酶&lt;/span&gt;催化（rRNA的核酶活性）</p>
-<p><a class="pn" id="pn-109" href="#pn-109">109</a>3. **核糖体移位**：EF-G（原核）/eEF2（真核）驱动</p>
-<p><a class="pn" id="pn-110" href="#pn-110">110</a>4. **空载tRNA释放**：从E位离开</p>
-<p><a class="pn" id="pn-111" href="#pn-111">111</a>**延伸因子**：</p>
-<p><a class="pn" id="pn-112" href="#pn-112">112</a>| 原核 | 真核 | 功能 |</p>
-<p><a class="pn" id="pn-113" href="#pn-113">113</a>|------|------|------|</p>
-<p><a class="pn" id="pn-114" href="#pn-114">114</a>| EF-Tu | eEF1A | 护送氨酰-tRNA进入A位 |</p>
-<p><a class="pn" id="pn-115" href="#pn-115">115</a>| EF-Ts | eEF1B | 再生EF-Tu/eEF1A |</p>
-<p><a class="pn" id="pn-116" href="#pn-116">116</a>| EF-G | eEF2 | 驱动核糖体移位 |</p>
-<p><a class="pn" id="pn-117" href="#pn-117">117</a>### 终止阶段</p>
-<p><a class="pn" id="pn-118" href="#pn-118">118</a>**终止信号**：</p>
-<p><a class="pn" id="pn-119" href="#pn-119">119</a>- 终止密码子：UAA、UAG、UGA</p>
-<p><a class="pn" id="pn-120" href="#pn-120">120</a>- 无对应的氨酰-tRNA</p>
-<p><a class="pn" id="pn-121" href="#pn-121">121</a>**释放因子**：</p>
-<p><a class="pn" id="pn-122" href="#pn-122">122</a>| 因子 | 识别密码子 |</p>
-<p><a class="pn" id="pn-123" href="#pn-123">123</a>|------|-----------|</p>
-<p><a class="pn" id="pn-124" href="#pn-124">124</a>| RF1（原核） | UAA、UAG |</p>
-<p><a class="pn" id="pn-125" href="#pn-125">125</a>| RF2（原核） | UAA、UGA |</p>
-<p><a class="pn" id="pn-126" href="#pn-126">126</a>| RF3（原核） | 促进RF1/RF2释放 |</p>
-<p><a class="pn" id="pn-127" href="#pn-127">127</a>| eRF1（真核） | 所有终止密码子 |</p>
-<p><a class="pn" id="pn-128" href="#pn-128">128</a>**终止过程**：</p>
-<p><a class="pn" id="pn-129" href="#pn-129">129</a>1. 释放因子识别终止密码子</p>
-<p><a class="pn" id="pn-130" href="#pn-130">130</a>2. 肽酰转移酶活性改变：水解肽酰-tRNA</p>
-<p><a class="pn" id="pn-131" href="#pn-131">131</a>3. 多肽链释放</p>
-<p><a class="pn" id="pn-132" href="#pn-132">132</a>4. 核糖体解离</p>
-<h2>4.5 翻译后修饰</h2>
-<p><a class="pn" id="pn-133" href="#pn-133">133</a>### 蛋白质折叠</p>
-<p><a class="pn" id="pn-134" href="#pn-134">134</a>**分子伴侣**：</p>
-<p><a class="pn" id="pn-135" href="#pn-135">135</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Hsp70&lt;/span&gt;：防止新生肽链聚集</p>
-<p><a class="pn" id="pn-136" href="#pn-136">136</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Hsp60/GroEL&lt;/span&gt;：提供折叠腔室</p>
-<p><a class="pn" id="pn-137" href="#pn-137">137</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Hsp90&lt;/span&gt;：稳定特定蛋白质</p>
-<p><a class="pn" id="pn-138" href="#pn-138">138</a>### 化学修饰</p>
-<p><a class="pn" id="pn-139" href="#pn-139">139</a>| 修饰类型 | 位点 | 功能 |</p>
-<p><a class="pn" id="pn-140" href="#pn-140">140</a>|---------|------|------|</p>
-<p><a class="pn" id="pn-141" href="#pn-141">141</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;磷酸化&lt;/span&gt; | Ser/Thr/Tyr | 信号转导、活性调控 |</p>
-<p><a class="pn" id="pn-142" href="#pn-142">142</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;糖基化&lt;/span&gt; | Asn/Ser/Thr | 蛋白质定位、稳定性 |</p>
-<p><a class="pn" id="pn-143" href="#pn-143">143</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;乙酰化&lt;/span&gt; | Lys | 蛋白质相互作用 |</p>
-<p><a class="pn" id="pn-144" href="#pn-144">144</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;泛素化&lt;/span&gt; | Lys | 蛋白质降解标记 |</p>
-<p><a class="pn" id="pn-145" href="#pn-145">145</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;甲基化&lt;/span&gt; | Lys/Arg | 信号转导 |</p>
-<p><a class="pn" id="pn-146" href="#pn-146">146</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;二硫键&lt;/span&gt; | Cys-Cys | 结构稳定 |</p>
-<p><a class="pn" id="pn-147" href="#pn-147">147</a>### 蛋白质分选</p>
-<p><a class="pn" id="pn-148" href="#pn-148">148</a>**信号肽假说**：</p>
-<p><a class="pn" id="pn-149" href="#pn-149">149</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;序列&quot;&gt;信号肽&lt;/span&gt;引导蛋白质到特定位置</p>
-<p><a class="pn" id="pn-150" href="#pn-150">150</a>- &lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;SRP&lt;/span&gt;（信号识别颗粒）识别信号肽</p>
-<p><a class="pn" id="pn-151" href="#pn-151">151</a>- 转运到内质网、线粒体、叶绿体等</p>
-<h2>4.6 翻译调控</h2>
-<p><a class="pn" id="pn-152" href="#pn-152">152</a>### 翻译起始调控</p>
-<p><a class="pn" id="pn-153" href="#pn-153">153</a>**eIF4E结合蛋白**（&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;4E-BP&lt;/span&gt;）：</p>
-<p><a class="pn" id="pn-154" href="#pn-154">154</a>- 与&lt;span class=&quot;entity entity-generic&quot; title=&quot;因子&quot;&gt;eIF4E&lt;/span&gt;竞争结合</p>
-<p><a class="pn" id="pn-155" href="#pn-155">155</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;激酶&quot;&gt;mTOR激酶&lt;/span&gt;磷酸化4E-BP，释放eIF4E</p>
-<p><a class="pn" id="pn-156" href="#pn-156">156</a>- 营养信号调控翻译</p>
-<p><a class="pn" id="pn-157" href="#pn-157">157</a>**铁响应元件**（&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;IRE&lt;/span&gt;）：</p>
-<p><a class="pn" id="pn-158" href="#pn-158">158</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;铁调节蛋白&lt;/span&gt;（IRP）结合IRE</p>
-<p><a class="pn" id="pn-159" href="#pn-159">159</a>- 铁缺乏时：抑制&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;铁蛋白&lt;/span&gt;mRNA翻译</p>
-<p><a class="pn" id="pn-160" href="#pn-160">160</a>- 铁充足时：IRP失活，翻译进行</p>
-<p><a class="pn" id="pn-161" href="#pn-161">161</a>### 全局调控</p>
-<p><a class="pn" id="pn-162" href="#pn-162">162</a>**eIF2磷酸化**：</p>
-<p><a class="pn" id="pn-163" href="#pn-163">163</a>- 应激条件下eIF2α磷酸化</p>
-<p><a class="pn" id="pn-164" href="#pn-164">164</a>- 抑制全局翻译起始</p>
-<p><a class="pn" id="pn-165" href="#pn-165">165</a>- 但激活特定应激基因翻译</p>
-<p><a class="pn" id="pn-166" href="#pn-166">166</a>**miRNA调控**：</p>
-<p><a class="pn" id="pn-167" href="#pn-167">167</a>- &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;miRNA&lt;/span&gt;与&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;RISC复合物&lt;/span&gt;结合</p>
-<p><a class="pn" id="pn-168" href="#pn-168">168</a>- 靶向mRNA抑制翻译或促进降解</p>
-<h2>本章小结</h2>
-<p><a class="pn" id="pn-169" href="#pn-169">169</a>- 遗传密码具有简并性、通用性、连续性</p>
-<p><a class="pn" id="pn-170" href="#pn-170">170</a>- tRNA通过反密码子识别密码子，携带特定氨基酸</p>
-<p><a class="pn" id="pn-171" href="#pn-171">171</a>- 核糖体是蛋白质合成的场所，具有A、P、E三个位点</p>
-<p><a class="pn" id="pn-172" href="#pn-172">172</a>- 翻译分起始、延伸、终止三个阶段</p>
-<p><a class="pn" id="pn-173" href="#pn-173">173</a>- 翻译后修饰决定蛋白质的最终功能和定位</p>
-<p><a class="pn" id="pn-174" href="#pn-174">174</a>- 翻译水平调控是基因表达调控的重要环节</p>
-<h2>思考题</h2>
-<p><a class="pn" id="pn-175" href="#pn-175">175</a>1. 遗传密码的简并性有什么生物学意义？</p>
-<p><a class="pn" id="pn-176" href="#pn-176">176</a>2. 比较原核生物和真核生物翻译起始的差异。</p>
-<p><a class="pn" id="pn-177" href="#pn-177">177</a>3. 为什么肽酰转移酶活性由rRNA而不是蛋白质执行？</p>
-<p><a class="pn" id="pn-178" href="#pn-178">178</a>---</p>
-<h2>第四章：表达调控</h2>
-<h2>4.1 基因表达调控概述</h2>
-<p><a class="pn" id="pn-179" href="#pn-179">179</a>### 调控层次</p>
-<p><a class="pn" id="pn-180" href="#pn-180">180</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：gene_regulation&quot;&gt;基因表达调控&lt;/span&gt;发生在多个层次：</p>
-<p><a class="pn" id="pn-181" href="#pn-181">181</a>```</p>
-<p><a class="pn" id="pn-182" href="#pn-182">182</a>DNA → 转录 → RNA加工 → 翻译 → 蛋白质修饰</p>
-<p><a class="pn" id="pn-183" href="#pn-183">183</a> ↑      ↑       ↑        ↑        ↑</p>
-<p><a class="pn" id="pn-184" href="#pn-184">184</a>染色质  转录   转录后   翻译    翻译后</p>
-<p><a class="pn" id="pn-185" href="#pn-185">185</a>```</p>
-<p><a class="pn" id="pn-186" href="#pn-186">186</a>| 层次 | 调控点 | 特点 |</p>
-<p><a class="pn" id="pn-187" href="#pn-187">187</a>|------|--------|------|</p>
-<p><a class="pn" id="pn-188" href="#pn-188">188</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;染色质水平&lt;/span&gt; | DNA可及性 | 表观遗传，长期调控 |</p>
-<p><a class="pn" id="pn-189" href="#pn-189">189</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;转录水平&lt;/span&gt; | 转录起始 | 最主要调控点 |</p>
-<p><a class="pn" id="pn-190" href="#pn-190">190</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;转录后水平&lt;/span&gt; | RNA加工、稳定性 | 快速响应 |</p>
-<p><a class="pn" id="pn-191" href="#pn-191">191</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;翻译水平&lt;/span&gt; | 翻译起始 | 应急调控 |</p>
-<p><a class="pn" id="pn-192" href="#pn-192">192</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;翻译后水平&lt;/span&gt; | 蛋白质修饰、定位 | 功能激活 |</p>
-<h2>4.2 原核生物基因调控</h2>
-<p><a class="pn" id="pn-193" href="#pn-193">193</a>### 操纵子模型</p>
-<p><a class="pn" id="pn-194" href="#pn-194">194</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：operon&quot;&gt;操纵子&lt;/span&gt;（Operon）是原核生物基因调控的基本单位：</p>
-<p><a class="pn" id="pn-195" href="#pn-195">195</a>```</p>
-<p><a class="pn" id="pn-196" href="#pn-196">196</a>启动子 - 操纵基因 - 结构基因群</p>
-<p><a class="pn" id="pn-197" href="#pn-197">197</a>   ↑         ↑</p>
-<p><a class="pn" id="pn-198" href="#pn-198">198</a>RNA聚合酶  阻遏蛋白</p>
-<p><a class="pn" id="pn-199" href="#pn-199">199</a>```</p>
-<p><a class="pn" id="pn-200" href="#pn-200">200</a>| 元件 | 功能 |</p>
-<p><a class="pn" id="pn-201" href="#pn-201">201</a>|------|------|</p>
-<p><a class="pn" id="pn-202" href="#pn-202">202</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;启动子&lt;/span&gt; | RNA聚合酶结合位点 |</p>
-<p><a class="pn" id="pn-203" href="#pn-203">203</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;操纵基因&lt;/span&gt;（Operator） | 阻遏蛋白结合位点 |</p>
-<p><a class="pn" id="pn-204" href="#pn-204">204</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;结构基因&lt;/span&gt; | 编码功能蛋白 |</p>
-<p><a class="pn" id="pn-205" href="#pn-205">205</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;调节基因&lt;/span&gt; | 编码调控蛋白 |</p>
-<p><a class="pn" id="pn-206" href="#pn-206">206</a>### 乳糖操纵子</p>
-<p><a class="pn" id="pn-207" href="#pn-207">207</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;乳糖操纵子&lt;/span&gt;（Lac operon）：</p>
-<p><a class="pn" id="pn-208" href="#pn-208">208</a>**负调控**（阻遏）：</p>
-<p><a class="pn" id="pn-209" href="#pn-209">209</a>- 无乳糖时：&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;阻遏蛋白&lt;/span&gt;结合操纵基因，转录关闭</p>
-<p><a class="pn" id="pn-210" href="#pn-210">210</a>- 有乳糖时：乳糖作为&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;诱导物&lt;/span&gt;，阻遏蛋白失活，转录开启</p>
-<p><a class="pn" id="pn-211" href="#pn-211">211</a>**正调控**（激活）：</p>
-<p><a class="pn" id="pn-212" href="#pn-212">212</a>- 葡萄糖缺乏时：&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;cAMP&lt;/span&gt;升高，&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;CAP蛋白&lt;/span&gt;激活转录</p>
-<p><a class="pn" id="pn-213" href="#pn-213">213</a>### 色氨酸操纵子</p>
-<p><a class="pn" id="pn-214" href="#pn-214">214</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;色氨酸操纵子&lt;/span&gt;（Trp operon）：</p>
-<p><a class="pn" id="pn-215" href="#pn-215">215</a>**阻遏型操纵子**：</p>
-<p><a class="pn" id="pn-216" href="#pn-216">216</a>- 无色氨酸时：转录开启</p>
-<p><a class="pn" id="pn-217" href="#pn-217">217</a>- 有色氨酸时：色氨酸作为&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;辅阻遏物&lt;/span&gt;，阻遏蛋白激活，转录关闭</p>
-<p><a class="pn" id="pn-218" href="#pn-218">218</a>**衰减作用**（Attenuation）：</p>
-<p><a class="pn" id="pn-219" href="#pn-219">219</a>- 前导肽的翻译影响转录终止</p>
-<p><a class="pn" id="pn-220" href="#pn-220">220</a>- 转录-翻译偶联的精细调控</p>
-<h2>4.3 真核生物转录调控</h2>
-<p><a class="pn" id="pn-221" href="#pn-221">221</a>### 顺式作用元件</p>
-<p><a class="pn" id="pn-222" href="#pn-222">222</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：cis_element&quot;&gt;顺式作用元件&lt;/span&gt;：DNA上的调控序列</p>
-<p><a class="pn" id="pn-223" href="#pn-223">223</a>| 元件 | 位置 | 功能 |</p>
-<p><a class="pn" id="pn-224" href="#pn-224">224</a>|------|------|------|</p>
-<p><a class="pn" id="pn-225" href="#pn-225">225</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;启动子&lt;/span&gt; | 转录起始点附近 | 基础转录装置组装 |</p>
-<p><a class="pn" id="pn-226" href="#pn-226">226</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;增强子&lt;/span&gt;（Enhancer） | 远端（1kb-1Mb） | 显著增强转录效率 |</p>
-<p><a class="pn" id="pn-227" href="#pn-227">227</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;沉默子&lt;/span&gt;（Silencer） | 远端 | 抑制转录 |</p>
-<p><a class="pn" id="pn-228" href="#pn-228">228</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;绝缘子&lt;/span&gt;（Insulator） | 边界 | 阻断增强子/沉默子作用 |</p>
-<p><a class="pn" id="pn-229" href="#pn-229">229</a>### 反式作用因子</p>
-<p><a class="pn" id="pn-230" href="#pn-230">230</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：trans_factor&quot;&gt;反式作用因子&lt;/span&gt;：调控蛋白</p>
-<p><a class="pn" id="pn-231" href="#pn-231">231</a>**转录因子结构**：</p>
-<p><a class="pn" id="pn-232" href="#pn-232">232</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;DNA结合域&lt;/span&gt;：识别特定序列</p>
-<p><a class="pn" id="pn-233" href="#pn-233">233</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;转录激活域&lt;/span&gt;：招募转录 machinery</p>
-<p><a class="pn" id="pn-234" href="#pn-234">234</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;二聚化结构域&lt;/span&gt;：形成同源/异源二聚体</p>
-<p><a class="pn" id="pn-235" href="#pn-235">235</a>**常见DNA结合域**：</p>
-<p><a class="pn" id="pn-236" href="#pn-236">236</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;同源异型域&lt;/span&gt;（Homeodomain）</p>
-<p><a class="pn" id="pn-237" href="#pn-237">237</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;锌指结构&lt;/span&gt;（Zinc finger）</p>
-<p><a class="pn" id="pn-238" href="#pn-238">238</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;碱性亮氨酸拉链&lt;/span&gt;（bZIP）</p>
-<p><a class="pn" id="pn-239" href="#pn-239">239</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;螺旋-环-螺旋&lt;/span&gt;（HLH）</p>
-<p><a class="pn" id="pn-240" href="#pn-240">240</a>### 转录调控网络</p>
-<p><a class="pn" id="pn-241" href="#pn-241">241</a>**组合调控**：</p>
-<p><a class="pn" id="pn-242" href="#pn-242">242</a>- 多个转录因子协同作用</p>
-<p><a class="pn" id="pn-243" href="#pn-243">243</a>- 产生特异性的时空表达模式</p>
-<p><a class="pn" id="pn-244" href="#pn-244">244</a>**实例**：&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;MyoD&lt;/span&gt;与肌肉分化</p>
-<p><a class="pn" id="pn-245" href="#pn-245">245</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;MyoD&lt;/span&gt;是&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;碱性HLH&lt;/span&gt;转录因子</p>
-<p><a class="pn" id="pn-246" href="#pn-246">246</a>- 激活肌肉特异性基因表达</p>
-<p><a class="pn" id="pn-247" href="#pn-247">247</a>- 可诱导成纤维细胞转化为肌细胞</p>
-<h2>4.4 转录后调控</h2>
-<p><a class="pn" id="pn-248" href="#pn-248">248</a>### RNA加工调控</p>
-<p><a class="pn" id="pn-249" href="#pn-249">249</a>**选择性剪接**（Alternative splicing）：</p>
-<p><a class="pn" id="pn-250" href="#pn-250">250</a>- 一个基因产生多种mRNA异构体</p>
-<p><a class="pn" id="pn-251" href="#pn-251">251</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;外显子&lt;/span&gt;跳跃、&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;内含子&lt;/span&gt;保留</p>
-<p><a class="pn" id="pn-252" href="#pn-252">252</a>- 人类约95%的基因存在选择性剪接</p>
-<p><a class="pn" id="pn-253" href="#pn-253">253</a>**实例**：&lt;span class=&quot;entity entity-generic&quot; title=&quot;基因&quot;&gt;α-原肌球蛋白&lt;/span&gt;基因</p>
-<p><a class="pn" id="pn-254" href="#pn-254">254</a>- 14个外显子，通过选择性剪接产生多种组织特异性蛋白</p>
-<p><a class="pn" id="pn-255" href="#pn-255">255</a>### RNA稳定性调控</p>
-<p><a class="pn" id="pn-256" href="#pn-256">256</a>**mRNA降解途径**：</p>
-<p><a class="pn" id="pn-257" href="#pn-257">257</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;脱腺苷酸化&lt;/span&gt;：去除poly(A)尾</p>
-<p><a class="pn" id="pn-258" href="#pn-258">258</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;脱帽&lt;/span&gt;：去除5&#x27;帽</p>
-<p><a class="pn" id="pn-259" href="#pn-259">259</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;外切酶降解&lt;/span&gt;：5&#x27;→3&#x27;或3&#x27;→5&#x27;</p>
-<p><a class="pn" id="pn-260" href="#pn-260">260</a>**调控元件**：</p>
-<p><a class="pn" id="pn-261" href="#pn-261">261</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;AU富含元件&lt;/span&gt;（ARE）：促进降解</p>
-<p><a class="pn" id="pn-262" href="#pn-262">262</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;miRNA&lt;/span&gt;：通过&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;RNA干扰&lt;/span&gt;抑制翻译或促进降解</p>
-<p><a class="pn" id="pn-263" href="#pn-263">263</a>### miRNA调控</p>
-<p><a class="pn" id="pn-264" href="#pn-264">264</a>&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;miRNA&lt;/span&gt;（微小RNA）：</p>
-<p><a class="pn" id="pn-265" href="#pn-265">265</a>- 长度：21-25 nt</p>
-<p><a class="pn" id="pn-266" href="#pn-266">266</a>- 来源：RNA聚合酶II转录，经&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Drosha&lt;/span&gt;和&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Dicer&lt;/span&gt;加工</p>
-<p><a class="pn" id="pn-267" href="#pn-267">267</a>- 机制：与&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;RISC复合物&lt;/span&gt;结合，靶向mRNA</p>
-<p><a class="pn" id="pn-268" href="#pn-268">268</a>**调控方式**：</p>
-<p><a class="pn" id="pn-269" href="#pn-269">269</a>- 完全互补：mRNA切割</p>
-<p><a class="pn" id="pn-270" href="#pn-270">270</a>- 部分互补：翻译抑制</p>
-<h2>4.5 翻译调控</h2>
-<p><a class="pn" id="pn-271" href="#pn-271">271</a>### 翻译起始调控</p>
-<p><a class="pn" id="pn-272" href="#pn-272">272</a>**eIF4E结合蛋白**（&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;4E-BP&lt;/span&gt;）：</p>
-<p><a class="pn" id="pn-273" href="#pn-273">273</a>- 与&lt;span class=&quot;entity entity-generic&quot; title=&quot;因子&quot;&gt;eIF4E&lt;/span&gt;竞争结合</p>
-<p><a class="pn" id="pn-274" href="#pn-274">274</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;激酶&quot;&gt;mTOR激酶&lt;/span&gt;磷酸化4E-BP，释放eIF4E</p>
-<p><a class="pn" id="pn-275" href="#pn-275">275</a>- 营养信号调控翻译</p>
-<p><a class="pn" id="pn-276" href="#pn-276">276</a>**铁响应元件**（&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;IRE&lt;/span&gt;）：</p>
-<p><a class="pn" id="pn-277" href="#pn-277">277</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;铁调节蛋白&lt;/span&gt;（IRP）结合IRE</p>
-<p><a class="pn" id="pn-278" href="#pn-278">278</a>- 铁缺乏时：抑制&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;铁蛋白&lt;/span&gt;mRNA翻译</p>
-<p><a class="pn" id="pn-279" href="#pn-279">279</a>- 铁充足时：IRP失活，翻译进行</p>
-<p><a class="pn" id="pn-280" href="#pn-280">280</a>### 翻译延伸与终止调控</p>
-<p><a class="pn" id="pn-281" href="#pn-281">281</a>**罕见密码子**：</p>
-<p><a class="pn" id="pn-282" href="#pn-282">282</a>- 对应tRNA丰度低</p>
-<p><a class="pn" id="pn-283" href="#pn-283">283</a>- 减慢翻译速度，影响蛋白质折叠</p>
-<p><a class="pn" id="pn-284" href="#pn-284">284</a>**通读**（Read-through）：</p>
-<p><a class="pn" id="pn-285" href="#pn-285">285</a>- 终止密码子被识别为编码氨基酸</p>
-<p><a class="pn" id="pn-286" href="#pn-286">286</a>- 产生延伸的蛋白质</p>
-<h2>4.6 表观遗传调控</h2>
-<p><a class="pn" id="pn-287" href="#pn-287">287</a>### DNA甲基化</p>
-<p><a class="pn" id="pn-288" href="#pn-288">288</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;DNA甲基化&lt;/span&gt;：</p>
-<p><a class="pn" id="pn-289" href="#pn-289">289</a>- 位点：&lt;span class=&quot;entity entity-generic&quot; title=&quot;碱基&quot;&gt;CpG岛&lt;/span&gt;中的&lt;span class=&quot;entity entity-generic&quot; title=&quot;碱基&quot;&gt;胞嘧啶&lt;/span&gt;</p>
-<p><a class="pn" id="pn-290" href="#pn-290">290</a>- 酶：&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;DNA甲基转移酶&lt;/span&gt;（DNMT）</p>
-<p><a class="pn" id="pn-291" href="#pn-291">291</a>- 效应：通常抑制基因表达</p>
-<p><a class="pn" id="pn-292" href="#pn-292">292</a>**生物学意义**：</p>
-<p><a class="pn" id="pn-293" href="#pn-293">293</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;基因组印记&lt;/span&gt;（Imprinting）</p>
-<p><a class="pn" id="pn-294" href="#pn-294">294</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;X染色体失活&lt;/span&gt;</p>
-<p><a class="pn" id="pn-295" href="#pn-295">295</a>- 肿瘤抑制基因沉默</p>
-<p><a class="pn" id="pn-296" href="#pn-296">296</a>### 组蛋白修饰</p>
-<p><a class="pn" id="pn-297" href="#pn-297">297</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：histone_modification&quot;&gt;组蛋白修饰&lt;/span&gt;：</p>
-<p><a class="pn" id="pn-298" href="#pn-298">298</a>| 修饰 | 位点 | 效应 |</p>
-<p><a class="pn" id="pn-299" href="#pn-299">299</a>|------|------|------|</p>
-<p><a class="pn" id="pn-300" href="#pn-300">300</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;乙酰化&lt;/span&gt;（Ac） | 赖氨酸 | 激活转录 |</p>
-<p><a class="pn" id="pn-301" href="#pn-301">301</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;甲基化&lt;/span&gt;（Me） | 赖氨酸/精氨酸 | H3K4me3激活，H3K27me3抑制 |</p>
-<p><a class="pn" id="pn-302" href="#pn-302">302</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;磷酸化&lt;/span&gt;（P） | 丝氨酸 | 调控染色质结构 |</p>
-<p><a class="pn" id="pn-303" href="#pn-303">303</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;泛素化&lt;/span&gt;（Ub） | 赖氨酸 | 调控转录 |</p>
-<p><a class="pn" id="pn-304" href="#pn-304">304</a>**组蛋白密码**：不同修饰组合产生特定调控效应</p>
-<p><a class="pn" id="pn-305" href="#pn-305">305</a>### 染色质重塑</p>
-<p><a class="pn" id="pn-306" href="#pn-306">306</a>&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;染色质重塑复合物&lt;/span&gt;：</p>
-<p><a class="pn" id="pn-307" href="#pn-307">307</a>- &lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;SWI/SNF&lt;/span&gt;：利用ATP水解能量重塑核小体</p>
-<p><a class="pn" id="pn-308" href="#pn-308">308</a>- &lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;ISWI&lt;/span&gt;、&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;CHD&lt;/span&gt;、&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;INO80&lt;/span&gt;家族</p>
-<p><a class="pn" id="pn-309" href="#pn-309">309</a>**功能**：</p>
-<p><a class="pn" id="pn-310" href="#pn-310">310</a>- 改变核小体位置</p>
-<p><a class="pn" id="pn-311" href="#pn-311">311</a>- 影响DNA可及性</p>
-<p><a class="pn" id="pn-312" href="#pn-312">312</a>- 调控转录因子结合</p>
-<h2>本章小结</h2>
-<p><a class="pn" id="pn-313" href="#pn-313">313</a>- 基因表达调控发生在多个层次，转录水平最重要</p>
-<p><a class="pn" id="pn-314" href="#pn-314">314</a>- 原核生物以操纵子为单位进行负/正调控</p>
-<p><a class="pn" id="pn-315" href="#pn-315">315</a>- 真核生物通过顺式元件和反式因子精细调控</p>
-<p><a class="pn" id="pn-316" href="#pn-316">316</a>- 转录后调控包括剪接、稳定性、miRNA等</p>
-<p><a class="pn" id="pn-317" href="#pn-317">317</a>- 表观遗传调控不改变DNA序列，但影响基因表达</p>
-<h2>思考题</h2>
-<p><a class="pn" id="pn-318" href="#pn-318">318</a>1. 为什么真核生物需要比原核生物更复杂的调控机制？</p>
-<p><a class="pn" id="pn-319" href="#pn-319">319</a>2. DNA甲基化和组蛋白修饰如何协同调控基因表达？</p>
-<p><a class="pn" id="pn-320" href="#pn-320">320</a>3. miRNA和siRNA在调控机制上有什么异同？</p></div><nav class="chapter-nav"><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch05_%E5%8E%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7%E4%B8%8E%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">下一章 →</a></nav></main>
+<main><nav class="chapter-nav"><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch05_%E5%8E%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7%E4%B8%8E%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第4章</span>翻译与表达调控</div><div class="article"><h2 id="_1">第四章：翻译</h2>
+<h2 id="41">4.1 遗传密码</h2>
+<h3 id="_2">密码子特征</h3>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a><span class="entity concept" title="概念：genetic_code">遗传密码</span>：mRNA上编码氨基酸的三联体密码子</p>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>密码子数</td>
+<td>64个（4³）</td>
+</tr>
+<tr>
+<td>编码氨基酸</td>
+<td>61个</td>
+</tr>
+<tr>
+<td>终止密码子</td>
+<td>3个：UAA、UAG、UGA</td>
+</tr>
+<tr>
+<td>起始密码子</td>
+<td>AUG（编码Met）</td>
+</tr>
+</tbody>
+</table>
+<p><a class="pn" id="pn-2" href="#pn-2">2</a><strong>密码子特点</strong>：
+- <strong>简并性</strong>：多个密码子编码同一氨基酸（如Leu有6个密码子）
+- <strong>通用性</strong>：几乎所有生物共用（线粒体有例外）
+- <strong>连续性</strong>：无标点，不重叠
+- <strong>方向性</strong>：5'→3'阅读
+- <strong>不重叠性</strong>：每个核苷酸只属于一个密码子</p>
+<h3 id="_3">密码子表</h3>
+<table>
+<thead>
+<tr>
+<th>第一位</th>
+<th>U</th>
+<th>C</th>
+<th>A</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>U</strong></td>
+<td>Phe</td>
+<td>Ser</td>
+<td>Tyr</td>
+<td>Cys</td>
+</tr>
+<tr>
+<td></td>
+<td>Phe</td>
+<td>Ser</td>
+<td>Tyr</td>
+<td>Cys</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Ser</td>
+<td>STOP</td>
+<td>STOP</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Ser</td>
+<td>STOP</td>
+<td>Trp</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Leu</td>
+<td>Pro</td>
+<td>His</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Pro</td>
+<td>His</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Pro</td>
+<td>Gln</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td></td>
+<td>Leu</td>
+<td>Pro</td>
+<td>Gln</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td>Ile</td>
+<td>Thr</td>
+<td>Asn</td>
+<td>Ser</td>
+</tr>
+<tr>
+<td></td>
+<td>Ile</td>
+<td>Thr</td>
+<td>Asn</td>
+<td>Ser</td>
+</tr>
+<tr>
+<td></td>
+<td>Ile</td>
+<td>Thr</td>
+<td>Lys</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td></td>
+<td>Met</td>
+<td>Thr</td>
+<td>Lys</td>
+<td>Arg</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Val</td>
+<td>Ala</td>
+<td>Asp</td>
+<td>Gly</td>
+</tr>
+<tr>
+<td></td>
+<td>Val</td>
+<td>Ala</td>
+<td>Asp</td>
+<td>Gly</td>
+</tr>
+<tr>
+<td></td>
+<td>Val</td>
+<td>Ala</td>
+<td>Glu</td>
+<td>Gly</td>
+</tr>
+<tr>
+<td></td>
+<td>Val</td>
+<td>Ala</td>
+<td>Glu</td>
+<td>Gly</td>
+</tr>
+</tbody>
+</table>
+<h2 id="42-trna">4.2 tRNA与氨基酸活化</h2>
+<h3 id="trna">tRNA结构</h3>
+<p><a class="pn" id="pn-3" href="#pn-3">3</a><span class="entity molecule" title="分子">tRNA</span>（转运RNA）的功能：
+- 携带特定氨基酸
+- 识别mRNA上的密码子（<span class="entity entity-generic" title="概念">反密码子</span>）</p>
+<p><a class="pn" id="pn-4" href="#pn-4">4</a><strong>结构特征</strong>：
+- 长度：73-93个核苷酸
+- 三叶草二级结构
+- L形三级结构
+- <span class="entity entity-generic" title="概念">氨基酸臂</span>：3'端CCA，结合氨基酸
+- <span class="entity entity-generic" title="概念">反密码子环</span>：识别密码子
+- <span class="entity entity-generic" title="概念">D环</span>和<span class="entity entity-generic" title="概念">TψC环</span>：结构稳定</p>
+<h3 id="_4">氨基酸活化</h3>
+<p><a class="pn" id="pn-5" href="#pn-5">5</a><span class="entity enzyme" title="酶">氨酰-tRNA合成酶</span>（aaRS）：
+- 催化氨基酸与tRNA连接
+- 高度特异性（一种酶对应一种氨基酸）
+- 两步反应：
+  1. 氨基酸 + ATP → 氨酰-AMP + PPi
+  2. 氨酰-AMP + tRNA → 氨酰-tRNA + AMP</p>
+<p><a class="pn" id="pn-6" href="#pn-6">6</a><strong>校对机制</strong>：
+- 合成酶的编辑活性
+- 识别tRNA的反密码子和受体茎
+- 确保翻译保真性</p>
+<h3 id="_5">摆动配对</h3>
+<p><a class="pn" id="pn-7" href="#pn-7">7</a><span class="entity concept" title="概念：wobble">摆动假说</span>：反密码子5'位碱基与密码子3'位配对有一定灵活性</p>
+<table>
+<thead>
+<tr>
+<th>反密码子5'位</th>
+<th>可配对密码子3'位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>G</td>
+</tr>
+<tr>
+<td>A</td>
+<td>U</td>
+</tr>
+<tr>
+<td>U</td>
+<td>A或G</td>
+</tr>
+<tr>
+<td>G</td>
+<td>C或U</td>
+</tr>
+<tr>
+<td>I（次黄嘌呤）</td>
+<td>U、C或A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="43">4.3 核糖体</h2>
+<h3 id="_6">核糖体结构</h3>
+<p><a class="pn" id="pn-8" href="#pn-8">8</a><span class="entity complex" title="复合物">核糖体</span>是蛋白质合成的场所：</p>
+<table>
+<thead>
+<tr>
+<th>亚基</th>
+<th>原核</th>
+<th>真核</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大亚基</td>
+<td>50S（23S+5S rRNA + 蛋白质）</td>
+<td>60S（28S+5.8S+5S rRNA + 蛋白质）</td>
+</tr>
+<tr>
+<td>小亚基</td>
+<td>30S（16S rRNA + 蛋白质）</td>
+<td>40S（18S rRNA + 蛋白质）</td>
+</tr>
+<tr>
+<td>完整</td>
+<td>70S</td>
+<td>80S</td>
+</tr>
+</tbody>
+</table>
+<p><a class="pn" id="pn-9" href="#pn-9">9</a><strong>rRNA功能</strong>：
+- 催化肽键形成（核酶活性）
+- 提供结构框架
+- 参与tRNA和mRNA结合</p>
+<h3 id="_7">核糖体功能位点</h3>
+<table>
+<thead>
+<tr>
+<th>位点</th>
+<th>名称</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A位</strong></td>
+<td>氨酰位（Aminoacyl site）</td>
+<td>接受新氨酰-tRNA</td>
+</tr>
+<tr>
+<td><strong>P位</strong></td>
+<td>肽酰位（Peptidyl site）</td>
+<td>携带正在延伸的肽链</td>
+</tr>
+<tr>
+<td><strong>E位</strong></td>
+<td>出口位（Exit site）</td>
+<td>释放空载tRNA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">核糖体组装</h3>
+<p><a class="pn" id="pn-10" href="#pn-10">10</a><strong>原核生物</strong>：
+- 30S亚基：16S rRNA + 21种蛋白质
+- 50S亚基：23S rRNA + 5S rRNA + 34种蛋白质</p>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>真核生物</strong>：
+- 在核仁中组装
+- 需要snoRNA指导rRNA修饰
+- 组装后输出到细胞质</p>
+<h2 id="44">4.4 翻译过程</h2>
+<h3 id="_9">起始阶段</h3>
+<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>原核生物</strong>：
+1. <strong>小亚基识别mRNA</strong>：<span class="entity entity-generic" title="概念">SD序列</span>（Shine-Dalgarno）与16S rRNA 3'端互补
+2. <strong>起始tRNA进入</strong>：fMet-tRNAᶠᴹᵉᵗ进入P位
+3. <strong>大亚基结合</strong>：形成70S起始复合物</p>
+<p><a class="pn" id="pn-13" href="#pn-13">13</a><strong>真核生物</strong>：
+1. <strong>5'帽识别</strong>：eIF4F复合物识别m⁷G帽
+2. <strong>扫描机制</strong>：43S前起始复合物从5'端扫描到AUG
+3. <strong>起始密码子识别</strong>：Kozak序列（GCCRCC<strong>AUG</strong>G）
+4. <strong>大亚基结合</strong>：形成80S起始复合物</p>
+<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>起始因子</strong>：
+| 因子 | 功能 |
+|------|------|
+| IF1/IF2/IF3 | 原核起始因子 |
+| eIF1-eIF6 | 真核起始因子（eIF4F识别帽结构） |</p>
+<h3 id="_10">延伸阶段</h3>
+<p><a class="pn" id="pn-15" href="#pn-15">15</a><strong>延伸循环</strong>：
+1. <strong>氨酰-tRNA进入A位</strong>：EF-Tu（原核）/eEF1A（真核）护送
+2. <strong>肽键形成</strong>：<span class="entity enzyme" title="酶">肽酰转移酶</span>催化（rRNA的核酶活性）
+3. <strong>核糖体移位</strong>：EF-G（原核）/eEF2（真核）驱动
+4. <strong>空载tRNA释放</strong>：从E位离开</p>
+<p><a class="pn" id="pn-16" href="#pn-16">16</a><strong>延伸因子</strong>：
+| 原核 | 真核 | 功能 |
+|------|------|------|
+| EF-Tu | eEF1A | 护送氨酰-tRNA进入A位 |
+| EF-Ts | eEF1B | 再生EF-Tu/eEF1A |
+| EF-G | eEF2 | 驱动核糖体移位 |</p>
+<h3 id="_11">终止阶段</h3>
+<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>终止信号</strong>：
+- 终止密码子：UAA、UAG、UGA
+- 无对应的氨酰-tRNA</p>
+<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>释放因子</strong>：
+| 因子 | 识别密码子 |
+|------|-----------|
+| RF1（原核） | UAA、UAG |
+| RF2（原核） | UAA、UGA |
+| RF3（原核） | 促进RF1/RF2释放 |
+| eRF1（真核） | 所有终止密码子 |</p>
+<p><a class="pn" id="pn-19" href="#pn-19">19</a><strong>终止过程</strong>：
+1. 释放因子识别终止密码子
+2. 肽酰转移酶活性改变：水解肽酰-tRNA
+3. 多肽链释放
+4. 核糖体解离</p>
+<h2 id="45">4.5 翻译后修饰</h2>
+<h3 id="_12">蛋白质折叠</h3>
+<p><a class="pn" id="pn-20" href="#pn-20">20</a><strong>分子伴侣</strong>：
+- <span class="entity protein" title="蛋白">Hsp70</span>：防止新生肽链聚集
+- <span class="entity protein" title="蛋白">Hsp60/GroEL</span>：提供折叠腔室
+- <span class="entity protein" title="蛋白">Hsp90</span>：稳定特定蛋白质</p>
+<h3 id="_13">化学修饰</h3>
+<table>
+<thead>
+<tr>
+<th>修饰类型</th>
+<th>位点</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="修饰">磷酸化</span></td>
+<td>Ser/Thr/Tyr</td>
+<td>信号转导、活性调控</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">糖基化</span></td>
+<td>Asn/Ser/Thr</td>
+<td>蛋白质定位、稳定性</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">乙酰化</span></td>
+<td>Lys</td>
+<td>蛋白质相互作用</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">泛素化</span></td>
+<td>Lys</td>
+<td>蛋白质降解标记</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">甲基化</span></td>
+<td>Lys/Arg</td>
+<td>信号转导</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">二硫键</span></td>
+<td>Cys-Cys</td>
+<td>结构稳定</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_14">蛋白质分选</h3>
+<p><a class="pn" id="pn-21" href="#pn-21">21</a><strong>信号肽假说</strong>：
+- <span class="entity entity-generic" title="序列">信号肽</span>引导蛋白质到特定位置
+- <span class="entity complex" title="复合物">SRP</span>（信号识别颗粒）识别信号肽
+- 转运到内质网、线粒体、叶绿体等</p>
+<h2 id="46">4.6 翻译调控</h2>
+<h3 id="_15">翻译起始调控</h3>
+<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>eIF4E结合蛋白</strong>（<span class="entity protein" title="蛋白">4E-BP</span>）：
+- 与<span class="entity entity-generic" title="因子">eIF4E</span>竞争结合
+- <span class="entity entity-generic" title="激酶">mTOR激酶</span>磷酸化4E-BP，释放eIF4E
+- 营养信号调控翻译</p>
+<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>铁响应元件</strong>（<span class="entity entity-generic" title="概念">IRE</span>）：
+- <span class="entity protein" title="蛋白">铁调节蛋白</span>（IRP）结合IRE
+- 铁缺乏时：抑制<span class="entity protein" title="蛋白">铁蛋白</span>mRNA翻译
+- 铁充足时：IRP失活，翻译进行</p>
+<h3 id="_16">全局调控</h3>
+<p><a class="pn" id="pn-24" href="#pn-24">24</a><strong>eIF2磷酸化</strong>：
+- 应激条件下eIF2α磷酸化
+- 抑制全局翻译起始
+- 但激活特定应激基因翻译</p>
+<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>miRNA调控</strong>：
+- <span class="entity molecule" title="分子">miRNA</span>与<span class="entity complex" title="复合物">RISC复合物</span>结合
+- 靶向mRNA抑制翻译或促进降解</p>
+<h2 id="_17">本章小结</h2>
+<ul>
+<li>遗传密码具有简并性、通用性、连续性</li>
+<li>tRNA通过反密码子识别密码子，携带特定氨基酸</li>
+<li>核糖体是蛋白质合成的场所，具有A、P、E三个位点</li>
+<li>翻译分起始、延伸、终止三个阶段</li>
+<li>翻译后修饰决定蛋白质的最终功能和定位</li>
+<li>翻译水平调控是基因表达调控的重要环节</li>
+</ul>
+<h2 id="_18">思考题</h2>
+<ol>
+<li>遗传密码的简并性有什么生物学意义？</li>
+<li>比较原核生物和真核生物翻译起始的差异。</li>
+<li>为什么肽酰转移酶活性由rRNA而不是蛋白质执行？</li>
+</ol>
+<hr />
+<h2 id="_19">第四章：表达调控</h2>
+<h2 id="41_1">4.1 基因表达调控概述</h2>
+<h3 id="_20">调控层次</h3>
+<p><a class="pn" id="pn-26" href="#pn-26">26</a><span class="entity concept" title="概念：gene_regulation">基因表达调控</span>发生在多个层次：</p>
+<pre><code>DNA → 转录 → RNA加工 → 翻译 → 蛋白质修饰
+ ↑      ↑       ↑        ↑        ↑
+染色质  转录   转录后   翻译    翻译后
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>调控点</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="概念">染色质水平</span></td>
+<td>DNA可及性</td>
+<td>表观遗传，长期调控</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">转录水平</span></td>
+<td>转录起始</td>
+<td>最主要调控点</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">转录后水平</span></td>
+<td>RNA加工、稳定性</td>
+<td>快速响应</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">翻译水平</span></td>
+<td>翻译起始</td>
+<td>应急调控</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">翻译后水平</span></td>
+<td>蛋白质修饰、定位</td>
+<td>功能激活</td>
+</tr>
+</tbody>
+</table>
+<h2 id="42">4.2 原核生物基因调控</h2>
+<h3 id="_21">操纵子模型</h3>
+<p><a class="pn" id="pn-27" href="#pn-27">27</a><span class="entity concept" title="概念：operon">操纵子</span>（Operon）是原核生物基因调控的基本单位：</p>
+<pre><code>启动子 - 操纵基因 - 结构基因群
+   ↑         ↑
+RNA聚合酶  阻遏蛋白
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>元件</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="概念">启动子</span></td>
+<td>RNA聚合酶结合位点</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">操纵基因</span>（Operator）</td>
+<td>阻遏蛋白结合位点</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">结构基因</span></td>
+<td>编码功能蛋白</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">调节基因</span></td>
+<td>编码调控蛋白</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_22">乳糖操纵子</h3>
+<p><a class="pn" id="pn-28" href="#pn-28">28</a><span class="entity entity-generic" title="概念">乳糖操纵子</span>（Lac operon）：</p>
+<p><a class="pn" id="pn-29" href="#pn-29">29</a><strong>负调控</strong>（阻遏）：
+- 无乳糖时：<span class="entity protein" title="蛋白">阻遏蛋白</span>结合操纵基因，转录关闭
+- 有乳糖时：乳糖作为<span class="entity molecule" title="分子">诱导物</span>，阻遏蛋白失活，转录开启</p>
+<p><a class="pn" id="pn-30" href="#pn-30">30</a><strong>正调控</strong>（激活）：
+- 葡萄糖缺乏时：<span class="entity molecule" title="分子">cAMP</span>升高，<span class="entity protein" title="蛋白">CAP蛋白</span>激活转录</p>
+<h3 id="_23">色氨酸操纵子</h3>
+<p><a class="pn" id="pn-31" href="#pn-31">31</a><span class="entity entity-generic" title="概念">色氨酸操纵子</span>（Trp operon）：</p>
+<p><a class="pn" id="pn-32" href="#pn-32">32</a><strong>阻遏型操纵子</strong>：
+- 无色氨酸时：转录开启
+- 有色氨酸时：色氨酸作为<span class="entity molecule" title="分子">辅阻遏物</span>，阻遏蛋白激活，转录关闭</p>
+<p><a class="pn" id="pn-33" href="#pn-33">33</a><strong>衰减作用</strong>（Attenuation）：
+- 前导肽的翻译影响转录终止
+- 转录-翻译偶联的精细调控</p>
+<h2 id="43_1">4.3 真核生物转录调控</h2>
+<h3 id="_24">顺式作用元件</h3>
+<p><a class="pn" id="pn-34" href="#pn-34">34</a><span class="entity concept" title="概念：cis_element">顺式作用元件</span>：DNA上的调控序列</p>
+<table>
+<thead>
+<tr>
+<th>元件</th>
+<th>位置</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="概念">启动子</span></td>
+<td>转录起始点附近</td>
+<td>基础转录装置组装</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">增强子</span>（Enhancer）</td>
+<td>远端（1kb-1Mb）</td>
+<td>显著增强转录效率</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">沉默子</span>（Silencer）</td>
+<td>远端</td>
+<td>抑制转录</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="概念">绝缘子</span>（Insulator）</td>
+<td>边界</td>
+<td>阻断增强子/沉默子作用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_25">反式作用因子</h3>
+<p><a class="pn" id="pn-35" href="#pn-35">35</a><span class="entity concept" title="概念：trans_factor">反式作用因子</span>：调控蛋白</p>
+<p><a class="pn" id="pn-36" href="#pn-36">36</a><strong>转录因子结构</strong>：
+- <span class="entity entity-generic" title="结构">DNA结合域</span>：识别特定序列
+- <span class="entity entity-generic" title="结构">转录激活域</span>：招募转录 machinery
+- <span class="entity entity-generic" title="结构">二聚化结构域</span>：形成同源/异源二聚体</p>
+<p><a class="pn" id="pn-37" href="#pn-37">37</a><strong>常见DNA结合域</strong>：
+- <span class="entity entity-generic" title="结构">同源异型域</span>（Homeodomain）
+- <span class="entity entity-generic" title="结构">锌指结构</span>（Zinc finger）
+- <span class="entity entity-generic" title="结构">碱性亮氨酸拉链</span>（bZIP）
+- <span class="entity entity-generic" title="结构">螺旋-环-螺旋</span>（HLH）</p>
+<h3 id="_26">转录调控网络</h3>
+<p><a class="pn" id="pn-38" href="#pn-38">38</a><strong>组合调控</strong>：
+- 多个转录因子协同作用
+- 产生特异性的时空表达模式</p>
+<p><a class="pn" id="pn-39" href="#pn-39">39</a><strong>实例</strong>：<span class="entity entity-generic" title="概念">MyoD</span>与肌肉分化
+- <span class="entity protein" title="蛋白">MyoD</span>是<span class="entity entity-generic" title="概念">碱性HLH</span>转录因子
+- 激活肌肉特异性基因表达
+- 可诱导成纤维细胞转化为肌细胞</p>
+<h2 id="44_1">4.4 转录后调控</h2>
+<h3 id="rna">RNA加工调控</h3>
+<p><a class="pn" id="pn-40" href="#pn-40">40</a><strong>选择性剪接</strong>（Alternative splicing）：
+- 一个基因产生多种mRNA异构体
+- <span class="entity entity-generic" title="概念">外显子</span>跳跃、<span class="entity entity-generic" title="概念">内含子</span>保留
+- 人类约95%的基因存在选择性剪接</p>
+<p><a class="pn" id="pn-41" href="#pn-41">41</a><strong>实例</strong>：<span class="entity entity-generic" title="基因">α-原肌球蛋白</span>基因
+- 14个外显子，通过选择性剪接产生多种组织特异性蛋白</p>
+<h3 id="rna_1">RNA稳定性调控</h3>
+<p><a class="pn" id="pn-42" href="#pn-42">42</a><strong>mRNA降解途径</strong>：
+- <span class="entity entity-generic" title="概念">脱腺苷酸化</span>：去除poly(A)尾
+- <span class="entity entity-generic" title="概念">脱帽</span>：去除5'帽
+- <span class="entity entity-generic" title="概念">外切酶降解</span>：5'→3'或3'→5'</p>
+<p><a class="pn" id="pn-43" href="#pn-43">43</a><strong>调控元件</strong>：
+- <span class="entity entity-generic" title="概念">AU富含元件</span>（ARE）：促进降解
+- <span class="entity entity-generic" title="概念">miRNA</span>：通过<span class="entity entity-generic" title="概念">RNA干扰</span>抑制翻译或促进降解</p>
+<h3 id="mirna">miRNA调控</h3>
+<p><a class="pn" id="pn-44" href="#pn-44">44</a><span class="entity molecule" title="分子">miRNA</span>（微小RNA）：
+- 长度：21-25 nt
+- 来源：RNA聚合酶II转录，经<span class="entity enzyme" title="酶">Drosha</span>和<span class="entity enzyme" title="酶">Dicer</span>加工
+- 机制：与<span class="entity complex" title="复合物">RISC复合物</span>结合，靶向mRNA</p>
+<p><a class="pn" id="pn-45" href="#pn-45">45</a><strong>调控方式</strong>：
+- 完全互补：mRNA切割
+- 部分互补：翻译抑制</p>
+<h2 id="45_1">4.5 翻译调控</h2>
+<h3 id="_27">翻译起始调控</h3>
+<p><a class="pn" id="pn-46" href="#pn-46">46</a><strong>eIF4E结合蛋白</strong>（<span class="entity protein" title="蛋白">4E-BP</span>）：
+- 与<span class="entity entity-generic" title="因子">eIF4E</span>竞争结合
+- <span class="entity entity-generic" title="激酶">mTOR激酶</span>磷酸化4E-BP，释放eIF4E
+- 营养信号调控翻译</p>
+<p><a class="pn" id="pn-47" href="#pn-47">47</a><strong>铁响应元件</strong>（<span class="entity entity-generic" title="概念">IRE</span>）：
+- <span class="entity protein" title="蛋白">铁调节蛋白</span>（IRP）结合IRE
+- 铁缺乏时：抑制<span class="entity protein" title="蛋白">铁蛋白</span>mRNA翻译
+- 铁充足时：IRP失活，翻译进行</p>
+<h3 id="_28">翻译延伸与终止调控</h3>
+<p><a class="pn" id="pn-48" href="#pn-48">48</a><strong>罕见密码子</strong>：
+- 对应tRNA丰度低
+- 减慢翻译速度，影响蛋白质折叠</p>
+<p><a class="pn" id="pn-49" href="#pn-49">49</a><strong>通读</strong>（Read-through）：
+- 终止密码子被识别为编码氨基酸
+- 产生延伸的蛋白质</p>
+<h2 id="46_1">4.6 表观遗传调控</h2>
+<h3 id="dna">DNA甲基化</h3>
+<p><a class="pn" id="pn-50" href="#pn-50">50</a><span class="entity entity-generic" title="修饰">DNA甲基化</span>：
+- 位点：<span class="entity entity-generic" title="碱基">CpG岛</span>中的<span class="entity entity-generic" title="碱基">胞嘧啶</span>
+- 酶：<span class="entity enzyme" title="酶">DNA甲基转移酶</span>（DNMT）
+- 效应：通常抑制基因表达</p>
+<p><a class="pn" id="pn-51" href="#pn-51">51</a><strong>生物学意义</strong>：
+- <span class="entity entity-generic" title="概念">基因组印记</span>（Imprinting）
+- <span class="entity entity-generic" title="概念">X染色体失活</span>
+- 肿瘤抑制基因沉默</p>
+<h3 id="_29">组蛋白修饰</h3>
+<p><a class="pn" id="pn-52" href="#pn-52">52</a><span class="entity concept" title="概念：histone_modification">组蛋白修饰</span>：</p>
+<table>
+<thead>
+<tr>
+<th>修饰</th>
+<th>位点</th>
+<th>效应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="entity entity-generic" title="修饰">乙酰化</span>（Ac）</td>
+<td>赖氨酸</td>
+<td>激活转录</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">甲基化</span>（Me）</td>
+<td>赖氨酸/精氨酸</td>
+<td>H3K4me3激活，H3K27me3抑制</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">磷酸化</span>（P）</td>
+<td>丝氨酸</td>
+<td>调控染色质结构</td>
+</tr>
+<tr>
+<td><span class="entity entity-generic" title="修饰">泛素化</span>（Ub）</td>
+<td>赖氨酸</td>
+<td>调控转录</td>
+</tr>
+</tbody>
+</table>
+<p><a class="pn" id="pn-53" href="#pn-53">53</a><strong>组蛋白密码</strong>：不同修饰组合产生特定调控效应</p>
+<h3 id="_30">染色质重塑</h3>
+<p><a class="pn" id="pn-54" href="#pn-54">54</a><span class="entity complex" title="复合物">染色质重塑复合物</span>：
+- <span class="entity complex" title="复合物">SWI/SNF</span>：利用ATP水解能量重塑核小体
+- <span class="entity complex" title="复合物">ISWI</span>、<span class="entity complex" title="复合物">CHD</span>、<span class="entity complex" title="复合物">INO80</span>家族</p>
+<p><a class="pn" id="pn-55" href="#pn-55">55</a><strong>功能</strong>：
+- 改变核小体位置
+- 影响DNA可及性
+- 调控转录因子结合</p>
+<h2 id="_31">本章小结</h2>
+<ul>
+<li>基因表达调控发生在多个层次，转录水平最重要</li>
+<li>原核生物以操纵子为单位进行负/正调控</li>
+<li>真核生物通过顺式元件和反式因子精细调控</li>
+<li>转录后调控包括剪接、稳定性、miRNA等</li>
+<li>表观遗传调控不改变DNA序列，但影响基因表达</li>
+</ul>
+<h2 id="_32">思考题</h2>
+<ol>
+<li>为什么真核生物需要比原核生物更复杂的调控机制？</li>
+<li>DNA甲基化和组蛋白修饰如何协同调控基因表达？</li>
+<li>miRNA和siRNA在调控机制上有什么异同？</li>
+</ol></div><nav class="chapter-nav"><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch05_%E5%8E%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7%E4%B8%8E%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%BB%B4%E6%8C%81.html">下一章 →</a></nav></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();
