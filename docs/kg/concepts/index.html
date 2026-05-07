@@ -164,6 +164,7 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <main><h1>🌐 概念图谱</h1>
 <div class="section-divider"></div>
 <div id="graph-container" style="width:100%;height:80vh;min-height:600px;background:var(--warm);border-radius:var(--rad);overflow:hidden;position:relative">
+  <input id="graph-search" placeholder="🔍 搜索实体..." oninput="highlightEntity(this.value)" style="position:absolute;top:12px;left:12px;z-index:5;padding:8px 16px;border:1px solid var(--line);border-radius:20px;font-size:.85rem;background:var(--bg);color:var(--ink);outline:none;width:200px">
   <div id="tooltip" style="position:absolute;padding:6px 14px;background:rgba(0,0,0,.82);color:#fff;border-radius:8px;font-size:.85rem;pointer-events:none;display:none;z-index:10;white-space:nowrap"></div>
   <div style="position:absolute;bottom:16px;right:16px;display:flex;gap:8px;z-index:5">
     <button onclick="zoomIn()" style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:1.1rem">+</button>
@@ -171,7 +172,7 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
   </div>
 </div>
 <div class="section-divider"></div>
-<div class="card" style="margin:16px 32px"><p style="font-size:.9rem;color:var(--mu)">💡 悬停高亮关联 | 双击跳转实体 | 拖拽节点 | 滚轮缩放</p></div>
+<div class="card" style="margin:16px 32px"><p style="font-size:.9rem;color:var(--mu)">💡 悬停查看关联数 | 双击跳转实体 | 拖拽节点 | 滚轮缩放 | 左上搜索框筛选高亮</p></div>
 <div class="card" style="margin:8px 32px">
   <p style="font-weight:600;margin-bottom:8px">🔗 关系图例</p>
   <p style="display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem">
@@ -184,7 +185,7 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
   </p>
 </div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="graph.js?v=1778141930"></script>
+<script src="graph.js?v=1778142264"></script>
 <div class="section-divider"></div>
 <h2 style="padding:0 32px">📊 统计</h2>
 <div class="card" style="margin:16px 32px"><p><b>162</b> 个节点 · <b>209</b> 条关系 · <b>10</b> 个类别</p></div></main>
