@@ -443,124 +443,190 @@ def build_concepts(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
     links = data.get("links", [])
     relation_types = data.get("relationTypes", {})
     
-    # Category color map for nodes
     cat_colors = {
         "核心理论": "#1d4ed8", "分子": "#2563eb", "蛋白质": "#db2777", "酶": "#059669",
-        "过程": "#ea580c", "技术": "#6366f1", "复合物": "#7c3aed", "调控元件": "#db2777",
-        "调控单元": "#db2777", "机制": "#0891b2", "表观修饰": "#0891b2", "结构": "#7c3aed",
-        "小RNA": "#2563eb", "工具": "#059669", "调控": "#db2777"
-    }
-    rel_colors = {
-        "is-a": "#667eea", "part-of": "#764ba2", "regulates": "#e74c3c", "catalyzes": "#27ae60",
-        "participates": "#f39c12", "produces": "#9b59b6", "binds": "#3498db", "inhibits": "#e67e22",
-        "activates": "#2ecc71", "related": "#95a5a6"
+        "过程": "#ea580c", "技术": "#6366f1", "复合物": "#7c3aed", "调控": "#db2777",
+        "机制": "#0891b2", "基因组": "#7c3aed", "概念": "#64748b"
     }
     
-    # Build a visual graph using layered layout
-    # Layer 0: core theory, Layer 1: molecules, Layer 2: processes, Layer 3: machinery/techniques
-    node_map = {}
+    # Build node map for hrefs
+    node_links = {}
     for n in nodes:
         if isinstance(n, dict):
-            node_map[n.get("id") or n.get("name")] = n
+            name = n.get("name", n.get("id", ""))
+            node_links[name] = entity_href(str(name), entities, out)
     
-    layers = {"中心法则": 0}
-    # Simple BFS layering
-    for l in links:
-        src = l.get("source")
-        tgt = l.get("target")
-        if src in layers:
-            layers[tgt] = max(layers.get(tgt, 0), layers.get(src, 0) + 1)
-        elif tgt in layers:
-            layers[src] = max(layers.get(src, 0), layers.get(tgt, 0) - 1)
+    # JSON data embedded for D3
+    graph_json = json.dumps(data, ensure_ascii=False)
     
-    for n in node_map:
-        if n not in layers:
-            layers[n] = 2
-    
-    # Group by layer
-    layer_nodes = {}
-    for nid, layer in layers.items():
-        layer_nodes.setdefault(layer, []).append(nid)
-    
-    # SVG generation
-    svg_width = 1100
-    layer_x = {}
-    for layer in sorted(layer_nodes):
-        items = layer_nodes[layer]
-        spacing = svg_width / (len(items) + 1)
-        for i, nid in enumerate(items):
-            layer_x[nid] = spacing * (i + 1)
-    
-    svg_height = max(100, (max(layer_nodes.keys()) + 1) * 120 + 60)
-    
-    svg_lines = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {svg_width} {svg_height}" style="width:100%;height:auto;font-family:system-ui,sans-serif">']
-    svg_lines.append('<defs><marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#94a3b8"/></marker></defs>')
-    
-    # Draw edges
-    edge_used = set()
-    for l in links:
-        src = l.get("source")
-        tgt = l.get("target")
-        rtype = l.get("type", "related")
-        key = (src, tgt)
-        if key in edge_used:
-            continue
-        edge_used.add(key)
-        if src in layer_x and tgt in layer_x:
-            x1, x2 = layer_x[src], layer_x[tgt]
-            y1 = layers.get(src, 0) * 120 + 40
-            y2 = layers.get(tgt, 0) * 120 + 40
-            color = rel_colors.get(rtype, "#94a3b8")
-            svg_lines.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="1.2" stroke-opacity="0.5" marker-end="url(#arrow)"/>')
-    
-    # Draw nodes
-    for n in nodes:
-        if not isinstance(n, dict):
-            continue
-        nid = n.get("id") or n.get("name")
-        name = n.get("name") or nid
-        cat = n.get("category", "")
-        color = cat_colors.get(cat, "#64748b")
-        if nid in layer_x:
-            x = layer_x[nid]
-            y = layers.get(nid, 2) * 120 + 40
-            href = entity_href(str(name), entities, out)
-            # Truncate long names
-            display = name if len(name) <= 5 else name
-            svg_lines.append(f'<a href="{href}"><rect x="{x-42}" y="{y-15}" width="84" height="30" rx="15" fill="{color}" fill-opacity="0.9"/><text x="{x}" y="{y+5}" text-anchor="middle" fill="white" font-size="13" font-weight="600">{html.escape(display[:8])}</text></a>')
-    
-    svg_lines.append('</svg>')
-    svg_graph = "\n".join(svg_lines)
-    
-    # Node pills
-    node_html = "".join(f'<a class="pill" href="{entity_href(str(n.get("name") or n.get("id")), entities, out)}">{html.escape(str(n.get("name") or n.get("id")))}</a>' for n in nodes if isinstance(n, dict))
-    
-    # Legend for relation types
-    legend_parts = []
-    for k, v in relation_types.items():
-        c = rel_colors.get(k, "#95a5a6")
-        legend_parts.append(f'<span class="badge" style="background:{c}22;color:{c};border:1px solid {c}44">{v.get("label", k)}</span>')
-    legend = "".join(legend_parts)
-    
-    link_rows_parts = []
-    for l in links:
-        if not isinstance(l, dict):
-            continue
-        rt = str(l.get("type"))
-        rc = rel_colors.get(rt, "#95a5a6")
-        link_rows_parts.append(f'<tr><td><a href="{entity_href(str(l.get("source")), entities, out)}"><b>{html.escape(str(l.get("source")))}</b></a></td><td><span class="badge" style="background:{rc}22;color:{rc};border:1px solid {rc}44">{html.escape(rt)}</span></td><td><a href="{entity_href(str(l.get("target")), entities, out)}"><b>{html.escape(str(l.get("target")))}</b></a></td><td>{html.escape(str(l.get("description", "")))}</td></tr>')
-    link_rows = "".join(link_rows_parts)
-    
-    body = f'''<h1>概念图谱</h1>
+    body = f'''<h1>🌐 概念图谱</h1>
 <div class="section-divider"></div>
-<h2>🌐 可视化图谱</h2>
-<div class="graph">{svg_graph}</div>
+<div id="graph-container" style="width:100%;height:80vh;min-height:600px;background:var(--warm);border-radius:var(--rad);overflow:hidden;position:relative">
+  <div id="tooltip" style="position:absolute;padding:6px 14px;background:rgba(0,0,0,.82);color:#fff;border-radius:8px;font-size:.85rem;pointer-events:none;display:none;z-index:10;white-space:nowrap"></div>
+  <div style="position:absolute;bottom:16px;right:16px;display:flex;gap:8px;z-index:5">
+    <button onclick="zoomIn()" style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:1.1rem">+</button>
+    <button onclick="zoomOut()" style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:1.1rem">−</button>
+  </div>
+</div>
 <div class="section-divider"></div>
-<h2>🏷️ 关系图例</h2><p style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">{legend}</p>
+<div class="card" style="margin:16px 32px"><p style="font-size:.9rem;color:var(--mu)">💡 拖拽旋转 | 滚轮缩放 | 悬停查看名称 | 双击跳转实体详情</p></div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+const graphData = {graph_json};
+
+const W = document.getElementById("graph-container").clientWidth;
+const H = document.getElementById("graph-container").clientHeight;
+const R = Math.min(W, H) * 0.38;
+
+const svg = d3.select("#graph-container").append("svg")
+  .attr("width", W).attr("height", H);
+const g = svg.append("g");
+
+// Category ring positions
+const cats = [...new Set(graphData.nodes.map(n => n.category))];
+const catRing = {{}};
+cats.forEach((c, i) => {{ catRing[c] = (i + 1) / (cats.length + 1) * Math.PI * 0.45; }});
+
+// Color scale
+const colorScale = d3.scaleOrdinal()
+  .domain(cats)
+  .range(["#1d4ed8","#2563eb","#db2777","#059669","#ea580c","#6366f1","#7c3aed","#db2777","#0891b2","#7c3aed","#64748b"]);
+
+// Pre-compute node positions on sphere
+const nodeMap = new Map();
+graphData.nodes.forEach(n => {{
+  const phi = catRing[n.category] || Math.PI * 0.5;
+  const theta = Math.random() * Math.PI * 2;
+  n.x = R * Math.cos(theta) * Math.sin(phi);
+  n.y = R * Math.cos(phi);
+  n.z = R * Math.sin(theta) * Math.sin(phi);
+  nodeMap.set(n.id || n.name, n);
+}});
+
+// Build link lookup
+const linkMap = new Map();
+graphData.links.forEach(l => {{
+  const src = nodeMap.get(l.source);
+  const tgt = nodeMap.get(l.target);
+  if (src && tgt) {{
+    const key = l.source + "|||" + l.target;
+    linkMap.set(key, {{source: src, target: tgt}});
+  }}
+}});
+
+const allNodes = graphData.nodes.filter(n => nodeMap.has(n.id || n.name));
+
+// Draw category ring labels
+g.selectAll(".ring-label").data(cats).enter().append("text")
+  .attr("class", "ring-label")
+  .attr("x", d => R * 1.12 * Math.cos(catRing[d] - Math.PI/2))
+  .attr("y", d => R * 1.12 * Math.sin(catRing[d] - Math.PI/2))
+  .attr("text-anchor", "middle")
+  .attr("fill", d => colorScale(d))
+  .attr("font-size", "14px")
+  .attr("font-weight", "600")
+  .text(d => d);
+
+// Draw links
+g.selectAll(".link").data([...linkMap.values()]).enter().append("line")
+  .attr("class", "link")
+  .attr("stroke", "rgba(148,163,184,.2)")
+  .attr("stroke-width", 0.6);
+
+// Draw nodes
+const node = g.selectAll(".node").data(allNodes).enter().append("g")
+  .attr("class", "node")
+  .style("cursor", "pointer");
+
+node.append("circle")
+  .attr("r", d => d.importance === "core-important" ? 5 : 3.5)
+  .attr("fill", d => colorScale(d.category))
+  .attr("fill-opacity", 0.85)
+  .attr("stroke", "#fff")
+  .attr("stroke-width", 0.5);
+
+node.on("mouseover", (ev, d) => {{
+  d3.select("#tooltip").style("display", "block").html(`<b>${{d.name}}</b><br><span style="font-size:.75rem;opacity:.7">${{d.category}}</span>`);
+  d3.select(ev.currentTarget).select("circle").attr("r", d.importance === "core-important" ? 8 : 6).attr("fill-opacity", 1);
+}}).on("mousemove", ev => {{
+  d3.select("#tooltip").style("left", (ev.offsetX + 12) + "px").style("top", (ev.offsetY - 10) + "px");
+}}).on("mouseout", (ev, d) => {{
+  d3.select("#tooltip").style("display", "none");
+  d3.select(ev.currentTarget).select("circle").attr("r", d.importance === "core-important" ? 5 : 3.5).attr("fill-opacity", 0.85);
+}}).on("dblclick", (ev, d) => {{
+  const links = {json.dumps({n.get("name", n.get("id","")): entity_href(str(n.get("name", n.get("id",""))), entities, out) for n in nodes if isinstance(n, dict)}, ensure_ascii=False)};
+  const href = links[d.name];
+  if (href) window.location = href;
+}});
+
+// 3D → 2D projection
+function project(x, y, z) {{
+  const scale = 400 / (400 + z);
+  return [W/2 + x * scale, H/2 + y * scale, scale];
+}}
+
+// Force simulation for sphere surface
+const sim = d3.forceSimulation(allNodes)
+  .force("ring", d => {{
+    const phi = catRing[d.category] || Math.PI * 0.5;
+    const targetR = R;
+    const cx = targetR * Math.cos(d.theta) * Math.sin(phi);
+    const cy = targetR * Math.cos(phi);
+    const cz = targetR * Math.sin(d.theta) * Math.sin(phi);
+    d.x += (cx - d.x) * 0.15;
+    d.y += (cy - d.y) * 0.15;
+    d.z += (cz - d.z) * 0.15;
+    // Radial constraint
+    const dist = Math.sqrt(d.x*d.x + d.y*d.y + d.z*d.z);
+    if (dist > R * 1.05 || dist < R * 0.85) {{
+      const s = R / dist;
+      d.x *= s; d.y *= s; d.z *= s;
+    }}
+  }})
+  .force("charge", d3.forceManyBody().strength(-8))
+  .alphaDecay(0.003)
+  .on("tick", () => {{
+    node.attr("transform", d => {{
+      const [px, py, s] = project(d.x, d.y, d.z);
+      return `translate(${{px}},${{py}}) scale(${{s}})`;
+    }});
+    g.selectAll(".link").each(function(d) {{
+      const [sx, sy] = project(d.source.x, d.source.y, d.source.z);
+      const [tx, ty] = project(d.target.x, d.target.y, d.target.z);
+      d3.select(this).attr("x1", sx).attr("y1", sy).attr("x2", tx).attr("y2", ty);
+    }});
+  }});
+
+// Zoom
+let currentZoom = 1;
+const zoom = d3.zoom().scaleExtent([0.3, 4]).on("zoom", e => {{
+  g.attr("transform", e.transform);
+  currentZoom = e.transform.k;
+}});
+svg.call(zoom);
+window.zoomIn = () => svg.transition().call(zoom.scaleBy, 1.3);
+window.zoomOut = () => svg.transition().call(zoom.scaleBy, 0.7);
+
+// Drag rotation
+let dragState = null;
+svg.on("mousedown", ev => {{ if (!ev.shiftKey) dragState = {{x: ev.clientX, y: ev.clientY}}; }});
+svg.on("mousemove", ev => {{
+  if (dragState) {{
+    const dx = ev.clientX - dragState.x;
+    const dy = ev.clientY - dragState.y;
+    allNodes.forEach(n => {{
+      n.theta -= dx * 0.005;
+      const phi = catRing[n.category] || Math.PI * 0.5;
+      // slight phi adjustment
+    }});
+    dragState = {{x: ev.clientX, y: ev.clientY}};
+  }}
+}});
+svg.on("mouseup", () => {{ dragState = null; }});
+</script>
 <div class="section-divider"></div>
-<h2>📋 所有节点</h2><div class="card"><p>{node_html}</p></div>
-<div class="section-divider"></div>
-<article class="article"><h2>📊 关系表</h2><table><thead><tr><th>源</th><th>关系</th><th>目标</th><th>说明</th></tr></thead><tbody>{link_rows}</tbody></table></article>'''
+<h2 style="padding:0 32px">📊 统计</h2>
+<div class="card" style="margin:16px 32px"><p><b>{len(nodes)}</b> 个节点 · <b>{len(links)}</b> 条关系 · <b>{len(set(n.get("category","") for n in nodes if isinstance(n, dict)))}</b> 个类别</p></div>'''
     write_page(out, "概念图谱", body, pages, "concept", json.dumps(data, ensure_ascii=False))
 
 
