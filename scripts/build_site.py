@@ -492,7 +492,7 @@ def build_concepts(pages: list[Page], entities: dict[str, dict[str, Any]]) -> No
   </p>
 </div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="graph.js?v=20260508"></script>
+<script src="graph.js?v=1778141930"></script>
 <div class="section-divider"></div>
 <h2 style="padding:0 32px">📊 统计</h2>
 <div class="card" style="margin:16px 32px"><p><b>{len(nodes)}</b> 个节点 · <b>{len(links)}</b> 条关系 · <b>{n_cats}</b> 个类别</p></div>"""
