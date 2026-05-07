@@ -5,13 +5,28 @@
   "category": "技术",
   "chapter": "第 11 章",
   "importance": "core-major",
-  "definition": "Southern blot 是检测特定 DNA 的印迹技术，通过限制性内切酶切割 DNA，凝胶电泳分离后转膜杂交检测。",
+  "definition": "Southern blot（DNA印迹）由Edwin Southern于1975年发明，是检测基因组DNA中特定序列的经典技术，也是分子生物学三种印迹技术（Southern、Northern、Western）的鼻祖。其步骤为：基因组DNA经限制性内切酶消化后产生不同长度的片段，经琼脂糖凝胶电泳分离，碱变性处理使双链DNA解离为单链，通过毛细作用或真空转移将DNA固定到硝酸纤维素膜或尼龙膜上，再与标记探针杂交后通过放射自显影或化学发光检测。Southern blot常用于基因拷贝数测定、限制性片段长度多态性（RFLP）分析、转基因鉴定和基因重排检测（如免疫球蛋白和T细胞受体重排分析在淋巴瘤诊断中的应用）。虽然Southern blot灵敏度和通量不如PCR和测序技术，但其直接提供基因组结构信息的能力在特定应用中仍不可替代。",
   "keyConcepts": [
-    {"term": "限制性酶切", "definition": "用限制性内切酶切割 DNA"},
-    {"term": "琼脂糖凝胶电泳", "definition": "按大小分离 DNA 片段"},
-    {"term": "变性", "definition": "将双链 DNA 变为单链 DNA"},
-    {"term": "探针杂交", "definition": "标记探针与靶 DNA 杂交"},
-    {"term": "自显影", "definition": "通过放射性或化学发光检测信号"}
+    {
+      "term": "限制性酶切",
+      "definition": "用限制性内切酶切割 DNA"
+    },
+    {
+      "term": "琼脂糖凝胶电泳",
+      "definition": "按大小分离 DNA 片段"
+    },
+    {
+      "term": "变性",
+      "definition": "将双链 DNA 变为单链 DNA"
+    },
+    {
+      "term": "探针杂交",
+      "definition": "标记探针与靶 DNA 杂交"
+    },
+    {
+      "term": "自显影",
+      "definition": "通过放射性或化学发光检测信号"
+    }
   ],
   "keyPoints": [
     "Southern blot 由 Southern 发明",
@@ -20,7 +35,12 @@
     "DNA 指纹技术的基础",
     "Southern blot 在基因诊断中应用广泛"
   ],
-  "relatedEntities": ["分子生物学技术", "DNA", "限制性内切酶", "探针"],
+  "relatedEntities": [
+    "分子生物学技术",
+    "DNA",
+    "限制性内切酶",
+    "探针"
+  ],
   "references": [
     "Southern EM. Detection of specific sequences among DNA fragments separated by gel electrophoresis. J Mol Biol, 1975"
   ]

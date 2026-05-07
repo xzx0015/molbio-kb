@@ -5,13 +5,28 @@
   "category": "过程",
   "chapter": "第 3 章",
   "importance": "core-major",
-  "definition": "DNA 重组是 DNA 分子断裂后重新连接形成新组合的过程，包括同源重组、位点特异性重组和转座等类型。",
+  "definition": "DNA重组是指DNA分子发生断裂后重新连接形成新的序列组合的生物学过程，是基因组多样性和进化的核心驱动力。主要类型包括：①同源重组（homologous recombination），发生在减数分裂中同源染色体之间，依赖RecA/Rad51介导的链入侵和交叉，是遗传多样性的主要来源；②位点特异性重组，由特异重组酶识别特定序列催化，如λ噬菌体整合/切除和免疫球蛋白基因重排；③转座，由转座子介导DNA片段在基因组内迁移到新位点。在实验技术层面，重组DNA技术（recombinant DNA technology）使科学家能够将目的基因整合到载体中，是分子克隆和基因工程的理论基础。",
   "keyConcepts": [
-    {"term": "同源重组", "definition": "发生在同源序列之间的重组，如减数分裂中的交叉互换"},
-    {"term": "位点特异性重组", "definition": "发生在特定序列位点的重组，如噬菌体整合"},
-    {"term": "转座", "definition": "转座子在基因组中移动的过程"},
-    {"term": "Holliday 连接体", "definition": "同源重组中的中间结构，呈十字形"},
-    {"term": "RecA 蛋白", "definition": "大肠杆菌中促进同源重组的蛋白"}
+    {
+      "term": "同源重组",
+      "definition": "发生在同源序列之间的重组，如减数分裂中的交叉互换"
+    },
+    {
+      "term": "位点特异性重组",
+      "definition": "发生在特定序列位点的重组，如噬菌体整合"
+    },
+    {
+      "term": "转座",
+      "definition": "转座子在基因组中移动的过程"
+    },
+    {
+      "term": "Holliday 连接体",
+      "definition": "同源重组中的中间结构，呈十字形"
+    },
+    {
+      "term": "RecA 蛋白",
+      "definition": "大肠杆菌中促进同源重组的蛋白"
+    }
   ],
   "keyPoints": [
     "同源重组需要序列同源性",
@@ -20,7 +35,12 @@
     "转座可导致基因突变和基因组重排",
     "DNA 重组在基因工程中广泛应用"
   ],
-  "relatedEntities": ["DNA 修复", "基因工程", "基因组", "转座子"],
+  "relatedEntities": [
+    "DNA 修复",
+    "基因工程",
+    "基因组",
+    "转座子"
+  ],
   "references": [
     "Holliday R. A mechanism for gene conversion in fungi. Genet Res, 1964"
   ]

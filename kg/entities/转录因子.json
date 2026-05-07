@@ -5,13 +5,28 @@
   "category": "调控",
   "chapter": "第 7-8 章",
   "importance": "core-important",
-  "definition": "转录因子是能与 DNA 特定序列结合并调控基因转录的蛋白质，通常含有 DNA 结合域和转录激活域。",
+  "definition": "转录因子是一类通过识别并结合基因组中特定DNA序列调控基因转录速率和时空调控模式的蛋白质，是基因表达调控网络的核心节点。根据作用模式可分为：①通用转录因子（GTF）——TFⅡA/TFⅡB/TFⅡD/TFⅡE/TFⅡF/TFⅡH等，是所有蛋白质编码基因启动子区进行基础转录的必需组件，在RNA聚合酶Ⅱ启动子上协同组装成转录起始前复合物（PIC）；②特异性转录因子——识别基因上游特定增强子或沉默子DNA序列，调控特定基因集群的时空特异性表达，包含两个核心功能域：DNA结合域（DBD）和转录调控域（AD激活域或RD抑制域）。常见的DNA结合域结构家族包括锌指（Zinc Finger）、螺旋-转角-螺旋（HTH，如Homeodomain蛋白）、碱性亮氨酸拉链（bZIP，如AP-1、c-Fos/c-Jun）、碱性螺旋-环-螺旋（bHLH，如c-Myc、MyoD）等。转录因子还通过招募共激活因子（CBP/p300组蛋白乙酰转移酶、Mediator复合物）或共抑制因子（HDAC、HP1）来调节染色质环境。p53、NF-κB、STATs等转录因子作为关键信号通路的效应节点，其异常激活或失活与恶性肿瘤、炎症和发育缺陷密切相关。",
   "keyConcepts": [
-    {"term": "DNA 结合域", "definition": "转录因子中与 DNA 结合的蛋白质结构域"},
-    {"term": "转录激活域", "definition": "转录因子中激活转录的结构域"},
-    {"term": "通用转录因子", "definition": "参与基础转录的转录因子，如 TFIID、TFIIB"},
-    {"term": "特异性转录因子", "definition": "调控特定基因表达的转录因子"},
-    {"term": "DNA 结合基序", "definition": "转录因子识别 DNA 的特定结构模式"}
+    {
+      "term": "DNA 结合域",
+      "definition": "转录因子中与 DNA 结合的蛋白质结构域"
+    },
+    {
+      "term": "转录激活域",
+      "definition": "转录因子中激活转录的结构域"
+    },
+    {
+      "term": "通用转录因子",
+      "definition": "参与基础转录的转录因子，如 TFIID、TFIIB"
+    },
+    {
+      "term": "特异性转录因子",
+      "definition": "调控特定基因表达的转录因子"
+    },
+    {
+      "term": "DNA 结合基序",
+      "definition": "转录因子识别 DNA 的特定结构模式"
+    }
   ],
   "keyPoints": [
     "转录因子是基因表达调控的关键分子",
@@ -20,7 +35,12 @@
     "特异性转录因子调控特定基因",
     "转录因子异常与多种疾病相关"
   ],
-  "relatedEntities": ["基因调控", "启动子", "增强子", "基因转录"],
+  "relatedEntities": [
+    "基因调控",
+    "启动子",
+    "增强子",
+    "基因转录"
+  ],
   "references": [
     "Ptashne M. A genetic switch. Cold Spring Harbor Laboratory Press, 1992"
   ]

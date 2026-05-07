@@ -5,13 +5,28 @@
   "category": "调控",
   "chapter": "第9章",
   "importance": "core-important",
-  "definition": "DNA甲基化是在DNA甲基转移酶催化下，将甲基基团添加到胞嘧啶（主要是CpG岛）的过程，是重要的表观遗传修饰，与基因沉默、基因组印记和X染色体失活相关。",
+  "definition": "DNA甲基化是最早发现且研究最深入的表观遗传修饰之一，指在DNA甲基转移酶（DNMT）催化下，以S-腺苷甲硫氨酸（SAM）为甲基供体，在CpG二核苷酸中胞嘧啶的5位碳上添加甲基基团生成5-甲基胞嘧啶（5mC）。基因组中CpG二核苷酸呈非均匀分布，密集区域称为CpG岛，多位于基因启动子区。启动子CpG岛的超甲基化通常导致转录因子无法结合，从而使下游基因沉默——这一机制在X染色体失活、基因组印记和肿瘤抑制基因的失活中发挥关键作用。DNA甲基化模式的建立靠DNMT3a/DNMT3b（从头甲基化），复制后靠DNMT1识别半甲基化位点进行维持。与基因突变不同，DNA甲基化是动态可逆的，由TET蛋白家族催化的主动去甲基化和被动稀释均可恢复基因表达，因此成为表观遗传治疗的重要靶点。",
   "keyConcepts": [
-    {"term": "CpG岛", "definition": "基因组中富含CpG二核苷酸的区域，常位于基因启动子区"},
-    {"term": "DNMT", "definition": "DNA甲基转移酶，催化DNA甲基化"},
-    {"term": "5-甲基胞嘧啶", "definition": "DNA甲基化的主要产物，5mC"},
-    {"term": "基因组印记", "definition": "基因表达依赖于亲本来源的表观遗传现象"},
-    {"term": "X染色体失活", "definition": "雌性哺乳动物中一条X染色体随机失活的现象"}
+    {
+      "term": "CpG岛",
+      "definition": "基因组中富含CpG二核苷酸的区域，常位于基因启动子区"
+    },
+    {
+      "term": "DNMT",
+      "definition": "DNA甲基转移酶，催化DNA甲基化"
+    },
+    {
+      "term": "5-甲基胞嘧啶",
+      "definition": "DNA甲基化的主要产物，5mC"
+    },
+    {
+      "term": "基因组印记",
+      "definition": "基因表达依赖于亲本来源的表观遗传现象"
+    },
+    {
+      "term": "X染色体失活",
+      "definition": "雌性哺乳动物中一条X染色体随机失活的现象"
+    }
   ],
   "keyPoints": [
     "DNA甲基化主要发生在CpG岛的胞嘧啶上",
@@ -20,7 +35,12 @@
     "DNA甲基化异常与癌症等疾病相关",
     "DNA甲基化是可逆的表观遗传修饰"
   ],
-  "relatedEntities": ["表观遗传", "组蛋白修饰", "基因调控", "CpG岛"],
+  "relatedEntities": [
+    "表观遗传",
+    "组蛋白修饰",
+    "基因调控",
+    "CpG岛"
+  ],
   "references": [
     "Bird A. DNA methylation and the frequency of CpG in animal DNA. Nucleic Acids Res, 1980"
   ]

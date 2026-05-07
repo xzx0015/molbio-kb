@@ -5,13 +5,28 @@
   "category": "调控",
   "chapter": "第 9 章",
   "importance": "core-major",
-  "definition": "siRNA（小干扰 RNA）是一类长度约 21 个核苷酸的双链 RNA，通过与靶 mRNA 完全互补配对，介导靶 mRNA 的降解，实现基因沉默。",
+  "definition": "小干扰RNA（siRNA）是一类长度约21个核苷酸的双链RNA分子，是RNA干扰（RNAi）途径的核心效应分子。siRNA可来源于外源导入的长双链RNA经Dicer酶切割，或通过化学合成、短发夹RNA（shRNA）表达载体等方式引入细胞。在胞质中，siRNA双链中的引导链被整合入RNA诱导沉默复合物（RISC），通过完美的Watson-Crick碱基互补配对与靶mRNA结合，激活Argonaute-2蛋白的内切酶活性在其配对区中央切割mRNA，导致靶基因的序列特异性沉默。与miRNA通过部分配对和翻译抑制发挥作用不同，siRNA通常实现完全的mRNA降解，沉默效率更高。siRNA作为研究工具（基因敲低）和潜在治疗手段在临床上受到关注，Patisiran（靶向TTR基因的siRNA药物）于2018年获批用于治疗遗传性转甲状腺素蛋白淀粉样变性，开启了RNAi疗法的新纪元。",
   "keyConcepts": [
-    {"term": "dsRNA", "definition": "双链 RNA，siRNA 的前体"},
-    {"term": "Dicer", "definition": "切割 dsRNA 产生 siRNA 的核酸酶"},
-    {"term": "RISC", "definition": "RNA 诱导沉默复合物，装载 siRNA 后切割靶 mRNA"},
-    {"term": "Argonaute", "definition": "RISC 的核心蛋白，具有切割活性"},
-    {"term": "shRNA", "definition": "短发夹 RNA，可在细胞内产生 siRNA"}
+    {
+      "term": "dsRNA",
+      "definition": "双链 RNA，siRNA 的前体"
+    },
+    {
+      "term": "Dicer",
+      "definition": "切割 dsRNA 产生 siRNA 的核酸酶"
+    },
+    {
+      "term": "RISC",
+      "definition": "RNA 诱导沉默复合物，装载 siRNA 后切割靶 mRNA"
+    },
+    {
+      "term": "Argonaute",
+      "definition": "RISC 的核心蛋白，具有切割活性"
+    },
+    {
+      "term": "shRNA",
+      "definition": "短发夹 RNA，可在细胞内产生 siRNA"
+    }
   ],
   "keyPoints": [
     "siRNA 由 Fire 和 Mello 发现，获 2006 年诺贝尔奖",
@@ -20,7 +35,12 @@
     "siRNA 是 RNA 干扰的核心分子",
     "siRNA 技术在基因功能研究和治疗中应用广泛"
   ],
-  "relatedEntities": ["RNA 干扰", "miRNA", "非编码 RNA", "基因调控"],
+  "relatedEntities": [
+    "RNA 干扰",
+    "miRNA",
+    "非编码 RNA",
+    "基因调控"
+  ],
   "references": [
     "Fire A, Mello CC. Potent and specific genetic interference by double-stranded RNA in Caenorhabditis elegans. Nature, 1998"
   ]

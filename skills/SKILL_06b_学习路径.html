@@ -161,695 +161,555 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-06b">SKILL 06b: 个性化学习路径系统</h1>
-<blockquote>
-<p>基于知识依赖图谱和学习者状态的个性化学习路径生成与优化系统。</p>
-</blockquote>
-<hr />
-<h2 id="_1">一、系统概述</h2>
-<h3 id="11">1.1 设计目标</h3>
-<ul>
-<li><strong>个性化路径</strong>：根据学习者当前状态生成定制化学习路径</li>
-<li><strong>依赖感知</strong>：严格遵循知识前置依赖关系</li>
-<li><strong>灵活策略</strong>：支持最短路径、最完整路径等多种策略</li>
-<li><strong>薄弱识别</strong>：自动识别学习薄弱环节并推荐强化</li>
-</ul>
-<h3 id="12">1.2 核心功能</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────────┐
-│                     个性化学习路径系统                          │
-├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │
-│  │ 掌握度评估   │  │ 路径生成    │  │ 薄弱识别    │  │ 进度追踪│ │
-│  │             │  │             │  │             │  │        │ │
-│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │
-├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
-│  │ 最短路径    │  │ 最完整路径  │  │ 自适应调整  │             │
-│  │             │  │             │  │             │             │
-│  └─────────────┘  └─────────────┘  └─────────────┘             │
-└─────────────────────────────────────────────────────────────────┘
-</code></pre>
-<hr />
-<h2 id="_2">二、知识点掌握度评估</h2>
-<h3 id="21">2.1 评估维度</h3>
-<table>
-<thead>
-<tr>
-<th>维度</th>
-<th>说明</th>
-<th>权重</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>测试正确率</strong></td>
-<td>该知识点相关题目的正确率</td>
-<td>40%</td>
-</tr>
-<tr>
-<td><strong>学习时长</strong></td>
-<td>实际学习时长与建议时长的比例</td>
-<td>20%</td>
-</tr>
-<tr>
-<td><strong>学习次数</strong></td>
-<td>学习该知识点的次数</td>
-<td>15%</td>
-</tr>
-<tr>
-<td><strong>前置掌握</strong></td>
-<td>前置知识的平均掌握度</td>
-<td>15%</td>
-</tr>
-<tr>
-<td><strong>最近学习</strong></td>
-<td>最近学习的时间衰减</td>
-<td>10%</td>
-</tr>
-</tbody>
-</table>
-<h3 id="22">2.2 掌握度计算模型</h3>
-<pre><code class="language-python">class MasteryCalculator:
-    &quot;&quot;&quot;
-    知识点掌握度计算模型
-    &quot;&quot;&quot;
-
-    def calculate_mastery(self, user_id: str, concept_id: str) -&gt; float:
-        &quot;&quot;&quot;
-        计算用户对某知识点的掌握度 (0-1)
-        &quot;&quot;&quot;
-        # 1. 获取学习数据
-        study_data = self.get_study_data(user_id, concept_id)
-
-        # 2. 计算各维度得分
-        test_score = self._calc_test_score(study_data['test_results'])
-        time_score = self._calc_time_score(study_data['study_time'], study_data['recommended_time'])
-        count_score = self._calc_count_score(study_data['study_count'])
-        prereq_score = self._calc_prerequisite_score(user_id, concept_id)
-        recency_score = self._calc_recency_score(study_data['last_study_time'])
-
-        # 3. 加权求和
-        mastery = (
-            test_score * 0.40 +
-            time_score * 0.20 +
-            count_score * 0.15 +
-            prereq_score * 0.15 +
-            recency_score * 0.10
-        )
-
-        return min(mastery, 1.0)
-
-    def _calc_test_score(self, test_results: list) -&gt; float:
-        &quot;&quot;&quot;计算测试正确率得分&quot;&quot;&quot;
-        if not test_results:
-            return 0.0
-
-        # 加权平均，最近测试权重更高
-        weights = [0.5 ** i for i in range(len(test_results))]
-        weights.reverse()
-
-        weighted_sum = sum(r['correct'] * w for r, w in zip(test_results, weights))
-        total_weight = sum(weights)
-
-        return weighted_sum / total_weight if total_weight &gt; 0 else 0.0
-
-    def _calc_time_score(self, actual_time: int, recommended_time: int) -&gt; float:
-        &quot;&quot;&quot;计算学习时长得分&quot;&quot;&quot;
-        if recommended_time == 0:
-            return 0.5
-
-        ratio = actual_time / recommended_time
-        # 达到建议时长得满分，不足按比例，超过不加分
-        return min(ratio, 1.0)
-
-    def _calc_count_score(self, study_count: int) -&gt; float:
-        &quot;&quot;&quot;计算学习次数得分&quot;&quot;&quot;
-        # 学习1次得0.3，2次得0.6，3次及以上得1.0
-        if study_count &gt;= 3:
-            return 1.0
-        return study_count * 0.3
-
-    def _calc_prerequisite_score(self, user_id: str, concept_id: str) -&gt; float:
-        &quot;&quot;&quot;计算前置知识掌握度得分&quot;&quot;&quot;
-        prereqs = self.get_prerequisites(concept_id)
-        if not prereqs:
-            return 1.0
-
-        prereq_masteries = [self.calculate_mastery(user_id, p) for p in prereqs]
-        return sum(prereq_masteries) / len(prereq_masteries)
-
-    def _calc_recency_score(self, last_study_time: datetime) -&gt; float:
-        &quot;&quot;&quot;计算最近学习时间得分（时间衰减）&quot;&quot;&quot;
-        if last_study_time is None:
-            return 0.0
-
-        days_since = (datetime.now() - last_study_time).days
-        # 7天内得1.0，30天内线性衰减，超过30天得0.3
-        if days_since &lt;= 7:
-            return 1.0
-        elif days_since &lt;= 30:
-            return 1.0 - (days_since - 7) / 23 * 0.7
-        else:
-            return 0.3
-</code></pre>
-<h3 id="23">2.3 掌握度等级划分</h3>
-<table>
-<thead>
-<tr>
-<th>掌握度</th>
-<th>等级</th>
-<th>颜色</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.0 - 0.3</td>
-<td>未掌握</td>
-<td>🔴</td>
-<td>需要系统学习</td>
-</tr>
-<tr>
-<td>0.3 - 0.5</td>
-<td>初步了解</td>
-<td>🟠</td>
-<td>需要加强练习</td>
-</tr>
-<tr>
-<td>0.5 - 0.7</td>
-<td>基本掌握</td>
-<td>🟡</td>
-<td>可以进阶学习</td>
-</tr>
-<tr>
-<td>0.7 - 0.9</td>
-<td>熟练掌握</td>
-<td>🟢</td>
-<td>可以应用实践</td>
-</tr>
-<tr>
-<td>0.9 - 1.0</td>
-<td>精通</td>
-<td>🔵</td>
-<td>可以教授他人</td>
-</tr>
-</tbody>
-</table>
-<h3 id="24">2.4 掌握度可视化</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
-│  知识点掌握度总览                                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  DNA复制                                    [████████░░] 85%│
-│  ├── 半保留复制                             [██████████] 95%│
-│  ├── 复制叉                                 [███████░░░] 70%│
-│  ├── DNA聚合酶                              [████████░░] 80%│
-│  ├── 冈崎片段                               [████░░░░░░] 40%│  ⚠️ 薄弱
-│  └── 引物酶                                 [░░░░░░░░░░]  0%│  ⚠️ 未学习
-│                                                             │
-│  转录                                       [██████░░░░] 60%│
-│  ├── 转录起始                               [████████░░] 85%│
-│  ├── RNA聚合酶                              [█████░░░░░] 50%│
-│  └── 转录因子                               [░░░░░░░░░░]  0%│  ⚠️ 未学习
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-</code></pre>
-<hr />
-<h2 id="_3">三、学习路径生成</h2>
-<h3 id="31">3.1 路径生成算法</h3>
-<h4 id="311">3.1.1 拓扑排序基础</h4>
-<pre><code class="language-python">from collections import defaultdict, deque
-
-def topological_sort(concepts: list, dependencies: dict) -&gt; list:
-    &quot;&quot;&quot;
-    基于前置依赖的拓扑排序
-    concepts: 知识点列表
-    dependencies: {concept_id: [prereq_ids]} 依赖关系
-    &quot;&quot;&quot;
-    # 计算入度
-    in_degree = {c: 0 for c in concepts}
-    for concept, prereqs in dependencies.items():
-        in_degree[concept] = len(prereqs)
-
-    # 初始化队列（入度为0的节点）
-    queue = deque([c for c in concepts if in_degree[c] == 0])
-    result = []
-
-    while queue:
-        concept = queue.popleft()
-        result.append(concept)
-
-        # 更新依赖此知识点的入度
-        for c, prereqs in dependencies.items():
-            if concept in prereqs:
-                in_degree[c] -= 1
-                if in_degree[c] == 0:
-                    queue.append(c)
-
-    return result
-</code></pre>
-<h4 id="312">3.1.2 最短路径算法</h4>
-<pre><code class="language-python">import heapq
-from dataclasses import dataclass
-
-@dataclass
-class PathNode:
-    concept_id: str
-    cost: float  # 学习成本（时间）
-    mastery_gain: float  # 掌握度提升
-
-def shortest_learning_path(
-    user_id: str,
-    target_concept: str,
-    mastery_threshold: float = 0.7
-) -&gt; list:
-    &quot;&quot;&quot;
-    生成从当前状态到目标知识点的最短学习路径
-    考虑已掌握的知识点，只学习未掌握的前置知识
-    &quot;&quot;&quot;
-    # 1. 获取目标知识点的所有前置依赖
-    all_prereqs = get_all_prerequisites(target_concept)
-
-    # 2. 过滤已掌握的知识点
-    concepts_to_learn = [
-        c for c in all_prereqs 
-        if get_mastery(user_id, c) &lt; mastery_threshold
-    ]
-    concepts_to_learn.append(target_concept)
-
-    # 3. 构建依赖图
-    graph = build_dependency_graph(concepts_to_learn)
-
-    # 4. 使用Dijkstra算法找最短路径
-    # 边的权重 = 建议学习时长 / 难度系数
-    return dijkstra_path(graph, start=None, target=target_concept)
-
-def dijkstra_path(graph: dict, start: str, target: str) -&gt; list:
-    &quot;&quot;&quot;
-    Dijkstra最短路径算法
-    &quot;&quot;&quot;
-    distances = {node: float('inf') for node in graph}
-    distances[start] = 0
-    previous = {node: None for node in graph}
-
-    pq = [(0, start)]
-
-    while pq:
-        current_dist, current = heapq.heappop(pq)
-
-        if current == target:
-            break
-
-        if current_dist &gt; distances[current]:
-            continue
-
-        for neighbor, weight in graph[current].items():
-            distance = current_dist + weight
-            if distance &lt; distances[neighbor]:
-                distances[neighbor] = distance
-                previous[neighbor] = current
-                heapq.heappush(pq, (distance, neighbor))
-
-    # 重建路径
-    path = []
-    current = target
-    while current is not None:
-        path.append(current)
-        current = previous[current]
-    path.reverse()
-
-    return path
-</code></pre>
-<h4 id="313">3.1.3 最完整路径算法</h4>
-<pre><code class="language-python">def comprehensive_learning_path(
-    user_id: str,
-    target_concept: str,
-    include_optional: bool = True
-) -&gt; list:
-    &quot;&quot;&quot;
-    生成最完整的学习路径
-    包含所有前置知识、相关知识和推荐扩展
-    &quot;&quot;&quot;
-    path = []
-
-    # 1. 强依赖路径（必须学习）
-    strong_prereqs = get_prerequisites(target_concept, level='strong')
-    path.extend(topological_sort(strong_prereqs))
-
-    # 2. 弱依赖路径（推荐学习）
-    weak_prereqs = get_prerequisites(target_concept, level='weak')
-    path.extend(topological_sort(weak_prereqs))
-
-    # 3. 可选扩展（根据用户偏好）
-    if include_optional:
-        optional = get_related_concepts(target_concept, limit=5)
-        path.extend(optional)
-
-    # 4. 目标知识点
-    path.append(target_concept)
-
-    return path
-</code></pre>
-<h3 id="32">3.2 路径策略对比</h3>
-<table>
-<thead>
-<tr>
-<th>策略</th>
-<th>适用场景</th>
-<th>特点</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>最短路径</strong></td>
-<td>时间紧迫、考前冲刺</td>
-<td>只学必要前置知识</td>
-<td>学PCR只需掌握DNA复制基础</td>
-</tr>
-<tr>
-<td><strong>最完整路径</strong></td>
-<td>系统学习、深度学习</td>
-<td>包含所有相关知识点</td>
-<td>学PCR需学复制原理、引物设计、酶学等</td>
-</tr>
-<tr>
-<td><strong>推荐路径</strong></td>
-<td>日常学习</td>
-<td>平衡深度和广度</td>
-<td>根据掌握度动态调整</td>
-</tr>
-<tr>
-<td><strong>复习路径</strong></td>
-<td>查漏补缺</td>
-<td>针对薄弱环节</td>
-<td>只学掌握度&lt;0.5的知识点</td>
-</tr>
-</tbody>
-</table>
-<h3 id="33">3.3 路径可视化</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
-│  个性化学习路径: DNA复制                                    │
-│  预计总时长: 3小时30分钟  |  已掌握: 2/8 知识点            │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  阶段 1: 前置基础 (45分钟)                                  │
-│  ═══════════════════════════════════════════════════════   │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │ DNA结构     │───→│ 碱基配对    │───→│ 酶基础      │     │
-│  │ [已掌握 ✓]  │    │ [已掌握 ✓]  │    │ [学习中 ▶]  │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│                                                             │
-│  阶段 2: 核心机制 (90分钟)                                  │
-│  ═══════════════════════════════════════════════════════   │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │ 半保留复制  │───→│ 复制叉      │───→│ DNA聚合酶   │     │
-│  │ [未开始 ○]  │    │ [未开始 ○]  │    │ [未开始 ○]  │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
-│         ↓                                                   │
-│  ┌─────────────┐    ┌─────────────┐                         │
-│  │ 冈崎片段    │───→│ DNA连接酶   │                         │
-│  │ [未开始 ○]  │    │ [未开始 ○]  │                         │
-│  └─────────────┘    └─────────────┘                         │
-│                                                             │
-│  阶段 3: 应用拓展 (45分钟)                                  │
-│  ═══════════════════════════════════════════════════════   │
-│  ┌─────────────┐    ┌─────────────┐                         │
-│  │ 复制调控    │───→│ PCR技术     │                         │
-│  │ [未开始 ○]  │    │ [未开始 ○]  │                         │
-│  └─────────────┘    └─────────────┘                         │
-│                                                             │
-│  [开始学习]  [调整路径]  [导出计划]                         │
-└─────────────────────────────────────────────────────────────┘
-</code></pre>
-<hr />
-<h2 id="_4">四、薄弱环节识别</h2>
-<h3 id="41">4.1 薄弱点检测算法</h3>
-<pre><code class="language-python">def identify_weak_areas(user_id: str, concept_area: str = None) -&gt; dict:
-    &quot;&quot;&quot;
-    识别学习者的薄弱环节
-    &quot;&quot;&quot;
-    weak_areas = {
-        'concepts': [],      # 薄弱知识点
-        'categories': [],    # 薄弱分类
-        'dependencies': [],  # 依赖断裂点
-        'patterns': []       # 薄弱模式
-    }
-
-    # 1. 识别掌握度低的知识点
-    concepts = get_all_concepts(area=concept_area)
-    for concept in concepts:
-        mastery = get_mastery(user_id, concept)
-        if mastery &lt; 0.5:
-            weak_areas['concepts'].append({
-                'concept': concept,
-                'mastery': mastery,
-                'priority': calculate_priority(concept)
-            })
-
-    # 2. 识别薄弱分类
-    category_masteries = {}
-    for concept in concepts:
-        category = get_category(concept)
-        mastery = get_mastery(user_id, concept)
-        if category not in category_masteries:
-            category_masteries[category] = []
-        category_masteries[category].append(mastery)
-
-    for category, masteries in category_masteries.items():
-        avg_mastery = sum(masteries) / len(masteries)
-        if avg_mastery &lt; 0.6:
-            weak_areas['categories'].append({
-                'category': category,
-                'avg_mastery': avg_mastery,
-                'concept_count': len(masteries)
-            })
-
-    # 3. 识别依赖断裂点
-    for concept in concepts:
-        mastery = get_mastery(user_id, concept)
-        if mastery &gt;= 0.7:  # 已掌握
-            continue
-
-        prereqs = get_prerequisites(concept)
-        prereq_masteries = [get_mastery(user_id, p) for p in prereqs]
-
-        # 如果前置知识掌握良好但当前知识薄弱
-        if prereq_masteries and min(prereq_masteries) &gt;= 0.6:
-            weak_areas['dependencies'].append({
-                'concept': concept,
-                'prereq_mastery': sum(prereq_masteries) / len(prereq_masteries),
-                'current_mastery': mastery
-            })
-
-    # 4. 识别薄弱模式
-    weak_areas['patterns'] = analyze_weak_patterns(user_id)
-
-    return weak_areas
-
-def analyze_weak_patterns(user_id: str) -&gt; list:
-    &quot;&quot;&quot;
-    分析薄弱模式（如：总是学不会某类概念）
-    &quot;&quot;&quot;
-    patterns = []
-
-    # 按题型分析
-    question_type_stats = get_question_type_stats(user_id)
-    for q_type, accuracy in question_type_stats.items():
-        if accuracy &lt; 0.5:
-            patterns.append({
-                'type': 'question_type',
-                'detail': q_type,
-                'accuracy': accuracy,
-                'suggestion': f'建议加强{q_type}类型题目的练习'
-            })
-
-    # 按难度分析
-    difficulty_stats = get_difficulty_stats(user_id)
-    for diff, accuracy in difficulty_stats.items():
-        if accuracy &lt; 0.5:
-            patterns.append({
-                'type': 'difficulty',
-                'detail': diff,
-                'accuracy': accuracy,
-                'suggestion': f'建议先巩固{diff}难度知识点'
-            })
-
-    return patterns
-</code></pre>
-<h3 id="42">4.2 薄弱点报告</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
-│  薄弱环节分析报告                                           │
-│  生成时间: 2025-03-17  |  学习者: 张同学                    │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  📊 整体掌握度: 62% (中等偏下)                              │
-│                                                             │
-│  🔴 薄弱知识点 (掌握度 &lt; 50%)                               │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ 1. 冈崎片段                              掌握度: 40% │ │
-│  │    └─ 建议: 复习DNA复制机制，重点理解后随链合成       │ │
-│  │                                                       │ │
-│  │ 2. 转录因子                              掌握度: 35% │ │
-│  │    └─ 建议: 学习通用转录因子与特异性转录因子的区别    │ │
-│  │                                                       │ │
-│  │ 3. 密码子简并性                          掌握度: 30% │ │
-│  │    └─ 建议: 理解摆动假说，练习密码子-氨基酸对应       │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  🟠 薄弱分类 (平均掌握度 &lt; 60%)                             │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ • 翻译后修饰                             平均: 45%     │ │
-│  │   包含: 蛋白质折叠(40%), 糖基化(50%), 磷酸化(45%)     │ │
-│  │                                                       │ │
-│  │ • 转录调控                               平均: 52%     │ │
-│  │   包含: 操纵子模型(55%), 乳糖操纵子(50%), 色氨酸操纵子│ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  🔗 依赖断裂点                                              │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ • 已掌握&quot;DNA聚合酶&quot;但&quot;冈崎片段&quot;薄弱                   │ │
-│  │   可能原因: 理解酶的功能但未掌握复制过程的连续性      │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  📈 薄弱模式                                                │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ • 案例分析题正确率仅 35%，建议加强应用练习            │ │
-│  │ • 高难度题目正确率仅 28%，建议先巩固基础              │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  [生成强化计划]  [查看详情]  [导出报告]                     │
-└─────────────────────────────────────────────────────────────┘
-</code></pre>
-<hr />
-<h2 id="_5">五、用户交互流程</h2>
-<h3 id="51">5.1 路径生成流程</h3>
-<pre><code>用户选择学习目标
-      ↓
-系统评估当前掌握度
-      ↓
-分析前置依赖关系
-      ↓
-选择路径策略
-┌─────────┬─────────┬─────────┐
-↓         ↓         ↓         ↓
-最短路径  最完整路径 推荐路径  复习路径
-      ↓
-生成个性化路径
-      ↓
-展示路径可视化
-      ↓
-用户确认/调整
-      ↓
-开始学习
-</code></pre>
-<h3 id="52">5.2 进度追踪流程</h3>
-<pre><code>用户完成学习/练习
-      ↓
-更新知识点掌握度
-      ↓
-检查路径进度
-      ↓
-是否需要调整?
-      ↓
-是 → 重新计算路径 → 推荐调整
-      ↓
-否 → 继续下一知识点
-      ↓
-生成学习报告
-</code></pre>
-<hr />
-<h2 id="api">六、API接口设计</h2>
-<h3 id="61">6.1 路径生成接口</h3>
-<pre><code class="language-yaml">POST /api/learning-paths/generate
-参数:
-  user_id: 用户ID
-  target_concept: 目标知识点ID
-  strategy: 路径策略 (shortest|comprehensive|recommended|review)
-  time_budget: 时间预算(分钟, 可选)
-返回:
-  path_id: 路径ID
-  path_name: 路径名称
-  total_time: 预计总时长
-  stages: 学习阶段列表
-    - stage_id: 阶段ID
-      stage_name: 阶段名称
-      concepts: 知识点列表
-        - concept_id: 知识点ID
-          name: 名称
-          estimated_time: 预计时长
-          mastery_required: 目标掌握度
-  prerequisites_summary: 前置知识概况
-
-GET /api/learning-paths/{path_id}
-返回:
-  path详情
-  progress: 当前进度
-  completed_concepts: 已完成知识点
-  current_concept: 当前学习知识点
-  next_concepts: 待学习知识点
-
-POST /api/learning-paths/{path_id}/adjust
-参数:
-  reason: 调整原因 (time_constraint|difficulty|interest)
-  preferences: 调整偏好
-返回:
-  adjusted_path: 调整后的路径
-</code></pre>
-<h3 id="62">6.2 掌握度接口</h3>
-<pre><code class="language-yaml">GET /api/users/{user_id}/mastery
-参数:
-  concept_id: 知识点ID(可选, 不传则返回全部)
-返回:
-  concept_id: 知识点ID
-  mastery_level: 掌握度(0-1)
-  mastery_grade: 掌握等级
-  last_study: 最后学习时间
-  study_count: 学习次数
-  test_accuracy: 测试正确率
-
-POST /api/users/{user_id}/mastery/update
-参数:
-  concept_id: 知识点ID
-  study_time: 本次学习时长
-  test_result: 测试结果(可选)
-返回:
-  updated_mastery: 更新后的掌握度
-  mastery_change: 掌握度变化
-  next_recommendation: 下一步建议
-</code></pre>
-<h3 id="63">6.3 薄弱点接口</h3>
-<pre><code class="language-yaml">GET /api/users/{user_id}/weak-areas
-参数:
-  area: 知识领域(可选)
-  threshold: 掌握度阈值(默认0.5)
-返回:
-  weak_concepts: 薄弱知识点列表
-  weak_categories: 薄弱分类列表
-  dependency_gaps: 依赖断裂点
-  weak_patterns: 薄弱模式
-  recommendations: 强化建议
-
-POST /api/users/{user_id}/strengthen-plan
-参数:
-  weak_areas: 薄弱点列表
-  time_budget: 时间预算
-返回:
-  plan_id: 计划ID
-  plan_name: 计划名称
-  daily_tasks: 每日任务
-  expected_improvement: 预期提升
-</code></pre>
-<hr />
-<h2 id="_6">七、总结</h2>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 06b: 个性化学习路径系统</h1>
+<p>&gt; 基于知识依赖图谱和学习者状态的个性化学习路径生成与优化系统。</p>
+<p>---</p>
+<h2>一、系统概述</h2>
+<p>### 1.1 设计目标</p>
+<p>- **个性化路径**：根据学习者当前状态生成定制化学习路径</p>
+<p>- **依赖感知**：严格遵循知识前置依赖关系</p>
+<p>- **灵活策略**：支持最短路径、最完整路径等多种策略</p>
+<p>- **薄弱识别**：自动识别学习薄弱环节并推荐强化</p>
+<p>### 1.2 核心功能</p>
+<p>```</p>
+<p>┌─────────────────────────────────────────────────────────────────┐</p>
+<p>│                     个性化学习路径系统                          │</p>
+<p>├─────────────────────────────────────────────────────────────────┤</p>
+<p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │</p>
+<p>│  │ 掌握度评估   │  │ 路径生成    │  │ 薄弱识别    │  │ 进度追踪│ │</p>
+<p>│  │             │  │             │  │             │  │        │ │</p>
+<p>│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │</p>
+<p>├─────────────────────────────────────────────────────────────────┤</p>
+<p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │</p>
+<p>│  │ 最短路径    │  │ 最完整路径  │  │ 自适应调整  │             │</p>
+<p>│  │             │  │             │  │             │             │</p>
+<p>│  └─────────────┘  └─────────────┘  └─────────────┘             │</p>
+<p>└─────────────────────────────────────────────────────────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>二、知识点掌握度评估</h2>
+<p>### 2.1 评估维度</p>
+<p>| 维度 | 说明 | 权重 |</p>
+<p>|------|------|------|</p>
+<p>| **测试正确率** | 该知识点相关题目的正确率 | 40% |</p>
+<p>| **学习时长** | 实际学习时长与建议时长的比例 | 20% |</p>
+<p>| **学习次数** | 学习该知识点的次数 | 15% |</p>
+<p>| **前置掌握** | 前置知识的平均掌握度 | 15% |</p>
+<p>| **最近学习** | 最近学习的时间衰减 | 10% |</p>
+<p>### 2.2 掌握度计算模型</p>
+<p>```python</p>
+<p>class MasteryCalculator:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    知识点掌握度计算模型</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    def calculate_mastery(self, user_id: str, concept_id: str) -&gt; float:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        计算用户对某知识点的掌握度 (0-1)</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        # 1. 获取学习数据</p>
+<p>        study_data = self.get_study_data(user_id, concept_id)</p>
+<p>        # 2. 计算各维度得分</p>
+<p>        test_score = self._calc_test_score(study_data[&#x27;test_results&#x27;])</p>
+<p>        time_score = self._calc_time_score(study_data[&#x27;study_time&#x27;], study_data[&#x27;recommended_time&#x27;])</p>
+<p>        count_score = self._calc_count_score(study_data[&#x27;study_count&#x27;])</p>
+<p>        prereq_score = self._calc_prerequisite_score(user_id, concept_id)</p>
+<p>        recency_score = self._calc_recency_score(study_data[&#x27;last_study_time&#x27;])</p>
+<p>        # 3. 加权求和</p>
+<p>        mastery = (</p>
+<p>            test_score * 0.40 +</p>
+<p>            time_score * 0.20 +</p>
+<p>            count_score * 0.15 +</p>
+<p>            prereq_score * 0.15 +</p>
+<p>            recency_score * 0.10</p>
+<p>        )</p>
+<p>        return min(mastery, 1.0)</p>
+<p>    def _calc_test_score(self, test_results: list) -&gt; float:</p>
+<p>        &quot;&quot;&quot;计算测试正确率得分&quot;&quot;&quot;</p>
+<p>        if not test_results:</p>
+<p>            return 0.0</p>
+<p>        # 加权平均，最近测试权重更高</p>
+<p>        weights = [0.5 ** i for i in range(len(test_results))]</p>
+<p>        weights.reverse()</p>
+<p>        weighted_sum = sum(r[&#x27;correct&#x27;] * w for r, w in zip(test_results, weights))</p>
+<p>        total_weight = sum(weights)</p>
+<p>        return weighted_sum / total_weight if total_weight &gt; 0 else 0.0</p>
+<p>    def _calc_time_score(self, actual_time: int, recommended_time: int) -&gt; float:</p>
+<p>        &quot;&quot;&quot;计算学习时长得分&quot;&quot;&quot;</p>
+<p>        if recommended_time == 0:</p>
+<p>            return 0.5</p>
+<p>        ratio = actual_time / recommended_time</p>
+<p>        # 达到建议时长得满分，不足按比例，超过不加分</p>
+<p>        return min(ratio, 1.0)</p>
+<p>    def _calc_count_score(self, study_count: int) -&gt; float:</p>
+<p>        &quot;&quot;&quot;计算学习次数得分&quot;&quot;&quot;</p>
+<p>        # 学习1次得0.3，2次得0.6，3次及以上得1.0</p>
+<p>        if study_count &gt;= 3:</p>
+<p>            return 1.0</p>
+<p>        return study_count * 0.3</p>
+<p>    def _calc_prerequisite_score(self, user_id: str, concept_id: str) -&gt; float:</p>
+<p>        &quot;&quot;&quot;计算前置知识掌握度得分&quot;&quot;&quot;</p>
+<p>        prereqs = self.get_prerequisites(concept_id)</p>
+<p>        if not prereqs:</p>
+<p>            return 1.0</p>
+<p>        prereq_masteries = [self.calculate_mastery(user_id, p) for p in prereqs]</p>
+<p>        return sum(prereq_masteries) / len(prereq_masteries)</p>
+<p>    def _calc_recency_score(self, last_study_time: datetime) -&gt; float:</p>
+<p>        &quot;&quot;&quot;计算最近学习时间得分（时间衰减）&quot;&quot;&quot;</p>
+<p>        if last_study_time is None:</p>
+<p>            return 0.0</p>
+<p>        days_since = (datetime.now() - last_study_time).days</p>
+<p>        # 7天内得1.0，30天内线性衰减，超过30天得0.3</p>
+<p>        if days_since &lt;= 7:</p>
+<p>            return 1.0</p>
+<p>        elif days_since &lt;= 30:</p>
+<p>            return 1.0 - (days_since - 7) / 23 * 0.7</p>
+<p>        else:</p>
+<p>            return 0.3</p>
+<p>```</p>
+<p>### 2.3 掌握度等级划分</p>
+<p>| 掌握度 | 等级 | 颜色 | 说明 |</p>
+<p>|--------|------|------|------|</p>
+<p>| 0.0 - 0.3 | 未掌握 | 🔴 | 需要系统学习 |</p>
+<p>| 0.3 - 0.5 | 初步了解 | 🟠 | 需要加强练习 |</p>
+<p>| 0.5 - 0.7 | 基本掌握 | 🟡 | 可以进阶学习 |</p>
+<p>| 0.7 - 0.9 | 熟练掌握 | 🟢 | 可以应用实践 |</p>
+<p>| 0.9 - 1.0 | 精通 | 🔵 | 可以教授他人 |</p>
+<p>### 2.4 掌握度可视化</p>
+<p>```</p>
+<p>┌─────────────────────────────────────────────────────────────┐</p>
+<p>│  知识点掌握度总览                                           │</p>
+<p>├─────────────────────────────────────────────────────────────┤</p>
+<p>│                                                             │</p>
+<p>│  DNA复制                                    [████████░░] 85%│</p>
+<p>│  ├── 半保留复制                             [██████████] 95%│</p>
+<p>│  ├── 复制叉                                 [███████░░░] 70%│</p>
+<p>│  ├── DNA聚合酶                              [████████░░] 80%│</p>
+<p>│  ├── 冈崎片段                               [████░░░░░░] 40%│  ⚠️ 薄弱</p>
+<p>│  └── 引物酶                                 [░░░░░░░░░░]  0%│  ⚠️ 未学习</p>
+<p>│                                                             │</p>
+<p>│  转录                                       [██████░░░░] 60%│</p>
+<p>│  ├── 转录起始                               [████████░░] 85%│</p>
+<p>│  ├── RNA聚合酶                              [█████░░░░░] 50%│</p>
+<p>│  └── 转录因子                               [░░░░░░░░░░]  0%│  ⚠️ 未学习</p>
+<p>│                                                             │</p>
+<p>└─────────────────────────────────────────────────────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>三、学习路径生成</h2>
+<p>### 3.1 路径生成算法</p>
+<p>#### 3.1.1 拓扑排序基础</p>
+<p>```python</p>
+<p>from collections import defaultdict, deque</p>
+<p>def topological_sort(concepts: list, dependencies: dict) -&gt; list:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    基于前置依赖的拓扑排序</p>
+<p>    concepts: 知识点列表</p>
+<p>    dependencies: {concept_id: [prereq_ids]} 依赖关系</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    # 计算入度</p>
+<p>    in_degree = {c: 0 for c in concepts}</p>
+<p>    for concept, prereqs in dependencies.items():</p>
+<p>        in_degree[concept] = len(prereqs)</p>
+<p>    # 初始化队列（入度为0的节点）</p>
+<p>    queue = deque([c for c in concepts if in_degree[c] == 0])</p>
+<p>    result = []</p>
+<p>    while queue:</p>
+<p>        concept = queue.popleft()</p>
+<p>        result.append(concept)</p>
+<p>        # 更新依赖此知识点的入度</p>
+<p>        for c, prereqs in dependencies.items():</p>
+<p>            if concept in prereqs:</p>
+<p>                in_degree[c] -= 1</p>
+<p>                if in_degree[c] == 0:</p>
+<p>                    queue.append(c)</p>
+<p>    return result</p>
+<p>```</p>
+<p>#### 3.1.2 最短路径算法</p>
+<p>```python</p>
+<p>import heapq</p>
+<p>from dataclasses import dataclass</p>
+<p>@dataclass</p>
+<p>class PathNode:</p>
+<p>    concept_id: str</p>
+<p>    cost: float  # 学习成本（时间）</p>
+<p>    mastery_gain: float  # 掌握度提升</p>
+<p>def shortest_learning_path(</p>
+<p>    user_id: str,</p>
+<p>    target_concept: str,</p>
+<p>    mastery_threshold: float = 0.7</p>
+<p>) -&gt; list:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    生成从当前状态到目标知识点的最短学习路径</p>
+<p>    考虑已掌握的知识点，只学习未掌握的前置知识</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    # 1. 获取目标知识点的所有前置依赖</p>
+<p>    all_prereqs = get_all_prerequisites(target_concept)</p>
+<p>    # 2. 过滤已掌握的知识点</p>
+<p>    concepts_to_learn = [</p>
+<p>        c for c in all_prereqs </p>
+<p>        if get_mastery(user_id, c) &lt; mastery_threshold</p>
+<p>    ]</p>
+<p>    concepts_to_learn.append(target_concept)</p>
+<p>    # 3. 构建依赖图</p>
+<p>    graph = build_dependency_graph(concepts_to_learn)</p>
+<p>    # 4. 使用Dijkstra算法找最短路径</p>
+<p>    # 边的权重 = 建议学习时长 / 难度系数</p>
+<p>    return dijkstra_path(graph, start=None, target=target_concept)</p>
+<p>def dijkstra_path(graph: dict, start: str, target: str) -&gt; list:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    Dijkstra最短路径算法</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    distances = {node: float(&#x27;inf&#x27;) for node in graph}</p>
+<p>    distances[start] = 0</p>
+<p>    previous = {node: None for node in graph}</p>
+<p>    pq = [(0, start)]</p>
+<p>    while pq:</p>
+<p>        current_dist, current = heapq.heappop(pq)</p>
+<p>        if current == target:</p>
+<p>            break</p>
+<p>        if current_dist &gt; distances[current]:</p>
+<p>            continue</p>
+<p>        for neighbor, weight in graph[current].items():</p>
+<p>            distance = current_dist + weight</p>
+<p>            if distance &lt; distances[neighbor]:</p>
+<p>                distances[neighbor] = distance</p>
+<p>                previous[neighbor] = current</p>
+<p>                heapq.heappush(pq, (distance, neighbor))</p>
+<p>    # 重建路径</p>
+<p>    path = []</p>
+<p>    current = target</p>
+<p>    while current is not None:</p>
+<p>        path.append(current)</p>
+<p>        current = previous[current]</p>
+<p>    path.reverse()</p>
+<p>    return path</p>
+<p>```</p>
+<p>#### 3.1.3 最完整路径算法</p>
+<p>```python</p>
+<p>def comprehensive_learning_path(</p>
+<p>    user_id: str,</p>
+<p>    target_concept: str,</p>
+<p>    include_optional: bool = True</p>
+<p>) -&gt; list:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    生成最完整的学习路径</p>
+<p>    包含所有前置知识、相关知识和推荐扩展</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    path = []</p>
+<p>    # 1. 强依赖路径（必须学习）</p>
+<p>    strong_prereqs = get_prerequisites(target_concept, level=&#x27;strong&#x27;)</p>
+<p>    path.extend(topological_sort(strong_prereqs))</p>
+<p>    # 2. 弱依赖路径（推荐学习）</p>
+<p>    weak_prereqs = get_prerequisites(target_concept, level=&#x27;weak&#x27;)</p>
+<p>    path.extend(topological_sort(weak_prereqs))</p>
+<p>    # 3. 可选扩展（根据用户偏好）</p>
+<p>    if include_optional:</p>
+<p>        optional = get_related_concepts(target_concept, limit=5)</p>
+<p>        path.extend(optional)</p>
+<p>    # 4. 目标知识点</p>
+<p>    path.append(target_concept)</p>
+<p>    return path</p>
+<p>```</p>
+<p>### 3.2 路径策略对比</p>
+<p>| 策略 | 适用场景 | 特点 | 示例 |</p>
+<p>|------|---------|------|------|</p>
+<p>| **最短路径** | 时间紧迫、考前冲刺 | 只学必要前置知识 | 学PCR只需掌握DNA复制基础 |</p>
+<p>| **最完整路径** | 系统学习、深度学习 | 包含所有相关知识点 | 学PCR需学复制原理、引物设计、酶学等 |</p>
+<p>| **推荐路径** | 日常学习 | 平衡深度和广度 | 根据掌握度动态调整 |</p>
+<p>| **复习路径** | 查漏补缺 | 针对薄弱环节 | 只学掌握度&lt;0.5的知识点 |</p>
+<p>### 3.3 路径可视化</p>
+<p>```</p>
+<p>┌─────────────────────────────────────────────────────────────┐</p>
+<p>│  个性化学习路径: DNA复制                                    │</p>
+<p>│  预计总时长: 3小时30分钟  |  已掌握: 2/8 知识点            │</p>
+<p>├─────────────────────────────────────────────────────────────┤</p>
+<p>│                                                             │</p>
+<p>│  阶段 1: 前置基础 (45分钟)                                  │</p>
+<p>│  ═══════════════════════════════════════════════════════   │</p>
+<p>│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │</p>
+<p>│  │ DNA结构     │───→│ 碱基配对    │───→│ 酶基础      │     │</p>
+<p>│  │ [已掌握 ✓]  │    │ [已掌握 ✓]  │    │ [学习中 ▶]  │     │</p>
+<p>│  └─────────────┘    └─────────────┘    └─────────────┘     │</p>
+<p>│                                                             │</p>
+<p>│  阶段 2: 核心机制 (90分钟)                                  │</p>
+<p>│  ═══════════════════════════════════════════════════════   │</p>
+<p>│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │</p>
+<p>│  │ 半保留复制  │───→│ 复制叉      │───→│ DNA聚合酶   │     │</p>
+<p>│  │ [未开始 ○]  │    │ [未开始 ○]  │    │ [未开始 ○]  │     │</p>
+<p>│  └─────────────┘    └─────────────┘    └─────────────┘     │</p>
+<p>│         ↓                                                   │</p>
+<p>│  ┌─────────────┐    ┌─────────────┐                         │</p>
+<p>│  │ 冈崎片段    │───→│ DNA连接酶   │                         │</p>
+<p>│  │ [未开始 ○]  │    │ [未开始 ○]  │                         │</p>
+<p>│  └─────────────┘    └─────────────┘                         │</p>
+<p>│                                                             │</p>
+<p>│  阶段 3: 应用拓展 (45分钟)                                  │</p>
+<p>│  ═══════════════════════════════════════════════════════   │</p>
+<p>│  ┌─────────────┐    ┌─────────────┐                         │</p>
+<p>│  │ 复制调控    │───→│ PCR技术     │                         │</p>
+<p>│  │ [未开始 ○]  │    │ [未开始 ○]  │                         │</p>
+<p>│  └─────────────┘    └─────────────┘                         │</p>
+<p>│                                                             │</p>
+<p>│  [开始学习]  [调整路径]  [导出计划]                         │</p>
+<p>└─────────────────────────────────────────────────────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>四、薄弱环节识别</h2>
+<p>### 4.1 薄弱点检测算法</p>
+<p>```python</p>
+<p>def identify_weak_areas(user_id: str, concept_area: str = None) -&gt; dict:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    识别学习者的薄弱环节</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    weak_areas = {</p>
+<p>        &#x27;concepts&#x27;: [],      # 薄弱知识点</p>
+<p>        &#x27;categories&#x27;: [],    # 薄弱分类</p>
+<p>        &#x27;dependencies&#x27;: [],  # 依赖断裂点</p>
+<p>        &#x27;patterns&#x27;: []       # 薄弱模式</p>
+<p>    }</p>
+<p>    # 1. 识别掌握度低的知识点</p>
+<p>    concepts = get_all_concepts(area=concept_area)</p>
+<p>    for concept in concepts:</p>
+<p>        mastery = get_mastery(user_id, concept)</p>
+<p>        if mastery &lt; 0.5:</p>
+<p>            weak_areas[&#x27;concepts&#x27;].append({</p>
+<p>                &#x27;concept&#x27;: concept,</p>
+<p>                &#x27;mastery&#x27;: mastery,</p>
+<p>                &#x27;priority&#x27;: calculate_priority(concept)</p>
+<p>            })</p>
+<p>    # 2. 识别薄弱分类</p>
+<p>    category_masteries = {}</p>
+<p>    for concept in concepts:</p>
+<p>        category = get_category(concept)</p>
+<p>        mastery = get_mastery(user_id, concept)</p>
+<p>        if category not in category_masteries:</p>
+<p>            category_masteries[category] = []</p>
+<p>        category_masteries[category].append(mastery)</p>
+<p>    for category, masteries in category_masteries.items():</p>
+<p>        avg_mastery = sum(masteries) / len(masteries)</p>
+<p>        if avg_mastery &lt; 0.6:</p>
+<p>            weak_areas[&#x27;categories&#x27;].append({</p>
+<p>                &#x27;category&#x27;: category,</p>
+<p>                &#x27;avg_mastery&#x27;: avg_mastery,</p>
+<p>                &#x27;concept_count&#x27;: len(masteries)</p>
+<p>            })</p>
+<p>    # 3. 识别依赖断裂点</p>
+<p>    for concept in concepts:</p>
+<p>        mastery = get_mastery(user_id, concept)</p>
+<p>        if mastery &gt;= 0.7:  # 已掌握</p>
+<p>            continue</p>
+<p>        prereqs = get_prerequisites(concept)</p>
+<p>        prereq_masteries = [get_mastery(user_id, p) for p in prereqs]</p>
+<p>        # 如果前置知识掌握良好但当前知识薄弱</p>
+<p>        if prereq_masteries and min(prereq_masteries) &gt;= 0.6:</p>
+<p>            weak_areas[&#x27;dependencies&#x27;].append({</p>
+<p>                &#x27;concept&#x27;: concept,</p>
+<p>                &#x27;prereq_mastery&#x27;: sum(prereq_masteries) / len(prereq_masteries),</p>
+<p>                &#x27;current_mastery&#x27;: mastery</p>
+<p>            })</p>
+<p>    # 4. 识别薄弱模式</p>
+<p>    weak_areas[&#x27;patterns&#x27;] = analyze_weak_patterns(user_id)</p>
+<p>    return weak_areas</p>
+<p>def analyze_weak_patterns(user_id: str) -&gt; list:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    分析薄弱模式（如：总是学不会某类概念）</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    patterns = []</p>
+<p>    # 按题型分析</p>
+<p>    question_type_stats = get_question_type_stats(user_id)</p>
+<p>    for q_type, accuracy in question_type_stats.items():</p>
+<p>        if accuracy &lt; 0.5:</p>
+<p>            patterns.append({</p>
+<p>                &#x27;type&#x27;: &#x27;question_type&#x27;,</p>
+<p>                &#x27;detail&#x27;: q_type,</p>
+<p>                &#x27;accuracy&#x27;: accuracy,</p>
+<p>                &#x27;suggestion&#x27;: f&#x27;建议加强{q_type}类型题目的练习&#x27;</p>
+<p>            })</p>
+<p>    # 按难度分析</p>
+<p>    difficulty_stats = get_difficulty_stats(user_id)</p>
+<p>    for diff, accuracy in difficulty_stats.items():</p>
+<p>        if accuracy &lt; 0.5:</p>
+<p>            patterns.append({</p>
+<p>                &#x27;type&#x27;: &#x27;difficulty&#x27;,</p>
+<p>                &#x27;detail&#x27;: diff,</p>
+<p>                &#x27;accuracy&#x27;: accuracy,</p>
+<p>                &#x27;suggestion&#x27;: f&#x27;建议先巩固{diff}难度知识点&#x27;</p>
+<p>            })</p>
+<p>    return patterns</p>
+<p>```</p>
+<p>### 4.2 薄弱点报告</p>
+<p>```</p>
+<p>┌─────────────────────────────────────────────────────────────┐</p>
+<p>│  薄弱环节分析报告                                           │</p>
+<p>│  生成时间: 2025-03-17  |  学习者: 张同学                    │</p>
+<p>├─────────────────────────────────────────────────────────────┤</p>
+<p>│                                                             │</p>
+<p>│  📊 整体掌握度: 62% (中等偏下)                              │</p>
+<p>│                                                             │</p>
+<p>│  🔴 薄弱知识点 (掌握度 &lt; 50%)                               │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ 1. 冈崎片段                              掌握度: 40% │ │</p>
+<p>│  │    └─ 建议: 复习DNA复制机制，重点理解后随链合成       │ │</p>
+<p>│  │                                                       │ │</p>
+<p>│  │ 2. 转录因子                              掌握度: 35% │ │</p>
+<p>│  │    └─ 建议: 学习通用转录因子与特异性转录因子的区别    │ │</p>
+<p>│  │                                                       │ │</p>
+<p>│  │ 3. 密码子简并性                          掌握度: 30% │ │</p>
+<p>│  │    └─ 建议: 理解摆动假说，练习密码子-氨基酸对应       │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  🟠 薄弱分类 (平均掌握度 &lt; 60%)                             │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ • 翻译后修饰                             平均: 45%     │ │</p>
+<p>│  │   包含: 蛋白质折叠(40%), 糖基化(50%), 磷酸化(45%)     │ │</p>
+<p>│  │                                                       │ │</p>
+<p>│  │ • 转录调控                               平均: 52%     │ │</p>
+<p>│  │   包含: 操纵子模型(55%), 乳糖操纵子(50%), 色氨酸操纵子│ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  🔗 依赖断裂点                                              │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ • 已掌握&quot;DNA聚合酶&quot;但&quot;冈崎片段&quot;薄弱                   │ │</p>
+<p>│  │   可能原因: 理解酶的功能但未掌握复制过程的连续性      │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  📈 薄弱模式                                                │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ • 案例分析题正确率仅 35%，建议加强应用练习            │ │</p>
+<p>│  │ • 高难度题目正确率仅 28%，建议先巩固基础              │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  [生成强化计划]  [查看详情]  [导出报告]                     │</p>
+<p>└─────────────────────────────────────────────────────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>五、用户交互流程</h2>
+<p>### 5.1 路径生成流程</p>
+<p>```</p>
+<p>用户选择学习目标</p>
+<p>      ↓</p>
+<p>系统评估当前掌握度</p>
+<p>      ↓</p>
+<p>分析前置依赖关系</p>
+<p>      ↓</p>
+<p>选择路径策略</p>
+<p>┌─────────┬─────────┬─────────┐</p>
+<p>↓         ↓         ↓         ↓</p>
+<p>最短路径  最完整路径 推荐路径  复习路径</p>
+<p>      ↓</p>
+<p>生成个性化路径</p>
+<p>      ↓</p>
+<p>展示路径可视化</p>
+<p>      ↓</p>
+<p>用户确认/调整</p>
+<p>      ↓</p>
+<p>开始学习</p>
+<p>```</p>
+<p>### 5.2 进度追踪流程</p>
+<p>```</p>
+<p>用户完成学习/练习</p>
+<p>      ↓</p>
+<p>更新知识点掌握度</p>
+<p>      ↓</p>
+<p>检查路径进度</p>
+<p>      ↓</p>
+<p>是否需要调整?</p>
+<p>      ↓</p>
+<p>是 → 重新计算路径 → 推荐调整</p>
+<p>      ↓</p>
+<p>否 → 继续下一知识点</p>
+<p>      ↓</p>
+<p>生成学习报告</p>
+<p>```</p>
+<p>---</p>
+<h2>六、API接口设计</h2>
+<p>### 6.1 路径生成接口</p>
+<p>```yaml</p>
+<p>POST /api/learning-paths/generate</p>
+<p>参数:</p>
+<p>  user_id: 用户ID</p>
+<p>  target_concept: 目标知识点ID</p>
+<p>  strategy: 路径策略 (shortest|comprehensive|recommended|review)</p>
+<p>  time_budget: 时间预算(分钟, 可选)</p>
+<p>返回:</p>
+<p>  path_id: 路径ID</p>
+<p>  path_name: 路径名称</p>
+<p>  total_time: 预计总时长</p>
+<p>  stages: 学习阶段列表</p>
+<p>    - stage_id: 阶段ID</p>
+<p>      stage_name: 阶段名称</p>
+<p>      concepts: 知识点列表</p>
+<p>        - concept_id: 知识点ID</p>
+<p>          name: 名称</p>
+<p>          estimated_time: 预计时长</p>
+<p>          mastery_required: 目标掌握度</p>
+<p>  prerequisites_summary: 前置知识概况</p>
+<p>GET /api/learning-paths/{path_id}</p>
+<p>返回:</p>
+<p>  path详情</p>
+<p>  progress: 当前进度</p>
+<p>  completed_concepts: 已完成知识点</p>
+<p>  current_concept: 当前学习知识点</p>
+<p>  next_concepts: 待学习知识点</p>
+<p>POST /api/learning-paths/{path_id}/adjust</p>
+<p>参数:</p>
+<p>  reason: 调整原因 (time_constraint|difficulty|interest)</p>
+<p>  preferences: 调整偏好</p>
+<p>返回:</p>
+<p>  adjusted_path: 调整后的路径</p>
+<p>```</p>
+<p>### 6.2 掌握度接口</p>
+<p>```yaml</p>
+<p>GET /api/users/{user_id}/mastery</p>
+<p>参数:</p>
+<p>  concept_id: 知识点ID(可选, 不传则返回全部)</p>
+<p>返回:</p>
+<p>  concept_id: 知识点ID</p>
+<p>  mastery_level: 掌握度(0-1)</p>
+<p>  mastery_grade: 掌握等级</p>
+<p>  last_study: 最后学习时间</p>
+<p>  study_count: 学习次数</p>
+<p>  test_accuracy: 测试正确率</p>
+<p>POST /api/users/{user_id}/mastery/update</p>
+<p>参数:</p>
+<p>  concept_id: 知识点ID</p>
+<p>  study_time: 本次学习时长</p>
+<p>  test_result: 测试结果(可选)</p>
+<p>返回:</p>
+<p>  updated_mastery: 更新后的掌握度</p>
+<p>  mastery_change: 掌握度变化</p>
+<p>  next_recommendation: 下一步建议</p>
+<p>```</p>
+<p>### 6.3 薄弱点接口</p>
+<p>```yaml</p>
+<p>GET /api/users/{user_id}/weak-areas</p>
+<p>参数:</p>
+<p>  area: 知识领域(可选)</p>
+<p>  threshold: 掌握度阈值(默认0.5)</p>
+<p>返回:</p>
+<p>  weak_concepts: 薄弱知识点列表</p>
+<p>  weak_categories: 薄弱分类列表</p>
+<p>  dependency_gaps: 依赖断裂点</p>
+<p>  weak_patterns: 薄弱模式</p>
+<p>  recommendations: 强化建议</p>
+<p>POST /api/users/{user_id}/strengthen-plan</p>
+<p>参数:</p>
+<p>  weak_areas: 薄弱点列表</p>
+<p>  time_budget: 时间预算</p>
+<p>返回:</p>
+<p>  plan_id: 计划ID</p>
+<p>  plan_name: 计划名称</p>
+<p>  daily_tasks: 每日任务</p>
+<p>  expected_improvement: 预期提升</p>
+<p>```</p>
+<p>---</p>
+<h2>七、总结</h2>
 <p>个性化学习路径系统的核心特性：</p>
-<ol>
-<li><strong>多维度掌握度评估</strong>：综合考虑测试成绩、学习时长、学习次数、前置掌握和最近学习</li>
-<li><strong>智能路径生成</strong>：支持最短路径、最完整路径、推荐路径和复习路径四种策略</li>
-<li><strong>薄弱点精准识别</strong>：从知识点、分类、依赖和模式四个维度识别薄弱环节</li>
-<li><strong>动态路径调整</strong>：根据学习进度实时调整路径，确保学习效率</li>
-<li><strong>可视化展示</strong>：清晰的路径图和掌握度热力图，直观展示学习状态</li>
-</ol></article></main>
+<p>1. **多维度掌握度评估**：综合考虑测试成绩、学习时长、学习次数、前置掌握和最近学习</p>
+<p>2. **智能路径生成**：支持最短路径、最完整路径、推荐路径和复习路径四种策略</p>
+<p>3. **薄弱点精准识别**：从知识点、分类、依赖和模式四个维度识别薄弱环节</p>
+<p>4. **动态路径调整**：根据学习进度实时调整路径，确保学习效率</p>
+<p>5. **可视化展示**：清晰的路径图和掌握度热力图，直观展示学习状态</p></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

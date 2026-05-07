@@ -1,0 +1,34 @@
+{
+  "id": "dna-transposon",
+  "nameEn": "DNA Transposon",
+  "category": "基因组",
+  "chapter": "第5章",
+  "importance": "core-major",
+  "definition": "DNA转座子是通过'切割-粘贴'（cut-and-paste）或'复制-粘贴'（replicative）机制在基因组中移动的离散DNA序列，是Barbara McClintock于1940年代在玉米中发现的可移动遗传元件（获1983年诺贝尔奖）。其结构简单：两端为反方向重复序列（TIR），中间编码转座酶（transposase）——唯一必需的酶蛋白，负责识别TIR、切除转座子和在靶位点重新插入。人类基因组中约3%为DNA转座子序列，绝大多数因累积突变而丧失了跳跃能力（化石转座子）。然而，一些基因组巧妙地'驯化'了转座子——最著名的例子是脊椎动物免疫系统的RAG1/RAG2重组酶，它们源自古代转座子、现已被精确整合入V(D)J重组系统催化抗体和T细胞受体的体细胞多样性。Sleeping Beauty转座子系统是目前基因治疗和插入突变筛选中最具应用潜力的合成DNA转座子。",
+  "keyConcepts": [
+    {
+      "term": "转座酶",
+      "definition": "催化DNA转座子切除和插入的酶，识别两端TIR序列"
+    },
+    {
+      "term": "TIR",
+      "definition": "反向末端重复，转座酶识别和切割的靶序列"
+    },
+    {
+      "term": "靶位点重复",
+      "definition": "插入后在两端产生的短正向重复（TSD），不同转座子特征长度不同"
+    }
+  ],
+  "keyPoints": [
+    "切割-粘贴移动的遗传元件",
+    "两端为反向重复(TIR)，中间编码转座酶",
+    "人类基因组约3%为已失活的DNA转座子化石",
+    "V(D)J重组系统源自转座子驯化"
+  ],
+  "relatedEntities": [
+    "DNA 重组",
+    "逆转录转座子",
+    "突变",
+    "基因组注释"
+  ]
+}

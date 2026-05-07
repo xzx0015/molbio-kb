@@ -5,14 +5,32 @@
   "category": "分子",
   "chapter": "第 2 章",
   "importance": "core-important",
-  "definition": "核苷酸是核酸（DNA 和 RNA）的基本组成单位，由碱基、五碳糖和磷酸基团组成，是遗传信息的载体。",
+  "definition": "核苷酸是核酸（DNA和RNA）的基本结构单位，由三部分组成：含氮碱基（嘌呤类腺嘌呤A、鸟嘌呤G或嘧啶类胞嘧啶C、胸腺嘧啶T/尿嘧啶U）、五碳糖（脱氧核糖或核糖）以及一至三个磷酸基团。核苷酸通过3'→5'磷酸二酯键连接形成多核苷酸链，磷酸-糖骨架赋予核酸方向性和化学稳定性。核苷酸不仅是遗传信息的载体，还承担着诸多其他关键细胞功能：三磷酸核苷（NTP/dNTP）是核酸合成的前体和能量的通用货币（ATP的β-γ磷酸酐键的水解释放约30.5 kJ/mol自由能）；环状核苷酸（cAMP、cGMP）是激素信号通路的第二信使；NAD⁺、FAD、辅酶A等辅因子以核苷酸衍生物形式参与氧化还原和代谢反应。核酸的碱基序列即为遗传信息的载体——DNA的双螺旋结构和碱基互补配对原则（A=T/U、G≡C）是实现信息储存和精准复制的分子基础。",
   "keyConcepts": [
-    {"term": "脱氧核糖核苷酸", "definition": "DNA 的组成单位，含脱氧核糖和 A/T/G/C 碱基"},
-    {"term": "核糖核苷酸", "definition": "RNA 的组成单位，含核糖和 A/U/G/C 碱基"},
-    {"term": "碱基", "definition": "核苷酸中的含氮杂环化合物，包括嘌呤和嘧啶"},
-    {"term": "磷酸二酯键", "definition": "连接核苷酸的化学键，形成核酸链"},
-    {"term": "dNTP", "definition": "脱氧核苷三磷酸，DNA 合成的原料"},
-    {"term": "NTP", "definition": "核苷三磷酸，RNA 合成的原料"}
+    {
+      "term": "脱氧核糖核苷酸",
+      "definition": "DNA 的组成单位，含脱氧核糖和 A/T/G/C 碱基"
+    },
+    {
+      "term": "核糖核苷酸",
+      "definition": "RNA 的组成单位，含核糖和 A/U/G/C 碱基"
+    },
+    {
+      "term": "碱基",
+      "definition": "核苷酸中的含氮杂环化合物，包括嘌呤和嘧啶"
+    },
+    {
+      "term": "磷酸二酯键",
+      "definition": "连接核苷酸的化学键，形成核酸链"
+    },
+    {
+      "term": "dNTP",
+      "definition": "脱氧核苷三磷酸，DNA 合成的原料"
+    },
+    {
+      "term": "NTP",
+      "definition": "核苷三磷酸，RNA 合成的原料"
+    }
   ],
   "keyPoints": [
     "核苷酸由碱基、五碳糖和磷酸组成",
@@ -21,7 +39,13 @@
     "核苷三磷酸（dNTP/NTP）是核酸合成的原料",
     "核苷酸还参与能量代谢（ATP）和信号传导（cAMP）"
   ],
-  "relatedEntities": ["DNA", "RNA", "DNA 复制", "基因转录", "染色体与 DNA"],
+  "relatedEntities": [
+    "DNA",
+    "RNA",
+    "DNA 复制",
+    "基因转录",
+    "染色体与 DNA"
+  ],
   "references": [
     "Watson JD, Crick FH. Molecular structure of nucleic acids. Nature, 1953"
   ]

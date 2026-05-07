@@ -1,0 +1,35 @@
+{
+  "id": "ner",
+  "nameEn": "Nucleotide Excision Repair",
+  "category": "过程",
+  "chapter": "第5章",
+  "importance": "core-major",
+  "keyConcepts": [
+    {
+      "term": "XPC-hHR23B",
+      "definition": "GG-NER的损伤识别复合物，识别螺旋扭曲性损伤"
+    },
+    {
+      "term": "TFIIH",
+      "definition": "含XPB和XPD解旋酶的九亚基复合物，在损伤位点打开DNA双链"
+    },
+    {
+      "term": "XPF-ERCC1/XPG",
+      "definition": "分别在损伤5'端和3'端切割的核酸内切酶"
+    }
+  ],
+  "keyPoints": [
+    "修复螺旋扭曲性加合物损伤（紫外线产物、化学致癌物加合物）",
+    "GG-NER（全基因组）和TC-NER（转录偶联）两种亚通路",
+    "XP（着色性干皮病）由NER基因缺陷引起",
+    "NER缺陷与极高皮肤癌风险相关"
+  ],
+  "relatedEntities": [
+    "DNA 重组",
+    "切除修复",
+    "嘧啶二聚体",
+    "诱发性损伤",
+    "DNA 聚合酶"
+  ],
+  "definition": "核苷酸切除修复（NER）是修复螺旋扭曲性DNA加合物损伤（包括紫外线诱导的环丁烷嘧啶二聚体CPD和6-4光产物、化学致癌物如苯并[a]芘的加合物、以及顺铂等化疗药物的DNA交联）的核心通路。NER通过切除包含损伤位点的一段约24-32个核苷酸的寡核苷酸、再以互补链为模板填补缺口来恢复原始序列。分为两个亚通路：全基因组NER（GG-NER）由XPC-hHR23B复合物扫描全基因组识别螺旋扭曲；转录偶联NER（TC-NER）由RNA聚合酶Ⅱ在损伤位点停滞触发，更高效地修复活跃转录基因的模板链。中间步骤共用：TFIIH利用XPB/XPD解旋酶打开双链→XPA-RPA验证损伤→XPF-ERCC1在5'端、XPG在3'端切割释放损伤寡核苷酸→DNA聚合酶δ/ε和连接酶完成修复。NER基因的遗传缺陷导致着色性干皮病、Cockayne综合征等严重光敏性、神经系统退化和极高皮肤癌发病率。"
+}

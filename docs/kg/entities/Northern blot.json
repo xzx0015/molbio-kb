@@ -5,13 +5,28 @@
   "category": "技术",
   "chapter": "第 11 章",
   "importance": "core-major",
-  "definition": "Northern blot 是检测特定 RNA 的印迹技术，通过凝胶电泳分离 RNA，转膜后用探针杂交检测。",
+  "definition": "Northern blot（RNA印迹）是检测特定RNA分子表达水平和大小的经典分子生物学技术，由Alwine等人于1977年建立，因与Southern blot的类比而得名。其基本流程为：从细胞或组织中提取总RNA或mRNA，经变性琼脂糖凝胶电泳按大小分离，转移（印迹）至尼龙膜或硝酸纤维素膜，再与放射性同位素或化学发光标记的特异性探针杂交，通过放射自显影或化学发光检测目标条带。Northern blot提供的不仅是定量信息，还能反映RNA的完整性和剪接异构体，这是RT-PCR和微阵列等替代技术难以同时提供的。虽然通量低、操作相对繁琐，但在验证RNA测序结果、检测特定转录本的表达变化中仍具有不可替代的参考价值。",
   "keyConcepts": [
-    {"term": "甲醛变性胶", "definition": "用于 RNA 分离的变性琼脂糖凝胶"},
-    {"term": "探针", "definition": "标记的 DNA 或 RNA 片段，用于检测特定 RNA"},
-    {"term": "杂交", "definition": "探针与靶 RNA 的碱基配对过程"},
-    {"term": "转膜", "definition": "将凝胶中的 RNA 转移到膜上"},
-    {"term": "放射性标记", "definition": "用放射性同位素标记探针"}
+    {
+      "term": "甲醛变性胶",
+      "definition": "用于 RNA 分离的变性琼脂糖凝胶"
+    },
+    {
+      "term": "探针",
+      "definition": "标记的 DNA 或 RNA 片段，用于检测特定 RNA"
+    },
+    {
+      "term": "杂交",
+      "definition": "探针与靶 RNA 的碱基配对过程"
+    },
+    {
+      "term": "转膜",
+      "definition": "将凝胶中的 RNA 转移到膜上"
+    },
+    {
+      "term": "放射性标记",
+      "definition": "用放射性同位素标记探针"
+    }
   ],
   "keyPoints": [
     "Northern blot 用于检测特定 RNA 的大小和表达量",
@@ -20,7 +35,12 @@
     "Northern blot 可分析 RNA 加工和剪接",
     "RT-qPCR 已部分替代 Northern blot"
   ],
-  "relatedEntities": ["分子生物学技术", "RNA", "探针", "Southern blot"],
+  "relatedEntities": [
+    "分子生物学技术",
+    "RNA",
+    "探针",
+    "Southern blot"
+  ],
   "references": [
     "Alwine JC, et al. Detection of specific RNAs or specific fragments of DNA among fractionated DNA. PNAS, 1977"
   ]

@@ -5,13 +5,28 @@
   "category": "调控",
   "chapter": "第 4 章",
   "importance": "core-important",
-  "definition": "启动子是位于基因上游、能被 RNA 聚合酶识别并结合的 DNA 序列，决定转录起始位点和转录效率。",
+  "definition": "启动子是位于基因转录起始位点上游的特异性DNA序列元件，负责招募RNA聚合酶和通用转录因子，决定转录的起始位点和基础转录效率。原核生物启动子包含两段保守的六核苷酸序列：-10区（Pribnow框，TATAAT）和-35区（TTGACA），分别被RNA聚合酶的σ因子识别，两者间的间隔（通常17±1 bp）对启动子强度至关重要。真核生物蛋白质编码基因的启动子更为复杂：核心启动子（约-40至+40区域）包含TATA框（位于-25至-30）、起始子（Inr）、下游启动子元件（DPE）等，TATA框被TATA结合蛋白（TBP）识别，TBP是TFIID复合物的亚基，TFIID的DNA结合引发通用转录因子的顺序组装。真核启动子通常还包含位于更远上游的调控元件如CAAT框和GC框，由特异性转录因子结合以调控转录强度。启动子是基因表达调控的第一道关卡，其甲基化状态、染色质可及性和转录因子结合状态共同决定了基因是否被表达以及表达量。",
   "keyConcepts": [
-    {"term": "TATA 框", "definition": "真核生物启动子中的保守序列，位于 -25 至 -30 区"},
-    {"term": "CAAT 框", "definition": "真核生物启动子中的保守序列，位于 -70 至 -80 区"},
-    {"term": "GC 框", "definition": "富含 GC 的启动子元件"},
-    {"term": "Pribnow 框", "definition": "原核生物启动子中的 -10 区保守序列"},
-    {"term": "-35 区", "definition": "原核生物启动子中的另一个保守区域"}
+    {
+      "term": "TATA 框",
+      "definition": "真核生物启动子中的保守序列，位于 -25 至 -30 区"
+    },
+    {
+      "term": "CAAT 框",
+      "definition": "真核生物启动子中的保守序列，位于 -70 至 -80 区"
+    },
+    {
+      "term": "GC 框",
+      "definition": "富含 GC 的启动子元件"
+    },
+    {
+      "term": "Pribnow 框",
+      "definition": "原核生物启动子中的 -10 区保守序列"
+    },
+    {
+      "term": "-35 区",
+      "definition": "原核生物启动子中的另一个保守区域"
+    }
   ],
   "keyPoints": [
     "启动子位于转录起始位点上游",
@@ -20,7 +35,12 @@
     "真核生物启动子含 TATA 框、CAAT 框等",
     "启动子突变可影响基因表达"
   ],
-  "relatedEntities": ["基因转录", "RNA 聚合酶", "转录因子", "基因调控"],
+  "relatedEntities": [
+    "基因转录",
+    "RNA 聚合酶",
+    "转录因子",
+    "基因调控"
+  ],
   "references": [
     "Jacob F, Monod J. Genetic regulatory mechanisms in the synthesis of proteins. J Mol Biol, 1961"
   ]

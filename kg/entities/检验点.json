@@ -5,14 +5,32 @@
   "category": "过程",
   "chapter": "第8章",
   "importance": "core-important",
-  "definition": "细胞周期检验点是监控细胞周期进程的关键调控点，确保细胞在进入下一阶段前完成必要的准备，如DNA复制完成、损伤修复等。",
+  "definition": "细胞周期检验点（Checkpoint）是监控细胞周期各阶段是否正常完成的质量控制机制，通过一系列蛋白激酶信号级联在检测到问题（如DNA损伤、复制未完成或纺锤体组装异常）时暂停细胞周期进程，为修复或纠错争取时间。主要检验点包括：①G1/S检验点（限制点/Restriction Point）——检查DNA完整性和生长信号，决定细胞是否进入DNA合成期；②S期内检验点——监控DNA复制叉停滞和双链断裂；③G2/M检验点——确认DNA复制已完成且无损伤，决定是否进入有丝分裂；④纺锤体组装检验点（SAC）——确保所有染色体通过着丝粒正确附着在纺锤体微管上，防止染色体错误分配。检验点核心激酶包括ATM/ATR（磷脂酰肌醇3激酶相关激酶家族）和CHK1/CHK2效应激酶，它们磷酸化并稳定p53、抑制CDC25磷酸酶活化CDK1-Cyclin B等下游靶标实现周期阻滞。检验点的丧失导致基因组不稳定性，是几乎所有癌细胞的标志性特征。",
   "keyConcepts": [
-    {"term": "G1/S检验点", "definition": "监控细胞大小、营养、DNA损伤，决定是否进入S期"},
-    {"term": "S期检验点", "definition": "监控DNA复制进度，防止复制叉停滞"},
-    {"term": "G2/M检验点", "definition": "监控DNA复制完成和损伤修复，决定是否进入有丝分裂"},
-    {"term": "纺锤体检验点", "definition": "监控染色体与纺锤体正确连接，防止染色体分离错误"},
-    {"term": "p53", "definition": "肿瘤抑制蛋白，DNA损伤时激活检验点"},
-    {"term": "ATM/ATR", "definition": "DNA损伤感应激酶，激活检验点信号"}
+    {
+      "term": "G1/S检验点",
+      "definition": "监控细胞大小、营养、DNA损伤，决定是否进入S期"
+    },
+    {
+      "term": "S期检验点",
+      "definition": "监控DNA复制进度，防止复制叉停滞"
+    },
+    {
+      "term": "G2/M检验点",
+      "definition": "监控DNA复制完成和损伤修复，决定是否进入有丝分裂"
+    },
+    {
+      "term": "纺锤体检验点",
+      "definition": "监控染色体与纺锤体正确连接，防止染色体分离错误"
+    },
+    {
+      "term": "p53",
+      "definition": "肿瘤抑制蛋白，DNA损伤时激活检验点"
+    },
+    {
+      "term": "ATM/ATR",
+      "definition": "DNA损伤感应激酶，激活检验点信号"
+    }
   ],
   "keyPoints": [
     "检验点确保细胞周期有序进行",
@@ -21,7 +39,13 @@
     "纺锤体检验点防止染色体分离错误",
     "检验点激活可逆，修复完成后恢复周期"
   ],
-  "relatedEntities": ["细胞周期", "CDK", "p53", "DNA修复", "基因调控"],
+  "relatedEntities": [
+    "细胞周期",
+    "CDK",
+    "p53",
+    "DNA修复",
+    "基因调控"
+  ],
   "references": [
     "Hartwell LH, Weinert TA. Checkpoints: controls that ensure the order of cell cycle events. Science, 1989"
   ]

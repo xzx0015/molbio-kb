@@ -5,13 +5,28 @@
   "category": "技术",
   "chapter": "第 11 章",
   "importance": "core-major",
-  "definition": "电泳是利用电场使带电分子（DNA、RNA、蛋白质）在凝胶中迁移分离的技术，根据分子大小和电荷进行分离，是分子生物学的基础技术。",
+  "definition": "电泳是利用带电分子在电场中迁移速率差异进行分离的技术，是分子生物学实验中最基础的分析和分离手段。在凝胶电泳中，带负电的核酸分子（DNA/RNA）在琼脂糖或聚丙烯酰胺凝胶中由负极向正极迁移，迁移速率与分子量对数成反比（小分子迁移快），同时受凝胶浓度、电场强度和缓冲体系影响。琼脂糖凝胶电泳分离范围约100 bp-50 kb，聚丙烯酰胺凝胶电泳（PAGE）分辨率可达单个碱基差异。SDS-PAGE是分析蛋白质分子量的标准方法：SDS变性蛋白质并赋予其均匀的负电荷密度，使迁移速率仅取决于分子量。脉冲场凝胶电泳（PFGE）通过交替改变电场方向分离大分子DNA（>50 kb至数Mb），是细菌分子分型和基因组大片段分析的核心工具。电泳不仅用于分离，更是Southern/Northern/Western三种印迹技术、Sanger测序和多种核酸检测方法的前置步骤。",
   "keyConcepts": [
-    {"term": "琼脂糖凝胶电泳", "definition": "用于 DNA 和 RNA 分离的电泳方法"},
-    {"term": "SDS-PAGE", "definition": "用于蛋白质分离的聚丙烯酰胺凝胶电泳"},
-    {"term": "DNA Marker", "definition": "已知大小的 DNA 片段，用于估算样品大小"},
-    {"term": "溴化乙锭", "definition": "DNA 染料，可在紫外光下显示 DNA 条带"},
-    {"term": "迁移率", "definition": "分子在电场中的移动速度，与大小成反比"}
+    {
+      "term": "琼脂糖凝胶电泳",
+      "definition": "用于 DNA 和 RNA 分离的电泳方法"
+    },
+    {
+      "term": "SDS-PAGE",
+      "definition": "用于蛋白质分离的聚丙烯酰胺凝胶电泳"
+    },
+    {
+      "term": "DNA Marker",
+      "definition": "已知大小的 DNA 片段，用于估算样品大小"
+    },
+    {
+      "term": "溴化乙锭",
+      "definition": "DNA 染料，可在紫外光下显示 DNA 条带"
+    },
+    {
+      "term": "迁移率",
+      "definition": "分子在电场中的移动速度，与大小成反比"
+    }
   ],
   "keyPoints": [
     "电泳根据分子大小分离生物大分子",
@@ -20,7 +35,12 @@
     "DNA 在琼脂糖凝胶中按大小分离",
     "电泳是分子生物学实验的基础技术"
   ],
-  "relatedEntities": ["分子生物学技术", "DNA", "蛋白质", "Western blot"],
+  "relatedEntities": [
+    "分子生物学技术",
+    "DNA",
+    "蛋白质",
+    "Western blot"
+  ],
   "references": [
     "Helling RB, et al. An analysis of the T4 bacteriophage lysis-lysogeny decision at the molecular level. J Virol, 1974"
   ]

@@ -5,15 +5,36 @@
   "category": "基因组",
   "chapter": "第 3 章",
   "importance": "core-important",
-  "definition": "突变是 DNA 序列的永久性改变，包括点突变、插入、缺失、重排等类型，是遗传变异的来源，可导致疾病或提供进化优势。",
+  "definition": "突变是DNA序列的可遗传性改变，是遗传变异的根本来源和进化的原材料。按发生尺度分类：基因突变包括碱基替换（转换A↔G、C↔T或颠换嘌呤↔嘧啶）、插入、缺失（indel），可导致错义突变（氨基酸替换）、无义突变（提前出现终止密码子）、移码突变（改变阅读框）或剪接突变（破坏正常剪接）；染色体水平突变包括缺失、重复、倒位、易位以及染色体数目异常（非整倍体、多倍体）。按来源分类：自发突变源于DNA复制错误（碱基错配、聚合酶滑移导致的重复序列扩展/收缩）和碱基自发脱氨/脱嘌呤等化学损伤；诱发突变为环境因素所致（紫外线诱导嘧啶二聚体、电离辐射造成双链断裂、化学诱变剂如烷化剂修饰碱基）。生物体已进化出多层次DNA损伤修复系统（DNA损伤应答DDR网络）以对抗突变积累。驱动突变（driver mutation）赋予生长优势，是癌症发生的分子基础；乘客突变（passenger mutation）则为伴随事件。",
   "keyConcepts": [
-    {"term": "点突变", "definition": "单个核苷酸的改变，包括转换和颠换"},
-    {"term": "插入", "definition": "DNA 序列中插入额外的核苷酸"},
-    {"term": "缺失", "definition": "DNA 序列中丢失核苷酸"},
-    {"term": "移码突变", "definition": "插入或缺失非 3 的倍数个核苷酸，导致阅读框改变"},
-    {"term": "错义突变", "definition": "改变氨基酸的点突变"},
-    {"term": "无义突变", "definition": "产生终止密码子的点突变"},
-    {"term": "同义突变", "definition": "不改变氨基酸的点突变"}
+    {
+      "term": "点突变",
+      "definition": "单个核苷酸的改变，包括转换和颠换"
+    },
+    {
+      "term": "插入",
+      "definition": "DNA 序列中插入额外的核苷酸"
+    },
+    {
+      "term": "缺失",
+      "definition": "DNA 序列中丢失核苷酸"
+    },
+    {
+      "term": "移码突变",
+      "definition": "插入或缺失非 3 的倍数个核苷酸，导致阅读框改变"
+    },
+    {
+      "term": "错义突变",
+      "definition": "改变氨基酸的点突变"
+    },
+    {
+      "term": "无义突变",
+      "definition": "产生终止密码子的点突变"
+    },
+    {
+      "term": "同义突变",
+      "definition": "不改变氨基酸的点突变"
+    }
   ],
   "keyPoints": [
     "突变是遗传变异的根本来源",
@@ -22,7 +43,12 @@
     "突变可导致遗传病或癌症",
     "突变也是进化的原材料"
   ],
-  "relatedEntities": ["DNA 修复", "SNP", "遗传密码", "DNA 复制"],
+  "relatedEntities": [
+    "DNA 修复",
+    "SNP",
+    "遗传密码",
+    "DNA 复制"
+  ],
   "references": [
     "Drake JW. A constant rate of spontaneous mutation in DNA-based microbes. PNAS, 1991"
   ]

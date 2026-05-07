@@ -1,0 +1,33 @@
+{
+  "id": "4e-bp",
+  "nameEn": "eIF4E-Binding Proteins",
+  "category": "调控",
+  "chapter": "第4章",
+  "importance": "core-major",
+  "definition": "eIF4E结合蛋白（4E-BPs）是翻译起始的关键负调控因子家族，通过竞争性抑制eIF4E-eIF4G的相互作用来调控帽依赖性翻译。在真核翻译起始中，eIF4E（帽结合蛋白）必须与eIF4G（骨架蛋白）结合形成eIF4F复合物才能招募40S小亚基启动扫描。4E-BP1（最典型成员）在低磷酸化状态下高亲和力结合eIF4E的背侧保守结合面，与eIF4G竞争同一结合位点从而阻断翻译起始。mTORC1在营养生长信号下磷酸化4E-BP1多个位点（Thr37/46→Thr70→Ser65，呈分级磷酸化模式），高度磷酸化的4E-BP1从eIF4E上解离，释放eIF4E参与帽依赖性翻译起始。4E-BP在癌症中具有重要的治疗意义：eIF4E的过表达是多种肿瘤的共同特征，抑制4E-BP磷酸化（mTOR抑制剂）或直接靶向eIF4E-eIF4G相互作用的药物正在临床开发中。",
+  "keyConcepts": [
+    {
+      "term": "eIF4E",
+      "definition": "帽结合蛋白，识别mRNA 5'帽结构启动翻译起始"
+    },
+    {
+      "term": "eIF4G",
+      "definition": "翻译起始骨架蛋白，桥接eIF4E和eIF3以招募40S小亚基"
+    },
+    {
+      "term": "mTORC1磷酸化",
+      "definition": "mTORC1多步磷酸化4E-BP1使其失活释放eIF4E"
+    }
+  ],
+  "keyPoints": [
+    "通过竞争性结合eIF4E阻断eIF4E-eIF4G相互作用",
+    "低磷酸化时抑制翻译，mTORC1磷酸化后失活释放eIF4E",
+    "是mTOR通路调控翻译的核心效应器之一"
+  ],
+  "relatedEntities": [
+    "翻译",
+    "mTOR通路",
+    "起始因子",
+    "基因调控"
+  ]
+}

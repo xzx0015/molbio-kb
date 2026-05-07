@@ -5,13 +5,28 @@
   "category": "分子",
   "chapter": "第 6 章",
   "importance": "core-major",
-  "definition": "反密码子是 tRNA 上与 mRNA 密码子互补配对的 3 个核苷酸，位于 tRNA 的反密码子环上。",
+  "definition": "反密码子是位于tRNA反密码子环上的三个核苷酸序列，在翻译过程中与mRNA上的密码子通过碱基互补配对进行识别（通常是反向平行的配对，即反密码子第1位识别密码子第3位）。tRNA携带的特定氨基酸由其反密码子决定，每个tRNA分子通过氨酰tRNA合成酶（aaRS）被加载上对应的氨基酸，确保遗传信息的忠实翻译。反密码子-密码子识别的核心特点是摆动假说（Wobble Hypothesis，Crick 1966）：反密码子第1位（5'端）与密码子第3位（3'端）的配对不如其他位置严格，因此一个tRNA可识别多个同义密码子——例如携带肌苷（I）在反密码子第1位的tRNA可识别密码子第3位的U、C或A。这种摆动机制的进化意义在于减少生物体所需的tRNA种类（理论上识别61个有义密码子需61种tRNA，实际只需约30-40种），同时在一定程度上容忍密码子第三位的突变而不改变翻译产物。",
   "keyConcepts": [
-    {"term": "反密码子环", "definition": "tRNA 上含有反密码子的环状结构"},
-    {"term": "密码子-反密码子配对", "definition": "mRNA 密码子与 tRNA 反密码子的碱基配对"},
-    {"term": "摆动假说", "definition": "Crick 提出的密码子-反密码子配对第三位的灵活性"},
-    {"term": "摆动配对", "definition": "反密码子第一位碱基与密码子第三位碱基的非标准配对"},
-    {"term": "次黄嘌呤", "definition": "常出现在反密码子第一位的修饰碱基，可与 U/C/A 配对"}
+    {
+      "term": "反密码子环",
+      "definition": "tRNA 上含有反密码子的环状结构"
+    },
+    {
+      "term": "密码子-反密码子配对",
+      "definition": "mRNA 密码子与 tRNA 反密码子的碱基配对"
+    },
+    {
+      "term": "摆动假说",
+      "definition": "Crick 提出的密码子-反密码子配对第三位的灵活性"
+    },
+    {
+      "term": "摆动配对",
+      "definition": "反密码子第一位碱基与密码子第三位碱基的非标准配对"
+    },
+    {
+      "term": "次黄嘌呤",
+      "definition": "常出现在反密码子第一位的修饰碱基，可与 U/C/A 配对"
+    }
   ],
   "keyPoints": [
     "反密码子位于 tRNA 的反密码子环上",
@@ -20,7 +35,12 @@
     "次黄嘌呤（I）在反密码子中常见",
     "密码子-反密码子配对确保翻译的准确性"
   ],
-  "relatedEntities": ["密码子", "tRNA", "遗传密码", "蛋白质翻译"],
+  "relatedEntities": [
+    "密码子",
+    "tRNA",
+    "遗传密码",
+    "蛋白质翻译"
+  ],
   "references": [
     "Crick FH. Codon-anticodon pairing: the wobble hypothesis. J Mol Biol, 1966"
   ]

@@ -1,0 +1,39 @@
+{
+  "id": "pcr",
+  "nameEn": "Polymerase Chain Reaction",
+  "category": "技术",
+  "chapter": "第6章",
+  "importance": "core-important",
+  "keyConcepts": [
+    {
+      "term": "变性",
+      "definition": "94-98°C加热使DNA双链解离为单链模板"
+    },
+    {
+      "term": "退火",
+      "definition": "降温至50-65°C使引物与模板上的互补序列特异性杂交"
+    },
+    {
+      "term": "延伸",
+      "definition": "72°C下Taq DNA聚合酶从引物3'端延伸合成新链"
+    },
+    {
+      "term": "指数扩增",
+      "definition": "每轮循环产物作为下一轮模板，n个循环后目标片段扩增约2ⁿ倍"
+    }
+  ],
+  "keyPoints": [
+    "由Kary Mullis于1985年发明（1993年诺贝尔化学奖）",
+    "核心组分：模板DNA、上下游引物、Taq DNA聚合酶、dNTPs、Mg²⁺缓冲液",
+    "标准30-35个循环可在数小时内扩增目标DNA百万倍",
+    "衍生技术：RT-PCR、qPCR、数字PCR"
+  ],
+  "relatedEntities": [
+    "DNA",
+    "DNA 聚合酶",
+    "引物酶",
+    "DNA 复制",
+    "测序技术"
+  ],
+  "definition": "聚合酶链式反应（PCR）是一种在体外快速、特异性地扩增特定DNA片段的技术，由Kary Mullis于1985年发明，是分子生物学最具革命性的技术之一。PCR基于DNA半保留复制的原理，通过反复循环三个温度步骤——高温变性（94-98°C使DNA双链解离）、低温退火（50-65°C使引物与靶序列互补配对）和中温延伸（72°C，Taq DNA聚合酶从引物3'端合成新链）——在数小时内将靶DNA序列从单个拷贝扩增至数十亿拷贝。Taq聚合酶（来自嗜热菌Thermus aquaticus）的引入是PCR实用化的关键：该酶在95°C仍保持活性，免去了每轮循环补加聚合酶的繁琐操作。PCR已衍生出众多变体，包括逆转录PCR（RT-PCR，检测RNA）、实时定量PCR（qPCR，实时监测扩增进程精确定量）和数字PCR（dPCR，单分子绝对定量），广泛应用于基因克隆、临床诊断、法医鉴定和病原体检测。"
+}

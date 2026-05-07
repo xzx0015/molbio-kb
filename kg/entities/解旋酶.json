@@ -5,13 +5,28 @@
   "category": "酶",
   "chapter": "第 3 章",
   "importance": "core-major",
-  "definition": "解旋酶是一类利用 ATP 水解能量解开 DNA 双链或 RNA 二级结构的酶，在 DNA 复制、修复、转录和重组中起关键作用。",
+  "definition": "解旋酶（Helicase）是一类利用核苷三磷酸（通常是ATP）水解的能量，在核酸双链或二级结构上进行定向移位并解离互补链或破坏RNA二级结构的分子马达蛋白。DNA解旋酶是DNA复制起始阶段的核心酶：在原核生物中，DnaB解旋酶被装载蛋白DnaC递送到复制起点解开的DNA上，沿后随链5'→3'方向移动，在前方解旋双链、为DNA聚合酶Ⅲ提供单链模板。MCM2-7六聚体复合物则是真核DNA复制的许可因子和解旋酶核心，在G1期装载到复制起点，S期被CDK/DDK磷酸化激活后在复制叉前解旋双链。RecQ家族解旋酶（人类有RECQL1-5五个成员，BLM/WRN/RECQL4缺陷分别引起Bloom综合征、Werner综合征和Rothmund-Thomson综合征）在DNA重组修复、复制叉稳定性和端粒维持中发挥关键作用，其缺陷导致基因组不稳定和早衰表型。DEAD/H-box RNA解旋酶超家族成员参与所有RNA代谢过程：eIF4A（DEAD-box）在翻译起始中解旋mRNA 5'UTR的二级结构，剪接体中的解旋酶介导RNA-RNA和RNA-蛋白质重排。",
   "keyConcepts": [
-    {"term": "DnaB 解旋酶", "definition": "大肠杆菌中主要的复制解旋酶"},
-    {"term": "MCM 复合物", "definition": "真核生物的复制解旋酶，在复制起始中起作用"},
-    {"term": "RecQ 解旋酶", "definition": "参与 DNA 修复的解旋酶家族"},
-    {"term": "SV40 大 T 抗原", "definition": "SV40 病毒的解旋酶，常用于体外研究"},
-    {"term": "ATP 依赖性", "definition": "解旋酶需要 ATP 水解提供能量"}
+    {
+      "term": "DnaB 解旋酶",
+      "definition": "大肠杆菌中主要的复制解旋酶"
+    },
+    {
+      "term": "MCM 复合物",
+      "definition": "真核生物的复制解旋酶，在复制起始中起作用"
+    },
+    {
+      "term": "RecQ 解旋酶",
+      "definition": "参与 DNA 修复的解旋酶家族"
+    },
+    {
+      "term": "SV40 大 T 抗原",
+      "definition": "SV40 病毒的解旋酶，常用于体外研究"
+    },
+    {
+      "term": "ATP 依赖性",
+      "definition": "解旋酶需要 ATP 水解提供能量"
+    }
   ],
   "keyPoints": [
     "解旋酶解开 DNA 双链，为复制和转录提供单链模板",
@@ -20,7 +35,12 @@
     "解旋酶缺陷可导致基因组不稳定和疾病",
     "解旋酶在 DNA 修复和重组中也发挥作用"
   ],
-  "relatedEntities": ["DNA 复制", "DNA 修复", "DNA 聚合酶", "基因转录"],
+  "relatedEntities": [
+    "DNA 复制",
+    "DNA 修复",
+    "DNA 聚合酶",
+    "基因转录"
+  ],
   "references": [
     "Lohman TM, Bjornson KP. Mechanisms of helicase-catalyzed DNA unwinding. Annu Rev Biochem, 1996"
   ],

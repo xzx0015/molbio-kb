@@ -1,0 +1,35 @@
+{
+  "id": "hr-repair",
+  "nameEn": "Homologous Recombination Repair",
+  "category": "过程",
+  "chapter": "第5章",
+  "importance": "core-major",
+  "keyConcepts": [
+    {
+      "term": "Rad51",
+      "definition": "真核生物同源重组的核心重组酶，在ssDNA上形成核蛋白丝介导链入侵"
+    },
+    {
+      "term": "BRCA1/BRCA2",
+      "definition": "HR修复的关键调控因子，BRCA2直接介导Rad51装载至ssDNA"
+    },
+    {
+      "term": "姐妹染色单体",
+      "definition": "S期复制产生的同源模板，是HR修复的首选模板"
+    }
+  ],
+  "keyPoints": [
+    "依赖同源序列作为修复模板，精确无错修复",
+    "限于S/G2期（需姐妹染色单体作为模板）",
+    "BRCA1/2突变导致HR缺陷→遗传性乳腺癌/卵巢癌",
+    "PARP抑制剂的合成致死原理基于HR缺陷"
+  ],
+  "relatedEntities": [
+    "DNA 重组",
+    "双链断裂修复",
+    "非同源末端连接",
+    "DNA 复制",
+    "突变"
+  ],
+  "definition": "同源重组修复（HR）是利用未受损的同源DNA序列（在体细胞中首选姐妹染色单体）作为模板，通过链入侵和DNA合成精确恢复断裂位点原始序列的DSB修复途径。由于需要同源模板的存在，HR仅可能在S期晚期和G2期发挥作用（此时每条染色体已复制存在姐妹染色单体）。其核心步骤包括：断裂末端被MRN-CtIP复合物切除产生3'悬垂单链→RPA结合保护ssDNA→BRCA2介导Rad51置换RPA在ssDNA上形成核蛋白丝→Rad51-ssDNA丝寻找并侵入同源双链形成D环→DNA聚合酶以同源链为模板延伸→Holliday连接体被解离酶切割完成修复。BRCA1和BRCA2基因的突变使HR修复严重受损，导致基因组不稳定，携带者面临极高的乳腺癌和卵巢癌风险。这一缺陷赋予PARP抑制剂（奥拉帕尼等）合成致死效应——HR缺陷的肿瘤细胞同时抑制PARP后无法修复自发性单链断裂，累积的损伤导致细胞死亡。"
+}

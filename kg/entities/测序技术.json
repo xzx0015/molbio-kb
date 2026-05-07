@@ -5,13 +5,28 @@
   "category": "技术",
   "chapter": "第 11 章",
   "importance": "core-important",
-  "definition": "测序技术是测定 DNA 或 RNA 核苷酸序列的方法，包括 Sanger 测序、二代测序和三代测序等技术。",
+  "definition": "DNA/RNA测序技术是测定核酸分子精确核苷酸序列的方法学体系，经历了三代革命性发展。第一代测序以Sanger双脱氧链终止法（1977年）为标志：利用ddNTP（缺少3'-OH基团）随机终止DNA链延伸反应，通过高分辨率聚丙烯酰胺凝胶电泳或毛细管电泳读出序列，读长可达800-1000 bp，准确度极高（>99.999%），至今仍是临床基因检测的'金标准'。第二代测序（NGS, 2005年起）以Illumina边合成边测序技术为代表：DNA样品经文库构建后在流动槽表面进行桥式PCR扩增形成簇，通过可逆终止荧光标记dNTP进行循环测序，单次运行可产生数十亿条短读长（150-300 bp），极大降低了测序成本（人类全基因组测序从30亿美元降至几百美元）。第三代测序（如PacBio SMRT和Oxford Nanopore）绕过PCR扩增直接对单个DNA分子进行实时测序，读长可达数万至数千万碱基对，使复杂基因组区域（如着丝粒、端粒、重复序列）的完整组装成为可能。三种测序技术的互补结合已成为现代基因组学研究的标配策略。",
   "keyConcepts": [
-    {"term": "Sanger 测序", "definition": "链终止法测序，使用双脱氧核苷酸"},
-    {"term": "二代测序", "definition": "高通量测序技术，如 Illumina 测序"},
-    {"term": "三代测序", "definition": "单分子测序技术，如 PacBio 和 Nanopore"},
-    {"term": "边合成边测序", "definition": "Illumina 的测序原理"},
-    {"term": "单分子实时测序", "definition": "PacBio 的测序原理"}
+    {
+      "term": "Sanger 测序",
+      "definition": "链终止法测序，使用双脱氧核苷酸"
+    },
+    {
+      "term": "二代测序",
+      "definition": "高通量测序技术，如 Illumina 测序"
+    },
+    {
+      "term": "三代测序",
+      "definition": "单分子测序技术，如 PacBio 和 Nanopore"
+    },
+    {
+      "term": "边合成边测序",
+      "definition": "Illumina 的测序原理"
+    },
+    {
+      "term": "单分子实时测序",
+      "definition": "PacBio 的测序原理"
+    }
   ],
   "keyPoints": [
     "Sanger 测序是第一代测序技术",
@@ -20,7 +35,12 @@
     "人类基因组计划推动了测序技术发展",
     "测序技术在精准医学中应用广泛"
   ],
-  "relatedEntities": ["分子生物学技术", "基因组", "DNA", "PCR"],
+  "relatedEntities": [
+    "分子生物学技术",
+    "基因组",
+    "DNA",
+    "PCR"
+  ],
   "references": [
     "Sanger F, et al. DNA sequencing with chain-terminating inhibitors. PNAS, 1977"
   ]

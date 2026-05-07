@@ -5,14 +5,32 @@
   "category": "调控",
   "chapter": "第 9 章",
   "importance": "core-major",
-  "definition": "miRNA（微小 RNA）是一类长度约 22 个核苷酸的内源性非编码 RNA，通过与靶 mRNA 的 3'UTR 结合，抑制翻译或促进 mRNA 降解，调控基因表达。",
+  "definition": "微小RNA（miRNA）是一类长度约22个核苷酸的内源性非编码单链RNA，通过碱基互补配对识别靶mRNA的3'非翻译区（3'UTR），介导转录后水平的基因表达抑制。miRNA的生物合成路径为：RNA聚合酶Ⅱ转录生成初级miRNA（pri-miRNA），经Drosha-DGCR8微处理器复合物在核内切割为前体miRNA（pre-miRNA，约70nt的发夹结构），由Exportin-5转运至胞质后被Dicer切割为成熟的miRNA双链体，其中一条链（引导链）被加载到Argonaute蛋白中形成miRISC复合物。miRISC通过miRNA第2-8位的'种子序列'与靶mRNA互补配对，主要导致mRNA去腺苷化、脱帽和降解（动物细胞）或切割（植物细胞）。一个miRNA可调控数百个靶基因，人类基因组编码超过2000种miRNA，它们深度参与细胞分化、增殖、凋亡、代谢等几乎所有生物学过程，miRNA的异常表达与多种癌症、心血管疾病和神经退行性疾病密切相关。",
   "keyConcepts": [
-    {"term": "pri-miRNA", "definition": "miRNA 的初级转录产物，含有茎环结构"},
-    {"term": "pre-miRNA", "definition": "Drosha 加工后的 miRNA 前体，约 70nt"},
-    {"term": "Dicer", "definition": "切割 pre-miRNA 产生成熟 miRNA 的核酸酶"},
-    {"term": "RISC", "definition": "RNA 诱导沉默复合物，装载 miRNA 后调控靶基因"},
-    {"term": "种子序列", "definition": "miRNA 5'端第 2-8 位核苷酸，决定靶标识别"},
-    {"term": "3'UTR", "definition": "mRNA 的 3'非翻译区，miRNA 的主要结合位点"}
+    {
+      "term": "pri-miRNA",
+      "definition": "miRNA 的初级转录产物，含有茎环结构"
+    },
+    {
+      "term": "pre-miRNA",
+      "definition": "Drosha 加工后的 miRNA 前体，约 70nt"
+    },
+    {
+      "term": "Dicer",
+      "definition": "切割 pre-miRNA 产生成熟 miRNA 的核酸酶"
+    },
+    {
+      "term": "RISC",
+      "definition": "RNA 诱导沉默复合物，装载 miRNA 后调控靶基因"
+    },
+    {
+      "term": "种子序列",
+      "definition": "miRNA 5'端第 2-8 位核苷酸，决定靶标识别"
+    },
+    {
+      "term": "3'UTR",
+      "definition": "mRNA 的 3'非翻译区，miRNA 的主要结合位点"
+    }
   ],
   "keyPoints": [
     "miRNA 是一类重要的基因表达调控因子",
@@ -21,7 +39,12 @@
     "miRNA 在发育、分化、癌症等过程中起重要作用",
     "miRNA 可作为疾病诊断标志物和治疗靶点"
   ],
-  "relatedEntities": ["非编码 RNA", "RNA 干扰", "基因调控", "siRNA"],
+  "relatedEntities": [
+    "非编码 RNA",
+    "RNA 干扰",
+    "基因调控",
+    "siRNA"
+  ],
   "references": [
     "Lee RC, et al. The C. elegans heterochronic gene lin-4 encodes small RNAs with antisense complementarity to lin-14. Cell, 1993",
     "Bartel DP. MicroRNAs: genomics, biogenesis, mechanism, and function. Cell, 2004"

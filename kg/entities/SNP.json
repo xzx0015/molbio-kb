@@ -5,14 +5,32 @@
   "category": "基因组",
   "chapter": "第 10 章",
   "importance": "core-major",
-  "definition": "SNP（单核苷酸多态性）是基因组中最常见的遗传变异，指在基因组水平上单个核苷酸的变异，是遗传标记和疾病关联研究的重要工具。",
+  "definition": "单核苷酸多态性（SNP）是基因组中最丰富的遗传变异类型，指在群体中频率≥1%的单个核苷酸位点上发生的替换（A/G/C/T之间的转换或颠换），人类基因组中平均每300个碱基对即存在一个SNP，总数估计超过一千万个。绝大多数SNP位于非编码区，对表型无明显影响；位于编码区（cSNP）的可造成同义、错义或无义突变，可能改变蛋白质功能；位于调控区域的SNP可能影响转录因子结合或RNA剪接。SNP作为遗传标记被广泛应用于全基因组关联研究（GWAS），通过比较病例组与对照组的等位基因频率差异，发现与复杂疾病（如2型糖尿病、高血压、癌症易感性）关联的风险位点。国际HapMap计划和千人基因组计划已系统性地编目了全球主要人群的SNP资源。",
   "keyConcepts": [
-    {"term": "等位基因", "definition": "同一基因座上的不同序列变异"},
-    {"term": "基因型", "definition": "个体在某个 SNP 位点的等位基因组成"},
-    {"term": "次要等位基因频率", "definition": "人群中次要等位基因的出现频率"},
-    {"term": "同义 SNP", "definition": "不改变氨基酸的 SNP"},
-    {"term": "非同义 SNP", "definition": "改变氨基酸的 SNP"},
-    {"term": "GWAS", "definition": "全基因组关联研究，用于发现疾病相关 SNP"}
+    {
+      "term": "等位基因",
+      "definition": "同一基因座上的不同序列变异"
+    },
+    {
+      "term": "基因型",
+      "definition": "个体在某个 SNP 位点的等位基因组成"
+    },
+    {
+      "term": "次要等位基因频率",
+      "definition": "人群中次要等位基因的出现频率"
+    },
+    {
+      "term": "同义 SNP",
+      "definition": "不改变氨基酸的 SNP"
+    },
+    {
+      "term": "非同义 SNP",
+      "definition": "改变氨基酸的 SNP"
+    },
+    {
+      "term": "GWAS",
+      "definition": "全基因组关联研究，用于发现疾病相关 SNP"
+    }
   ],
   "keyPoints": [
     "SNP 是人类基因组中最丰富的遗传变异",
@@ -21,7 +39,12 @@
     "GWAS 用于发现疾病相关的 SNP",
     "SNP 可用于个体化医学和药物基因组学"
   ],
-  "relatedEntities": ["基因组", "突变", "遗传密码", "多态性"],
+  "relatedEntities": [
+    "基因组",
+    "突变",
+    "遗传密码",
+    "多态性"
+  ],
   "references": [
     "International HapMap Consortium. The International HapMap Project. Nature, 2003"
   ]

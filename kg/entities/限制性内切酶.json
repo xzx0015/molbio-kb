@@ -5,13 +5,28 @@
   "category": "酶",
   "chapter": "第 11 章",
   "importance": "core-major",
-  "definition": "限制性内切酶是一类能识别特定 DNA 序列并在特定位点切割 DNA 的酶，是基因工程的重要工具酶。",
+  "definition": "限制性内切酶（Restriction Endonuclease）是一类在原核生物限制-修饰系统中识别特定DNA序列并在识别位点内或其附近进行内切切割的核酸酶，是原核生物抵御噬菌体等外源DNA入侵的适应性免疫系统的重要组成部分，同时是基因工程中最重要的工具酶之一。限制酶按照亚基组成、辅因子需求和切割方式分为四型：Ⅱ型限制酶最为常用，其为简单的同二聚体蛋白，在Mg²⁺存在下识别4-8 bp通常为回文对称的DNA序列，在特定位点（识别位点内或紧邻处）切割。切割产生两种末端类型：平末端（如SmaⅠ：CCC^GGG）或黏性末端——突出的5'端（如EcoRⅠ：G^AATTC）或3'端（如KpnⅠ：GGTAC^C），黏性末端通过互补碱基配对可高效连接，极大地便利了DNA重组。目前已发现超过4000种限制酶识别约360种不同的DNA序列。EcoRⅠ（源自E. coli）、HindⅢ（源自Haemophilus influenzae）、BamHⅠ（源自Bacillus amyloliquefaciens）是最经典的三种限制酶。限制酶的发现（Arber、Smith和Nathans，1978年诺贝尔奖）奠定了重组DNA技术和现代分子生物学的基础。在分子克隆中，限制酶与DNA连接酶的协同作用实现了目的DNA片段与载体的精确拼接。",
   "keyConcepts": [
-    {"term": "识别序列", "definition": "限制性内切酶识别的特定 DNA 序列，通常为 4-8 bp 的回文序列"},
-    {"term": "粘性末端", "definition": "切割后产生的单链突出末端，如 EcoRI 切割产生的 5'突出"},
-    {"term": "平末端", "definition": "切割后产生的平齐末端，如 SmaI 切割"},
-    {"term": "I/II/III 型", "definition": "限制性内切酶的分类，II 型最常用"},
-    {"term": "同裂酶", "definition": "识别相同序列但来源不同的限制性内切酶"}
+    {
+      "term": "识别序列",
+      "definition": "限制性内切酶识别的特定 DNA 序列，通常为 4-8 bp 的回文序列"
+    },
+    {
+      "term": "粘性末端",
+      "definition": "切割后产生的单链突出末端，如 EcoRI 切割产生的 5'突出"
+    },
+    {
+      "term": "平末端",
+      "definition": "切割后产生的平齐末端，如 SmaI 切割"
+    },
+    {
+      "term": "I/II/III 型",
+      "definition": "限制性内切酶的分类，II 型最常用"
+    },
+    {
+      "term": "同裂酶",
+      "definition": "识别相同序列但来源不同的限制性内切酶"
+    }
   ],
   "keyPoints": [
     "限制性内切酶是基因工程的基础工具",
@@ -20,7 +35,12 @@
     "粘性末端便于 DNA 片段连接",
     "限制性内切酶的发现获 1978 年诺贝尔奖"
   ],
-  "relatedEntities": ["基因工程", "DNA 连接酶", "分子克隆", "PCR"],
+  "relatedEntities": [
+    "基因工程",
+    "DNA 连接酶",
+    "分子克隆",
+    "PCR"
+  ],
   "references": [
     "Smith HO, Wilcox KW. A restriction enzyme from Hemophilus influenzae. J Mol Biol, 1970"
   ],

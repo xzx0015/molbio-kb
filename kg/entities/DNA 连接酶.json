@@ -5,13 +5,28 @@
   "category": "酶",
   "chapter": "第 11 章",
   "importance": "core-major",
-  "definition": "DNA 连接酶是催化 DNA 片段之间形成磷酸二酯键的酶，在 DNA 复制、修复和基因工程中起关键作用。",
+  "definition": "DNA连接酶是催化DNA链断裂处形成3'-羟基与5'-磷酸之间磷酸二酯键的酶，其反应需消耗ATP（真核和病毒）或NAD⁺（细菌）提供能量。在DNA复制过程中，DNA连接酶负责连接后随链上的冈崎片段，将多个不连续的短片段拼接为完整的子链。在DNA修复（核苷酸切除修复、碱基切除修复）和重组过程中，DNA连接酶同样承担缺口封闭的关键作用。在基因工程中，T4 DNA连接酶（来自T4噬菌体）被广泛用于将外源DNA片段与载体连接构建重组DNA分子，是现代分子克隆最基础的工具酶之一。",
   "keyConcepts": [
-    {"term": "磷酸二酯键", "definition": "连接 DNA 核苷酸之间的化学键"},
-    {"term": "粘性末端连接", "definition": "连接具有互补单链突出的 DNA 片段"},
-    {"term": "平末端连接", "definition": "连接平齐的 DNA 末端，效率较低"},
-    {"term": "T4 DNA 连接酶", "definition": "来自 T4 噬菌体，可连接粘性末端和平末端"},
-    {"term": "E. coli DNA 连接酶", "definition": "来自大肠杆菌，需要 NAD+ 作为辅因子"}
+    {
+      "term": "磷酸二酯键",
+      "definition": "连接 DNA 核苷酸之间的化学键"
+    },
+    {
+      "term": "粘性末端连接",
+      "definition": "连接具有互补单链突出的 DNA 片段"
+    },
+    {
+      "term": "平末端连接",
+      "definition": "连接平齐的 DNA 末端，效率较低"
+    },
+    {
+      "term": "T4 DNA 连接酶",
+      "definition": "来自 T4 噬菌体，可连接粘性末端和平末端"
+    },
+    {
+      "term": "E. coli DNA 连接酶",
+      "definition": "来自大肠杆菌，需要 NAD+ 作为辅因子"
+    }
   ],
   "keyPoints": [
     "DNA 连接酶连接 DNA 片段的 3'-OH 和 5'-磷酸基团",
@@ -20,7 +35,12 @@
     "在基因工程中用于连接载体和插入片段",
     "DNA 连接酶需要 ATP 或 NAD+ 作为能量来源"
   ],
-  "relatedEntities": ["DNA 复制", "基因工程", "限制性内切酶", "DNA 修复"],
+  "relatedEntities": [
+    "DNA 复制",
+    "基因工程",
+    "限制性内切酶",
+    "DNA 修复"
+  ],
   "references": [
     "Lehman IR. DNA ligase: structure, mechanism, and function. Science, 1974"
   ],

@@ -5,14 +5,32 @@
   "category": "分子",
   "chapter": "第 6 章",
   "importance": "core-important",
-  "definition": "密码子是 mRNA 上连续的 3 个核苷酸，决定一个氨基酸或翻译信号，共有 64 个密码子。",
+  "definition": "密码子是mRNA上每三个连续核苷酸组成的基本编码单元，每个密码子特异性地决定一个氨基酸或翻译信号（起始或终止）。遗传密码总共有64个密码子（4³）：61个编码20种标准氨基酸，3个为终止密码子（UAA、UAG、UGA），AUG不仅编码甲硫氨酸同时也是翻译起始信号。遗传密码的简并性（degeneracy）指多数氨基酸由多个同义密码子编码，且同义密码子通常仅在第三位碱基上有差别——这是摆动假说的分子基础。遗传密码的通用性（universality）是分子生物学最根本的原则之一：从细菌到人类，几乎所有的生物使用同一套遗传密码表。但存在少数例外：人类线粒体使用稍有不同的密码子（UGA编码色氨酸而非终止，AGA/AGG为终止而非精氨酸），某些纤毛虫中UAA和UAG编码谷氨酰胺。密码子使用偏好性（codon usage bias）在不同物种间差异显著，这对异源表达系统的设计至关重要。",
   "keyConcepts": [
-    {"term": "起始密码子", "definition": "AUG，编码甲硫氨酸，标志翻译起始"},
-    {"term": "终止密码子", "definition": "UAA、UAG、UGA，不编码氨基酸，导致翻译终止"},
-    {"term": "有义密码子", "definition": "编码氨基酸的 61 个密码子"},
-    {"term": "同义密码子", "definition": "编码同一氨基酸的不同密码子"},
-    {"term": "密码子简并性", "definition": "多个密码子编码同一氨基酸的现象"},
-    {"term": "密码子使用偏好", "definition": "不同生物对同义密码子的使用频率差异"}
+    {
+      "term": "起始密码子",
+      "definition": "AUG，编码甲硫氨酸，标志翻译起始"
+    },
+    {
+      "term": "终止密码子",
+      "definition": "UAA、UAG、UGA，不编码氨基酸，导致翻译终止"
+    },
+    {
+      "term": "有义密码子",
+      "definition": "编码氨基酸的 61 个密码子"
+    },
+    {
+      "term": "同义密码子",
+      "definition": "编码同一氨基酸的不同密码子"
+    },
+    {
+      "term": "密码子简并性",
+      "definition": "多个密码子编码同一氨基酸的现象"
+    },
+    {
+      "term": "密码子使用偏好",
+      "definition": "不同生物对同义密码子的使用频率差异"
+    }
   ],
   "keyPoints": [
     "64 个密码子：61 个有义密码子 + 3 个终止密码子",
@@ -21,7 +39,12 @@
     "密码子与反密码子配对具有摆动性",
     "线粒体和某些生物使用变异的遗传密码"
   ],
-  "relatedEntities": ["遗传密码", "反密码子", "tRNA", "蛋白质翻译"],
+  "relatedEntities": [
+    "遗传密码",
+    "反密码子",
+    "tRNA",
+    "蛋白质翻译"
+  ],
   "references": [
     "Nirenberg MW, Matthaei JH. The dependence of cell-free protein synthesis in E. coli upon naturally occurring or synthetic template polyribonucleotides. PNAS, 1961"
   ]

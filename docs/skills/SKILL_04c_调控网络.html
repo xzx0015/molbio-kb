@@ -161,912 +161,642 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill_04c">SKILL_04c: 调控网络 — 分子调控关系的知识图谱</h1>
-<blockquote>
-<p>定义分子生物学中的转录调控、信号通路和代谢网络关系，构建分子机制的结构化表示。</p>
-</blockquote>
-<hr />
-<h2 id="_1">一、关系类型定义</h2>
-<h3 id="11-transcriptional-regulation">1.1 转录调控 (transcriptional-regulation)</h3>
-<p><strong>定义</strong>：表示转录因子（TF）或其他调控因子对靶基因转录水平的影响。</p>
-<p><strong>Schema</strong>：</p>
-<pre><code>(调控因子, regulates/activates/inhibits, 靶基因, [mechanism, binding-site, context])
-</code></pre>
-<p><strong>方向</strong>：调控因子 → 靶基因（单向）</p>
-<p><strong>属性</strong>：
-- <code>mechanism</code>: 调控机制
-  - <code>transcriptional_activation</code>: 转录激活
-  - <code>transcriptional_repression</code>: 转录抑制
-  - <code>chromatin_remodeling</code>: 染色质重塑
-  - <code>enhancer_promoter_looping</code>: 增强子-启动子环化
-- <code>binding-site</code>: 结合位点（启动子/增强子/沉默子/绝缘子）
-- <code>context</code>: 细胞类型/组织/发育阶段/环境刺激
-- <code>evidence</code>: 实验证据（ChIP-seq/RNA-seq/报告基因/EMSA）
-- <code>confidence</code>: 置信度</p>
-<p><strong>示例</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>调控因子</th>
-<th>关系</th>
-<th>靶基因</th>
-<th>机制</th>
-<th>结合位点</th>
-<th>上下文</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>p53</td>
-<td>activates</td>
-<td>p21</td>
-<td>转录激活</td>
-<td>启动子p53结合元件</td>
-<td>DNA损伤</td>
-</tr>
-<tr>
-<td>p53</td>
-<td>activates</td>
-<td>Bax</td>
-<td>转录激活</td>
-<td>启动子</td>
-<td>凋亡诱导</td>
-</tr>
-<tr>
-<td>p53</td>
-<td>activates</td>
-<td>GADD45</td>
-<td>转录激活</td>
-<td>启动子</td>
-<td>DNA损伤</td>
-</tr>
-<tr>
-<td>p53</td>
-<td>inhibits</td>
-<td>MDM2</td>
-<td>转录抑制</td>
-<td>启动子</td>
-<td>负反馈</td>
-</tr>
-<tr>
-<td>c-Myc</td>
-<td>activates</td>
-<td>Cyclin D1</td>
-<td>转录激活</td>
-<td>E-box元件</td>
-<td>细胞增殖</td>
-</tr>
-<tr>
-<td>NF-κB</td>
-<td>activates</td>
-<td>IL-6</td>
-<td>转录激活</td>
-<td>κB位点</td>
-<td>炎症反应</td>
-</tr>
-<tr>
-<td>Oct4</td>
-<td>activates</td>
-<td>Nanog</td>
-<td>转录激活</td>
-<td>启动子</td>
-<td>干细胞维持</td>
-</tr>
-<tr>
-<td>REST</td>
-<td>inhibits</td>
-<td>神经元基因</td>
-<td>转录抑制</td>
-<td>NRSE元件</td>
-<td>非神经组织</td>
-</tr>
-<tr>
-<td>HIF-1α</td>
-<td>activates</td>
-<td>VEGF</td>
-<td>转录激活</td>
-<td>HRE元件</td>
-<td>低氧条件</td>
-</tr>
-<tr>
-<td>STAT3</td>
-<td>activates</td>
-<td>SOCS3</td>
-<td>转录激活</td>
-<td>GAS元件</td>
-<td>IL-6信号</td>
-</tr>
-</tbody>
-</table>
-<p><strong>转录调控层级示例</strong>：</p>
-<pre><code>DNA损伤信号
-  → ATM/ATR激活
-    → p53磷酸化稳定
-      → p53核定位
-        ├── activates → p21
-        │   └── 细胞周期阻滞（G1/S检查点）
-        ├── activates → GADD45
-        │   └── DNA修复
-        ├── activates → Bax
-        │   └── 线粒体凋亡途径
-        ├── activates → PUMA
-        │   └── 凋亡
-        └── inhibits → MDM2
-            └── 负反馈调控p53水平
-</code></pre>
-<p><strong>细胞周期调控网络</strong>：</p>
-<pre><code>G1期
-├── Cyclin D-CDK4/6
-│   ├── phosphorylates → Rb
-│   │   └── releases → E2F
-│   │       ├── activates → Cyclin E
-│   │       ├── activates → DNA复制酶基因
-│   │       └── 进入S期
-│   └── inhibited-by → p16
-│
-├── p16 (CDK抑制剂)
-│   └── inhibits → CDK4/6
-│       └── 细胞周期阻滞
-│
-└── p53-p21通路
-    ├── DNA损伤 → activates → p53
-    │   └── activates → p21
-    │       └── inhibits → CDK2/Cyclin E
-    │           └── G1期阻滞
-    └── MDM2负反馈
-        └── inhibits → p53
-
-S期
-├── Cyclin E-CDK2
-│   └── 启动DNA复制
-│
-├── Cyclin A-CDK2
-│   └── 推进DNA复制
-│
-└── 检查点
-    ├── ATR-Chk1
-    │   └── 复制应激响应
-    └── 复制完成 → 进入G2
-
-G2/M转换
-├── Cyclin B-CDK1 (MPF)
-│   ├── inhibited-by → Wee1/Myt1
-│   └── activated-by → Cdc25
-│       └── 进入M期
-│
-└── DNA损伤检查点
-    └── ATM-Chk2/p53
-        └── G2期阻滞
-</code></pre>
-<p><strong>发现方法</strong>：
-1. <strong>数据库导入</strong>：TRANSFAC、JASPAR、ChIP-Atlas、ENCODE
-2. <strong>文献挖掘</strong>："X激活Y的转录"、"X抑制Y表达"
-3. <strong>实验数据</strong>：ChIP-seq峰、RNA-seq差异表达、报告基因实验
-4. <strong>LLM推理</strong>：从调控机制描述中提取关系</p>
-<hr />
-<h3 id="12-signaling-pathway">1.2 信号通路 (signaling-pathway)</h3>
-<p><strong>定义</strong>：表示信号分子通过级联反应传递信号，最终导致细胞响应的关系网络。</p>
-<p><strong>Schema</strong>：</p>
-<pre><code>(上游分子, signals-to/activates/inhibits/phosphorylates, 下游分子, [pathway, mechanism, kinetics])
-</code></pre>
-<p><strong>方向</strong>：上游 → 下游（单向，但可能有反馈）</p>
-<p><strong>属性</strong>：
-- <code>pathway</code>: 所属信号通路名称
-- <code>mechanism</code>: 信号传递机制（磷酸化/去磷酸化/蛋白切割/第二信使）
-- <code>kinetics</code>: 动力学特征（快速/慢速/持续/瞬时）
-- <code>amplification</code>: 信号放大程度
-- <code>crosstalk</code>: 与其他通路的交互</p>
-<p><strong>示例</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>上游分子</th>
-<th>关系</th>
-<th>下游分子</th>
-<th>通路</th>
-<th>机制</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>配体</td>
-<td>binds-to</td>
-<td>受体</td>
-<td>多种</td>
-<td>配体-受体结合</td>
-</tr>
-<tr>
-<td>受体</td>
-<td>activates</td>
-<td>激酶</td>
-<td>RTK通路</td>
-<td>自磷酸化</td>
-</tr>
-<tr>
-<td>Ras</td>
-<td>activates</td>
-<td>Raf</td>
-<td>MAPK通路</td>
-<td>GTP结合</td>
-</tr>
-<tr>
-<td>Raf</td>
-<td>phosphorylates</td>
-<td>MEK</td>
-<td>MAPK通路</td>
-<td>丝氨酸磷酸化</td>
-</tr>
-<tr>
-<td>MEK</td>
-<td>phosphorylates</td>
-<td>ERK</td>
-<td>MAPK通路</td>
-<td>苏氨酸/酪氨酸磷酸化</td>
-</tr>
-<tr>
-<td>ERK</td>
-<td>phosphorylates</td>
-<td>转录因子</td>
-<td>MAPK通路</td>
-<td>核转位</td>
-</tr>
-<tr>
-<td>PI3K</td>
-<td>produces</td>
-<td>PIP3</td>
-<td>PI3K-AKT通路</td>
-<td>磷酸化</td>
-</tr>
-<tr>
-<td>PIP3</td>
-<td>recruits</td>
-<td>AKT</td>
-<td>PI3K-AKT通路</td>
-<td>膜定位</td>
-</tr>
-<tr>
-<td>PDK1</td>
-<td>phosphorylates</td>
-<td>AKT</td>
-<td>PI3K-AKT通路</td>
-<td>激活磷酸化</td>
-</tr>
-<tr>
-<td>AKT</td>
-<td>phosphorylates</td>
-<td>mTOR</td>
-<td>PI3K-AKT通路</td>
-<td>激活</td>
-</tr>
-<tr>
-<td>cAMP</td>
-<td>activates</td>
-<td>PKA</td>
-<td>GPCR通路</td>
-<td>变构激活</td>
-</tr>
-<tr>
-<td>IP3</td>
-<td>releases</td>
-<td>Ca²⁺</td>
-<td>GPCR通路</td>
-<td>内质网释放</td>
-</tr>
-<tr>
-<td>TGF-β</td>
-<td>binds-to</td>
-<td>TGF-βR</td>
-<td>TGF-β通路</td>
-<td>受体二聚化</td>
-</tr>
-<tr>
-<td>Smad2/3</td>
-<td>phosphorylates</td>
-<td>Smad4</td>
-<td>TGF-β通路</td>
-<td>复合物形成</td>
-</tr>
-<tr>
-<td>Wnt</td>
-<td>binds-to</td>
-<td>Frizzled</td>
-<td>Wnt通路</td>
-<td>受体激活</td>
-</tr>
-<tr>
-<td>β-catenin</td>
-<td>accumulates</td>
-<td>核内</td>
-<td>Wnt通路</td>
-<td>降解抑制</td>
-</tr>
-</tbody>
-</table>
-<p><strong>MAPK信号通路详解</strong>：</p>
-<pre><code>生长因子（EGF/PDGF等）
-  ↓ binds-to
-受体酪氨酸激酶（EGFR/PDGFR）
-  ↓ 自磷酸化 + 二聚化
-招募适配蛋白（Grb2/SOS）
-  ↓
-Ras-GDP → Ras-GTP（激活）
-  ↓
-Raf（MAPKKK）激活
-  ↓ 磷酸化
-MEK1/2（MAPKK）激活
-  ↓ 双磷酸化
-ERK1/2（MAPK）激活
-  ↓ 核转位
-  ├── phosphorylates → Elk-1
-  │   └── activates → c-fos
-  ├── phosphorylates → c-Myc
-  │   └── 细胞周期推进
-  ├── phosphorylates → STAT
-  │   └── 转录调控
-  └── phosphorylates → 其他底物
-      └── 细胞增殖/分化/存活
-
-负调控：
-- PP2A/PP5: 去磷酸化ERK
-- DUSP/MKP: 去磷酸化ERK
-- Sprouty: 抑制Raf激活
-- RKIP: 抑制Raf-MEK结合
-</code></pre>
-<p><strong>PI3K-AKT信号通路详解</strong>：</p>
-<pre><code>生长因子/胰岛素
-  ↓
-受体酪氨酸激酶
-  ↓
-PI3K激活
-  ↓ 催化
-PIP2 → PIP3
-  ↓ 招募
-PDK1 + AKT → 细胞膜
-  ↓
-PDK1磷酸化AKT-T308
-  ↓
-mTORC2磷酸化AKT-S473
-  ↓
-AKT完全激活
-  ↓
-  ├── inhibits → TSC1/2
-  │   └── 释放Rheb
-  │       └── activates → mTORC1
-  │           ├── phosphorylates → S6K
-  │           │   └── 蛋白质合成↑
-  │           ├── phosphorylates → 4E-BP1
-  │           │   └── 翻译启动↑
-  │           └── 细胞生长/增殖
-  │
-  ├── inhibits → GSK3β
-  │   └── 糖原合成↑ / 细胞周期↑
-  │
-  ├── inhibits → Bad
-  │   └── 细胞凋亡↓
-  │
-  ├── inhibits → Caspase-9
-  │   └── 细胞凋亡↓
-  │
-  ├── activates → NF-κB
-  │   └── 细胞存活/炎症
-  │
-  ├── inhibits → p21/p27
-  │   └── 细胞周期推进
-  │
-  └── 其他底物...
-
-负调控：
-- PTEN: 去磷酸化PIP3 → PIP2
-- SHIP: 去磷酸化PIP3
-- PHLPP: 去磷酸化AKT-S473
-- PP2A: 去磷酸化AKT-T308
-</code></pre>
-<p><strong>信号通路交叉对话（Crosstalk）</strong>：</p>
-<pre><code>MAPK通路 ←───交互───→ PI3K-AKT通路
-    │                    │
-    ├── ERK磷酸化TSC1/2 ──┤
-    │   （抑制mTORC1）    │
-    │                    │
-    ├── AKT磷酸化Raf ─────┤
-    │   （抑制MAPK）      │
-    │                    │
-    └── 共同靶点：        │
-        ├── p90RSK       │
-        ├── GSK3β        │
-        └── mTOR         │
-
-Wnt通路 ←───交互───→ TGF-β通路
-    │                    │
-    ├── Smad与β-catenin复合物形成
-    │                    │
-    └── 共同调控细胞分化
-
-炎症信号（NF-κB）←───交互───→ 凋亡信号
-    │                    │
-    ├── NF-κB激活抗凋亡基因
-    │   （Bcl-2, c-IAP等）
-    │                    │
-    └── TNF-α同时激活两者
-</code></pre>
-<p><strong>发现方法</strong>：
-1. <strong>数据库导入</strong>：KEGG、Reactome、PhosphoSitePlus、Signor
-2. <strong>文献挖掘</strong>："X磷酸化Y"、"X激活Y"、"X通路调控Y"
-3. <strong>磷酸化蛋白质组学</strong>：质谱鉴定磷酸化位点和激酶-底物关系
-4. <strong>LLM推理</strong>：从信号转导描述中提取级联关系</p>
-<hr />
-<h3 id="13-metabolic-network">1.3 代谢网络 (metabolic-network)</h3>
-<p><strong>定义</strong>：表示代谢物之间的转化关系，包括底物-产物关系、酶催化关系等。</p>
-<p><strong>Schema</strong>：</p>
-<pre><code>(底物, converted-to, 产物, [enzyme, reaction-type, compartment])
-(酶, catalyzes, 反应, [substrates, products, kinetics])
-</code></pre>
-<p><strong>方向</strong>：底物 → 产物（单向或双向）</p>
-<p><strong>属性</strong>：
-- <code>enzyme</code>: 催化酶
-- <code>reaction-type</code>: 反应类型（氧化/还原/水解/磷酸化/脱羧等）
-- <code>compartment</code>: 亚细胞定位（胞质/线粒体/内质网等）
-- <code>reversibility</code>: 可逆性（可逆/不可逆）
-- <code>energy-change</code>: 能量变化（ATP/GTP/NADH等）
-- <code>regulation</code>: 调控信息（激活/抑制）</p>
-<p><strong>示例</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>底物</th>
-<th>关系</th>
-<th>产物</th>
-<th>酶</th>
-<th>反应类型</th>
-<th>能量变化</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>葡萄糖</td>
-<td>converted-to</td>
-<td>葡萄糖-6-磷酸</td>
-<td>己糖激酶</td>
-<td>磷酸化</td>
-<td>-1 ATP</td>
-</tr>
-<tr>
-<td>葡萄糖-6-磷酸</td>
-<td>converted-to</td>
-<td>果糖-6-磷酸</td>
-<td>磷酸葡萄糖异构酶</td>
-<td>异构化</td>
-<td>0</td>
-</tr>
-<tr>
-<td>果糖-6-磷酸</td>
-<td>converted-to</td>
-<td>果糖-1,6-二磷酸</td>
-<td>磷酸果糖激酶-1</td>
-<td>磷酸化</td>
-<td>-1 ATP</td>
-</tr>
-<tr>
-<td>丙酮酸</td>
-<td>converted-to</td>
-<td>乙酰CoA</td>
-<td>丙酮酸脱氢酶</td>
-<td>氧化脱羧</td>
-<td>+1 NADH</td>
-</tr>
-<tr>
-<td>乙酰CoA</td>
-<td>converted-to</td>
-<td>柠檬酸</td>
-<td>柠檬酸合酶</td>
-<td>缩合</td>
-<td>0</td>
-</tr>
-<tr>
-<td>异柠檬酸</td>
-<td>converted-to</td>
-<td>α-酮戊二酸</td>
-<td>异柠檬酸脱氢酶</td>
-<td>氧化脱羧</td>
-<td>+1 NADH</td>
-</tr>
-<tr>
-<td>α-酮戊二酸</td>
-<td>converted-to</td>
-<td>琥珀酰CoA</td>
-<td>α-酮戊二酸脱氢酶</td>
-<td>氧化脱羧</td>
-<td>+1 NADH</td>
-</tr>
-<tr>
-<td>琥珀酰CoA</td>
-<td>converted-to</td>
-<td>琥珀酸</td>
-<td>琥珀酰CoA合成酶</td>
-<td>底物水平磷酸化</td>
-<td>+1 GTP</td>
-</tr>
-</tbody>
-</table>
-<p><strong>糖酵解通路详解</strong>：</p>
-<pre><code>葡萄糖
-  ↓ 己糖激酶（HK）
-葡萄糖-6-磷酸（G6P）
-  │   ← 被己糖磷酸异构酶催化 ← 果糖-6-磷酸（F6P）
-  │     （糖异生方向）
-  ↓ 磷酸葡萄糖异构酶（PGI）
-果糖-6-磷酸（F6P）
-  ↓ 磷酸果糖激酶-1（PFK-1）
-  │   【关键限速酶，被ATP/柠檬酸抑制，被AMP/F-2,6-BP激活】
-果糖-1,6-二磷酸（F1,6BP）
-  ↓ 醛缩酶（ALD）
-甘油醛-3-磷酸（G3P） + 二羟丙酮磷酸（DHAP）
-  │   ← DHAP被丙糖磷酸异构酶（TPI）转化为G3P
-  ↓
-2 × 甘油醛-3-磷酸（G3P）
-  ↓ 甘油醛-3-磷酸脱氢酶（GAPDH）
-  │   【+ NAD⁺ + Pi → + NADH】
-1,3-二磷酸甘油酸（1,3-BPG）
-  ↓ 磷酸甘油酸激酶（PGK）
-  │   【ADP → ATP（底物水平磷酸化）】
-3-磷酸甘油酸（3-PG）
-  ↓ 磷酸甘油酸变位酶（PGAM）
-2-磷酸甘油酸（2-PG）
-  ↓ 烯醇化酶（ENO）
-磷酸烯醇式丙酮酸（PEP）
-  ↓ 丙酮酸激酶（PK）
-  │   【关键限速酶，ADP → ATP】
-丙酮酸
-  │
-  ├── [有氧] → 进入线粒体 → 丙酮酸脱氢酶 → 乙酰CoA → TCA循环
-  │
-  └── [无氧] → 乳酸脱氢酶（LDH）
-        【+ NADH → NAD⁺，再生NAD⁺维持糖酵解】
-        乳酸
-
-总反应：
-葡萄糖 + 2 NAD⁺ + 2 ADP + 2 Pi → 2 丙酮酸 + 2 NADH + 2 ATP + 2 H⁺
-</code></pre>
-<p><strong>TCA循环（三羧酸循环）详解</strong>：</p>
-<pre><code>乙酰CoA（2C） + 草酰乙酸（4C）
-  ↓ 柠檬酸合酶（CS）
-柠檬酸（6C）
-  ↓ 顺乌头酸酶（ACO）
-异柠檬酸（6C）
-  ↓ 异柠檬酸脱氢酶（IDH）
-  │   【+ NAD⁺ → NADH + CO₂】
-α-酮戊二酸（5C）
-  ↓ α-酮戊二酸脱氢酶复合体（α-KGDH）
-  │   【+ NAD⁺ → NADH + CO₂】
-  │   【类似丙酮酸脱氢酶复合体】
-琥珀酰CoA（4C）
-  ↓ 琥珀酰CoA合成酶（SCS）
-  │   【GDP + Pi → GTP（底物水平磷酸化）】
-琥珀酸（4C）
-  ↓ 琥珀酸脱氢酶（SDH）
-  │   【+ FAD → FADH₂】
-  │   【位于线粒体内膜，电子传递链复合体II】
-延胡索酸（4C）
-  ↓ 延胡索酸酶（FH）
-苹果酸（4C）
-  ↓ 苹果酸脱氢酶（MDH）
-  │   【+ NAD⁺ → NADH】
-草酰乙酸（4C）
-  ↓ 与下一个乙酰CoA结合，循环继续
-
-每轮TCA循环产物（1乙酰CoA）：
-- 3 NADH
-- 1 FADH₂
-- 1 GTP（相当于ATP）
-- 2 CO₂
-
-总能量产出（1葡萄糖 → 2乙酰CoA → 2轮TCA）：
-- 6 NADH
-- 2 FADH₂
-- 2 GTP
-</code></pre>
-<p><strong>氧化磷酸化与电子传递链</strong>：</p>
-<pre><code>NADH（来自糖酵解/TCA/脂肪酸氧化）
-  ↓ 复合体I（NADH脱氢酶）
-  │   【4H⁺泵出线粒体基质】
-泛醌（CoQ）
-  ← 复合体II（琥珀酸脱氢酶，来自FADH₂）
-  ↓
-复合体III（细胞色素bc1复合体）
-  │   【4H⁺泵出】
-细胞色素c（Cyt c）
-  ↓
-复合体IV（细胞色素c氧化酶）
-  │   【2H⁺泵出】
-  │   【½ O₂ + 2H⁺ → H₂O】
-O₂
-
-质子梯度（线粒体内膜间隙 → 基质）
-  ↓
-ATP合酶（复合体V）
-  │   【质子回流驱动旋转】
-  │   【ADP + Pi → ATP】
-ATP
-
-化学计量：
-- 1 NADH → ~2.5 ATP
-- 1 FADH₂ → ~1.5 ATP
-</code></pre>
-<p><strong>代谢通路交叉与调控</strong>：</p>
-<pre><code>                    葡萄糖
-                      │
-                      ↓ 糖酵解
-                    丙酮酸
-                      │
-        ┌─────────────┼─────────────┐
-        ↓             ↓             ↓
-    乳酸（无氧）  乙酰CoA    丙氨酸（转氨）
-                      │
-        ┌─────────────┼─────────────┐
-        ↓             ↓             ↓
-    TCA循环      脂肪酸合成    胆固醇合成
-        │             │             │
-        ↓             ↓             ↓
-    能量（ATP）   脂肪储存     膜合成/激素
-        │
-        ↓
-    氨基酸合成（α-酮戊二酸、草酰乙酸等）
-
-关键调控点：
-1. 己糖激酶（被G6P反馈抑制）
-2. 磷酸果糖激酶-1（限速酶）
-   - 抑制：ATP、柠檬酸
-   - 激活：AMP、F-2,6-BP
-3. 丙酮酸激酶
-   - 抑制：ATP、丙氨酸
-   - 激活：F-1,6-BP
-4. 丙酮酸脱氢酶复合体
-   - 抑制：乙酰CoA、NADH、ATP
-5. 柠檬酸合酶
-   - 抑制：ATP、琥珀酰CoA、NADH
-6. 异柠檬酸脱氢酶
-   - 抑制：ATP、NADH
-   - 激活：ADP、Ca²⁺
-7. α-酮戊二酸脱氢酶
-   - 抑制：琥珀酰CoA、NADH
-</code></pre>
-<p><strong>发现方法</strong>：
-1. <strong>数据库导入</strong>：KEGG、MetaCyc、Reactome、HMDB
-2. <strong>文献挖掘</strong>："X转化为Y"、"X酶催化Y反应"
-3. <strong>代谢组学</strong>：质谱检测代谢物水平变化
-4. <strong>LLM推理</strong>：从代谢通路描述中提取转化关系</p>
-<hr />
-<h2 id="_2">二、调控网络整合</h2>
-<h3 id="21">2.1 多层次调控整合</h3>
-<pre><code>表观遗传调控
-    ↓
-染色质重塑 → DNA可及性改变
-    ↓
-转录调控（TF → 靶基因）
-    ↓
-RNA加工（剪切/编辑/转运）
-    ↓
-转录后调控（miRNA/lncRNA）
-    ↓
-翻译调控
-    ↓
-翻译后修饰（磷酸化/泛素化/乙酰化等）
-    ↓
-蛋白质活性/定位/稳定性
-    ↓
-代谢酶活性
-    ↓
-代谢流/能量产生
-    ↓
-细胞表型/功能
-
-示例：胰岛素信号整合
-胰岛素
-  ↓
-受体酪氨酸激酶激活
-  ↓
-  ├── PI3K-AKT通路
-  │   ├── 葡萄糖转运（GLUT4转位）
-  │   ├── 糖原合成（GSK3β抑制）
-  │   ├── 蛋白质合成（mTOR激活）
-  │   └── 基因表达（FOXO磷酸化）
-  │
-  └── MAPK通路
-      ├── 细胞增殖
-      └── 基因表达
-</code></pre>
-<h3 id="22">2.2 网络拓扑分析</h3>
-<pre><code class="language-python">def analyze_regulatory_network(relations):
-    &quot;&quot;&quot;分析调控网络拓扑特征&quot;&quot;&quot;
-
-    # 1. 构建网络图
-    G = build_network_graph(relations)
-
-    # 2. 计算中心性指标
-    centrality = {
-        &quot;degree&quot;: nx.degree_centrality(G),
-        &quot;betweenness&quot;: nx.betweenness_centrality(G),
-        &quot;pagerank&quot;: nx.pagerank(G)
-    }
-
-    # 3. 识别关键节点（枢纽基因/蛋白）
-    hub_nodes = identify_hubs(G, threshold=0.9)
-
-    # 4. 发现调控模块
-    modules = community_detection(G)
-
-    # 5. 识别反馈回路
-    feedback_loops = find_cycles(G)
-
-    # 6. 通路富集分析
-    pathway_enrichment = enrich_pathways(modules)
-
-    return {
-        &quot;centrality&quot;: centrality,
-        &quot;hubs&quot;: hub_nodes,
-        &quot;modules&quot;: modules,
-        &quot;feedback_loops&quot;: feedback_loops,
-        &quot;pathway_enrichment&quot;: pathway_enrichment
-    }
-</code></pre>
-<hr />
-<h2 id="_3">三、关系发现方法</h2>
-<h3 id="31">3.1 规则匹配模式</h3>
-<pre><code class="language-python">REGULATION_RELATION_PATTERNS = {
-    # 转录调控
-    &quot;transcriptional_regulation&quot;: [
-        r&quot;({tf})激活({gene})的转录&quot;,
-        r&quot;({tf})抑制({gene})的表达&quot;,
-        r&quot;({tf})调控({gene})&quot;,
-        r&quot;({tf})结合到({gene})的启动子&quot;,
-    ],
-
-    # 信号传递
-    &quot;signal_transduction&quot;: [
-        r&quot;({protein})磷酸化({protein})&quot;,
-        r&quot;({protein})激活({protein})&quot;,
-        r&quot;({protein})抑制({protein})&quot;,
-        r&quot;({protein})通过({pathway})信号通路&quot;,
-    ],
-
-    # 代谢转化
-    &quot;metabolic_conversion&quot;: [
-        r&quot;({substrate})转化为({product})&quot;,
-        r&quot;({enzyme})催化({substrate})生成({product})&quot;,
-        r&quot;({substrate})在({enzyme})作用下生成({product})&quot;,
-    ],
-}
-</code></pre>
-<h3 id="32-llm">3.2 LLM推理提示词</h3>
-<pre><code class="language-markdown">## 任务
-分析以下分子间的调控关系。
-
-## 分子信息
-分子A: {molecule_a} (类型: {type_a})
-分子B: {molecule_b} (类型: {type_b})
-
-## 上下文描述
-{context}
-
-## 关系类型选项
-1. **transcriptional_activation**: A转录激活B（A是TF，B是靶基因）
-2. **transcriptional_repression**: A转录抑制B
-3. **phosphorylates**: A磷酸化B（激酶-底物）
-4. **dephosphorylates**: A去磷酸化B（磷酸酶-底物）
-5. **activates**: A激活B的活性
-6. **inhibits**: A抑制B的活性
-7. **binds-to**: A与B结合
-8. **converts-to**: A转化为B（代谢反应）
-9. **catalyzes**: A催化B的转化（A是酶）
-10. **none**: 无明确关系
-
-## 输出格式
-```json
-{
-  &quot;relation_type&quot;: &quot;关系类型&quot;,
-  &quot;direction&quot;: &quot;A→B / B→A / 无向&quot;,
-  &quot;mechanism&quot;: &quot;具体机制&quot;,
-  &quot;pathway&quot;: &quot;所属通路（如有）&quot;,
-  &quot;confidence&quot;: 0.0-1.0,
-  &quot;evidence&quot;: &quot;证据来源&quot;,
-  &quot;context&quot;: &quot;适用条件&quot;
-}
-</code></pre>
-<pre><code>
----
-
-## 四、数据格式
-
-### 4.1 调控关系JSON
-
-```json
-{
-  &quot;relation_id&quot;: &quot;reg_001&quot;,
-  &quot;relation_type&quot;: &quot;transcriptional_activation&quot;,
-  &quot;subject&quot;: {
-    &quot;id&quot;: &quot;ent_p53&quot;,
-    &quot;name&quot;: &quot;p53&quot;,
-    &quot;type&quot;: &quot;protein&quot;,
-    &quot;category&quot;: &quot;transcription_factor&quot;,
-    &quot;function&quot;: &quot;tumor_suppressor&quot;
-  },
-  &quot;object&quot;: {
-    &quot;id&quot;: &quot;ent_p21&quot;,
-    &quot;name&quot;: &quot;p21&quot;,
-    &quot;type&quot;: &quot;gene&quot;,
-    &quot;category&quot;: &quot;CDK_inhibitor&quot;
-  },
-  &quot;properties&quot;: {
-    &quot;confidence&quot;: 0.98,
-    &quot;mechanism&quot;: &quot;direct_binding&quot;,
-    &quot;binding_site&quot;: &quot;p53_response_element&quot;,
-    &quot;context&quot;: {
-      &quot;cell_type&quot;: &quot;fibroblast&quot;,
-      &quot;condition&quot;: &quot;DNA_damage&quot;,
-      &quot;stimulus&quot;: &quot;UV_irradiation&quot;
-    },
-    &quot;evidence&quot;: [
-      &quot;ChIP-seq&quot;,
-      &quot;luciferase_reporter&quot;,
-      &quot;RNA-seq&quot;
-    ],
-    &quot;references&quot;: [&quot;PMID:12345678&quot;]
-  },
-  &quot;source&quot;: {
-    &quot;method&quot;: &quot;database_import&quot;,
-    &quot;database&quot;: &quot;TRRUST&quot;,
-    &quot;version&quot;: &quot;v2&quot;
-  }
-}
-</code></pre>
-<h3 id="42-json">4.2 信号通路JSON</h3>
-<pre><code class="language-json">{
-  &quot;pathway_id&quot;: &quot;path_001&quot;,
-  &quot;name&quot;: &quot;MAPK_signaling&quot;,
-  &quot;category&quot;: &quot;signal_transduction&quot;,
-  &quot;description&quot;: &quot;丝裂原活化蛋白激酶信号通路&quot;,
-  &quot;nodes&quot;: [
-    {&quot;id&quot;: &quot;Ras&quot;, &quot;type&quot;: &quot;small_GTPase&quot;},
-    {&quot;id&quot;: &quot;Raf&quot;, &quot;type&quot;: &quot;kinase&quot;},
-    {&quot;id&quot;: &quot;MEK&quot;, &quot;type&quot;: &quot;kinase&quot;},
-    {&quot;id&quot;: &quot;ERK&quot;, &quot;type&quot;: &quot;kinase&quot;}
-  ],
-  &quot;edges&quot;: [
-    {&quot;source&quot;: &quot;Ras&quot;, &quot;target&quot;: &quot;Raf&quot;, &quot;type&quot;: &quot;activates&quot;},
-    {&quot;source&quot;: &quot;Raf&quot;, &quot;target&quot;: &quot;MEK&quot;, &quot;type&quot;: &quot;phosphorylates&quot;},
-    {&quot;source&quot;: &quot;MEK&quot;, &quot;target&quot;: &quot;ERK&quot;, &quot;type&quot;: &quot;phosphorylates&quot;}
-  ],
-  &quot;crosstalk&quot;: [
-    {&quot;pathway&quot;: &quot;PI3K-AKT&quot;, &quot;interaction&quot;: &quot;inhibition&quot;, &quot;node&quot;: &quot;Raf&quot;}
-  ]
-}
-</code></pre>
-<h3 id="43-json">4.3 代谢反应JSON</h3>
-<pre><code class="language-json">{
-  &quot;reaction_id&quot;: &quot;rxn_001&quot;,
-  &quot;name&quot;: &quot;hexokinase_reaction&quot;,
-  &quot;enzyme&quot;: {
-    &quot;id&quot;: &quot;ent_HK&quot;,
-    &quot;name&quot;: &quot;hexokinase&quot;,
-    &quot;ec_number&quot;: &quot;2.7.1.1&quot;
-  },
-  &quot;substrates&quot;: [
-    {&quot;id&quot;: &quot;ent_glucose&quot;, &quot;name&quot;: &quot;glucose&quot;, &quot;stoichiometry&quot;: 1},
-    {&quot;id&quot;: &quot;ent_ATP&quot;, &quot;name&quot;: &quot;ATP&quot;, &quot;stoichiometry&quot;: 1}
-  ],
-  &quot;products&quot;: [
-    {&quot;id&quot;: &quot;ent_G6P&quot;, &quot;name&quot;: &quot;glucose-6-phosphate&quot;, &quot;stoichiometry&quot;: 1},
-    {&quot;id&quot;: &quot;ent_ADP&quot;, &quot;name&quot;: &quot;ADP&quot;, &quot;stoichiometry&quot;: 1}
-  ],
-  &quot;properties&quot;: {
-    &quot;reversibility&quot;: false,
-    &quot;compartment&quot;: &quot;cytoplasm&quot;,
-    &quot;regulation&quot;: {
-      &quot;inhibitors&quot;: [&quot;glucose-6-phosphate&quot;],
-      &quot;activators&quot;: [&quot;insulin&quot;]
-    }
-  }
-}
-</code></pre></article></main>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL_04c: 调控网络 — 分子调控关系的知识图谱</h1>
+<p>&gt; 定义分子生物学中的转录调控、信号通路和代谢网络关系，构建分子机制的结构化表示。</p>
+<p>---</p>
+<h2>一、关系类型定义</h2>
+<p>### 1.1 转录调控 (transcriptional-regulation)</p>
+<p>**定义**：表示转录因子（TF）或其他调控因子对靶基因转录水平的影响。</p>
+<p>**Schema**：</p>
+<p>```</p>
+<p>(调控因子, regulates/activates/inhibits, 靶基因, [mechanism, binding-site, context])</p>
+<p>```</p>
+<p>**方向**：调控因子 → 靶基因（单向）</p>
+<p>**属性**：</p>
+<p>- `mechanism`: 调控机制</p>
+<p>  - `transcriptional_activation`: 转录激活</p>
+<p>  - `transcriptional_repression`: 转录抑制</p>
+<p>  - `chromatin_remodeling`: 染色质重塑</p>
+<p>  - `enhancer_promoter_looping`: 增强子-启动子环化</p>
+<p>- `binding-site`: 结合位点（启动子/增强子/沉默子/绝缘子）</p>
+<p>- `context`: 细胞类型/组织/发育阶段/环境刺激</p>
+<p>- `evidence`: 实验证据（ChIP-seq/RNA-seq/报告基因/EMSA）</p>
+<p>- `confidence`: 置信度</p>
+<p>**示例**：</p>
+<p>| 调控因子 | 关系 | 靶基因 | 机制 | 结合位点 | 上下文 |</p>
+<p>|----------|------|--------|------|----------|--------|</p>
+<p>| p53 | activates | p21 | 转录激活 | 启动子p53结合元件 | DNA损伤 |</p>
+<p>| p53 | activates | Bax | 转录激活 | 启动子 | 凋亡诱导 |</p>
+<p>| p53 | activates | GADD45 | 转录激活 | 启动子 | DNA损伤 |</p>
+<p>| p53 | inhibits | MDM2 | 转录抑制 | 启动子 | 负反馈 |</p>
+<p>| c-Myc | activates | Cyclin D1 | 转录激活 | E-box元件 | 细胞增殖 |</p>
+<p>| NF-κB | activates | IL-6 | 转录激活 | κB位点 | 炎症反应 |</p>
+<p>| Oct4 | activates | Nanog | 转录激活 | 启动子 | 干细胞维持 |</p>
+<p>| REST | inhibits | 神经元基因 | 转录抑制 | NRSE元件 | 非神经组织 |</p>
+<p>| HIF-1α | activates | VEGF | 转录激活 | HRE元件 | 低氧条件 |</p>
+<p>| STAT3 | activates | SOCS3 | 转录激活 | GAS元件 | IL-6信号 |</p>
+<p>**转录调控层级示例**：</p>
+<p>```</p>
+<p>DNA损伤信号</p>
+<p>  → ATM/ATR激活</p>
+<p>    → p53磷酸化稳定</p>
+<p>      → p53核定位</p>
+<p>        ├── activates → p21</p>
+<p>        │   └── 细胞周期阻滞（G1/S检查点）</p>
+<p>        ├── activates → GADD45</p>
+<p>        │   └── DNA修复</p>
+<p>        ├── activates → Bax</p>
+<p>        │   └── 线粒体凋亡途径</p>
+<p>        ├── activates → PUMA</p>
+<p>        │   └── 凋亡</p>
+<p>        └── inhibits → MDM2</p>
+<p>            └── 负反馈调控p53水平</p>
+<p>```</p>
+<p>**细胞周期调控网络**：</p>
+<p>```</p>
+<p>G1期</p>
+<p>├── Cyclin D-CDK4/6</p>
+<p>│   ├── phosphorylates → Rb</p>
+<p>│   │   └── releases → E2F</p>
+<p>│   │       ├── activates → Cyclin E</p>
+<p>│   │       ├── activates → DNA复制酶基因</p>
+<p>│   │       └── 进入S期</p>
+<p>│   └── inhibited-by → p16</p>
+<p>│</p>
+<p>├── p16 (CDK抑制剂)</p>
+<p>│   └── inhibits → CDK4/6</p>
+<p>│       └── 细胞周期阻滞</p>
+<p>│</p>
+<p>└── p53-p21通路</p>
+<p>    ├── DNA损伤 → activates → p53</p>
+<p>    │   └── activates → p21</p>
+<p>    │       └── inhibits → CDK2/Cyclin E</p>
+<p>    │           └── G1期阻滞</p>
+<p>    └── MDM2负反馈</p>
+<p>        └── inhibits → p53</p>
+<p>S期</p>
+<p>├── Cyclin E-CDK2</p>
+<p>│   └── 启动DNA复制</p>
+<p>│</p>
+<p>├── Cyclin A-CDK2</p>
+<p>│   └── 推进DNA复制</p>
+<p>│</p>
+<p>└── 检查点</p>
+<p>    ├── ATR-Chk1</p>
+<p>    │   └── 复制应激响应</p>
+<p>    └── 复制完成 → 进入G2</p>
+<p>G2/M转换</p>
+<p>├── Cyclin B-CDK1 (MPF)</p>
+<p>│   ├── inhibited-by → Wee1/Myt1</p>
+<p>│   └── activated-by → Cdc25</p>
+<p>│       └── 进入M期</p>
+<p>│</p>
+<p>└── DNA损伤检查点</p>
+<p>    └── ATM-Chk2/p53</p>
+<p>        └── G2期阻滞</p>
+<p>```</p>
+<p>**发现方法**：</p>
+<p>1. **数据库导入**：TRANSFAC、JASPAR、ChIP-Atlas、ENCODE</p>
+<p>2. **文献挖掘**：&quot;X激活Y的转录&quot;、&quot;X抑制Y表达&quot;</p>
+<p>3. **实验数据**：ChIP-seq峰、RNA-seq差异表达、报告基因实验</p>
+<p>4. **LLM推理**：从调控机制描述中提取关系</p>
+<p>---</p>
+<p>### 1.2 信号通路 (signaling-pathway)</p>
+<p>**定义**：表示信号分子通过级联反应传递信号，最终导致细胞响应的关系网络。</p>
+<p>**Schema**：</p>
+<p>```</p>
+<p>(上游分子, signals-to/activates/inhibits/phosphorylates, 下游分子, [pathway, mechanism, kinetics])</p>
+<p>```</p>
+<p>**方向**：上游 → 下游（单向，但可能有反馈）</p>
+<p>**属性**：</p>
+<p>- `pathway`: 所属信号通路名称</p>
+<p>- `mechanism`: 信号传递机制（磷酸化/去磷酸化/蛋白切割/第二信使）</p>
+<p>- `kinetics`: 动力学特征（快速/慢速/持续/瞬时）</p>
+<p>- `amplification`: 信号放大程度</p>
+<p>- `crosstalk`: 与其他通路的交互</p>
+<p>**示例**：</p>
+<p>| 上游分子 | 关系 | 下游分子 | 通路 | 机制 |</p>
+<p>|----------|------|----------|------|------|</p>
+<p>| 配体 | binds-to | 受体 | 多种 | 配体-受体结合 |</p>
+<p>| 受体 | activates | 激酶 | RTK通路 | 自磷酸化 |</p>
+<p>| Ras | activates | Raf | MAPK通路 | GTP结合 |</p>
+<p>| Raf | phosphorylates | MEK | MAPK通路 | 丝氨酸磷酸化 |</p>
+<p>| MEK | phosphorylates | ERK | MAPK通路 | 苏氨酸/酪氨酸磷酸化 |</p>
+<p>| ERK | phosphorylates | 转录因子 | MAPK通路 | 核转位 |</p>
+<p>| PI3K | produces | PIP3 | PI3K-AKT通路 | 磷酸化 |</p>
+<p>| PIP3 | recruits | AKT | PI3K-AKT通路 | 膜定位 |</p>
+<p>| PDK1 | phosphorylates | AKT | PI3K-AKT通路 | 激活磷酸化 |</p>
+<p>| AKT | phosphorylates | mTOR | PI3K-AKT通路 | 激活 |</p>
+<p>| cAMP | activates | PKA | GPCR通路 | 变构激活 |</p>
+<p>| IP3 | releases | Ca²⁺ | GPCR通路 | 内质网释放 |</p>
+<p>| TGF-β | binds-to | TGF-βR | TGF-β通路 | 受体二聚化 |</p>
+<p>| Smad2/3 | phosphorylates | Smad4 | TGF-β通路 | 复合物形成 |</p>
+<p>| Wnt | binds-to | Frizzled | Wnt通路 | 受体激活 |</p>
+<p>| β-catenin | accumulates | 核内 | Wnt通路 | 降解抑制 |</p>
+<p>**MAPK信号通路详解**：</p>
+<p>```</p>
+<p>生长因子（EGF/PDGF等）</p>
+<p>  ↓ binds-to</p>
+<p>受体酪氨酸激酶（EGFR/PDGFR）</p>
+<p>  ↓ 自磷酸化 + 二聚化</p>
+<p>招募适配蛋白（Grb2/SOS）</p>
+<p>  ↓</p>
+<p>Ras-GDP → Ras-GTP（激活）</p>
+<p>  ↓</p>
+<p>Raf（MAPKKK）激活</p>
+<p>  ↓ 磷酸化</p>
+<p>MEK1/2（MAPKK）激活</p>
+<p>  ↓ 双磷酸化</p>
+<p>ERK1/2（MAPK）激活</p>
+<p>  ↓ 核转位</p>
+<p>  ├── phosphorylates → Elk-1</p>
+<p>  │   └── activates → c-fos</p>
+<p>  ├── phosphorylates → c-Myc</p>
+<p>  │   └── 细胞周期推进</p>
+<p>  ├── phosphorylates → STAT</p>
+<p>  │   └── 转录调控</p>
+<p>  └── phosphorylates → 其他底物</p>
+<p>      └── 细胞增殖/分化/存活</p>
+<p>负调控：</p>
+<p>- PP2A/PP5: 去磷酸化ERK</p>
+<p>- DUSP/MKP: 去磷酸化ERK</p>
+<p>- Sprouty: 抑制Raf激活</p>
+<p>- RKIP: 抑制Raf-MEK结合</p>
+<p>```</p>
+<p>**PI3K-AKT信号通路详解**：</p>
+<p>```</p>
+<p>生长因子/胰岛素</p>
+<p>  ↓</p>
+<p>受体酪氨酸激酶</p>
+<p>  ↓</p>
+<p>PI3K激活</p>
+<p>  ↓ 催化</p>
+<p>PIP2 → PIP3</p>
+<p>  ↓ 招募</p>
+<p>PDK1 + AKT → 细胞膜</p>
+<p>  ↓</p>
+<p>PDK1磷酸化AKT-T308</p>
+<p>  ↓</p>
+<p>mTORC2磷酸化AKT-S473</p>
+<p>  ↓</p>
+<p>AKT完全激活</p>
+<p>  ↓</p>
+<p>  ├── inhibits → TSC1/2</p>
+<p>  │   └── 释放Rheb</p>
+<p>  │       └── activates → mTORC1</p>
+<p>  │           ├── phosphorylates → S6K</p>
+<p>  │           │   └── 蛋白质合成↑</p>
+<p>  │           ├── phosphorylates → 4E-BP1</p>
+<p>  │           │   └── 翻译启动↑</p>
+<p>  │           └── 细胞生长/增殖</p>
+<p>  │</p>
+<p>  ├── inhibits → GSK3β</p>
+<p>  │   └── 糖原合成↑ / 细胞周期↑</p>
+<p>  │</p>
+<p>  ├── inhibits → Bad</p>
+<p>  │   └── 细胞凋亡↓</p>
+<p>  │</p>
+<p>  ├── inhibits → Caspase-9</p>
+<p>  │   └── 细胞凋亡↓</p>
+<p>  │</p>
+<p>  ├── activates → NF-κB</p>
+<p>  │   └── 细胞存活/炎症</p>
+<p>  │</p>
+<p>  ├── inhibits → p21/p27</p>
+<p>  │   └── 细胞周期推进</p>
+<p>  │</p>
+<p>  └── 其他底物...</p>
+<p>负调控：</p>
+<p>- PTEN: 去磷酸化PIP3 → PIP2</p>
+<p>- SHIP: 去磷酸化PIP3</p>
+<p>- PHLPP: 去磷酸化AKT-S473</p>
+<p>- PP2A: 去磷酸化AKT-T308</p>
+<p>```</p>
+<p>**信号通路交叉对话（Crosstalk）**：</p>
+<p>```</p>
+<p>MAPK通路 ←───交互───→ PI3K-AKT通路</p>
+<p>    │                    │</p>
+<p>    ├── ERK磷酸化TSC1/2 ──┤</p>
+<p>    │   （抑制mTORC1）    │</p>
+<p>    │                    │</p>
+<p>    ├── AKT磷酸化Raf ─────┤</p>
+<p>    │   （抑制MAPK）      │</p>
+<p>    │                    │</p>
+<p>    └── 共同靶点：        │</p>
+<p>        ├── p90RSK       │</p>
+<p>        ├── GSK3β        │</p>
+<p>        └── mTOR         │</p>
+<p>Wnt通路 ←───交互───→ TGF-β通路</p>
+<p>    │                    │</p>
+<p>    ├── Smad与β-catenin复合物形成</p>
+<p>    │                    │</p>
+<p>    └── 共同调控细胞分化</p>
+<p>炎症信号（NF-κB）←───交互───→ 凋亡信号</p>
+<p>    │                    │</p>
+<p>    ├── NF-κB激活抗凋亡基因</p>
+<p>    │   （Bcl-2, c-IAP等）</p>
+<p>    │                    │</p>
+<p>    └── TNF-α同时激活两者</p>
+<p>```</p>
+<p>**发现方法**：</p>
+<p>1. **数据库导入**：KEGG、Reactome、PhosphoSitePlus、Signor</p>
+<p>2. **文献挖掘**：&quot;X磷酸化Y&quot;、&quot;X激活Y&quot;、&quot;X通路调控Y&quot;</p>
+<p>3. **磷酸化蛋白质组学**：质谱鉴定磷酸化位点和激酶-底物关系</p>
+<p>4. **LLM推理**：从信号转导描述中提取级联关系</p>
+<p>---</p>
+<p>### 1.3 代谢网络 (metabolic-network)</p>
+<p>**定义**：表示代谢物之间的转化关系，包括底物-产物关系、酶催化关系等。</p>
+<p>**Schema**：</p>
+<p>```</p>
+<p>(底物, converted-to, 产物, [enzyme, reaction-type, compartment])</p>
+<p>(酶, catalyzes, 反应, [substrates, products, kinetics])</p>
+<p>```</p>
+<p>**方向**：底物 → 产物（单向或双向）</p>
+<p>**属性**：</p>
+<p>- `enzyme`: 催化酶</p>
+<p>- `reaction-type`: 反应类型（氧化/还原/水解/磷酸化/脱羧等）</p>
+<p>- `compartment`: 亚细胞定位（胞质/线粒体/内质网等）</p>
+<p>- `reversibility`: 可逆性（可逆/不可逆）</p>
+<p>- `energy-change`: 能量变化（ATP/GTP/NADH等）</p>
+<p>- `regulation`: 调控信息（激活/抑制）</p>
+<p>**示例**：</p>
+<p>| 底物 | 关系 | 产物 | 酶 | 反应类型 | 能量变化 |</p>
+<p>|------|------|------|-----|----------|----------|</p>
+<p>| 葡萄糖 | converted-to | 葡萄糖-6-磷酸 | 己糖激酶 | 磷酸化 | -1 ATP |</p>
+<p>| 葡萄糖-6-磷酸 | converted-to | 果糖-6-磷酸 | 磷酸葡萄糖异构酶 | 异构化 | 0 |</p>
+<p>| 果糖-6-磷酸 | converted-to | 果糖-1,6-二磷酸 | 磷酸果糖激酶-1 | 磷酸化 | -1 ATP |</p>
+<p>| 丙酮酸 | converted-to | 乙酰CoA | 丙酮酸脱氢酶 | 氧化脱羧 | +1 NADH |</p>
+<p>| 乙酰CoA | converted-to | 柠檬酸 | 柠檬酸合酶 | 缩合 | 0 |</p>
+<p>| 异柠檬酸 | converted-to | α-酮戊二酸 | 异柠檬酸脱氢酶 | 氧化脱羧 | +1 NADH |</p>
+<p>| α-酮戊二酸 | converted-to | 琥珀酰CoA | α-酮戊二酸脱氢酶 | 氧化脱羧 | +1 NADH |</p>
+<p>| 琥珀酰CoA | converted-to | 琥珀酸 | 琥珀酰CoA合成酶 | 底物水平磷酸化 | +1 GTP |</p>
+<p>**糖酵解通路详解**：</p>
+<p>```</p>
+<p>葡萄糖</p>
+<p>  ↓ 己糖激酶（HK）</p>
+<p>葡萄糖-6-磷酸（G6P）</p>
+<p>  │   ← 被己糖磷酸异构酶催化 ← 果糖-6-磷酸（F6P）</p>
+<p>  │     （糖异生方向）</p>
+<p>  ↓ 磷酸葡萄糖异构酶（PGI）</p>
+<p>果糖-6-磷酸（F6P）</p>
+<p>  ↓ 磷酸果糖激酶-1（PFK-1）</p>
+<p>  │   【关键限速酶，被ATP/柠檬酸抑制，被AMP/F-2,6-BP激活】</p>
+<p>果糖-1,6-二磷酸（F1,6BP）</p>
+<p>  ↓ 醛缩酶（ALD）</p>
+<p>甘油醛-3-磷酸（G3P） + 二羟丙酮磷酸（DHAP）</p>
+<p>  │   ← DHAP被丙糖磷酸异构酶（TPI）转化为G3P</p>
+<p>  ↓</p>
+<p>2 × 甘油醛-3-磷酸（G3P）</p>
+<p>  ↓ 甘油醛-3-磷酸脱氢酶（GAPDH）</p>
+<p>  │   【+ NAD⁺ + Pi → + NADH】</p>
+<p>1,3-二磷酸甘油酸（1,3-BPG）</p>
+<p>  ↓ 磷酸甘油酸激酶（PGK）</p>
+<p>  │   【ADP → ATP（底物水平磷酸化）】</p>
+<p>3-磷酸甘油酸（3-PG）</p>
+<p>  ↓ 磷酸甘油酸变位酶（PGAM）</p>
+<p>2-磷酸甘油酸（2-PG）</p>
+<p>  ↓ 烯醇化酶（ENO）</p>
+<p>磷酸烯醇式丙酮酸（PEP）</p>
+<p>  ↓ 丙酮酸激酶（PK）</p>
+<p>  │   【关键限速酶，ADP → ATP】</p>
+<p>丙酮酸</p>
+<p>  │</p>
+<p>  ├── [有氧] → 进入线粒体 → 丙酮酸脱氢酶 → 乙酰CoA → TCA循环</p>
+<p>  │</p>
+<p>  └── [无氧] → 乳酸脱氢酶（LDH）</p>
+<p>        【+ NADH → NAD⁺，再生NAD⁺维持糖酵解】</p>
+<p>        乳酸</p>
+<p>总反应：</p>
+<p>葡萄糖 + 2 NAD⁺ + 2 ADP + 2 Pi → 2 丙酮酸 + 2 NADH + 2 ATP + 2 H⁺</p>
+<p>```</p>
+<p>**TCA循环（三羧酸循环）详解**：</p>
+<p>```</p>
+<p>乙酰CoA（2C） + 草酰乙酸（4C）</p>
+<p>  ↓ 柠檬酸合酶（CS）</p>
+<p>柠檬酸（6C）</p>
+<p>  ↓ 顺乌头酸酶（ACO）</p>
+<p>异柠檬酸（6C）</p>
+<p>  ↓ 异柠檬酸脱氢酶（IDH）</p>
+<p>  │   【+ NAD⁺ → NADH + CO₂】</p>
+<p>α-酮戊二酸（5C）</p>
+<p>  ↓ α-酮戊二酸脱氢酶复合体（α-KGDH）</p>
+<p>  │   【+ NAD⁺ → NADH + CO₂】</p>
+<p>  │   【类似丙酮酸脱氢酶复合体】</p>
+<p>琥珀酰CoA（4C）</p>
+<p>  ↓ 琥珀酰CoA合成酶（SCS）</p>
+<p>  │   【GDP + Pi → GTP（底物水平磷酸化）】</p>
+<p>琥珀酸（4C）</p>
+<p>  ↓ 琥珀酸脱氢酶（SDH）</p>
+<p>  │   【+ FAD → FADH₂】</p>
+<p>  │   【位于线粒体内膜，电子传递链复合体II】</p>
+<p>延胡索酸（4C）</p>
+<p>  ↓ 延胡索酸酶（FH）</p>
+<p>苹果酸（4C）</p>
+<p>  ↓ 苹果酸脱氢酶（MDH）</p>
+<p>  │   【+ NAD⁺ → NADH】</p>
+<p>草酰乙酸（4C）</p>
+<p>  ↓ 与下一个乙酰CoA结合，循环继续</p>
+<p>每轮TCA循环产物（1乙酰CoA）：</p>
+<p>- 3 NADH</p>
+<p>- 1 FADH₂</p>
+<p>- 1 GTP（相当于ATP）</p>
+<p>- 2 CO₂</p>
+<p>总能量产出（1葡萄糖 → 2乙酰CoA → 2轮TCA）：</p>
+<p>- 6 NADH</p>
+<p>- 2 FADH₂</p>
+<p>- 2 GTP</p>
+<p>```</p>
+<p>**氧化磷酸化与电子传递链**：</p>
+<p>```</p>
+<p>NADH（来自糖酵解/TCA/脂肪酸氧化）</p>
+<p>  ↓ 复合体I（NADH脱氢酶）</p>
+<p>  │   【4H⁺泵出线粒体基质】</p>
+<p>泛醌（CoQ）</p>
+<p>  ← 复合体II（琥珀酸脱氢酶，来自FADH₂）</p>
+<p>  ↓</p>
+<p>复合体III（细胞色素bc1复合体）</p>
+<p>  │   【4H⁺泵出】</p>
+<p>细胞色素c（Cyt c）</p>
+<p>  ↓</p>
+<p>复合体IV（细胞色素c氧化酶）</p>
+<p>  │   【2H⁺泵出】</p>
+<p>  │   【½ O₂ + 2H⁺ → H₂O】</p>
+<p>O₂</p>
+<p>质子梯度（线粒体内膜间隙 → 基质）</p>
+<p>  ↓</p>
+<p>ATP合酶（复合体V）</p>
+<p>  │   【质子回流驱动旋转】</p>
+<p>  │   【ADP + Pi → ATP】</p>
+<p>ATP</p>
+<p>化学计量：</p>
+<p>- 1 NADH → ~2.5 ATP</p>
+<p>- 1 FADH₂ → ~1.5 ATP</p>
+<p>```</p>
+<p>**代谢通路交叉与调控**：</p>
+<p>```</p>
+<p>                    葡萄糖</p>
+<p>                      │</p>
+<p>                      ↓ 糖酵解</p>
+<p>                    丙酮酸</p>
+<p>                      │</p>
+<p>        ┌─────────────┼─────────────┐</p>
+<p>        ↓             ↓             ↓</p>
+<p>    乳酸（无氧）  乙酰CoA    丙氨酸（转氨）</p>
+<p>                      │</p>
+<p>        ┌─────────────┼─────────────┐</p>
+<p>        ↓             ↓             ↓</p>
+<p>    TCA循环      脂肪酸合成    胆固醇合成</p>
+<p>        │             │             │</p>
+<p>        ↓             ↓             ↓</p>
+<p>    能量（ATP）   脂肪储存     膜合成/激素</p>
+<p>        │</p>
+<p>        ↓</p>
+<p>    氨基酸合成（α-酮戊二酸、草酰乙酸等）</p>
+<p>关键调控点：</p>
+<p>1. 己糖激酶（被G6P反馈抑制）</p>
+<p>2. 磷酸果糖激酶-1（限速酶）</p>
+<p>   - 抑制：ATP、柠檬酸</p>
+<p>   - 激活：AMP、F-2,6-BP</p>
+<p>3. 丙酮酸激酶</p>
+<p>   - 抑制：ATP、丙氨酸</p>
+<p>   - 激活：F-1,6-BP</p>
+<p>4. 丙酮酸脱氢酶复合体</p>
+<p>   - 抑制：乙酰CoA、NADH、ATP</p>
+<p>5. 柠檬酸合酶</p>
+<p>   - 抑制：ATP、琥珀酰CoA、NADH</p>
+<p>6. 异柠檬酸脱氢酶</p>
+<p>   - 抑制：ATP、NADH</p>
+<p>   - 激活：ADP、Ca²⁺</p>
+<p>7. α-酮戊二酸脱氢酶</p>
+<p>   - 抑制：琥珀酰CoA、NADH</p>
+<p>```</p>
+<p>**发现方法**：</p>
+<p>1. **数据库导入**：KEGG、MetaCyc、Reactome、HMDB</p>
+<p>2. **文献挖掘**：&quot;X转化为Y&quot;、&quot;X酶催化Y反应&quot;</p>
+<p>3. **代谢组学**：质谱检测代谢物水平变化</p>
+<p>4. **LLM推理**：从代谢通路描述中提取转化关系</p>
+<p>---</p>
+<h2>二、调控网络整合</h2>
+<p>### 2.1 多层次调控整合</p>
+<p>```</p>
+<p>表观遗传调控</p>
+<p>    ↓</p>
+<p>染色质重塑 → DNA可及性改变</p>
+<p>    ↓</p>
+<p>转录调控（TF → 靶基因）</p>
+<p>    ↓</p>
+<p>RNA加工（剪切/编辑/转运）</p>
+<p>    ↓</p>
+<p>转录后调控（miRNA/lncRNA）</p>
+<p>    ↓</p>
+<p>翻译调控</p>
+<p>    ↓</p>
+<p>翻译后修饰（磷酸化/泛素化/乙酰化等）</p>
+<p>    ↓</p>
+<p>蛋白质活性/定位/稳定性</p>
+<p>    ↓</p>
+<p>代谢酶活性</p>
+<p>    ↓</p>
+<p>代谢流/能量产生</p>
+<p>    ↓</p>
+<p>细胞表型/功能</p>
+<p>示例：胰岛素信号整合</p>
+<p>胰岛素</p>
+<p>  ↓</p>
+<p>受体酪氨酸激酶激活</p>
+<p>  ↓</p>
+<p>  ├── PI3K-AKT通路</p>
+<p>  │   ├── 葡萄糖转运（GLUT4转位）</p>
+<p>  │   ├── 糖原合成（GSK3β抑制）</p>
+<p>  │   ├── 蛋白质合成（mTOR激活）</p>
+<p>  │   └── 基因表达（FOXO磷酸化）</p>
+<p>  │</p>
+<p>  └── MAPK通路</p>
+<p>      ├── 细胞增殖</p>
+<p>      └── 基因表达</p>
+<p>```</p>
+<p>### 2.2 网络拓扑分析</p>
+<p>```python</p>
+<p>def analyze_regulatory_network(relations):</p>
+<p>    &quot;&quot;&quot;分析调控网络拓扑特征&quot;&quot;&quot;</p>
+<p>    # 1. 构建网络图</p>
+<p>    G = build_network_graph(relations)</p>
+<p>    # 2. 计算中心性指标</p>
+<p>    centrality = {</p>
+<p>        &quot;degree&quot;: nx.degree_centrality(G),</p>
+<p>        &quot;betweenness&quot;: nx.betweenness_centrality(G),</p>
+<p>        &quot;pagerank&quot;: nx.pagerank(G)</p>
+<p>    }</p>
+<p>    # 3. 识别关键节点（枢纽基因/蛋白）</p>
+<p>    hub_nodes = identify_hubs(G, threshold=0.9)</p>
+<p>    # 4. 发现调控模块</p>
+<p>    modules = community_detection(G)</p>
+<p>    # 5. 识别反馈回路</p>
+<p>    feedback_loops = find_cycles(G)</p>
+<p>    # 6. 通路富集分析</p>
+<p>    pathway_enrichment = enrich_pathways(modules)</p>
+<p>    return {</p>
+<p>        &quot;centrality&quot;: centrality,</p>
+<p>        &quot;hubs&quot;: hub_nodes,</p>
+<p>        &quot;modules&quot;: modules,</p>
+<p>        &quot;feedback_loops&quot;: feedback_loops,</p>
+<p>        &quot;pathway_enrichment&quot;: pathway_enrichment</p>
+<p>    }</p>
+<p>```</p>
+<p>---</p>
+<h2>三、关系发现方法</h2>
+<p>### 3.1 规则匹配模式</p>
+<p>```python</p>
+<p>REGULATION_RELATION_PATTERNS = {</p>
+<p>    # 转录调控</p>
+<p>    &quot;transcriptional_regulation&quot;: [</p>
+<p>        r&quot;({tf})激活({gene})的转录&quot;,</p>
+<p>        r&quot;({tf})抑制({gene})的表达&quot;,</p>
+<p>        r&quot;({tf})调控({gene})&quot;,</p>
+<p>        r&quot;({tf})结合到({gene})的启动子&quot;,</p>
+<p>    ],</p>
+<p>    # 信号传递</p>
+<p>    &quot;signal_transduction&quot;: [</p>
+<p>        r&quot;({protein})磷酸化({protein})&quot;,</p>
+<p>        r&quot;({protein})激活({protein})&quot;,</p>
+<p>        r&quot;({protein})抑制({protein})&quot;,</p>
+<p>        r&quot;({protein})通过({pathway})信号通路&quot;,</p>
+<p>    ],</p>
+<p>    # 代谢转化</p>
+<p>    &quot;metabolic_conversion&quot;: [</p>
+<p>        r&quot;({substrate})转化为({product})&quot;,</p>
+<p>        r&quot;({enzyme})催化({substrate})生成({product})&quot;,</p>
+<p>        r&quot;({substrate})在({enzyme})作用下生成({product})&quot;,</p>
+<p>    ],</p>
+<p>}</p>
+<p>```</p>
+<p>### 3.2 LLM推理提示词</p>
+<p>```markdown</p>
+<h2>任务</h2>
+<p>分析以下分子间的调控关系。</p>
+<h2>分子信息</h2>
+<p>分子A: {molecule_a} (类型: {type_a})</p>
+<p>分子B: {molecule_b} (类型: {type_b})</p>
+<h2>上下文描述</h2>
+<p>{context}</p>
+<h2>关系类型选项</h2>
+<p>1. **transcriptional_activation**: A转录激活B（A是TF，B是靶基因）</p>
+<p>2. **transcriptional_repression**: A转录抑制B</p>
+<p>3. **phosphorylates**: A磷酸化B（激酶-底物）</p>
+<p>4. **dephosphorylates**: A去磷酸化B（磷酸酶-底物）</p>
+<p>5. **activates**: A激活B的活性</p>
+<p>6. **inhibits**: A抑制B的活性</p>
+<p>7. **binds-to**: A与B结合</p>
+<p>8. **converts-to**: A转化为B（代谢反应）</p>
+<p>9. **catalyzes**: A催化B的转化（A是酶）</p>
+<p>10. **none**: 无明确关系</p>
+<h2>输出格式</h2>
+<p>```json</p>
+<p>{</p>
+<p>  &quot;relation_type&quot;: &quot;关系类型&quot;,</p>
+<p>  &quot;direction&quot;: &quot;A→B / B→A / 无向&quot;,</p>
+<p>  &quot;mechanism&quot;: &quot;具体机制&quot;,</p>
+<p>  &quot;pathway&quot;: &quot;所属通路（如有）&quot;,</p>
+<p>  &quot;confidence&quot;: 0.0-1.0,</p>
+<p>  &quot;evidence&quot;: &quot;证据来源&quot;,</p>
+<p>  &quot;context&quot;: &quot;适用条件&quot;</p>
+<p>}</p>
+<p>```</p>
+<p>```</p>
+<p>---</p>
+<h2>四、数据格式</h2>
+<p>### 4.1 调控关系JSON</p>
+<p>```json</p>
+<p>{</p>
+<p>  &quot;relation_id&quot;: &quot;reg_001&quot;,</p>
+<p>  &quot;relation_type&quot;: &quot;transcriptional_activation&quot;,</p>
+<p>  &quot;subject&quot;: {</p>
+<p>    &quot;id&quot;: &quot;ent_p53&quot;,</p>
+<p>    &quot;name&quot;: &quot;p53&quot;,</p>
+<p>    &quot;type&quot;: &quot;protein&quot;,</p>
+<p>    &quot;category&quot;: &quot;transcription_factor&quot;,</p>
+<p>    &quot;function&quot;: &quot;tumor_suppressor&quot;</p>
+<p>  },</p>
+<p>  &quot;object&quot;: {</p>
+<p>    &quot;id&quot;: &quot;ent_p21&quot;,</p>
+<p>    &quot;name&quot;: &quot;p21&quot;,</p>
+<p>    &quot;type&quot;: &quot;gene&quot;,</p>
+<p>    &quot;category&quot;: &quot;CDK_inhibitor&quot;</p>
+<p>  },</p>
+<p>  &quot;properties&quot;: {</p>
+<p>    &quot;confidence&quot;: 0.98,</p>
+<p>    &quot;mechanism&quot;: &quot;direct_binding&quot;,</p>
+<p>    &quot;binding_site&quot;: &quot;p53_response_element&quot;,</p>
+<p>    &quot;context&quot;: {</p>
+<p>      &quot;cell_type&quot;: &quot;fibroblast&quot;,</p>
+<p>      &quot;condition&quot;: &quot;DNA_damage&quot;,</p>
+<p>      &quot;stimulus&quot;: &quot;UV_irradiation&quot;</p>
+<p>    },</p>
+<p>    &quot;evidence&quot;: [</p>
+<p>      &quot;ChIP-seq&quot;,</p>
+<p>      &quot;luciferase_reporter&quot;,</p>
+<p>      &quot;RNA-seq&quot;</p>
+<p>    ],</p>
+<p>    &quot;references&quot;: [&quot;PMID:12345678&quot;]</p>
+<p>  },</p>
+<p>  &quot;source&quot;: {</p>
+<p>    &quot;method&quot;: &quot;database_import&quot;,</p>
+<p>    &quot;database&quot;: &quot;TRRUST&quot;,</p>
+<p>    &quot;version&quot;: &quot;v2&quot;</p>
+<p>  }</p>
+<p>}</p>
+<p>```</p>
+<p>### 4.2 信号通路JSON</p>
+<p>```json</p>
+<p>{</p>
+<p>  &quot;pathway_id&quot;: &quot;path_001&quot;,</p>
+<p>  &quot;name&quot;: &quot;MAPK_signaling&quot;,</p>
+<p>  &quot;category&quot;: &quot;signal_transduction&quot;,</p>
+<p>  &quot;description&quot;: &quot;丝裂原活化蛋白激酶信号通路&quot;,</p>
+<p>  &quot;nodes&quot;: [</p>
+<p>    {&quot;id&quot;: &quot;Ras&quot;, &quot;type&quot;: &quot;small_GTPase&quot;},</p>
+<p>    {&quot;id&quot;: &quot;Raf&quot;, &quot;type&quot;: &quot;kinase&quot;},</p>
+<p>    {&quot;id&quot;: &quot;MEK&quot;, &quot;type&quot;: &quot;kinase&quot;},</p>
+<p>    {&quot;id&quot;: &quot;ERK&quot;, &quot;type&quot;: &quot;kinase&quot;}</p>
+<p>  ],</p>
+<p>  &quot;edges&quot;: [</p>
+<p>    {&quot;source&quot;: &quot;Ras&quot;, &quot;target&quot;: &quot;Raf&quot;, &quot;type&quot;: &quot;activates&quot;},</p>
+<p>    {&quot;source&quot;: &quot;Raf&quot;, &quot;target&quot;: &quot;MEK&quot;, &quot;type&quot;: &quot;phosphorylates&quot;},</p>
+<p>    {&quot;source&quot;: &quot;MEK&quot;, &quot;target&quot;: &quot;ERK&quot;, &quot;type&quot;: &quot;phosphorylates&quot;}</p>
+<p>  ],</p>
+<p>  &quot;crosstalk&quot;: [</p>
+<p>    {&quot;pathway&quot;: &quot;PI3K-AKT&quot;, &quot;interaction&quot;: &quot;inhibition&quot;, &quot;node&quot;: &quot;Raf&quot;}</p>
+<p>  ]</p>
+<p>}</p>
+<p>```</p>
+<p>### 4.3 代谢反应JSON</p>
+<p>```json</p>
+<p>{</p>
+<p>  &quot;reaction_id&quot;: &quot;rxn_001&quot;,</p>
+<p>  &quot;name&quot;: &quot;hexokinase_reaction&quot;,</p>
+<p>  &quot;enzyme&quot;: {</p>
+<p>    &quot;id&quot;: &quot;ent_HK&quot;,</p>
+<p>    &quot;name&quot;: &quot;hexokinase&quot;,</p>
+<p>    &quot;ec_number&quot;: &quot;2.7.1.1&quot;</p>
+<p>  },</p>
+<p>  &quot;substrates&quot;: [</p>
+<p>    {&quot;id&quot;: &quot;ent_glucose&quot;, &quot;name&quot;: &quot;glucose&quot;, &quot;stoichiometry&quot;: 1},</p>
+<p>    {&quot;id&quot;: &quot;ent_ATP&quot;, &quot;name&quot;: &quot;ATP&quot;, &quot;stoichiometry&quot;: 1}</p>
+<p>  ],</p>
+<p>  &quot;products&quot;: [</p>
+<p>    {&quot;id&quot;: &quot;ent_G6P&quot;, &quot;name&quot;: &quot;glucose-6-phosphate&quot;, &quot;stoichiometry&quot;: 1},</p>
+<p>    {&quot;id&quot;: &quot;ent_ADP&quot;, &quot;name&quot;: &quot;ADP&quot;, &quot;stoichiometry&quot;: 1}</p>
+<p>  ],</p>
+<p>  &quot;properties&quot;: {</p>
+<p>    &quot;reversibility&quot;: false,</p>
+<p>    &quot;compartment&quot;: &quot;cytoplasm&quot;,</p>
+<p>    &quot;regulation&quot;: {</p>
+<p>      &quot;inhibitors&quot;: [&quot;glucose-6-phosphate&quot;],</p>
+<p>      &quot;activators&quot;: [&quot;insulin&quot;]</p>
+<p>    }</p>
+<p>  }</p>
+<p>}</p>
+<p>```</p></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

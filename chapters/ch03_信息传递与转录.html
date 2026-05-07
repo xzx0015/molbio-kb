@@ -161,562 +161,312 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><nav class="chapter-nav"><a href="ch02_%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%A4%8D%E5%88%B6.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch04_%E7%BF%BB%E8%AF%91%E4%B8%8E%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第3章</span>信息传递与转录</div><div class="article"><h2 id="_1">第三章：信息传递</h2>
-<h2 id="31-dna">3.1 DNA复制概述</h2>
-<h3 id="_2">半保留复制</h3>
-<p><a class="pn" id="pn-1" href="#pn-1">1</a><span class="entity concept" title="概念：semiconservative_replication">半保留复制</span>是DNA复制的核心机制：</p>
-<pre><code>亲代DNA:    5'-ATGC-3'      3'-TACG-5'
-                ↓ 解旋
-子代DNA1:   5'-ATGC-3'  +  新合成: 3'-TACG-5'
-子代DNA2:   新合成: 5'-ATGC-3'  +  3'-TACG-5'
-</code></pre>
-<p><a class="pn" id="pn-2" href="#pn-2">2</a><strong>实验证明</strong>：<span class="entity entity-generic" title="人物">Meselson</span>和<span class="entity entity-generic" title="人物">Stahl</span>（1958）的¹⁵N同位素标记实验</p>
-<h3 id="_3">复制起点与复制叉</h3>
-<table>
-<thead>
-<tr>
-<th>概念</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity entity-generic" title="概念">复制起点</span>（Origin）</td>
-<td>DNA复制开始的特定序列</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">复制叉</span>（Replication fork）</td>
-<td>Y形结构，双链解开的区域</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">复制子</span>（Replicon）</td>
-<td>从一个起点复制的DNA单位</td>
-</tr>
-</tbody>
-</table>
-<p><a class="pn" id="pn-3" href="#pn-3">3</a><strong>原核生物</strong>：通常单一起点（如<span class="entity entity-generic" title="概念">OriC</span>）
-<strong>真核生物</strong>：多个起点，形成<span class="entity entity-generic" title="概念">复制泡</span></p>
-<h2 id="32-dna">3.2 DNA复制机制</h2>
-<h3 id="_4">复制过程中的关键酶</h3>
-<table>
-<thead>
-<tr>
-<th>酶</th>
-<th>功能</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity enzyme" title="酶">解旋酶</span>（Helicase）</td>
-<td>解开双链</td>
-<td>ATP供能，双向移动</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">单链结合蛋白</span>（SSB）</td>
-<td>稳定单链</td>
-<td>防止复性、降解</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">拓扑异构酶</span></td>
-<td>缓解超螺旋</td>
-<td>I型切断单链，II型切断双链</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">DNA聚合酶</span></td>
-<td>合成新链</td>
-<td>5'→3'方向，需引物</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">引物酶</span>（Primase）</td>
-<td>合成RNA引物</td>
-<td>提供3'-OH末端</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">DNA连接酶</span></td>
-<td>连接片段</td>
-<td>连接Okazaki片段</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_5">前导链与后随链</h3>
-<p><a class="pn" id="pn-4" href="#pn-4">4</a><span class="entity concept" title="概念：leading_lagging">前导链与后随链</span>：</p>
-<ul>
-<li><strong>前导链</strong>（Leading strand）：连续合成，方向与复制叉移动相同</li>
-<li><strong>后随链</strong>（Lagging strand）：不连续合成，形成<span class="entity entity-generic" title="概念">冈崎片段</span></li>
-</ul>
-<blockquote>
-<p><a class="pn" id="pn-5" href="#pn-5">5</a><strong>半不连续复制</strong>：一条连续，一条不连续</p>
-</blockquote>
-<h3 id="dna">DNA聚合酶特性</h3>
-<p><a class="pn" id="pn-6" href="#pn-6">6</a><strong>原核生物</strong>（以<span class="entity entity-generic" title="生物">大肠杆菌</span>为例）：</p>
-<table>
-<thead>
-<tr>
-<th>聚合酶</th>
-<th>功能</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity enzyme" title="酶">Pol I</span></td>
-<td>修复、切除RNA引物</td>
-<td>5'→3'外切活性</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">Pol II</span></td>
-<td>修复</td>
-<td>SOS修复</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">Pol III</span></td>
-<td>主要复制酶</td>
-<td>高保真、高速度</td>
-</tr>
-</tbody>
-</table>
-<p><a class="pn" id="pn-7" href="#pn-7">7</a><strong>真核生物</strong>：
-- <span class="entity enzyme" title="酶">Pol α</span>：合成RNA-DNA引物
-- <span class="entity enzyme" title="酶">Pol δ</span>：合成后随链
-- <span class="entity enzyme" title="酶">Pol ε</span>：合成前导链</p>
-<h2 id="33">3.3 转录</h2>
-<h3 id="_6">转录概述</h3>
-<p><a class="pn" id="pn-8" href="#pn-8">8</a><span class="entity concept" title="概念：transcription">转录</span>：以DNA为模板合成RNA的过程</p>
-<pre><code>DNA:    3'-TACG-5'  →  RNA:  5'-AUGC-3'
-</code></pre>
-<p><a class="pn" id="pn-9" href="#pn-9">9</a><strong>关键差异</strong>：
-- 转录不需要引物
-- 转录是局部的（基因选择性表达）
-- RNA合成后释放，不保持双链</p>
-<h3 id="rna">RNA聚合酶</h3>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>功能</th>
-<th>产物</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity enzyme" title="酶">RNA聚合酶I</span></td>
-<td>真核生物核仁</td>
-<td>rRNA（除5S）</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">RNA聚合酶II</span></td>
-<td>真核生物核质</td>
-<td>mRNA、snRNA、miRNA</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">RNA聚合酶III</span></td>
-<td>真核生物核质</td>
-<td>tRNA、5S rRNA</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_7">转录过程</h3>
-<p><a class="pn" id="pn-10" href="#pn-10">10</a><strong>1. 起始</strong>：
-- <span class="entity entity-generic" title="概念">启动子</span>（Promoter）：RNA聚合酶结合位点
-- <span class="entity entity-generic" title="概念">TATA盒</span>：真核生物核心元件
-- 转录起始复合物组装</p>
-<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>2. 延伸</strong>：
-- RNA聚合酶沿DNA移动
-- 5'→3'合成RNA
-- DNA-RNA杂合双链（约8-9bp）</p>
-<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>3. 终止</strong>：
-- 原核：<span class="entity entity-generic" title="概念">ρ因子</span>依赖/非依赖
-- 真核：<span class="entity entity-generic" title="概念">poly(A)信号</span>、<span class="entity entity-generic" title="概念">终止子</span></p>
-<h2 id="34">3.4 翻译</h2>
-<h3 id="_8">遗传密码</h3>
-<p><a class="pn" id="pn-13" href="#pn-13">13</a><span class="entity concept" title="概念：genetic_code">遗传密码</span>：mRNA上编码氨基酸的三联体密码子</p>
-<table>
-<thead>
-<tr>
-<th>特征</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>密码子数</td>
-<td>64个（4³）</td>
-</tr>
-<tr>
-<td>编码氨基酸</td>
-<td>61个</td>
-</tr>
-<tr>
-<td>终止密码子</td>
-<td>3个：UAA、UAG、UGA</td>
-</tr>
-<tr>
-<td>起始密码子</td>
-<td>AUG（编码Met）</td>
-</tr>
-</tbody>
-</table>
-<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>密码子特点</strong>：
-- <strong>简并性</strong>：多个密码子编码同一氨基酸
-- <strong>通用性</strong>：几乎所有生物共用
-- <strong>连续性</strong>：无标点，不重叠
-- <strong>方向性</strong>：5'→3'阅读</p>
-<h3 id="trna">tRNA与氨基酸活化</h3>
-<p><a class="pn" id="pn-15" href="#pn-15">15</a><span class="entity molecule" title="分子">tRNA</span>（转运RNA）的功能：
-- 携带特定氨基酸
-- 识别mRNA上的密码子（<span class="entity entity-generic" title="概念">反密码子</span>）
-- <span class="entity entity-generic" title="概念">氨基酸臂</span>：结合氨基酸
-- <span class="entity entity-generic" title="概念">反密码子环</span>：识别密码子</p>
-<p><a class="pn" id="pn-16" href="#pn-16">16</a><span class="entity enzyme" title="酶">氨酰-tRNA合成酶</span>：催化氨基酸与tRNA连接，高度特异性</p>
-<h3 id="_9">核糖体</h3>
-<p><a class="pn" id="pn-17" href="#pn-17">17</a><span class="entity complex" title="复合物">核糖体</span>是蛋白质合成的场所：</p>
-<table>
-<thead>
-<tr>
-<th>亚基</th>
-<th>原核</th>
-<th>真核</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>大亚基</td>
-<td>50S（23S+5S+蛋白质）</td>
-<td>60S（28S+5.8S+5S+蛋白质）</td>
-</tr>
-<tr>
-<td>小亚基</td>
-<td>30S（16S+蛋白质）</td>
-<td>40S（18S+蛋白质）</td>
-</tr>
-<tr>
-<td>完整</td>
-<td>70S</td>
-<td>80S</td>
-</tr>
-</tbody>
-</table>
-<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>功能位点</strong>：
-- <strong>A位</strong>（氨酰位）：接受新氨酰-tRNA
-- <strong>P位</strong>（肽酰位）：携带正在延伸的肽链
-- <strong>E位</strong>（出口位）：释放空载tRNA</p>
-<h3 id="_10">翻译过程</h3>
-<p><a class="pn" id="pn-19" href="#pn-19">19</a><strong>1. 起始</strong>：
-- 小亚基识别mRNA（<span class="entity entity-generic" title="概念">SD序列</span>或<span class="entity entity-generic" title="概念">5&#x27;帽</span>）
-- 起始tRNA进入P位
-- 大亚基结合</p>
-<p><a class="pn" id="pn-20" href="#pn-20">20</a><strong>2. 延伸</strong>：
-- 氨酰-tRNA进入A位
-- <span class="entity process" title="过程">肽键形成</span>（<span class="entity enzyme" title="酶">肽酰转移酶</span>催化）
-- 核糖体移位</p>
-<p><a class="pn" id="pn-21" href="#pn-21">21</a><strong>3. 终止</strong>：
-- 释放因子识别终止密码子
-- 多肽链释放
-- 核糖体解离</p>
-<h2 id="35-rna">3.5 逆转录与RNA复制</h2>
-<h3 id="_11">逆转录</h3>
-<p><a class="pn" id="pn-22" href="#pn-22">22</a><span class="entity concept" title="概念：reverse_transcription">逆转录</span>：RNA → DNA</p>
-<ul>
-<li><span class="entity enzyme" title="酶">逆转录酶</span>（Reverse transcriptase）</li>
-<li>需要tRNA作为引物</li>
-<li>产物：<span class="entity molecule" title="分子">cDNA</span>（互补DNA）</li>
-</ul>
-<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>生物学意义</strong>：
-- <span class="entity entity-generic" title="概念">逆转录病毒</span>（如HIV）
-- 真核生物<span class="entity entity-generic" title="概念">端粒酶</span>
-- <span class="entity entity-generic" title="概念">假基因</span>形成</p>
-<h2 id="_12">本章小结</h2>
-<ul>
-<li>DNA半保留复制确保遗传信息精确传递</li>
-<li>复制是半不连续的，需要多种酶协同</li>
-<li>转录以DNA为模板合成RNA，不需引物</li>
-<li>翻译以mRNA为模板，tRNA转运氨基酸，核糖体催化</li>
-<li>逆转录是中心法则的补充</li>
-</ul>
-<h2 id="_13">思考题</h2>
-<ol>
-<li>为什么DNA复制需要RNA引物，而转录不需要？</li>
-<li>真核生物为什么需要3种RNA聚合酶？</li>
-<li>遗传密码的简并性有什么生物学意义？</li>
-</ol>
-<hr />
-<h2 id="_14">第三章：转录</h2>
-<h2 id="31">3.1 转录概述</h2>
-<h3 id="_15">转录的基本概念</h3>
-<p><a class="pn" id="pn-24" href="#pn-24">24</a><span class="entity concept" title="概念：transcription">转录</span>：以DNA为模板合成RNA的过程</p>
-<pre><code>DNA:    3'-TACG-5'  →  RNA:  5'-AUGC-3'
-</code></pre>
-<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>关键特征</strong>：
-- 转录不需要引物
-- 转录是局部的（基因选择性表达）
-- RNA合成后释放，不保持双链
-- 只有一条DNA链作为模板（模板链/反义链）</p>
-<h3 id="_16">转录与复制的比较</h3>
-<table>
-<thead>
-<tr>
-<th>特征</th>
-<th>DNA复制</th>
-<th>转录</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>模板</td>
-<td>双链DNA</td>
-<td>单链DNA</td>
-</tr>
-<tr>
-<td>产物</td>
-<td>DNA</td>
-<td>RNA</td>
-</tr>
-<tr>
-<td>引物</td>
-<td>需要RNA引物</td>
-<td>不需要</td>
-</tr>
-<tr>
-<td>原料</td>
-<td>dNTPs</td>
-<td>NTPs</td>
-</tr>
-<tr>
-<td>碱基配对</td>
-<td>A-T, G-C</td>
-<td>A-U, G-C</td>
-</tr>
-<tr>
-<td>保真性</td>
-<td>高</td>
-<td>较低</td>
-</tr>
-</tbody>
-</table>
-<h2 id="32-rna">3.2 RNA聚合酶</h2>
-<h3 id="rna_1">原核生物RNA聚合酶</h3>
-<p><a class="pn" id="pn-26" href="#pn-26">26</a><span class="entity enzyme" title="酶">RNA聚合酶</span>组成：
-- <strong>核心酶</strong>：α₂ββ'ω（催化活性）
-- <strong>全酶</strong>：核心酶 + σ因子（识别启动子）</p>
-<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>σ因子类型</strong>：
-| σ因子 | 识别的启动子 | 功能 |
-|-------|-------------|------|
-| σ⁷⁰ | 管家基因 | 主要σ因子 |
-| σ³² | 热休克基因 | 应激反应 |
-| σ⁵⁴ | 氮代谢基因 | 特殊代谢 |</p>
-<h3 id="rna_2">真核生物RNA聚合酶</h3>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>定位</th>
-<th>产物</th>
-<th>对α-鹅膏蕈碱敏感性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity enzyme" title="酶">RNA聚合酶I</span></td>
-<td>核仁</td>
-<td>rRNA（除5S）</td>
-<td>不敏感</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">RNA聚合酶II</span></td>
-<td>核质</td>
-<td>mRNA、snRNA、miRNA</td>
-<td>高度敏感</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">RNA聚合酶III</span></td>
-<td>核质</td>
-<td>tRNA、5S rRNA</td>
-<td>中度敏感</td>
-</tr>
-</tbody>
-</table>
-<p><a class="pn" id="pn-28" href="#pn-28">28</a><strong>RNA聚合酶II</strong>：
-- 最大、最复杂的聚合酶
-- 包含12个以上亚基
-- 负责蛋白质编码基因的转录</p>
-<h2 id="33_1">3.3 转录过程</h2>
-<h3 id="_17">起始阶段</h3>
-<p><a class="pn" id="pn-29" href="#pn-29">29</a><strong>原核生物</strong>：
-1. <strong>启动子识别</strong>：σ因子识别-10区（TATAAT）和-35区（TTGACA）
-2. <strong>闭合复合物形成</strong>：RNA聚合酶结合双链DNA
-3. <strong>开放复合物形成</strong>：DNA解旋约14bp
-4. <strong>起始合成</strong>：合成前10个核苷酸，σ因子释放</p>
-<p><a class="pn" id="pn-30" href="#pn-30">30</a><strong>真核生物</strong>：
-1. <strong>启动子元件</strong>：
-   - <span class="entity entity-generic" title="概念">TATA盒</span>（-25至-30）：核心元件
-   - <span class="entity entity-generic" title="概念">起始子</span>（Inr）：转录起始位点
-   - <span class="entity entity-generic" title="概念">上游激活序列</span>（UAS）</p>
-<ol>
-<li><strong>通用转录因子</strong>（GTFs）：
-   | 因子 | 功能 |
-   |------|------|
-   | TFIID | 识别TATA盒（含TBP） |
-   | TFIIB | 桥接TFIID和RNA聚合酶II |
-   | TFIIF | 招募RNA聚合酶II |
-   | TFIIE | 招募TFIIH |
-   | TFIIH | 解旋酶活性，启动子逃逸 |</li>
-</ol>
-<h3 id="_18">延伸阶段</h3>
-<ul>
-<li>RNA聚合酶沿DNA模板移动（3'→5'方向）</li>
-<li>RNA链以5'→3'方向合成</li>
-<li>形成DNA-RNA杂合双链（约8-9bp）</li>
-<li>拓扑异构酶缓解超螺旋</li>
-</ul>
-<h3 id="_19">终止阶段</h3>
-<p><a class="pn" id="pn-31" href="#pn-31">31</a><strong>原核生物</strong>：
-- <strong>ρ因子非依赖终止</strong>：发夹结构 + poly-U序列
-- <strong>ρ因子依赖终止</strong>：ρ蛋白解旋酶活性</p>
-<p><a class="pn" id="pn-32" href="#pn-32">32</a><strong>真核生物</strong>：
-- <span class="entity entity-generic" title="概念">poly(A)信号</span>（AAUAAA）：切割和加尾信号
-- <span class="entity entity-generic" title="概念">终止子</span>：转录终止序列
-- 转录终止与3'端加工偶联</p>
-<h2 id="34_1">3.4 原核生物转录调控</h2>
-<h3 id="_20">操纵子模型</h3>
-<p><a class="pn" id="pn-33" href="#pn-33">33</a><span class="entity concept" title="概念：operon">操纵子</span>（Operon）是原核生物基因调控的基本单位：</p>
-<pre><code>启动子 - 操纵基因 - 结构基因群
-   ↑         ↑
-RNA聚合酶  阻遏蛋白
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>元件</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity entity-generic" title="概念">启动子</span></td>
-<td>RNA聚合酶结合位点</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">操纵基因</span>（Operator）</td>
-<td>阻遏蛋白结合位点</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">结构基因</span></td>
-<td>编码功能蛋白</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">调节基因</span></td>
-<td>编码调控蛋白</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_21">乳糖操纵子</h3>
-<p><a class="pn" id="pn-34" href="#pn-34">34</a><span class="entity entity-generic" title="概念">乳糖操纵子</span>（Lac operon）：</p>
-<p><a class="pn" id="pn-35" href="#pn-35">35</a><strong>负调控</strong>（阻遏）：
-- 无乳糖时：<span class="entity protein" title="蛋白">阻遏蛋白</span>结合操纵基因，转录关闭
-- 有乳糖时：乳糖作为<span class="entity molecule" title="分子">诱导物</span>，阻遏蛋白失活，转录开启</p>
-<p><a class="pn" id="pn-36" href="#pn-36">36</a><strong>正调控</strong>（激活）：
-- 葡萄糖缺乏时：<span class="entity molecule" title="分子">cAMP</span>升高，<span class="entity protein" title="蛋白">CAP蛋白</span>（catabolite activator protein）激活转录
-- 葡萄糖存在时：cAMP水平低，CAP不结合，转录水平低</p>
-<h3 id="_22">色氨酸操纵子</h3>
-<p><a class="pn" id="pn-37" href="#pn-37">37</a><span class="entity entity-generic" title="概念">色氨酸操纵子</span>（Trp operon）：</p>
-<p><a class="pn" id="pn-38" href="#pn-38">38</a><strong>阻遏型操纵子</strong>：
-- 无色氨酸时：转录开启
-- 有色氨酸时：色氨酸作为<span class="entity molecule" title="分子">辅阻遏物</span>，阻遏蛋白激活，转录关闭</p>
-<p><a class="pn" id="pn-39" href="#pn-39">39</a><strong>衰减作用</strong>（Attenuation）：
-- 前导序列含有4个可互补配对的区域
-- 前导肽的翻译影响转录终止
-- 转录-翻译偶联的精细调控机制</p>
-<h2 id="35">3.5 真核生物转录调控</h2>
-<h3 id="_23">顺式作用元件</h3>
-<p><a class="pn" id="pn-40" href="#pn-40">40</a><span class="entity concept" title="概念：cis_element">顺式作用元件</span>：DNA上的调控序列</p>
-<table>
-<thead>
-<tr>
-<th>元件</th>
-<th>位置</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity entity-generic" title="概念">启动子</span></td>
-<td>转录起始点附近</td>
-<td>基础转录装置组装</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">增强子</span>（Enhancer）</td>
-<td>远端（1kb-1Mb）</td>
-<td>显著增强转录效率</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">沉默子</span>（Silencer）</td>
-<td>远端</td>
-<td>抑制转录</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">绝缘子</span>（Insulator）</td>
-<td>边界</td>
-<td>阻断增强子/沉默子作用</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_24">反式作用因子</h3>
-<p><a class="pn" id="pn-41" href="#pn-41">41</a><span class="entity concept" title="概念：trans_factor">反式作用因子</span>：调控蛋白</p>
-<p><a class="pn" id="pn-42" href="#pn-42">42</a><strong>转录因子结构域</strong>：
-- <span class="entity entity-generic" title="结构">DNA结合域</span>：识别特定序列
-- <span class="entity entity-generic" title="结构">转录激活域</span>：招募转录 machinery
-- <span class="entity entity-generic" title="结构">二聚化结构域</span>：形成同源/异源二聚体</p>
-<p><a class="pn" id="pn-43" href="#pn-43">43</a><strong>常见DNA结合域</strong>：
-| 结构域 | 特征 | 代表因子 |
-|--------|------|---------|
-| <span class="entity entity-generic" title="结构">同源异型域</span> | 螺旋-转角-螺旋变体 | HOX蛋白 |
-| <span class="entity entity-generic" title="结构">锌指</span> | Zn²⁺稳定 | SP1、TFIIIA |
-| <span class="entity entity-generic" title="结构">碱性亮氨酸拉链</span> | bZIP二聚化 | AP-1、CREB |
-| <span class="entity entity-generic" title="结构">螺旋-环-螺旋</span> | HLH二聚化 | MyoD、E47 |</p>
-<h3 id="_25">染色质与转录</h3>
-<p><a class="pn" id="pn-44" href="#pn-44">44</a><strong>核小体与转录</strong>：
-- 核小体阻碍RNA聚合酶前进
-- <span class="entity complex" title="复合物">染色质重塑复合物</span>（SWI/SNF等）协助核小体滑动</p>
-<p><a class="pn" id="pn-45" href="#pn-45">45</a><strong>组蛋白修饰</strong>：
-- <span class="entity entity-generic" title="修饰">H3K4me3</span>：激活转录标记
-- <span class="entity entity-generic" title="修饰">H3K27me3</span>：抑制转录标记
-- <span class="entity entity-generic" title="修饰">组蛋白乙酰化</span>：通常激活转录</p>
-<h2 id="36-rna">3.6 RNA加工</h2>
-<h3 id="5">5'端加帽</h3>
-<p><a class="pn" id="pn-46" href="#pn-46">46</a><span class="entity entity-generic" title="修饰">5&#x27;帽结构</span>：
-- 结构：m⁷G(5')ppp(5')N
-- 酶：<span class="entity enzyme" title="酶">鸟苷酰转移酶</span>
-- 功能：保护mRNA、促进翻译起始、参与mRNA输出</p>
-<h3 id="3">3'端加尾</h3>
-<p><a class="pn" id="pn-47" href="#pn-47">47</a><span class="entity entity-generic" title="修饰">poly(A)尾</span>：
-- 长度：100-250个腺苷酸
-- 酶：<span class="entity enzyme" title="酶">poly(A)聚合酶</span>
-- 功能：稳定mRNA、促进翻译、调控降解</p>
-<h3 id="rna_3">RNA剪接</h3>
-<p><a class="pn" id="pn-48" href="#pn-48">48</a><strong>剪接过程</strong>：
-- 切除<span class="entity entity-generic" title="概念">内含子</span>，连接<span class="entity entity-generic" title="概念">外显子</span>
-- <span class="entity complex" title="复合物">剪接体</span>（spliceosome）执行
-- 涉及snRNP（U1、U2、U4/U6、U5）</p>
-<p><a class="pn" id="pn-49" href="#pn-49">49</a><strong>选择性剪接</strong>：
-- 一个基因产生多种mRNA异构体
-- 人类约95%的基因存在选择性剪接
-- 增加蛋白质组多样性</p>
-<h2 id="_26">本章小结</h2>
-<ul>
-<li>转录以DNA为模板合成RNA，不需引物</li>
-<li>原核生物一个RNA聚合酶，真核生物有三种</li>
-<li>转录分起始、延伸、终止三个阶段</li>
-<li>原核生物以操纵子为单位进行调控</li>
-<li>真核生物通过顺式元件和反式因子精细调控</li>
-<li>RNA加工（加帽、加尾、剪接）是真核mRNA成熟的关键步骤</li>
-</ul>
-<h2 id="_27">思考题</h2>
-<ol>
-<li>为什么真核生物需要三种RNA聚合酶？</li>
-<li>比较乳糖操纵子和色氨酸操纵子的调控机制。</li>
-<li>选择性剪接有什么生物学意义？</li>
-</ol></div><nav class="chapter-nav"><a href="ch02_%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%A4%8D%E5%88%B6.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch04_%E7%BF%BB%E8%AF%91%E4%B8%8E%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">下一章 →</a></nav></main>
+<main><nav class="chapter-nav"><a href="ch02_%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%A4%8D%E5%88%B6.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch04_%E7%BF%BB%E8%AF%91%E4%B8%8E%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第3章</span>信息传递与转录</div><div class="article"><h2>第三章：信息传递</h2>
+<h2>3.1 DNA复制概述</h2>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a>### 半保留复制</p>
+<p><a class="pn" id="pn-2" href="#pn-2">2</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：semiconservative_replication&quot;&gt;半保留复制&lt;/span&gt;是DNA复制的核心机制：</p>
+<p><a class="pn" id="pn-3" href="#pn-3">3</a>```</p>
+<p><a class="pn" id="pn-4" href="#pn-4">4</a>亲代DNA:    5&#x27;-ATGC-3&#x27;      3&#x27;-TACG-5&#x27;</p>
+<p><a class="pn" id="pn-5" href="#pn-5">5</a>                ↓ 解旋</p>
+<p><a class="pn" id="pn-6" href="#pn-6">6</a>子代DNA1:   5&#x27;-ATGC-3&#x27;  +  新合成: 3&#x27;-TACG-5&#x27;</p>
+<p><a class="pn" id="pn-7" href="#pn-7">7</a>子代DNA2:   新合成: 5&#x27;-ATGC-3&#x27;  +  3&#x27;-TACG-5&#x27;</p>
+<p><a class="pn" id="pn-8" href="#pn-8">8</a>```</p>
+<p><a class="pn" id="pn-9" href="#pn-9">9</a>**实验证明**：&lt;span class=&quot;entity entity-generic&quot; title=&quot;人物&quot;&gt;Meselson&lt;/span&gt;和&lt;span class=&quot;entity entity-generic&quot; title=&quot;人物&quot;&gt;Stahl&lt;/span&gt;（1958）的¹⁵N同位素标记实验</p>
+<p><a class="pn" id="pn-10" href="#pn-10">10</a>### 复制起点与复制叉</p>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a>| 概念 | 说明 |</p>
+<p><a class="pn" id="pn-12" href="#pn-12">12</a>|------|------|</p>
+<p><a class="pn" id="pn-13" href="#pn-13">13</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;复制起点&lt;/span&gt;（Origin） | DNA复制开始的特定序列 |</p>
+<p><a class="pn" id="pn-14" href="#pn-14">14</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;复制叉&lt;/span&gt;（Replication fork） | Y形结构，双链解开的区域 |</p>
+<p><a class="pn" id="pn-15" href="#pn-15">15</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;复制子&lt;/span&gt;（Replicon） | 从一个起点复制的DNA单位 |</p>
+<p><a class="pn" id="pn-16" href="#pn-16">16</a>**原核生物**：通常单一起点（如&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;OriC&lt;/span&gt;）</p>
+<p><a class="pn" id="pn-17" href="#pn-17">17</a>**真核生物**：多个起点，形成&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;复制泡&lt;/span&gt;</p>
+<h2>3.2 DNA复制机制</h2>
+<p><a class="pn" id="pn-18" href="#pn-18">18</a>### 复制过程中的关键酶</p>
+<p><a class="pn" id="pn-19" href="#pn-19">19</a>| 酶 | 功能 | 特点 |</p>
+<p><a class="pn" id="pn-20" href="#pn-20">20</a>|---|------|------|</p>
+<p><a class="pn" id="pn-21" href="#pn-21">21</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;解旋酶&lt;/span&gt;（Helicase） | 解开双链 | ATP供能，双向移动 |</p>
+<p><a class="pn" id="pn-22" href="#pn-22">22</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;单链结合蛋白&lt;/span&gt;（SSB） | 稳定单链 | 防止复性、降解 |</p>
+<p><a class="pn" id="pn-23" href="#pn-23">23</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;拓扑异构酶&lt;/span&gt; | 缓解超螺旋 | I型切断单链，II型切断双链 |</p>
+<p><a class="pn" id="pn-24" href="#pn-24">24</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;DNA聚合酶&lt;/span&gt; | 合成新链 | 5&#x27;→3&#x27;方向，需引物 |</p>
+<p><a class="pn" id="pn-25" href="#pn-25">25</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;引物酶&lt;/span&gt;（Primase） | 合成RNA引物 | 提供3&#x27;-OH末端 |</p>
+<p><a class="pn" id="pn-26" href="#pn-26">26</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;DNA连接酶&lt;/span&gt; | 连接片段 | 连接Okazaki片段 |</p>
+<p><a class="pn" id="pn-27" href="#pn-27">27</a>### 前导链与后随链</p>
+<p><a class="pn" id="pn-28" href="#pn-28">28</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：leading_lagging&quot;&gt;前导链与后随链&lt;/span&gt;：</p>
+<p><a class="pn" id="pn-29" href="#pn-29">29</a>- **前导链**（Leading strand）：连续合成，方向与复制叉移动相同</p>
+<p><a class="pn" id="pn-30" href="#pn-30">30</a>- **后随链**（Lagging strand）：不连续合成，形成&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;冈崎片段&lt;/span&gt;</p>
+<p><a class="pn" id="pn-31" href="#pn-31">31</a>&gt; **半不连续复制**：一条连续，一条不连续</p>
+<p><a class="pn" id="pn-32" href="#pn-32">32</a>### DNA聚合酶特性</p>
+<p><a class="pn" id="pn-33" href="#pn-33">33</a>**原核生物**（以&lt;span class=&quot;entity entity-generic&quot; title=&quot;生物&quot;&gt;大肠杆菌&lt;/span&gt;为例）：</p>
+<p><a class="pn" id="pn-34" href="#pn-34">34</a>| 聚合酶 | 功能 | 特点 |</p>
+<p><a class="pn" id="pn-35" href="#pn-35">35</a>|--------|------|------|</p>
+<p><a class="pn" id="pn-36" href="#pn-36">36</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol I&lt;/span&gt; | 修复、切除RNA引物 | 5&#x27;→3&#x27;外切活性 |</p>
+<p><a class="pn" id="pn-37" href="#pn-37">37</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol II&lt;/span&gt; | 修复 | SOS修复 |</p>
+<p><a class="pn" id="pn-38" href="#pn-38">38</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol III&lt;/span&gt; | 主要复制酶 | 高保真、高速度 |</p>
+<p><a class="pn" id="pn-39" href="#pn-39">39</a>**真核生物**：</p>
+<p><a class="pn" id="pn-40" href="#pn-40">40</a>- &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol α&lt;/span&gt;：合成RNA-DNA引物</p>
+<p><a class="pn" id="pn-41" href="#pn-41">41</a>- &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol δ&lt;/span&gt;：合成后随链</p>
+<p><a class="pn" id="pn-42" href="#pn-42">42</a>- &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol ε&lt;/span&gt;：合成前导链</p>
+<h2>3.3 转录</h2>
+<p><a class="pn" id="pn-43" href="#pn-43">43</a>### 转录概述</p>
+<p><a class="pn" id="pn-44" href="#pn-44">44</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：transcription&quot;&gt;转录&lt;/span&gt;：以DNA为模板合成RNA的过程</p>
+<p><a class="pn" id="pn-45" href="#pn-45">45</a>```</p>
+<p><a class="pn" id="pn-46" href="#pn-46">46</a>DNA:    3&#x27;-TACG-5&#x27;  →  RNA:  5&#x27;-AUGC-3&#x27;</p>
+<p><a class="pn" id="pn-47" href="#pn-47">47</a>```</p>
+<p><a class="pn" id="pn-48" href="#pn-48">48</a>**关键差异**：</p>
+<p><a class="pn" id="pn-49" href="#pn-49">49</a>- 转录不需要引物</p>
+<p><a class="pn" id="pn-50" href="#pn-50">50</a>- 转录是局部的（基因选择性表达）</p>
+<p><a class="pn" id="pn-51" href="#pn-51">51</a>- RNA合成后释放，不保持双链</p>
+<p><a class="pn" id="pn-52" href="#pn-52">52</a>### RNA聚合酶</p>
+<p><a class="pn" id="pn-53" href="#pn-53">53</a>| 类型 | 功能 | 产物 |</p>
+<p><a class="pn" id="pn-54" href="#pn-54">54</a>|------|------|------|</p>
+<p><a class="pn" id="pn-55" href="#pn-55">55</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;RNA聚合酶I&lt;/span&gt; | 真核生物核仁 | rRNA（除5S） |</p>
+<p><a class="pn" id="pn-56" href="#pn-56">56</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;RNA聚合酶II&lt;/span&gt; | 真核生物核质 | mRNA、snRNA、miRNA |</p>
+<p><a class="pn" id="pn-57" href="#pn-57">57</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;RNA聚合酶III&lt;/span&gt; | 真核生物核质 | tRNA、5S rRNA |</p>
+<p><a class="pn" id="pn-58" href="#pn-58">58</a>### 转录过程</p>
+<p><a class="pn" id="pn-59" href="#pn-59">59</a>**1. 起始**：</p>
+<p><a class="pn" id="pn-60" href="#pn-60">60</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;启动子&lt;/span&gt;（Promoter）：RNA聚合酶结合位点</p>
+<p><a class="pn" id="pn-61" href="#pn-61">61</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;TATA盒&lt;/span&gt;：真核生物核心元件</p>
+<p><a class="pn" id="pn-62" href="#pn-62">62</a>- 转录起始复合物组装</p>
+<p><a class="pn" id="pn-63" href="#pn-63">63</a>**2. 延伸**：</p>
+<p><a class="pn" id="pn-64" href="#pn-64">64</a>- RNA聚合酶沿DNA移动</p>
+<p><a class="pn" id="pn-65" href="#pn-65">65</a>- 5&#x27;→3&#x27;合成RNA</p>
+<p><a class="pn" id="pn-66" href="#pn-66">66</a>- DNA-RNA杂合双链（约8-9bp）</p>
+<p><a class="pn" id="pn-67" href="#pn-67">67</a>**3. 终止**：</p>
+<p><a class="pn" id="pn-68" href="#pn-68">68</a>- 原核：&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;ρ因子&lt;/span&gt;依赖/非依赖</p>
+<p><a class="pn" id="pn-69" href="#pn-69">69</a>- 真核：&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;poly(A)信号&lt;/span&gt;、&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;终止子&lt;/span&gt;</p>
+<h2>3.4 翻译</h2>
+<p><a class="pn" id="pn-70" href="#pn-70">70</a>### 遗传密码</p>
+<p><a class="pn" id="pn-71" href="#pn-71">71</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：genetic_code&quot;&gt;遗传密码&lt;/span&gt;：mRNA上编码氨基酸的三联体密码子</p>
+<p><a class="pn" id="pn-72" href="#pn-72">72</a>| 特征 | 说明 |</p>
+<p><a class="pn" id="pn-73" href="#pn-73">73</a>|------|------|</p>
+<p><a class="pn" id="pn-74" href="#pn-74">74</a>| 密码子数 | 64个（4³） |</p>
+<p><a class="pn" id="pn-75" href="#pn-75">75</a>| 编码氨基酸 | 61个 |</p>
+<p><a class="pn" id="pn-76" href="#pn-76">76</a>| 终止密码子 | 3个：UAA、UAG、UGA |</p>
+<p><a class="pn" id="pn-77" href="#pn-77">77</a>| 起始密码子 | AUG（编码Met） |</p>
+<p><a class="pn" id="pn-78" href="#pn-78">78</a>**密码子特点**：</p>
+<p><a class="pn" id="pn-79" href="#pn-79">79</a>- **简并性**：多个密码子编码同一氨基酸</p>
+<p><a class="pn" id="pn-80" href="#pn-80">80</a>- **通用性**：几乎所有生物共用</p>
+<p><a class="pn" id="pn-81" href="#pn-81">81</a>- **连续性**：无标点，不重叠</p>
+<p><a class="pn" id="pn-82" href="#pn-82">82</a>- **方向性**：5&#x27;→3&#x27;阅读</p>
+<p><a class="pn" id="pn-83" href="#pn-83">83</a>### tRNA与氨基酸活化</p>
+<p><a class="pn" id="pn-84" href="#pn-84">84</a>&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;tRNA&lt;/span&gt;（转运RNA）的功能：</p>
+<p><a class="pn" id="pn-85" href="#pn-85">85</a>- 携带特定氨基酸</p>
+<p><a class="pn" id="pn-86" href="#pn-86">86</a>- 识别mRNA上的密码子（&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;反密码子&lt;/span&gt;）</p>
+<p><a class="pn" id="pn-87" href="#pn-87">87</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;氨基酸臂&lt;/span&gt;：结合氨基酸</p>
+<p><a class="pn" id="pn-88" href="#pn-88">88</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;反密码子环&lt;/span&gt;：识别密码子</p>
+<p><a class="pn" id="pn-89" href="#pn-89">89</a>&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;氨酰-tRNA合成酶&lt;/span&gt;：催化氨基酸与tRNA连接，高度特异性</p>
+<p><a class="pn" id="pn-90" href="#pn-90">90</a>### 核糖体</p>
+<p><a class="pn" id="pn-91" href="#pn-91">91</a>&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;核糖体&lt;/span&gt;是蛋白质合成的场所：</p>
+<p><a class="pn" id="pn-92" href="#pn-92">92</a>| 亚基 | 原核 | 真核 |</p>
+<p><a class="pn" id="pn-93" href="#pn-93">93</a>|------|------|------|</p>
+<p><a class="pn" id="pn-94" href="#pn-94">94</a>| 大亚基 | 50S（23S+5S+蛋白质） | 60S（28S+5.8S+5S+蛋白质） |</p>
+<p><a class="pn" id="pn-95" href="#pn-95">95</a>| 小亚基 | 30S（16S+蛋白质） | 40S（18S+蛋白质） |</p>
+<p><a class="pn" id="pn-96" href="#pn-96">96</a>| 完整 | 70S | 80S |</p>
+<p><a class="pn" id="pn-97" href="#pn-97">97</a>**功能位点**：</p>
+<p><a class="pn" id="pn-98" href="#pn-98">98</a>- **A位**（氨酰位）：接受新氨酰-tRNA</p>
+<p><a class="pn" id="pn-99" href="#pn-99">99</a>- **P位**（肽酰位）：携带正在延伸的肽链</p>
+<p><a class="pn" id="pn-100" href="#pn-100">100</a>- **E位**（出口位）：释放空载tRNA</p>
+<p><a class="pn" id="pn-101" href="#pn-101">101</a>### 翻译过程</p>
+<p><a class="pn" id="pn-102" href="#pn-102">102</a>**1. 起始**：</p>
+<p><a class="pn" id="pn-103" href="#pn-103">103</a>- 小亚基识别mRNA（&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;SD序列&lt;/span&gt;或&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;5&amp;#x27;帽&lt;/span&gt;）</p>
+<p><a class="pn" id="pn-104" href="#pn-104">104</a>- 起始tRNA进入P位</p>
+<p><a class="pn" id="pn-105" href="#pn-105">105</a>- 大亚基结合</p>
+<p><a class="pn" id="pn-106" href="#pn-106">106</a>**2. 延伸**：</p>
+<p><a class="pn" id="pn-107" href="#pn-107">107</a>- 氨酰-tRNA进入A位</p>
+<p><a class="pn" id="pn-108" href="#pn-108">108</a>- &lt;span class=&quot;entity process&quot; title=&quot;过程&quot;&gt;肽键形成&lt;/span&gt;（&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;肽酰转移酶&lt;/span&gt;催化）</p>
+<p><a class="pn" id="pn-109" href="#pn-109">109</a>- 核糖体移位</p>
+<p><a class="pn" id="pn-110" href="#pn-110">110</a>**3. 终止**：</p>
+<p><a class="pn" id="pn-111" href="#pn-111">111</a>- 释放因子识别终止密码子</p>
+<p><a class="pn" id="pn-112" href="#pn-112">112</a>- 多肽链释放</p>
+<p><a class="pn" id="pn-113" href="#pn-113">113</a>- 核糖体解离</p>
+<h2>3.5 逆转录与RNA复制</h2>
+<p><a class="pn" id="pn-114" href="#pn-114">114</a>### 逆转录</p>
+<p><a class="pn" id="pn-115" href="#pn-115">115</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：reverse_transcription&quot;&gt;逆转录&lt;/span&gt;：RNA → DNA</p>
+<p><a class="pn" id="pn-116" href="#pn-116">116</a>- &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;逆转录酶&lt;/span&gt;（Reverse transcriptase）</p>
+<p><a class="pn" id="pn-117" href="#pn-117">117</a>- 需要tRNA作为引物</p>
+<p><a class="pn" id="pn-118" href="#pn-118">118</a>- 产物：&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;cDNA&lt;/span&gt;（互补DNA）</p>
+<p><a class="pn" id="pn-119" href="#pn-119">119</a>**生物学意义**：</p>
+<p><a class="pn" id="pn-120" href="#pn-120">120</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;逆转录病毒&lt;/span&gt;（如HIV）</p>
+<p><a class="pn" id="pn-121" href="#pn-121">121</a>- 真核生物&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;端粒酶&lt;/span&gt;</p>
+<p><a class="pn" id="pn-122" href="#pn-122">122</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;假基因&lt;/span&gt;形成</p>
+<h2>本章小结</h2>
+<p><a class="pn" id="pn-123" href="#pn-123">123</a>- DNA半保留复制确保遗传信息精确传递</p>
+<p><a class="pn" id="pn-124" href="#pn-124">124</a>- 复制是半不连续的，需要多种酶协同</p>
+<p><a class="pn" id="pn-125" href="#pn-125">125</a>- 转录以DNA为模板合成RNA，不需引物</p>
+<p><a class="pn" id="pn-126" href="#pn-126">126</a>- 翻译以mRNA为模板，tRNA转运氨基酸，核糖体催化</p>
+<p><a class="pn" id="pn-127" href="#pn-127">127</a>- 逆转录是中心法则的补充</p>
+<h2>思考题</h2>
+<p><a class="pn" id="pn-128" href="#pn-128">128</a>1. 为什么DNA复制需要RNA引物，而转录不需要？</p>
+<p><a class="pn" id="pn-129" href="#pn-129">129</a>2. 真核生物为什么需要3种RNA聚合酶？</p>
+<p><a class="pn" id="pn-130" href="#pn-130">130</a>3. 遗传密码的简并性有什么生物学意义？</p>
+<p><a class="pn" id="pn-131" href="#pn-131">131</a>---</p>
+<h2>第三章：转录</h2>
+<h2>3.1 转录概述</h2>
+<p><a class="pn" id="pn-132" href="#pn-132">132</a>### 转录的基本概念</p>
+<p><a class="pn" id="pn-133" href="#pn-133">133</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：transcription&quot;&gt;转录&lt;/span&gt;：以DNA为模板合成RNA的过程</p>
+<p><a class="pn" id="pn-134" href="#pn-134">134</a>```</p>
+<p><a class="pn" id="pn-135" href="#pn-135">135</a>DNA:    3&#x27;-TACG-5&#x27;  →  RNA:  5&#x27;-AUGC-3&#x27;</p>
+<p><a class="pn" id="pn-136" href="#pn-136">136</a>```</p>
+<p><a class="pn" id="pn-137" href="#pn-137">137</a>**关键特征**：</p>
+<p><a class="pn" id="pn-138" href="#pn-138">138</a>- 转录不需要引物</p>
+<p><a class="pn" id="pn-139" href="#pn-139">139</a>- 转录是局部的（基因选择性表达）</p>
+<p><a class="pn" id="pn-140" href="#pn-140">140</a>- RNA合成后释放，不保持双链</p>
+<p><a class="pn" id="pn-141" href="#pn-141">141</a>- 只有一条DNA链作为模板（模板链/反义链）</p>
+<p><a class="pn" id="pn-142" href="#pn-142">142</a>### 转录与复制的比较</p>
+<p><a class="pn" id="pn-143" href="#pn-143">143</a>| 特征 | DNA复制 | 转录 |</p>
+<p><a class="pn" id="pn-144" href="#pn-144">144</a>|------|---------|------|</p>
+<p><a class="pn" id="pn-145" href="#pn-145">145</a>| 模板 | 双链DNA | 单链DNA |</p>
+<p><a class="pn" id="pn-146" href="#pn-146">146</a>| 产物 | DNA | RNA |</p>
+<p><a class="pn" id="pn-147" href="#pn-147">147</a>| 引物 | 需要RNA引物 | 不需要 |</p>
+<p><a class="pn" id="pn-148" href="#pn-148">148</a>| 原料 | dNTPs | NTPs |</p>
+<p><a class="pn" id="pn-149" href="#pn-149">149</a>| 碱基配对 | A-T, G-C | A-U, G-C |</p>
+<p><a class="pn" id="pn-150" href="#pn-150">150</a>| 保真性 | 高 | 较低 |</p>
+<h2>3.2 RNA聚合酶</h2>
+<p><a class="pn" id="pn-151" href="#pn-151">151</a>### 原核生物RNA聚合酶</p>
+<p><a class="pn" id="pn-152" href="#pn-152">152</a>&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;RNA聚合酶&lt;/span&gt;组成：</p>
+<p><a class="pn" id="pn-153" href="#pn-153">153</a>- **核心酶**：α₂ββ&#x27;ω（催化活性）</p>
+<p><a class="pn" id="pn-154" href="#pn-154">154</a>- **全酶**：核心酶 + σ因子（识别启动子）</p>
+<p><a class="pn" id="pn-155" href="#pn-155">155</a>**σ因子类型**：</p>
+<p><a class="pn" id="pn-156" href="#pn-156">156</a>| σ因子 | 识别的启动子 | 功能 |</p>
+<p><a class="pn" id="pn-157" href="#pn-157">157</a>|-------|-------------|------|</p>
+<p><a class="pn" id="pn-158" href="#pn-158">158</a>| σ⁷⁰ | 管家基因 | 主要σ因子 |</p>
+<p><a class="pn" id="pn-159" href="#pn-159">159</a>| σ³² | 热休克基因 | 应激反应 |</p>
+<p><a class="pn" id="pn-160" href="#pn-160">160</a>| σ⁵⁴ | 氮代谢基因 | 特殊代谢 |</p>
+<p><a class="pn" id="pn-161" href="#pn-161">161</a>### 真核生物RNA聚合酶</p>
+<p><a class="pn" id="pn-162" href="#pn-162">162</a>| 类型 | 定位 | 产物 | 对α-鹅膏蕈碱敏感性 |</p>
+<p><a class="pn" id="pn-163" href="#pn-163">163</a>|------|------|------|-------------------|</p>
+<p><a class="pn" id="pn-164" href="#pn-164">164</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;RNA聚合酶I&lt;/span&gt; | 核仁 | rRNA（除5S） | 不敏感 |</p>
+<p><a class="pn" id="pn-165" href="#pn-165">165</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;RNA聚合酶II&lt;/span&gt; | 核质 | mRNA、snRNA、miRNA | 高度敏感 |</p>
+<p><a class="pn" id="pn-166" href="#pn-166">166</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;RNA聚合酶III&lt;/span&gt; | 核质 | tRNA、5S rRNA | 中度敏感 |</p>
+<p><a class="pn" id="pn-167" href="#pn-167">167</a>**RNA聚合酶II**：</p>
+<p><a class="pn" id="pn-168" href="#pn-168">168</a>- 最大、最复杂的聚合酶</p>
+<p><a class="pn" id="pn-169" href="#pn-169">169</a>- 包含12个以上亚基</p>
+<p><a class="pn" id="pn-170" href="#pn-170">170</a>- 负责蛋白质编码基因的转录</p>
+<h2>3.3 转录过程</h2>
+<p><a class="pn" id="pn-171" href="#pn-171">171</a>### 起始阶段</p>
+<p><a class="pn" id="pn-172" href="#pn-172">172</a>**原核生物**：</p>
+<p><a class="pn" id="pn-173" href="#pn-173">173</a>1. **启动子识别**：σ因子识别-10区（TATAAT）和-35区（TTGACA）</p>
+<p><a class="pn" id="pn-174" href="#pn-174">174</a>2. **闭合复合物形成**：RNA聚合酶结合双链DNA</p>
+<p><a class="pn" id="pn-175" href="#pn-175">175</a>3. **开放复合物形成**：DNA解旋约14bp</p>
+<p><a class="pn" id="pn-176" href="#pn-176">176</a>4. **起始合成**：合成前10个核苷酸，σ因子释放</p>
+<p><a class="pn" id="pn-177" href="#pn-177">177</a>**真核生物**：</p>
+<p><a class="pn" id="pn-178" href="#pn-178">178</a>1. **启动子元件**：</p>
+<p><a class="pn" id="pn-179" href="#pn-179">179</a>   - &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;TATA盒&lt;/span&gt;（-25至-30）：核心元件</p>
+<p><a class="pn" id="pn-180" href="#pn-180">180</a>   - &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;起始子&lt;/span&gt;（Inr）：转录起始位点</p>
+<p><a class="pn" id="pn-181" href="#pn-181">181</a>   - &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;上游激活序列&lt;/span&gt;（UAS）</p>
+<p><a class="pn" id="pn-182" href="#pn-182">182</a>2. **通用转录因子**（GTFs）：</p>
+<p><a class="pn" id="pn-183" href="#pn-183">183</a>   | 因子 | 功能 |</p>
+<p><a class="pn" id="pn-184" href="#pn-184">184</a>   |------|------|</p>
+<p><a class="pn" id="pn-185" href="#pn-185">185</a>   | TFIID | 识别TATA盒（含TBP） |</p>
+<p><a class="pn" id="pn-186" href="#pn-186">186</a>   | TFIIB | 桥接TFIID和RNA聚合酶II |</p>
+<p><a class="pn" id="pn-187" href="#pn-187">187</a>   | TFIIF | 招募RNA聚合酶II |</p>
+<p><a class="pn" id="pn-188" href="#pn-188">188</a>   | TFIIE | 招募TFIIH |</p>
+<p><a class="pn" id="pn-189" href="#pn-189">189</a>   | TFIIH | 解旋酶活性，启动子逃逸 |</p>
+<p><a class="pn" id="pn-190" href="#pn-190">190</a>### 延伸阶段</p>
+<p><a class="pn" id="pn-191" href="#pn-191">191</a>- RNA聚合酶沿DNA模板移动（3&#x27;→5&#x27;方向）</p>
+<p><a class="pn" id="pn-192" href="#pn-192">192</a>- RNA链以5&#x27;→3&#x27;方向合成</p>
+<p><a class="pn" id="pn-193" href="#pn-193">193</a>- 形成DNA-RNA杂合双链（约8-9bp）</p>
+<p><a class="pn" id="pn-194" href="#pn-194">194</a>- 拓扑异构酶缓解超螺旋</p>
+<p><a class="pn" id="pn-195" href="#pn-195">195</a>### 终止阶段</p>
+<p><a class="pn" id="pn-196" href="#pn-196">196</a>**原核生物**：</p>
+<p><a class="pn" id="pn-197" href="#pn-197">197</a>- **ρ因子非依赖终止**：发夹结构 + poly-U序列</p>
+<p><a class="pn" id="pn-198" href="#pn-198">198</a>- **ρ因子依赖终止**：ρ蛋白解旋酶活性</p>
+<p><a class="pn" id="pn-199" href="#pn-199">199</a>**真核生物**：</p>
+<p><a class="pn" id="pn-200" href="#pn-200">200</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;poly(A)信号&lt;/span&gt;（AAUAAA）：切割和加尾信号</p>
+<p><a class="pn" id="pn-201" href="#pn-201">201</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;终止子&lt;/span&gt;：转录终止序列</p>
+<p><a class="pn" id="pn-202" href="#pn-202">202</a>- 转录终止与3&#x27;端加工偶联</p>
+<h2>3.4 原核生物转录调控</h2>
+<p><a class="pn" id="pn-203" href="#pn-203">203</a>### 操纵子模型</p>
+<p><a class="pn" id="pn-204" href="#pn-204">204</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：operon&quot;&gt;操纵子&lt;/span&gt;（Operon）是原核生物基因调控的基本单位：</p>
+<p><a class="pn" id="pn-205" href="#pn-205">205</a>```</p>
+<p><a class="pn" id="pn-206" href="#pn-206">206</a>启动子 - 操纵基因 - 结构基因群</p>
+<p><a class="pn" id="pn-207" href="#pn-207">207</a>   ↑         ↑</p>
+<p><a class="pn" id="pn-208" href="#pn-208">208</a>RNA聚合酶  阻遏蛋白</p>
+<p><a class="pn" id="pn-209" href="#pn-209">209</a>```</p>
+<p><a class="pn" id="pn-210" href="#pn-210">210</a>| 元件 | 功能 |</p>
+<p><a class="pn" id="pn-211" href="#pn-211">211</a>|------|------|</p>
+<p><a class="pn" id="pn-212" href="#pn-212">212</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;启动子&lt;/span&gt; | RNA聚合酶结合位点 |</p>
+<p><a class="pn" id="pn-213" href="#pn-213">213</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;操纵基因&lt;/span&gt;（Operator） | 阻遏蛋白结合位点 |</p>
+<p><a class="pn" id="pn-214" href="#pn-214">214</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;结构基因&lt;/span&gt; | 编码功能蛋白 |</p>
+<p><a class="pn" id="pn-215" href="#pn-215">215</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;调节基因&lt;/span&gt; | 编码调控蛋白 |</p>
+<p><a class="pn" id="pn-216" href="#pn-216">216</a>### 乳糖操纵子</p>
+<p><a class="pn" id="pn-217" href="#pn-217">217</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;乳糖操纵子&lt;/span&gt;（Lac operon）：</p>
+<p><a class="pn" id="pn-218" href="#pn-218">218</a>**负调控**（阻遏）：</p>
+<p><a class="pn" id="pn-219" href="#pn-219">219</a>- 无乳糖时：&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;阻遏蛋白&lt;/span&gt;结合操纵基因，转录关闭</p>
+<p><a class="pn" id="pn-220" href="#pn-220">220</a>- 有乳糖时：乳糖作为&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;诱导物&lt;/span&gt;，阻遏蛋白失活，转录开启</p>
+<p><a class="pn" id="pn-221" href="#pn-221">221</a>**正调控**（激活）：</p>
+<p><a class="pn" id="pn-222" href="#pn-222">222</a>- 葡萄糖缺乏时：&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;cAMP&lt;/span&gt;升高，&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;CAP蛋白&lt;/span&gt;（catabolite activator protein）激活转录</p>
+<p><a class="pn" id="pn-223" href="#pn-223">223</a>- 葡萄糖存在时：cAMP水平低，CAP不结合，转录水平低</p>
+<p><a class="pn" id="pn-224" href="#pn-224">224</a>### 色氨酸操纵子</p>
+<p><a class="pn" id="pn-225" href="#pn-225">225</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;色氨酸操纵子&lt;/span&gt;（Trp operon）：</p>
+<p><a class="pn" id="pn-226" href="#pn-226">226</a>**阻遏型操纵子**：</p>
+<p><a class="pn" id="pn-227" href="#pn-227">227</a>- 无色氨酸时：转录开启</p>
+<p><a class="pn" id="pn-228" href="#pn-228">228</a>- 有色氨酸时：色氨酸作为&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;辅阻遏物&lt;/span&gt;，阻遏蛋白激活，转录关闭</p>
+<p><a class="pn" id="pn-229" href="#pn-229">229</a>**衰减作用**（Attenuation）：</p>
+<p><a class="pn" id="pn-230" href="#pn-230">230</a>- 前导序列含有4个可互补配对的区域</p>
+<p><a class="pn" id="pn-231" href="#pn-231">231</a>- 前导肽的翻译影响转录终止</p>
+<p><a class="pn" id="pn-232" href="#pn-232">232</a>- 转录-翻译偶联的精细调控机制</p>
+<h2>3.5 真核生物转录调控</h2>
+<p><a class="pn" id="pn-233" href="#pn-233">233</a>### 顺式作用元件</p>
+<p><a class="pn" id="pn-234" href="#pn-234">234</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：cis_element&quot;&gt;顺式作用元件&lt;/span&gt;：DNA上的调控序列</p>
+<p><a class="pn" id="pn-235" href="#pn-235">235</a>| 元件 | 位置 | 功能 |</p>
+<p><a class="pn" id="pn-236" href="#pn-236">236</a>|------|------|------|</p>
+<p><a class="pn" id="pn-237" href="#pn-237">237</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;启动子&lt;/span&gt; | 转录起始点附近 | 基础转录装置组装 |</p>
+<p><a class="pn" id="pn-238" href="#pn-238">238</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;增强子&lt;/span&gt;（Enhancer） | 远端（1kb-1Mb） | 显著增强转录效率 |</p>
+<p><a class="pn" id="pn-239" href="#pn-239">239</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;沉默子&lt;/span&gt;（Silencer） | 远端 | 抑制转录 |</p>
+<p><a class="pn" id="pn-240" href="#pn-240">240</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;绝缘子&lt;/span&gt;（Insulator） | 边界 | 阻断增强子/沉默子作用 |</p>
+<p><a class="pn" id="pn-241" href="#pn-241">241</a>### 反式作用因子</p>
+<p><a class="pn" id="pn-242" href="#pn-242">242</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：trans_factor&quot;&gt;反式作用因子&lt;/span&gt;：调控蛋白</p>
+<p><a class="pn" id="pn-243" href="#pn-243">243</a>**转录因子结构域**：</p>
+<p><a class="pn" id="pn-244" href="#pn-244">244</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;DNA结合域&lt;/span&gt;：识别特定序列</p>
+<p><a class="pn" id="pn-245" href="#pn-245">245</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;转录激活域&lt;/span&gt;：招募转录 machinery</p>
+<p><a class="pn" id="pn-246" href="#pn-246">246</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;二聚化结构域&lt;/span&gt;：形成同源/异源二聚体</p>
+<p><a class="pn" id="pn-247" href="#pn-247">247</a>**常见DNA结合域**：</p>
+<p><a class="pn" id="pn-248" href="#pn-248">248</a>| 结构域 | 特征 | 代表因子 |</p>
+<p><a class="pn" id="pn-249" href="#pn-249">249</a>|--------|------|---------|</p>
+<p><a class="pn" id="pn-250" href="#pn-250">250</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;同源异型域&lt;/span&gt; | 螺旋-转角-螺旋变体 | HOX蛋白 |</p>
+<p><a class="pn" id="pn-251" href="#pn-251">251</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;锌指&lt;/span&gt; | Zn²⁺稳定 | SP1、TFIIIA |</p>
+<p><a class="pn" id="pn-252" href="#pn-252">252</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;碱性亮氨酸拉链&lt;/span&gt; | bZIP二聚化 | AP-1、CREB |</p>
+<p><a class="pn" id="pn-253" href="#pn-253">253</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;螺旋-环-螺旋&lt;/span&gt; | HLH二聚化 | MyoD、E47 |</p>
+<p><a class="pn" id="pn-254" href="#pn-254">254</a>### 染色质与转录</p>
+<p><a class="pn" id="pn-255" href="#pn-255">255</a>**核小体与转录**：</p>
+<p><a class="pn" id="pn-256" href="#pn-256">256</a>- 核小体阻碍RNA聚合酶前进</p>
+<p><a class="pn" id="pn-257" href="#pn-257">257</a>- &lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;染色质重塑复合物&lt;/span&gt;（SWI/SNF等）协助核小体滑动</p>
+<p><a class="pn" id="pn-258" href="#pn-258">258</a>**组蛋白修饰**：</p>
+<p><a class="pn" id="pn-259" href="#pn-259">259</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;H3K4me3&lt;/span&gt;：激活转录标记</p>
+<p><a class="pn" id="pn-260" href="#pn-260">260</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;H3K27me3&lt;/span&gt;：抑制转录标记</p>
+<p><a class="pn" id="pn-261" href="#pn-261">261</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;组蛋白乙酰化&lt;/span&gt;：通常激活转录</p>
+<h2>3.6 RNA加工</h2>
+<p><a class="pn" id="pn-262" href="#pn-262">262</a>### 5&#x27;端加帽</p>
+<p><a class="pn" id="pn-263" href="#pn-263">263</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;5&amp;#x27;帽结构&lt;/span&gt;：</p>
+<p><a class="pn" id="pn-264" href="#pn-264">264</a>- 结构：m⁷G(5&#x27;)ppp(5&#x27;)N</p>
+<p><a class="pn" id="pn-265" href="#pn-265">265</a>- 酶：&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;鸟苷酰转移酶&lt;/span&gt;</p>
+<p><a class="pn" id="pn-266" href="#pn-266">266</a>- 功能：保护mRNA、促进翻译起始、参与mRNA输出</p>
+<p><a class="pn" id="pn-267" href="#pn-267">267</a>### 3&#x27;端加尾</p>
+<p><a class="pn" id="pn-268" href="#pn-268">268</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;修饰&quot;&gt;poly(A)尾&lt;/span&gt;：</p>
+<p><a class="pn" id="pn-269" href="#pn-269">269</a>- 长度：100-250个腺苷酸</p>
+<p><a class="pn" id="pn-270" href="#pn-270">270</a>- 酶：&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;poly(A)聚合酶&lt;/span&gt;</p>
+<p><a class="pn" id="pn-271" href="#pn-271">271</a>- 功能：稳定mRNA、促进翻译、调控降解</p>
+<p><a class="pn" id="pn-272" href="#pn-272">272</a>### RNA剪接</p>
+<p><a class="pn" id="pn-273" href="#pn-273">273</a>**剪接过程**：</p>
+<p><a class="pn" id="pn-274" href="#pn-274">274</a>- 切除&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;内含子&lt;/span&gt;，连接&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;外显子&lt;/span&gt;</p>
+<p><a class="pn" id="pn-275" href="#pn-275">275</a>- &lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;剪接体&lt;/span&gt;（spliceosome）执行</p>
+<p><a class="pn" id="pn-276" href="#pn-276">276</a>- 涉及snRNP（U1、U2、U4/U6、U5）</p>
+<p><a class="pn" id="pn-277" href="#pn-277">277</a>**选择性剪接**：</p>
+<p><a class="pn" id="pn-278" href="#pn-278">278</a>- 一个基因产生多种mRNA异构体</p>
+<p><a class="pn" id="pn-279" href="#pn-279">279</a>- 人类约95%的基因存在选择性剪接</p>
+<p><a class="pn" id="pn-280" href="#pn-280">280</a>- 增加蛋白质组多样性</p>
+<h2>本章小结</h2>
+<p><a class="pn" id="pn-281" href="#pn-281">281</a>- 转录以DNA为模板合成RNA，不需引物</p>
+<p><a class="pn" id="pn-282" href="#pn-282">282</a>- 原核生物一个RNA聚合酶，真核生物有三种</p>
+<p><a class="pn" id="pn-283" href="#pn-283">283</a>- 转录分起始、延伸、终止三个阶段</p>
+<p><a class="pn" id="pn-284" href="#pn-284">284</a>- 原核生物以操纵子为单位进行调控</p>
+<p><a class="pn" id="pn-285" href="#pn-285">285</a>- 真核生物通过顺式元件和反式因子精细调控</p>
+<p><a class="pn" id="pn-286" href="#pn-286">286</a>- RNA加工（加帽、加尾、剪接）是真核mRNA成熟的关键步骤</p>
+<h2>思考题</h2>
+<p><a class="pn" id="pn-287" href="#pn-287">287</a>1. 为什么真核生物需要三种RNA聚合酶？</p>
+<p><a class="pn" id="pn-288" href="#pn-288">288</a>2. 比较乳糖操纵子和色氨酸操纵子的调控机制。</p>
+<p><a class="pn" id="pn-289" href="#pn-289">289</a>3. 选择性剪接有什么生物学意义？</p></div><nav class="chapter-nav"><a href="ch02_%E5%88%86%E5%AD%90%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%A4%8D%E5%88%B6.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch04_%E7%BF%BB%E8%AF%91%E4%B8%8E%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">下一章 →</a></nav></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

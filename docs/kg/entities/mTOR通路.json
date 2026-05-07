@@ -1,0 +1,34 @@
+{
+  "id": "mtor",
+  "nameEn": "mTOR Pathway",
+  "category": "机制",
+  "chapter": "第7章",
+  "importance": "core-major",
+  "keyConcepts": [
+    {
+      "term": "mTORC1",
+      "definition": "含Raptor的mTOR复合物，雷帕霉素敏感，调控蛋白质合成和细胞生长"
+    },
+    {
+      "term": "mTORC2",
+      "definition": "含Rictor的mTOR复合物，雷帕霉素不敏感，调控细胞骨架和存活"
+    },
+    {
+      "term": "S6K/4E-BP1",
+      "definition": "mTORC1两大底物，磷酸化促进翻译起始和延伸"
+    }
+  ],
+  "keyPoints": [
+    "细胞生长和代谢的中央调控枢纽",
+    "整合生长因子、营养、能量和氧信号",
+    "mTORC1激活翻译和脂质合成，抑制自噬",
+    "雷帕霉素类似物为临床mTORC1抑制剂"
+  ],
+  "relatedEntities": [
+    "信号转导",
+    "翻译",
+    "自噬",
+    "MAPK通路"
+  ],
+  "definition": "mTOR是细胞整合生长因子、氨基酸可用性、能量状态和氧气水平多种信号决定合成代谢与抑制分解代谢的中央调控枢纽。以两种复合物形式存在：mTORC1（含Raptor，雷帕霉素敏感）和mTORC2（含Rictor）。营养充足下mTORC1磷酸化S6K1和4E-BP1：S6K促进翻译起始和延伸，4E-BP1磷酸化后释放eIF4E启动帽依赖性翻译。饥饿条件下mTORC1抑制，允许自噬提供替代营养来源。mTOR通路异常活化在多种癌症和代谢疾病中发挥驱动作用。"
+}

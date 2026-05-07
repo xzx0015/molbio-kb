@@ -1,0 +1,34 @@
+{
+  "id": "wnt",
+  "name": "Wnt/β-catenin通路",
+  "nameEn": "Wnt/β-Catenin Pathway",
+  "category": "机制",
+  "chapter": "第7章",
+  "importance": "core-major",
+  "keyConcepts": [
+    {
+      "term": "β-catenin",
+      "definition": "Wnt通路的转录共激活因子，在胞质中稳定性受降解复合物严格控制"
+    },
+    {
+      "term": "APC/Axin/GSK3β",
+      "definition": "β-catenin降解复合物的核心组分"
+    },
+    {
+      "term": "TCF/LEF",
+      "definition": "核内转录因子，与β-catenin结合后激活Wnt靶基因"
+    }
+  ],
+  "keyPoints": [
+    "决定细胞命运和增殖的关键发育信号通路",
+    "无Wnt时β-catenin被持续降解；Wnt结合受体后积累入核激活基因",
+    "APC突变是大肠癌最常见的驱动突变（>80%）"
+  ],
+  "relatedEntities": [
+    "信号转导",
+    "转录因子",
+    "细胞周期",
+    "细胞凋亡"
+  ],
+  "definition": "Wnt/β-catenin信号通路是一条进化极保守的发育信号轴，在胚胎发育（体轴形成、器官发生）和成体干细胞维持中调控细胞命运决定和增殖。核心调控逻辑基于β-catenin蛋白稳定性的二元控制：无Wnt信号时，降解复合物（Axin/APC/CK1/GSK3β）将β-catenin磷酸化后靶向蛋白酶体降解；Wnt配体结合Frizzled-LRP5/6受体后，Disheveled蛋白招募Axin至受体，降解复合物解体，β-catenin稳定积累并转位入核，与TCF/LEF转录因子结合激活c-Myc、Cyclin D1等靶基因。APC基因的双等位基因失活突变是人类结直肠癌最常见的驱动事件（>80%），导致β-catenin组成型激活。"
+}

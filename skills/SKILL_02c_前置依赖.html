@@ -161,557 +161,375 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-02c">SKILL 02c: 前置依赖 — 知识点先修关系图</h1>
-<blockquote>
-<p>构建分子生物学课程的知识点前置依赖网络，定义学习路径，识别关键节点。</p>
-</blockquote>
-<hr />
-<h2 id="_1">一、核心概念</h2>
-<h3 id="11">1.1 前置依赖定义</h3>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 02c: 前置依赖 — 知识点先修关系图</h1>
+<p>&gt; 构建分子生物学课程的知识点前置依赖网络，定义学习路径，识别关键节点。</p>
+<p>---</p>
+<h2>一、核心概念</h2>
+<p>### 1.1 前置依赖定义</p>
 <p>前置依赖是指学习某一知识点之前必须先掌握的其他知识点。这种关系形成有向无环图（DAG），指导学习顺序。</p>
-<pre><code>知识点A ──前置──→ 知识点B
-（必须先学A，才能学B）
-</code></pre>
-<h3 id="12">1.2 依赖类型</h3>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>标记</th>
-<th>说明</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>强依赖</strong></td>
-<td><code>required</code></td>
-<td>必须掌握，否则无法理解</td>
-<td>DNA结构 → DNA复制</td>
-</tr>
-<tr>
-<td><strong>推荐依赖</strong></td>
-<td><code>recommended</code></td>
-<td>有助于理解，但非必须</td>
-<td>有机化学 → 生物化学</td>
-</tr>
-<tr>
-<td><strong>类比依赖</strong></td>
-<td><code>analogy</code></td>
-<td>概念相似，可类比迁移</td>
-<td>DNA复制 → RNA转录</td>
-</tr>
-<tr>
-<td><strong>应用依赖</strong></td>
-<td><code>application</code></td>
-<td>理论→应用</td>
-<td>复制原理 → PCR技术</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="_2">二、依赖关系识别</h2>
-<h3 id="21">2.1 识别规则</h3>
+<p>```</p>
+<p>知识点A ──前置──→ 知识点B</p>
+<p>（必须先学A，才能学B）</p>
+<p>```</p>
+<p>### 1.2 依赖类型</p>
+<p>| 类型 | 标记 | 说明 | 示例 |</p>
+<p>|------|------|------|------|</p>
+<p>| **强依赖** | `required` | 必须掌握，否则无法理解 | DNA结构 → DNA复制 |</p>
+<p>| **推荐依赖** | `recommended` | 有助于理解，但非必须 | 有机化学 → 生物化学 |</p>
+<p>| **类比依赖** | `analogy` | 概念相似，可类比迁移 | DNA复制 → RNA转录 |</p>
+<p>| **应用依赖** | `application` | 理论→应用 | 复制原理 → PCR技术 |</p>
+<p>---</p>
+<h2>二、依赖关系识别</h2>
+<p>### 2.1 识别规则</p>
 <p>依赖关系通过以下方式识别：</p>
-<table>
-<thead>
-<tr>
-<th>规则</th>
-<th>触发条件</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>术语引用</td>
-<td>概念A的定义中引用概念B</td>
-<td>"DNA聚合酶<strong>在复制叉处</strong>..." → 复制叉是前置</td>
-</tr>
-<tr>
-<td>逻辑顺序</td>
-<td>过程A在过程B之前发生</td>
-<td>复制起始 → 复制延伸</td>
-</tr>
-<tr>
-<td>结构组成</td>
-<td>A是B的组成部分</td>
-<td>核苷酸 → DNA</td>
-</tr>
-<tr>
-<td>功能依赖</td>
-<td>A的功能依赖B</td>
-<td>翻译 → 转录（需要mRNA）</td>
-</tr>
-<tr>
-<td>数学依赖</td>
-<td>需要数学概念</td>
-<td>化学计量 → 反应动力学</td>
-</tr>
-</tbody>
-</table>
-<h3 id="22">2.2 依赖强度评估</h3>
-<pre><code class="language-python">def calculate_dependency_strength(from_concept, to_concept, text):
-    &quot;&quot;&quot;计算两个概念间的依赖强度&quot;&quot;&quot;
-    score = 0
-
-    # 直接引用 +3
-    if from_concept in get_prerequisites(to_concept, text):
-        score += 3
-
-    # 同一句中出现 +2
-    if cooccur_in_sentence(from_concept, to_concept, text):
-        score += 2
-
-    # 同一段中出现 +1
-    if cooccur_in_paragraph(from_concept, to_concept, text):
-        score += 1
-
-    # 距离越近分数越高
-    distance = get_concept_distance(from_concept, to_concept, text)
-    score += max(0, 3 - distance // 100)
-
-    return score
-</code></pre>
-<p><strong>依赖强度分级</strong>：
-- 7-9分：强依赖（required）
-- 4-6分：推荐依赖（recommended）
-- 1-3分：弱相关（related）
-- 0分：无依赖</p>
-<hr />
-<h2 id="_3">三、依赖图构建</h2>
-<h3 id="31">3.1 图结构定义</h3>
-<pre><code class="language-json">{
-  &quot;dependency_graph&quot;: {
-    &quot;nodes&quot;: [
-      {
-        &quot;id&quot;: &quot;C01.02&quot;,
-        &quot;name&quot;: &quot;DNA双螺旋结构&quot;,
-        &quot;chapter&quot;: &quot;01&quot;,
-        &quot;level&quot;: &quot;core&quot;,
-        &quot;difficulty&quot;: 2,
-        &quot;estimated_time&quot;: 30  // 分钟
-      },
-      {
-        &quot;id&quot;: &quot;C02.01&quot;,
-        &quot;name&quot;: &quot;DNA复制&quot;,
-        &quot;chapter&quot;: &quot;02&quot;,
-        &quot;level&quot;: &quot;core&quot;,
-        &quot;difficulty&quot;: 3,
-        &quot;estimated_time&quot;: 45
-      },
-      {
-        &quot;id&quot;: &quot;C02.03&quot;,
-        &quot;name&quot;: &quot;DNA聚合酶&quot;,
-        &quot;chapter&quot;: &quot;02&quot;,
-        &quot;level&quot;: &quot;core&quot;,
-        &quot;difficulty&quot;: 3,
-        &quot;estimated_time&quot;: 40
-      }
-    ],
-    &quot;edges&quot;: [
-      {
-        &quot;from&quot;: &quot;C01.02&quot;,
-        &quot;to&quot;: &quot;C02.01&quot;,
-        &quot;type&quot;: &quot;required&quot;,
-        &quot;strength&quot;: 8,
-        &quot;reason&quot;: &quot;理解DNA复制必须先理解DNA结构&quot;
-      },
-      {
-        &quot;from&quot;: &quot;C02.01&quot;,
-        &quot;to&quot;: &quot;C02.03&quot;,
-        &quot;type&quot;: &quot;required&quot;,
-        &quot;strength&quot;: 7,
-        &quot;reason&quot;: &quot;DNA聚合酶是DNA复制的执行者&quot;
-      },
-      {
-        &quot;from&quot;: &quot;C02.01&quot;,
-        &quot;to&quot;: &quot;C03.01&quot;,
-        &quot;type&quot;: &quot;analogy&quot;,
-        &quot;strength&quot;: 5,
-        &quot;reason&quot;: &quot;转录与复制机制相似&quot;
-      }
-    ]
-  }
-}
-</code></pre>
-<h3 id="32">3.2 可视化表示</h3>
-<pre><code>                    ┌─────────────┐
-                    │ DNA双螺旋   │
-                    │  C01.02     │
-                    └──────┬──────┘
-                           │ required
-                           ▼
-                    ┌─────────────┐
-                    │ DNA复制     │◄──────────┐
-                    │  C02.01     │           │ analogy
-                    └──────┬──────┘           │
-           ┌───────────────┼───────────────┐  │
-           │ required      │ required      │  │
-           ▼               ▼               ▼  │
-    ┌─────────────┐ ┌─────────────┐ ┌─────────┴─┐
-    │ DNA聚合酶   │ │ 复制叉      │ │ RNA转录   │
-    │  C02.03     │ │  C02.04     │ │  C03.01   │
-    └──────┬──────┘ └─────────────┘ └───────────┘
-           │
-           ▼
-    ┌─────────────┐
-    │ PCR技术     │
-    │  A02.01     │
-    └─────────────┘
-</code></pre>
-<hr />
-<h2 id="_4">四、学习路径生成</h2>
-<h3 id="41">4.1 拓扑排序</h3>
+<p>| 规则 | 触发条件 | 示例 |</p>
+<p>|------|----------|------|</p>
+<p>| 术语引用 | 概念A的定义中引用概念B | &quot;DNA聚合酶**在复制叉处**...&quot; → 复制叉是前置 |</p>
+<p>| 逻辑顺序 | 过程A在过程B之前发生 | 复制起始 → 复制延伸 |</p>
+<p>| 结构组成 | A是B的组成部分 | 核苷酸 → DNA |</p>
+<p>| 功能依赖 | A的功能依赖B | 翻译 → 转录（需要mRNA） |</p>
+<p>| 数学依赖 | 需要数学概念 | 化学计量 → 反应动力学 |</p>
+<p>### 2.2 依赖强度评估</p>
+<p>```python</p>
+<p>def calculate_dependency_strength(from_concept, to_concept, text):</p>
+<p>    &quot;&quot;&quot;计算两个概念间的依赖强度&quot;&quot;&quot;</p>
+<p>    score = 0</p>
+<p>    # 直接引用 +3</p>
+<p>    if from_concept in get_prerequisites(to_concept, text):</p>
+<p>        score += 3</p>
+<p>    # 同一句中出现 +2</p>
+<p>    if cooccur_in_sentence(from_concept, to_concept, text):</p>
+<p>        score += 2</p>
+<p>    # 同一段中出现 +1</p>
+<p>    if cooccur_in_paragraph(from_concept, to_concept, text):</p>
+<p>        score += 1</p>
+<p>    # 距离越近分数越高</p>
+<p>    distance = get_concept_distance(from_concept, to_concept, text)</p>
+<p>    score += max(0, 3 - distance // 100)</p>
+<p>    return score</p>
+<p>```</p>
+<p>**依赖强度分级**：</p>
+<p>- 7-9分：强依赖（required）</p>
+<p>- 4-6分：推荐依赖（recommended）</p>
+<p>- 1-3分：弱相关（related）</p>
+<p>- 0分：无依赖</p>
+<p>---</p>
+<h2>三、依赖图构建</h2>
+<p>### 3.1 图结构定义</p>
+<p>```json</p>
+<p>{</p>
+<p>  &quot;dependency_graph&quot;: {</p>
+<p>    &quot;nodes&quot;: [</p>
+<p>      {</p>
+<p>        &quot;id&quot;: &quot;C01.02&quot;,</p>
+<p>        &quot;name&quot;: &quot;DNA双螺旋结构&quot;,</p>
+<p>        &quot;chapter&quot;: &quot;01&quot;,</p>
+<p>        &quot;level&quot;: &quot;core&quot;,</p>
+<p>        &quot;difficulty&quot;: 2,</p>
+<p>        &quot;estimated_time&quot;: 30  // 分钟</p>
+<p>      },</p>
+<p>      {</p>
+<p>        &quot;id&quot;: &quot;C02.01&quot;,</p>
+<p>        &quot;name&quot;: &quot;DNA复制&quot;,</p>
+<p>        &quot;chapter&quot;: &quot;02&quot;,</p>
+<p>        &quot;level&quot;: &quot;core&quot;,</p>
+<p>        &quot;difficulty&quot;: 3,</p>
+<p>        &quot;estimated_time&quot;: 45</p>
+<p>      },</p>
+<p>      {</p>
+<p>        &quot;id&quot;: &quot;C02.03&quot;,</p>
+<p>        &quot;name&quot;: &quot;DNA聚合酶&quot;,</p>
+<p>        &quot;chapter&quot;: &quot;02&quot;,</p>
+<p>        &quot;level&quot;: &quot;core&quot;,</p>
+<p>        &quot;difficulty&quot;: 3,</p>
+<p>        &quot;estimated_time&quot;: 40</p>
+<p>      }</p>
+<p>    ],</p>
+<p>    &quot;edges&quot;: [</p>
+<p>      {</p>
+<p>        &quot;from&quot;: &quot;C01.02&quot;,</p>
+<p>        &quot;to&quot;: &quot;C02.01&quot;,</p>
+<p>        &quot;type&quot;: &quot;required&quot;,</p>
+<p>        &quot;strength&quot;: 8,</p>
+<p>        &quot;reason&quot;: &quot;理解DNA复制必须先理解DNA结构&quot;</p>
+<p>      },</p>
+<p>      {</p>
+<p>        &quot;from&quot;: &quot;C02.01&quot;,</p>
+<p>        &quot;to&quot;: &quot;C02.03&quot;,</p>
+<p>        &quot;type&quot;: &quot;required&quot;,</p>
+<p>        &quot;strength&quot;: 7,</p>
+<p>        &quot;reason&quot;: &quot;DNA聚合酶是DNA复制的执行者&quot;</p>
+<p>      },</p>
+<p>      {</p>
+<p>        &quot;from&quot;: &quot;C02.01&quot;,</p>
+<p>        &quot;to&quot;: &quot;C03.01&quot;,</p>
+<p>        &quot;type&quot;: &quot;analogy&quot;,</p>
+<p>        &quot;strength&quot;: 5,</p>
+<p>        &quot;reason&quot;: &quot;转录与复制机制相似&quot;</p>
+<p>      }</p>
+<p>    ]</p>
+<p>  }</p>
+<p>}</p>
+<p>```</p>
+<p>### 3.2 可视化表示</p>
+<p>```</p>
+<p>                    ┌─────────────┐</p>
+<p>                    │ DNA双螺旋   │</p>
+<p>                    │  C01.02     │</p>
+<p>                    └──────┬──────┘</p>
+<p>                           │ required</p>
+<p>                           ▼</p>
+<p>                    ┌─────────────┐</p>
+<p>                    │ DNA复制     │◄──────────┐</p>
+<p>                    │  C02.01     │           │ analogy</p>
+<p>                    └──────┬──────┘           │</p>
+<p>           ┌───────────────┼───────────────┐  │</p>
+<p>           │ required      │ required      │  │</p>
+<p>           ▼               ▼               ▼  │</p>
+<p>    ┌─────────────┐ ┌─────────────┐ ┌─────────┴─┐</p>
+<p>    │ DNA聚合酶   │ │ 复制叉      │ │ RNA转录   │</p>
+<p>    │  C02.03     │ │  C02.04     │ │  C03.01   │</p>
+<p>    └──────┬──────┘ └─────────────┘ └───────────┘</p>
+<p>           │</p>
+<p>           ▼</p>
+<p>    ┌─────────────┐</p>
+<p>    │ PCR技术     │</p>
+<p>    │  A02.01     │</p>
+<p>    └─────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>四、学习路径生成</h2>
+<p>### 4.1 拓扑排序</p>
 <p>基于依赖图生成学习顺序：</p>
-<pre><code class="language-python">def topological_sort(graph):
-    &quot;&quot;&quot;生成拓扑有序的学习路径&quot;&quot;&quot;
-    visited = set()
-    path = []
-
-    def dfs(node):
-        if node in visited:
-            return
-        visited.add(node)
-
-        # 先学习所有前置知识点
-        for prereq in get_prerequisites(node, graph):
-            dfs(prereq)
-
-        path.append(node)
-
-    for node in graph.nodes:
-        dfs(node)
-
-    return path
-</code></pre>
-<h3 id="42">4.2 最短学习路径</h3>
-<pre><code class="language-python">def shortest_learning_path(target, graph):
-    &quot;&quot;&quot;计算到达目标知识点的最短学习路径&quot;&quot;&quot;
-    # Dijkstra算法
-    distances = {node: float('inf') for node in graph.nodes}
-    distances[target] = 0
-
-    pq = [(0, target)]
-    while pq:
-        dist, node = heapq.heappop(pq)
-
-        for prereq in get_prerequisites(node, graph):
-            new_dist = dist + get_learning_time(prereq)
-            if new_dist &lt; distances[prereq]:
-                distances[prereq] = new_dist
-                heapq.heappush(pq, (new_dist, prereq))
-
-    return distances
-</code></pre>
-<h3 id="43">4.3 个性化学习路径</h3>
-<pre><code class="language-json">{
-  &quot;learning_path&quot;: {
-    &quot;student_profile&quot;: {
-      &quot;background&quot;: &quot;生物学本科&quot;,
-      &quot;known_concepts&quot;: [&quot;C01.01&quot;, &quot;C01.02&quot;],
-      &quot;target_concepts&quot;: [&quot;C02.01&quot;, &quot;C02.03&quot;, &quot;A02.01&quot;],
-      &quot;available_time&quot;: 120,  // 分钟
-      &quot;preferred_difficulty&quot;: &quot;medium&quot;
-    },
-    &quot;generated_path&quot;: [
-      {
-        &quot;step&quot;: 1,
-        &quot;concept&quot;: &quot;C02.01&quot;,
-        &quot;name&quot;: &quot;DNA复制&quot;,
-        &quot;estimated_time&quot;: 45,
-        &quot;reason&quot;: &quot;目标概念，前置知识已掌握&quot;
-      },
-      {
-        &quot;step&quot;: 2,
-        &quot;concept&quot;: &quot;C02.03&quot;,
-        &quot;name&quot;: &quot;DNA聚合酶&quot;,
-        &quot;estimated_time&quot;: 40,
-        &quot;reason&quot;: &quot;DNA复制的核心执行者&quot;
-      },
-      {
-        &quot;step&quot;: 3,
-        &quot;concept&quot;: &quot;A02.01&quot;,
-        &quot;name&quot;: &quot;PCR技术&quot;,
-        &quot;estimated_time&quot;: 35,
-        &quot;reason&quot;: &quot;基于DNA复制原理的应用技术&quot;
-      }
-    ],
-    &quot;total_time&quot;: 120,
-    &quot;coverage&quot;: &quot;100%&quot;
-  }
-}
-</code></pre>
-<hr />
-<h2 id="_5">五、关键节点识别</h2>
-<h3 id="51">5.1 枢纽概念</h3>
+<p>```python</p>
+<p>def topological_sort(graph):</p>
+<p>    &quot;&quot;&quot;生成拓扑有序的学习路径&quot;&quot;&quot;</p>
+<p>    visited = set()</p>
+<p>    path = []</p>
+<p>    def dfs(node):</p>
+<p>        if node in visited:</p>
+<p>            return</p>
+<p>        visited.add(node)</p>
+<p>        # 先学习所有前置知识点</p>
+<p>        for prereq in get_prerequisites(node, graph):</p>
+<p>            dfs(prereq)</p>
+<p>        path.append(node)</p>
+<p>    for node in graph.nodes:</p>
+<p>        dfs(node)</p>
+<p>    return path</p>
+<p>```</p>
+<p>### 4.2 最短学习路径</p>
+<p>```python</p>
+<p>def shortest_learning_path(target, graph):</p>
+<p>    &quot;&quot;&quot;计算到达目标知识点的最短学习路径&quot;&quot;&quot;</p>
+<p>    # Dijkstra算法</p>
+<p>    distances = {node: float(&#x27;inf&#x27;) for node in graph.nodes}</p>
+<p>    distances[target] = 0</p>
+<p>    pq = [(0, target)]</p>
+<p>    while pq:</p>
+<p>        dist, node = heapq.heappop(pq)</p>
+<p>        for prereq in get_prerequisites(node, graph):</p>
+<p>            new_dist = dist + get_learning_time(prereq)</p>
+<p>            if new_dist &lt; distances[prereq]:</p>
+<p>                distances[prereq] = new_dist</p>
+<p>                heapq.heappush(pq, (new_dist, prereq))</p>
+<p>    return distances</p>
+<p>```</p>
+<p>### 4.3 个性化学习路径</p>
+<p>```json</p>
+<p>{</p>
+<p>  &quot;learning_path&quot;: {</p>
+<p>    &quot;student_profile&quot;: {</p>
+<p>      &quot;background&quot;: &quot;生物学本科&quot;,</p>
+<p>      &quot;known_concepts&quot;: [&quot;C01.01&quot;, &quot;C01.02&quot;],</p>
+<p>      &quot;target_concepts&quot;: [&quot;C02.01&quot;, &quot;C02.03&quot;, &quot;A02.01&quot;],</p>
+<p>      &quot;available_time&quot;: 120,  // 分钟</p>
+<p>      &quot;preferred_difficulty&quot;: &quot;medium&quot;</p>
+<p>    },</p>
+<p>    &quot;generated_path&quot;: [</p>
+<p>      {</p>
+<p>        &quot;step&quot;: 1,</p>
+<p>        &quot;concept&quot;: &quot;C02.01&quot;,</p>
+<p>        &quot;name&quot;: &quot;DNA复制&quot;,</p>
+<p>        &quot;estimated_time&quot;: 45,</p>
+<p>        &quot;reason&quot;: &quot;目标概念，前置知识已掌握&quot;</p>
+<p>      },</p>
+<p>      {</p>
+<p>        &quot;step&quot;: 2,</p>
+<p>        &quot;concept&quot;: &quot;C02.03&quot;,</p>
+<p>        &quot;name&quot;: &quot;DNA聚合酶&quot;,</p>
+<p>        &quot;estimated_time&quot;: 40,</p>
+<p>        &quot;reason&quot;: &quot;DNA复制的核心执行者&quot;</p>
+<p>      },</p>
+<p>      {</p>
+<p>        &quot;step&quot;: 3,</p>
+<p>        &quot;concept&quot;: &quot;A02.01&quot;,</p>
+<p>        &quot;name&quot;: &quot;PCR技术&quot;,</p>
+<p>        &quot;estimated_time&quot;: 35,</p>
+<p>        &quot;reason&quot;: &quot;基于DNA复制原理的应用技术&quot;</p>
+<p>      }</p>
+<p>    ],</p>
+<p>    &quot;total_time&quot;: 120,</p>
+<p>    &quot;coverage&quot;: &quot;100%&quot;</p>
+<p>  }</p>
+<p>}</p>
+<p>```</p>
+<p>---</p>
+<h2>五、关键节点识别</h2>
+<p>### 5.1 枢纽概念</p>
 <p>枢纽概念是被大量其他概念依赖的核心概念：</p>
-<pre><code class="language-python">def find_hub_concepts(graph, top_n=10):
-    &quot;&quot;&quot;识别枢纽概念（高入度节点）&quot;&quot;&quot;
-    in_degrees = {}
-    for node in graph.nodes:
-        in_degrees[node] = len(get_dependents(node, graph))
-
-    return sorted(in_degrees.items(), 
-                  key=lambda x: x[1], 
-                  reverse=True)[:top_n]
-</code></pre>
-<p><strong>典型枢纽概念</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>概念</th>
-<th>被依赖数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DNA结构</td>
-<td>15</td>
-<td>后续所有DNA相关概念的基础</td>
-</tr>
-<tr>
-<td>中心法则</td>
-<td>12</td>
-<td>遗传信息流动的核心框架</td>
-</tr>
-<tr>
-<td>基因表达</td>
-<td>10</td>
-<td>转录和翻译的上位概念</td>
-</tr>
-<tr>
-<td>DNA聚合酶</td>
-<td>8</td>
-<td>多种技术的理论基础</td>
-</tr>
-</tbody>
-</table>
-<h3 id="52">5.2 瓶颈概念</h3>
+<p>```python</p>
+<p>def find_hub_concepts(graph, top_n=10):</p>
+<p>    &quot;&quot;&quot;识别枢纽概念（高入度节点）&quot;&quot;&quot;</p>
+<p>    in_degrees = {}</p>
+<p>    for node in graph.nodes:</p>
+<p>        in_degrees[node] = len(get_dependents(node, graph))</p>
+<p>    return sorted(in_degrees.items(), </p>
+<p>                  key=lambda x: x[1], </p>
+<p>                  reverse=True)[:top_n]</p>
+<p>```</p>
+<p>**典型枢纽概念**：</p>
+<p>| 概念 | 被依赖数 | 说明 |</p>
+<p>|------|----------|------|</p>
+<p>| DNA结构 | 15 | 后续所有DNA相关概念的基础 |</p>
+<p>| 中心法则 | 12 | 遗传信息流动的核心框架 |</p>
+<p>| 基因表达 | 10 | 转录和翻译的上位概念 |</p>
+<p>| DNA聚合酶 | 8 | 多种技术的理论基础 |</p>
+<p>### 5.2 瓶颈概念</p>
 <p>瓶颈概念是通往多个高级概念的必经之路：</p>
-<pre><code class="language-python">def find_bottleneck_concepts(graph):
-    &quot;&quot;&quot;识别瓶颈概念（高介数中心性）&quot;&quot;&quot;
-    betweenness = calculate_betweenness_centrality(graph)
-    return sorted(betweenness.items(),
-                  key=lambda x: x[1],
-                  reverse=True)
-</code></pre>
-<h3 id="53">5.3 前置链长度</h3>
-<pre><code class="language-python">def prerequisite_chain_length(concept, graph, memo={}):
-    &quot;&quot;&quot;计算概念的前置链长度&quot;&quot;&quot;
-    if concept in memo:
-        return memo[concept]
-
-    prereqs = get_prerequisites(concept, graph)
-    if not prereqs:
-        memo[concept] = 0
-        return 0
-
-    max_length = max(prerequisite_chain_length(p, graph, memo) 
-                     for p in prereqs)
-    memo[concept] = max_length + 1
-    return memo[concept]
-</code></pre>
-<p><strong>前置链长度分布</strong>：
-- 0级：基础概念（如"细胞"、"分子"）
-- 1级：直接依赖基础概念
-- 2级：依赖1级概念
-- 3级+：高级概念</p>
-<hr />
-<h2 id="_6">六、依赖图验证</h2>
-<h3 id="61">6.1 环检测</h3>
+<p>```python</p>
+<p>def find_bottleneck_concepts(graph):</p>
+<p>    &quot;&quot;&quot;识别瓶颈概念（高介数中心性）&quot;&quot;&quot;</p>
+<p>    betweenness = calculate_betweenness_centrality(graph)</p>
+<p>    return sorted(betweenness.items(),</p>
+<p>                  key=lambda x: x[1],</p>
+<p>                  reverse=True)</p>
+<p>```</p>
+<p>### 5.3 前置链长度</p>
+<p>```python</p>
+<p>def prerequisite_chain_length(concept, graph, memo={}):</p>
+<p>    &quot;&quot;&quot;计算概念的前置链长度&quot;&quot;&quot;</p>
+<p>    if concept in memo:</p>
+<p>        return memo[concept]</p>
+<p>    prereqs = get_prerequisites(concept, graph)</p>
+<p>    if not prereqs:</p>
+<p>        memo[concept] = 0</p>
+<p>        return 0</p>
+<p>    max_length = max(prerequisite_chain_length(p, graph, memo) </p>
+<p>                     for p in prereqs)</p>
+<p>    memo[concept] = max_length + 1</p>
+<p>    return memo[concept]</p>
+<p>```</p>
+<p>**前置链长度分布**：</p>
+<p>- 0级：基础概念（如&quot;细胞&quot;、&quot;分子&quot;）</p>
+<p>- 1级：直接依赖基础概念</p>
+<p>- 2级：依赖1级概念</p>
+<p>- 3级+：高级概念</p>
+<p>---</p>
+<h2>六、依赖图验证</h2>
+<p>### 6.1 环检测</p>
 <p>依赖图必须是无环的（DAG）：</p>
-<pre><code class="language-python">def detect_cycles(graph):
-    &quot;&quot;&quot;检测依赖图中的环&quot;&quot;&quot;
-    visited = set()
-    rec_stack = set()
-    cycles = []
-
-    def dfs(node, path):
-        visited.add(node)
-        rec_stack.add(node)
-        path.append(node)
-
-        for neighbor in get_dependents(node, graph):
-            if neighbor not in visited:
-                dfs(neighbor, path)
-            elif neighbor in rec_stack:
-                # 发现环
-                cycle_start = path.index(neighbor)
-                cycles.append(path[cycle_start:] + [neighbor])
-
-        path.pop()
-        rec_stack.remove(node)
-
-    for node in graph.nodes:
-        if node not in visited:
-            dfs(node, [])
-
-    return cycles
-</code></pre>
-<h3 id="62">6.2 完整性检查</h3>
-<pre><code class="language-python">def validate_dependencies(graph):
-    &quot;&quot;&quot;验证依赖图的完整性&quot;&quot;&quot;
-    issues = []
-
-    # 检查1：所有被依赖的概念都存在
-    for edge in graph.edges:
-        if edge.from not in graph.nodes:
-            issues.append(f&quot;缺失节点: {edge.from}&quot;)
-        if edge.to not in graph.nodes:
-            issues.append(f&quot;缺失节点: {edge.to}&quot;)
-
-    # 检查2：无环
-    cycles = detect_cycles(graph)
-    if cycles:
-        issues.append(f&quot;发现环: {cycles}&quot;)
-
-    # 检查3：所有概念可达（从基础概念出发）
-    roots = [n for n in graph.nodes if not get_prerequisites(n, graph)]
-    if not roots:
-        issues.append(&quot;无根节点（所有概念都有前置）&quot;)
-
-    # 检查4：依赖强度合理
-    for edge in graph.edges:
-        if edge.strength &lt; 1 or edge.strength &gt; 9:
-            issues.append(f&quot;依赖强度异常: {edge}&quot;)
-
-    return issues
-</code></pre>
-<hr />
-<h2 id="_7">七、工具链</h2>
-<h3 id="71">7.1 脚本一览</h3>
-<table>
-<thead>
-<tr>
-<th>脚本</th>
-<th>位置</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>prereq_extract.py</code></td>
-<td>scripts/</td>
-<td>从标注文本提取依赖关系</td>
-</tr>
-<tr>
-<td><code>prereq_graph_build.py</code></td>
-<td>scripts/</td>
-<td>构建依赖图</td>
-</tr>
-<tr>
-<td><code>prereq_analyze.py</code></td>
-<td>scripts/</td>
-<td>分析依赖图（枢纽、瓶颈）</td>
-</tr>
-<tr>
-<td><code>learning_path_gen.py</code></td>
-<td>scripts/</td>
-<td>生成学习路径</td>
-</tr>
-<tr>
-<td><code>lint_prereq.py</code></td>
-<td>scripts/</td>
-<td>依赖图验证</td>
-</tr>
-</tbody>
-</table>
-<h3 id="72">7.2 处理流程</h3>
-<pre><code class="language-bash"># 1. 提取依赖关系
-python scripts/prereq_extract.py
-
-# 2. 构建依赖图
-python scripts/prereq_graph_build.py
-
-# 3. 分析依赖图
-python scripts/prereq_analyze.py
-
-# 4. 生成学习路径
-python scripts/learning_path_gen.py --target C02.03
-
-# 5. 验证
-python scripts/lint_prereq.py
-</code></pre>
-<hr />
-<h2 id="_8">八、质量检查</h2>
-<h3 id="81-lint_prereqpy">8.1 lint_prereq.py 检查项</h3>
-<p><strong>依赖图结构检查</strong>：
-- 无环（DAG）
-- 所有节点可达
-- 依赖强度合理（1-9）</p>
-<p><strong>依赖逻辑检查</strong>：
-- 无冗余依赖（A→B→C，则不需要A→C）
-- 无矛盾依赖（A依赖B，B又依赖A）
-- 难度递增（前置概念难度 ≤ 后置概念难度）</p>
-<p><strong>常见问题及修复</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>问题</th>
-<th>表现</th>
-<th>修复方式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>依赖环</td>
-<td>A→B→C→A</td>
-<td>识别并打破环</td>
-</tr>
-<tr>
-<td>孤立节点</td>
-<td>无前置也无后置</td>
-<td>检查是否为孤立概念，或补充依赖</td>
-</tr>
-<tr>
-<td>难度倒置</td>
-<td>前置比后置更难</td>
-<td>调整难度评级或依赖方向</td>
-</tr>
-<tr>
-<td>冗余依赖</td>
-<td>存在传递闭包中的直接边</td>
-<td>删除冗余边</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="_9">九、扩展到其他课程</h2>
-<table>
-<thead>
-<tr>
-<th>课程类型</th>
-<th>典型依赖链</th>
-<th>特殊考虑</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数学课程</td>
-<td>定理依赖、证明链</td>
-<td>严格顺序，少并行</td>
-</tr>
-<tr>
-<td>编程课程</td>
-<td>语法→算法→项目</td>
-<td>实践依赖理论</td>
-</tr>
-<tr>
-<td>语言课程</td>
-<td>词汇→语法→阅读</td>
-<td>技能并行发展</td>
-</tr>
-<tr>
-<td>实验课程</td>
-<td>理论→操作→分析</td>
-<td>安全前置要求</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p><em>本SKILL文档基于分子生物学课程的前置依赖构建经验提炼。</em>
-<em>核心产出：~450知识点，~600依赖边，平均前置链长度2.5。</em></p></article></main>
+<p>```python</p>
+<p>def detect_cycles(graph):</p>
+<p>    &quot;&quot;&quot;检测依赖图中的环&quot;&quot;&quot;</p>
+<p>    visited = set()</p>
+<p>    rec_stack = set()</p>
+<p>    cycles = []</p>
+<p>    def dfs(node, path):</p>
+<p>        visited.add(node)</p>
+<p>        rec_stack.add(node)</p>
+<p>        path.append(node)</p>
+<p>        for neighbor in get_dependents(node, graph):</p>
+<p>            if neighbor not in visited:</p>
+<p>                dfs(neighbor, path)</p>
+<p>            elif neighbor in rec_stack:</p>
+<p>                # 发现环</p>
+<p>                cycle_start = path.index(neighbor)</p>
+<p>                cycles.append(path[cycle_start:] + [neighbor])</p>
+<p>        path.pop()</p>
+<p>        rec_stack.remove(node)</p>
+<p>    for node in graph.nodes:</p>
+<p>        if node not in visited:</p>
+<p>            dfs(node, [])</p>
+<p>    return cycles</p>
+<p>```</p>
+<p>### 6.2 完整性检查</p>
+<p>```python</p>
+<p>def validate_dependencies(graph):</p>
+<p>    &quot;&quot;&quot;验证依赖图的完整性&quot;&quot;&quot;</p>
+<p>    issues = []</p>
+<p>    # 检查1：所有被依赖的概念都存在</p>
+<p>    for edge in graph.edges:</p>
+<p>        if edge.from not in graph.nodes:</p>
+<p>            issues.append(f&quot;缺失节点: {edge.from}&quot;)</p>
+<p>        if edge.to not in graph.nodes:</p>
+<p>            issues.append(f&quot;缺失节点: {edge.to}&quot;)</p>
+<p>    # 检查2：无环</p>
+<p>    cycles = detect_cycles(graph)</p>
+<p>    if cycles:</p>
+<p>        issues.append(f&quot;发现环: {cycles}&quot;)</p>
+<p>    # 检查3：所有概念可达（从基础概念出发）</p>
+<p>    roots = [n for n in graph.nodes if not get_prerequisites(n, graph)]</p>
+<p>    if not roots:</p>
+<p>        issues.append(&quot;无根节点（所有概念都有前置）&quot;)</p>
+<p>    # 检查4：依赖强度合理</p>
+<p>    for edge in graph.edges:</p>
+<p>        if edge.strength &lt; 1 or edge.strength &gt; 9:</p>
+<p>            issues.append(f&quot;依赖强度异常: {edge}&quot;)</p>
+<p>    return issues</p>
+<p>```</p>
+<p>---</p>
+<h2>七、工具链</h2>
+<p>### 7.1 脚本一览</p>
+<p>| 脚本 | 位置 | 功能 |</p>
+<p>|------|------|------|</p>
+<p>| `prereq_extract.py` | scripts/ | 从标注文本提取依赖关系 |</p>
+<p>| `prereq_graph_build.py` | scripts/ | 构建依赖图 |</p>
+<p>| `prereq_analyze.py` | scripts/ | 分析依赖图（枢纽、瓶颈） |</p>
+<p>| `learning_path_gen.py` | scripts/ | 生成学习路径 |</p>
+<p>| `lint_prereq.py` | scripts/ | 依赖图验证 |</p>
+<p>### 7.2 处理流程</p>
+<p>```bash</p>
+<h1>1. 提取依赖关系</h1>
+<p>python scripts/prereq_extract.py</p>
+<h1>2. 构建依赖图</h1>
+<p>python scripts/prereq_graph_build.py</p>
+<h1>3. 分析依赖图</h1>
+<p>python scripts/prereq_analyze.py</p>
+<h1>4. 生成学习路径</h1>
+<p>python scripts/learning_path_gen.py --target C02.03</p>
+<h1>5. 验证</h1>
+<p>python scripts/lint_prereq.py</p>
+<p>```</p>
+<p>---</p>
+<h2>八、质量检查</h2>
+<p>### 8.1 lint_prereq.py 检查项</p>
+<p>**依赖图结构检查**：</p>
+<p>- 无环（DAG）</p>
+<p>- 所有节点可达</p>
+<p>- 依赖强度合理（1-9）</p>
+<p>**依赖逻辑检查**：</p>
+<p>- 无冗余依赖（A→B→C，则不需要A→C）</p>
+<p>- 无矛盾依赖（A依赖B，B又依赖A）</p>
+<p>- 难度递增（前置概念难度 ≤ 后置概念难度）</p>
+<p>**常见问题及修复**：</p>
+<p>| 问题 | 表现 | 修复方式 |</p>
+<p>|------|------|---------|</p>
+<p>| 依赖环 | A→B→C→A | 识别并打破环 |</p>
+<p>| 孤立节点 | 无前置也无后置 | 检查是否为孤立概念，或补充依赖 |</p>
+<p>| 难度倒置 | 前置比后置更难 | 调整难度评级或依赖方向 |</p>
+<p>| 冗余依赖 | 存在传递闭包中的直接边 | 删除冗余边 |</p>
+<p>---</p>
+<h2>九、扩展到其他课程</h2>
+<p>| 课程类型 | 典型依赖链 | 特殊考虑 |</p>
+<p>|----------|------------|----------|</p>
+<p>| 数学课程 | 定理依赖、证明链 | 严格顺序，少并行 |</p>
+<p>| 编程课程 | 语法→算法→项目 | 实践依赖理论 |</p>
+<p>| 语言课程 | 词汇→语法→阅读 | 技能并行发展 |</p>
+<p>| 实验课程 | 理论→操作→分析 | 安全前置要求 |</p>
+<p>---</p>
+<p>*本SKILL文档基于分子生物学课程的前置依赖构建经验提炼。*</p>
+<p>*核心产出：~450知识点，~600依赖边，平均前置链长度2.5。*</p></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

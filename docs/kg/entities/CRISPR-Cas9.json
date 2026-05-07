@@ -1,0 +1,44 @@
+{
+  "id": "crispr-cas9",
+  "nameEn": "CRISPR-Cas9",
+  "category": "技术",
+  "chapter": "第6章",
+  "importance": "core-important",
+  "keyConcepts": [
+    {
+      "term": "sgRNA",
+      "definition": "单引导RNA，由crRNA和tracrRNA融合而成，负责识别靶DNA序列并引导Cas9"
+    },
+    {
+      "term": "Cas9蛋白",
+      "definition": "CRISPR系统的效应核酸酶，含RuvC和HNH两个核酸酶结构域，各切割一条DNA链"
+    },
+    {
+      "term": "PAM序列",
+      "definition": "原型间隔序列邻近基序，SpCas9识别NGG，是Cas9切割的必要前提"
+    },
+    {
+      "term": "NHEJ修复",
+      "definition": "非同源末端连接，切割后细胞的默认修复途径，常引入indel导致基因敲除"
+    },
+    {
+      "term": "HDR修复",
+      "definition": "同源定向修复，提供修复模板可实现精确的基因编辑"
+    }
+  ],
+  "keyPoints": [
+    "源于细菌适应性免疫系统的革命性基因编辑技术",
+    "sgRNA识别靶序列（需PAM），Cas9切割DNA双链",
+    "Doudna和Charpentier获2020年诺贝尔化学奖",
+    "应用：基因敲除、基因敲入、碱基编辑、基因调控、表观遗传编辑"
+  ],
+  "relatedEntities": [
+    "DNA",
+    "基因工程",
+    "DNA 修复",
+    "非同源末端连接",
+    "同源重组修复",
+    "载体"
+  ],
+  "definition": "CRISPR-Cas9是目前应用最广泛的基因编辑技术，源自细菌和古菌的CRISPR（规律成簇间隔短回文重复序列）适应性免疫系统。在这一系统中，Cas9蛋白在单引导RNA（sgRNA）的引导下识别靶标DNA序列——sgRNA的5'端20个核苷酸（间隔序列）与靶DNA互补配对，同时要求靶序列紧邻一个短PAM基序（SpCas9为5'-NGG-3'）。识别成功后，Cas9的RuvC和HNH结构域分别切割DNA的非靶链和靶链，产生双链断裂（DSB）。细胞的DNA损伤修复机制随后被激活：非同源末端连接（NHEJ）途径在断裂位点引入随机插入/缺失实现基因敲除，而同源定向修复（HDR）途径可利用外源修复模板实现精确的基因替换或插入。自2012年Jinek等人证明Cas9可编程切割后，CRISPR已衍生出碱基编辑器（CBE/ABE）、先导编辑（Prime Editing）、CRISPRi/a（转录干扰/激活）等众多变体，彻底改变了功能基因组学和基因治疗研究。"
+}

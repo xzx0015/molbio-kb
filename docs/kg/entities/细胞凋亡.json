@@ -5,14 +5,32 @@
   "category": "过程",
   "chapter": "第5章",
   "importance": "core-major",
-  "definition": "细胞凋亡是程序性细胞死亡，是细胞主动、有序地结束生命的过程，对发育、组织稳态和防御至关重要，不引起炎症反应。",
+  "definition": "细胞凋亡（Apoptosis）是I型程序性细胞死亡，是细胞在基因调控下主动、有序地自我消亡的过程，对多细胞生物的发育、组织稳态和疾病防御至关重要，其最显著特征是细胞膜完整性的保持，因此不会引发炎症反应。凋亡由两条核心信号通路介导：①外在途径（死亡受体途径）——配体（FasL、TNF-α、TRAIL）结合细胞表面死亡受体后，通过FADD衔接蛋白招募并激活启动子caspase-8；②内在途径（线粒体途径）——DNA损伤、氧化应激、生长因子撤除等信号激活促凋亡BCL-2家族成员（BAX/BAK）在线粒体外膜形成孔道，释放细胞色素c，与Apaf-1和caspase-9组装形成凋亡体，激活下游执行子caspase-3/-7。执行子caspase通过切割数百种底物蛋白（如ICAD释放CAD酶进行DNA片段化、PARP失活终止DNA修复）产生典型的凋亡形态学特征：细胞皱缩、膜起泡、染色质凝缩、DNA梯状断裂和凋亡小体形成。凋亡与癌症、自身免疫病和神经退行性疾病密切关联：癌变需要凋亡逃逸，p53是最著名的促凋亡抑癌基因，BCL-2在滤泡性淋巴瘤中因染色体t(14;18)易位而过表达。",
   "keyConcepts": [
-    {"term": "caspase", "definition": "半胱天冬氨酸蛋白酶，凋亡的执行者"},
-    {"term": "凋亡小体", "definition": "凋亡细胞形成的膜包被小体，被吞噬细胞清除"},
-    {"term": "线粒体途径", "definition": "通过线粒体释放细胞色素c激活caspase的凋亡途径"},
-    {"term": "死亡受体途径", "definition": "通过死亡受体（如Fas）激活caspase的凋亡途径"},
-    {"term": "Bcl-2家族", "definition": "调控线粒体途径的蛋白家族，包括促凋亡和抗凋亡成员"},
-    {"term": "DNA ladder", "definition": "凋亡细胞DNA降解形成的180bp整数倍片段"}
+    {
+      "term": "caspase",
+      "definition": "半胱天冬氨酸蛋白酶，凋亡的执行者"
+    },
+    {
+      "term": "凋亡小体",
+      "definition": "凋亡细胞形成的膜包被小体，被吞噬细胞清除"
+    },
+    {
+      "term": "线粒体途径",
+      "definition": "通过线粒体释放细胞色素c激活caspase的凋亡途径"
+    },
+    {
+      "term": "死亡受体途径",
+      "definition": "通过死亡受体（如Fas）激活caspase的凋亡途径"
+    },
+    {
+      "term": "Bcl-2家族",
+      "definition": "调控线粒体途径的蛋白家族，包括促凋亡和抗凋亡成员"
+    },
+    {
+      "term": "DNA ladder",
+      "definition": "凋亡细胞DNA降解形成的180bp整数倍片段"
+    }
   ],
   "keyPoints": [
     "凋亡是程序性、受控的细胞死亡过程",
@@ -21,7 +39,13 @@
     "凋亡细胞形成凋亡小体，被吞噬细胞清除，不引起炎症",
     "caspase级联反应是凋亡的核心机制"
   ],
-  "relatedEntities": ["线粒体", "caspase", "细胞周期", "基因调控", "DNA修复"],
+  "relatedEntities": [
+    "线粒体",
+    "caspase",
+    "细胞周期",
+    "基因调控",
+    "DNA修复"
+  ],
   "references": [
     "Kerr JF, Wyllie AH, Currie AR. Apoptosis: a basic biological phenomenon. Br J Cancer, 1972"
   ]

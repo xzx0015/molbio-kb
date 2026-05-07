@@ -1,0 +1,33 @@
+{
+  "id": "holliday",
+  "nameEn": "Holliday Junction Model",
+  "category": "核心理论",
+  "chapter": "第5章",
+  "importance": "core-major",
+  "definition": "Holliday模型由Robin Holliday于1964年提出，是描述同源重组过程中DNA链交换和分支迁移的经典分子模型。其核心核心特征为Holliday连接体（Holliday junction）——重组过程中四条DNA单链在两个同源双链分子间交换配对形成的四臂十字交叉结构。模型描述重组过程为：①两个同源DNA双链在同一位置产生单链切口→②单链从各自双链解离→③异源单链通过互补碱基配对侵入对方双链形成Holliday连接体→④分支迁移扩展异源双链区→⑤Holliday连接体被解离酶（resolvase）以两种方式之一切割：水平切割（horizontally）产生非交换产物（patch），垂直切割（vertically）产生交换产物（splice/crossover）。该模型经Meselson-Radding修正（1975年）和Szostak双链断裂修复模型（1983年）的发展，已成为理解减数分裂同源重组和DSB修复的分子框架。",
+  "keyConcepts": [
+    {
+      "term": "Holliday连接体",
+      "definition": "四臂DNA十字交叉结构，由链交换和分支迁移形成的重组中间体"
+    },
+    {
+      "term": "分支迁移",
+      "definition": "Holliday连接体沿DNA移动的过程，扩展或收缩异源双链区"
+    },
+    {
+      "term": "解离",
+      "definition": "解离酶在Holliday连接体处切割决定是否产生染色体交叉"
+    }
+  ],
+  "keyPoints": [
+    "经典的同源重组分子模型（1964年）",
+    "核心特征是Holliday连接体四臂结构",
+    "分支迁移改变异源双链区长度",
+    "解离方式决定重组产物是否含交叉（crossover）"
+  ],
+  "relatedEntities": [
+    "DNA 重组",
+    "同源重组修复",
+    "非同源末端连接"
+  ]
+}

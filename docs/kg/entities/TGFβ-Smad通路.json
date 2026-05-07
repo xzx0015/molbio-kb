@@ -1,0 +1,34 @@
+{
+  "id": "tgfb",
+  "name": "TGF-β/Smad通路",
+  "nameEn": "TGF-β/Smad Pathway",
+  "category": "机制",
+  "chapter": "第7章",
+  "importance": "core-major",
+  "keyConcepts": [
+    {
+      "term": "TGF-β受体",
+      "definition": "Ⅰ型和Ⅱ型丝/苏氨酸激酶受体，配体结合后Ⅱ型磷酸化激活Ⅰ型"
+    },
+    {
+      "term": "R-Smad",
+      "definition": "受体调控型Smad（Smad2/3响应TGF-β，Smad1/5/8响应BMP）"
+    },
+    {
+      "term": "Co-Smad",
+      "definition": "Smad4，与磷酸化R-Smad形成异源复合物入核调控靶基因"
+    }
+  ],
+  "keyPoints": [
+    "TGF-β超家族通过受体Smad通路调控增殖/分化/凋亡",
+    "在正常上皮中抑制增殖，在晚期肿瘤中促进侵袭转移",
+    "Smad4是胰腺癌中的高频突变肿瘤抑制因子"
+  ],
+  "relatedEntities": [
+    "信号转导",
+    "转录因子",
+    "细胞凋亡",
+    "细胞周期"
+  ],
+  "definition": "TGF-β/Smad通路是TGF-β超家族信号转导的经典胞内通路，在胚胎发育、免疫调节和肿瘤发生中发挥双面性作用。配体结合诱导Ⅱ型受体磷酸化Ⅰ型受体，活化的Ⅰ型受体磷酸化R-Smad（Smad2/3），磷酸化R-Smad与Smad4形成异源复合物入核，与DNA结合伴侣转录因子合作调控靶基因。TGF-β在肿瘤中表现双重角色：正常和癌前细胞中抑制增殖（诱导p15/p21，抑制c-Myc）；晚期肿瘤中反而促进EMT和转移。慢性炎症和纤维化中TGF-β过度活化驱动ECM沉积。"
+}

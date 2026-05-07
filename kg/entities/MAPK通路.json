@@ -1,0 +1,38 @@
+{
+  "id": "mapk",
+  "nameEn": "MAPK Pathway",
+  "category": "机制",
+  "chapter": "第7章",
+  "importance": "core-major",
+  "keyConcepts": [
+    {
+      "term": "Ras",
+      "definition": "小G蛋白，MAPK通路的关键分子开关，约30%人类癌症中存在RAS突变"
+    },
+    {
+      "term": "Raf",
+      "definition": "MAPKKK，被Ras-GTP招募至质膜激活，是首个被鉴定的癌基因编码的丝/苏氨酸激酶"
+    },
+    {
+      "term": "MEK",
+      "definition": "MAPKK，磷酸化ERK的活化环T-E-Y基序"
+    },
+    {
+      "term": "ERK",
+      "definition": "MAPK，进入核内磷酸化多种转录因子（Elk-1、c-Fos、c-Myc）调控基因表达"
+    }
+  ],
+  "keyPoints": [
+    "Ras→Raf→MEK→ERK三级激酶级联",
+    "响应生长因子（EGF、PDGF等）信号促进细胞增殖",
+    "RAS和BRAF是癌症中的高频突变激酶",
+    "MEK和BRAF抑制剂用于黑色素瘤等靶向治疗"
+  ],
+  "relatedEntities": [
+    "信号转导",
+    "转录因子",
+    "细胞周期",
+    "基因调控"
+  ],
+  "definition": "MAPK（丝裂原活化蛋白激酶）通路是进化保守的胞内信号转导核心模块，将细胞外生长因子和促分裂信号通过三级激酶级联（MAPKKK→MAPKK→MAPK）传递至核内转录因子，调控细胞增殖、分化和存活。经典Ras-Raf-MEK-ERK通路的激活顺序为：配体（如EGF）结合RTK→接头蛋白Grb2-SOS激活Ras（GDP→GTP交换）→Ras-GTP招募Raf（MAPKKK）至质膜→Raf磷酸化激活MEK1/2（MAPKK）→MEK磷酸化ERK1/2（MAPK）活化环T-E-Y基序→活化的ERK二聚化后转位入核，磷酸化数十种底物包括转录因子（Elk-1、c-Myc）协同激活即早基因表达。该通路在约三分之一的人类癌症中异常激活：KRAS（第12/13密码子）突变在胰腺癌（>90%）和结直肠癌中高频出现，BRAF V600E突变驱动约50%的黑色素瘤，使MEK和BRAF抑制剂（曲美替尼、维莫非尼）成为重要的靶向抗癌药物。"
+}

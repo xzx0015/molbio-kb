@@ -161,929 +161,729 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1 id="skill-06c-">SKILL 06c: 知识点-题库关联系统</h1>
-<blockquote>
-<p>基于知识图谱的题目多标签标注、难度分级和知识点覆盖分析系统。</p>
-</blockquote>
-<hr />
-<h2 id="_1">一、系统概述</h2>
-<h3 id="11">1.1 设计目标</h3>
-<ul>
-<li><strong>精准标注</strong>：每道题目精确标注考查的知识点和认知层次</li>
-<li><strong>难度分级</strong>：科学的难度评估和自适应调整机制</li>
-<li><strong>覆盖分析</strong>：全面分析题库对知识点的覆盖情况</li>
-<li><strong>智能推荐</strong>：基于薄弱知识点的个性化题目推荐</li>
-</ul>
-<h3 id="12">1.2 核心功能</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────────┐
-│                     知识点-题库关联系统                          │
-├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │
-│  │ 多标签标注   │  │ 难度分级    │  │ 覆盖分析    │  │ 智能推荐│ │
-│  │             │  │             │  │             │  │        │ │
-│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │
-├─────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
-│  │ 题目录入    │  │ 标签管理    │  │ 统计分析    │             │
-│  │             │  │             │  │             │             │
-│  └─────────────┘  └─────────────┘  └─────────────┘             │
-└─────────────────────────────────────────────────────────────────┘
-</code></pre>
-<hr />
-<h2 id="_2">二、题目多标签标注</h2>
-<h3 id="21">2.1 标签体系</h3>
-<h4 id="211">2.1.1 知识点标签</h4>
-<pre><code class="language-python"># 知识点标签结构
-question_tags = {
-    &quot;primary_concept&quot;: &quot;主要考查知识点&quot;,      # 1个
-    &quot;secondary_concepts&quot;: [&quot;次要知识点&quot;],     # 0-n个
-    &quot;prerequisite_concepts&quot;: [&quot;涉及的前置知识&quot;], # 0-n个
-    &quot;application_concepts&quot;: [&quot;应用知识点&quot;]     # 0-n个
-}
-</code></pre>
-<p><strong>标注示例</strong>：</p>
-<pre><code class="language-yaml">题目: &quot;DNA复制时，后随链上合成的短片段被称为什么？&quot;
-
-知识点标签:
-  primary_concept: &quot;冈崎片段&quot;              # 直接考查
-  secondary_concepts:                      # 相关考查
-    - &quot;DNA复制&quot;
-    - &quot;后随链&quot;
-  prerequisite_concepts:                   # 需要了解
-    - &quot;DNA结构&quot;
-    - &quot;碱基配对&quot;
-  application_concepts: []                  # 无应用拓展
-
-认知层次标签:
-  bloom_level: &quot;记忆&quot;                      # 布鲁姆认知层次
-  cognitive_depth: 1                       # 认知深度 1-5
-
-难度标签:
-  difficulty: &quot;L2&quot;                         # L1-L5
-  discrimination: 0.65                     # 区分度
-
-题型标签:
-  question_type: &quot;单选题&quot;
-  answer_type: &quot;概念识别&quot;
-</code></pre>
-<h4 id="212">2.1.2 认知层次标签（布鲁姆分类法）</h4>
-<table>
-<thead>
-<tr>
-<th>层次</th>
-<th>说明</th>
-<th>关键词</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>记忆</strong></td>
-<td>回忆事实、术语</td>
-<td>是什么、定义、名称</td>
-<td>DNA的全称是？</td>
-</tr>
-<tr>
-<td><strong>理解</strong></td>
-<td>解释概念、原理</td>
-<td>为什么、解释、说明</td>
-<td>为什么DNA复制是半保留的？</td>
-</tr>
-<tr>
-<td><strong>应用</strong></td>
-<td>在新情境使用知识</td>
-<td>如何、应用、举例</td>
-<td>如何设计PCR引物？</td>
-</tr>
-<tr>
-<td><strong>分析</strong></td>
-<td>分解、比较、关联</td>
-<td>比较、区别、分析</td>
-<td>比较DNA复制与转录的异同</td>
-</tr>
-<tr>
-<td><strong>评价</strong></td>
-<td>判断、评估</td>
-<td>评价、判断、选择</td>
-<td>评价该实验设计的合理性</td>
-</tr>
-<tr>
-<td><strong>创造</strong></td>
-<td>综合、设计、创新</td>
-<td>设计、提出、构建</td>
-<td>设计一个验证半保留复制的实验</td>
-</tr>
-</tbody>
-</table>
-<h4 id="213">2.1.3 题型标签</h4>
-<table>
-<thead>
-<tr>
-<th>一级分类</th>
-<th>二级分类</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>客观题</strong></td>
-<td>单选题</td>
-<td>只有一个正确答案</td>
-</tr>
-<tr>
-<td></td>
-<td>多选题</td>
-<td>多个正确答案</td>
-</tr>
-<tr>
-<td></td>
-<td>判断题</td>
-<td>正确/错误判断</td>
-</tr>
-<tr>
-<td></td>
-<td>填空题</td>
-<td>填写关键术语</td>
-</tr>
-<tr>
-<td><strong>主观题</strong></td>
-<td>简答题</td>
-<td>简要回答概念</td>
-</tr>
-<tr>
-<td></td>
-<td>论述题</td>
-<td>详细阐述原理</td>
-</tr>
-<tr>
-<td></td>
-<td>计算题</td>
-<td>数值计算</td>
-</tr>
-<tr>
-<td></td>
-<td>案例分析</td>
-<td>分析实际案例</td>
-</tr>
-<tr>
-<td><strong>实验题</strong></td>
-<td>实验设计</td>
-<td>设计实验方案</td>
-</tr>
-<tr>
-<td></td>
-<td>实验分析</td>
-<td>分析实验结果</td>
-</tr>
-</tbody>
-</table>
-<h3 id="22">2.2 标注流程</h3>
-<pre><code>┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
-│ 题目录入 │ ──→│ 自动标注 │ ──→│ 人工审核 │ ──→│ 质量检查 │ ──→│ 发布入库 │
-└─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘
-                    │               │               │
-                    ↓               ↓               ↓
-              ┌─────────┐     ┌─────────┐     ┌─────────┐
-              │NLP实体识别│     │专家审核  │     │一致性检查│
-              │关键词匹配│     │标签修正  │     │完整性检查│
-              └─────────┘     └─────────┘     └─────────┘
-</code></pre>
-<p><strong>自动标注实现</strong>：</p>
-<pre><code class="language-python">import spacy
-from typing import List, Dict
-
-class QuestionAutoTagger:
-    &quot;&quot;&quot;题目自动标注器&quot;&quot;&quot;
-
-    def __init__(self, concept_graph, nlp_model):
-        self.concept_graph = concept_graph  # 知识图谱
-        self.nlp = nlp_model                # NLP模型
-
-    def auto_tag(self, question_text: str, answer_text: str = None) -&gt; Dict:
-        &quot;&quot;&quot;
-        自动标注题目
-        &quot;&quot;&quot;
-        tags = {
-            &quot;primary_concept&quot;: None,
-            &quot;secondary_concepts&quot;: [],
-            &quot;prerequisite_concepts&quot;: [],
-            &quot;bloom_level&quot;: None,
-            &quot;question_type&quot;: None,
-            &quot;difficulty_estimate&quot;: None
-        }
-
-        # 1. 实体识别（知识点提取）
-        doc = self.nlp(question_text)
-        entities = [ent.text for ent in doc.ents if ent.label_ == &quot;CONCEPT&quot;]
-
-        # 2. 匹配知识图谱
-        matched_concepts = []
-        for entity in entities:
-            concept = self.concept_graph.find_concept(entity)
-            if concept:
-                matched_concepts.append(concept)
-
-        # 3. 确定主要知识点
-        if matched_concepts:
-            tags[&quot;primary_concept&quot;] = self._select_primary_concept(
-                matched_concepts, question_text
-            )
-            tags[&quot;secondary_concepts&quot;] = [
-                c for c in matched_concepts 
-                if c != tags[&quot;primary_concept&quot;]
-            ]
-
-        # 4. 查找前置知识
-        if tags[&quot;primary_concept&quot;]:
-            tags[&quot;prerequisite_concepts&quot;] = self.concept_graph.get_prerequisites(
-                tags[&quot;primary_concept&quot;]
-            )
-
-        # 5. 判断认知层次
-        tags[&quot;bloom_level&quot;] = self._detect_bloom_level(question_text)
-
-        # 6. 估计难度
-        tags[&quot;difficulty_estimate&quot;] = self._estimate_difficulty(
-            question_text, tags
-        )
-
-        return tags
-
-    def _select_primary_concept(self, concepts: List, question_text: str) -&gt; str:
-        &quot;&quot;&quot;选择主要知识点&quot;&quot;&quot;
-        # 优先选择在问题主干中出现的概念
-        for concept in concepts:
-            if concept in question_text.split(&quot;？&quot;)[0]:
-                return concept
-        return concepts[0]
-
-    def _detect_bloom_level(self, question_text: str) -&gt; str:
-        &quot;&quot;&quot;检测布鲁姆认知层次&quot;&quot;&quot;
-        bloom_keywords = {
-            &quot;记忆&quot;: [&quot;是什么&quot;, &quot;定义&quot;, &quot;名称&quot;, &quot;全称&quot;, &quot;谁发现&quot;],
-            &quot;理解&quot;: [&quot;为什么&quot;, &quot;解释&quot;, &quot;说明&quot;, &quot;原理&quot;, &quot;机制&quot;],
-            &quot;应用&quot;: [&quot;如何&quot;, &quot;怎样&quot;, &quot;应用&quot;, &quot;举例&quot;, &quot;设计&quot;],
-            &quot;分析&quot;: [&quot;比较&quot;, &quot;区别&quot;, &quot;分析&quot;, &quot;异同&quot;, &quot;关系&quot;],
-            &quot;评价&quot;: [&quot;评价&quot;, &quot;判断&quot;, &quot;选择&quot;, &quot;合理性&quot;, &quot;优缺点&quot;],
-            &quot;创造&quot;: [&quot;设计&quot;, &quot;提出&quot;, &quot;构建&quot;, &quot;创新&quot;, &quot;改进&quot;]
-        }
-
-        for level, keywords in bloom_keywords.items():
-            if any(kw in question_text for kw in keywords):
-                return level
-
-        return &quot;记忆&quot;  # 默认
-
-    def _estimate_difficulty(self, question_text: str, tags: Dict) -&gt; str:
-        &quot;&quot;&quot;估计题目难度&quot;&quot;&quot;
-        score = 0
-
-        # 基于认知层次
-        bloom_scores = {&quot;记忆&quot;: 1, &quot;理解&quot;: 2, &quot;应用&quot;: 3, &quot;分析&quot;: 4, &quot;评价&quot;: 5, &quot;创造&quot;: 5}
-        score += bloom_scores.get(tags[&quot;bloom_level&quot;], 1)
-
-        # 基于涉及知识点数量
-        score += len(tags[&quot;secondary_concepts&quot;]) * 0.5
-
-        # 基于文本长度（信息复杂度）
-        score += len(question_text) / 100
-
-        # 映射到难度等级
-        if score &lt;= 2:
-            return &quot;L1&quot;
-        elif score &lt;= 3:
-            return &quot;L2&quot;
-        elif score &lt;= 4:
-            return &quot;L3&quot;
-        elif score &lt;= 5:
-            return &quot;L4&quot;
-        else:
-            return &quot;L5&quot;
-</code></pre>
-<h3 id="23">2.3 标签管理界面</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
-│  题目标注编辑器                                    [保存]   │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  题目内容:                                                  │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ DNA复制时，后随链上合成的短片段被称为什么？            │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  参考答案: 冈崎片段                                         │
-│                                                             │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│                                                             │
-│  📌 知识点标签                                              │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ 主要知识点: [冈崎片段                    ] [🔍搜索]   │ │
-│  │                                                       │ │
-│  │ 次要知识点: [DNA复制  ] [后随链  ] [+添加]            │ │
-│  │                                                       │ │
-│  │ 前置知识:   [DNA结构   ] [碱基配对] [+添加]            │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  🧠 认知层次                                                │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ ( ) 记忆  (●) 理解  ( ) 应用  ( ) 分析  ( ) 评价      │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  📊 难度分级                                                │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ L1(基础)  L2(简单)  L3(中等)  L4(较难)  L5(困难)      │ │
-│  │         ●────┬────┬────┬────┬────                     │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  📝 题型                                                    │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ [单选题 ▼]  [概念识别 ▼]                              │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  [自动标注]  [取消]  [保存并下一题]                         │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-</code></pre>
-<hr />
-<h2 id="_3">三、难度分级</h2>
-<h3 id="31">3.1 难度等级定义</h3>
-<table>
-<thead>
-<tr>
-<th>等级</th>
-<th>名称</th>
-<th>通过率</th>
-<th>描述</th>
-<th>适合阶段</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>L1</strong></td>
-<td>基础</td>
-<td>90-100%</td>
-<td>直接记忆性题目</td>
-<td>初学阶段</td>
-</tr>
-<tr>
-<td><strong>L2</strong></td>
-<td>简单</td>
-<td>70-90%</td>
-<td>理解性题目</td>
-<td>基础巩固</td>
-</tr>
-<tr>
-<td><strong>L3</strong></td>
-<td>中等</td>
-<td>50-70%</td>
-<td>应用性题目</td>
-<td>能力提升</td>
-</tr>
-<tr>
-<td><strong>L4</strong></td>
-<td>较难</td>
-<td>30-50%</td>
-<td>分析性题目</td>
-<td>进阶训练</td>
-</tr>
-<tr>
-<td><strong>L5</strong></td>
-<td>困难</td>
-<td>0-30%</td>
-<td>综合性/创造性题目</td>
-<td>挑战提高</td>
-</tr>
-</tbody>
-</table>
-<h3 id="32-irt">3.2 难度校准（IRT模型）</h3>
-<pre><code class="language-python">import numpy as np
-from scipy.optimize import minimize
-
-class IRTCalibrator:
-    &quot;&quot;&quot;
-    基于项目反应理论(IRT)的难度校准
-    使用1PL/Rasch模型或2PL模型
-    &quot;&quot;&quot;
-
-    def __init__(self, model=&quot;2pl&quot;):
-        self.model = model
-        self.parameters = {}
-
-    def calibrate(self, responses: np.ndarray) -&gt; Dict:
-        &quot;&quot;&quot;
-        校准题目参数
-        responses: shape (n_students, n_questions) 答题矩阵
-        &quot;&quot;&quot;
-        n_students, n_questions = responses.shape
-
-        # 初始化参数
-        abilities = np.zeros(n_students)      # 学生能力
-        difficulties = np.zeros(n_questions)  # 题目难度
-        discriminations = np.ones(n_questions) if self.model == &quot;2pl&quot; else None
-
-        # 联合极大似然估计
-        def negative_log_likelihood(params):
-            # 解包参数
-            n = n_students
-            abilities = params[:n]
-            difficulties = params[n:n+n_questions]
-
-            if self.model == &quot;2pl&quot;:
-                discriminations = params[n+n_questions:]
-
-            # 计算概率
-            if self.model == &quot;1pl&quot;:
-                prob = self._rasch_model(abilities, difficulties)
-            else:
-                prob = self._2pl_model(abilities, difficulties, discriminations)
-
-            # 计算负对数似然
-            ll = np.sum(responses * np.log(prob) + (1-responses) * np.log(1-prob))
-            return -ll
-
-        # 优化
-        initial_params = np.concatenate([abilities, difficulties])
-        if self.model == &quot;2pl&quot;:
-            initial_params = np.concatenate([initial_params, discriminations])
-
-        result = minimize(negative_log_likelihood, initial_params, method='L-BFGS-B')
-
-        # 提取校准后的参数
-        self.parameters = {
-            &quot;abilities&quot;: result.x[:n_students],
-            &quot;difficulties&quot;: result.x[n_students:n_students+n_questions],
-        }
-
-        if self.model == &quot;2pl&quot;:
-            self.parameters[&quot;discriminations&quot;] = result.x[n_students+n_questions:]
-
-        return self.parameters
-
-    def _rasch_model(self, abilities, difficulties):
-        &quot;&quot;&quot;Rasch模型 (1PL)&quot;&quot;&quot;
-        # P(正确) = 1 / (1 + exp(-(ability - difficulty)))
-        return 1 / (1 + np.exp(-(abilities[:, np.newaxis] - difficulties)))
-
-    def _2pl_model(self, abilities, difficulties, discriminations):
-        &quot;&quot;&quot;2PL模型&quot;&quot;&quot;
-        # P(正确) = 1 / (1 + exp(-a * (ability - difficulty)))
-        return 1 / (1 + np.exp(
-            -discriminations * (abilities[:, np.newaxis] - difficulties)
-        ))
-
-    def estimate_difficulty_level(self, difficulty: float) -&gt; str:
-        &quot;&quot;&quot;
-        将连续难度值映射到离散等级
-        &quot;&quot;&quot;
-        if difficulty &lt; -1.5:
-            return &quot;L1&quot;
-        elif difficulty &lt; -0.5:
-            return &quot;L2&quot;
-        elif difficulty &lt; 0.5:
-            return &quot;L3&quot;
-        elif difficulty &lt; 1.5:
-            return &quot;L4&quot;
-        else:
-            return &quot;L5&quot;
-</code></pre>
-<h3 id="33">3.3 区分度计算</h3>
-<pre><code class="language-python">def calculate_discrimination(responses: list, total_scores: list) -&gt; float:
-    &quot;&quot;&quot;
-    计算题目的区分度（点二列相关系数）
-
-    responses: 该题的答题情况 (0/1)
-    total_scores: 每个学生的总分
-    &quot;&quot;&quot;
-    # 按总分分组（高分组 vs 低分组）
-    n = len(responses)
-    sorted_indices = np.argsort(total_scores)
-
-    # 取前27%和后27%
-    high_group = sorted_indices[int(n*0.73):]
-    low_group = sorted_indices[:int(n*0.27)]
-
-    # 计算通过率
-    high_pass_rate = np.mean([responses[i] for i in high_group])
-    low_pass_rate = np.mean([responses[i] for i in low_group])
-
-    # 区分度 = 高分组通过率 - 低分组通过率
-    discrimination = high_pass_rate - low_pass_rate
-
-    return discrimination
-
-# 区分度评价标准
-DISCRIMINATION_LEVELS = {
-    &quot;excellent&quot;: (0.4, 1.0),    # 优秀，保留
-    &quot;good&quot;: (0.3, 0.4),         # 良好，保留
-    &quot;fair&quot;: (0.2, 0.3),         # 一般，需修改
-    &quot;poor&quot;: (0.0, 0.2),         # 较差，需修改或删除
-    &quot;invalid&quot;: (-1.0, 0.0)      # 异常（负区分度），删除
-}
-</code></pre>
-<hr />
-<h2 id="_4">四、知识点覆盖分析</h2>
-<h3 id="41">4.1 覆盖度指标</h3>
-<pre><code class="language-python">class CoverageAnalyzer:
-    &quot;&quot;&quot;知识点覆盖度分析器&quot;&quot;&quot;
-
-    def __init__(self, concept_graph, question_bank):
-        self.concept_graph = concept_graph
-        self.question_bank = question_bank
-
-    def analyze_coverage(self, area: str = None) -&gt; Dict:
-        &quot;&quot;&quot;
-        分析题库对知识点的覆盖情况
-        &quot;&quot;&quot;
-        # 获取该领域所有知识点
-        concepts = self.concept_graph.get_concepts(area=area)
-
-        coverage = {
-            &quot;overall&quot;: {},
-            &quot;by_category&quot;: {},
-            &quot;by_difficulty&quot;: {},
-            &quot;by_bloom&quot;: {},
-            &quot;gaps&quot;: []
-        }
-
-        # 1. 总体覆盖度
-        covered_concepts = set()
-        for question in self.question_bank:
-            covered_concepts.update(question.get_concepts())
-
-        coverage[&quot;overall&quot;] = {
-            &quot;total_concepts&quot;: len(concepts),
-            &quot;covered_concepts&quot;: len(covered_concepts),
-            &quot;coverage_rate&quot;: len(covered_concepts) / len(concepts),
-            &quot;total_questions&quot;: len(self.question_bank)
-        }
-
-        # 2. 按分类覆盖
-        for category in self.concept_graph.get_categories():
-            cat_concepts = self.concept_graph.get_concepts(category=category)
-            cat_covered = len(set(cat_concepts) &amp; covered_concepts)
-            coverage[&quot;by_category&quot;][category] = {
-                &quot;total&quot;: len(cat_concepts),
-                &quot;covered&quot;: cat_covered,
-                &quot;rate&quot;: cat_covered / len(cat_concepts) if cat_concepts else 0
-            }
-
-        # 3. 按难度覆盖
-        for level in [&quot;L1&quot;, &quot;L2&quot;, &quot;L3&quot;, &quot;L4&quot;, &quot;L5&quot;]:
-            questions = [q for q in self.question_bank if q.difficulty == level]
-            coverage[&quot;by_difficulty&quot;][level] = len(questions)
-
-        # 4. 识别覆盖缺口
-        coverage[&quot;gaps&quot;] = self._identify_gaps(concepts, covered_concepts)
-
-        return coverage
-
-    def _identify_gaps(self, all_concepts: list, covered_concepts: set) -&gt; list:
-        &quot;&quot;&quot;识别覆盖缺口&quot;&quot;&quot;
-        gaps = []
-
-        for concept in all_concepts:
-            if concept not in covered_concepts:
-                gaps.append({
-                    &quot;concept&quot;: concept,
-                    &quot;type&quot;: &quot;no_questions&quot;,
-                    &quot;priority&quot;: self.concept_graph.get_importance(concept)
-                })
-            else:
-                # 检查题目数量是否充足
-                question_count = self.question_bank.count_questions(concept)
-                if question_count &lt; 3:  # 少于3题认为覆盖不足
-                    gaps.append({
-                        &quot;concept&quot;: concept,
-                        &quot;type&quot;: &quot;insufficient_questions&quot;,
-                        &quot;current_count&quot;: question_count,
-                        &quot;recommended_count&quot;: 5,
-                        &quot;priority&quot;: self.concept_graph.get_importance(concept)
-                    })
-
-        # 按优先级排序
-        gaps.sort(key=lambda x: x[&quot;priority&quot;], reverse=True)
-        return gaps
-</code></pre>
-<h3 id="42">4.2 覆盖度报告</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
-│  题库知识点覆盖分析报告                                     │
-│  题库: 分子生物学题库  |  题目总数: 1,250  |  生成时间      │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  📊 总体覆盖度                                              │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │                                                       │ │
-│  │   知识点总数: 156    已覆盖: 142    覆盖率: 91.0%    │ │
-│  │                                                       │ │
-│  │   ████████████████████████████████████████░░░░░ 91%  │ │
-│  │                                                       │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  📈 分类覆盖度                                              │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ DNA复制        ████████████████████████████████ 95%  │ │
-│  │ 转录           ██████████████████████████████░░░ 92%  │ │
-│  │ 翻译           █████████████████████████████░░░░ 88%  │ │
-│  │ 基因调控       ████████████████████████░░░░░░░░░ 75%  │ │
-│  │ 分子技术       ████████████████████████████░░░░░ 85%  │ │
-│  │ 应用领域       ██████████████████░░░░░░░░░░░░░░░ 65%  │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  📊 难度分布                                                │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ L1(基础):  ████████████████ 312题 (25%)              │ │
-│  │ L2(简单):  ██████████████████████ 425题 (34%)        │ │
-│  │ L3(中等):  ██████████████ 312题 (25%)                │ │
-│  │ L4(较难):  ████████ 156题 (12%)                      │ │
-│  │ L5(困难):  ████ 45题 (4%)                            │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  🔴 覆盖缺口 (14个知识点)                                   │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ 高优先级:                                               │ │
-│  │ • 染色质重塑 (核心) - 无题目                           │ │
-│  │ • CRISPR脱靶效应 (重要) - 仅1题                        │ │
-│  │                                                         │ │
-│  │ 中优先级:                                               │ │
-│  │ • 三代测序技术 - 无题目                                │ │
-│  │ • 合成生物学应用 - 仅2题                               │ │
-│  │                                                         │ │
-│  │ [查看全部] [生成补题建议]                               │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  [导出报告] [生成补题计划]                                  │
-└─────────────────────────────────────────────────────────────┘
-</code></pre>
-<hr />
-<h2 id="_5">五、智能推荐</h2>
-<h3 id="51">5.1 推荐策略</h3>
-<pre><code class="language-python">class QuestionRecommender:
-    &quot;&quot;&quot;智能题目推荐器&quot;&quot;&quot;
-
-    def __init__(self, question_bank, user_model):
-        self.question_bank = question_bank
-        self.user_model = user_model
-
-    def recommend(self, user_id: str, strategy: str = &quot;adaptive&quot;, 
-                  count: int = 10) -&gt; list:
-        &quot;&quot;&quot;
-        推荐题目
-
-        strategy: 推荐策略
-          - adaptive: 自适应难度
-          - weak_focus: 薄弱点强化
-          - comprehensive: 综合练习
-          - exam_simulation: 模拟考试
-        &quot;&quot;&quot;
-        if strategy == &quot;adaptive&quot;:
-            return self._adaptive_recommend(user_id, count)
-        elif strategy == &quot;weak_focus&quot;:
-            return self._weak_focus_recommend(user_id, count)
-        elif strategy == &quot;comprehensive&quot;:
-            return self._comprehensive_recommend(user_id, count)
-        elif strategy == &quot;exam_simulation&quot;:
-            return self._exam_simulation(user_id, count)
-
-    def _adaptive_recommend(self, user_id: str, count: int) -&gt; list:
-        &quot;&quot;&quot;
-        自适应难度推荐
-        根据用户能力动态调整题目难度
-        &quot;&quot;&quot;
-        # 获取用户当前能力估计
-        ability = self.user_model.estimate_ability(user_id)
-
-        # 选择难度与用户能力匹配的题目
-        # P(正确)在60-80%的题目
-        candidates = []
-        for question in self.question_bank:
-            prob_correct = self._irt_probability(ability, question.difficulty)
-            if 0.6 &lt;= prob_correct &lt;= 0.8:
-                candidates.append((question, prob_correct))
-
-        # 按信息量和多样性排序
-        candidates = self._diversify(candidates, count)
-
-        return [q for q, _ in candidates[:count]]
-
-    def _weak_focus_recommend(self, user_id: str, count: int) -&gt; list:
-        &quot;&quot;&quot;
-        薄弱点强化推荐
-        针对掌握度低的知识点推荐题目
-        &quot;&quot;&quot;
-        # 获取薄弱知识点
-        weak_concepts = self.user_model.get_weak_concepts(user_id)
-
-        recommendations = []
-        for concept in weak_concepts[:5]:  # 取前5个薄弱点
-            # 获取该知识点的题目
-            questions = self.question_bank.get_questions(
-                concept=concept,
-                exclude_answered=True
-            )
-
-            # 按难度排序（从易到难）
-            questions.sort(key=lambda q: q.difficulty_level)
-
-            recommendations.extend(questions[:2])  # 每个薄弱点2题
-
-        return recommendations[:count]
-
-    def _diversify(self, candidates: list, count: int) -&gt; list:
-        &quot;&quot;&quot;
-        多样性排序
-        确保推荐的题目覆盖不同知识点和认知层次
-        &quot;&quot;&quot;
-        selected = []
-        concept_coverage = set()
-        bloom_coverage = set()
-
-        for question, prob in sorted(candidates, key=lambda x: abs(x[1]-0.7)):
-            # 优先选择覆盖新知识点和新认知层次的题目
-            concept = question.primary_concept
-            bloom = question.bloom_level
-
-            novelty = 0
-            if concept not in concept_coverage:
-                novelty += 1
-            if bloom not in bloom_coverage:
-                novelty += 0.5
-
-            if novelty &gt; 0 or len(selected) &lt; count // 2:
-                selected.append((question, prob))
-                concept_coverage.add(concept)
-                bloom_coverage.add(bloom)
-
-            if len(selected) &gt;= count:
-                break
-
-        return selected
-</code></pre>
-<h3 id="52">5.2 推荐界面</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
-│  智能练习推荐                                               │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  📊 当前状态                                                │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ 整体掌握度: 68%  |  今日已练习: 15题  |  正确率: 73% │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  🎯 推荐练习 (共10题，预计20分钟)                          │
-│  ═══════════════════════════════════════════════════════   │
-│                                                             │
-│  基于您的薄弱点推荐:                                        │
-│                                                             │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ 1. [单选] 冈崎片段的形成机制                          │ │
-│  │    难度: ⭐⭐  |  知识点: DNA复制 &gt; 复制机制          │ │
-│  │    💡 您在该知识点的掌握度为40%，建议加强练习         │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ 2. [填空] DNA聚合酶的校对功能                         │ │
-│  │    难度: ⭐⭐⭐  |  知识点: DNA复制 &gt; 复制酶          │ │
-│  │    💡 相关知识点，有助于理解复制准确性                │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ 3. [判断] 前导链的合成是连续的                        │ │
-│  │    难度: ⭐  |  知识点: DNA复制 &gt; 复制机制            │ │
-│  │    💡 基础概念，巩固理解                              │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-│  ... 还有7题 ...                                            │
-│                                                             │
-│  [开始练习]  [换一批]  [自定义筛选]                         │
-│                                                             │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
-│                                                             │
-│  🎮 其他练习模式                                            │
-│  ┌───────────────────────────────────────────────────────┐ │
-│  │ [自适应练习] [薄弱点强化] [章节测试] [模拟考试]       │ │
-│  └───────────────────────────────────────────────────────┘ │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-</code></pre>
-<hr />
-<h2 id="api">六、API接口设计</h2>
-<h3 id="61">6.1 题目管理接口</h3>
-<pre><code class="language-yaml"># 创建题目
-POST /api/questions
-参数:
-  content: 题目内容
-  answer: 参考答案
-  explanation: 解析
-  options: 选项(选择题)
-  tags: 标签
-    - primary_concept: 主要知识点
-    - secondary_concepts: 次要知识点
-    - bloom_level: 认知层次
-    - difficulty: 难度
-    - question_type: 题型
-返回:
-  question_id: 题目ID
-  auto_tags: 自动标注结果
-
-# 更新题目标签
-PUT /api/questions/{id}/tags
-参数:
-  tags: 标签更新
-返回:
-  updated_tags: 更新后的标签
-
-# 批量导入题目
-POST /api/questions/batch
-参数:
-  questions: 题目列表
-  auto_tag: 是否自动标注
-返回:
-  imported_count: 导入数量
-  failed_count: 失败数量
-  errors: 错误列表
-</code></pre>
-<h3 id="62">6.2 标签查询接口</h3>
-<pre><code class="language-yaml"># 按标签查询题目
-GET /api/questions
-参数:
-  concept: 知识点ID
-  difficulty: 难度(L1-L5)
-  bloom_level: 认知层次
-  question_type: 题型
-  limit: 数量
-  offset: 偏移
-返回:
-  total: 总数
-  questions: 题目列表
-
-# 获取题目标签
-GET /api/questions/{id}/tags
-返回:
-  primary_concept: 主要知识点
-  secondary_concepts: 次要知识点
-  prerequisite_concepts: 前置知识
-  bloom_level: 认知层次
-  difficulty: 难度
-  difficulty_params: 难度参数(IRT)
-</code></pre>
-<h3 id="63">6.3 覆盖分析接口</h3>
-<pre><code class="language-yaml"># 获取覆盖分析报告
-GET /api/coverage/analysis
-参数:
-  area: 知识领域
-返回:
-  overall: 总体覆盖度
-  by_category: 分类覆盖度
-  by_difficulty: 难度分布
-  gaps: 覆盖缺口
-
-# 获取补题建议
-GET /api/coverage/gaps/recommendations
-参数:
-  priority: 优先级筛选
-返回:
-  recommendations: 补题建议列表
-    - concept: 知识点
-      type: 缺口类型
-      recommended_count: 建议题目数
-      recommended_difficulties: 建议难度分布
-      recommended_bloom: 建议认知层次分布
-</code></pre>
-<h3 id="64">6.4 推荐接口</h3>
-<pre><code class="language-yaml"># 获取推荐题目
-GET /api/questions/recommendations
-参数:
-  user_id: 用户ID
-  strategy: 策略(adaptive|weak_focus|comprehensive|exam)
-  count: 数量
-  exclude_answered: 排除已答题
-返回:
-  recommendations: 推荐题目列表
-    - question: 题目
-      reason: 推荐理由
-      expected_difficulty: 预期难度
-
-# 提交答案并获取反馈
-POST /api/questions/{id}/submit
-参数:
-  user_id: 用户ID
-  answer: 答案
-  time_spent: 用时(秒)
-返回:
-  correct: 是否正确
-  explanation: 解析
-  concept_mastery: 知识点掌握度更新
-  next_recommendation: 下一题推荐
-</code></pre>
-<hr />
-<h2 id="_6">七、总结</h2>
+<main><div class="crumb"><a href="../index.html">首页</a> / <a href="index.html">构建方法</a></div><div class="section-divider"></div><article class="article"><h1>SKILL 06c: 知识点-题库关联系统</h1>
+<p>&gt; 基于知识图谱的题目多标签标注、难度分级和知识点覆盖分析系统。</p>
+<p>---</p>
+<h2>一、系统概述</h2>
+<p>### 1.1 设计目标</p>
+<p>- **精准标注**：每道题目精确标注考查的知识点和认知层次</p>
+<p>- **难度分级**：科学的难度评估和自适应调整机制</p>
+<p>- **覆盖分析**：全面分析题库对知识点的覆盖情况</p>
+<p>- **智能推荐**：基于薄弱知识点的个性化题目推荐</p>
+<p>### 1.2 核心功能</p>
+<p>```</p>
+<p>┌─────────────────────────────────────────────────────────────────┐</p>
+<p>│                     知识点-题库关联系统                          │</p>
+<p>├─────────────────────────────────────────────────────────────────┤</p>
+<p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────┐ │</p>
+<p>│  │ 多标签标注   │  │ 难度分级    │  │ 覆盖分析    │  │ 智能推荐│ │</p>
+<p>│  │             │  │             │  │             │  │        │ │</p>
+<p>│  └─────────────┘  └─────────────┘  └─────────────┘  └────────┘ │</p>
+<p>├─────────────────────────────────────────────────────────────────┤</p>
+<p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │</p>
+<p>│  │ 题目录入    │  │ 标签管理    │  │ 统计分析    │             │</p>
+<p>│  │             │  │             │  │             │             │</p>
+<p>│  └─────────────┘  └─────────────┘  └─────────────┘             │</p>
+<p>└─────────────────────────────────────────────────────────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>二、题目多标签标注</h2>
+<p>### 2.1 标签体系</p>
+<p>#### 2.1.1 知识点标签</p>
+<p>```python</p>
+<h1>知识点标签结构</h1>
+<p>question_tags = {</p>
+<p>    &quot;primary_concept&quot;: &quot;主要考查知识点&quot;,      # 1个</p>
+<p>    &quot;secondary_concepts&quot;: [&quot;次要知识点&quot;],     # 0-n个</p>
+<p>    &quot;prerequisite_concepts&quot;: [&quot;涉及的前置知识&quot;], # 0-n个</p>
+<p>    &quot;application_concepts&quot;: [&quot;应用知识点&quot;]     # 0-n个</p>
+<p>}</p>
+<p>```</p>
+<p>**标注示例**：</p>
+<p>```yaml</p>
+<p>题目: &quot;DNA复制时，后随链上合成的短片段被称为什么？&quot;</p>
+<p>知识点标签:</p>
+<p>  primary_concept: &quot;冈崎片段&quot;              # 直接考查</p>
+<p>  secondary_concepts:                      # 相关考查</p>
+<p>    - &quot;DNA复制&quot;</p>
+<p>    - &quot;后随链&quot;</p>
+<p>  prerequisite_concepts:                   # 需要了解</p>
+<p>    - &quot;DNA结构&quot;</p>
+<p>    - &quot;碱基配对&quot;</p>
+<p>  application_concepts: []                  # 无应用拓展</p>
+<p>认知层次标签:</p>
+<p>  bloom_level: &quot;记忆&quot;                      # 布鲁姆认知层次</p>
+<p>  cognitive_depth: 1                       # 认知深度 1-5</p>
+<p>难度标签:</p>
+<p>  difficulty: &quot;L2&quot;                         # L1-L5</p>
+<p>  discrimination: 0.65                     # 区分度</p>
+<p>题型标签:</p>
+<p>  question_type: &quot;单选题&quot;</p>
+<p>  answer_type: &quot;概念识别&quot;</p>
+<p>```</p>
+<p>#### 2.1.2 认知层次标签（布鲁姆分类法）</p>
+<p>| 层次 | 说明 | 关键词 | 示例 |</p>
+<p>|------|------|--------|------|</p>
+<p>| **记忆** | 回忆事实、术语 | 是什么、定义、名称 | DNA的全称是？ |</p>
+<p>| **理解** | 解释概念、原理 | 为什么、解释、说明 | 为什么DNA复制是半保留的？ |</p>
+<p>| **应用** | 在新情境使用知识 | 如何、应用、举例 | 如何设计PCR引物？ |</p>
+<p>| **分析** | 分解、比较、关联 | 比较、区别、分析 | 比较DNA复制与转录的异同 |</p>
+<p>| **评价** | 判断、评估 | 评价、判断、选择 | 评价该实验设计的合理性 |</p>
+<p>| **创造** | 综合、设计、创新 | 设计、提出、构建 | 设计一个验证半保留复制的实验 |</p>
+<p>#### 2.1.3 题型标签</p>
+<p>| 一级分类 | 二级分类 | 说明 |</p>
+<p>|---------|---------|------|</p>
+<p>| **客观题** | 单选题 | 只有一个正确答案 |</p>
+<p>| | 多选题 | 多个正确答案 |</p>
+<p>| | 判断题 | 正确/错误判断 |</p>
+<p>| | 填空题 | 填写关键术语 |</p>
+<p>| **主观题** | 简答题 | 简要回答概念 |</p>
+<p>| | 论述题 | 详细阐述原理 |</p>
+<p>| | 计算题 | 数值计算 |</p>
+<p>| | 案例分析 | 分析实际案例 |</p>
+<p>| **实验题** | 实验设计 | 设计实验方案 |</p>
+<p>| | 实验分析 | 分析实验结果 |</p>
+<p>### 2.2 标注流程</p>
+<p>```</p>
+<p>┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐</p>
+<p>│ 题目录入 │ ──→│ 自动标注 │ ──→│ 人工审核 │ ──→│ 质量检查 │ ──→│ 发布入库 │</p>
+<p>└─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘</p>
+<p>                    │               │               │</p>
+<p>                    ↓               ↓               ↓</p>
+<p>              ┌─────────┐     ┌─────────┐     ┌─────────┐</p>
+<p>              │NLP实体识别│     │专家审核  │     │一致性检查│</p>
+<p>              │关键词匹配│     │标签修正  │     │完整性检查│</p>
+<p>              └─────────┘     └─────────┘     └─────────┘</p>
+<p>```</p>
+<p>**自动标注实现**：</p>
+<p>```python</p>
+<p>import spacy</p>
+<p>from typing import List, Dict</p>
+<p>class QuestionAutoTagger:</p>
+<p>    &quot;&quot;&quot;题目自动标注器&quot;&quot;&quot;</p>
+<p>    def __init__(self, concept_graph, nlp_model):</p>
+<p>        self.concept_graph = concept_graph  # 知识图谱</p>
+<p>        self.nlp = nlp_model                # NLP模型</p>
+<p>    def auto_tag(self, question_text: str, answer_text: str = None) -&gt; Dict:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        自动标注题目</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        tags = {</p>
+<p>            &quot;primary_concept&quot;: None,</p>
+<p>            &quot;secondary_concepts&quot;: [],</p>
+<p>            &quot;prerequisite_concepts&quot;: [],</p>
+<p>            &quot;bloom_level&quot;: None,</p>
+<p>            &quot;question_type&quot;: None,</p>
+<p>            &quot;difficulty_estimate&quot;: None</p>
+<p>        }</p>
+<p>        # 1. 实体识别（知识点提取）</p>
+<p>        doc = self.nlp(question_text)</p>
+<p>        entities = [ent.text for ent in doc.ents if ent.label_ == &quot;CONCEPT&quot;]</p>
+<p>        # 2. 匹配知识图谱</p>
+<p>        matched_concepts = []</p>
+<p>        for entity in entities:</p>
+<p>            concept = self.concept_graph.find_concept(entity)</p>
+<p>            if concept:</p>
+<p>                matched_concepts.append(concept)</p>
+<p>        # 3. 确定主要知识点</p>
+<p>        if matched_concepts:</p>
+<p>            tags[&quot;primary_concept&quot;] = self._select_primary_concept(</p>
+<p>                matched_concepts, question_text</p>
+<p>            )</p>
+<p>            tags[&quot;secondary_concepts&quot;] = [</p>
+<p>                c for c in matched_concepts </p>
+<p>                if c != tags[&quot;primary_concept&quot;]</p>
+<p>            ]</p>
+<p>        # 4. 查找前置知识</p>
+<p>        if tags[&quot;primary_concept&quot;]:</p>
+<p>            tags[&quot;prerequisite_concepts&quot;] = self.concept_graph.get_prerequisites(</p>
+<p>                tags[&quot;primary_concept&quot;]</p>
+<p>            )</p>
+<p>        # 5. 判断认知层次</p>
+<p>        tags[&quot;bloom_level&quot;] = self._detect_bloom_level(question_text)</p>
+<p>        # 6. 估计难度</p>
+<p>        tags[&quot;difficulty_estimate&quot;] = self._estimate_difficulty(</p>
+<p>            question_text, tags</p>
+<p>        )</p>
+<p>        return tags</p>
+<p>    def _select_primary_concept(self, concepts: List, question_text: str) -&gt; str:</p>
+<p>        &quot;&quot;&quot;选择主要知识点&quot;&quot;&quot;</p>
+<p>        # 优先选择在问题主干中出现的概念</p>
+<p>        for concept in concepts:</p>
+<p>            if concept in question_text.split(&quot;？&quot;)[0]:</p>
+<p>                return concept</p>
+<p>        return concepts[0]</p>
+<p>    def _detect_bloom_level(self, question_text: str) -&gt; str:</p>
+<p>        &quot;&quot;&quot;检测布鲁姆认知层次&quot;&quot;&quot;</p>
+<p>        bloom_keywords = {</p>
+<p>            &quot;记忆&quot;: [&quot;是什么&quot;, &quot;定义&quot;, &quot;名称&quot;, &quot;全称&quot;, &quot;谁发现&quot;],</p>
+<p>            &quot;理解&quot;: [&quot;为什么&quot;, &quot;解释&quot;, &quot;说明&quot;, &quot;原理&quot;, &quot;机制&quot;],</p>
+<p>            &quot;应用&quot;: [&quot;如何&quot;, &quot;怎样&quot;, &quot;应用&quot;, &quot;举例&quot;, &quot;设计&quot;],</p>
+<p>            &quot;分析&quot;: [&quot;比较&quot;, &quot;区别&quot;, &quot;分析&quot;, &quot;异同&quot;, &quot;关系&quot;],</p>
+<p>            &quot;评价&quot;: [&quot;评价&quot;, &quot;判断&quot;, &quot;选择&quot;, &quot;合理性&quot;, &quot;优缺点&quot;],</p>
+<p>            &quot;创造&quot;: [&quot;设计&quot;, &quot;提出&quot;, &quot;构建&quot;, &quot;创新&quot;, &quot;改进&quot;]</p>
+<p>        }</p>
+<p>        for level, keywords in bloom_keywords.items():</p>
+<p>            if any(kw in question_text for kw in keywords):</p>
+<p>                return level</p>
+<p>        return &quot;记忆&quot;  # 默认</p>
+<p>    def _estimate_difficulty(self, question_text: str, tags: Dict) -&gt; str:</p>
+<p>        &quot;&quot;&quot;估计题目难度&quot;&quot;&quot;</p>
+<p>        score = 0</p>
+<p>        # 基于认知层次</p>
+<p>        bloom_scores = {&quot;记忆&quot;: 1, &quot;理解&quot;: 2, &quot;应用&quot;: 3, &quot;分析&quot;: 4, &quot;评价&quot;: 5, &quot;创造&quot;: 5}</p>
+<p>        score += bloom_scores.get(tags[&quot;bloom_level&quot;], 1)</p>
+<p>        # 基于涉及知识点数量</p>
+<p>        score += len(tags[&quot;secondary_concepts&quot;]) * 0.5</p>
+<p>        # 基于文本长度（信息复杂度）</p>
+<p>        score += len(question_text) / 100</p>
+<p>        # 映射到难度等级</p>
+<p>        if score &lt;= 2:</p>
+<p>            return &quot;L1&quot;</p>
+<p>        elif score &lt;= 3:</p>
+<p>            return &quot;L2&quot;</p>
+<p>        elif score &lt;= 4:</p>
+<p>            return &quot;L3&quot;</p>
+<p>        elif score &lt;= 5:</p>
+<p>            return &quot;L4&quot;</p>
+<p>        else:</p>
+<p>            return &quot;L5&quot;</p>
+<p>```</p>
+<p>### 2.3 标签管理界面</p>
+<p>```</p>
+<p>┌─────────────────────────────────────────────────────────────┐</p>
+<p>│  题目标注编辑器                                    [保存]   │</p>
+<p>├─────────────────────────────────────────────────────────────┤</p>
+<p>│                                                             │</p>
+<p>│  题目内容:                                                  │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ DNA复制时，后随链上合成的短片段被称为什么？            │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  参考答案: 冈崎片段                                         │</p>
+<p>│                                                             │</p>
+<p>│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │</p>
+<p>│                                                             │</p>
+<p>│  📌 知识点标签                                              │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ 主要知识点: [冈崎片段                    ] [🔍搜索]   │ │</p>
+<p>│  │                                                       │ │</p>
+<p>│  │ 次要知识点: [DNA复制  ] [后随链  ] [+添加]            │ │</p>
+<p>│  │                                                       │ │</p>
+<p>│  │ 前置知识:   [DNA结构   ] [碱基配对] [+添加]            │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  🧠 认知层次                                                │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ ( ) 记忆  (●) 理解  ( ) 应用  ( ) 分析  ( ) 评价      │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  📊 难度分级                                                │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ L1(基础)  L2(简单)  L3(中等)  L4(较难)  L5(困难)      │ │</p>
+<p>│  │         ●────┬────┬────┬────┬────                     │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  📝 题型                                                    │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ [单选题 ▼]  [概念识别 ▼]                              │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  [自动标注]  [取消]  [保存并下一题]                         │</p>
+<p>│                                                             │</p>
+<p>└─────────────────────────────────────────────────────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>三、难度分级</h2>
+<p>### 3.1 难度等级定义</p>
+<p>| 等级 | 名称 | 通过率 | 描述 | 适合阶段 |</p>
+<p>|------|------|--------|------|---------|</p>
+<p>| **L1** | 基础 | 90-100% | 直接记忆性题目 | 初学阶段 |</p>
+<p>| **L2** | 简单 | 70-90% | 理解性题目 | 基础巩固 |</p>
+<p>| **L3** | 中等 | 50-70% | 应用性题目 | 能力提升 |</p>
+<p>| **L4** | 较难 | 30-50% | 分析性题目 | 进阶训练 |</p>
+<p>| **L5** | 困难 | 0-30% | 综合性/创造性题目 | 挑战提高 |</p>
+<p>### 3.2 难度校准（IRT模型）</p>
+<p>```python</p>
+<p>import numpy as np</p>
+<p>from scipy.optimize import minimize</p>
+<p>class IRTCalibrator:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    基于项目反应理论(IRT)的难度校准</p>
+<p>    使用1PL/Rasch模型或2PL模型</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    def __init__(self, model=&quot;2pl&quot;):</p>
+<p>        self.model = model</p>
+<p>        self.parameters = {}</p>
+<p>    def calibrate(self, responses: np.ndarray) -&gt; Dict:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        校准题目参数</p>
+<p>        responses: shape (n_students, n_questions) 答题矩阵</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        n_students, n_questions = responses.shape</p>
+<p>        # 初始化参数</p>
+<p>        abilities = np.zeros(n_students)      # 学生能力</p>
+<p>        difficulties = np.zeros(n_questions)  # 题目难度</p>
+<p>        discriminations = np.ones(n_questions) if self.model == &quot;2pl&quot; else None</p>
+<p>        # 联合极大似然估计</p>
+<p>        def negative_log_likelihood(params):</p>
+<p>            # 解包参数</p>
+<p>            n = n_students</p>
+<p>            abilities = params[:n]</p>
+<p>            difficulties = params[n:n+n_questions]</p>
+<p>            if self.model == &quot;2pl&quot;:</p>
+<p>                discriminations = params[n+n_questions:]</p>
+<p>            # 计算概率</p>
+<p>            if self.model == &quot;1pl&quot;:</p>
+<p>                prob = self._rasch_model(abilities, difficulties)</p>
+<p>            else:</p>
+<p>                prob = self._2pl_model(abilities, difficulties, discriminations)</p>
+<p>            # 计算负对数似然</p>
+<p>            ll = np.sum(responses * np.log(prob) + (1-responses) * np.log(1-prob))</p>
+<p>            return -ll</p>
+<p>        # 优化</p>
+<p>        initial_params = np.concatenate([abilities, difficulties])</p>
+<p>        if self.model == &quot;2pl&quot;:</p>
+<p>            initial_params = np.concatenate([initial_params, discriminations])</p>
+<p>        result = minimize(negative_log_likelihood, initial_params, method=&#x27;L-BFGS-B&#x27;)</p>
+<p>        # 提取校准后的参数</p>
+<p>        self.parameters = {</p>
+<p>            &quot;abilities&quot;: result.x[:n_students],</p>
+<p>            &quot;difficulties&quot;: result.x[n_students:n_students+n_questions],</p>
+<p>        }</p>
+<p>        if self.model == &quot;2pl&quot;:</p>
+<p>            self.parameters[&quot;discriminations&quot;] = result.x[n_students+n_questions:]</p>
+<p>        return self.parameters</p>
+<p>    def _rasch_model(self, abilities, difficulties):</p>
+<p>        &quot;&quot;&quot;Rasch模型 (1PL)&quot;&quot;&quot;</p>
+<p>        # P(正确) = 1 / (1 + exp(-(ability - difficulty)))</p>
+<p>        return 1 / (1 + np.exp(-(abilities[:, np.newaxis] - difficulties)))</p>
+<p>    def _2pl_model(self, abilities, difficulties, discriminations):</p>
+<p>        &quot;&quot;&quot;2PL模型&quot;&quot;&quot;</p>
+<p>        # P(正确) = 1 / (1 + exp(-a * (ability - difficulty)))</p>
+<p>        return 1 / (1 + np.exp(</p>
+<p>            -discriminations * (abilities[:, np.newaxis] - difficulties)</p>
+<p>        ))</p>
+<p>    def estimate_difficulty_level(self, difficulty: float) -&gt; str:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        将连续难度值映射到离散等级</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        if difficulty &lt; -1.5:</p>
+<p>            return &quot;L1&quot;</p>
+<p>        elif difficulty &lt; -0.5:</p>
+<p>            return &quot;L2&quot;</p>
+<p>        elif difficulty &lt; 0.5:</p>
+<p>            return &quot;L3&quot;</p>
+<p>        elif difficulty &lt; 1.5:</p>
+<p>            return &quot;L4&quot;</p>
+<p>        else:</p>
+<p>            return &quot;L5&quot;</p>
+<p>```</p>
+<p>### 3.3 区分度计算</p>
+<p>```python</p>
+<p>def calculate_discrimination(responses: list, total_scores: list) -&gt; float:</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    计算题目的区分度（点二列相关系数）</p>
+<p>    responses: 该题的答题情况 (0/1)</p>
+<p>    total_scores: 每个学生的总分</p>
+<p>    &quot;&quot;&quot;</p>
+<p>    # 按总分分组（高分组 vs 低分组）</p>
+<p>    n = len(responses)</p>
+<p>    sorted_indices = np.argsort(total_scores)</p>
+<p>    # 取前27%和后27%</p>
+<p>    high_group = sorted_indices[int(n*0.73):]</p>
+<p>    low_group = sorted_indices[:int(n*0.27)]</p>
+<p>    # 计算通过率</p>
+<p>    high_pass_rate = np.mean([responses[i] for i in high_group])</p>
+<p>    low_pass_rate = np.mean([responses[i] for i in low_group])</p>
+<p>    # 区分度 = 高分组通过率 - 低分组通过率</p>
+<p>    discrimination = high_pass_rate - low_pass_rate</p>
+<p>    return discrimination</p>
+<h1>区分度评价标准</h1>
+<p>DISCRIMINATION_LEVELS = {</p>
+<p>    &quot;excellent&quot;: (0.4, 1.0),    # 优秀，保留</p>
+<p>    &quot;good&quot;: (0.3, 0.4),         # 良好，保留</p>
+<p>    &quot;fair&quot;: (0.2, 0.3),         # 一般，需修改</p>
+<p>    &quot;poor&quot;: (0.0, 0.2),         # 较差，需修改或删除</p>
+<p>    &quot;invalid&quot;: (-1.0, 0.0)      # 异常（负区分度），删除</p>
+<p>}</p>
+<p>```</p>
+<p>---</p>
+<h2>四、知识点覆盖分析</h2>
+<p>### 4.1 覆盖度指标</p>
+<p>```python</p>
+<p>class CoverageAnalyzer:</p>
+<p>    &quot;&quot;&quot;知识点覆盖度分析器&quot;&quot;&quot;</p>
+<p>    def __init__(self, concept_graph, question_bank):</p>
+<p>        self.concept_graph = concept_graph</p>
+<p>        self.question_bank = question_bank</p>
+<p>    def analyze_coverage(self, area: str = None) -&gt; Dict:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        分析题库对知识点的覆盖情况</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        # 获取该领域所有知识点</p>
+<p>        concepts = self.concept_graph.get_concepts(area=area)</p>
+<p>        coverage = {</p>
+<p>            &quot;overall&quot;: {},</p>
+<p>            &quot;by_category&quot;: {},</p>
+<p>            &quot;by_difficulty&quot;: {},</p>
+<p>            &quot;by_bloom&quot;: {},</p>
+<p>            &quot;gaps&quot;: []</p>
+<p>        }</p>
+<p>        # 1. 总体覆盖度</p>
+<p>        covered_concepts = set()</p>
+<p>        for question in self.question_bank:</p>
+<p>            covered_concepts.update(question.get_concepts())</p>
+<p>        coverage[&quot;overall&quot;] = {</p>
+<p>            &quot;total_concepts&quot;: len(concepts),</p>
+<p>            &quot;covered_concepts&quot;: len(covered_concepts),</p>
+<p>            &quot;coverage_rate&quot;: len(covered_concepts) / len(concepts),</p>
+<p>            &quot;total_questions&quot;: len(self.question_bank)</p>
+<p>        }</p>
+<p>        # 2. 按分类覆盖</p>
+<p>        for category in self.concept_graph.get_categories():</p>
+<p>            cat_concepts = self.concept_graph.get_concepts(category=category)</p>
+<p>            cat_covered = len(set(cat_concepts) &amp; covered_concepts)</p>
+<p>            coverage[&quot;by_category&quot;][category] = {</p>
+<p>                &quot;total&quot;: len(cat_concepts),</p>
+<p>                &quot;covered&quot;: cat_covered,</p>
+<p>                &quot;rate&quot;: cat_covered / len(cat_concepts) if cat_concepts else 0</p>
+<p>            }</p>
+<p>        # 3. 按难度覆盖</p>
+<p>        for level in [&quot;L1&quot;, &quot;L2&quot;, &quot;L3&quot;, &quot;L4&quot;, &quot;L5&quot;]:</p>
+<p>            questions = [q for q in self.question_bank if q.difficulty == level]</p>
+<p>            coverage[&quot;by_difficulty&quot;][level] = len(questions)</p>
+<p>        # 4. 识别覆盖缺口</p>
+<p>        coverage[&quot;gaps&quot;] = self._identify_gaps(concepts, covered_concepts)</p>
+<p>        return coverage</p>
+<p>    def _identify_gaps(self, all_concepts: list, covered_concepts: set) -&gt; list:</p>
+<p>        &quot;&quot;&quot;识别覆盖缺口&quot;&quot;&quot;</p>
+<p>        gaps = []</p>
+<p>        for concept in all_concepts:</p>
+<p>            if concept not in covered_concepts:</p>
+<p>                gaps.append({</p>
+<p>                    &quot;concept&quot;: concept,</p>
+<p>                    &quot;type&quot;: &quot;no_questions&quot;,</p>
+<p>                    &quot;priority&quot;: self.concept_graph.get_importance(concept)</p>
+<p>                })</p>
+<p>            else:</p>
+<p>                # 检查题目数量是否充足</p>
+<p>                question_count = self.question_bank.count_questions(concept)</p>
+<p>                if question_count &lt; 3:  # 少于3题认为覆盖不足</p>
+<p>                    gaps.append({</p>
+<p>                        &quot;concept&quot;: concept,</p>
+<p>                        &quot;type&quot;: &quot;insufficient_questions&quot;,</p>
+<p>                        &quot;current_count&quot;: question_count,</p>
+<p>                        &quot;recommended_count&quot;: 5,</p>
+<p>                        &quot;priority&quot;: self.concept_graph.get_importance(concept)</p>
+<p>                    })</p>
+<p>        # 按优先级排序</p>
+<p>        gaps.sort(key=lambda x: x[&quot;priority&quot;], reverse=True)</p>
+<p>        return gaps</p>
+<p>```</p>
+<p>### 4.2 覆盖度报告</p>
+<p>```</p>
+<p>┌─────────────────────────────────────────────────────────────┐</p>
+<p>│  题库知识点覆盖分析报告                                     │</p>
+<p>│  题库: 分子生物学题库  |  题目总数: 1,250  |  生成时间      │</p>
+<p>├─────────────────────────────────────────────────────────────┤</p>
+<p>│                                                             │</p>
+<p>│  📊 总体覆盖度                                              │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │                                                       │ │</p>
+<p>│  │   知识点总数: 156    已覆盖: 142    覆盖率: 91.0%    │ │</p>
+<p>│  │                                                       │ │</p>
+<p>│  │   ████████████████████████████████████████░░░░░ 91%  │ │</p>
+<p>│  │                                                       │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  📈 分类覆盖度                                              │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ DNA复制        ████████████████████████████████ 95%  │ │</p>
+<p>│  │ 转录           ██████████████████████████████░░░ 92%  │ │</p>
+<p>│  │ 翻译           █████████████████████████████░░░░ 88%  │ │</p>
+<p>│  │ 基因调控       ████████████████████████░░░░░░░░░ 75%  │ │</p>
+<p>│  │ 分子技术       ████████████████████████████░░░░░ 85%  │ │</p>
+<p>│  │ 应用领域       ██████████████████░░░░░░░░░░░░░░░ 65%  │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  📊 难度分布                                                │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ L1(基础):  ████████████████ 312题 (25%)              │ │</p>
+<p>│  │ L2(简单):  ██████████████████████ 425题 (34%)        │ │</p>
+<p>│  │ L3(中等):  ██████████████ 312题 (25%)                │ │</p>
+<p>│  │ L4(较难):  ████████ 156题 (12%)                      │ │</p>
+<p>│  │ L5(困难):  ████ 45题 (4%)                            │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  🔴 覆盖缺口 (14个知识点)                                   │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ 高优先级:                                               │ │</p>
+<p>│  │ • 染色质重塑 (核心) - 无题目                           │ │</p>
+<p>│  │ • CRISPR脱靶效应 (重要) - 仅1题                        │ │</p>
+<p>│  │                                                         │ │</p>
+<p>│  │ 中优先级:                                               │ │</p>
+<p>│  │ • 三代测序技术 - 无题目                                │ │</p>
+<p>│  │ • 合成生物学应用 - 仅2题                               │ │</p>
+<p>│  │                                                         │ │</p>
+<p>│  │ [查看全部] [生成补题建议]                               │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  [导出报告] [生成补题计划]                                  │</p>
+<p>└─────────────────────────────────────────────────────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>五、智能推荐</h2>
+<p>### 5.1 推荐策略</p>
+<p>```python</p>
+<p>class QuestionRecommender:</p>
+<p>    &quot;&quot;&quot;智能题目推荐器&quot;&quot;&quot;</p>
+<p>    def __init__(self, question_bank, user_model):</p>
+<p>        self.question_bank = question_bank</p>
+<p>        self.user_model = user_model</p>
+<p>    def recommend(self, user_id: str, strategy: str = &quot;adaptive&quot;, </p>
+<p>                  count: int = 10) -&gt; list:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        推荐题目</p>
+<p>        strategy: 推荐策略</p>
+<p>          - adaptive: 自适应难度</p>
+<p>          - weak_focus: 薄弱点强化</p>
+<p>          - comprehensive: 综合练习</p>
+<p>          - exam_simulation: 模拟考试</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        if strategy == &quot;adaptive&quot;:</p>
+<p>            return self._adaptive_recommend(user_id, count)</p>
+<p>        elif strategy == &quot;weak_focus&quot;:</p>
+<p>            return self._weak_focus_recommend(user_id, count)</p>
+<p>        elif strategy == &quot;comprehensive&quot;:</p>
+<p>            return self._comprehensive_recommend(user_id, count)</p>
+<p>        elif strategy == &quot;exam_simulation&quot;:</p>
+<p>            return self._exam_simulation(user_id, count)</p>
+<p>    def _adaptive_recommend(self, user_id: str, count: int) -&gt; list:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        自适应难度推荐</p>
+<p>        根据用户能力动态调整题目难度</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        # 获取用户当前能力估计</p>
+<p>        ability = self.user_model.estimate_ability(user_id)</p>
+<p>        # 选择难度与用户能力匹配的题目</p>
+<p>        # P(正确)在60-80%的题目</p>
+<p>        candidates = []</p>
+<p>        for question in self.question_bank:</p>
+<p>            prob_correct = self._irt_probability(ability, question.difficulty)</p>
+<p>            if 0.6 &lt;= prob_correct &lt;= 0.8:</p>
+<p>                candidates.append((question, prob_correct))</p>
+<p>        # 按信息量和多样性排序</p>
+<p>        candidates = self._diversify(candidates, count)</p>
+<p>        return [q for q, _ in candidates[:count]]</p>
+<p>    def _weak_focus_recommend(self, user_id: str, count: int) -&gt; list:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        薄弱点强化推荐</p>
+<p>        针对掌握度低的知识点推荐题目</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        # 获取薄弱知识点</p>
+<p>        weak_concepts = self.user_model.get_weak_concepts(user_id)</p>
+<p>        recommendations = []</p>
+<p>        for concept in weak_concepts[:5]:  # 取前5个薄弱点</p>
+<p>            # 获取该知识点的题目</p>
+<p>            questions = self.question_bank.get_questions(</p>
+<p>                concept=concept,</p>
+<p>                exclude_answered=True</p>
+<p>            )</p>
+<p>            # 按难度排序（从易到难）</p>
+<p>            questions.sort(key=lambda q: q.difficulty_level)</p>
+<p>            recommendations.extend(questions[:2])  # 每个薄弱点2题</p>
+<p>        return recommendations[:count]</p>
+<p>    def _diversify(self, candidates: list, count: int) -&gt; list:</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        多样性排序</p>
+<p>        确保推荐的题目覆盖不同知识点和认知层次</p>
+<p>        &quot;&quot;&quot;</p>
+<p>        selected = []</p>
+<p>        concept_coverage = set()</p>
+<p>        bloom_coverage = set()</p>
+<p>        for question, prob in sorted(candidates, key=lambda x: abs(x[1]-0.7)):</p>
+<p>            # 优先选择覆盖新知识点和新认知层次的题目</p>
+<p>            concept = question.primary_concept</p>
+<p>            bloom = question.bloom_level</p>
+<p>            novelty = 0</p>
+<p>            if concept not in concept_coverage:</p>
+<p>                novelty += 1</p>
+<p>            if bloom not in bloom_coverage:</p>
+<p>                novelty += 0.5</p>
+<p>            if novelty &gt; 0 or len(selected) &lt; count // 2:</p>
+<p>                selected.append((question, prob))</p>
+<p>                concept_coverage.add(concept)</p>
+<p>                bloom_coverage.add(bloom)</p>
+<p>            if len(selected) &gt;= count:</p>
+<p>                break</p>
+<p>        return selected</p>
+<p>```</p>
+<p>### 5.2 推荐界面</p>
+<p>```</p>
+<p>┌─────────────────────────────────────────────────────────────┐</p>
+<p>│  智能练习推荐                                               │</p>
+<p>├─────────────────────────────────────────────────────────────┤</p>
+<p>│                                                             │</p>
+<p>│  📊 当前状态                                                │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ 整体掌握度: 68%  |  今日已练习: 15题  |  正确率: 73% │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  🎯 推荐练习 (共10题，预计20分钟)                          │</p>
+<p>│  ═══════════════════════════════════════════════════════   │</p>
+<p>│                                                             │</p>
+<p>│  基于您的薄弱点推荐:                                        │</p>
+<p>│                                                             │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ 1. [单选] 冈崎片段的形成机制                          │ │</p>
+<p>│  │    难度: ⭐⭐  |  知识点: DNA复制 &gt; 复制机制          │ │</p>
+<p>│  │    💡 您在该知识点的掌握度为40%，建议加强练习         │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ 2. [填空] DNA聚合酶的校对功能                         │ │</p>
+<p>│  │    难度: ⭐⭐⭐  |  知识点: DNA复制 &gt; 复制酶          │ │</p>
+<p>│  │    💡 相关知识点，有助于理解复制准确性                │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ 3. [判断] 前导链的合成是连续的                        │ │</p>
+<p>│  │    难度: ⭐  |  知识点: DNA复制 &gt; 复制机制            │ │</p>
+<p>│  │    💡 基础概念，巩固理解                              │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>│  ... 还有7题 ...                                            │</p>
+<p>│                                                             │</p>
+<p>│  [开始练习]  [换一批]  [自定义筛选]                         │</p>
+<p>│                                                             │</p>
+<p>│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │</p>
+<p>│                                                             │</p>
+<p>│  🎮 其他练习模式                                            │</p>
+<p>│  ┌───────────────────────────────────────────────────────┐ │</p>
+<p>│  │ [自适应练习] [薄弱点强化] [章节测试] [模拟考试]       │ │</p>
+<p>│  └───────────────────────────────────────────────────────┘ │</p>
+<p>│                                                             │</p>
+<p>└─────────────────────────────────────────────────────────────┘</p>
+<p>```</p>
+<p>---</p>
+<h2>六、API接口设计</h2>
+<p>### 6.1 题目管理接口</p>
+<p>```yaml</p>
+<h1>创建题目</h1>
+<p>POST /api/questions</p>
+<p>参数:</p>
+<p>  content: 题目内容</p>
+<p>  answer: 参考答案</p>
+<p>  explanation: 解析</p>
+<p>  options: 选项(选择题)</p>
+<p>  tags: 标签</p>
+<p>    - primary_concept: 主要知识点</p>
+<p>    - secondary_concepts: 次要知识点</p>
+<p>    - bloom_level: 认知层次</p>
+<p>    - difficulty: 难度</p>
+<p>    - question_type: 题型</p>
+<p>返回:</p>
+<p>  question_id: 题目ID</p>
+<p>  auto_tags: 自动标注结果</p>
+<h1>更新题目标签</h1>
+<p>PUT /api/questions/{id}/tags</p>
+<p>参数:</p>
+<p>  tags: 标签更新</p>
+<p>返回:</p>
+<p>  updated_tags: 更新后的标签</p>
+<h1>批量导入题目</h1>
+<p>POST /api/questions/batch</p>
+<p>参数:</p>
+<p>  questions: 题目列表</p>
+<p>  auto_tag: 是否自动标注</p>
+<p>返回:</p>
+<p>  imported_count: 导入数量</p>
+<p>  failed_count: 失败数量</p>
+<p>  errors: 错误列表</p>
+<p>```</p>
+<p>### 6.2 标签查询接口</p>
+<p>```yaml</p>
+<h1>按标签查询题目</h1>
+<p>GET /api/questions</p>
+<p>参数:</p>
+<p>  concept: 知识点ID</p>
+<p>  difficulty: 难度(L1-L5)</p>
+<p>  bloom_level: 认知层次</p>
+<p>  question_type: 题型</p>
+<p>  limit: 数量</p>
+<p>  offset: 偏移</p>
+<p>返回:</p>
+<p>  total: 总数</p>
+<p>  questions: 题目列表</p>
+<h1>获取题目标签</h1>
+<p>GET /api/questions/{id}/tags</p>
+<p>返回:</p>
+<p>  primary_concept: 主要知识点</p>
+<p>  secondary_concepts: 次要知识点</p>
+<p>  prerequisite_concepts: 前置知识</p>
+<p>  bloom_level: 认知层次</p>
+<p>  difficulty: 难度</p>
+<p>  difficulty_params: 难度参数(IRT)</p>
+<p>```</p>
+<p>### 6.3 覆盖分析接口</p>
+<p>```yaml</p>
+<h1>获取覆盖分析报告</h1>
+<p>GET /api/coverage/analysis</p>
+<p>参数:</p>
+<p>  area: 知识领域</p>
+<p>返回:</p>
+<p>  overall: 总体覆盖度</p>
+<p>  by_category: 分类覆盖度</p>
+<p>  by_difficulty: 难度分布</p>
+<p>  gaps: 覆盖缺口</p>
+<h1>获取补题建议</h1>
+<p>GET /api/coverage/gaps/recommendations</p>
+<p>参数:</p>
+<p>  priority: 优先级筛选</p>
+<p>返回:</p>
+<p>  recommendations: 补题建议列表</p>
+<p>    - concept: 知识点</p>
+<p>      type: 缺口类型</p>
+<p>      recommended_count: 建议题目数</p>
+<p>      recommended_difficulties: 建议难度分布</p>
+<p>      recommended_bloom: 建议认知层次分布</p>
+<p>```</p>
+<p>### 6.4 推荐接口</p>
+<p>```yaml</p>
+<h1>获取推荐题目</h1>
+<p>GET /api/questions/recommendations</p>
+<p>参数:</p>
+<p>  user_id: 用户ID</p>
+<p>  strategy: 策略(adaptive|weak_focus|comprehensive|exam)</p>
+<p>  count: 数量</p>
+<p>  exclude_answered: 排除已答题</p>
+<p>返回:</p>
+<p>  recommendations: 推荐题目列表</p>
+<p>    - question: 题目</p>
+<p>      reason: 推荐理由</p>
+<p>      expected_difficulty: 预期难度</p>
+<h1>提交答案并获取反馈</h1>
+<p>POST /api/questions/{id}/submit</p>
+<p>参数:</p>
+<p>  user_id: 用户ID</p>
+<p>  answer: 答案</p>
+<p>  time_spent: 用时(秒)</p>
+<p>返回:</p>
+<p>  correct: 是否正确</p>
+<p>  explanation: 解析</p>
+<p>  concept_mastery: 知识点掌握度更新</p>
+<p>  next_recommendation: 下一题推荐</p>
+<p>```</p>
+<p>---</p>
+<h2>七、总结</h2>
 <p>知识点-题库关联系统的核心特性：</p>
-<ol>
-<li><strong>多维度标签体系</strong>：知识点标签、认知层次标签、难度标签、题型标签</li>
-<li><strong>智能自动标注</strong>：基于NLP的自动标注，提高标注效率</li>
-<li><strong>科学难度分级</strong>：基于IRT模型的难度校准，确保难度客观准确</li>
-<li><strong>全面覆盖分析</strong>：多维度覆盖度分析，识别题库缺口</li>
-<li><strong>个性化推荐</strong>：基于用户能力和薄弱点的智能题目推荐</li>
-<li><strong>数据驱动优化</strong>：通过答题数据持续优化题目参数和推荐效果</li>
-</ol></article></main>
+<p>1. **多维度标签体系**：知识点标签、认知层次标签、难度标签、题型标签</p>
+<p>2. **智能自动标注**：基于NLP的自动标注，提高标注效率</p>
+<p>3. **科学难度分级**：基于IRT模型的难度校准，确保难度客观准确</p>
+<p>4. **全面覆盖分析**：多维度覆盖度分析，识别题库缺口</p>
+<p>5. **个性化推荐**：基于用户能力和薄弱点的智能题目推荐</p>
+<p>6. **数据驱动优化**：通过答题数据持续优化题目参数和推荐效果</p></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

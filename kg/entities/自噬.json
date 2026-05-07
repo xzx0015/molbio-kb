@@ -5,14 +5,32 @@
   "category": "过程",
   "chapter": "第5章",
   "importance": "core-major",
-  "definition": "自噬是细胞通过形成自噬体包裹胞质成分，与溶酶体融合降解，实现自我更新的过程，在营养缺乏、应激和发育中起重要作用。",
+  "definition": "自噬（Autophagy）是细胞将自身胞质成分（受损细胞器、蛋白质聚集体和病原体）包裹入双层膜结构的自噬体，与溶酶体（动物）或液泡（酵母和植物）融合进行降解和循环再利用的进化保守过程，可分为巨自噬（macroautophagy，最典型）、微自噬和分子伴侣介导的自噬三种类型。自噬的核心分子机器由超过30种ATG（autophagy-related）基因编码的蛋白质组成：mTORC1在营养充足时磷酸化抑制ULK1/ATG1复合物；饥饿、缺氧等信号抑制mTORC1，ULK1复合物激活后磷酸化下游Beclin-1-VPS34 PI3K复合物产生PI3P，招募WIPI和ATG12-ATG5-ATG16L1复合物催化LC3/ATG8的磷脂酰乙醇胺（PE）脂化，脂化的LC3（LC3-II）插入自噬体膜并介导货物受体的选择性自噬（如p62/SQSTM1识别泛素化蛋白聚集体）。自噬的双重角色在疾病中尤为突出：①通过清除损伤线粒体和蛋白聚集体发挥细胞保护作用，自噬功能减退与神经退行性疾病（帕金森病中PINK1/Parkin介导的线粒体自噬通路缺陷）和衰老相关；②在某些癌症晚期，自噬反而帮助肿瘤细胞在缺氧和营养匮乏的微环境中存活，此时抑制自噬成为治疗策略（临床使用氯喹/羟氯喹作为自噬抑制剂）。",
   "keyConcepts": [
-    {"term": "自噬体", "definition": "双层膜结构，包裹待降解的胞质成分"},
-    {"term": "溶酶体", "definition": "含有水解酶的细胞器，降解自噬体内容物"},
-    {"term": "自噬溶酶体", "definition": "自噬体与溶酶体融合后的结构"},
-    {"term": "ATG基因", "definition": "自噬相关基因，编码自噬 machinery 蛋白"},
-    {"term": "mTOR", "definition": "营养感应激酶，抑制自噬的主要调控因子"},
-    {"term": "LC3", "definition": "自噬体膜蛋白，自噬的标志物"}
+    {
+      "term": "自噬体",
+      "definition": "双层膜结构，包裹待降解的胞质成分"
+    },
+    {
+      "term": "溶酶体",
+      "definition": "含有水解酶的细胞器，降解自噬体内容物"
+    },
+    {
+      "term": "自噬溶酶体",
+      "definition": "自噬体与溶酶体融合后的结构"
+    },
+    {
+      "term": "ATG基因",
+      "definition": "自噬相关基因，编码自噬 machinery 蛋白"
+    },
+    {
+      "term": "mTOR",
+      "definition": "营养感应激酶，抑制自噬的主要调控因子"
+    },
+    {
+      "term": "LC3",
+      "definition": "自噬体膜蛋白，自噬的标志物"
+    }
   ],
   "keyPoints": [
     "自噬是细胞自我更新的重要机制",
@@ -21,7 +39,13 @@
     "自噬可选择性降解受损细胞器（线粒体自噬）",
     "2016年诺贝尔生理学或医学奖授予自噬研究"
   ],
-  "relatedEntities": ["溶酶体", "线粒体", "mTOR", "细胞凋亡", "蛋白质"],
+  "relatedEntities": [
+    "溶酶体",
+    "线粒体",
+    "mTOR",
+    "细胞凋亡",
+    "蛋白质"
+  ],
   "references": [
     "Mizushima N, Ohsumi Y. Autophagy: renovation of cells and tissues. Cell, 2011"
   ]

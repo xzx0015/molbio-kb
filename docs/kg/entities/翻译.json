@@ -1,0 +1,38 @@
+{
+  "id": "translation-kg",
+  "nameEn": "Translation",
+  "category": "过程",
+  "chapter": "第4章",
+  "importance": "core-important",
+  "definition": "翻译是以mRNA为模板、在核糖体上合成多肽链的过程，是中心法则中RNA→蛋白质的信息传递步骤。翻译分为三个主要阶段：①起始——小亚基识别mRNA的5'帽并扫描至起始密码子AUG，起始Met-tRNAᵢ通过eIF2-GTP递送至P位，大亚基加入组装为80S（真核）/70S（原核）完整核糖体；②延伸——氨酰-tRNA在eEF1A（原核EF-Tu）帮助下进入A位，核糖体大亚基的肽基转移酶中心（由rRNA催化）将P位肽基转移至A位氨基酸形成肽键，eEF2（原核EF-G）催化核糖体沿mRNA转位一个密码子；③终止——释放因子识别终止密码子触发肽基-tRNA水解释放多肽链、核糖体亚基解离。翻译的高保真性依赖于氨酰-tRNA合成酶对tRNA-氨基酸配对的精确校对以及核糖体解码中心对密码子-反密码子配对的监控。",
+  "keyConcepts": [
+    {
+      "term": "起始",
+      "definition": "小亚基扫描至AUG、起始tRNA进入P位、大亚基加入完成组装"
+    },
+    {
+      "term": "延伸",
+      "definition": "氨酰-tRNA进入A位→肽键形成→核糖体转位一个密码子的循环"
+    },
+    {
+      "term": "终止",
+      "definition": "释放因子识别UAA/UAG/UGA→水解释放多肽→亚基解离"
+    }
+  ],
+  "keyPoints": [
+    "mRNA→蛋白质，完成遗传信息的最终表达",
+    "在核糖体上进行，需mRNA、tRNA、多种翻译因子的协同",
+    "起始是限速步骤，受多重调控",
+    "许多抗生素通过抑制细菌翻译发挥作用"
+  ],
+  "relatedEntities": [
+    "DNA",
+    "RNA",
+    "蛋白质",
+    "mRNA",
+    "tRNA",
+    "核糖体",
+    "密码子",
+    "氨基酸"
+  ]
+}

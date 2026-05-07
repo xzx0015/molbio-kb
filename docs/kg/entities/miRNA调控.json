@@ -1,0 +1,34 @@
+{
+  "id": "mirna-regulation",
+  "nameEn": "miRNA-Mediated Regulation",
+  "category": "调控",
+  "chapter": "第4章",
+  "importance": "core-major",
+  "keyConcepts": [
+    {
+      "term": "种子序列",
+      "definition": "miRNA第2-8位核苷酸，是靶mRNA识别的主要决定因素"
+    },
+    {
+      "term": "miRISC",
+      "definition": "含miRNA和Argonaute蛋白的RISC，AGO2具内切酶活性"
+    },
+    {
+      "term": "3'UTR",
+      "definition": "mRNA 3'非翻译区，miRNA优先结合的靶区域"
+    }
+  ],
+  "keyPoints": [
+    "一个miRNA可调控数百个靶基因",
+    "主要通过mRNA去腺苷化-脱帽-降解实现沉默",
+    "深度参与发育、分化和免疫调控"
+  ],
+  "relatedEntities": [
+    "miRNA",
+    "RNA 干扰",
+    "siRNA",
+    "mRNA降解途径",
+    "基因调控"
+  ],
+  "definition": "miRNA介导的基因调控是转录后水平基因沉默的主要机制之一。miRNA通过种子序列（第2-8位核苷酸）识别靶mRNA 3'UTR，引导miRISC复合物执行翻译抑制和/或mRNA降解。动物细胞中多数miRNA与靶mRNA仅为不完全配对，miRISC主要通过GW182介导的mRNA去腺苷化、脱帽和5'→3'外切降解实现沉默。一个miRNA可调控数百个靶基因，一个mRNA的3'UTR也可能被多个miRNA协同调控——形成复杂的转录后调控网络。"
+}

@@ -5,13 +5,28 @@
   "category": "调控",
   "chapter": "第 7-8 章",
   "importance": "core-major",
-  "definition": "增强子是能够增强基因转录效率的 DNA 序列，可位于基因的上游、下游或内含子中，具有位置和方向独立性。",
+  "definition": "增强子是基因组中能够显著提高靶基因转录水平的顺式作用DNA元件，是决定基因时空特异性表达的关键调控元件。增强子区别于启动子的核心特征包括：①位置和方向独立——可位于靶基因的上游、下游、内含子中甚至相距数十万碱基对；②以方向无关的方式发挥作用，正反方向均可增强转录；③通常含有密集的转录因子结合位点簇，多种转录因子协同结合后通过染色质环化（chromatin looping）与靶启动子空间接近，招募共激活因子（如Mediator复合物和组蛋白乙酰转移酶p300/CBP）重塑局部染色质。超级增强子（super-enhancer）是一类特大规模的增强子簇，调控决定细胞身份的关键基因（如胚胎干细胞中的Oct4/Sox2/Nanog），在肿瘤中常被癌基因劫持驱动其异常高表达。全基因组范围鉴定增强子通常依赖染色质特征标记：DNase I超敏位点、H3K27ac和H3K4me1组蛋白修饰的高信号、以及p300结合位点。",
   "keyConcepts": [
-    {"term": "位置独立性", "definition": "增强子可在基因上游、下游或内部发挥作用"},
-    {"term": "方向独立性", "definition": "增强子正向或反向插入均可发挥作用"},
-    {"term": "远距离作用", "definition": "增强子可在数千碱基外发挥作用"},
-    {"term": "转录因子结合", "definition": "增强子结合特异性转录因子"},
-    {"term": "染色质环", "definition": "增强子通过染色质环与启动子接近"}
+    {
+      "term": "位置独立性",
+      "definition": "增强子可在基因上游、下游或内部发挥作用"
+    },
+    {
+      "term": "方向独立性",
+      "definition": "增强子正向或反向插入均可发挥作用"
+    },
+    {
+      "term": "远距离作用",
+      "definition": "增强子可在数千碱基外发挥作用"
+    },
+    {
+      "term": "转录因子结合",
+      "definition": "增强子结合特异性转录因子"
+    },
+    {
+      "term": "染色质环",
+      "definition": "增强子通过染色质环与启动子接近"
+    }
   ],
   "keyPoints": [
     "增强子可显著增强基因转录",
@@ -20,7 +35,12 @@
     "增强子通过染色质环与启动子相互作用",
     "增强子突变可导致疾病"
   ],
-  "relatedEntities": ["基因调控", "启动子", "转录因子", "沉默子"],
+  "relatedEntities": [
+    "基因调控",
+    "启动子",
+    "转录因子",
+    "沉默子"
+  ],
   "references": [
     "Banerji J, et al. A lymphocyte-specific cellular enhancer is located downstream of the joining region in immunoglobulin heavy chain genes. Cell, 1983"
   ]

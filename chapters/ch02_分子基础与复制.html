@@ -161,437 +161,196 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><nav class="chapter-nav"><a href="ch01_%E7%BB%AA%E8%AE%BA.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第2章</span>分子基础与复制</div><div class="article"><h2 id="_1">第二章：分子基础</h2>
-<h2 id="21">2.1 核酸的化学组成</h2>
-<h3 id="_2">核苷酸结构</h3>
-<p><a class="pn" id="pn-1" href="#pn-1">1</a><span class="entity molecule" title="分子">核苷酸</span>（Nucleotide）是核酸的基本组成单位，由三部分组成：</p>
-<table>
-<thead>
-<tr>
-<th>组分</th>
-<th>说明</th>
-<th>代表</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity molecule" title="分子">磷酸基团</span></td>
-<td>连接核苷酸形成磷酸二酯键</td>
-<td>—PO₄</td>
-</tr>
-<tr>
-<td><span class="entity molecule" title="分子">五碳糖</span></td>
-<td>DNA为<span class="entity molecule" title="分子">脱氧核糖</span>，RNA为<span class="entity molecule" title="分子">核糖</span></td>
-<td>C5H10O4 / C5H10O5</td>
-</tr>
-<tr>
-<td><span class="entity molecule" title="分子">含氮碱基</span></td>
-<td>携带遗传信息</td>
-<td>A/T/G/C/U</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_3">碱基配对规则</h3>
-<p><a class="pn" id="pn-2" href="#pn-2">2</a><span class="entity concept" title="概念：base_pairing">碱基互补配对</span>是核酸结构的分子基础：</p>
-<ul>
-<li><span class="entity molecule" title="分子">腺嘌呤</span>（A）⇔ <span class="entity molecule" title="分子">胸腺嘧啶</span>（T）：<strong>2个氢键</strong></li>
-<li><span class="entity molecule" title="分子">鸟嘌呤</span>（G）⇔ <span class="entity molecule" title="分子">胞嘧啶</span>（C）：<strong>3个氢键</strong></li>
-</ul>
-<blockquote>
-<p><a class="pn" id="pn-3" href="#pn-3">3</a><strong>Chargaff法则</strong>：在DNA中，A=T，G=C，A+G=T+C</p>
-</blockquote>
-<h2 id="22-dna">2.2 DNA的双螺旋结构</h2>
-<h3 id="watson-crick">Watson-Crick模型</h3>
-<p><a class="pn" id="pn-4" href="#pn-4">4</a>1953年，<span class="entity entity-generic" title="人物">Watson</span>和<span class="entity entity-generic" title="人物">Crick</span>提出DNA<span class="entity entity-generic" title="结构">双螺旋结构</span>模型：</p>
-<p><a class="pn" id="pn-5" href="#pn-5">5</a><strong>结构特征</strong>：
-- 两条反向平行的<span class="entity molecule" title="分子">多核苷酸链</span>
-- 右手螺旋（B-DNA），每圈10个碱基对
-- 碱基位于内侧，磷酸-糖骨架位于外侧
-- 大沟（Major groove）和小沟（Minor groove）</p>
-<h3 id="dna">DNA构象类型</h3>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>螺旋方向</th>
-<th>碱基对/圈</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity entity-generic" title="结构">B-DNA</span></td>
-<td>右手</td>
-<td>10</td>
-<td>生理条件下最常见</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="结构">A-DNA</span></td>
-<td>右手</td>
-<td>11</td>
-<td>脱水状态，较粗短</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="结构">Z-DNA</span></td>
-<td>左手</td>
-<td>12</td>
-<td>高盐或特定序列，调控功能</td>
-</tr>
-</tbody>
-</table>
-<h2 id="23-rna">2.3 RNA的结构特点</h2>
-<h3 id="rnadna">RNA与DNA的差异</h3>
-<table>
-<thead>
-<tr>
-<th>特征</th>
-<th>DNA</th>
-<th>RNA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>糖</td>
-<td><span class="entity molecule" title="分子">脱氧核糖</span></td>
-<td><span class="entity molecule" title="分子">核糖</span></td>
-</tr>
-<tr>
-<td>碱基</td>
-<td>A/T/G/C</td>
-<td>A/<strong>U</strong>/G/C</td>
-</tr>
-<tr>
-<td>结构</td>
-<td>双链</td>
-<td>通常单链</td>
-</tr>
-<tr>
-<td>稳定性</td>
-<td>高（2'-脱氧）</td>
-<td>低（易被水解）</td>
-</tr>
-<tr>
-<td>功能</td>
-<td>遗传信息存储</td>
-<td>信息传递与催化</td>
-</tr>
-</tbody>
-</table>
-<h3 id="rna">RNA二级结构</h3>
-<p><a class="pn" id="pn-6" href="#pn-6">6</a>单链RNA通过<span class="entity process" title="过程">分子内碱基配对</span>形成局部双链：</p>
-<ul>
-<li><strong>茎环结构</strong>（Stem-loop）：最常见</li>
-<li><strong>发夹结构</strong>（Hairpin）：反向重复序列</li>
-<li><strong>假结</strong>（Pseudoknot）：复杂调控结构</li>
-</ul>
-<h2 id="24">2.4 蛋白质的结构基础</h2>
-<h3 id="_4">氨基酸</h3>
-<p><a class="pn" id="pn-7" href="#pn-7">7</a><span class="entity molecule" title="分子">氨基酸</span>是蛋白质的基本单位，20种标准氨基酸：</p>
-<table>
-<thead>
-<tr>
-<th>分类</th>
-<th>代表氨基酸</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>非极性</td>
-<td><span class="entity molecule" title="分子">丙氨酸</span>、<span class="entity molecule" title="分子">亮氨酸</span></td>
-<td>疏水，位于蛋白质内部</td>
-</tr>
-<tr>
-<td>极性不带电</td>
-<td><span class="entity molecule" title="分子">丝氨酸</span>、<span class="entity molecule" title="分子">苏氨酸</span></td>
-<td>亲水，可形成氢键</td>
-</tr>
-<tr>
-<td>酸性</td>
-<td><span class="entity molecule" title="分子">天冬氨酸</span>、<span class="entity molecule" title="分子">谷氨酸</span></td>
-<td>带负电</td>
-</tr>
-<tr>
-<td>碱性</td>
-<td><span class="entity molecule" title="分子">赖氨酸</span>、<span class="entity molecule" title="分子">精氨酸</span></td>
-<td>带正电</td>
-</tr>
-<tr>
-<td>芳香族</td>
-<td><span class="entity molecule" title="分子">苯丙氨酸</span>、<span class="entity molecule" title="分子">酪氨酸</span></td>
-<td>特殊光学性质</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_5">蛋白质结构层次</h3>
-<p><a class="pn" id="pn-8" href="#pn-8">8</a><span class="entity concept" title="概念：protein_structure">蛋白质结构</span>分为四个层次：</p>
-<ol>
-<li><strong>一级结构</strong>：氨基酸序列（<span class="entity entity-generic" title="化学键">肽键</span>连接）</li>
-<li><strong>二级结构</strong>：局部折叠（<span class="entity entity-generic" title="结构">α-螺旋</span>、<span class="entity entity-generic" title="结构">β-折叠</span>）</li>
-<li><strong>三级结构</strong>：整体三维构象</li>
-<li><strong>四级结构</strong>：多亚基组装</li>
-</ol>
-<h2 id="25">2.5 生物大分子相互作用</h2>
-<h3 id="dna-">DNA-蛋白质相互作用</h3>
-<p><a class="pn" id="pn-9" href="#pn-9">9</a><span class="entity process" title="过程">蛋白质识别DNA</span>的分子机制：</p>
-<ul>
-<li><strong>氢键</strong>：识别特定碱基序列</li>
-<li><strong>疏水作用</strong>：大沟中的碱基暴露</li>
-<li><strong>静电作用</strong>：带正电氨基酸与磷酸骨架</li>
-</ul>
-<h3 id="_6">常见结合模体</h3>
-<table>
-<thead>
-<tr>
-<th>模体</th>
-<th>结构特征</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity entity-generic" title="结构">螺旋-转角-螺旋</span>（HTH）</td>
-<td>两个α-螺旋</td>
-<td>原核生物转录因子</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="结构">锌指</span>（Zinc finger）</td>
-<td>Zn²⁺稳定</td>
-<td>真核生物DNA结合</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="结构">亮氨酸拉链</span>（Leucine zipper）</td>
-<td>二聚化结构</td>
-<td>转录激活</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="结构">螺旋-环-螺旋</span>（HLH）</td>
-<td>二聚化+DNA结合</td>
-<td>发育调控</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_7">本章小结</h2>
-<ul>
-<li>核苷酸由磷酸、五碳糖、碱基组成</li>
-<li>DNA双螺旋结构是遗传信息存储的分子基础</li>
-<li>RNA通常为单链，具有催化功能（<span class="entity molecule" title="分子">核酶</span>）</li>
-<li>蛋白质结构决定功能，四级结构层次清晰</li>
-<li>大分子相互作用依赖氢键、疏水作用、静电作用</li>
-</ul>
-<h2 id="_8">思考题</h2>
-<ol>
-<li>为什么DNA使用脱氧核糖而RNA使用核糖？这对它们的功能有什么影响？</li>
-<li>G≡C碱基对比A=T更稳定，这对基因组有什么意义？</li>
-<li>列举3种DNA结合蛋白的结构模体及其功能。</li>
-</ol>
-<hr />
-<h2 id="dna_1">第二章：DNA复制</h2>
-<h2 id="21-dna">2.1 DNA复制概述</h2>
-<h3 id="_9">半保留复制</h3>
-<p><a class="pn" id="pn-10" href="#pn-10">10</a><span class="entity concept" title="概念：semiconservative_replication">半保留复制</span>是DNA复制的核心机制：</p>
-<pre><code>亲代DNA:    5'-ATGC-3'      3'-TACG-5'
-                ↓ 解旋
-子代DNA1:   5'-ATGC-3'  +  新合成: 3'-TACG-5'
-子代DNA2:   新合成: 5'-ATGC-3'  +  3'-TACG-5'
-</code></pre>
-<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>实验证明</strong>：<span class="entity entity-generic" title="人物">Meselson</span>和<span class="entity entity-generic" title="人物">Stahl</span>（1958）的¹⁵N同位素标记实验</p>
-<h3 id="_10">复制起点与复制叉</h3>
-<table>
-<thead>
-<tr>
-<th>概念</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity entity-generic" title="概念">复制起点</span>（Origin）</td>
-<td>DNA复制开始的特定序列</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">复制叉</span>（Replication fork）</td>
-<td>Y形结构，双链解开的区域</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="概念">复制子</span>（Replicon）</td>
-<td>从一个起点复制的DNA单位</td>
-</tr>
-</tbody>
-</table>
-<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>原核生物</strong>：通常单一起点（如<span class="entity entity-generic" title="概念">OriC</span>）
-<strong>真核生物</strong>：多个起点，形成<span class="entity entity-generic" title="概念">复制泡</span></p>
-<h2 id="22-dna_1">2.2 DNA复制机制</h2>
-<h3 id="_11">复制过程中的关键酶</h3>
-<table>
-<thead>
-<tr>
-<th>酶</th>
-<th>功能</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity enzyme" title="酶">解旋酶</span>（Helicase）</td>
-<td>解开双链</td>
-<td>ATP供能，双向移动</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">单链结合蛋白</span>（SSB）</td>
-<td>稳定单链</td>
-<td>防止复性、降解</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">拓扑异构酶</span></td>
-<td>缓解超螺旋</td>
-<td>I型切断单链，II型切断双链</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">DNA聚合酶</span></td>
-<td>合成新链</td>
-<td>5'→3'方向，需引物</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">引物酶</span>（Primase）</td>
-<td>合成RNA引物</td>
-<td>提供3'-OH末端</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">DNA连接酶</span></td>
-<td>连接片段</td>
-<td>连接Okazaki片段</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_12">前导链与后随链</h3>
-<p><a class="pn" id="pn-13" href="#pn-13">13</a><span class="entity concept" title="概念：leading_lagging">前导链与后随链</span>：</p>
-<ul>
-<li><strong>前导链</strong>（Leading strand）：连续合成，方向与复制叉移动相同</li>
-<li><strong>后随链</strong>（Lagging strand）：不连续合成，形成<span class="entity entity-generic" title="概念">冈崎片段</span></li>
-</ul>
-<blockquote>
-<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>半不连续复制</strong>：一条连续，一条不连续</p>
-</blockquote>
-<h3 id="dna_2">DNA聚合酶特性</h3>
-<p><a class="pn" id="pn-15" href="#pn-15">15</a><strong>原核生物</strong>（以<span class="entity entity-generic" title="生物">大肠杆菌</span>为例）：</p>
-<table>
-<thead>
-<tr>
-<th>聚合酶</th>
-<th>功能</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity enzyme" title="酶">Pol I</span></td>
-<td>修复、切除RNA引物</td>
-<td>5'→3'外切活性</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">Pol II</span></td>
-<td>修复</td>
-<td>SOS修复</td>
-</tr>
-<tr>
-<td><span class="entity enzyme" title="酶">Pol III</span></td>
-<td>主要复制酶</td>
-<td>高保真、高速度</td>
-</tr>
-</tbody>
-</table>
-<p><a class="pn" id="pn-16" href="#pn-16">16</a><strong>真核生物</strong>：
-- <span class="entity enzyme" title="酶">Pol α</span>：合成RNA-DNA引物
-- <span class="entity enzyme" title="酶">Pol δ</span>：合成后随链
-- <span class="entity enzyme" title="酶">Pol ε</span>：合成前导链</p>
-<h2 id="23-dna">2.3 DNA复制的调控</h2>
-<h3 id="_13">复制起始调控</h3>
-<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>原核生物</strong>：
-- <span class="entity protein" title="蛋白">DnaA</span>蛋白结合OriC的9bp重复序列
-- ATP-DnaA促进双链解开
-- <span class="entity protein" title="蛋白">DnaC</span>协助<span class="entity protein" title="蛋白">DnaB</span>解旋酶加载</p>
-<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>真核生物</strong>：
-- 复制起点识别复合物<span class="entity complex" title="复合物">ORC</span>
-- <span class="entity protein" title="蛋白">Cdc6</span>和<span class="entity protein" title="蛋白">Cdt1</span>招募<span class="entity protein" title="蛋白">MCM</span>解旋酶
-- <span class="entity entity-generic" title="激酶">CDK</span>和<span class="entity entity-generic" title="激酶">DDK</span>激酶激活复制起始</p>
-<h3 id="_14">复制检查点</h3>
-<p><a class="pn" id="pn-19" href="#pn-19">19</a><span class="entity concept" title="概念：replication_checkpoint">复制检查点</span>确保DNA完整复制：</p>
-<ul>
-<li><strong>S期检查点</strong>：监测复制叉进展</li>
-<li><strong>DNA损伤检查点</strong>：<span class="entity entity-generic" title="激酶">ATM/ATR</span>激酶通路</li>
-<li><strong>复制许可</strong>：每轮细胞周期只复制一次</li>
-</ul>
-<h2 id="24_1">2.4 端粒与端粒酶</h2>
-<h3 id="_15">端粒结构</h3>
-<p><a class="pn" id="pn-20" href="#pn-20">20</a><span class="entity entity-generic" title="结构">端粒</span>（Telomere）：染色体末端的保护结构</p>
-<ul>
-<li>序列：人类为<span class="entity entity-generic" title="序列">TTAGGG</span>重复（5-15 kb）</li>
-<li>结构：<span class="entity entity-generic" title="结构">T环</span>（T-loop），3'端回折</li>
-<li>功能：防止染色体末端被识别为DNA损伤</li>
-</ul>
-<h3 id="_16">端粒酶</h3>
-<p><a class="pn" id="pn-21" href="#pn-21">21</a><span class="entity enzyme" title="酶">端粒酶</span>（Telomerase）：
-- <span class="entity complex" title="复合物">核糖核蛋白</span>复合物
-- <span class="entity molecule" title="分子">RNA组分</span>（<span class="entity entity-generic" title="RNA">TERC</span>）：模板序列
-- <span class="entity protein" title="蛋白">蛋白质组分</span>（<span class="entity protein" title="蛋白">TERT</span>）：逆转录酶活性</p>
-<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>机制</strong>：</p>
-<pre><code>端粒DNA 3'端 → 端粒酶结合 → 以RNA为模板延伸 → 移位 → 重复
-</code></pre>
-<h3 id="_17">端粒与衰老</h3>
-<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>端粒缩短</strong>：
-- 正常体细胞：端粒酶活性低，端粒逐代缩短
-- <span class="entity entity-generic" title="概念">Hayflick极限</span>：细胞分裂约50-60次后衰老</p>
-<p><a class="pn" id="pn-24" href="#pn-24">24</a><strong>端粒酶与癌症</strong>：
-- 85-90%的癌细胞端粒酶重新激活
-- 维持端粒长度，获得无限增殖能力</p>
-<h2 id="25-dna">2.5 DNA损伤与修复</h2>
-<h3 id="_18">损伤类型</h3>
-<table>
-<thead>
-<tr>
-<th>诱变剂</th>
-<th>损伤类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="entity entity-generic" title="诱变剂">UV</span></td>
-<td>嘧啶二聚体（CPD、6-4光产物）</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="诱变剂">电离辐射</span></td>
-<td>双链断裂、碱基氧化</td>
-</tr>
-<tr>
-<td><span class="entity entity-generic" title="诱变剂">烷化剂</span></td>
-<td>碱基烷基化</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_19">主要修复机制</h3>
-<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>直接修复</strong>：
-- <span class="entity entity-generic" title="修复">光修复</span>：<span class="entity enzyme" title="酶">光裂合酶</span>裂解嘧啶二聚体</p>
-<p><a class="pn" id="pn-26" href="#pn-26">26</a><strong>切除修复</strong>：
-- <span class="entity entity-generic" title="修复">BER</span>（碱基切除修复）：修复单个损伤碱基
-- <span class="entity entity-generic" title="修复">NER</span>（核苷酸切除修复）：修复大的螺旋扭曲</p>
-<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>双链断裂修复</strong>：
-- <span class="entity entity-generic" title="修复">同源重组</span>（HRR）：高保真，需要同源模板
-- <span class="entity entity-generic" title="修复">非同源末端连接</span>（NHEJ）：易错，不需要模板</p>
-<h2 id="_20">本章小结</h2>
-<ul>
-<li>DNA半保留复制确保遗传信息精确传递</li>
-<li>复制是半不连续的，需要多种酶协同</li>
-<li>复制起始受严格调控，确保每周期只复制一次</li>
-<li>端粒酶维持染色体末端，与衰老和癌症相关</li>
-<li>DNA损伤修复机制维持基因组稳定性</li>
-</ul>
-<h2 id="_21">思考题</h2>
-<ol>
-<li>为什么DNA复制需要RNA引物？</li>
-<li>前导链和后随链的合成有什么不同？</li>
-<li>端粒酶在癌症治疗中有什么潜在应用？</li>
-</ol></div><nav class="chapter-nav"><a href="ch01_%E7%BB%AA%E8%AE%BA.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">下一章 →</a></nav></main>
+<main><nav class="chapter-nav"><a href="ch01_%E7%BB%AA%E8%AE%BA.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第2章</span>分子基础与复制</div><div class="article"><h2>第二章：分子基础</h2>
+<h2>2.1 核酸的化学组成</h2>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a>### 核苷酸结构</p>
+<p><a class="pn" id="pn-2" href="#pn-2">2</a>&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;核苷酸&lt;/span&gt;（Nucleotide）是核酸的基本组成单位，由三部分组成：</p>
+<p><a class="pn" id="pn-3" href="#pn-3">3</a>| 组分 | 说明 | 代表 |</p>
+<p><a class="pn" id="pn-4" href="#pn-4">4</a>|------|------|------|</p>
+<p><a class="pn" id="pn-5" href="#pn-5">5</a>| &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;磷酸基团&lt;/span&gt; | 连接核苷酸形成磷酸二酯键 | —PO₄ |</p>
+<p><a class="pn" id="pn-6" href="#pn-6">6</a>| &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;五碳糖&lt;/span&gt; | DNA为&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;脱氧核糖&lt;/span&gt;，RNA为&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;核糖&lt;/span&gt; | C5H10O4 / C5H10O5 |</p>
+<p><a class="pn" id="pn-7" href="#pn-7">7</a>| &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;含氮碱基&lt;/span&gt; | 携带遗传信息 | A/T/G/C/U |</p>
+<p><a class="pn" id="pn-8" href="#pn-8">8</a>### 碱基配对规则</p>
+<p><a class="pn" id="pn-9" href="#pn-9">9</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：base_pairing&quot;&gt;碱基互补配对&lt;/span&gt;是核酸结构的分子基础：</p>
+<p><a class="pn" id="pn-10" href="#pn-10">10</a>- &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;腺嘌呤&lt;/span&gt;（A）⇔ &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;胸腺嘧啶&lt;/span&gt;（T）：**2个氢键**</p>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a>- &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;鸟嘌呤&lt;/span&gt;（G）⇔ &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;胞嘧啶&lt;/span&gt;（C）：**3个氢键**</p>
+<p><a class="pn" id="pn-12" href="#pn-12">12</a>&gt; **Chargaff法则**：在DNA中，A=T，G=C，A+G=T+C</p>
+<h2>2.2 DNA的双螺旋结构</h2>
+<p><a class="pn" id="pn-13" href="#pn-13">13</a>### Watson-Crick模型</p>
+<p><a class="pn" id="pn-14" href="#pn-14">14</a>1953年，&lt;span class=&quot;entity entity-generic&quot; title=&quot;人物&quot;&gt;Watson&lt;/span&gt;和&lt;span class=&quot;entity entity-generic&quot; title=&quot;人物&quot;&gt;Crick&lt;/span&gt;提出DNA&lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;双螺旋结构&lt;/span&gt;模型：</p>
+<p><a class="pn" id="pn-15" href="#pn-15">15</a>**结构特征**：</p>
+<p><a class="pn" id="pn-16" href="#pn-16">16</a>- 两条反向平行的&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;多核苷酸链&lt;/span&gt;</p>
+<p><a class="pn" id="pn-17" href="#pn-17">17</a>- 右手螺旋（B-DNA），每圈10个碱基对</p>
+<p><a class="pn" id="pn-18" href="#pn-18">18</a>- 碱基位于内侧，磷酸-糖骨架位于外侧</p>
+<p><a class="pn" id="pn-19" href="#pn-19">19</a>- 大沟（Major groove）和小沟（Minor groove）</p>
+<p><a class="pn" id="pn-20" href="#pn-20">20</a>### DNA构象类型</p>
+<p><a class="pn" id="pn-21" href="#pn-21">21</a>| 类型 | 螺旋方向 | 碱基对/圈 | 特点 |</p>
+<p><a class="pn" id="pn-22" href="#pn-22">22</a>|------|---------|-----------|------|</p>
+<p><a class="pn" id="pn-23" href="#pn-23">23</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;B-DNA&lt;/span&gt; | 右手 | 10 | 生理条件下最常见 |</p>
+<p><a class="pn" id="pn-24" href="#pn-24">24</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;A-DNA&lt;/span&gt; | 右手 | 11 | 脱水状态，较粗短 |</p>
+<p><a class="pn" id="pn-25" href="#pn-25">25</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;Z-DNA&lt;/span&gt; | 左手 | 12 | 高盐或特定序列，调控功能 |</p>
+<h2>2.3 RNA的结构特点</h2>
+<p><a class="pn" id="pn-26" href="#pn-26">26</a>### RNA与DNA的差异</p>
+<p><a class="pn" id="pn-27" href="#pn-27">27</a>| 特征 | DNA | RNA |</p>
+<p><a class="pn" id="pn-28" href="#pn-28">28</a>|------|-----|-----|</p>
+<p><a class="pn" id="pn-29" href="#pn-29">29</a>| 糖 | &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;脱氧核糖&lt;/span&gt; | &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;核糖&lt;/span&gt; |</p>
+<p><a class="pn" id="pn-30" href="#pn-30">30</a>| 碱基 | A/T/G/C | A/**U**/G/C |</p>
+<p><a class="pn" id="pn-31" href="#pn-31">31</a>| 结构 | 双链 | 通常单链 |</p>
+<p><a class="pn" id="pn-32" href="#pn-32">32</a>| 稳定性 | 高（2&#x27;-脱氧） | 低（易被水解） |</p>
+<p><a class="pn" id="pn-33" href="#pn-33">33</a>| 功能 | 遗传信息存储 | 信息传递与催化 |</p>
+<p><a class="pn" id="pn-34" href="#pn-34">34</a>### RNA二级结构</p>
+<p><a class="pn" id="pn-35" href="#pn-35">35</a>单链RNA通过&lt;span class=&quot;entity process&quot; title=&quot;过程&quot;&gt;分子内碱基配对&lt;/span&gt;形成局部双链：</p>
+<p><a class="pn" id="pn-36" href="#pn-36">36</a>- **茎环结构**（Stem-loop）：最常见</p>
+<p><a class="pn" id="pn-37" href="#pn-37">37</a>- **发夹结构**（Hairpin）：反向重复序列</p>
+<p><a class="pn" id="pn-38" href="#pn-38">38</a>- **假结**（Pseudoknot）：复杂调控结构</p>
+<h2>2.4 蛋白质的结构基础</h2>
+<p><a class="pn" id="pn-39" href="#pn-39">39</a>### 氨基酸</p>
+<p><a class="pn" id="pn-40" href="#pn-40">40</a>&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;氨基酸&lt;/span&gt;是蛋白质的基本单位，20种标准氨基酸：</p>
+<p><a class="pn" id="pn-41" href="#pn-41">41</a>| 分类 | 代表氨基酸 | 特点 |</p>
+<p><a class="pn" id="pn-42" href="#pn-42">42</a>|------|-----------|------|</p>
+<p><a class="pn" id="pn-43" href="#pn-43">43</a>| 非极性 | &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;丙氨酸&lt;/span&gt;、&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;亮氨酸&lt;/span&gt; | 疏水，位于蛋白质内部 |</p>
+<p><a class="pn" id="pn-44" href="#pn-44">44</a>| 极性不带电 | &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;丝氨酸&lt;/span&gt;、&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;苏氨酸&lt;/span&gt; | 亲水，可形成氢键 |</p>
+<p><a class="pn" id="pn-45" href="#pn-45">45</a>| 酸性 | &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;天冬氨酸&lt;/span&gt;、&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;谷氨酸&lt;/span&gt; | 带负电 |</p>
+<p><a class="pn" id="pn-46" href="#pn-46">46</a>| 碱性 | &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;赖氨酸&lt;/span&gt;、&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;精氨酸&lt;/span&gt; | 带正电 |</p>
+<p><a class="pn" id="pn-47" href="#pn-47">47</a>| 芳香族 | &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;苯丙氨酸&lt;/span&gt;、&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;酪氨酸&lt;/span&gt; | 特殊光学性质 |</p>
+<p><a class="pn" id="pn-48" href="#pn-48">48</a>### 蛋白质结构层次</p>
+<p><a class="pn" id="pn-49" href="#pn-49">49</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：protein_structure&quot;&gt;蛋白质结构&lt;/span&gt;分为四个层次：</p>
+<p><a class="pn" id="pn-50" href="#pn-50">50</a>1. **一级结构**：氨基酸序列（&lt;span class=&quot;entity entity-generic&quot; title=&quot;化学键&quot;&gt;肽键&lt;/span&gt;连接）</p>
+<p><a class="pn" id="pn-51" href="#pn-51">51</a>2. **二级结构**：局部折叠（&lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;α-螺旋&lt;/span&gt;、&lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;β-折叠&lt;/span&gt;）</p>
+<p><a class="pn" id="pn-52" href="#pn-52">52</a>3. **三级结构**：整体三维构象</p>
+<p><a class="pn" id="pn-53" href="#pn-53">53</a>4. **四级结构**：多亚基组装</p>
+<h2>2.5 生物大分子相互作用</h2>
+<p><a class="pn" id="pn-54" href="#pn-54">54</a>### DNA-蛋白质相互作用</p>
+<p><a class="pn" id="pn-55" href="#pn-55">55</a>&lt;span class=&quot;entity process&quot; title=&quot;过程&quot;&gt;蛋白质识别DNA&lt;/span&gt;的分子机制：</p>
+<p><a class="pn" id="pn-56" href="#pn-56">56</a>- **氢键**：识别特定碱基序列</p>
+<p><a class="pn" id="pn-57" href="#pn-57">57</a>- **疏水作用**：大沟中的碱基暴露</p>
+<p><a class="pn" id="pn-58" href="#pn-58">58</a>- **静电作用**：带正电氨基酸与磷酸骨架</p>
+<p><a class="pn" id="pn-59" href="#pn-59">59</a>### 常见结合模体</p>
+<p><a class="pn" id="pn-60" href="#pn-60">60</a>| 模体 | 结构特征 | 功能 |</p>
+<p><a class="pn" id="pn-61" href="#pn-61">61</a>|------|---------|------|</p>
+<p><a class="pn" id="pn-62" href="#pn-62">62</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;螺旋-转角-螺旋&lt;/span&gt;（HTH） | 两个α-螺旋 | 原核生物转录因子 |</p>
+<p><a class="pn" id="pn-63" href="#pn-63">63</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;锌指&lt;/span&gt;（Zinc finger） | Zn²⁺稳定 | 真核生物DNA结合 |</p>
+<p><a class="pn" id="pn-64" href="#pn-64">64</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;亮氨酸拉链&lt;/span&gt;（Leucine zipper） | 二聚化结构 | 转录激活 |</p>
+<p><a class="pn" id="pn-65" href="#pn-65">65</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;螺旋-环-螺旋&lt;/span&gt;（HLH） | 二聚化+DNA结合 | 发育调控 |</p>
+<h2>本章小结</h2>
+<p><a class="pn" id="pn-66" href="#pn-66">66</a>- 核苷酸由磷酸、五碳糖、碱基组成</p>
+<p><a class="pn" id="pn-67" href="#pn-67">67</a>- DNA双螺旋结构是遗传信息存储的分子基础</p>
+<p><a class="pn" id="pn-68" href="#pn-68">68</a>- RNA通常为单链，具有催化功能（&lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;核酶&lt;/span&gt;）</p>
+<p><a class="pn" id="pn-69" href="#pn-69">69</a>- 蛋白质结构决定功能，四级结构层次清晰</p>
+<p><a class="pn" id="pn-70" href="#pn-70">70</a>- 大分子相互作用依赖氢键、疏水作用、静电作用</p>
+<h2>思考题</h2>
+<p><a class="pn" id="pn-71" href="#pn-71">71</a>1. 为什么DNA使用脱氧核糖而RNA使用核糖？这对它们的功能有什么影响？</p>
+<p><a class="pn" id="pn-72" href="#pn-72">72</a>2. G≡C碱基对比A=T更稳定，这对基因组有什么意义？</p>
+<p><a class="pn" id="pn-73" href="#pn-73">73</a>3. 列举3种DNA结合蛋白的结构模体及其功能。</p>
+<p><a class="pn" id="pn-74" href="#pn-74">74</a>---</p>
+<h2>第二章：DNA复制</h2>
+<h2>2.1 DNA复制概述</h2>
+<p><a class="pn" id="pn-75" href="#pn-75">75</a>### 半保留复制</p>
+<p><a class="pn" id="pn-76" href="#pn-76">76</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：semiconservative_replication&quot;&gt;半保留复制&lt;/span&gt;是DNA复制的核心机制：</p>
+<p><a class="pn" id="pn-77" href="#pn-77">77</a>```</p>
+<p><a class="pn" id="pn-78" href="#pn-78">78</a>亲代DNA:    5&#x27;-ATGC-3&#x27;      3&#x27;-TACG-5&#x27;</p>
+<p><a class="pn" id="pn-79" href="#pn-79">79</a>                ↓ 解旋</p>
+<p><a class="pn" id="pn-80" href="#pn-80">80</a>子代DNA1:   5&#x27;-ATGC-3&#x27;  +  新合成: 3&#x27;-TACG-5&#x27;</p>
+<p><a class="pn" id="pn-81" href="#pn-81">81</a>子代DNA2:   新合成: 5&#x27;-ATGC-3&#x27;  +  3&#x27;-TACG-5&#x27;</p>
+<p><a class="pn" id="pn-82" href="#pn-82">82</a>```</p>
+<p><a class="pn" id="pn-83" href="#pn-83">83</a>**实验证明**：&lt;span class=&quot;entity entity-generic&quot; title=&quot;人物&quot;&gt;Meselson&lt;/span&gt;和&lt;span class=&quot;entity entity-generic&quot; title=&quot;人物&quot;&gt;Stahl&lt;/span&gt;（1958）的¹⁵N同位素标记实验</p>
+<p><a class="pn" id="pn-84" href="#pn-84">84</a>### 复制起点与复制叉</p>
+<p><a class="pn" id="pn-85" href="#pn-85">85</a>| 概念 | 说明 |</p>
+<p><a class="pn" id="pn-86" href="#pn-86">86</a>|------|------|</p>
+<p><a class="pn" id="pn-87" href="#pn-87">87</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;复制起点&lt;/span&gt;（Origin） | DNA复制开始的特定序列 |</p>
+<p><a class="pn" id="pn-88" href="#pn-88">88</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;复制叉&lt;/span&gt;（Replication fork） | Y形结构，双链解开的区域 |</p>
+<p><a class="pn" id="pn-89" href="#pn-89">89</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;复制子&lt;/span&gt;（Replicon） | 从一个起点复制的DNA单位 |</p>
+<p><a class="pn" id="pn-90" href="#pn-90">90</a>**原核生物**：通常单一起点（如&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;OriC&lt;/span&gt;）</p>
+<p><a class="pn" id="pn-91" href="#pn-91">91</a>**真核生物**：多个起点，形成&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;复制泡&lt;/span&gt;</p>
+<h2>2.2 DNA复制机制</h2>
+<p><a class="pn" id="pn-92" href="#pn-92">92</a>### 复制过程中的关键酶</p>
+<p><a class="pn" id="pn-93" href="#pn-93">93</a>| 酶 | 功能 | 特点 |</p>
+<p><a class="pn" id="pn-94" href="#pn-94">94</a>|---|------|------|</p>
+<p><a class="pn" id="pn-95" href="#pn-95">95</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;解旋酶&lt;/span&gt;（Helicase） | 解开双链 | ATP供能，双向移动 |</p>
+<p><a class="pn" id="pn-96" href="#pn-96">96</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;单链结合蛋白&lt;/span&gt;（SSB） | 稳定单链 | 防止复性、降解 |</p>
+<p><a class="pn" id="pn-97" href="#pn-97">97</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;拓扑异构酶&lt;/span&gt; | 缓解超螺旋 | I型切断单链，II型切断双链 |</p>
+<p><a class="pn" id="pn-98" href="#pn-98">98</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;DNA聚合酶&lt;/span&gt; | 合成新链 | 5&#x27;→3&#x27;方向，需引物 |</p>
+<p><a class="pn" id="pn-99" href="#pn-99">99</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;引物酶&lt;/span&gt;（Primase） | 合成RNA引物 | 提供3&#x27;-OH末端 |</p>
+<p><a class="pn" id="pn-100" href="#pn-100">100</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;DNA连接酶&lt;/span&gt; | 连接片段 | 连接Okazaki片段 |</p>
+<p><a class="pn" id="pn-101" href="#pn-101">101</a>### 前导链与后随链</p>
+<p><a class="pn" id="pn-102" href="#pn-102">102</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：leading_lagging&quot;&gt;前导链与后随链&lt;/span&gt;：</p>
+<p><a class="pn" id="pn-103" href="#pn-103">103</a>- **前导链**（Leading strand）：连续合成，方向与复制叉移动相同</p>
+<p><a class="pn" id="pn-104" href="#pn-104">104</a>- **后随链**（Lagging strand）：不连续合成，形成&lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;冈崎片段&lt;/span&gt;</p>
+<p><a class="pn" id="pn-105" href="#pn-105">105</a>&gt; **半不连续复制**：一条连续，一条不连续</p>
+<p><a class="pn" id="pn-106" href="#pn-106">106</a>### DNA聚合酶特性</p>
+<p><a class="pn" id="pn-107" href="#pn-107">107</a>**原核生物**（以&lt;span class=&quot;entity entity-generic&quot; title=&quot;生物&quot;&gt;大肠杆菌&lt;/span&gt;为例）：</p>
+<p><a class="pn" id="pn-108" href="#pn-108">108</a>| 聚合酶 | 功能 | 特点 |</p>
+<p><a class="pn" id="pn-109" href="#pn-109">109</a>|--------|------|------|</p>
+<p><a class="pn" id="pn-110" href="#pn-110">110</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol I&lt;/span&gt; | 修复、切除RNA引物 | 5&#x27;→3&#x27;外切活性 |</p>
+<p><a class="pn" id="pn-111" href="#pn-111">111</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol II&lt;/span&gt; | 修复 | SOS修复 |</p>
+<p><a class="pn" id="pn-112" href="#pn-112">112</a>| &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol III&lt;/span&gt; | 主要复制酶 | 高保真、高速度 |</p>
+<p><a class="pn" id="pn-113" href="#pn-113">113</a>**真核生物**：</p>
+<p><a class="pn" id="pn-114" href="#pn-114">114</a>- &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol α&lt;/span&gt;：合成RNA-DNA引物</p>
+<p><a class="pn" id="pn-115" href="#pn-115">115</a>- &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol δ&lt;/span&gt;：合成后随链</p>
+<p><a class="pn" id="pn-116" href="#pn-116">116</a>- &lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;Pol ε&lt;/span&gt;：合成前导链</p>
+<h2>2.3 DNA复制的调控</h2>
+<p><a class="pn" id="pn-117" href="#pn-117">117</a>### 复制起始调控</p>
+<p><a class="pn" id="pn-118" href="#pn-118">118</a>**原核生物**：</p>
+<p><a class="pn" id="pn-119" href="#pn-119">119</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;DnaA&lt;/span&gt;蛋白结合OriC的9bp重复序列</p>
+<p><a class="pn" id="pn-120" href="#pn-120">120</a>- ATP-DnaA促进双链解开</p>
+<p><a class="pn" id="pn-121" href="#pn-121">121</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;DnaC&lt;/span&gt;协助&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;DnaB&lt;/span&gt;解旋酶加载</p>
+<p><a class="pn" id="pn-122" href="#pn-122">122</a>**真核生物**：</p>
+<p><a class="pn" id="pn-123" href="#pn-123">123</a>- 复制起点识别复合物&lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;ORC&lt;/span&gt;</p>
+<p><a class="pn" id="pn-124" href="#pn-124">124</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Cdc6&lt;/span&gt;和&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Cdt1&lt;/span&gt;招募&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;MCM&lt;/span&gt;解旋酶</p>
+<p><a class="pn" id="pn-125" href="#pn-125">125</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;激酶&quot;&gt;CDK&lt;/span&gt;和&lt;span class=&quot;entity entity-generic&quot; title=&quot;激酶&quot;&gt;DDK&lt;/span&gt;激酶激活复制起始</p>
+<p><a class="pn" id="pn-126" href="#pn-126">126</a>### 复制检查点</p>
+<p><a class="pn" id="pn-127" href="#pn-127">127</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：replication_checkpoint&quot;&gt;复制检查点&lt;/span&gt;确保DNA完整复制：</p>
+<p><a class="pn" id="pn-128" href="#pn-128">128</a>- **S期检查点**：监测复制叉进展</p>
+<p><a class="pn" id="pn-129" href="#pn-129">129</a>- **DNA损伤检查点**：&lt;span class=&quot;entity entity-generic&quot; title=&quot;激酶&quot;&gt;ATM/ATR&lt;/span&gt;激酶通路</p>
+<p><a class="pn" id="pn-130" href="#pn-130">130</a>- **复制许可**：每轮细胞周期只复制一次</p>
+<h2>2.4 端粒与端粒酶</h2>
+<p><a class="pn" id="pn-131" href="#pn-131">131</a>### 端粒结构</p>
+<p><a class="pn" id="pn-132" href="#pn-132">132</a>&lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;端粒&lt;/span&gt;（Telomere）：染色体末端的保护结构</p>
+<p><a class="pn" id="pn-133" href="#pn-133">133</a>- 序列：人类为&lt;span class=&quot;entity entity-generic&quot; title=&quot;序列&quot;&gt;TTAGGG&lt;/span&gt;重复（5-15 kb）</p>
+<p><a class="pn" id="pn-134" href="#pn-134">134</a>- 结构：&lt;span class=&quot;entity entity-generic&quot; title=&quot;结构&quot;&gt;T环&lt;/span&gt;（T-loop），3&#x27;端回折</p>
+<p><a class="pn" id="pn-135" href="#pn-135">135</a>- 功能：防止染色体末端被识别为DNA损伤</p>
+<p><a class="pn" id="pn-136" href="#pn-136">136</a>### 端粒酶</p>
+<p><a class="pn" id="pn-137" href="#pn-137">137</a>&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;端粒酶&lt;/span&gt;（Telomerase）：</p>
+<p><a class="pn" id="pn-138" href="#pn-138">138</a>- &lt;span class=&quot;entity complex&quot; title=&quot;复合物&quot;&gt;核糖核蛋白&lt;/span&gt;复合物</p>
+<p><a class="pn" id="pn-139" href="#pn-139">139</a>- &lt;span class=&quot;entity molecule&quot; title=&quot;分子&quot;&gt;RNA组分&lt;/span&gt;（&lt;span class=&quot;entity entity-generic&quot; title=&quot;RNA&quot;&gt;TERC&lt;/span&gt;）：模板序列</p>
+<p><a class="pn" id="pn-140" href="#pn-140">140</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;蛋白质组分&lt;/span&gt;（&lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;TERT&lt;/span&gt;）：逆转录酶活性</p>
+<p><a class="pn" id="pn-141" href="#pn-141">141</a>**机制**：</p>
+<p><a class="pn" id="pn-142" href="#pn-142">142</a>```</p>
+<p><a class="pn" id="pn-143" href="#pn-143">143</a>端粒DNA 3&#x27;端 → 端粒酶结合 → 以RNA为模板延伸 → 移位 → 重复</p>
+<p><a class="pn" id="pn-144" href="#pn-144">144</a>```</p>
+<p><a class="pn" id="pn-145" href="#pn-145">145</a>### 端粒与衰老</p>
+<p><a class="pn" id="pn-146" href="#pn-146">146</a>**端粒缩短**：</p>
+<p><a class="pn" id="pn-147" href="#pn-147">147</a>- 正常体细胞：端粒酶活性低，端粒逐代缩短</p>
+<p><a class="pn" id="pn-148" href="#pn-148">148</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;概念&quot;&gt;Hayflick极限&lt;/span&gt;：细胞分裂约50-60次后衰老</p>
+<p><a class="pn" id="pn-149" href="#pn-149">149</a>**端粒酶与癌症**：</p>
+<p><a class="pn" id="pn-150" href="#pn-150">150</a>- 85-90%的癌细胞端粒酶重新激活</p>
+<p><a class="pn" id="pn-151" href="#pn-151">151</a>- 维持端粒长度，获得无限增殖能力</p>
+<h2>2.5 DNA损伤与修复</h2>
+<p><a class="pn" id="pn-152" href="#pn-152">152</a>### 损伤类型</p>
+<p><a class="pn" id="pn-153" href="#pn-153">153</a>| 诱变剂 | 损伤类型 |</p>
+<p><a class="pn" id="pn-154" href="#pn-154">154</a>|--------|---------|</p>
+<p><a class="pn" id="pn-155" href="#pn-155">155</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;诱变剂&quot;&gt;UV&lt;/span&gt; | 嘧啶二聚体（CPD、6-4光产物） |</p>
+<p><a class="pn" id="pn-156" href="#pn-156">156</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;诱变剂&quot;&gt;电离辐射&lt;/span&gt; | 双链断裂、碱基氧化 |</p>
+<p><a class="pn" id="pn-157" href="#pn-157">157</a>| &lt;span class=&quot;entity entity-generic&quot; title=&quot;诱变剂&quot;&gt;烷化剂&lt;/span&gt; | 碱基烷基化 |</p>
+<p><a class="pn" id="pn-158" href="#pn-158">158</a>### 主要修复机制</p>
+<p><a class="pn" id="pn-159" href="#pn-159">159</a>**直接修复**：</p>
+<p><a class="pn" id="pn-160" href="#pn-160">160</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;修复&quot;&gt;光修复&lt;/span&gt;：&lt;span class=&quot;entity enzyme&quot; title=&quot;酶&quot;&gt;光裂合酶&lt;/span&gt;裂解嘧啶二聚体</p>
+<p><a class="pn" id="pn-161" href="#pn-161">161</a>**切除修复**：</p>
+<p><a class="pn" id="pn-162" href="#pn-162">162</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;修复&quot;&gt;BER&lt;/span&gt;（碱基切除修复）：修复单个损伤碱基</p>
+<p><a class="pn" id="pn-163" href="#pn-163">163</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;修复&quot;&gt;NER&lt;/span&gt;（核苷酸切除修复）：修复大的螺旋扭曲</p>
+<p><a class="pn" id="pn-164" href="#pn-164">164</a>**双链断裂修复**：</p>
+<p><a class="pn" id="pn-165" href="#pn-165">165</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;修复&quot;&gt;同源重组&lt;/span&gt;（HRR）：高保真，需要同源模板</p>
+<p><a class="pn" id="pn-166" href="#pn-166">166</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;修复&quot;&gt;非同源末端连接&lt;/span&gt;（NHEJ）：易错，不需要模板</p>
+<h2>本章小结</h2>
+<p><a class="pn" id="pn-167" href="#pn-167">167</a>- DNA半保留复制确保遗传信息精确传递</p>
+<p><a class="pn" id="pn-168" href="#pn-168">168</a>- 复制是半不连续的，需要多种酶协同</p>
+<p><a class="pn" id="pn-169" href="#pn-169">169</a>- 复制起始受严格调控，确保每周期只复制一次</p>
+<p><a class="pn" id="pn-170" href="#pn-170">170</a>- 端粒酶维持染色体末端，与衰老和癌症相关</p>
+<p><a class="pn" id="pn-171" href="#pn-171">171</a>- DNA损伤修复机制维持基因组稳定性</p>
+<h2>思考题</h2>
+<p><a class="pn" id="pn-172" href="#pn-172">172</a>1. 为什么DNA复制需要RNA引物？</p>
+<p><a class="pn" id="pn-173" href="#pn-173">173</a>2. 前导链和后随链的合成有什么不同？</p>
+<p><a class="pn" id="pn-174" href="#pn-174">174</a>3. 端粒酶在癌症治疗中有什么潜在应用？</p></div><nav class="chapter-nav"><a href="ch01_%E7%BB%AA%E8%AE%BA.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch03_%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E4%B8%8E%E8%BD%AC%E5%BD%95.html">下一章 →</a></nav></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

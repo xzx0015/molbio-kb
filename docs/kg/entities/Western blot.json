@@ -5,13 +5,28 @@
   "category": "技术",
   "chapter": "第 11 章",
   "importance": "core-major",
-  "definition": "Western blot 是检测特定蛋白质的免疫印迹技术，通过 SDS-PAGE 分离蛋白质，转膜后用抗体检测。",
+  "definition": "Western blot（蛋白质印迹/免疫印迹）是检测复杂样品中特定蛋白质的半定量技术，由Towbin和Burnette分别于1979年和1981年建立。流程为：蛋白质样品经SDS-PAGE按分子量分离后，通过电场作用将凝胶中的蛋白质转移至PVDF膜（聚偏二氟乙烯）或硝酸纤维素膜上；膜经封闭液（如脱脂牛奶或BSA）封闭非特异性结合位点后，依次与特异性一抗（识别目标蛋白）和酶标二抗（识别一抗的Fc段）孵育；最后通过化学发光（HRP-鲁米诺系统）、荧光或显色反应检测信号，条带强度与目标蛋白质丰度成正比。Western blot广泛应用于蛋白质表达水平检测、蛋白质翻译后修饰分析（磷酸化、乙酰化等）、蛋白质相互作用验证（免疫共沉淀后检测）以及临床诊断（如HIV确证试验）。",
   "keyConcepts": [
-    {"term": "SDS-PAGE", "definition": "十二烷基硫酸钠聚丙烯酰胺凝胶电泳，按分子量分离蛋白质"},
-    {"term": "转膜", "definition": "将凝胶中的蛋白质转移到 PVDF 或硝酸纤维素膜上"},
-    {"term": "一抗", "definition": "识别目标蛋白质的一抗（特异性抗体）"},
-    {"term": "二抗", "definition": "识别一抗的二抗，通常带有酶标记或荧光标记"},
-    {"term": "显色", "definition": "通过化学发光或显色反应检测蛋白质条带"}
+    {
+      "term": "SDS-PAGE",
+      "definition": "十二烷基硫酸钠聚丙烯酰胺凝胶电泳，按分子量分离蛋白质"
+    },
+    {
+      "term": "转膜",
+      "definition": "将凝胶中的蛋白质转移到 PVDF 或硝酸纤维素膜上"
+    },
+    {
+      "term": "一抗",
+      "definition": "识别目标蛋白质的一抗（特异性抗体）"
+    },
+    {
+      "term": "二抗",
+      "definition": "识别一抗的二抗，通常带有酶标记或荧光标记"
+    },
+    {
+      "term": "显色",
+      "definition": "通过化学发光或显色反应检测蛋白质条带"
+    }
   ],
   "keyPoints": [
     "Western blot 用于检测特定蛋白质的存在和大小",
@@ -20,7 +35,12 @@
     "抗体特异性是关键",
     "Western blot 是蛋白质研究的基础技术"
   ],
-  "relatedEntities": ["分子生物学技术", "蛋白质", "抗体", "SDS-PAGE"],
+  "relatedEntities": [
+    "分子生物学技术",
+    "蛋白质",
+    "抗体",
+    "SDS-PAGE"
+  ],
   "references": [
     "Towbin H, et al. Electrophoretic transfer of proteins from polyacrylamide gels to nitrocellulose sheets. PNAS, 1979"
   ]

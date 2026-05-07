@@ -5,13 +5,28 @@
   "category": "酶",
   "chapter": "第 3 章",
   "importance": "core-important",
-  "definition": "DNA 聚合酶是以 DNA 为模板合成 DNA 的酶，是 DNA 复制的关键酶，具有 5'→3'聚合酶活性、3'→5'外切酶活性（校对功能）。",
+  "definition": "DNA聚合酶是催化DNA复制的核心酶，以单链DNA为模板，按碱基互补配对原则在引物的3'-OH端沿5'→3'方向逐个添加脱氧核苷酸，合成与模板链互补的新生DNA链。所有DNA聚合酶均具有5'→3'聚合酶活性，绝大多数还具备3'→5'外切酶活性（校对功能），可将复制错误率从约10⁻⁵降至10⁻⁷。原核生物中，DNA聚合酶Ⅲ（Pol III）是主要的复制酶，具有高持续合成能力；DNA聚合酶Ⅰ（Pol I）则负责RNA引物的切除和缺口填补。真核生物拥有至少15种DNA聚合酶，其中Pol α负责合成RNA-DNA引物，Pol δ和Pol ε分别主导后随链和前导链的延伸。Taq DNA聚合酶（来自嗜热菌Thermus aquaticus）因其耐热性而成为PCR技术的核心工具，极大推动了分子生物学研究。",
   "keyConcepts": [
-    {"term": "DNA 聚合酶 I", "definition": "原核生物中主要参与 DNA 修复和 RNA 引物切除的酶"},
-    {"term": "DNA 聚合酶 III", "definition": "原核生物中主要的复制酶，具有高持续合成能力"},
-    {"term": "DNA 聚合酶 α/δ/ε", "definition": "真核生物中的主要 DNA 聚合酶，分别负责引物合成和链延伸"},
-    {"term": "Taq 酶", "definition": "耐热的 DNA 聚合酶，来自 Thermus aquaticus，用于 PCR"},
-    {"term": "校对功能", "definition": "3'→5'外切酶活性，可切除错配碱基，保证复制准确性"}
+    {
+      "term": "DNA 聚合酶 I",
+      "definition": "原核生物中主要参与 DNA 修复和 RNA 引物切除的酶"
+    },
+    {
+      "term": "DNA 聚合酶 III",
+      "definition": "原核生物中主要的复制酶，具有高持续合成能力"
+    },
+    {
+      "term": "DNA 聚合酶 α/δ/ε",
+      "definition": "真核生物中的主要 DNA 聚合酶，分别负责引物合成和链延伸"
+    },
+    {
+      "term": "Taq 酶",
+      "definition": "耐热的 DNA 聚合酶，来自 Thermus aquaticus，用于 PCR"
+    },
+    {
+      "term": "校对功能",
+      "definition": "3'→5'外切酶活性，可切除错配碱基，保证复制准确性"
+    }
   ],
   "keyPoints": [
     "DNA 聚合酶需要引物，不能从头合成 DNA",
@@ -20,7 +35,12 @@
     "真核生物有多种 DNA 聚合酶，分工不同",
     "Taq 酶的发现使 PCR 技术成为可能"
   ],
-  "relatedEntities": ["DNA 复制", "PCR", "DNA 修复", "基因工程"],
+  "relatedEntities": [
+    "DNA 复制",
+    "PCR",
+    "DNA 修复",
+    "基因工程"
+  ],
   "references": [
     "Kornberg A. Enzymatic synthesis of DNA. Nobel Lecture, 1959"
   ],

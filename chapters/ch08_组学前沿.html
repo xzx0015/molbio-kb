@@ -161,194 +161,190 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><nav class="chapter-nav"><a href="ch07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a></nav><div class="chapter-title"><span class="ch-num">第8章</span>组学前沿</div><div class="article"><h2 id="_1">第八章：组学与前沿技术</h2>
-<h2 id="81">8.1 基因组学</h2>
-<h3 id="dna">DNA测序技术</h3>
-<p><a class="pn" id="pn-1" href="#pn-1">1</a><strong>第一代测序（Sanger测序）</strong>：
-- 双脱氧终止法
-- 读长：500-1000 bp
-- 准确率：&gt;99.9%
-- 应用：小片段验证、重测序</p>
-<p><a class="pn" id="pn-2" href="#pn-2">2</a><strong>第二代测序（NGS）</strong>：
-| 平台 | 技术原理 | 读长 | 应用 |
-|------|---------|------|------|
-| Illumina | 桥式PCR + 荧光标记 | 150-300 bp | 全基因组、RNA-seq |
-| Ion Torrent | 半导体测序 | 200-400 bp | 靶向测序 |</p>
-<p><a class="pn" id="pn-3" href="#pn-3">3</a><strong>第三代测序</strong>：
-- <strong>PacBio</strong>：单分子实时测序，读长10-20 kb
-- <strong>Oxford Nanopore</strong>：纳米孔测序，便携、实时</p>
-<h3 id="_2">全基因组分析</h3>
-<p><a class="pn" id="pn-4" href="#pn-4">4</a><strong>全基因组测序</strong>（WGS）：
-- 检测SNV、Indel、SV、CNV
-- 疾病研究、群体遗传学</p>
-<p><a class="pn" id="pn-5" href="#pn-5">5</a><strong>全外显子测序</strong>（WES）：
-- 只测外显子区域（占基因组1-2%）
-- 成本较低，适合孟德尔疾病研究</p>
-<p><a class="pn" id="pn-6" href="#pn-6">6</a><strong>基因组注释</strong>：
-- 基因预测（ab initio、同源比对）
-- 功能注释（GO、KEGG）
-- 非编码RNA注释</p>
-<h3 id="_3">比较基因组学</h3>
-<p><a class="pn" id="pn-7" href="#pn-7">7</a><strong>同线性分析</strong>（Synteny）：
-- 比较不同物种基因组结构
-- 揭示进化关系</p>
-<p><a class="pn" id="pn-8" href="#pn-8">8</a><strong>全基因组复制</strong>（WGD）：
-- 植物基因组常见
-- 基因家族扩张</p>
-<h2 id="82">8.2 转录组学</h2>
-<h3 id="rna-seq">RNA-seq技术</h3>
-<p><a class="pn" id="pn-9" href="#pn-9">9</a><strong>原理</strong>：
-1. RNA提取
-2. 逆转录为cDNA
-3. 文库构建
-4. 高通量测序
-5. 数据分析</p>
-<p><a class="pn" id="pn-10" href="#pn-10">10</a><strong>应用</strong>：
-- 基因表达定量
-- 可变剪接分析
-- 新转录本发现
-- 融合基因检测</p>
-<h3 id="_4">单细胞转录组</h3>
-<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>scRNA-seq技术</strong>：
-| 平台 | 特点 |
-|------|------|
-| 10x Genomics | 高通量，3'端捕获 |
-| Smart-seq2 | 全长覆盖 |
-| Drop-seq | 低成本 |</p>
-<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>分析流程</strong>：
-1. 质控和过滤
-2. 归一化
-3. 降维（PCA、t-SNE、UMAP）
-4. 聚类
-5. 差异表达分析
-6. 轨迹推断</p>
-<p><a class="pn" id="pn-13" href="#pn-13">13</a><strong>应用</strong>：
-- 细胞类型鉴定
-- 发育轨迹重建
-- 肿瘤异质性分析</p>
-<h3 id="_5">空间转录组</h3>
-<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>技术原理</strong>：
-- 保留组织空间信息
-- 结合组织学和转录组学</p>
-<p><a class="pn" id="pn-15" href="#pn-15">15</a><strong>平台</strong>：
-- 10x Genomics Visium
-- Slide-seq
-- MERFISH</p>
-<h2 id="83">8.3 蛋白质组学</h2>
-<h3 id="_6">质谱技术</h3>
-<p><a class="pn" id="pn-16" href="#pn-16">16</a><strong>LC-MS/MS</strong>：
-- 液相色谱分离
-- 质谱检测
-- 蛋白质鉴定和定量</p>
-<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>定量方法</strong>：
-| 方法 | 原理 |
-|------|------|
-| SILAC | 稳定同位素标记 |
-| iTRAQ/TMT | 同位素标记 |
-| Label-free | 无标记，基于肽段强度 |
-| DIA/SWATH | 数据非依赖采集 |</p>
-<h3 id="_7">蛋白质相互作用</h3>
-<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>酵母双杂交</strong>（Y2H）：
-- 检测蛋白质-蛋白质相互作用
-- 高通量筛选</p>
-<p><a class="pn" id="pn-19" href="#pn-19">19</a><strong>质谱蛋白质组学</strong>：
-- AP-MS（亲和纯化质谱）
-- BioID（邻近标记）</p>
-<h3 id="_8">翻译后修饰</h3>
-<p><a class="pn" id="pn-20" href="#pn-20">20</a><strong>磷酸化蛋白质组</strong>：
-- TiO₂/IMAC富集
-- 质谱鉴定磷酸化位点</p>
-<p><a class="pn" id="pn-21" href="#pn-21">21</a><strong>泛素化蛋白质组</strong>：
-- 泛素化位点鉴定
-- 蛋白质降解研究</p>
-<h2 id="84">8.4 代谢组学</h2>
-<h3 id="_9">代谢物检测</h3>
-<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>LC-MS</strong>：
-- 非靶向代谢组学
-- 广谱检测代谢物</p>
-<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>GC-MS</strong>：
-- 挥发性代谢物
-- 标准品库匹配</p>
-<p><a class="pn" id="pn-24" href="#pn-24">24</a><strong>NMR</strong>：
-- 无损伤检测
-- 定量准确</p>
-<h3 id="_10">代谢流分析</h3>
-<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>原理</strong>：
-- 同位素示踪（¹³C、¹⁵N）
-- 追踪代谢物转化
-- 计算代谢通量</p>
-<h2 id="85">8.5 表观基因组学</h2>
-<h3 id="chip-seq">ChIP-seq</h3>
-<p><a class="pn" id="pn-26" href="#pn-26">26</a><strong>原理</strong>：
-- 染色质免疫沉淀
-- 测序鉴定蛋白质结合位点</p>
-<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>应用</strong>：
-- 转录因子结合位点
-- 组蛋白修饰分布
-- 染色质可及性（ATAC-seq）</p>
-<h3 id="dna_1">DNA甲基化测序</h3>
-<p><a class="pn" id="pn-28" href="#pn-28">28</a><strong>WGBS</strong>（全基因组亚硫酸氢盐测序）：
-- 金标准方法
-- 单碱基分辨率</p>
-<p><a class="pn" id="pn-29" href="#pn-29">29</a><strong>RRBS</strong>（简化代表性亚硫酸氢盐测序）：
-- 只测CpG富集区域
-- 成本较低</p>
-<h3 id="_11">染色质构象</h3>
-<p><a class="pn" id="pn-30" href="#pn-30">30</a><strong>Hi-C</strong>：
-- 检测染色质三维结构
-- 揭示拓扑关联结构域（TAD）</p>
-<p><a class="pn" id="pn-31" href="#pn-31">31</a><strong>Capture-C</strong>：
-- 高分辨率检测特定区域互作
-- 增强子-启动子互作</p>
-<h2 id="86">8.6 前沿技术</h2>
-<h3 id="_12">基因治疗</h3>
-<p><a class="pn" id="pn-32" href="#pn-32">32</a><strong>递送系统</strong>：
-| 类型 | 特点 |
-|------|------|
-| 病毒载体 | AAV、慢病毒、腺病毒 |
-| 非病毒载体 | 脂质纳米颗粒（LNP） |
-| 基因编辑 | CRISPR体内递送 |</p>
-<p><a class="pn" id="pn-33" href="#pn-33">33</a><strong>应用</strong>：
-- 单基因遗传病（如镰状细胞贫血）
-- 癌症免疫治疗（CAR-T）
-- 眼科疾病</p>
-<h3 id="_13">合成生物学</h3>
-<p><a class="pn" id="pn-34" href="#pn-34">34</a><strong>基因线路</strong>：
-- 逻辑门（AND、OR、NOT）
-- 振荡器、开关</p>
-<p><a class="pn" id="pn-35" href="#pn-35">35</a><strong>细胞工厂</strong>：
-- 微生物合成药物（青蒿素、紫杉醇）
-- 生物燃料生产</p>
-<h3 id="_14">人工智能与生物学</h3>
-<p><a class="pn" id="pn-36" href="#pn-36">36</a><strong>AlphaFold</strong>：
-- 蛋白质结构预测
-- 覆盖2亿+蛋白质</p>
-<p><a class="pn" id="pn-37" href="#pn-37">37</a><strong>深度学习应用</strong>：
-- 基因表达预测
-- 药物发现
-- 医学影像分析</p>
-<h3 id="_15">类器官与器官芯片</h3>
-<p><a class="pn" id="pn-38" href="#pn-38">38</a><strong>类器官</strong>（Organoid）：
-- 干细胞自组织形成
-- 模拟器官结构和功能
-- 疾病建模、药物筛选</p>
-<p><a class="pn" id="pn-39" href="#pn-39">39</a><strong>器官芯片</strong>（Organ-on-chip）：
-- 微流控技术
-- 模拟器官微环境
-- 药物毒性测试</p>
-<h2 id="_16">本章小结</h2>
-<ul>
-<li>组学技术从基因组、转录组、蛋白质组、代谢组多层次研究生物系统</li>
-<li>单细胞和空间技术揭示细胞异质性和组织微环境</li>
-<li>表观基因组学研究基因调控的表观遗传机制</li>
-<li>前沿技术（基因治疗、合成生物学、AI）正在改变生物医学研究</li>
-</ul>
-<h2 id="_17">思考题</h2>
-<ol>
-<li>单细胞RNA-seq相比bulk RNA-seq有什么优势和局限？</li>
-<li>空间转录组技术如何改变我们对组织生物学的理解？</li>
-<li>人工智能在分子生物学研究中有哪些应用前景？</li>
-</ol></div><nav class="chapter-nav"><a href="ch07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a></nav></main>
+<main><nav class="chapter-nav"><a href="ch07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a></nav><div class="chapter-title"><span class="ch-num">第8章</span>组学前沿</div><div class="article"><h2>第八章：组学与前沿技术</h2>
+<h2>8.1 基因组学</h2>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a>### DNA测序技术</p>
+<p><a class="pn" id="pn-2" href="#pn-2">2</a>**第一代测序（Sanger测序）**：</p>
+<p><a class="pn" id="pn-3" href="#pn-3">3</a>- 双脱氧终止法</p>
+<p><a class="pn" id="pn-4" href="#pn-4">4</a>- 读长：500-1000 bp</p>
+<p><a class="pn" id="pn-5" href="#pn-5">5</a>- 准确率：&gt;99.9%</p>
+<p><a class="pn" id="pn-6" href="#pn-6">6</a>- 应用：小片段验证、重测序</p>
+<p><a class="pn" id="pn-7" href="#pn-7">7</a>**第二代测序（NGS）**：</p>
+<p><a class="pn" id="pn-8" href="#pn-8">8</a>| 平台 | 技术原理 | 读长 | 应用 |</p>
+<p><a class="pn" id="pn-9" href="#pn-9">9</a>|------|---------|------|------|</p>
+<p><a class="pn" id="pn-10" href="#pn-10">10</a>| Illumina | 桥式PCR + 荧光标记 | 150-300 bp | 全基因组、RNA-seq |</p>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a>| Ion Torrent | 半导体测序 | 200-400 bp | 靶向测序 |</p>
+<p><a class="pn" id="pn-12" href="#pn-12">12</a>**第三代测序**：</p>
+<p><a class="pn" id="pn-13" href="#pn-13">13</a>- **PacBio**：单分子实时测序，读长10-20 kb</p>
+<p><a class="pn" id="pn-14" href="#pn-14">14</a>- **Oxford Nanopore**：纳米孔测序，便携、实时</p>
+<p><a class="pn" id="pn-15" href="#pn-15">15</a>### 全基因组分析</p>
+<p><a class="pn" id="pn-16" href="#pn-16">16</a>**全基因组测序**（WGS）：</p>
+<p><a class="pn" id="pn-17" href="#pn-17">17</a>- 检测SNV、Indel、SV、CNV</p>
+<p><a class="pn" id="pn-18" href="#pn-18">18</a>- 疾病研究、群体遗传学</p>
+<p><a class="pn" id="pn-19" href="#pn-19">19</a>**全外显子测序**（WES）：</p>
+<p><a class="pn" id="pn-20" href="#pn-20">20</a>- 只测外显子区域（占基因组1-2%）</p>
+<p><a class="pn" id="pn-21" href="#pn-21">21</a>- 成本较低，适合孟德尔疾病研究</p>
+<p><a class="pn" id="pn-22" href="#pn-22">22</a>**基因组注释**：</p>
+<p><a class="pn" id="pn-23" href="#pn-23">23</a>- 基因预测（ab initio、同源比对）</p>
+<p><a class="pn" id="pn-24" href="#pn-24">24</a>- 功能注释（GO、KEGG）</p>
+<p><a class="pn" id="pn-25" href="#pn-25">25</a>- 非编码RNA注释</p>
+<p><a class="pn" id="pn-26" href="#pn-26">26</a>### 比较基因组学</p>
+<p><a class="pn" id="pn-27" href="#pn-27">27</a>**同线性分析**（Synteny）：</p>
+<p><a class="pn" id="pn-28" href="#pn-28">28</a>- 比较不同物种基因组结构</p>
+<p><a class="pn" id="pn-29" href="#pn-29">29</a>- 揭示进化关系</p>
+<p><a class="pn" id="pn-30" href="#pn-30">30</a>**全基因组复制**（WGD）：</p>
+<p><a class="pn" id="pn-31" href="#pn-31">31</a>- 植物基因组常见</p>
+<p><a class="pn" id="pn-32" href="#pn-32">32</a>- 基因家族扩张</p>
+<h2>8.2 转录组学</h2>
+<p><a class="pn" id="pn-33" href="#pn-33">33</a>### RNA-seq技术</p>
+<p><a class="pn" id="pn-34" href="#pn-34">34</a>**原理**：</p>
+<p><a class="pn" id="pn-35" href="#pn-35">35</a>1. RNA提取</p>
+<p><a class="pn" id="pn-36" href="#pn-36">36</a>2. 逆转录为cDNA</p>
+<p><a class="pn" id="pn-37" href="#pn-37">37</a>3. 文库构建</p>
+<p><a class="pn" id="pn-38" href="#pn-38">38</a>4. 高通量测序</p>
+<p><a class="pn" id="pn-39" href="#pn-39">39</a>5. 数据分析</p>
+<p><a class="pn" id="pn-40" href="#pn-40">40</a>**应用**：</p>
+<p><a class="pn" id="pn-41" href="#pn-41">41</a>- 基因表达定量</p>
+<p><a class="pn" id="pn-42" href="#pn-42">42</a>- 可变剪接分析</p>
+<p><a class="pn" id="pn-43" href="#pn-43">43</a>- 新转录本发现</p>
+<p><a class="pn" id="pn-44" href="#pn-44">44</a>- 融合基因检测</p>
+<p><a class="pn" id="pn-45" href="#pn-45">45</a>### 单细胞转录组</p>
+<p><a class="pn" id="pn-46" href="#pn-46">46</a>**scRNA-seq技术**：</p>
+<p><a class="pn" id="pn-47" href="#pn-47">47</a>| 平台 | 特点 |</p>
+<p><a class="pn" id="pn-48" href="#pn-48">48</a>|------|------|</p>
+<p><a class="pn" id="pn-49" href="#pn-49">49</a>| 10x Genomics | 高通量，3&#x27;端捕获 |</p>
+<p><a class="pn" id="pn-50" href="#pn-50">50</a>| Smart-seq2 | 全长覆盖 |</p>
+<p><a class="pn" id="pn-51" href="#pn-51">51</a>| Drop-seq | 低成本 |</p>
+<p><a class="pn" id="pn-52" href="#pn-52">52</a>**分析流程**：</p>
+<p><a class="pn" id="pn-53" href="#pn-53">53</a>1. 质控和过滤</p>
+<p><a class="pn" id="pn-54" href="#pn-54">54</a>2. 归一化</p>
+<p><a class="pn" id="pn-55" href="#pn-55">55</a>3. 降维（PCA、t-SNE、UMAP）</p>
+<p><a class="pn" id="pn-56" href="#pn-56">56</a>4. 聚类</p>
+<p><a class="pn" id="pn-57" href="#pn-57">57</a>5. 差异表达分析</p>
+<p><a class="pn" id="pn-58" href="#pn-58">58</a>6. 轨迹推断</p>
+<p><a class="pn" id="pn-59" href="#pn-59">59</a>**应用**：</p>
+<p><a class="pn" id="pn-60" href="#pn-60">60</a>- 细胞类型鉴定</p>
+<p><a class="pn" id="pn-61" href="#pn-61">61</a>- 发育轨迹重建</p>
+<p><a class="pn" id="pn-62" href="#pn-62">62</a>- 肿瘤异质性分析</p>
+<p><a class="pn" id="pn-63" href="#pn-63">63</a>### 空间转录组</p>
+<p><a class="pn" id="pn-64" href="#pn-64">64</a>**技术原理**：</p>
+<p><a class="pn" id="pn-65" href="#pn-65">65</a>- 保留组织空间信息</p>
+<p><a class="pn" id="pn-66" href="#pn-66">66</a>- 结合组织学和转录组学</p>
+<p><a class="pn" id="pn-67" href="#pn-67">67</a>**平台**：</p>
+<p><a class="pn" id="pn-68" href="#pn-68">68</a>- 10x Genomics Visium</p>
+<p><a class="pn" id="pn-69" href="#pn-69">69</a>- Slide-seq</p>
+<p><a class="pn" id="pn-70" href="#pn-70">70</a>- MERFISH</p>
+<h2>8.3 蛋白质组学</h2>
+<p><a class="pn" id="pn-71" href="#pn-71">71</a>### 质谱技术</p>
+<p><a class="pn" id="pn-72" href="#pn-72">72</a>**LC-MS/MS**：</p>
+<p><a class="pn" id="pn-73" href="#pn-73">73</a>- 液相色谱分离</p>
+<p><a class="pn" id="pn-74" href="#pn-74">74</a>- 质谱检测</p>
+<p><a class="pn" id="pn-75" href="#pn-75">75</a>- 蛋白质鉴定和定量</p>
+<p><a class="pn" id="pn-76" href="#pn-76">76</a>**定量方法**：</p>
+<p><a class="pn" id="pn-77" href="#pn-77">77</a>| 方法 | 原理 |</p>
+<p><a class="pn" id="pn-78" href="#pn-78">78</a>|------|------|</p>
+<p><a class="pn" id="pn-79" href="#pn-79">79</a>| SILAC | 稳定同位素标记 |</p>
+<p><a class="pn" id="pn-80" href="#pn-80">80</a>| iTRAQ/TMT | 同位素标记 |</p>
+<p><a class="pn" id="pn-81" href="#pn-81">81</a>| Label-free | 无标记，基于肽段强度 |</p>
+<p><a class="pn" id="pn-82" href="#pn-82">82</a>| DIA/SWATH | 数据非依赖采集 |</p>
+<p><a class="pn" id="pn-83" href="#pn-83">83</a>### 蛋白质相互作用</p>
+<p><a class="pn" id="pn-84" href="#pn-84">84</a>**酵母双杂交**（Y2H）：</p>
+<p><a class="pn" id="pn-85" href="#pn-85">85</a>- 检测蛋白质-蛋白质相互作用</p>
+<p><a class="pn" id="pn-86" href="#pn-86">86</a>- 高通量筛选</p>
+<p><a class="pn" id="pn-87" href="#pn-87">87</a>**质谱蛋白质组学**：</p>
+<p><a class="pn" id="pn-88" href="#pn-88">88</a>- AP-MS（亲和纯化质谱）</p>
+<p><a class="pn" id="pn-89" href="#pn-89">89</a>- BioID（邻近标记）</p>
+<p><a class="pn" id="pn-90" href="#pn-90">90</a>### 翻译后修饰</p>
+<p><a class="pn" id="pn-91" href="#pn-91">91</a>**磷酸化蛋白质组**：</p>
+<p><a class="pn" id="pn-92" href="#pn-92">92</a>- TiO₂/IMAC富集</p>
+<p><a class="pn" id="pn-93" href="#pn-93">93</a>- 质谱鉴定磷酸化位点</p>
+<p><a class="pn" id="pn-94" href="#pn-94">94</a>**泛素化蛋白质组**：</p>
+<p><a class="pn" id="pn-95" href="#pn-95">95</a>- 泛素化位点鉴定</p>
+<p><a class="pn" id="pn-96" href="#pn-96">96</a>- 蛋白质降解研究</p>
+<h2>8.4 代谢组学</h2>
+<p><a class="pn" id="pn-97" href="#pn-97">97</a>### 代谢物检测</p>
+<p><a class="pn" id="pn-98" href="#pn-98">98</a>**LC-MS**：</p>
+<p><a class="pn" id="pn-99" href="#pn-99">99</a>- 非靶向代谢组学</p>
+<p><a class="pn" id="pn-100" href="#pn-100">100</a>- 广谱检测代谢物</p>
+<p><a class="pn" id="pn-101" href="#pn-101">101</a>**GC-MS**：</p>
+<p><a class="pn" id="pn-102" href="#pn-102">102</a>- 挥发性代谢物</p>
+<p><a class="pn" id="pn-103" href="#pn-103">103</a>- 标准品库匹配</p>
+<p><a class="pn" id="pn-104" href="#pn-104">104</a>**NMR**：</p>
+<p><a class="pn" id="pn-105" href="#pn-105">105</a>- 无损伤检测</p>
+<p><a class="pn" id="pn-106" href="#pn-106">106</a>- 定量准确</p>
+<p><a class="pn" id="pn-107" href="#pn-107">107</a>### 代谢流分析</p>
+<p><a class="pn" id="pn-108" href="#pn-108">108</a>**原理**：</p>
+<p><a class="pn" id="pn-109" href="#pn-109">109</a>- 同位素示踪（¹³C、¹⁵N）</p>
+<p><a class="pn" id="pn-110" href="#pn-110">110</a>- 追踪代谢物转化</p>
+<p><a class="pn" id="pn-111" href="#pn-111">111</a>- 计算代谢通量</p>
+<h2>8.5 表观基因组学</h2>
+<p><a class="pn" id="pn-112" href="#pn-112">112</a>### ChIP-seq</p>
+<p><a class="pn" id="pn-113" href="#pn-113">113</a>**原理**：</p>
+<p><a class="pn" id="pn-114" href="#pn-114">114</a>- 染色质免疫沉淀</p>
+<p><a class="pn" id="pn-115" href="#pn-115">115</a>- 测序鉴定蛋白质结合位点</p>
+<p><a class="pn" id="pn-116" href="#pn-116">116</a>**应用**：</p>
+<p><a class="pn" id="pn-117" href="#pn-117">117</a>- 转录因子结合位点</p>
+<p><a class="pn" id="pn-118" href="#pn-118">118</a>- 组蛋白修饰分布</p>
+<p><a class="pn" id="pn-119" href="#pn-119">119</a>- 染色质可及性（ATAC-seq）</p>
+<p><a class="pn" id="pn-120" href="#pn-120">120</a>### DNA甲基化测序</p>
+<p><a class="pn" id="pn-121" href="#pn-121">121</a>**WGBS**（全基因组亚硫酸氢盐测序）：</p>
+<p><a class="pn" id="pn-122" href="#pn-122">122</a>- 金标准方法</p>
+<p><a class="pn" id="pn-123" href="#pn-123">123</a>- 单碱基分辨率</p>
+<p><a class="pn" id="pn-124" href="#pn-124">124</a>**RRBS**（简化代表性亚硫酸氢盐测序）：</p>
+<p><a class="pn" id="pn-125" href="#pn-125">125</a>- 只测CpG富集区域</p>
+<p><a class="pn" id="pn-126" href="#pn-126">126</a>- 成本较低</p>
+<p><a class="pn" id="pn-127" href="#pn-127">127</a>### 染色质构象</p>
+<p><a class="pn" id="pn-128" href="#pn-128">128</a>**Hi-C**：</p>
+<p><a class="pn" id="pn-129" href="#pn-129">129</a>- 检测染色质三维结构</p>
+<p><a class="pn" id="pn-130" href="#pn-130">130</a>- 揭示拓扑关联结构域（TAD）</p>
+<p><a class="pn" id="pn-131" href="#pn-131">131</a>**Capture-C**：</p>
+<p><a class="pn" id="pn-132" href="#pn-132">132</a>- 高分辨率检测特定区域互作</p>
+<p><a class="pn" id="pn-133" href="#pn-133">133</a>- 增强子-启动子互作</p>
+<h2>8.6 前沿技术</h2>
+<p><a class="pn" id="pn-134" href="#pn-134">134</a>### 基因治疗</p>
+<p><a class="pn" id="pn-135" href="#pn-135">135</a>**递送系统**：</p>
+<p><a class="pn" id="pn-136" href="#pn-136">136</a>| 类型 | 特点 |</p>
+<p><a class="pn" id="pn-137" href="#pn-137">137</a>|------|------|</p>
+<p><a class="pn" id="pn-138" href="#pn-138">138</a>| 病毒载体 | AAV、慢病毒、腺病毒 |</p>
+<p><a class="pn" id="pn-139" href="#pn-139">139</a>| 非病毒载体 | 脂质纳米颗粒（LNP） |</p>
+<p><a class="pn" id="pn-140" href="#pn-140">140</a>| 基因编辑 | CRISPR体内递送 |</p>
+<p><a class="pn" id="pn-141" href="#pn-141">141</a>**应用**：</p>
+<p><a class="pn" id="pn-142" href="#pn-142">142</a>- 单基因遗传病（如镰状细胞贫血）</p>
+<p><a class="pn" id="pn-143" href="#pn-143">143</a>- 癌症免疫治疗（CAR-T）</p>
+<p><a class="pn" id="pn-144" href="#pn-144">144</a>- 眼科疾病</p>
+<p><a class="pn" id="pn-145" href="#pn-145">145</a>### 合成生物学</p>
+<p><a class="pn" id="pn-146" href="#pn-146">146</a>**基因线路**：</p>
+<p><a class="pn" id="pn-147" href="#pn-147">147</a>- 逻辑门（AND、OR、NOT）</p>
+<p><a class="pn" id="pn-148" href="#pn-148">148</a>- 振荡器、开关</p>
+<p><a class="pn" id="pn-149" href="#pn-149">149</a>**细胞工厂**：</p>
+<p><a class="pn" id="pn-150" href="#pn-150">150</a>- 微生物合成药物（青蒿素、紫杉醇）</p>
+<p><a class="pn" id="pn-151" href="#pn-151">151</a>- 生物燃料生产</p>
+<p><a class="pn" id="pn-152" href="#pn-152">152</a>### 人工智能与生物学</p>
+<p><a class="pn" id="pn-153" href="#pn-153">153</a>**AlphaFold**：</p>
+<p><a class="pn" id="pn-154" href="#pn-154">154</a>- 蛋白质结构预测</p>
+<p><a class="pn" id="pn-155" href="#pn-155">155</a>- 覆盖2亿+蛋白质</p>
+<p><a class="pn" id="pn-156" href="#pn-156">156</a>**深度学习应用**：</p>
+<p><a class="pn" id="pn-157" href="#pn-157">157</a>- 基因表达预测</p>
+<p><a class="pn" id="pn-158" href="#pn-158">158</a>- 药物发现</p>
+<p><a class="pn" id="pn-159" href="#pn-159">159</a>- 医学影像分析</p>
+<p><a class="pn" id="pn-160" href="#pn-160">160</a>### 类器官与器官芯片</p>
+<p><a class="pn" id="pn-161" href="#pn-161">161</a>**类器官**（Organoid）：</p>
+<p><a class="pn" id="pn-162" href="#pn-162">162</a>- 干细胞自组织形成</p>
+<p><a class="pn" id="pn-163" href="#pn-163">163</a>- 模拟器官结构和功能</p>
+<p><a class="pn" id="pn-164" href="#pn-164">164</a>- 疾病建模、药物筛选</p>
+<p><a class="pn" id="pn-165" href="#pn-165">165</a>**器官芯片**（Organ-on-chip）：</p>
+<p><a class="pn" id="pn-166" href="#pn-166">166</a>- 微流控技术</p>
+<p><a class="pn" id="pn-167" href="#pn-167">167</a>- 模拟器官微环境</p>
+<p><a class="pn" id="pn-168" href="#pn-168">168</a>- 药物毒性测试</p>
+<h2>本章小结</h2>
+<p><a class="pn" id="pn-169" href="#pn-169">169</a>- 组学技术从基因组、转录组、蛋白质组、代谢组多层次研究生物系统</p>
+<p><a class="pn" id="pn-170" href="#pn-170">170</a>- 单细胞和空间技术揭示细胞异质性和组织微环境</p>
+<p><a class="pn" id="pn-171" href="#pn-171">171</a>- 表观基因组学研究基因调控的表观遗传机制</p>
+<p><a class="pn" id="pn-172" href="#pn-172">172</a>- 前沿技术（基因治疗、合成生物学、AI）正在改变生物医学研究</p>
+<h2>思考题</h2>
+<p><a class="pn" id="pn-173" href="#pn-173">173</a>1. 单细胞RNA-seq相比bulk RNA-seq有什么优势和局限？</p>
+<p><a class="pn" id="pn-174" href="#pn-174">174</a>2. 空间转录组技术如何改变我们对组织生物学的理解？</p>
+<p><a class="pn" id="pn-175" href="#pn-175">175</a>3. 人工智能在分子生物学研究中有哪些应用前景？</p></div><nav class="chapter-nav"><a href="ch07_%E5%AE%9E%E9%AA%8C%E6%8A%80%E6%9C%AF.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a></nav></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

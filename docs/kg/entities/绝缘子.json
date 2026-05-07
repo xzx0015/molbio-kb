@@ -5,14 +5,32 @@
   "category": "调控",
   "chapter": "第7-8章",
   "importance": "core-basic",
-  "definition": "绝缘子是基因组中的调控元件，能够阻断增强子或沉默子对启动子的作用，或作为异染色质扩散的屏障，确保基因表达的独立调控。",
+  "definition": "绝缘子（Insulator）是基因组中具有两种独立功能的边界调控元件：①增强子阻断活性——当绝缘子位于增强子和启动子之间时，阻止增强子对启动子的激活作用，但允许增强子作用于绝缘子同侧的其他启动子，确保基因调控的特异性和独立；②异染色质屏障活性——阻止组成型异染色质的蔓延扩散，保护邻近常染色质区域的基因免受沉默。脊椎动物绝缘子的标志性实例是CTCF结合位点：CTCF（CCCTC结合因子）是一种11锌指蛋白，在人类基因组中有数万个结合位点，通过与cohesin复合物协同作用介导染色质环的形成，在三维基因组组织中发挥核心作用——约一半的拓扑关联结构域（TAD）边界为CTCF结合位点。CTCF结合位点的DNA甲基化可阻断CTCF结合，导致绝缘子功能丧失——这是IGF2-H19印记基因座研究的经典范例：在母源等位基因上CTCF结合绝缘子阻止下游增强子上游IGF2启动子；在父源等位基因上该位点为甲基化状态、CTCF无法结合，增强子激活IGF2。",
   "keyConcepts": [
-    {"term": "增强子阻断", "definition": "绝缘子阻止增强子远距离激活基因"},
-    {"term": "异染色质屏障", "definition": "绝缘子阻止异染色质扩散到常染色质区域"},
-    {"term": "CTCF", "definition": "绝缘子结合蛋白，介导染色质环化"},
-    {"term": "染色质环", "definition": "CTCF介导的染色质空间结构，形成拓扑关联结构域"},
-    {"term": "TAD", "definition": "拓扑关联结构域，染色质的基本功能单位"},
-    {"term": "基因座控制区", "definition": "LCR，含有绝缘子元件的调控区域"}
+    {
+      "term": "增强子阻断",
+      "definition": "绝缘子阻止增强子远距离激活基因"
+    },
+    {
+      "term": "异染色质屏障",
+      "definition": "绝缘子阻止异染色质扩散到常染色质区域"
+    },
+    {
+      "term": "CTCF",
+      "definition": "绝缘子结合蛋白，介导染色质环化"
+    },
+    {
+      "term": "染色质环",
+      "definition": "CTCF介导的染色质空间结构，形成拓扑关联结构域"
+    },
+    {
+      "term": "TAD",
+      "definition": "拓扑关联结构域，染色质的基本功能单位"
+    },
+    {
+      "term": "基因座控制区",
+      "definition": "LCR，含有绝缘子元件的调控区域"
+    }
   ],
   "keyPoints": [
     "绝缘子确保基因独立调控",
@@ -21,7 +39,13 @@
     "TAD是染色质的基本功能单位",
     "绝缘子异常与基因表达失调相关"
   ],
-  "relatedEntities": ["增强子", "沉默子", "基因调控", "染色质", "CTCF"],
+  "relatedEntities": [
+    "增强子",
+    "沉默子",
+    "基因调控",
+    "染色质",
+    "CTCF"
+  ],
   "references": [
     "Gaszner M, Felsenfeld G. Insulators: exploiting transcriptional and epigenetic mechanisms. Nat Rev Genet, 2006"
   ]

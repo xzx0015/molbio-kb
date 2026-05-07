@@ -5,14 +5,32 @@
   "category": "分子",
   "chapter": "第6章",
   "importance": "core-major",
-  "definition": "核糖体由大亚基和小亚基组成，翻译时组装。原核核糖体为70S（50S+30S），真核核糖体为80S（60S+40S），亚基由rRNA和核糖体蛋白组成。",
+  "definition": "核糖体是蛋白质合成的分子工厂，由大小两个亚基组成，每个亚基均由核糖体RNA（rRNA）和核糖体蛋白质构成，翻译时两亚基在mRNA上组装形成功能性核糖体。原核生物（70S）由50S大亚基（含23S和5S rRNA + 约34种蛋白质）和30S小亚基（含16S rRNA + 约21种蛋白质）组成；真核生物（80S）由60S大亚基（含28S、5.8S和5S rRNA + 约49种蛋白质）和40S小亚基（含18S rRNA + 约33种蛋白质）组成。小亚基主要负责与mRNA结合、密码子-反密码子识别和解码，大亚基则是肽基转移酶中心（催化肽键形成）的所在。rRNA不仅是核糖体的结构骨架，更是催化肽键形成的酶——核酶（ribozyme）：肽基转移酶中心完全由23S/28S rRNA构成，蛋白质仅起辅助稳定结构的作用，这为'RNA世界'假说提供了有力的结构证据。核糖体是临床上最重要的抗生素靶点之一：氨基糖苷类、四环素类、大环内酯类和氯霉素等均通过分别作用于小亚基或大亚基的不同功能位点，抑制细菌蛋白质合成。",
   "keyConcepts": [
-    {"term": "大亚基", "definition": "含肽酰转移酶中心，催化肽键形成"},
-    {"term": "小亚基", "definition": "含解码中心，识别mRNA密码子"},
-    {"term": "30S亚基", "definition": "原核小亚基，含16S rRNA"},
-    {"term": "50S亚基", "definition": "原核大亚基，含23S和5S rRNA"},
-    {"term": "40S亚基", "definition": "真核小亚基，含18S rRNA"},
-    {"term": "60S亚基", "definition": "真核大亚基，含28S、5.8S和5S rRNA"}
+    {
+      "term": "大亚基",
+      "definition": "含肽酰转移酶中心，催化肽键形成"
+    },
+    {
+      "term": "小亚基",
+      "definition": "含解码中心，识别mRNA密码子"
+    },
+    {
+      "term": "30S亚基",
+      "definition": "原核小亚基，含16S rRNA"
+    },
+    {
+      "term": "50S亚基",
+      "definition": "原核大亚基，含23S和5S rRNA"
+    },
+    {
+      "term": "40S亚基",
+      "definition": "真核小亚基，含18S rRNA"
+    },
+    {
+      "term": "60S亚基",
+      "definition": "真核大亚基，含28S、5.8S和5S rRNA"
+    }
   ],
   "keyPoints": [
     "核糖体亚基在翻译起始时组装",
@@ -21,7 +39,13 @@
     "核糖体蛋白稳定rRNA结构并协助功能",
     "核糖体亚基组装是核糖体生物发生的关键步骤"
   ],
-  "relatedEntities": ["核糖体", "rRNA", "蛋白质翻译", "tRNA", "mRNA"],
+  "relatedEntities": [
+    "核糖体",
+    "rRNA",
+    "蛋白质翻译",
+    "tRNA",
+    "mRNA"
+  ],
   "references": [
     "Ramakrishnan V. Ribosome structure and function. Nobel Lecture, 2009"
   ]

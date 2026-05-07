@@ -5,13 +5,28 @@
   "category": "酶",
   "chapter": "第 4 章",
   "importance": "core-important",
-  "definition": "RNA 聚合酶是以 DNA 为模板合成 RNA 的酶，催化转录过程，不需要引物，具有 5'→3'RNA 聚合酶活性。",
+  "definition": "RNA聚合酶是催化转录的核心酶，以DNA为模板、四种核糖核苷三磷酸（NTP）为底物，按5'→3'方向合成与模板DNA互补的RNA链。与DNA聚合酶不同，RNA聚合酶不需要引物即可从头起始RNA合成。原核生物仅有一种RNA聚合酶（由α₂ββ'ωσ亚基组成），而真核生物拥有三种不同的RNA聚合酶：RNA聚合酶Ⅰ负责转录rRNA（除5S rRNA外），RNA聚合酶Ⅱ转录所有蛋白质编码基因的mRNA以及多种非编码RNA，RNA聚合酶Ⅲ转录tRNA、5S rRNA和其他小RNA。RNA聚合酶Ⅱ的最大亚基含有一个独特的C端结构域（CTD），其磷酸化状态在转录起始、延伸、RNA加工和终止各阶段发生动态变化，是协调转录与RNA加工的关键调控枢纽。",
   "keyConcepts": [
-    {"term": "原核 RNA 聚合酶", "definition": "由 α₂ββ'ωσ 亚基组成，σ 因子负责识别启动子"},
-    {"term": "真核 RNA 聚合酶 I", "definition": "位于核仁，转录 rRNA（除 5S）"},
-    {"term": "真核 RNA 聚合酶 II", "definition": "位于核质，转录 mRNA 和 snRNA"},
-    {"term": "真核 RNA 聚合酶 III", "definition": "位于核质，转录 tRNA 和 5S rRNA"},
-    {"term": "启动子识别", "definition": "RNA 聚合酶识别并结合 DNA 上的启动子序列"}
+    {
+      "term": "原核 RNA 聚合酶",
+      "definition": "由 α₂ββ'ωσ 亚基组成，σ 因子负责识别启动子"
+    },
+    {
+      "term": "真核 RNA 聚合酶 I",
+      "definition": "位于核仁，转录 rRNA（除 5S）"
+    },
+    {
+      "term": "真核 RNA 聚合酶 II",
+      "definition": "位于核质，转录 mRNA 和 snRNA"
+    },
+    {
+      "term": "真核 RNA 聚合酶 III",
+      "definition": "位于核质，转录 tRNA 和 5S rRNA"
+    },
+    {
+      "term": "启动子识别",
+      "definition": "RNA 聚合酶识别并结合 DNA 上的启动子序列"
+    }
   ],
   "keyPoints": [
     "RNA 聚合酶不需要引物，可从头合成 RNA",
@@ -20,7 +35,12 @@
     "RNA 聚合酶 II 是研究最深入的，涉及 mRNA 合成",
     "转录因子协助 RNA 聚合酶结合启动子"
   ],
-  "relatedEntities": ["基因转录", "启动子", "转录因子", "非编码 RNA"],
+  "relatedEntities": [
+    "基因转录",
+    "启动子",
+    "转录因子",
+    "非编码 RNA"
+  ],
   "references": [
     "Burgess RR. RNA polymerase from Escherichia coli. Nature, 1969"
   ],

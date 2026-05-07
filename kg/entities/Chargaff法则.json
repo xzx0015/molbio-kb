@@ -1,0 +1,34 @@
+{
+  "id": "chargaff",
+  "nameEn": "Chargaff's Rules",
+  "category": "核心理论",
+  "chapter": "第2章",
+  "importance": "core-major",
+  "definition": "Chargaff法则（Chargaff's rules）由Erwin Chargaff于1950年代基于大量不同物种DNA的碱基组成分析建立，是Watson-Crick双螺旋模型中碱基互补配对原则的关键化学证据。第一法则：双链DNA中腺嘌呤(A)与胸腺嘧啶(T)的摩尔数相等、鸟嘌呤(G)与胞嘧啶(C)的摩尔数相等（A=T，G=C），但A+T与G+C的比例在不同物种间差异显著。第二法则：同一物种不同组织的DNA碱基组成一致，提示DNA是遗传物质。Chargaff法则为Watson和Crick在1953年推导A=T和G≡C的碱基配对规则提供了直接的定量化学约束，被Crick本人称为'Watson-Crick模型中仅次于X射线衍射数据的最重要的实验线索'。",
+  "keyConcepts": [
+    {
+      "term": "A=T",
+      "definition": "腺嘌呤和胸腺嘧啶等摩尔数，由2个氢键配对"
+    },
+    {
+      "term": "G≡C",
+      "definition": "鸟嘌呤和胞嘧啶等摩尔数，由3个氢键配对"
+    },
+    {
+      "term": "GC含量",
+      "definition": "(G+C)/(A+T+G+C)的比值，不同物种差异大（25-75%）"
+    }
+  ],
+  "keyPoints": [
+    "A=T，G=C是碱基互补配对的化学基础",
+    "来自多种物种DNA碱基组成的定量分析",
+    "直接引导Watson和Crick推导出双螺旋模型",
+    "GC含量在不同物种间差异显著（系统发育信息）"
+  ],
+  "relatedEntities": [
+    "DNA",
+    "核苷酸",
+    "密码子",
+    "DNA 复制"
+  ]
+}

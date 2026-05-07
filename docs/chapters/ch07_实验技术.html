@@ -161,281 +161,225 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
 <nav class="nav"><a href="../index.html">🧬 首页</a><a href="index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><nav class="chapter-nav"><a href="ch06_%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%9C%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch08_%E7%BB%84%E5%AD%A6%E5%89%8D%E6%B2%BF.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第7章</span>实验技术</div><div class="article"><h2 id="_1">第七章：分子生物学实验技术</h2>
-<h2 id="71">7.1 核酸操作技术</h2>
-<h3 id="_2">核酸提取</h3>
-<p><a class="pn" id="pn-1" href="#pn-1">1</a><strong>DNA提取原理</strong>：
-1. <strong>细胞裂解</strong>：SDS或CTAB破坏细胞膜
-2. <strong>蛋白质去除</strong>：蛋白酶K消化，酚/氯仿抽提
-3. <strong>DNA沉淀</strong>：乙醇或异丙醇沉淀
-4. <strong>纯化</strong>：洗涤去除杂质</p>
-<p><a class="pn" id="pn-2" href="#pn-2">2</a><strong>RNA提取注意事项</strong>：
-- RNA易被RNase降解
-- 使用DEPC处理的水
-- 快速操作，保持低温
-- TRIzol试剂一步法提取</p>
-<h3 id="_3">核酸电泳</h3>
-<p><a class="pn" id="pn-3" href="#pn-3">3</a><strong>琼脂糖凝胶电泳</strong>：
-- 分离DNA片段（50 bp - 50 kb）
-- 琼脂糖浓度：0.5%-2%（根据片段大小）
-- 染色：EB或GelRed
--  marker：DNA分子量标准</p>
-<p><a class="pn" id="pn-4" href="#pn-4">4</a><strong>聚丙烯酰胺凝胶电泳</strong>：
-- 分离小片段DNA/RNA（&lt;500 bp）
-- 分辨率高（可区分1 bp差异）
-- 用于测序、SSCP分析</p>
-<h3 id="_4">核酸定量</h3>
-<p><a class="pn" id="pn-5" href="#pn-5">5</a><strong>分光光度法</strong>：
-- A₂₆₀测定浓度（1 OD = 50 μg/mL dsDNA）
-- A₂₆₀/A₂₈₀评估纯度（1.8-2.0为纯DNA）
-- A₂₆₀/A₂₃₀评估有机溶剂污染</p>
-<p><a class="pn" id="pn-6" href="#pn-6">6</a><strong>荧光法</strong>：
-- PicoGreen（dsDNA特异性）
-- RiboGreen（RNA特异性）
-- Qubit荧光计</p>
-<h2 id="72-pcr">7.2 PCR技术</h2>
-<h3 id="_5">基本原理</h3>
-<p><a class="pn" id="pn-7" href="#pn-7">7</a><span class="entity concept" title="概念：pcr">PCR</span>（聚合酶链式反应）：体外快速扩增特定DNA片段</p>
-<p><a class="pn" id="pn-8" href="#pn-8">8</a><strong>发明者</strong>：Kary Mullis（1993年诺贝尔化学奖）</p>
-<p><a class="pn" id="pn-9" href="#pn-9">9</a><strong>反应体系</strong>：
-| 组分 | 作用 |
-|------|------|
-| 模板DNA | 扩增的原始材料 |
-| 引物 | 确定扩增起始位点 |
-| DNA聚合酶 | 催化DNA合成 |
-| dNTPs | 原料 |
-| 缓冲液 | 提供适宜环境（Mg²⁺、pH） |</p>
-<h3 id="_6">反应步骤</h3>
-<pre><code>94-95°C 变性 → 50-65°C 退火 → 72°C 延伸
-     ↓
-   30-35个循环
-     ↓
-  DNA指数扩增（2ⁿ）
-</code></pre>
-<p><a class="pn" id="pn-10" href="#pn-10">10</a><strong>关键参数</strong>：
-- 变性：94-95°C，30秒-2分钟
-- 退火：低于引物Tm 5°C
-- 延伸：1分钟/kb</p>
-<h3 id="pcr">PCR衍生技术</h3>
-<p><a class="pn" id="pn-11" href="#pn-11">11</a><strong>逆转录PCR</strong>（RT-PCR）：
-- RNA → 逆转录 → cDNA → PCR
-- 检测基因表达
-- 病毒检测（如COVID-19）</p>
-<p><a class="pn" id="pn-12" href="#pn-12">12</a><strong>实时定量PCR</strong>（qPCR）：
-- 荧光染料（SYBR Green）或探针（TaqMan）
-- 实时监测扩增
-- 定量分析基因表达</p>
-<p><a class="pn" id="pn-13" href="#pn-13">13</a><strong>数字PCR</strong>（dPCR）：
-- 样品分配到数千个微反应室
-- 绝对定量
-- 检测稀有突变</p>
-<h3 id="pcr_1">高保真PCR</h3>
-<p><a class="pn" id="pn-14" href="#pn-14">14</a><strong>常用酶</strong>：
-| 酶 | 特点 | 应用 |
-|----|------|------|
-| Taq酶 | 耐热，无校对 | 常规PCR |
-| Pfu酶 | 有3'-5'外切酶活性 | 克隆 |
-| Phusion酶 | 高保真，快速 | 测序、克隆 |</p>
-<h2 id="73">7.3 分子克隆技术</h2>
-<h3 id="_7">限制性内切酶</h3>
-<p><a class="pn" id="pn-15" href="#pn-15">15</a><strong>识别序列特点</strong>：
-- 通常为4-8 bp的回文序列
-- 切割产生粘性末端或平末端</p>
-<table>
-<thead>
-<tr>
-<th>酶</th>
-<th>识别序列</th>
-<th>末端</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EcoRI</td>
-<td>G↓AATTC</td>
-<td>5'粘性</td>
-</tr>
-<tr>
-<td>BamHI</td>
-<td>G↓GATCC</td>
-<td>5'粘性</td>
-</tr>
-<tr>
-<td>HindIII</td>
-<td>A↓AGCTT</td>
-<td>5'粘性</td>
-</tr>
-<tr>
-<td>SmaI</td>
-<td>CCC↓GGG</td>
-<td>平末端</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_8">载体系统</h3>
-<table>
-<thead>
-<tr>
-<th>载体类型</th>
-<th>容量</th>
-<th>宿主</th>
-<th>应用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>质粒</td>
-<td>2-10 kb</td>
-<td>细菌</td>
-<td>常规克隆</td>
-</tr>
-<tr>
-<td>噬菌体</td>
-<td>9-23 kb</td>
-<td>细菌</td>
-<td>cDNA文库</td>
-</tr>
-<tr>
-<td>BAC</td>
-<td>100-300 kb</td>
-<td>细菌</td>
-<td>基因组文库</td>
-</tr>
-<tr>
-<td>YAC</td>
-<td>0.5-2 Mb</td>
-<td>酵母</td>
-<td>大片段克隆</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_9">克隆流程</h3>
-<pre><code>目的基因获取 ← PCR/化学合成/文库筛选
-      ↓
-载体准备 ← 限制性内切酶切割
-      ↓
-连接反应 ← DNA连接酶
-      ↓
-转化/转染 ← 导入宿主细胞
-      ↓
-筛选鉴定 ← 抗生素抗性、蓝白斑筛选、测序
-</code></pre>
-<h3 id="_10">重组技术</h3>
-<p><a class="pn" id="pn-16" href="#pn-16">16</a><strong>Gibson Assembly</strong>：
-- 多片段无缝克隆
-- 不需要限制性内切酶
-- 同源重组原理</p>
-<p><a class="pn" id="pn-17" href="#pn-17">17</a><strong>Golden Gate克隆</strong>：
-- IIS型限制酶（如BsaI）
-- 产生任意4 bp突出端
-- 标准化、模块化克隆</p>
-<h2 id="74">7.4 基因表达分析</h2>
-<h3 id="northern-blot">Northern Blot</h3>
-<p><a class="pn" id="pn-18" href="#pn-18">18</a><strong>原理</strong>：检测特定RNA的表达</p>
-<p><a class="pn" id="pn-19" href="#pn-19">19</a><strong>步骤</strong>：
-1. RNA电泳分离
-2. 转膜
-3. 探针杂交
-4. 信号检测</p>
-<p><a class="pn" id="pn-20" href="#pn-20">20</a><strong>应用</strong>：
-- 检测mRNA大小
-- 分析可变剪接
-- 检测miRNA</p>
-<h3 id="western-blot">Western Blot</h3>
-<p><a class="pn" id="pn-21" href="#pn-21">21</a><strong>原理</strong>：检测特定蛋白质的表达</p>
-<p><a class="pn" id="pn-22" href="#pn-22">22</a><strong>步骤</strong>：
-1. 蛋白质电泳（SDS-PAGE）
-2. 转膜
-3. 抗体孵育（一抗、二抗）
-4. 信号检测（化学发光或荧光）</p>
-<p><a class="pn" id="pn-23" href="#pn-23">23</a><strong>应用</strong>：
-- 检测蛋白质表达水平
-- 检测蛋白质修饰（磷酸化等）
-- 确定蛋白质大小</p>
-<h3 id="_11">免疫沉淀</h3>
-<p><a class="pn" id="pn-24" href="#pn-24">24</a><strong>Co-IP</strong>（免疫共沉淀）：
-- 检测蛋白质-蛋白质相互作用
-- 抗体捕获目标蛋白及其结合蛋白</p>
-<p><a class="pn" id="pn-25" href="#pn-25">25</a><strong>ChIP</strong>（染色质免疫沉淀）：
-- 检测蛋白质-DNA相互作用
-- 确定转录因子结合位点</p>
-<h2 id="75">7.5 基因编辑技术</h2>
-<h3 id="crispr-cas9">CRISPR-Cas9系统</h3>
-<p><a class="pn" id="pn-26" href="#pn-26">26</a><strong>发现</strong>：Jennifer Doudna &amp; Emmanuelle Charpentier（2020年诺贝尔化学奖）</p>
-<p><a class="pn" id="pn-27" href="#pn-27">27</a><strong>组成</strong>：
-- <span class="entity protein" title="蛋白">Cas9蛋白</span>：核酸酶，切割DNA
-- <span class="entity entity-generic" title="RNA">sgRNA</span>：向导RNA，引导Cas9到靶位点</p>
-<p><a class="pn" id="pn-28" href="#pn-28">28</a><strong>原理</strong>：</p>
-<pre><code>sgRNA识别靶序列（PAM: NGG）
-        ↓
-Cas9切割DNA双链
-        ↓
-细胞修复（NHEJ或HDR）
-        ↓
-基因敲除或精确编辑
-</code></pre>
-<p><a class="pn" id="pn-29" href="#pn-29">29</a><strong>应用</strong>：
-- 基因功能研究
-- 遗传病治疗
-- 作物改良</p>
-<h3 id="_12">碱基编辑器</h3>
-<p><a class="pn" id="pn-30" href="#pn-30">30</a><strong>CBE</strong>（胞嘧啶碱基编辑器）：
-- C → T（或G → A）
-- 不需要切断DNA双链</p>
-<p><a class="pn" id="pn-31" href="#pn-31">31</a><strong>ABE</strong>（腺嘌呤碱基编辑器）：
-- A → G（或T → C）
-- 不产生双链断裂</p>
-<p><a class="pn" id="pn-32" href="#pn-32">32</a><strong>优势</strong>：
-- 减少随机插入/缺失
-- 精确点突变</p>
-<h3 id="prime-editing">Prime Editing</h3>
-<p><a class="pn" id="pn-33" href="#pn-33">33</a><strong>原理</strong>：
-- Cas9切口酶 + 逆转录酶
-- pegRNA（先导编辑向导RNA）
-- 可进行任意类型的点突变和小片段插入/缺失</p>
-<h2 id="76">7.6 细胞与成像技术</h2>
-<h3 id="_13">细胞培养</h3>
-<p><a class="pn" id="pn-34" href="#pn-34">34</a><strong>原代培养</strong>：直接从组织分离
-<strong>传代细胞系</strong>：可无限传代（如HeLa、293T）</p>
-<p><a class="pn" id="pn-35" href="#pn-35">35</a><strong>培养条件</strong>：
-- 培养基（DMEM、RPMI等）
-- 血清（FBS）
-- CO₂培养箱（5% CO₂，37°C）</p>
-<h3 id="_14">荧光显微镜</h3>
-<p><a class="pn" id="pn-36" href="#pn-36">36</a><strong>常用荧光染料</strong>：
-| 染料 | 激发/发射 | 应用 |
-|------|----------|------|
-| DAPI | 358/461 nm | DNA染色 |
-| GFP | 488/509 nm | 蛋白标记 |
-| RFP | 555/584 nm | 蛋白标记 |</p>
-<p><a class="pn" id="pn-37" href="#pn-37">37</a><strong>共聚焦显微镜</strong>：
-- 消除焦平面外信号
-- 三维重建
-- 活细胞成像</p>
-<h3 id="_15">流式细胞术</h3>
-<p><a class="pn" id="pn-38" href="#pn-38">38</a><strong>原理</strong>：
-- 单细胞悬液通过激光束
-- 检测散射光和荧光
-- 高速分析（每秒数千细胞）</p>
-<p><a class="pn" id="pn-39" href="#pn-39">39</a><strong>应用</strong>：
-- 细胞分选（FACS）
-- 细胞周期分析
-- 凋亡检测
-- 表面标志物分析</p>
-<h2 id="_16">本章小结</h2>
-<ul>
-<li>核酸提取、电泳、定量是分子生物学基础</li>
-<li>PCR技术可扩增、定量、检测特定DNA/RNA</li>
-<li>分子克隆依赖载体系统和限制酶</li>
-<li>基因编辑技术（CRISPR-Cas9）革命性地改变了基因操作</li>
-<li>细胞培养和成像技术是功能研究的重要工具</li>
-</ul>
-<h2 id="_17">思考题</h2>
-<ol>
-<li>为什么PCR需要引物，而DNA复制在体内不需要外源引物？</li>
-<li>比较CRISPR-Cas9与传统基因编辑技术（ZFN、TALEN）的优缺点。</li>
-<li>Western Blot和质谱在蛋白质分析中各有什么优势？</li>
-</ol></div><nav class="chapter-nav"><a href="ch06_%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%9C%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch08_%E7%BB%84%E5%AD%A6%E5%89%8D%E6%B2%BF.html">下一章 →</a></nav></main>
+<main><nav class="chapter-nav"><a href="ch06_%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%9C%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch08_%E7%BB%84%E5%AD%A6%E5%89%8D%E6%B2%BF.html">下一章 →</a></nav><div class="chapter-title"><span class="ch-num">第7章</span>实验技术</div><div class="article"><h2>第七章：分子生物学实验技术</h2>
+<h2>7.1 核酸操作技术</h2>
+<p><a class="pn" id="pn-1" href="#pn-1">1</a>### 核酸提取</p>
+<p><a class="pn" id="pn-2" href="#pn-2">2</a>**DNA提取原理**：</p>
+<p><a class="pn" id="pn-3" href="#pn-3">3</a>1. **细胞裂解**：SDS或CTAB破坏细胞膜</p>
+<p><a class="pn" id="pn-4" href="#pn-4">4</a>2. **蛋白质去除**：蛋白酶K消化，酚/氯仿抽提</p>
+<p><a class="pn" id="pn-5" href="#pn-5">5</a>3. **DNA沉淀**：乙醇或异丙醇沉淀</p>
+<p><a class="pn" id="pn-6" href="#pn-6">6</a>4. **纯化**：洗涤去除杂质</p>
+<p><a class="pn" id="pn-7" href="#pn-7">7</a>**RNA提取注意事项**：</p>
+<p><a class="pn" id="pn-8" href="#pn-8">8</a>- RNA易被RNase降解</p>
+<p><a class="pn" id="pn-9" href="#pn-9">9</a>- 使用DEPC处理的水</p>
+<p><a class="pn" id="pn-10" href="#pn-10">10</a>- 快速操作，保持低温</p>
+<p><a class="pn" id="pn-11" href="#pn-11">11</a>- TRIzol试剂一步法提取</p>
+<p><a class="pn" id="pn-12" href="#pn-12">12</a>### 核酸电泳</p>
+<p><a class="pn" id="pn-13" href="#pn-13">13</a>**琼脂糖凝胶电泳**：</p>
+<p><a class="pn" id="pn-14" href="#pn-14">14</a>- 分离DNA片段（50 bp - 50 kb）</p>
+<p><a class="pn" id="pn-15" href="#pn-15">15</a>- 琼脂糖浓度：0.5%-2%（根据片段大小）</p>
+<p><a class="pn" id="pn-16" href="#pn-16">16</a>- 染色：EB或GelRed</p>
+<p><a class="pn" id="pn-17" href="#pn-17">17</a>-  marker：DNA分子量标准</p>
+<p><a class="pn" id="pn-18" href="#pn-18">18</a>**聚丙烯酰胺凝胶电泳**：</p>
+<p><a class="pn" id="pn-19" href="#pn-19">19</a>- 分离小片段DNA/RNA（&lt;500 bp）</p>
+<p><a class="pn" id="pn-20" href="#pn-20">20</a>- 分辨率高（可区分1 bp差异）</p>
+<p><a class="pn" id="pn-21" href="#pn-21">21</a>- 用于测序、SSCP分析</p>
+<p><a class="pn" id="pn-22" href="#pn-22">22</a>### 核酸定量</p>
+<p><a class="pn" id="pn-23" href="#pn-23">23</a>**分光光度法**：</p>
+<p><a class="pn" id="pn-24" href="#pn-24">24</a>- A₂₆₀测定浓度（1 OD = 50 μg/mL dsDNA）</p>
+<p><a class="pn" id="pn-25" href="#pn-25">25</a>- A₂₆₀/A₂₈₀评估纯度（1.8-2.0为纯DNA）</p>
+<p><a class="pn" id="pn-26" href="#pn-26">26</a>- A₂₆₀/A₂₃₀评估有机溶剂污染</p>
+<p><a class="pn" id="pn-27" href="#pn-27">27</a>**荧光法**：</p>
+<p><a class="pn" id="pn-28" href="#pn-28">28</a>- PicoGreen（dsDNA特异性）</p>
+<p><a class="pn" id="pn-29" href="#pn-29">29</a>- RiboGreen（RNA特异性）</p>
+<p><a class="pn" id="pn-30" href="#pn-30">30</a>- Qubit荧光计</p>
+<h2>7.2 PCR技术</h2>
+<p><a class="pn" id="pn-31" href="#pn-31">31</a>### 基本原理</p>
+<p><a class="pn" id="pn-32" href="#pn-32">32</a>&lt;span class=&quot;entity concept&quot; title=&quot;概念：pcr&quot;&gt;PCR&lt;/span&gt;（聚合酶链式反应）：体外快速扩增特定DNA片段</p>
+<p><a class="pn" id="pn-33" href="#pn-33">33</a>**发明者**：Kary Mullis（1993年诺贝尔化学奖）</p>
+<p><a class="pn" id="pn-34" href="#pn-34">34</a>**反应体系**：</p>
+<p><a class="pn" id="pn-35" href="#pn-35">35</a>| 组分 | 作用 |</p>
+<p><a class="pn" id="pn-36" href="#pn-36">36</a>|------|------|</p>
+<p><a class="pn" id="pn-37" href="#pn-37">37</a>| 模板DNA | 扩增的原始材料 |</p>
+<p><a class="pn" id="pn-38" href="#pn-38">38</a>| 引物 | 确定扩增起始位点 |</p>
+<p><a class="pn" id="pn-39" href="#pn-39">39</a>| DNA聚合酶 | 催化DNA合成 |</p>
+<p><a class="pn" id="pn-40" href="#pn-40">40</a>| dNTPs | 原料 |</p>
+<p><a class="pn" id="pn-41" href="#pn-41">41</a>| 缓冲液 | 提供适宜环境（Mg²⁺、pH） |</p>
+<p><a class="pn" id="pn-42" href="#pn-42">42</a>### 反应步骤</p>
+<p><a class="pn" id="pn-43" href="#pn-43">43</a>```</p>
+<p><a class="pn" id="pn-44" href="#pn-44">44</a>94-95°C 变性 → 50-65°C 退火 → 72°C 延伸</p>
+<p><a class="pn" id="pn-45" href="#pn-45">45</a>     ↓</p>
+<p><a class="pn" id="pn-46" href="#pn-46">46</a>   30-35个循环</p>
+<p><a class="pn" id="pn-47" href="#pn-47">47</a>     ↓</p>
+<p><a class="pn" id="pn-48" href="#pn-48">48</a>  DNA指数扩增（2ⁿ）</p>
+<p><a class="pn" id="pn-49" href="#pn-49">49</a>```</p>
+<p><a class="pn" id="pn-50" href="#pn-50">50</a>**关键参数**：</p>
+<p><a class="pn" id="pn-51" href="#pn-51">51</a>- 变性：94-95°C，30秒-2分钟</p>
+<p><a class="pn" id="pn-52" href="#pn-52">52</a>- 退火：低于引物Tm 5°C</p>
+<p><a class="pn" id="pn-53" href="#pn-53">53</a>- 延伸：1分钟/kb</p>
+<p><a class="pn" id="pn-54" href="#pn-54">54</a>### PCR衍生技术</p>
+<p><a class="pn" id="pn-55" href="#pn-55">55</a>**逆转录PCR**（RT-PCR）：</p>
+<p><a class="pn" id="pn-56" href="#pn-56">56</a>- RNA → 逆转录 → cDNA → PCR</p>
+<p><a class="pn" id="pn-57" href="#pn-57">57</a>- 检测基因表达</p>
+<p><a class="pn" id="pn-58" href="#pn-58">58</a>- 病毒检测（如COVID-19）</p>
+<p><a class="pn" id="pn-59" href="#pn-59">59</a>**实时定量PCR**（qPCR）：</p>
+<p><a class="pn" id="pn-60" href="#pn-60">60</a>- 荧光染料（SYBR Green）或探针（TaqMan）</p>
+<p><a class="pn" id="pn-61" href="#pn-61">61</a>- 实时监测扩增</p>
+<p><a class="pn" id="pn-62" href="#pn-62">62</a>- 定量分析基因表达</p>
+<p><a class="pn" id="pn-63" href="#pn-63">63</a>**数字PCR**（dPCR）：</p>
+<p><a class="pn" id="pn-64" href="#pn-64">64</a>- 样品分配到数千个微反应室</p>
+<p><a class="pn" id="pn-65" href="#pn-65">65</a>- 绝对定量</p>
+<p><a class="pn" id="pn-66" href="#pn-66">66</a>- 检测稀有突变</p>
+<p><a class="pn" id="pn-67" href="#pn-67">67</a>### 高保真PCR</p>
+<p><a class="pn" id="pn-68" href="#pn-68">68</a>**常用酶**：</p>
+<p><a class="pn" id="pn-69" href="#pn-69">69</a>| 酶 | 特点 | 应用 |</p>
+<p><a class="pn" id="pn-70" href="#pn-70">70</a>|----|------|------|</p>
+<p><a class="pn" id="pn-71" href="#pn-71">71</a>| Taq酶 | 耐热，无校对 | 常规PCR |</p>
+<p><a class="pn" id="pn-72" href="#pn-72">72</a>| Pfu酶 | 有3&#x27;-5&#x27;外切酶活性 | 克隆 |</p>
+<p><a class="pn" id="pn-73" href="#pn-73">73</a>| Phusion酶 | 高保真，快速 | 测序、克隆 |</p>
+<h2>7.3 分子克隆技术</h2>
+<p><a class="pn" id="pn-74" href="#pn-74">74</a>### 限制性内切酶</p>
+<p><a class="pn" id="pn-75" href="#pn-75">75</a>**识别序列特点**：</p>
+<p><a class="pn" id="pn-76" href="#pn-76">76</a>- 通常为4-8 bp的回文序列</p>
+<p><a class="pn" id="pn-77" href="#pn-77">77</a>- 切割产生粘性末端或平末端</p>
+<p><a class="pn" id="pn-78" href="#pn-78">78</a>| 酶 | 识别序列 | 末端 |</p>
+<p><a class="pn" id="pn-79" href="#pn-79">79</a>|---|---------|------|</p>
+<p><a class="pn" id="pn-80" href="#pn-80">80</a>| EcoRI | G↓AATTC | 5&#x27;粘性 |</p>
+<p><a class="pn" id="pn-81" href="#pn-81">81</a>| BamHI | G↓GATCC | 5&#x27;粘性 |</p>
+<p><a class="pn" id="pn-82" href="#pn-82">82</a>| HindIII | A↓AGCTT | 5&#x27;粘性 |</p>
+<p><a class="pn" id="pn-83" href="#pn-83">83</a>| SmaI | CCC↓GGG | 平末端 |</p>
+<p><a class="pn" id="pn-84" href="#pn-84">84</a>### 载体系统</p>
+<p><a class="pn" id="pn-85" href="#pn-85">85</a>| 载体类型 | 容量 | 宿主 | 应用 |</p>
+<p><a class="pn" id="pn-86" href="#pn-86">86</a>|---------|------|------|------|</p>
+<p><a class="pn" id="pn-87" href="#pn-87">87</a>| 质粒 | 2-10 kb | 细菌 | 常规克隆 |</p>
+<p><a class="pn" id="pn-88" href="#pn-88">88</a>| 噬菌体 | 9-23 kb | 细菌 | cDNA文库 |</p>
+<p><a class="pn" id="pn-89" href="#pn-89">89</a>| BAC | 100-300 kb | 细菌 | 基因组文库 |</p>
+<p><a class="pn" id="pn-90" href="#pn-90">90</a>| YAC | 0.5-2 Mb | 酵母 | 大片段克隆 |</p>
+<p><a class="pn" id="pn-91" href="#pn-91">91</a>### 克隆流程</p>
+<p><a class="pn" id="pn-92" href="#pn-92">92</a>```</p>
+<p><a class="pn" id="pn-93" href="#pn-93">93</a>目的基因获取 ← PCR/化学合成/文库筛选</p>
+<p><a class="pn" id="pn-94" href="#pn-94">94</a>      ↓</p>
+<p><a class="pn" id="pn-95" href="#pn-95">95</a>载体准备 ← 限制性内切酶切割</p>
+<p><a class="pn" id="pn-96" href="#pn-96">96</a>      ↓</p>
+<p><a class="pn" id="pn-97" href="#pn-97">97</a>连接反应 ← DNA连接酶</p>
+<p><a class="pn" id="pn-98" href="#pn-98">98</a>      ↓</p>
+<p><a class="pn" id="pn-99" href="#pn-99">99</a>转化/转染 ← 导入宿主细胞</p>
+<p><a class="pn" id="pn-100" href="#pn-100">100</a>      ↓</p>
+<p><a class="pn" id="pn-101" href="#pn-101">101</a>筛选鉴定 ← 抗生素抗性、蓝白斑筛选、测序</p>
+<p><a class="pn" id="pn-102" href="#pn-102">102</a>```</p>
+<p><a class="pn" id="pn-103" href="#pn-103">103</a>### 重组技术</p>
+<p><a class="pn" id="pn-104" href="#pn-104">104</a>**Gibson Assembly**：</p>
+<p><a class="pn" id="pn-105" href="#pn-105">105</a>- 多片段无缝克隆</p>
+<p><a class="pn" id="pn-106" href="#pn-106">106</a>- 不需要限制性内切酶</p>
+<p><a class="pn" id="pn-107" href="#pn-107">107</a>- 同源重组原理</p>
+<p><a class="pn" id="pn-108" href="#pn-108">108</a>**Golden Gate克隆**：</p>
+<p><a class="pn" id="pn-109" href="#pn-109">109</a>- IIS型限制酶（如BsaI）</p>
+<p><a class="pn" id="pn-110" href="#pn-110">110</a>- 产生任意4 bp突出端</p>
+<p><a class="pn" id="pn-111" href="#pn-111">111</a>- 标准化、模块化克隆</p>
+<h2>7.4 基因表达分析</h2>
+<p><a class="pn" id="pn-112" href="#pn-112">112</a>### Northern Blot</p>
+<p><a class="pn" id="pn-113" href="#pn-113">113</a>**原理**：检测特定RNA的表达</p>
+<p><a class="pn" id="pn-114" href="#pn-114">114</a>**步骤**：</p>
+<p><a class="pn" id="pn-115" href="#pn-115">115</a>1. RNA电泳分离</p>
+<p><a class="pn" id="pn-116" href="#pn-116">116</a>2. 转膜</p>
+<p><a class="pn" id="pn-117" href="#pn-117">117</a>3. 探针杂交</p>
+<p><a class="pn" id="pn-118" href="#pn-118">118</a>4. 信号检测</p>
+<p><a class="pn" id="pn-119" href="#pn-119">119</a>**应用**：</p>
+<p><a class="pn" id="pn-120" href="#pn-120">120</a>- 检测mRNA大小</p>
+<p><a class="pn" id="pn-121" href="#pn-121">121</a>- 分析可变剪接</p>
+<p><a class="pn" id="pn-122" href="#pn-122">122</a>- 检测miRNA</p>
+<p><a class="pn" id="pn-123" href="#pn-123">123</a>### Western Blot</p>
+<p><a class="pn" id="pn-124" href="#pn-124">124</a>**原理**：检测特定蛋白质的表达</p>
+<p><a class="pn" id="pn-125" href="#pn-125">125</a>**步骤**：</p>
+<p><a class="pn" id="pn-126" href="#pn-126">126</a>1. 蛋白质电泳（SDS-PAGE）</p>
+<p><a class="pn" id="pn-127" href="#pn-127">127</a>2. 转膜</p>
+<p><a class="pn" id="pn-128" href="#pn-128">128</a>3. 抗体孵育（一抗、二抗）</p>
+<p><a class="pn" id="pn-129" href="#pn-129">129</a>4. 信号检测（化学发光或荧光）</p>
+<p><a class="pn" id="pn-130" href="#pn-130">130</a>**应用**：</p>
+<p><a class="pn" id="pn-131" href="#pn-131">131</a>- 检测蛋白质表达水平</p>
+<p><a class="pn" id="pn-132" href="#pn-132">132</a>- 检测蛋白质修饰（磷酸化等）</p>
+<p><a class="pn" id="pn-133" href="#pn-133">133</a>- 确定蛋白质大小</p>
+<p><a class="pn" id="pn-134" href="#pn-134">134</a>### 免疫沉淀</p>
+<p><a class="pn" id="pn-135" href="#pn-135">135</a>**Co-IP**（免疫共沉淀）：</p>
+<p><a class="pn" id="pn-136" href="#pn-136">136</a>- 检测蛋白质-蛋白质相互作用</p>
+<p><a class="pn" id="pn-137" href="#pn-137">137</a>- 抗体捕获目标蛋白及其结合蛋白</p>
+<p><a class="pn" id="pn-138" href="#pn-138">138</a>**ChIP**（染色质免疫沉淀）：</p>
+<p><a class="pn" id="pn-139" href="#pn-139">139</a>- 检测蛋白质-DNA相互作用</p>
+<p><a class="pn" id="pn-140" href="#pn-140">140</a>- 确定转录因子结合位点</p>
+<h2>7.5 基因编辑技术</h2>
+<p><a class="pn" id="pn-141" href="#pn-141">141</a>### CRISPR-Cas9系统</p>
+<p><a class="pn" id="pn-142" href="#pn-142">142</a>**发现**：Jennifer Doudna &amp; Emmanuelle Charpentier（2020年诺贝尔化学奖）</p>
+<p><a class="pn" id="pn-143" href="#pn-143">143</a>**组成**：</p>
+<p><a class="pn" id="pn-144" href="#pn-144">144</a>- &lt;span class=&quot;entity protein&quot; title=&quot;蛋白&quot;&gt;Cas9蛋白&lt;/span&gt;：核酸酶，切割DNA</p>
+<p><a class="pn" id="pn-145" href="#pn-145">145</a>- &lt;span class=&quot;entity entity-generic&quot; title=&quot;RNA&quot;&gt;sgRNA&lt;/span&gt;：向导RNA，引导Cas9到靶位点</p>
+<p><a class="pn" id="pn-146" href="#pn-146">146</a>**原理**：</p>
+<p><a class="pn" id="pn-147" href="#pn-147">147</a>```</p>
+<p><a class="pn" id="pn-148" href="#pn-148">148</a>sgRNA识别靶序列（PAM: NGG）</p>
+<p><a class="pn" id="pn-149" href="#pn-149">149</a>        ↓</p>
+<p><a class="pn" id="pn-150" href="#pn-150">150</a>Cas9切割DNA双链</p>
+<p><a class="pn" id="pn-151" href="#pn-151">151</a>        ↓</p>
+<p><a class="pn" id="pn-152" href="#pn-152">152</a>细胞修复（NHEJ或HDR）</p>
+<p><a class="pn" id="pn-153" href="#pn-153">153</a>        ↓</p>
+<p><a class="pn" id="pn-154" href="#pn-154">154</a>基因敲除或精确编辑</p>
+<p><a class="pn" id="pn-155" href="#pn-155">155</a>```</p>
+<p><a class="pn" id="pn-156" href="#pn-156">156</a>**应用**：</p>
+<p><a class="pn" id="pn-157" href="#pn-157">157</a>- 基因功能研究</p>
+<p><a class="pn" id="pn-158" href="#pn-158">158</a>- 遗传病治疗</p>
+<p><a class="pn" id="pn-159" href="#pn-159">159</a>- 作物改良</p>
+<p><a class="pn" id="pn-160" href="#pn-160">160</a>### 碱基编辑器</p>
+<p><a class="pn" id="pn-161" href="#pn-161">161</a>**CBE**（胞嘧啶碱基编辑器）：</p>
+<p><a class="pn" id="pn-162" href="#pn-162">162</a>- C → T（或G → A）</p>
+<p><a class="pn" id="pn-163" href="#pn-163">163</a>- 不需要切断DNA双链</p>
+<p><a class="pn" id="pn-164" href="#pn-164">164</a>**ABE**（腺嘌呤碱基编辑器）：</p>
+<p><a class="pn" id="pn-165" href="#pn-165">165</a>- A → G（或T → C）</p>
+<p><a class="pn" id="pn-166" href="#pn-166">166</a>- 不产生双链断裂</p>
+<p><a class="pn" id="pn-167" href="#pn-167">167</a>**优势**：</p>
+<p><a class="pn" id="pn-168" href="#pn-168">168</a>- 减少随机插入/缺失</p>
+<p><a class="pn" id="pn-169" href="#pn-169">169</a>- 精确点突变</p>
+<p><a class="pn" id="pn-170" href="#pn-170">170</a>### Prime Editing</p>
+<p><a class="pn" id="pn-171" href="#pn-171">171</a>**原理**：</p>
+<p><a class="pn" id="pn-172" href="#pn-172">172</a>- Cas9切口酶 + 逆转录酶</p>
+<p><a class="pn" id="pn-173" href="#pn-173">173</a>- pegRNA（先导编辑向导RNA）</p>
+<p><a class="pn" id="pn-174" href="#pn-174">174</a>- 可进行任意类型的点突变和小片段插入/缺失</p>
+<h2>7.6 细胞与成像技术</h2>
+<p><a class="pn" id="pn-175" href="#pn-175">175</a>### 细胞培养</p>
+<p><a class="pn" id="pn-176" href="#pn-176">176</a>**原代培养**：直接从组织分离</p>
+<p><a class="pn" id="pn-177" href="#pn-177">177</a>**传代细胞系**：可无限传代（如HeLa、293T）</p>
+<p><a class="pn" id="pn-178" href="#pn-178">178</a>**培养条件**：</p>
+<p><a class="pn" id="pn-179" href="#pn-179">179</a>- 培养基（DMEM、RPMI等）</p>
+<p><a class="pn" id="pn-180" href="#pn-180">180</a>- 血清（FBS）</p>
+<p><a class="pn" id="pn-181" href="#pn-181">181</a>- CO₂培养箱（5% CO₂，37°C）</p>
+<p><a class="pn" id="pn-182" href="#pn-182">182</a>### 荧光显微镜</p>
+<p><a class="pn" id="pn-183" href="#pn-183">183</a>**常用荧光染料**：</p>
+<p><a class="pn" id="pn-184" href="#pn-184">184</a>| 染料 | 激发/发射 | 应用 |</p>
+<p><a class="pn" id="pn-185" href="#pn-185">185</a>|------|----------|------|</p>
+<p><a class="pn" id="pn-186" href="#pn-186">186</a>| DAPI | 358/461 nm | DNA染色 |</p>
+<p><a class="pn" id="pn-187" href="#pn-187">187</a>| GFP | 488/509 nm | 蛋白标记 |</p>
+<p><a class="pn" id="pn-188" href="#pn-188">188</a>| RFP | 555/584 nm | 蛋白标记 |</p>
+<p><a class="pn" id="pn-189" href="#pn-189">189</a>**共聚焦显微镜**：</p>
+<p><a class="pn" id="pn-190" href="#pn-190">190</a>- 消除焦平面外信号</p>
+<p><a class="pn" id="pn-191" href="#pn-191">191</a>- 三维重建</p>
+<p><a class="pn" id="pn-192" href="#pn-192">192</a>- 活细胞成像</p>
+<p><a class="pn" id="pn-193" href="#pn-193">193</a>### 流式细胞术</p>
+<p><a class="pn" id="pn-194" href="#pn-194">194</a>**原理**：</p>
+<p><a class="pn" id="pn-195" href="#pn-195">195</a>- 单细胞悬液通过激光束</p>
+<p><a class="pn" id="pn-196" href="#pn-196">196</a>- 检测散射光和荧光</p>
+<p><a class="pn" id="pn-197" href="#pn-197">197</a>- 高速分析（每秒数千细胞）</p>
+<p><a class="pn" id="pn-198" href="#pn-198">198</a>**应用**：</p>
+<p><a class="pn" id="pn-199" href="#pn-199">199</a>- 细胞分选（FACS）</p>
+<p><a class="pn" id="pn-200" href="#pn-200">200</a>- 细胞周期分析</p>
+<p><a class="pn" id="pn-201" href="#pn-201">201</a>- 凋亡检测</p>
+<p><a class="pn" id="pn-202" href="#pn-202">202</a>- 表面标志物分析</p>
+<h2>本章小结</h2>
+<p><a class="pn" id="pn-203" href="#pn-203">203</a>- 核酸提取、电泳、定量是分子生物学基础</p>
+<p><a class="pn" id="pn-204" href="#pn-204">204</a>- PCR技术可扩增、定量、检测特定DNA/RNA</p>
+<p><a class="pn" id="pn-205" href="#pn-205">205</a>- 分子克隆依赖载体系统和限制酶</p>
+<p><a class="pn" id="pn-206" href="#pn-206">206</a>- 基因编辑技术（CRISPR-Cas9）革命性地改变了基因操作</p>
+<p><a class="pn" id="pn-207" href="#pn-207">207</a>- 细胞培养和成像技术是功能研究的重要工具</p>
+<h2>思考题</h2>
+<p><a class="pn" id="pn-208" href="#pn-208">208</a>1. 为什么PCR需要引物，而DNA复制在体内不需要外源引物？</p>
+<p><a class="pn" id="pn-209" href="#pn-209">209</a>2. 比较CRISPR-Cas9与传统基因编辑技术（ZFN、TALEN）的优缺点。</p>
+<p><a class="pn" id="pn-210" href="#pn-210">210</a>3. Western Blot和质谱在蛋白质分析中各有什么优势？</p></div><nav class="chapter-nav"><a href="ch06_%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9%E5%AD%A6%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%9C%9F%E6%A0%B8%E8%A1%A8%E8%BE%BE%E8%B0%83%E6%8E%A7.html">← 上一章</a><a href="../index.html" class="nav-home">🏠 首页</a><a href="ch08_%E7%BB%84%E5%AD%A6%E5%89%8D%E6%B2%BF.html">下一章 →</a></nav></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

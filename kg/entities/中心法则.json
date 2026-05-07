@@ -1,0 +1,46 @@
+{
+  "id": "central-dogma",
+  "nameEn": "Central Dogma",
+  "category": "核心理论",
+  "chapter": "第1章",
+  "importance": "core-important",
+  "keyConcepts": [
+    {
+      "term": "DNA复制",
+      "definition": "以DNA为模板合成子代DNA，实现遗传物质的精确拷贝"
+    },
+    {
+      "term": "转录",
+      "definition": "以DNA为模板合成RNA，将遗传信息从DNA传递至RNA"
+    },
+    {
+      "term": "翻译",
+      "definition": "以mRNA为模板合成蛋白质，将核苷酸序列信息转化为氨基酸序列"
+    },
+    {
+      "term": "逆转录",
+      "definition": "以RNA为模板合成DNA，由逆转录酶催化，修正了信息单向流动的原初假设"
+    },
+    {
+      "term": "RNA复制",
+      "definition": "某些RNA病毒以RNA为模板复制RNA基因组"
+    }
+  ],
+  "keyPoints": [
+    "DNA→RNA→蛋白质是遗传信息流动的主轴",
+    "逆转录和RNA复制的发现证明了信息流并非绝对单向",
+    "中心法则是理解所有分子生物学过程的统一框架",
+    "每种信息传递步骤由特异的聚合酶催化"
+  ],
+  "relatedEntities": [
+    "DNA",
+    "RNA",
+    "蛋白质",
+    "DNA 聚合酶",
+    "RNA 聚合酶",
+    "逆转录酶",
+    "转录",
+    "翻译"
+  ],
+  "definition": "中心法则（Central Dogma）由Francis Crick于1958年提出，是分子生物学最基本的理论框架，描述了遗传信息在生物体系中的流动路径：信息可从DNA传递至DNA（复制）、从DNA传递至RNA（转录）、从RNA传递至蛋白质（翻译），但不能从蛋白质反向传递至核酸。这一'禁止反向信息流'的原则——即序列信息一旦转化为蛋白质的氨基酸序列，就无法再被'读取'回核苷酸序列——是中心法则最核心的断言。1970年Temin和Baltimore发现逆转录酶后，RNA→DNA的信息流被补充进来，形成了更完整的中心法则图景。现代理解进一步涵盖了RNA→RNA（RNA病毒复制）和某些情况下的RNA→DNA→RNA（逆转录转座子）等特殊信息流路径，但蛋白质→核酸的逆向信息流从未被发现。"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "histone-code",
+  "nameEn": "Histone Code",
+  "category": "调控",
+  "chapter": "第4章",
+  "importance": "core-major",
+  "keyConcepts": [
+    {
+      "term": "Writer",
+      "definition": "添加组蛋白共价修饰的酶（HAT、HMT、激酶）"
+    },
+    {
+      "term": "Reader",
+      "definition": "识别特定修饰的效应蛋白（溴域识乙酰化、染色域识甲基化）"
+    },
+    {
+      "term": "Eraser",
+      "definition": "去除组蛋白修饰的酶（HDAC、去甲基化酶LSD1/JMJD）"
+    }
+  ],
+  "keyPoints": [
+    "修饰组合定义染色质的转录状态",
+    "H3K4me3=活性启动子，H3K27ac=活性增强子，H3K9me3=异染色质",
+    "修饰由writer添加、reader识别、eraser去除"
+  ],
+  "relatedEntities": [
+    "组蛋白修饰",
+    "染色质重塑",
+    "DNA甲基化",
+    "表观遗传",
+    "基因调控"
+  ],
+  "definition": "组蛋白密码假说由Strahl和Allis于2000年提出，认为核心组蛋白N端尾部多种共价翻译后修饰的组合模式——而非单一修饰——构成了被特定reader蛋白解读的调控密码，决定染色质的转录状态。标志性修饰谱：活性启动子=H3K4me3+H3K27ac；活性增强子=H3K4me1+H3K27ac；Polycomb抑制=H3K27me3（由PRC2-EZH催化）；组成型异染色质=H3K9me3（被HP1识别）。密码由writer、reader和eraser三层蛋白网络动态维持。基于组蛋白密码的异常在肿瘤中广泛存在，靶向BRD4溴域的BET抑制剂在血液肿瘤中展示活性。"
+}

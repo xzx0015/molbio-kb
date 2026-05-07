@@ -5,14 +5,32 @@
   "category": "分子",
   "chapter": "第2章",
   "importance": "core-important",
-  "definition": "线粒体是细胞的能量工厂，通过氧化磷酸化产生ATP。具有双层膜结构，含有自身的环状DNA（mtDNA），半自主复制。",
+  "definition": "线粒体是真核细胞的半自主细胞器，通过氧化磷酸化（OXPHOS）将营养物质中的化学能转化为ATP，为细胞提供约90%的能量需求，被誉为'细胞的能量工厂'。线粒体具有双层膜结构：外膜含电压依赖性阴离子通道（VDAC/孔蛋白），允许小分子自由通透；内膜高度折叠形成嵴（cristae），大幅增加表面积以容纳电子传递链（复合物Ⅰ-Ⅳ）和ATP合酶（复合物Ⅴ）。线粒体拥有自身的小型环状双链DNA基因组（mtDNA，人类约16.6 kb，编码13个氧化磷酸化蛋白亚基、22个tRNA和2个rRNA），但绝大多数线粒体蛋白（约99%）由核基因组编码后输入线粒体，因此线粒体为半自主细胞器。线粒体还深度参与钙离子稳态维持、铁硫簇组装、活性氧信号调控以及凋亡的内在途径调控（通过释放细胞色素c激活caspase级联）。线粒体疾病（mtDNA突变导致的母系遗传病，如Leber遗传性视神经病变和MELAS综合征）和线粒体功能障碍是神经退行性疾病和代谢综合征的重要研究方向。",
   "keyConcepts": [
-    {"term": "外膜", "definition": "线粒体外层膜，通透性较高"},
-    {"term": "内膜", "definition": "线粒体内层膜，形成嵴，含有电子传递链"},
-    {"term": "嵴", "definition": "内膜向内折叠形成的结构，增加表面积"},
-    {"term": "基质", "definition": "内膜包围的空间，含有三羧酸循环酶系"},
-    {"term": "mtDNA", "definition": "线粒体DNA，环状双链，母系遗传"},
-    {"term": "氧化磷酸化", "definition": "通过电子传递链和ATP合酶产生ATP的过程"}
+    {
+      "term": "外膜",
+      "definition": "线粒体外层膜，通透性较高"
+    },
+    {
+      "term": "内膜",
+      "definition": "线粒体内层膜，形成嵴，含有电子传递链"
+    },
+    {
+      "term": "嵴",
+      "definition": "内膜向内折叠形成的结构，增加表面积"
+    },
+    {
+      "term": "基质",
+      "definition": "内膜包围的空间，含有三羧酸循环酶系"
+    },
+    {
+      "term": "mtDNA",
+      "definition": "线粒体DNA，环状双链，母系遗传"
+    },
+    {
+      "term": "氧化磷酸化",
+      "definition": "通过电子传递链和ATP合酶产生ATP的过程"
+    }
   ],
   "keyPoints": [
     "线粒体是半自主细胞器，含有自己的DNA和核糖体",
@@ -21,7 +39,13 @@
     "线粒体功能障碍与多种疾病相关（线粒体病）",
     "线粒体在细胞凋亡中起关键作用"
   ],
-  "relatedEntities": ["DNA", "RNA", "核糖体", "细胞凋亡", "ATP"],
+  "relatedEntities": [
+    "DNA",
+    "RNA",
+    "核糖体",
+    "细胞凋亡",
+    "ATP"
+  ],
   "references": [
     "Alberts B, et al. Molecular Biology of the Cell. 6th ed. Garland Science, 2015"
   ]
