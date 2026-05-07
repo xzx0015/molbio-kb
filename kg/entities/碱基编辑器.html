@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>站内搜索 | 分子生物学知识库</title><meta name="description" content="站内搜索">
+<title>碱基编辑器 | 分子生物学知识库</title><meta name="description" content="{&quot;id&quot;: &quot;base-editor&quot;, &quot;nameEn&quot;: &quot;Base Editor (ABE/CBE)&quot;, &quot;category&quot;: &quot;技术&quot;, &quot;chapter&quot;: &quot;第6章&quot;, &quot;definition&quot;: &quot;碱基编辑器是CRISPR系统的精确基因编辑衍生工具，由David Liu实验室于2016年（CBE）和2">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== molbio-kb — Mintlify-inspired design ===== */
@@ -159,18 +159,16 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 </style></head><body>
 <header class="top"><div class="wrap">
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
-<nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
+<nav class="nav"><a href="../../index.html">🧬 首页</a><a href="../../chapters/index.html">📖 章节</a><a href="index.html">🏷️ 实体</a><a href="../concepts/index.html">🔗 图谱</a><a href="../../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><h1>🔍 站内搜索</h1><p class="muted">索引 <b>194</b> 个页面，离线可用。</p><input id="q" class="searchbox" placeholder="输入关键词，例如 DNA复制、PCR、转录因子..." autofocus><div id="results"></div>
-<script>
-const INDEX_URL = 'search-index.json';
-let docs=[];fetch(INDEX_URL).then(r=>r.json()).then(x=>{docs=x;render();});
-const q=document.getElementById('q'), results=document.getElementById('results');
-function score(d, term){const hay=(d.title+' '+d.text).toLowerCase(); const t=term.toLowerCase(); return (d.title.toLowerCase().includes(t)?5:0)+(hay.includes(t)?1:0);}
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function render(){const term=q.value.trim(); let arr=term?docs.map(d=>[score(d,term),d]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,30).map(x=>x[1]):docs.slice(0,20); results.innerHTML=arr.map(d=>`<div class="result"><a href="../${d.url}"><b>${esc(d.title)}</b></a> <span class="tag">${esc(d.kind)}</span><p class="muted">${esc(d.text.slice(0,160))}...</p></div>`).join('') || '<p class="muted">没有结果</p>';}
-q.addEventListener('input',render);
-</script></main>
+<main><div class="crumb"><a href="../../index.html">首页</a> / <a href="index.html">实体索引</a></div>
+<article class="article"><h1>碱基编辑器 <span class="tag">技术</span></h1>
+<p class="muted">Base Editor (ABE/CBE) · 第6章</p>
+<h2>定义</h2><p>碱基编辑器是CRISPR系统的精确基因编辑衍生工具，由David Liu实验室于2016年（CBE）和2017年（ABE）先后开发，可在不产生DNA双链断裂、不依赖同源定向修复（HDR）的情况下实现单个碱基的精确转换。胞嘧啶碱基编辑器（CBE）融合了Cas9切口酶（nCas9，D10A突变仅切割非编辑链）、胞嘧啶脱氨酶（大鼠APOBEC1或进化优化的变体）和尿嘧啶糖基化酶抑制因子（UGI），将靶C•G碱基对经C→U→T的脱氨-修复路径转换为T•A。腺嘌呤碱基编辑器（ABE）使用实验室进化的tRNA腺苷脱氨酶TadA变体，将A•T经A→I（肌苷，读作G）的脱氨路径转换为G•C。碱基编辑器在精准修正致病点突变（约占人类致病突变的60%）和作物分子育种中具有革命性潜力。</p>
+<h2>关键概念</h2><ul><li>暂无</li></ul>
+<h2>要点</h2><ul><li>暂无</li></ul>
+<h2>相关实体</h2><p>暂无</p>
+<h2>参考</h2><ul><li>暂无</li></ul></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

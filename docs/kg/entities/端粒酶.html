@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>站内搜索 | 分子生物学知识库</title><meta name="description" content="站内搜索">
+<title>端粒酶 | 分子生物学知识库</title><meta name="description" content="{&quot;id&quot;: &quot;telomerase&quot;, &quot;nameEn&quot;: &quot;Telomerase&quot;, &quot;category&quot;: &quot;酶&quot;, &quot;chapter&quot;: &quot;第5章&quot;, &quot;definition&quot;: &quot;端粒酶是负责延长染色体末端端粒重复序列（脊椎动物为TTAGGG）的核糖核蛋白逆转录酶，由催化蛋白亚基TERT（端粒酶逆转录酶）和R">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== molbio-kb — Mintlify-inspired design ===== */
@@ -159,18 +159,16 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 </style></head><body>
 <header class="top"><div class="wrap">
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
-<nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
+<nav class="nav"><a href="../../index.html">🧬 首页</a><a href="../../chapters/index.html">📖 章节</a><a href="index.html">🏷️ 实体</a><a href="../concepts/index.html">🔗 图谱</a><a href="../../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><h1>🔍 站内搜索</h1><p class="muted">索引 <b>194</b> 个页面，离线可用。</p><input id="q" class="searchbox" placeholder="输入关键词，例如 DNA复制、PCR、转录因子..." autofocus><div id="results"></div>
-<script>
-const INDEX_URL = 'search-index.json';
-let docs=[];fetch(INDEX_URL).then(r=>r.json()).then(x=>{docs=x;render();});
-const q=document.getElementById('q'), results=document.getElementById('results');
-function score(d, term){const hay=(d.title+' '+d.text).toLowerCase(); const t=term.toLowerCase(); return (d.title.toLowerCase().includes(t)?5:0)+(hay.includes(t)?1:0);}
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function render(){const term=q.value.trim(); let arr=term?docs.map(d=>[score(d,term),d]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,30).map(x=>x[1]):docs.slice(0,20); results.innerHTML=arr.map(d=>`<div class="result"><a href="../${d.url}"><b>${esc(d.title)}</b></a> <span class="tag">${esc(d.kind)}</span><p class="muted">${esc(d.text.slice(0,160))}...</p></div>`).join('') || '<p class="muted">没有结果</p>';}
-q.addEventListener('input',render);
-</script></main>
+<main><div class="crumb"><a href="../../index.html">首页</a> / <a href="index.html">实体索引</a></div>
+<article class="article"><h1>端粒酶 <span class="tag">酶</span></h1>
+<p class="muted">Telomerase · 第5章</p>
+<h2>定义</h2><p>端粒酶是负责延长染色体末端端粒重复序列（脊椎动物为TTAGGG）的核糖核蛋白逆转录酶，由催化蛋白亚基TERT（端粒酶逆转录酶）和RNA模板组分TERC（端粒酶RNA组分）组成。TERT以TERC为模板、以染色体3&#x27;悬垂单链为引物，通过逆转录反复合成端粒重复序列，补偿因「末端复制问题」（DNA聚合酶无法完全复制线性染色体最末端）导致的端粒逐代缩短。端粒酶在生殖细胞、干细胞和约85-90%的恶性肿瘤中高表达维持端粒长度和无限增殖能力，而在大多数正常体细胞中被严格抑制——这是癌症端粒维持的主要机制。端粒酶抑制剂（如伊美司他Imetelstat）和端粒酶激活策略分别在抗肿瘤和抗衰老领域被深入研究。2009年Blackburn、Greider和Szostak因端粒和端粒酶的发现获诺贝尔奖。</p>
+<h2>关键概念</h2><ul><li>暂无</li></ul>
+<h2>要点</h2><ul><li>暂无</li></ul>
+<h2>相关实体</h2><p>暂无</p>
+<h2>参考</h2><ul><li>暂无</li></ul></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

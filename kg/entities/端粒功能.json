@@ -1,0 +1,7 @@
+{
+  "id": "telomere-function",
+  "nameEn": "Telomere Function",
+  "category": "基因组",
+  "chapter": "第5章",
+  "definition": "端粒是线性染色体末端的特殊核蛋白结构，由短串联重复序列（脊椎动物为TTAGGG，长度在人类约5-15 kb）和专门的端粒结合蛋白复合物Shelterin（TRF1/TRF2/RAP1/TIN2/TPP1/POT1六亚基）组成。Shelterin的核心功能：①末端保护——TRF2和POT1分别抑制ATM和ATR DNA损伤激酶通路的激活，将天然染色体末端隐藏为「封闭」构象使DNA损伤修复机器不将其识别为DSB；②端粒长度调控——POT1-TPP1复合物调控端粒酶对端粒的接近；③促成T环（t-loop）——3'悬垂单链侵入上游双链端粒序列形成套索状结构，从物理上封闭染色体末端。端粒随每次细胞分裂逐渐缩短至临界长度后触发DNA损伤信号和复制性衰老（Hayflick极限），端粒维持机制（端粒酶激活或ALT途径）的获得是癌细胞无限增殖的必要条件。"
+}

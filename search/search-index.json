@@ -570,6 +570,12 @@
     "text": "{\"id\": \"enhancer\", \"name\": \"增强子\", \"nameEn\": \"Enhancer\", \"category\": \"调控\", \"chapter\": \"第 7-8 章\", \"importance\": \"core-major\", \"definition\": \"增强子是基因组中能够显著提高靶基因转录水平的顺式作用DNA元件，是决定基因时空特异性表达的关键调控元件。增强子区别于启动子的核心特征包括：①位置和方向独立——可位于靶基因的上游、下游、内含子中甚至相距数十万碱基对；②以方向无关的方式发挥作用，正反方向均可增强转录；③通常含有密集的转录因子结合位点簇，多种转录因子协同结合后通过染色质环化（chromatin looping）与靶启动子空间接近，招募共激活因子（如Mediator复合物和组蛋白乙酰转移酶p300/CBP）重塑局部染色质。超级增强子（super-enhancer）是一类特大规模的增强子簇，调控决定细胞身份的关键基因（如胚胎干细胞中的Oct4/Sox2/Nanog），在肿瘤中常被癌基因劫持驱动其异常高表达。全基因组范围鉴定增强子通常依赖染色质特征标记：DNase I超敏位点、H3K27ac和H3K4me1组蛋白修饰的高信号、以及p300结合位点。\", \"keyConcepts\": [{\"term\": \"位置独立性\", \"definition\": \"增强子可在基因上游、下游或内部发挥作用\"}, {\"term\": \"方向独立性\", \"definition\": \"增强子正向或反向插入均可发挥作用\"}, {\"term\": \"远距离作用\", \"definition\": \"增强子可在数千碱基外发挥作用\"}, {\"term\": \"转录因子结合\", \"definition\": \"增强子结合特异性转录因子\"}, {\"term\": \"染色质环\", \"definition\": \"增强子通过染色质环与启动子接近\"}], \"keyPoints\": [\"增强子可显著增强基因转录\", \"增强子具有位置和方向独立性\", \"增强子可远距离发挥作用\", \"增强子通过染色质环与启动子相互作用\", \"增强子突变可导致疾病\"], \"relatedEntities\": [\"基因调控\", \"启动子\", \"转录因子\", \"沉默子\"], \"references\": [\"Banerji J, et al. A lymphocyte-specific cellular enhancer is located downstream of the joining region in immunoglobulin heavy chain genes. Cell, 1983\"]}"
   },
   {
+    "title": "复制许可",
+    "url": "kg/entities/复制许可.html",
+    "kind": "entity",
+    "text": "{\"id\": \"replication-licensing\", \"nameEn\": \"Replication Licensing\", \"category\": \"过程\", \"chapter\": \"第3章\", \"definition\": \"复制许可是真核细胞确保每条染色体在每个细胞周期中仅被复制一次的核心调控机制。分为两个严格分离的步骤：①许可阶段（G1期）——在无CDK活性下，ORC（起点识别复合物）结合复制起点，随后Cdc6和Cdt1协同将MCM2-7六聚体解旋酶双六聚体装载至DNA上形成复制前复合物（pre-RC），此时解旋酶为失活状态；②激活阶段（S期）——CDK和DDK（Dbf4依赖性激酶）磷酸化pre-RC组分，Sld2/Sld3/Dpb11等因子被磷酸化激活后招募Cdc45和GINS与MCM2-7组装为活性CMG解旋酶。CDK活性同时通过磷酸化失活Cdc6、出核降解Cdt1以及招募Geminin抑制Cdt1等多重机制抑制新的pre-RC组装——确保了在S/G2/M期不再发生复制许可，每个复制起点在每次细胞周期仅被激活一次。许可失控导致DNA重复制是基因组不稳定的重要来源。\"}"
+  },
+  {
     "title": "外显子",
     "url": "kg/entities/外显子.html",
     "kind": "entity",
@@ -622,6 +628,12 @@
     "url": "kg/entities/染色质重塑.html",
     "kind": "entity",
     "text": "{\"id\": \"chromatin-remodeling\", \"name\": \"染色质重塑\", \"nameEn\": \"Chromatin Remodeling\", \"category\": \"调控\", \"chapter\": \"第9章\", \"importance\": \"core-major\", \"definition\": \"染色质重塑（Chromatin Remodeling）是指ATP依赖的染色质重塑复合物利用ATP水解的能量，通过滑动、移除或重组核小体改变染色质结构，从而调控DNA可及性的动态过程。染色质重塑复合物均属于SWI2/SNF2超家族ATP酶，根据结构域不同分为SWI/SNF、ISWI、CHD和INO80四大亚家族。SWI/SNF复合物（酵母中为ySWI/SNF和RSC，人类中为BAF/PBAF）是最具代表性的重塑复合物，它不改变核小体核心组成，而是通过滑动机制定位或移除核小体，暴露或遮蔽转录因子结合位点。染色质重塑在转录调控、DNA损伤修复、复制和重组中发挥基础性作用：在基因激活过程中，重塑复合物被转录因子招募至启动子区域清除核小体障碍；在DNA双链断裂修复中，重塑复合物协助修复因子接近断裂位点。值得注意的是，约20%的人类癌症中存在SWI/SNF复合物亚基的突变（如ARID1A、SMARCB1/INI1），表明染色质重塑在肿瘤抑制中具有关键功能。\", \"keyConcepts\": [{\"term\": \"SWI/SNF复合物\", \"definition\": \"第一个发现的染色质重塑复合物，利用ATP水解能量\"}, {\"term\": \"ISWI家族\", \"definition\": \"模仿开关家族，调控核小体间距\"}, {\"term\": \"CHD家族\", \"definition\": \"染色质解旋酶DNA结合蛋白家族\"}, {\"term\": \"核小体滑动\", \"definition\": \"重塑复合物使核小体沿DNA移动\"}, {\"term\": \"组蛋白置换\", \"definition\": \"用变体组蛋白替换标准组蛋白\"}, {\"term\": \"DNA可及性\", \"definition\": \"染色质结构影响转录因子结合DNA的能力\"}], \"keyPoints\": [\"染色质重塑是表观遗传调控的重要机制\", \"重塑复合物利用ATP水解提供能量\", \"重塑可改变核小体位置、组成或组蛋白修饰\", \"染色质重塑与发育、分化和癌症相关\", \"SWI/SNF亚基突变在多种癌症中常见\"], \"relatedEntities\": [\"表观遗传\", \"组蛋白修饰\", \"DNA甲基化\", \"基因调控\", \"核小体\"], \"references\": [\"Clapier CR, Cairns BR. The biology of chromatin remodeling complexes. Annu Rev Biochem, 2009\"]}"
+  },
+  {
+    "title": "核小体",
+    "url": "kg/entities/核小体.html",
+    "kind": "entity",
+    "text": "{\"id\": \"nucleosome\", \"nameEn\": \"Nucleosome\", \"category\": \"复合物\", \"chapter\": \"第3章\", \"definition\": \"核小体是真核生物染色质的基本重复结构单位，由约147 bp DNA以左手超螺旋缠绕组蛋白八聚体（H2A、H2B、H3、H4各两个拷贝）约1.65圈形成直径约11 nm的盘状核心颗粒。相邻核小体由约20-80 bp连接DNA串联，连接组蛋白H1结合在核小体DNA进出位点促进更高阶染色质折叠。核小体的定位——特别是启动子区域是否存在核小体——是决定基因转录状态的物理性开关：活性启动子通常为无核小体区域（NFR），核小体的存在物理阻碍转录因子和通用转录因子与DNA的结合。ATP依赖的染色质重塑复合物（SWI/SNF、ISWI等）和组蛋白分子伴侣调控核小体的动态定位和组成，是表观遗传调控的核心机制。\"}"
   },
   {
     "title": "核糖体",
@@ -708,10 +720,28 @@
     "text": "{\"id\": \"ber\", \"nameEn\": \"Base Excision Repair\", \"category\": \"过程\", \"chapter\": \"第5章\", \"importance\": \"core-major\", \"keyConcepts\": [{\"term\": \"DNA糖基化酶\", \"definition\": \"识别并切除特定类型受损碱基（如氧化、烷化、脱氨碱基）的酶，BER的起始酶\"}, {\"term\": \"APE1\", \"definition\": \"脱嘌呤/脱嘧啶核酸内切酶，在无碱基位点5'端切割磷酸二酯键骨架\"}, {\"term\": \"PARP1\", \"definition\": \"识别并结合单链断裂缺口，催化自身PARylation招募修复因子\"}], \"keyPoints\": [\"修复非螺旋扭曲性碱基损伤（氧化、烷化、脱氨）\", \"短补丁（单核苷酸替换）和长补丁（2-12核苷酸置换）两种模式\", \"每日每个细胞修复数千至数万处自发碱基损伤\", \"PARP抑制剂靶向BER通路用于肿瘤治疗\"], \"relatedEntities\": [\"DNA 聚合酶\", \"DNA 连接酶\", \"突变\", \"氧化损伤\", \"自发性损伤\"], \"definition\": \"碱基切除修复（BER）是修复非螺旋扭曲性碱基损伤的主要途径，负责纠正由内源性（活性氧、自发脱氨）和外源性（烷化剂、电离辐射）因素导致的碱基化学修饰（氧化碱基如8-oxoG、烷化碱基、脱氨产物如尿嘧啶）。BER通路核心步骤：DNA糖基化酶（人类有11种，各具底物特异性）识别并水解受损碱基与脱氧核糖之间的N-糖苷键，产生无碱基（AP）位点→APE1核酸内切酶在AP位点5'端切割产生单链断裂缺口→DNA聚合酶β填补缺口（短补丁BER，1个核苷酸）或Pol δ/ε进行置换合成（长补丁BER，2-12核苷酸）→连接酶IIIα-XRCC1（短补丁）或连接酶I（长补丁）封口。BER是细胞抵御自发DNA损伤的第一道防线，每个哺乳动物细胞每天需通过BER修复数千至数万处碱基损伤。\"}"
   },
   {
+    "title": "碱基编辑器",
+    "url": "kg/entities/碱基编辑器.html",
+    "kind": "entity",
+    "text": "{\"id\": \"base-editor\", \"nameEn\": \"Base Editor (ABE/CBE)\", \"category\": \"技术\", \"chapter\": \"第6章\", \"definition\": \"碱基编辑器是CRISPR系统的精确基因编辑衍生工具，由David Liu实验室于2016年（CBE）和2017年（ABE）先后开发，可在不产生DNA双链断裂、不依赖同源定向修复（HDR）的情况下实现单个碱基的精确转换。胞嘧啶碱基编辑器（CBE）融合了Cas9切口酶（nCas9，D10A突变仅切割非编辑链）、胞嘧啶脱氨酶（大鼠APOBEC1或进化优化的变体）和尿嘧啶糖基化酶抑制因子（UGI），将靶C•G碱基对经C→U→T的脱氨-修复路径转换为T•A。腺嘌呤碱基编辑器（ABE）使用实验室进化的tRNA腺苷脱氨酶TadA变体，将A•T经A→I（肌苷，读作G）的脱氨路径转换为G•C。碱基编辑器在精准修正致病点突变（约占人类致病突变的60%）和作物分子育种中具有革命性潜力。\"}"
+  },
+  {
     "title": "突变",
     "url": "kg/entities/突变.html",
     "kind": "entity",
     "text": "{\"id\": \"mutation\", \"name\": \"突变\", \"nameEn\": \"Mutation\", \"category\": \"基因组\", \"chapter\": \"第 3 章\", \"importance\": \"core-important\", \"definition\": \"突变是DNA序列的可遗传性改变，是遗传变异的根本来源和进化的原材料。按发生尺度分类：基因突变包括碱基替换（转换A↔G、C↔T或颠换嘌呤↔嘧啶）、插入、缺失（indel），可导致错义突变（氨基酸替换）、无义突变（提前出现终止密码子）、移码突变（改变阅读框）或剪接突变（破坏正常剪接）；染色体水平突变包括缺失、重复、倒位、易位以及染色体数目异常（非整倍体、多倍体）。按来源分类：自发突变源于DNA复制错误（碱基错配、聚合酶滑移导致的重复序列扩展/收缩）和碱基自发脱氨/脱嘌呤等化学损伤；诱发突变为环境因素所致（紫外线诱导嘧啶二聚体、电离辐射造成双链断裂、化学诱变剂如烷化剂修饰碱基）。生物体已进化出多层次DNA损伤修复系统（DNA损伤应答DDR网络）以对抗突变积累。驱动突变（driver mutation）赋予生长优势，是癌症发生的分子基础；乘客突变（passenger mutation）则为伴随事件。\", \"keyConcepts\": [{\"term\": \"点突变\", \"definition\": \"单个核苷酸的改变，包括转换和颠换\"}, {\"term\": \"插入\", \"definition\": \"DNA 序列中插入额外的核苷酸\"}, {\"term\": \"缺失\", \"definition\": \"DNA 序列中丢失核苷酸\"}, {\"term\": \"移码突变\", \"definition\": \"插入或缺失非 3 的倍数个核苷酸，导致阅读框改变\"}, {\"term\": \"错义突变\", \"definition\": \"改变氨基酸的点突变\"}, {\"term\": \"无义突变\", \"definition\": \"产生终止密码子的点突变\"}, {\"term\": \"同义突变\", \"definition\": \"不改变氨基酸的点突变\"}], \"keyPoints\": [\"突变是遗传变异的根本来源\", \"突变可由复制错误、辐射、化学物质等引起\", \"DNA 修复系统可纠正大部分突变\", \"突变可导致遗传病或癌症\", \"突变也是进化的原材料\"], \"relatedEntities\": [\"DNA 修复\", \"SNP\", \"遗传密码\", \"DNA 复制\"], \"references\": [\"Drake JW. A constant rate of spontaneous mutation in DNA-based microbes. PNAS, 1991\"]}"
+  },
+  {
+    "title": "端粒功能",
+    "url": "kg/entities/端粒功能.html",
+    "kind": "entity",
+    "text": "{\"id\": \"telomere-function\", \"nameEn\": \"Telomere Function\", \"category\": \"基因组\", \"chapter\": \"第5章\", \"definition\": \"端粒是线性染色体末端的特殊核蛋白结构，由短串联重复序列（脊椎动物为TTAGGG，长度在人类约5-15 kb）和专门的端粒结合蛋白复合物Shelterin（TRF1/TRF2/RAP1/TIN2/TPP1/POT1六亚基）组成。Shelterin的核心功能：①末端保护——TRF2和POT1分别抑制ATM和ATR DNA损伤激酶通路的激活，将天然染色体末端隐藏为「封闭」构象使DNA损伤修复机器不将其识别为DSB；②端粒长度调控——POT1-TPP1复合物调控端粒酶对端粒的接近；③促成T环（t-loop）——3'悬垂单链侵入上游双链端粒序列形成套索状结构，从物理上封闭染色体末端。端粒随每次细胞分裂逐渐缩短至临界长度后触发DNA损伤信号和复制性衰老（Hayflick极限），端粒维持机制（端粒酶激活或ALT途径）的获得是癌细胞无限增殖的必要条件。\"}"
+  },
+  {
+    "title": "端粒酶",
+    "url": "kg/entities/端粒酶.html",
+    "kind": "entity",
+    "text": "{\"id\": \"telomerase\", \"nameEn\": \"Telomerase\", \"category\": \"酶\", \"chapter\": \"第5章\", \"definition\": \"端粒酶是负责延长染色体末端端粒重复序列（脊椎动物为TTAGGG）的核糖核蛋白逆转录酶，由催化蛋白亚基TERT（端粒酶逆转录酶）和RNA模板组分TERC（端粒酶RNA组分）组成。TERT以TERC为模板、以染色体3'悬垂单链为引物，通过逆转录反复合成端粒重复序列，补偿因「末端复制问题」（DNA聚合酶无法完全复制线性染色体最末端）导致的端粒逐代缩短。端粒酶在生殖细胞、干细胞和约85-90%的恶性肿瘤中高表达维持端粒长度和无限增殖能力，而在大多数正常体细胞中被严格抑制——这是癌症端粒维持的主要机制。端粒酶抑制剂（如伊美司他Imetelstat）和端粒酶激活策略分别在抗肿瘤和抗衰老领域被深入研究。2009年Blackburn、Greider和Szostak因端粒和端粒酶的发现获诺贝尔奖。\"}"
   },
   {
     "title": "类器官",
@@ -936,6 +966,12 @@
     "text": "{\"id\": \"delivery-system\", \"nameEn\": \"Gene Delivery Systems\", \"category\": \"技术\", \"chapter\": \"第8章\", \"definition\": \"基因递送系统是将外源核酸安全高效地转入靶细胞或体内靶组织的运输工具，是基因治疗临床转化的核心瓶颈。两大类系统：病毒载体——AAV（非整合、低免疫原性、载量约4.7 kb，体内基因治疗首选如Luxturna）、慢病毒（整合染色体、适合体外修饰造血干细胞如CAR-T）和腺病毒（高载量、瞬时表达）；非病毒载体——脂质纳米颗粒（LNP，如mRNA COVID-19疫苗）和聚合物纳米颗粒等，优势在安全性和可重复给药，但递送效率普遍低于病毒载体。\"}"
   },
   {
+    "title": "通用转录因子",
+    "url": "kg/entities/通用转录因子.html",
+    "kind": "entity",
+    "text": "{\"id\": \"gtf\", \"nameEn\": \"General Transcription Factors\", \"category\": \"调控\", \"chapter\": \"第3章\", \"definition\": \"通用转录因子（GTF）是真核生物RNA聚合酶Ⅱ在所有蛋白质编码基因启动子上进行基础转录所必需的蛋白质因子集合。Pol II启动子上GTF的有序组装形成转录起始前复合物（PIC）：TFIID（含TBP的TATA框识别+TBP相关因子TAFs）首先结合启动子→TFIIA稳定TFIID-DNA结合→TFIIB桥接Pol II并确定转录起始位点→Pol II-TFIIF复合物加入→TFIIE招募TFIIH→TFIIH的XPB解旋酶亚基打开启动子DNA形成转录泡、CDK7激酶亚基磷酸化Pol II CTD Ser5触发启动子清除。GTF是所有蛋白质编码基因转录的绝对必需因子，虽然不提供基因特异性调控，但它们是转录因子调控信号整合到基础转录机器的关键界面。\"}"
+  },
+  {
     "title": "酵母双杂交",
     "url": "kg/entities/酵母双杂交.html",
     "kind": "entity",
@@ -976,6 +1012,12 @@
     "url": "kg/entities/限制性内切酶.html",
     "kind": "entity",
     "text": "{\"id\": \"restriction-enzyme\", \"name\": \"限制性内切酶\", \"nameEn\": \"Restriction Enzyme\", \"category\": \"酶\", \"chapter\": \"第 11 章\", \"importance\": \"core-major\", \"definition\": \"限制性内切酶（Restriction Endonuclease）是一类在原核生物限制-修饰系统中识别特定DNA序列并在识别位点内或其附近进行内切切割的核酸酶，是原核生物抵御噬菌体等外源DNA入侵的适应性免疫系统的重要组成部分，同时是基因工程中最重要的工具酶之一。限制酶按照亚基组成、辅因子需求和切割方式分为四型：Ⅱ型限制酶最为常用，其为简单的同二聚体蛋白，在Mg²⁺存在下识别4-8 bp通常为回文对称的DNA序列，在特定位点（识别位点内或紧邻处）切割。切割产生两种末端类型：平末端（如SmaⅠ：CCC^GGG）或黏性末端——突出的5'端（如EcoRⅠ：G^AATTC）或3'端（如KpnⅠ：GGTAC^C），黏性末端通过互补碱基配对可高效连接，极大地便利了DNA重组。目前已发现超过4000种限制酶识别约360种不同的DNA序列。EcoRⅠ（源自E. coli）、HindⅢ（源自Haemophilus influenzae）、BamHⅠ（源自Bacillus amyloliquefaciens）是最经典的三种限制酶。限制酶的发现（Arber、Smith和Nathans，1978年诺贝尔奖）奠定了重组DNA技术和现代分子生物学的基础。在分子克隆中，限制酶与DNA连接酶的协同作用实现了目的DNA片段与载体的精确拼接。\", \"keyConcepts\": [{\"term\": \"识别序列\", \"definition\": \"限制性内切酶识别的特定 DNA 序列，通常为 4-8 bp 的回文序列\"}, {\"term\": \"粘性末端\", \"definition\": \"切割后产生的单链突出末端，如 EcoRI 切割产生的 5'突出\"}, {\"term\": \"平末端\", \"definition\": \"切割后产生的平齐末端，如 SmaI 切割\"}, {\"term\": \"I/II/III 型\", \"definition\": \"限制性内切酶的分类，II 型最常用\"}, {\"term\": \"同裂酶\", \"definition\": \"识别相同序列但来源不同的限制性内切酶\"}], \"keyPoints\": [\"限制性内切酶是基因工程的基础工具\", \"II 型限制性内切酶识别特定序列并在内部切割\", \"常用酶：EcoRI、BamHI、HindIII 等\", \"粘性末端便于 DNA 片段连接\", \"限制性内切酶的发现获 1978 年诺贝尔奖\"], \"relatedEntities\": [\"基因工程\", \"DNA 连接酶\", \"分子克隆\", \"PCR\"], \"references\": [\"Smith HO, Wilcox KW. A restriction enzyme from Hemophilus influenzae. J Mol Biol, 1970\"], \"structure\": {\"pdbId\": \"1ERI\", \"pdbUrl\": \"https://www.rcsb.org/structure/1ERI\", \"alphafoldUrl\": \"https://alphafold.ebi.ac.uk/entry/P00642\", \"description\": \"EcoRI 内切酶与 DNA 复合物结构\", \"imageUrl\": \"https://cdn.rcsb.org/images/1e/1eri/1eri_assembly-1.jpeg\"}}"
+  },
+  {
+    "title": "静电作用",
+    "url": "kg/entities/静电作用.html",
+    "kind": "entity",
+    "text": "{\"id\": \"electrostatic\", \"nameEn\": \"Electrostatic Interactions\", \"category\": \"机制\", \"chapter\": \"第2章\", \"definition\": \"静电相互作用（离子键/盐桥）是蛋白质和核酸中带相反电荷的基团之间的库仑引力，在维持生物大分子结构和介导分子识别中发挥核心作用。在蛋白质中，酸性侧链（Asp/Glu的-COO⁻）与碱性侧链（Lys/Arg的-NH₃⁺、His的咪唑环）之间形成的盐桥可贡献5-20 kJ/mol的结合自由能，对蛋白质热稳定性和别构调控至关重要。在蛋白质-DNA识别中，带正电荷的Arg/Lys侧链与DNA带负电荷的磷酸骨架之间的静电互补是转录因子非序列特异性DNA结合（扫描/滑行）的基础，而序列特异性识别则通过氢键和范德华力实现。静电相互作用的强度与溶剂介电常数成反比，因此蛋白质疏水核心内的盐桥比溶剂暴露表面的更稳定。\"}"
   },
   {
     "title": "非同源末端连接",

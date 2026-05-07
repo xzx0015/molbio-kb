@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>站内搜索 | 分子生物学知识库</title><meta name="description" content="站内搜索">
+<title>静电作用 | 分子生物学知识库</title><meta name="description" content="{&quot;id&quot;: &quot;electrostatic&quot;, &quot;nameEn&quot;: &quot;Electrostatic Interactions&quot;, &quot;category&quot;: &quot;机制&quot;, &quot;chapter&quot;: &quot;第2章&quot;, &quot;definition&quot;: &quot;静电相互作用（离子键/盐桥）是蛋白质和核酸中带相反电荷的基团之间的库仑引力，在维持生物大分">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== molbio-kb — Mintlify-inspired design ===== */
@@ -159,18 +159,16 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 </style></head><body>
 <header class="top"><div class="wrap">
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
-<nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
+<nav class="nav"><a href="../../index.html">🧬 首页</a><a href="../../chapters/index.html">📖 章节</a><a href="index.html">🏷️ 实体</a><a href="../concepts/index.html">🔗 图谱</a><a href="../../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><h1>🔍 站内搜索</h1><p class="muted">索引 <b>194</b> 个页面，离线可用。</p><input id="q" class="searchbox" placeholder="输入关键词，例如 DNA复制、PCR、转录因子..." autofocus><div id="results"></div>
-<script>
-const INDEX_URL = 'search-index.json';
-let docs=[];fetch(INDEX_URL).then(r=>r.json()).then(x=>{docs=x;render();});
-const q=document.getElementById('q'), results=document.getElementById('results');
-function score(d, term){const hay=(d.title+' '+d.text).toLowerCase(); const t=term.toLowerCase(); return (d.title.toLowerCase().includes(t)?5:0)+(hay.includes(t)?1:0);}
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function render(){const term=q.value.trim(); let arr=term?docs.map(d=>[score(d,term),d]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,30).map(x=>x[1]):docs.slice(0,20); results.innerHTML=arr.map(d=>`<div class="result"><a href="../${d.url}"><b>${esc(d.title)}</b></a> <span class="tag">${esc(d.kind)}</span><p class="muted">${esc(d.text.slice(0,160))}...</p></div>`).join('') || '<p class="muted">没有结果</p>';}
-q.addEventListener('input',render);
-</script></main>
+<main><div class="crumb"><a href="../../index.html">首页</a> / <a href="index.html">实体索引</a></div>
+<article class="article"><h1>静电作用 <span class="tag">机制</span></h1>
+<p class="muted">Electrostatic Interactions · 第2章</p>
+<h2>定义</h2><p>静电相互作用（离子键/盐桥）是蛋白质和核酸中带相反电荷的基团之间的库仑引力，在维持生物大分子结构和介导分子识别中发挥核心作用。在蛋白质中，酸性侧链（Asp/Glu的-COO⁻）与碱性侧链（Lys/Arg的-NH₃⁺、His的咪唑环）之间形成的盐桥可贡献5-20 kJ/mol的结合自由能，对蛋白质热稳定性和别构调控至关重要。在蛋白质-DNA识别中，带正电荷的Arg/Lys侧链与DNA带负电荷的磷酸骨架之间的静电互补是转录因子非序列特异性DNA结合（扫描/滑行）的基础，而序列特异性识别则通过氢键和范德华力实现。静电相互作用的强度与溶剂介电常数成反比，因此蛋白质疏水核心内的盐桥比溶剂暴露表面的更稳定。</p>
+<h2>关键概念</h2><ul><li>暂无</li></ul>
+<h2>要点</h2><ul><li>暂无</li></ul>
+<h2>相关实体</h2><p>暂无</p>
+<h2>参考</h2><ul><li>暂无</li></ul></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

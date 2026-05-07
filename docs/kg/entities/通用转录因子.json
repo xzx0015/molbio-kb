@@ -1,0 +1,7 @@
+{
+  "id": "gtf",
+  "nameEn": "General Transcription Factors",
+  "category": "调控",
+  "chapter": "第3章",
+  "definition": "通用转录因子（GTF）是真核生物RNA聚合酶Ⅱ在所有蛋白质编码基因启动子上进行基础转录所必需的蛋白质因子集合。Pol II启动子上GTF的有序组装形成转录起始前复合物（PIC）：TFIID（含TBP的TATA框识别+TBP相关因子TAFs）首先结合启动子→TFIIA稳定TFIID-DNA结合→TFIIB桥接Pol II并确定转录起始位点→Pol II-TFIIF复合物加入→TFIIE招募TFIIH→TFIIH的XPB解旋酶亚基打开启动子DNA形成转录泡、CDK7激酶亚基磷酸化Pol II CTD Ser5触发启动子清除。GTF是所有蛋白质编码基因转录的绝对必需因子，虽然不提供基因特异性调控，但它们是转录因子调控信号整合到基础转录机器的关键界面。"
+}

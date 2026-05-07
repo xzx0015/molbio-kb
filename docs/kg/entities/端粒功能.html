@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>站内搜索 | 分子生物学知识库</title><meta name="description" content="站内搜索">
+<title>端粒功能 | 分子生物学知识库</title><meta name="description" content="{&quot;id&quot;: &quot;telomere-function&quot;, &quot;nameEn&quot;: &quot;Telomere Function&quot;, &quot;category&quot;: &quot;基因组&quot;, &quot;chapter&quot;: &quot;第5章&quot;, &quot;definition&quot;: &quot;端粒是线性染色体末端的特殊核蛋白结构，由短串联重复序列（脊椎动物为TTAGGG，长度在人类约5-1">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== molbio-kb — Mintlify-inspired design ===== */
@@ -159,18 +159,16 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 </style></head><body>
 <header class="top"><div class="wrap">
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
-<nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
+<nav class="nav"><a href="../../index.html">🧬 首页</a><a href="../../chapters/index.html">📖 章节</a><a href="index.html">🏷️ 实体</a><a href="../concepts/index.html">🔗 图谱</a><a href="../../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><h1>🔍 站内搜索</h1><p class="muted">索引 <b>194</b> 个页面，离线可用。</p><input id="q" class="searchbox" placeholder="输入关键词，例如 DNA复制、PCR、转录因子..." autofocus><div id="results"></div>
-<script>
-const INDEX_URL = 'search-index.json';
-let docs=[];fetch(INDEX_URL).then(r=>r.json()).then(x=>{docs=x;render();});
-const q=document.getElementById('q'), results=document.getElementById('results');
-function score(d, term){const hay=(d.title+' '+d.text).toLowerCase(); const t=term.toLowerCase(); return (d.title.toLowerCase().includes(t)?5:0)+(hay.includes(t)?1:0);}
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function render(){const term=q.value.trim(); let arr=term?docs.map(d=>[score(d,term),d]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,30).map(x=>x[1]):docs.slice(0,20); results.innerHTML=arr.map(d=>`<div class="result"><a href="../${d.url}"><b>${esc(d.title)}</b></a> <span class="tag">${esc(d.kind)}</span><p class="muted">${esc(d.text.slice(0,160))}...</p></div>`).join('') || '<p class="muted">没有结果</p>';}
-q.addEventListener('input',render);
-</script></main>
+<main><div class="crumb"><a href="../../index.html">首页</a> / <a href="index.html">实体索引</a></div>
+<article class="article"><h1>端粒功能 <span class="tag">基因组</span></h1>
+<p class="muted">Telomere Function · 第5章</p>
+<h2>定义</h2><p>端粒是线性染色体末端的特殊核蛋白结构，由短串联重复序列（脊椎动物为TTAGGG，长度在人类约5-15 kb）和专门的端粒结合蛋白复合物Shelterin（TRF1/TRF2/RAP1/TIN2/TPP1/POT1六亚基）组成。Shelterin的核心功能：①末端保护——TRF2和POT1分别抑制ATM和ATR DNA损伤激酶通路的激活，将天然染色体末端隐藏为「封闭」构象使DNA损伤修复机器不将其识别为DSB；②端粒长度调控——POT1-TPP1复合物调控端粒酶对端粒的接近；③促成T环（t-loop）——3&#x27;悬垂单链侵入上游双链端粒序列形成套索状结构，从物理上封闭染色体末端。端粒随每次细胞分裂逐渐缩短至临界长度后触发DNA损伤信号和复制性衰老（Hayflick极限），端粒维持机制（端粒酶激活或ALT途径）的获得是癌细胞无限增殖的必要条件。</p>
+<h2>关键概念</h2><ul><li>暂无</li></ul>
+<h2>要点</h2><ul><li>暂无</li></ul>
+<h2>相关实体</h2><p>暂无</p>
+<h2>参考</h2><ul><li>暂无</li></ul></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();

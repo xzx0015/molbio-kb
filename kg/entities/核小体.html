@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN" class=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>站内搜索 | 分子生物学知识库</title><meta name="description" content="站内搜索">
+<title>核小体 | 分子生物学知识库</title><meta name="description" content="{&quot;id&quot;: &quot;nucleosome&quot;, &quot;nameEn&quot;: &quot;Nucleosome&quot;, &quot;category&quot;: &quot;复合物&quot;, &quot;chapter&quot;: &quot;第3章&quot;, &quot;definition&quot;: &quot;核小体是真核生物染色质的基本重复结构单位，由约147 bp DNA以左手超螺旋缠绕组蛋白八聚体（H2A、H2B、H3、H4各两">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== molbio-kb — Mintlify-inspired design ===== */
@@ -159,18 +159,16 @@ html.dark .article h2,.dark .article h3,.dark .section h2{color:#ededed}
 </style></head><body>
 <header class="top"><div class="wrap">
 <span class="brand"><span class="icon">🧬</span>分子生物学知识库</span>
-<nav class="nav"><a href="../index.html">🧬 首页</a><a href="../chapters/index.html">📖 章节</a><a href="../kg/entities/index.html">🏷️ 实体</a><a href="../kg/concepts/index.html">🔗 图谱</a><a href="index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
+<nav class="nav"><a href="../../index.html">🧬 首页</a><a href="../../chapters/index.html">📖 章节</a><a href="index.html">🏷️ 实体</a><a href="../concepts/index.html">🔗 图谱</a><a href="../../search/index.html">🔍 搜索</a><button class="settings-toggle" onclick="toggleEntities()" title="开关实体高亮">⚙️</button><button class="settings-toggle" onclick="toggleDark()" title="明暗切换" style="font-size:.85rem">🌓</button></nav>
 </div></header>
-<main><h1>🔍 站内搜索</h1><p class="muted">索引 <b>194</b> 个页面，离线可用。</p><input id="q" class="searchbox" placeholder="输入关键词，例如 DNA复制、PCR、转录因子..." autofocus><div id="results"></div>
-<script>
-const INDEX_URL = 'search-index.json';
-let docs=[];fetch(INDEX_URL).then(r=>r.json()).then(x=>{docs=x;render();});
-const q=document.getElementById('q'), results=document.getElementById('results');
-function score(d, term){const hay=(d.title+' '+d.text).toLowerCase(); const t=term.toLowerCase(); return (d.title.toLowerCase().includes(t)?5:0)+(hay.includes(t)?1:0);}
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function render(){const term=q.value.trim(); let arr=term?docs.map(d=>[score(d,term),d]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,30).map(x=>x[1]):docs.slice(0,20); results.innerHTML=arr.map(d=>`<div class="result"><a href="../${d.url}"><b>${esc(d.title)}</b></a> <span class="tag">${esc(d.kind)}</span><p class="muted">${esc(d.text.slice(0,160))}...</p></div>`).join('') || '<p class="muted">没有结果</p>';}
-q.addEventListener('input',render);
-</script></main>
+<main><div class="crumb"><a href="../../index.html">首页</a> / <a href="index.html">实体索引</a></div>
+<article class="article"><h1>核小体 <span class="tag">复合物</span></h1>
+<p class="muted">Nucleosome · 第3章</p>
+<h2>定义</h2><p>核小体是真核生物染色质的基本重复结构单位，由约147 bp DNA以左手超螺旋缠绕组蛋白八聚体（H2A、H2B、H3、H4各两个拷贝）约1.65圈形成直径约11 nm的盘状核心颗粒。相邻核小体由约20-80 bp连接DNA串联，连接组蛋白H1结合在核小体DNA进出位点促进更高阶染色质折叠。核小体的定位——特别是启动子区域是否存在核小体——是决定基因转录状态的物理性开关：活性启动子通常为无核小体区域（NFR），核小体的存在物理阻碍转录因子和通用转录因子与DNA的结合。ATP依赖的染色质重塑复合物（SWI/SNF、ISWI等）和组蛋白分子伴侣调控核小体的动态定位和组成，是表观遗传调控的核心机制。</p>
+<h2>关键概念</h2><ul><li>暂无</li></ul>
+<h2>要点</h2><ul><li>暂无</li></ul>
+<h2>相关实体</h2><p>暂无</p>
+<h2>参考</h2><ul><li>暂无</li></ul></article></main>
 <footer class="footer"><p>Molecular Biology Knowledge Base · <a href="https://github.com/xzx0015/molbio-kb">GitHub</a></p></footer>
 <script>
 (function(){var bk="molbio-hide-entities";var dk="molbio-dark";var s=localStorage.getItem(bk);if(s==="1"){document.documentElement.classList.add("hide-entities")};var d=localStorage.getItem(dk);if(d==="1"){document.documentElement.classList.add("dark")}})();
