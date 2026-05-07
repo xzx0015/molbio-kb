@@ -514,128 +514,123 @@ graphData.nodes.forEach(n => {{
   nodeMap.set(n.id || n.name, n);
 }});
 
-// Build link lookup
-const linkMap = new Map();
+// Build link data - resolve source/target to node objects, keep type
+const linksData = [];
 graphData.links.forEach(l => {{
   const src = nodeMap.get(l.source);
   const tgt = nodeMap.get(l.target);
   if (src && tgt) {{
-    const key = l.source + "|||" + l.target;
-    linkMap.set(key, {{source: src, target: tgt}});
+    linksData.push({{source: src, target: tgt, type: l.type || "related"}});
   }}
 }});
+console.log("Links resolved:", linksData.length, "of", graphData.links.length);
 
-const allNodes = graphData.nodes.filter(n => nodeMap.has(n.id || n.name));
-
-// Draw category ring labels
+// Category ring labels
 g.selectAll(".ring-label").data(cats).enter().append("text")
   .attr("class", "ring-label")
   .attr("x", d => R * 1.12 * Math.cos(catRing[d] - Math.PI/2))
   .attr("y", d => R * 1.12 * Math.sin(catRing[d] - Math.PI/2))
   .attr("text-anchor", "middle")
   .attr("fill", d => colorScale(d))
-  .attr("font-size", "14px")
+  .attr("font-size", "13px")
   .attr("font-weight", "600")
   .text(d => d);
 
 // Draw links
 const relColors = {{"is-a":"#667eea","part-of":"#764ba2","regulates":"#e74c3c","catalyzes":"#27ae60","participates-in":"#f39c12","related":"#95a5a6"}};
-g.selectAll(".link").data([...linkMap.values()]).enter().append("line")
+const link = g.selectAll(".link").data(linksData).enter().append("line")
   .attr("class", "link")
-  .attr("stroke", d => relColors[d.type] || "rgba(148,163,184,.3)")
-  .attr("stroke-width", d => ["is-a","part-of","regulates","catalyzes"].includes(d.type) ? 1.0 : 0.5)
-  .attr("stroke-opacity", 0.35);
+  .attr("stroke", d => relColors[d.type] || "#95a5a6")
+  .attr("stroke-width", d => ["is-a","part-of","regulates","catalyzes"].includes(d.type) ? 1.2 : 0.6)
+  .attr("stroke-opacity", 0.45);
 
 // Draw nodes
+const allNodes = graphData.nodes.filter(n => nodeMap.has(n.id || n.name));
 const node = g.selectAll(".node").data(allNodes).enter().append("g")
   .attr("class", "node")
   .style("cursor", "pointer");
 
 node.append("circle")
-  .attr("r", d => d.importance === "core-important" ? 5 : 3.5)
+  .attr("r", d => d.importance === "core-important" ? 6 : 4)
   .attr("fill", d => colorScale(d.category))
-  .attr("fill-opacity", 0.85)
+  .attr("fill-opacity", 0.9)
   .attr("stroke", "#fff")
-  .attr("stroke-width", 0.5);
+  .attr("stroke-width", 1);
 
 node.on("mouseover", (ev, d) => {{
   d3.select("#tooltip").style("display", "block").html(`<b>${{d.name}}</b><br><span style="font-size:.75rem;opacity:.7">${{d.category}}</span>`);
-  d3.select(ev.currentTarget).select("circle").attr("r", d.importance === "core-important" ? 8 : 6).attr("fill-opacity", 1);
+  d3.select(ev.currentTarget).select("circle").attr("r", 9).attr("fill-opacity", 1).attr("stroke", "#333").attr("stroke-width", 2);
+  // Highlight connected links
+  link.attr("stroke-opacity", l => (l.source === d || l.target === d) ? 0.9 : 0.08)
+      .attr("stroke-width", l => (l.source === d || l.target === d) ? 2.5 : 0.3);
 }}).on("mousemove", ev => {{
-  d3.select("#tooltip").style("left", (ev.offsetX + 12) + "px").style("top", (ev.offsetY - 10) + "px");
+  d3.select("#tooltip").style("left", (ev.offsetX + 16) + "px").style("top", (ev.offsetY - 12) + "px");
 }}).on("mouseout", (ev, d) => {{
   d3.select("#tooltip").style("display", "none");
-  d3.select(ev.currentTarget).select("circle").attr("r", d.importance === "core-important" ? 5 : 3.5).attr("fill-opacity", 0.85);
+  d3.select(ev.currentTarget).select("circle").attr("r", d.importance === "core-important" ? 6 : 4).attr("fill-opacity", 0.9).attr("stroke", "#fff").attr("stroke-width", 1);
+  link.attr("stroke-opacity", 0.45).attr("stroke-width", d => ["is-a","part-of","regulates","catalyzes"].includes(d.type) ? 1.2 : 0.6);
 }}).on("dblclick", (ev, d) => {{
-  const links = {json.dumps({n.get("name", n.get("id","")): entity_href(str(n.get("name", n.get("id",""))), entities, out) for n in nodes if isinstance(n, dict)}, ensure_ascii=False)};
-  const href = links[d.name];
-  if (href) window.location = href;
+  const hrefs = {json.dumps({n.get("name", n.get("id","")): entity_href(str(n.get("name", n.get("id",""))), entities, out) for n in nodes if isinstance(n, dict)}, ensure_ascii=False)};
+  if (hrefs[d.name]) window.location = hrefs[d.name];
 }});
 
-// 3D → 2D projection
+// 3D projection
 function project(x, y, z) {{
-  const scale = 400 / (400 + z);
-  return [W/2 + x * scale, H/2 + y * scale, scale];
+  const s = 420 / (420 + z);
+  return [W/2 + x * s, H/2 + y * s, s];
 }}
 
-// Force simulation for sphere surface
+// Force simulation with link force
 const sim = d3.forceSimulation(allNodes)
-  .force("ring", d => {{
+  .force("link", d3.forceLink(linksData).id(d => d.id || d.name).distance(30).strength(0.3))
+  .force("charge", d3.forceManyBody().strength(-15))
+  .force("center", d3.forceCenter(0, 0))
+  .force("sphere", d => {{
     const phi = catRing[d.category] || Math.PI * 0.5;
     const targetR = R;
     const cx = targetR * Math.cos(d.theta) * Math.sin(phi);
     const cy = targetR * Math.cos(phi);
     const cz = targetR * Math.sin(d.theta) * Math.sin(phi);
-    d.x += (cx - d.x) * 0.15;
-    d.y += (cy - d.y) * 0.15;
-    d.z += (cz - d.z) * 0.15;
-    // Radial constraint
+    d.x += (cx - d.x) * 0.08;
+    d.y += (cy - d.y) * 0.08;
+    d.z += (cz - d.z) * 0.08;
     const dist = Math.sqrt(d.x*d.x + d.y*d.y + d.z*d.z);
-    if (dist > R * 1.05 || dist < R * 0.85) {{
+    if (dist > R * 1.08 || dist < R * 0.82) {{
       const s = R / dist;
       d.x *= s; d.y *= s; d.z *= s;
     }}
   }})
-  .force("charge", d3.forceManyBody().strength(-8))
-  .alphaDecay(0.003)
+  .alphaDecay(0.004)
   .on("tick", () => {{
+    link.attr("x1", d => project(d.source.x, d.source.y, d.source.z)[0])
+        .attr("y1", d => project(d.source.x, d.source.y, d.source.z)[1])
+        .attr("x2", d => project(d.target.x, d.target.y, d.target.z)[0])
+        .attr("y2", d => project(d.target.x, d.target.y, d.target.z)[1]);
     node.attr("transform", d => {{
       const [px, py, s] = project(d.x, d.y, d.z);
       return `translate(${{px}},${{py}}) scale(${{s}})`;
     }});
-    g.selectAll(".link").each(function(d) {{
-      const [sx, sy] = project(d.source.x, d.source.y, d.source.z);
-      const [tx, ty] = project(d.target.x, d.target.y, d.target.z);
-      d3.select(this).attr("x1", sx).attr("y1", sy).attr("x2", tx).attr("y2", ty);
-    }});
   }});
 
-// Zoom
-let currentZoom = 1;
-const zoom = d3.zoom().scaleExtent([0.3, 4]).on("zoom", e => {{
-  g.attr("transform", e.transform);
-  currentZoom = e.transform.k;
-}});
+// Zoom with d3.zoom
+const zoom = d3.zoom().scaleExtent([0.25, 5]).on("zoom", e => g.attr("transform", e.transform));
 svg.call(zoom);
-window.zoomIn = () => svg.transition().call(zoom.scaleBy, 1.3);
-window.zoomOut = () => svg.transition().call(zoom.scaleBy, 0.7);
+window.zoomIn = () => svg.transition().duration(300).call(zoom.scaleBy, 1.4);
+window.zoomOut = () => svg.transition().duration(300).call(zoom.scaleBy, 0.7);
 
 // Drag rotation
-let dragState = null;
-svg.on("mousedown", ev => {{ if (!ev.shiftKey) dragState = {{x: ev.clientX, y: ev.clientY}}; }});
+let dragRot = null;
+svg.on("mousedown", ev => {{ if (!ev.shiftKey) dragRot = {{x: ev.clientX, y: ev.clientY}}; }});
 svg.on("mousemove", ev => {{
-  if (dragState) {{
-    const dx = ev.clientX - dragState.x;
-    const dy = ev.clientY - dragState.y;
-    allNodes.forEach(n => {{
-      n.theta -= dx * 0.005;
-      const phi = catRing[n.category] || Math.PI * 0.5;
-      // slight phi adjustment
-    }});
-    dragState = {{x: ev.clientX, y: ev.clientY}};
+  if (dragRot) {{
+    const dx = ev.clientX - dragRot.x;
+    const dy = ev.clientY - dragRot.y;
+    sim.alpha(0.15).restart();
+    allNodes.forEach(n => {{ n.theta -= dx * 0.004; }});
+    dragRot = {{x: ev.clientX, y: ev.clientY}};
   }}
 }});
-svg.on("mouseup", () => {{ dragState = null; }});
+svg.on("mouseup", () => {{ dragRot = null; }});
 </script>
 <div class="section-divider"></div>
 <h2 style="padding:0 32px">📊 统计</h2>
