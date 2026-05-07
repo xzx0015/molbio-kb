@@ -56,6 +56,14 @@ node.append("circle")
   .attr("fill-opacity", 0.85)
   .attr("stroke", "#fff").attr("stroke-width", 1.2);
 
+// Label core-important nodes
+node.filter(d => d.importance === "core-important").append("text")
+  .attr("dx", d => d.r + 4).attr("dy", 4)
+  .text(d => d.name)
+  .attr("font-size", "11px")
+  .attr("fill", "var(--ink2)")
+  .style("pointer-events", "none");
+
 // ── Interaction with enhanced tooltip ──
 const tooltip = document.getElementById("tooltip");
 node.on("mouseover", (ev, d) => {
