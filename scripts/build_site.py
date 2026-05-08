@@ -35,6 +35,9 @@ except Exception:  # pragma: no cover
 ROOT = Path(__file__).resolve().parents[1]
 SITE_TITLE = "分子生物学知识库"
 
+CHAPTER_NAMES = ["", "绪论", "分子基础", "DNA复制与转录", "翻译与遗传密码",
+                 "基因组维持", "原核基因调控", "真核基因调控", "实验技术与组学"]
+
 ENTITY_TYPE_CLASS = {
     "分子": "molecule",
     "酶": "enzyme",
@@ -328,13 +331,14 @@ def build_chapters(pages: list[Page]) -> list[dict[str, str]]:
     # Collect all markdown files, grouped by chapter number prefix
     from collections import defaultdict
     md_files = sorted((ROOT / "content/chapters").glob("*.md"))
+    if len(md_files) != 8:
+        raise SystemExit(f"Expected exactly 8 chapter files, found {len(md_files)}: {[f.name for f in md_files]}")
     groups = defaultdict(list)
     for md in md_files:
         prefix = md.stem[:2]
         groups[prefix].append(md)
     
-    ch_names = ["", "绪论", "分子基础", "DNA复制与转录", "翻译与遗传密码",
-                "基因组维持", "原核基因调控", "真核基因调控", "实验技术与组学"]
+    ch_names = CHAPTER_NAMES
     
     # Build ONE merged page per chapter (8 chapters total)
     sorted_prefixes = sorted(groups)
@@ -557,8 +561,7 @@ def build_home(pages: list[Page], chapters: list[dict[str, str]], entities: dict
         prefix = md.stem[:2]
         groups[prefix].append(md)
     
-    ch_names_list = ["", "绪论", "分子基础与复制", "信息传递与转录", "翻译与表达调控",
-                "原核表达调控与基因组维持", "分子生物学技术与真核表达调控", "实验技术", "组学前沿"]
+    ch_names_list = CHAPTER_NAMES
     chapter_links = ""
     for prefix in sorted(groups):
         subs = groups[prefix]
